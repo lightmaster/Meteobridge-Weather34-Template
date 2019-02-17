@@ -89,11 +89,11 @@ else if ($aqiweather["aqi"]>=0){echo "<div class=dottedcirclegreen>" ; }
  else if ($aqiweather["aqi"] >50){echo $aqiweather["aqi"] ;echo "" ; }
  else if ($aqiweather["aqi"] >=0){echo $aqiweather["aqi"] ;echo "" ; }
  //WEATHER34 air quality description
- if ($aqiweather["aqi"]>300){echo "<br><airdescription><indoorred> ".$lang['Hazordous']."</airdescription>";}
+ if ($aqiweather["aqi"]>300){echo "<br><airdescription><indoorred>&nbsp;".$lang['Hazordous']."</airdescription>";}
  else if ($aqiweather["aqi"]>200){echo "<br><airdescription><indoorpurple>".$lang['VeryUnhealthy']."</airdescription>  ";}
- else if ($aqiweather["aqi"]>150){echo "<br><airdescription><indoorred>".$lang['Unhealthy']."</airdescription>";}
+ else if ($aqiweather["aqi"]>150){echo "<br><airdescription><indoorred>&nbsp;".$lang['Unhealthy']."</airdescription>";}
  else if ($aqiweather["aqi"]>100){echo "<br><airdescription><indoororange>".$lang['UnhealthyFS']."</airdescription>";} 
- else if ($aqiweather["aqi"]>50){echo "<br><airdescription><indooryellow>".$lang['Moderate']."</airdescription>";} 
+ else if ($aqiweather["aqi"]>50){echo "<br><airdescription><indooryellow>&nbsp;".$lang['Moderate']."</airdescription>";} 
  else if ($aqiweather["aqi"]>=0){echo "<br><airdescription><indoorgreen>&nbsp; &nbsp;".$lang['Good']."</airdescription>";} 
  ?>
 </div></div></div>
