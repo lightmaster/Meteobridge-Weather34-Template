@@ -68,6 +68,7 @@ $position12title   = "'. $_POST["position12title"]. '";
 $position12   = "'. $_POST["position12"]. '";
 $positionlastmoduletitle   = "'. $_POST["positionlastmoduletitle"]. '";
 $positionlastmodule   = "'. $_POST["positionlastmodule"]. '";
+$webcamurl   = "'. $_POST["webcamurl"]. '";
 
 $email    = "'. $_POST["email"]. '";
 $twitter   = "'. $_POST["twitter"]. '";
@@ -1376,7 +1377,7 @@ your nearly there :-) keep going<br><br>
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> airqualitymodule.php <orange>display airquality</orange><br></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> webcamsmall.php</span> <orange>display webcam</orange>.*
-     you need to edit this file and add your url to your webcam !!!<br></span>
+     add your url/path to wecam image using option below <br></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> mooonphase.php</span> <orange>display moonphase</orange><br></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
@@ -1389,7 +1390,13 @@ your nearly there :-) keep going<br><br>
         
         
         <br>
-        
+        <div class= "stationvalue">Webcam Add Your Path/Url to your webcam (i.e https://something.com/webcam.jpg)</div> 
+    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M30 12 L16 24 2 12" /></svg><br>
+
+  <input name="webcamurl" type="text" id="webcamurl" value="<?php echo $webcamurl ;?>" class="chooseapi">
+  
+  <br><br>
         
         <br>
      
