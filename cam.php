@@ -10,6 +10,6 @@
 
   
 <!-- HOMEWEATHER STATION TEMPLATE SIMPLE WEBCAM -add your url as shown below do NOT delete the class='webcam large' !!! -->
-<img src="http://www.winterman.org.uk/image1.jpg?version=<?php echo filemtime("http://www.winterman.org.uk/image1.jpg");?>" alt="weathercam" class="webcamlarge">
+<img src="<?php echo $webcamurl?>?version=<?php echo filemtime($webcamurl);?>" alt="weathercam" class="webcamlarge">
 </span>
 
