@@ -8,12 +8,10 @@ you may also find the Cumulus version maintained by Ken True (Saratoga) at https
 
 you may also find a weewx version maintained by Ian Millard is also avaialble via https://github.com/steepleian/WX-HWS
 
-This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+# This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 http://creativecommons.org/licenses/by-nc-nd/4.0/
 
-*Credits and Information ..
-
-Credits and thanks to the contributors who made this all possible since 2015.
+# Credits and thanks to the contributors who made this all possible since 2015.
 
  Erik M Madsen for language idea and initial script
  
