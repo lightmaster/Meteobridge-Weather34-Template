@@ -254,7 +254,7 @@ $date=str_replace('Z', ' ', $date);$date1 = strtotime($date) + 60*60*$UTC;echo d
 <span class="weather34card__count-text--big">  </span></div>  
 <div class="weather34card__stuff-container"><br>           
 <actual>Airport</actual>
-<div class="icon"><img src=css/icons/airport.svg width=40px></div>
+<div class="icon"><a href="https://www.checkwx.com/" title="https://www.checkwx.com/" target="_blank"><img src=img/checkwx.svg width=80px alt="https://www.checkwx.com/"></a></div>
 </section>
 <div class="provided">   
 &nbsp;<?php echo $info?> 
