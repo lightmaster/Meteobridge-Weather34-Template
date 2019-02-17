@@ -1036,7 +1036,7 @@ echo $eqalert;
 &nbsp;<?php echo $info?> CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
 <updated>               
  <?php echo '<svg viewBox="0 0 32 32" width=7 height=7 fill=#9aba2f stroke=#9aba2f stroke-linecap=round stroke-linejoin=round stroke-width=6.25%><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx=16 cy=16 r=14 /></svg>';
-; echo " Last Updated: ".date("H:i:s",filemtime('jsondata/kindex.txt'));?>
+; echo " Last Updated: ".date("H:i:s",filemtime('jsondata/eqnotification.txt'));?>
 </updated></div>
 </body>
 </html>
