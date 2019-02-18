@@ -245,10 +245,10 @@ else{echo "Due <span> North</span>";}?>
 echo "<sup><unit>Metar :<greyuv>" .$metar34raw."</greyuv>";?>
 </div>
 <div class="hitemp">
-<?php //update timestamp
-date_default_timezone_set($tz);$date = $metar34time;$date=str_replace('@', ' ', $date);
-$date=str_replace('Z', ' ', $date);$date1 = strtotime($date) + 60*60*$UTC;echo date('D jS F H:i a ',$date1);
-?> </div></div></div></div>
+<?php //update quick fix for strange API date code 18th Feb
+//$date = $metar34time;$date=str_replace('@', ' ', $date);
+//$date=str_replace('Z', ' ', $date);$date1 = strtotime($date) + 60*60*$UTC;echo date('D jS F H:i a ',$date1);
+date_default_timezone_set($tz);echo $metar34time;?> </div></div></div></div>
 <div class="weather34card__count-container">
 <div class="weather34card__count-textuv">
 <span class="weather34card__count-text--big">  </span></div>  
