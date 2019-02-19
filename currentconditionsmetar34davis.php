@@ -15,10 +15,10 @@ $sunsethour =date('G', $result['sunset']);$twighlight_begin =date('G:i', $result
 else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
 <div class="cloudconverter">
 <?php //cloudbase-weather34
-if ($weather['temp_units']=='C' && $weather["cloudbase3"]>1999){echo "<div class=cloudconvertercircle2000>Clouds<tyellow> ".round($weather["cloudbase3"])."</tyellow><smalltempunit2> ft</tblue><smalltempunit2>" ;}
-else if ($weather['temp_units']=='C'){echo "<div class=cloudconvertercircle>Clouds<tblue> ".round($weather["cloudbase3"])."</tblue><smalltempunit2> ft</tblue><smalltempunit2>" ;}
-else if ($weather['temp_units']=='F' && $weather["cloudbase3"]>609){echo "<div class=cloudconvertercircle2000>Clouds<tyellow> ".round($weather["cloudbase3"]*0.3048,0)."</tyellow><smalltempunit2> m</tblue><smalltempunit2>" ;}
-else if ($weather['temp_units']=='F'){echo "<div class=cloudconvertercircle>Clouds<tblue> ".round($weather["cloudbase3"]*0.3048,0)."</tblue><smalltempunit2> m</tblue><smalltempunit2>" ;}
+if ($weather['temp_units']=='C' && $weather["cloudbase3"]>=1999){echo "<div class=cloudconvertercircle2000>Clouds<tyellow> ".round($weather["cloudbase3"])."</tyellow><smalltempunit2> ft</tblue><smalltempunit2>" ;}
+else if ($weather['temp_units']=='C' && $weather["cloudbase3"]<1999){echo "<div class=cloudconvertercircle>Clouds<tblue> ".round($weather["cloudbase3"])."</tblue><smalltempunit2> ft</tblue><smalltempunit2>" ;}
+else if ($weather['temp_units']=='F' && $weather["cloudbase3"]*0.3048>=609){echo "<div class=cloudconvertercircle2000>Clouds<tyellow> ".round($weather["cloudbase3"]*0.3048,0)."</tyellow><smalltempunit2> m<smalltempunit2>" ;}
+else if ($weather['temp_units']=='F' && $weather["cloudbase3"]*0.3048<609){echo "<div class=cloudconvertercircle>Clouds<tblue> ".round($weather["cloudbase3"]*0.3048,0)."</tblue><smalltempunit2> m</tblue><smalltempunit2>" ;}
 ?></div></div>
 <div class="darkskyiconcurrent"><span1>
 <?php 
