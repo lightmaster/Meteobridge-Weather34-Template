@@ -93,13 +93,12 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["mbplatform"]	       = $meteobridgeapi[41];
 	$weather["uptime"]		       = $meteobridgeapi[81];//uptime in seconds
 	$weather["vpforecasttext"]	   = $meteobridgeapi1[1];
-	$weather["temp_avgtoday"]=$meteobridgeapi[152];
-	//weather34 meteobridge sun data
-	$weather["luminance"]=$meteobridgeapi[154];
-	$weather["daylight"]=$meteobridgeapi[155];
-	//weather34 meteobridge moon data 
+	$weather["temp_avgtoday"]	   =$meteobridgeapi[152];	
+	//weather34 meteobridge moon data sun data	
     $weather["moonphase"]=$meteobridgeapi[153];$weather["luminance"]=$meteobridgeapi[154];$weather["daylight"]=$meteobridgeapi[155];if ($meteobridgeapi[156]=='--'){$weather["moonrise"]='In Transit';}
 	else $weather["moonrise"]='Rise<moonrisecolor> '.date($timeFormatShort, strtotime($meteobridgeapi[156]));$weather["moonset"]='Set<moonsetcolor> '.date($timeFormatShort, strtotime($meteobridgeapi[157]));
+	if ($weather['luminance']>99.9){$weather['luminance']=100;}
+    if ($weather['luminance']<100){$weather['luminance']=$weather['luminance'];}
 	//weather34 meteobridge real feel 02-08-2018
 	$weather['realfeel'] = round(($weather['temp'] + 0.33*($weather['humidity']/100)*6.105*exp(17.27*$weather['temp']/(237.7+$weather['temp']))- 0.70*$weather["wind_speed"] - 4.00),1);//apparent courtesy of cumulus forum
 	$convertuptimemb34 = $weather["uptime"];$uptimedays = floor($convertuptimemb34 / 86400);$uptimehours = floor(($convertuptimemb34 -($uptimedays*86400)) / 3600);//meteobridge uptime  convert to days and hours	
@@ -900,18 +899,9 @@ foreach ($meteor_events as $meteor_check) {if ($meteor_check["event_start"]<=$me
 $uptime=$weather["uptime"];function convert_uptime($uptime) {$dt1 = new DateTime("@0");$dt2 = new DateTime("@$uptime");  return $dt1->diff($dt2)->format('%a day(s) %h hrs %i min');}
 //lunar and solar eclipse /meteor shpwers advisory 2018-2019-2020
 $eclipse_default=" <noalert>No Current Weather <spanyellow><ored>Alerts ".$alert."</ored></spanyellow></noalert>";
-//super moon  2019 21st Jan
-$eclipse_events[]=array("event_start"=>mktime(0, 0, 0, 1, 21 , 2019),"event_title"=>"<div style ='margin-top:5px;'>".$solareclipsesvg." <alert>Super<spanblue> Moon</spanblue> Phenomena</alert>  </div>
-","event_end"=>mktime(23, 59, 59, 1, 21, 2019),);
 //super moon  2019 19th Feb
 $eclipse_events[]=array("event_start"=>mktime(0, 0, 0, 2, 19 , 2019),"event_title"=>"<div style ='margin-top:5px;'>".$solareclipsesvg." <alert>Super<spanblue> Moon</spanblue> Phenomena</alert>  </div>
 ","event_end"=>mktime(23, 59, 59, 2, 19, 2019),);
-//leonids 2018
-$eclipse_events[]=array("event_start"=>mktime(0, 0, 0, 11, 17 , 2018),"event_title"=>"<div style ='margin-top:5px;'>".$meteorsvg." <alert>Leonids <spanyellow>Meteor Shower</spanyellow></alert>  </div>
-","event_end"=>mktime(23, 59, 59, 11, 18, 2018),);
-//geminids 2018
-$eclipse_events[]=array("event_start"=>mktime(0, 0, 0, 12, 13 , 2018),"event_title"=>"<div style ='margin-top:5px;'>".$meteorsvg." <alert>Geminids <spanyellow>Meteor Shower</spanyellow></alert>  </div>
-","event_end"=>mktime(23, 59, 59, 12, 14, 2018),);
 //Quadrantids 2019
 $eclipse_events[]=array("event_start"=>mktime(0, 0, 0, 1, 3 , 2019),"event_title"=>"<div style ='margin-top:5px;'>".$meteorsvg." <alert>Quadrantids <spanyellow>Meteor Shower</spanyellow></alert>  </div>
 ","event_end"=>mktime(23, 59, 59, 1, 4, 2019),);
@@ -944,16 +934,8 @@ $eclipse_events[]=array("event_start"=>mktime(0, 0, 0, 1, 3 , 2020),"event_title
 ","event_end"=>mktime(23, 59, 59, 1, 4, 2020),);
 //output eclipse events
 $eclipseNow=time();$eclipseOP=false;foreach ($eclipse_events as $eclipse_check) {if ($eclipse_check["event_start"]<=$eclipseNow&&$eclipseNow<=$eclipse_check["event_end"]) {$eclipseOP=true;$eclipse_default=$eclipse_check["event_title"];}};	
-//end lunar and solar eclipse /meteor shpwers advisory 2018-2019-2020
 ?>
 <?php // firerisk based on cumulus forum thread http://sandaysoft.com/forum/viewtopic.php?f=14&t=2789&sid=77ffab8f6f2359e09e6c58d8b13a0c3c&start=30
 $firerisk = number_format((((110 - 1.373 * $weather["humidity"] ) - 0.54 * (10.20 - $weather["temp"] )) * (124 * pow(10,(-0.0142 * $weather["humidity"] ))))/60,0);?>
-<?php //wetbulb
-$Tc =($weather['temp']);$P = $weather['barometer'];$RH = $weather['humidity'];
-$Tdc = (($Tc - (14.55 + 0.114 * $Tc) * (1 - (0.01 * $RH)) - pow((2.5 + 0.007 * $Tc) * (1 - (0.01 * $RH)) , 3) - (15.9 + 0.117 * $Tc) * pow(1 - (0.01 * $RH),  14)));
-$E = (6.11 * pow(10 , (7.5 * $Tdc / (237.7 + $Tdc))));
-$wetbulbcalc = (((0.00066 * $P) * $Tc) + ((4098 * $E) / pow(($Tdc + 237.7) , 2) * $Tdc)) / ((0.00066 * $P) + (4098 * $E) / pow(($Tdc + 237.7) , 2));
-$wetbulbx =number_format($wetbulbcalc,1);
-// K-INDEX & SOLAR DATA FOR WEATHER34 HOMEWEATHERSTATION TEMPLATE RADIO HAMS REJOICE :-) //
+<?php // K-INDEX & SOLAR DATA FOR WEATHER34 HOMEWEATHERSTATION TEMPLATE RADIO HAMS REJOICE :-) //
 $str = file_get_contents('jsondata/kindex.txt');$json = array_reverse(json_decode($str,false));$kp =  $json[1][1];?>
-<?php $file = $_SERVER["SCRIPT_NAME"];$break = Explode('/', $file);$mod34file = $break[count($break) - 1];?>
