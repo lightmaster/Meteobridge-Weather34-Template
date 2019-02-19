@@ -9,6 +9,13 @@ if (!$result1) die('Couldn\'t fetch records');
 $num_fields = mysqli_num_fields($result1); 
 $headers2 = array(); 
 
+#Create mbcharts/year folder if it doesn't exist
+if (!file_exists('../mbcharts/'.$weatherfileyear.'/')) {
+    $oldmask = umask(0);
+    mkdir('../mbcharts/'.$weatherfileyear, 0775, true);
+    umask($oldmask);
+}
+
 $fp = fopen('../mbcharts/'.$weatherfileyear.'.csv', 'a+'); 
 $fp1 = fopen('../mbcharts/'.$weatherfileyear.'/'.$weatherfilemonth.'.csv', 'a+'); 
 if ($fp && $result1) 
