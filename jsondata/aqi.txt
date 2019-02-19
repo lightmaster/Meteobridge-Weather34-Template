@@ -1,0 +1,1 @@
+{"status":"success","data":{"city":"Silivri","state":"Istanbul","country":"Turkey","location":{"type":"Point","coordinates":[28.25554,41.07318]},"current":{"weather":{"ts":"2018-06-03T14:00:00.000Z","hu":50,"ic":"01d","pr":1013,"tp":23,"wd":150,"ws":3.1},"pollution":{"ts":"2018-06-03T14:00:00.000Z","aqius":52,"mainus":"o3","aqicn":40,"maincn":"o3"}}}}
