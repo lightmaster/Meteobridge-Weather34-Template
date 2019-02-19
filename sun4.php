@@ -16,7 +16,7 @@ $thehour=date('H');$theminute=date('i');
 if ($weather["luminance"]==100) {$luminance1="<div class=percent100>";}else if ($weather["luminance"]>90) {$luminance1="<div class=percent90>";}else if ($weather["luminance"]>80) {$luminance1="<div class=percent80>";}else if ($weather["luminance"]>70) {$luminance1="<div class=percent70>";}else if ($weather["luminance"]>60) {$luminance1="<div class=percent60>";}else if ($weather["luminance"]>50) {$luminance1="<div class=percent50>";}else if ($weather["luminance"]>40) {$luminance1="<div class=percent40>";}else if ($weather["luminance"]>30) {$luminance1="<div class=percent30>";}else if ($weather["luminance"]>20) {$luminance1= "<div class=percent20>";}else if ($weather["luminance"]>=10) {$luminance1="<div class=percent10>";}else if ($weather["luminance"]>=0) {$luminance1="<div class=percent0>";}?>
 <style>.weather34sunclock {-webkit-transform:rotate(<?php echo ((($thehour*15)+($theminute/4))-86)?>deg);transform:rotate(<?php echo ((($thehour*15)+($theminute/4))-86)?>deg);border:5px solid rgba(255, 255,255,0);width:110px; height:110px;top:-9px;margin-left:104px}.weather34sunclock #poscircircle {display:none;}</style>
 <?php if($elev>=0){$elev1=$_SunPos->elevation."&deg;<div class=sunaboveweather34>&nbsp;</div>";}else if($elev<0){$elev1=$_SunPos->elevation."&deg;<div class=sunbelowweather34>&nbsp;</div>";}?>
-<div class="updatedtime"><?php echo $online.' '.date($timeFormat);?></div>
+<div class="updatedtime1"><?php echo $online.' '.date($timeFormat);?></div>
 <div class="daylightmoduleposition" > 
 <?php echo '
 <div class="sunlightday"><currentdaylight></currentdaylight>&nbsp;&nbsp;<value> '.$daylight.' hrs<br /><period><value>&nbsp;Daylight</period></div>
