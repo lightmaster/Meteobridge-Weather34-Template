@@ -1,4 +1,4 @@
-<?php include('livedata.php');?>
+<?php include('livedata.php');include('common.php');?>
 <div class="updatedtime"><span><?php if(file_exists($livedata)&&time()- filemtime($livedata)>300)echo $offline. '<offline> Offline </offline>';else echo $online." ".$weather["time"];?></div><br />
 <div class="tempindoorconverter">
 <?php //chuck
@@ -24,21 +24,30 @@ else if( $weather["temp_units"]=='C' && anyToC($weather["temp_indoor"])<10){echo
 <div class="weather34indoorword">
 <?php if($weather["temp_indoor_trend"] >0)echo number_format($weather["temp_indoor_trend"],1).'&deg;&nbsp; '.$risingsymbol;else if($weather["temp_indoor_trend"]<0)echo number_format($weather["temp_indoor_trend"],1).'&deg;&nbsp;'.$fallingsymbol;else if($weather["temp_indoor_trend"] ==0)echo 'Steady'; ?></div>
 </div></smalluvunit></div></div>
-<div class="weather34-humidityindoor"></div></div></div>
- <div class="weather34indoorhumrate"><span> 
- <?php 
- 
- if ($weather["humidity_indoor"]<25){ echo "<div class=homeindoorhum0-25><div class=rainratesmall>";}
- else if ($weather["humidity_indoor"]<35){ echo "<div class=homeindoorhum25-35><div class=rainratesmall>";}
- else if ($weather["humidity_indoor"]<60){ echo "<div class=homeindoorhum35-60><div class=rainratesmall>";}
- else if ($weather["humidity_indoor"]<90){ echo "<div class=homeindoorhum60-80><div class=rainratesmall>";}
- else if ($weather["humidity_indoor"]<=100){ echo "<div class=homeindoorhum80-100><div class=rainratesmall>";}  
- 
- if($weather["temp_humidity_trend"] >0)echo '<spanindoortemprising><indoortrends>&nbsp;'.$risingsymbol.' </spanindoortemprising> ';
- else if($weather["temp_humidity_trend"] <0)echo '<spanindoortempfalling><indoortrends> '.$fallingsymbol.' </spanindoortempfalling> ';else if($weather["temp_humidity_trend"] ==0)echo '<spanindoortempfalling><indoortrends>'.$steadysymbol.' </spanindoortempfalling> ';echo "</div>".number_format($weather["humidity_indoor"],0),"%";?> </indoortrends></div> 
-</div></div><div class="weather34humidityword">Humidity</div>
-<div class="weather34-feelslikeindoor"></div>
-<div class="weather34feelsrate"><span> 
- <?php  if (anyToC($weather["temp_indoor_feel"])>28){ echo "<div class=feelsindoorcirclered><div class=rainratesmall>";} else if (anyToC($weather["temp_indoor_feel"])>25){ echo "<div class=feelsindoorcircleorange><div class=rainratesmall>";} else if (anyToC($weather["temp_indoor_feel"])>18){ echo "<div class=feelsindoorcircleyellow><div class=rainratesmall>";} else if (anyToC($weather["temp_indoor_feel"])>15){ echo "<div class=feelsindoorcirclegreen><div class=rainratesmall>";} else if (anyToC($weather["temp_indoor_feel"])>0){ echo "<div class=feelsindoorcircleblue><div class=rainratesmall>";}if($weather["temp_indoor_trend"] >0)echo '<spanindoortemprising><indoortrends>'.$risingsymbol.' </spanindoortemprising> ';else if($weather["temp_indoor_trend"]<0)echo '<spanindoortempfalling><indoortrends>'.$fallingsymbol.' </spanindoortempfalling> ';
-else if($weather["temp_indoor_trend"] ==0)echo '<spanindoortempfalling><indoortrends>'.$steadysymbol.' </spanindoortempfalling> ';echo "</div>". number_format($weather["temp_indoor_feel"],1),"&deg;";?> 
-</div></div><div class="weather34feelsword">Feels Like</div> </span></div>
+
+<div class="heatcircle6"><div class="inheatcircle-content"><valuetextheading1><?php echo $lang['Humidity']?></valuetextheading1>
+<?php //humidity
+if ($weather["humidity_indoor"]>90){echo "<div class=tempconverter1><div class=temphumcircle80-100>".$weather["humidity_indoor"];}
+else if ($weather["humidity_indoor"]>70){echo "<div class=tempconverter1><div class=temphumcircle60-80>".$weather["humidity_indoor"];}
+else if ($weather["humidity_indoor"]>35){echo "<div class=tempconverter1><div class=temphumcircle35-60>".$weather["humidity_indoor"];}
+else if ($weather["humidity_indoor"]>25){echo "<div class=tempconverter1><div class=temphumcircle25-35>".$weather["humidity_indoor"];}
+else if ($weather["humidity_indoor"]<=25){echo "<div class=tempconverter1><div class=temphumcircle0-25>".$weather["humidity_indoor"];}?><smalltempunit2>%</smalltempunit2>
+<?php //humidity trend
+if($weather["humidity_trend"]>0){echo '&nbsp;'.$risingsymbol;}else if($weather["humidity_trend"]<0){echo '&nbsp;'.$fallingsymbol;}else{ echo '';}?></span></div></div></div>
+
+
+
+<div class="inheatcircle2-content"><valuetextheading1>Feels</valuetextheading1></div>
+<div class="heatcircle7">
+<?php  if (anyToC($weather["temp_indoor_feel"])>28){ echo "<div class=tempmodulehome30-35c><div class=rainratesmall>";} 
+else if (anyToC($weather["temp_indoor_feel"])>25){ echo "<div class=tempmodulehome25-30c><div class=rainratesmall>";}
+else if (anyToC($weather["temp_indoor_feel"])>20){ echo "<div class=tempmodulehome20-25c><div class=rainratesmall>";}  
+else if (anyToC($weather["temp_indoor_feel"])>15){ echo "<div class=tempmodulehome15-20c><div class=rainratesmall>";}
+else if (anyToC($weather["temp_indoor_feel"])>10){ echo "<div class=tempmodulehome10-15c><div class=rainratesmall>";} 
+else if (anyToC($weather["temp_indoor_feel"])>0){ echo "<div class=tempmodulehome0-5c><div class=rainratesmall>";}
+
+
+
+echo "</div>". number_format($weather["temp_indoor_feel"],1),"&deg;";?> </smalltempunit2>
+</span></div></div></div></div>
+
