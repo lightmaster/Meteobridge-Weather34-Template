@@ -33,8 +33,10 @@
    </spanelightning></div></div></div>';}   
    
    
-  else if ($darkskydayIcon=='rain'){echo '<spanelightning>'.$rainalert.'<alertvalue> Expect <blue>Rain Showers</blue> This Week 
-   </spanelightning></div></div></div>';}   
+    else if ($darkskydayIcon=='rain')
+  {echo '<spanelightning>'.$rainalert.'<alertvalue> Expect <blue>Rain Showers</blue> This Week <alertadvisory>'.$newalertcold.'</alertadvisory>
+   </spanelightning></div></div></div>';}     
+   
   
   
  //WEATHER34 solar eclipse events and no alerts 
