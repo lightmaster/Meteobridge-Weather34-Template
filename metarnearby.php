@@ -156,6 +156,7 @@ if ($metar34humidity >85) {echo '<div class=metarhumtoday85-100>'.$metar34humidi
 else if ($metar34humidity >70) {echo '<div class=metarhumtoday70-85>'.$metar34humidity ."<smalluvunit> &nbsp;%";}
 else if ($metar34humidity  >35) {echo '<div class=metarhumtoday35-70>'.$metar34humidity ."<smalluvunit> &nbsp;%";}
 else if ($metar34humidity >0) {echo '<div class=metarhumtoday0-35>'.$metar34humidity ."<smalluvunit> &nbsp;%";}
+else if ($metar34humidity =='') {echo '<div class=metarhumtoday0-35>N/A<smalluvunit> &nbsp;';}
 ?></smalluvunit></div></div> 
 <div class="maxword">&nbsp;&nbsp;&nbsp;Humidity</div>
 </div>
