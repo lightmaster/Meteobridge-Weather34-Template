@@ -34,7 +34,7 @@ background: -o-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29,
 border:0;color:#c5c5c5;overflow:hidden!important;margin-bottom:8px;border:solid 1px #444;border-bottom:solid 1px #444;border-top:1px solid rgba(97, 106, 114, 1.000);}
 .greydesc{color:#c5c5c5;margin-left:0px;margin-top:-10px;position:absolute}
 .none{float:none;margin-top:10px;position:absolute}
-.valuehi{font-size:1.75em;padding:5px;background:rgba(86, 95, 103,0.2);border-radius:3px;margin-top:5px;color:#ff7c39}
+.valuehi{font-size:1.75em;padding:5px;background:rgba(86, 95, 103,0.2);border-radius:3px;margin-top:5px;color:#ff7c39;font-family:weathertext2;}spantemp{font-size:0.75em;color:#777;font-family:weathertext2;}
 .darkskyweekdayhome{postion:absolutue;text-align:center;padding:0;color:#fff;font-family:Arial;font-size:0.7rem;;margin:0;background:0;margin-bottom:12px;}
 .darkskyforecasthome darkskytemphihome{font-size:0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}
 .darkskyforecasthome darkskytemphihome span{font-size::0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}
@@ -213,7 +213,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  echo "<div class='darkskywindgust'>";
 				  if($wuskydayTempHigh<=5){echo "<div class=valuehi><blue1>".$wuskydayTempHigh;}
 				  if($wuskydayTempHigh>5){echo "<div class=valuehi>".$wuskydayTempHigh;}
-				  echo "°" .$tempunit. "</div></div>";
+				  echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary.' </darkskywindhome></span><br>';				  
 				  if ( $wuskydayacumm>0){
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><value>Snow <blue1>&nbsp;'.$wuskydayacumm.'</blue1><value> cm</darkskywindhome><br></span2></precip>';}  				  
@@ -231,7 +231,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  echo "<div class='darkskywindgust'>";
 				  if($wuskydayTempHigh1<=5){echo "<div class=valuehi><blue1>".$wuskydayTempHigh1;}
 				  if($wuskydayTempHigh1>5){echo "<div class=valuehi>".$wuskydayTempHigh1;}
-				  echo "°" .$tempunit. "</div></div>";
+				  echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary1.' </span></darkskytempwindhome>';  
 				  if ( $wuskydayacumm1>0){
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><value>Snow <blue1>&nbsp;'.$wuskydayacumm1.'</blue1><value> cm</darkskywindhome><br></span2></precip>';} 
@@ -251,7 +251,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  echo "<div class='darkskywindgust'>";
 				  if($wuskydayTempHigh2<=5){echo "<div class=valuehi><blue1><blue1>".$wuskydayTempHigh2;}
 				  if($wuskydayTempHigh2>5){echo "<div class=valuehi>".$wuskydayTempHigh2;}
-				  echo "°" .$tempunit. "</div></div>";
+				  echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary2.' </span></darkskytempwindhome>';
 				  if ( $wuskydayacumm1>0){
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><value>Snow <blue1>&nbsp;'.$wuskydayacumm1.'</blue1><value> cm</darkskywindhome><br></span2></precip>';}  
@@ -269,7 +269,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  echo "<div class='darkskywindgust'>";
 				  if($wuskydayTempHigh3<=5){echo "<div class=valuehi><blue1>".$wuskydayTempHigh3;}
 				  if($wuskydayTempHigh3>5){echo "<div class=valuehi>".$wuskydayTempHigh3;}
-				  echo "°" .$tempunit. "</div></div>";
+				  echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary3.' </span></darkskytempwindhome>';
 				  if ( $wuskydayacumm1>0){
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><value>Snow <blue1>&nbsp;'.$wuskydayacumm1.'</blue1><value> cm</darkskywindhome><br></span2></precip>';}  				  
@@ -288,7 +288,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				   echo "<div class='darkskywindgust'>";
 				  if($wuskydayTempHigh4<=5){echo "<div class=valuehi><blue1>".$wuskydayTempHigh4;}
 				  if($wuskydayTempHigh4>5){echo "<div class=valuehi>".$wuskydayTempHigh4;}
-				  echo "°" .$tempunit. "</div></div>";
+				  echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary4.' </darkskywindhome></span><br>';
 				  if ( $wuskydayacumm4>0){
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><value>Snow <blue1>&nbsp;'.$wuskydayacumm4.'</blue1><value> cm</darkskywindhome><br></span2></precip>';}  				  
@@ -306,7 +306,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  echo "<div class='darkskywindgust'>";
 				  if($wuskydayTempHigh5<=5){echo "<div class=valuehi><blue1>".$wuskydayTempHigh5;}
 				  if($wuskydayTempHigh5>5){echo "<div class=valuehi>".$wuskydayTempHigh5;}
-				  echo "°" .$tempunit. "</div></div>";
+				  echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary5.' </darkskywindhome></span><br>';
 				  if ( $wuskydayacumm5>0){
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><value>Snow <blue1>&nbsp;'.$wuskydayacumm5.'</blue1><value> cm</darkskywindhome><br></span></precip>';}  
@@ -325,7 +325,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  echo "<div class='darkskywindgust'>";
 				  if($wuskydayTempHigh6<=5){echo "<div class=valuehi><blue1>".$wuskydayTempHigh6;}
 				  if($wuskydayTempHigh6>5){echo "<div class=valuehi>".$wuskydayTempHigh6;}
-				  echo "°" .$tempunit. "</div></div>";				  
+				  echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";				  
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary6.' </darkskywindhome></span><br>';
 				  if ( $wuskydayacumm6>0){echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><value>Snow <blue1>&nbsp;'.$wuskydayacumm6.'</blue1><value> cm</darkskywindhome>2</span></precip>';}  
 				  else if ($wuskydayPrecipType6='rain'){
@@ -341,7 +341,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  echo "<div class='darkskywindgust'>";
 				  if($wuskydayTempHigh7<=5){echo "<div class=valuehi><blue1>".$wuskydayTempHigh7;}
 				  if($wuskydayTempHigh7>5){echo "<div class=valuehi>".$wuskydayTempHigh7;}
-				  echo "°" .$tempunit. "</div></div>";
+				  echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary7.' </darkskywindhome></span><br>';
 				  if ( $wuskydayacumm7>0){
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><value>Snow <blue1>&nbsp;'.$wuskydayacumm7.'</blue1><value> cm</darkskywindhome></span2></precip>';}  
