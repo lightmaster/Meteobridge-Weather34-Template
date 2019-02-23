@@ -178,10 +178,7 @@ echo $rainlasttime?></orange></div>
 ?></span></div>
 </span> 
 <div class="hitemp">of <blue>Rain</blue> has been recorded for <?php echo date('Y');?></div>
-<div class="hitempy" style="width:200px;margin-top:0.5rem;font-size:1em"><?php echo $raininfo?> Max <blue>Rainfall</blue> <?php echo $weather["rainymaxtime"]?></div>
-
-
- <div class="lotemp" >
+<div class="lotemp" >
 <windgusts> Rainfall Year <?php echo date("Y");?></windgusts> </windgusts>
 </div> </div>  </div>
 <div class="weather34card__count-container">
