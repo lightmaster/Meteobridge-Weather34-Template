@@ -24,7 +24,7 @@ $parsed_weather34wujson = json_decode($weather34wuurl,false);{
 	
 	  //weather34 wu 
 	 	 
-	 if ($wuskydayTime = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[0]=='null'){
+	 if ($wuskydayTime = $parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[0]==null){
 	 $wuskydayIcon=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[1];	 
 	 $wuskydayTime = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[1];	
 	 $wuskydayTempHigh = $parsed_weather34wujson->{'daypart'}[0]->{'temperature'}[1];	
