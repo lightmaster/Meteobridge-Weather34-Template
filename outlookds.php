@@ -1,11 +1,11 @@
 <?php
 include_once('settings.php');include('livedata.php');
 	####################################################################################################
-	#	HOME WEATHER STATION TEMPLATE by BRIAN UNDERDOWN 2016-18                                       #
+	#	HOME WEATHER STATION TEMPLATE by BRIAN UNDERDOWN 2016-2019                                     #
 	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at https://weather34.com/homeweatherstation/index.html # 
 	# 	                                                                                               #
 	# 	                                                                                               #
-	# 	FORECAST DARKSKY WEATHER FORECAST: May 2018					 	                               #
+	# 	FORECAST WEATHER UNDERGROUND WEATHER FORECAST: FEB 2109  			                           #
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################

@@ -1,21 +1,17 @@
 <?php include_once('livedata.php');error_reporting(0); date_default_timezone_set($TZ);
 	####################################################################################################
-	#	HOME WEATHER STATION TEMPLATE by BRIAN UNDERDOWN 2016-17                                       #
+	#	HOME WEATHER STATION TEMPLATE by BRIAN UNDERDOWN 2016-17-18-19                                 #
 	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at https://weather34.com/homeweatherstation/           # 
 	# 	                                                                                               #
 	# 	                                                                                               #
-	# 	3 DAY WEATHER FORECAST:  December 2017  	 			   		                               #
+	# 	3 DAY WU WEATHER FORECAST:  FEB 2019			   		                              		   #
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
 ?><div class="updatedtime1"><?php $forecastime=filemtime('jsondata/darksky.txt');$weather34wuurl = file_get_contents("jsondata/dark.txt");if(filesize('jsondata/darksky.txt')<1){echo "".$offline. " Offline<br>";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
 <div class="darkskyforecasthome"><div class="darkskydiv">
 
-<?php //begin darksky stuff  
-
-//https://api.weather.com/v3/wx/forecast/daily/5day?geocode=40.994,28.54&language=en-US&format=json&units=m&apiKey=8c42f43035d54d7982f43035d5ad7982
-
-
+<?php //begin darksky stuff 
 $json='jsondata/wuforecast.txt';
 $weather34wuurl=file_get_contents($json);
 $parsed_weather34wujson = json_decode($weather34wuurl,false);{
@@ -171,7 +167,7 @@ else echo " ".$wuskydayWindGust1," <valuewindunit>".$windunit;echo  '</div>';'<b
 
 
 if ( $wuskydaysnow1>0 && $rainunit=='in'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.number_format($wuskydaysnow1*0.393701,2).'</oblue><valuewindunit>in</darkskywindhome></span></precip>';}
-else if ( $wuskydaysnow1>0 && $rainunit=='mm'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.$wuskydaysnow1.'</oblue><valuewindunit>cm</darkskywindhome></span></precip>';}
+else if ( $wuskydaysnow1>0 && $rainunit=='mm'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.$wuskydaysnow1.'</oblue><valuewindunit> cm</darkskywindhome></span></precip>';}
 
 else if ($wuskydayPrecipType='rain' && $rainunit=='in'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'. number_format($convertr1,1).'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit></darkskywindhome></span></precip>';}
 
