@@ -40,17 +40,17 @@ if(filesize('jsondata/darksky.txt')<1){echo "".$offline. " Offline<br>";}else ec
 				  else if ($darkskydayIcon == 'partly-cloudy-night'){echo '<img src="css/darkskyicons/partly-cloudy-day.svg" width="40"></img><br>';}     
 				  else echo '<img src="css/darkskyicons/'.$darkskydayIcon.'.svg" width="40"></img><br>';
 				  echo '</div><darkskytemphihome><span>&nbsp;'.$darkskydayTempHigh.'° </span></darkskytemphihome>|  ';
-				  echo '<darkskytemplohome><oblue>'.$darkskydayTempLow.'° &nbsp;</darkskytemplohome><br>'; 	  
+				  echo '<darkskytemplohome><oblue>'.$darkskydayTempLow.'° &nbsp;</darkskytemplohome><br></oblue>'; 	  
 				   	
-				  echo '<darkskytempwindhome>';				  
+				  echo '<darkskytempwindhome><grey>';				  
 				  if ($darkskydayWinddir <15 ) echo $lang['North'];elseif ($darkskydayWinddir <45 ) echo $lang['NNE'];elseif ($darkskydayWinddir <90 ) echo $lang['ENE'];elseif ($darkskydayWinddir <110 ) echo $lang['East'];
 				  elseif ($darkskydayWinddir <150 )  echo $lang['SE'];elseif ($darkskydayWinddir <170 )  echo $lang['SSE'];elseif ($darkskydayWinddir <190 ) echo $lang['South'];elseif ($darkskydayWinddir <220 ) echo $lang['SSW'];
 				  elseif ($darkskydayWinddir <250 ) echo $lang['SW'];elseif ($darkskydayWinddir <270 ) echo $lang['West'];elseif ($darkskydayWinddir <300 ) echo $lang['NW']; elseif ($darkskydayWinddir <340 ) echo $lang['NWN'];
 				  elseif ($darkskydayWinddir <360 ) echo $lang['North'];
-				  echo  '<span4> '.$darkskydayWindSpeed.'<valuewindunit> '.$windunit.'<br>';
+				  echo  '<span4><grey> '.$darkskydayWindSpeed.'<valuewindunit> '.$windunit.'<br>';
 				  echo  '</valuewindunit>';'';
 if ( $darkskydayacumm>0 && $weather['temp_units']=='F'){echo $snowflakesvg.'&nbsp;Snow<darkskytempwindhome><br><span><oblue>'.$darkskydayacumm.'</oblue></span><valuewindunit> in</valuewindunit>&nbsp;</darkskywindhome></span>';} 
 else if ( $darkskydayacumm>0 && $weather['temp_units']=='C'){echo $snowflakesvg.'&nbsp;Snow<darkskytempwindhome><br><span><oblue>'.$darkskydayacumm.'</oblue></span><valuewindunit> cm</valuewindunit>&nbsp;</darkskywindhome></span>';} 				  
-else if ( $darkskydayacumm==0){echo '&nbsp;'.$rainsvg.'&nbsp;Rain<br><darkskytempwindhome><oblue>'. $darkskydayprecipIntensity. "</oblue><valuewindunit> ".$weather["rain_units"].'</valuewindunit>&nbsp;<oblue>'.$darkskydayPrecipProb.'</oblue><valuewindunit>%</valuewindunit></darkskywindhome></span>';}
+else if ( $darkskydayacumm==0){echo '&nbsp;'.$rainsvg.'&nbsp;Rain<br><darkskytempwindhome><oblue>'. $darkskydayprecipIntensity. "</oblue><valuewindunit><grey> ".$weather["rain_units"].'</valuewindunit>&nbsp;<oblue>'.$darkskydayPrecipProb.'</oblue><valuewindunit><grey>%</valuewindunit></darkskywindhome></span>';}
 echo '<br><darkskytemplohome><uv>UVI <uvspan>'.$darkskydayUV.'</uvspan></uv></darkskytemplohome></div>';}?>
 </div></div></div>
