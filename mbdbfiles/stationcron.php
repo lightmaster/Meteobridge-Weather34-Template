@@ -46,6 +46,7 @@ curl_close ($ch);
 ?>
 
 <?php
+if ($position6=="forecast3ds.php"){
 // weather34 darksky  curl based
 $url4a = 'https://api.forecast.io/forecast/'.$apikey.'/'.$lat.','.$lon.'?lang='.$language.'&units='.$darkskyunit ;
 $ch4a = curl_init($url4a);
@@ -56,7 +57,23 @@ curl_setopt($ch4a, CURLOPT_FILE, $fp4a);
 curl_setopt($ch4a, CURLOPT_HEADER, 0);
 curl_exec($ch4a);
 curl_close($ch4a);
-fclose($fp4a);?>
+fclose($fp4a);}?>
+
+
+<?php
+if ($position6=="forecast3wu.php"){
+// weather34 weather underground  curl based
+$url4c = 'https://api.weather.com/v3/wx/forecast/daily/5day?geocode='.$lat.','.$lon.'&language=en-US&format=json&units='.$wuapiunit.'&apiKey='.$wuapikey ;
+$ch4c = curl_init($url4c);
+$filename4c = '../jsondata/wuforecast.txt';
+$complete_save_loc4c = $filename4c; 
+$fp4c = fopen($complete_save_loc4c, 'wb'); 
+curl_setopt($ch4c, CURLOPT_FILE, $fp4c);
+curl_setopt($ch4c, CURLOPT_HEADER, 0);
+curl_exec($ch4c);
+curl_close($ch4c);
+fclose($fp4c);}?>
+
 
 <?php // weather34 earthquakes curl based
 $url1 = 'https://earthquake-report.com/feeds/recent-eq?json'; 
