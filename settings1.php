@@ -1,5 +1,6 @@
 <?php 
 $apikey = "11111111111111";
+$wuapikey = "8BXSCCCRTY123456789";
 $weatherflowID = "5153";
 $weatherflowoption   = "no";
 $weatherflowlightning = "no";
@@ -13,6 +14,7 @@ $UTC = "1";
 $lon = 0.2;
 $lat = 50.1;
 $darkskyunit   = "si";
+$wuapiunit   = "m";
 $stationlocation = " METEOBRIDGE DEMO";
 $stationName = "METEOBRIDGE DEMO METEOBRIDGE DEMO";
 $moonadj = "0";
@@ -28,7 +30,7 @@ $windunit = "km/h";
 $distanceunit = "km";
 $tempunit = "C";
 $rainunit  = "mm";
-$rainrate = "/m";
+$rainrate = "/h";
 $pressureunit  = "hPa";
 $livedataFormat = "meteobridge-api";
 $livedata   = "mbridge/MBrealtimeupload.txt";
@@ -41,7 +43,7 @@ $languages   = "no";
 
 $dateFormat   = "d-m-Y";
 $timeFormat    = "g:i:s a";
-$timeFormatShort    = "g:i";
+$timeFormatShort    = "H:i";
 $clockformat    = "24";
 
 $showDate = false;
@@ -49,16 +51,18 @@ $temperaturemodule   = "temperature.php";
 $position1   = "weather34clock.php";
 $position2   = "windgustyear.php";
 $position3   = "wflightning.php";
-$position4   = "temperatureyear.php";
+$position4   = "advisory.php";
 $position1title   = "Station <ored> Time";
 $position2title   = "Wind <orange> Speed</orange>";
 $position3title   = "Lightning <oblue> Strikes";
 $position4title   = "Max-Min <ored>Temperature</orange> Annual";
-$position12title   = "Webcam";
-$position12   = "webcamsmall.php";
-$positionlastmoduletitle   = "Indoor Temperature";
+$position6title   = "Forecast";
+$position6   = "forecast3wu.php";
+$position12title   = "Purple Air Quality";
+$position12   = "airqualitymodule.php";
+$positionlastmoduletitle   = "Indoor Temperature ";
 $positionlastmodule   = "indoortemperature.php";
-$webcamurl   = "http://1111111111.com/images/something.jpg";
+$webcamurl   = "images/Terrasse.jpg";
 
 $email    = "something@gmail.com";
 $twitter   = "weather34";
@@ -67,14 +71,14 @@ $twitter   = "weather34";
 $theme1   = "dark";
 $since    = "May 2014";
 
-$weatherhardware   = "Davis Vantage Pro2";
-$mbplatform   = "Meteobridge NanoSD";
+$weatherhardware   = "Davis Vantage Vue";
+$mbplatform   = "Meteobridge Pro";
 $davis   = "Yes";
 
-$db_host   = "xxxxxx";
-$db_user    = "xxxxxx";
-$db_pass  = "xxxxx";
-$db_name   = "xxxxxx";
+$db_host   = "localhost";
+$db_user    = "weather34";
+$db_pass  = "weather34";
+$db_name   = "weather34";
 
 $notifications = "no";
 $sunoption = "sun3.php";
