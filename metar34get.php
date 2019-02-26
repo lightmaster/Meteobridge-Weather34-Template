@@ -29,6 +29,7 @@ $metar34windir          = $parsed_json->{'data'}[0]->{'wind'}->{'degrees'};
 $metar34windspeedmph          = $parsed_json->{'data'}[0]->{'wind'}->{'speed_mph'};
 $metar34windspeedkmh          = number_format($metar34windspeedmph*1.60934,0);//kmh
 $metar34windspeedkts          = $parsed_json->{'data'}[0]->{'wind'}->{'speed_kts'};
+$metar34windspeedms          = number_format($metar34windspeedmph*0.44704,1);
 $metar34raininches          = $parsed_json->{'data'}[0]->{'rain_in'};
 $metar34rainmm          = number_format($metar34raininches*25.4,2) ;
 $metar34visibility=str_replace(',', '', $metar34visibility);

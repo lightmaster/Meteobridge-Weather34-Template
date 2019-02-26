@@ -20,7 +20,8 @@ $alert="<svg id='firealert' viewBox='0 0 32 32' width='18px' height='18px' fill=
 .weather34-uvrate-bar{background:0;position:absolute;height:100px;width:30px;margin-left:235px;margin-top:-49px;color:RGBA(57,61,64,1)}
 .weather34uvrate{color:#ff8841;position:absolute;margin-left:238px;margin-top:17px;font-size:12px;width:20px;font-family:weathertext,arial,sans-serif;max-height:100px;line-height:10px;font-weight:normal}.weather34uvrate span{color:#777;font-family:weathertext,arial,sans-serif;font-size:12px;font-weight:normal}.lotempraw{font-size:12px;font-family:weathertext;line-height:11px;margin-top:5px;}
 purpleuv{color:#a475cb}reduv{color:#d65b4a}orangeuv{color:#ff8841}greenuv{color:#9aba2f}greyuv{color:#aaa}.uvmaxi{position:absolute;left:10px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:200px;}.uvmaxi span{color:#aaa}.sunfade{opacity:.8}unit{font-size:13px;color:#aaa;}.uvmaxi2{position:absolute;left:-10px;color:rgba(0, 154, 171, 1.000);margin-top:-60px;font-size:16px;width:200px;}.uvmaxi2 span{color:#aaa}
-actual{font-size:0.95rem;float:right;position:absolute;left:105px;top:20px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px;background:rgba(61, 64, 66, 1.000);padding:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}.hitemp{color:#aaa;font-size:13px;}.hitemp span{color:rgba(255, 124, 57, 1.000)}.hitemp span2{color:#aaa;font-size:1.1em;margin-left:4px;}
+actual{font-size:0.95rem;float:right;position:absolute;left:105px;top:20px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px;background:rgba(61, 64, 66, 1.000);padding:5px;}
+actualwind{font-size:0.95rem;float:right;position:absolute;left:25px;top:20px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px;background:rgba(61, 64, 66, 1.000);padding:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}.hitemp{color:#aaa;font-size:13px;}.hitemp span{color:rgba(255, 124, 57, 1.000)}.hitemp span2{color:#aaa;font-size:1.1em;margin-left:4px;}
 .hitempy{background:rgba(61, 64, 66, 0.8);color:#aaa;font-size:12px;width:240px;padding:1px;border-radius:4px;margin-top:2px;margin-left:0;padding-left:3px;}
 .lotemp{font-size:26px;font-family:weathertext;}blue{color:rgba(0, 154, 171, 1.000)}.icon{position:absolute;right:10px;bottom:2px;}
 .metar34compass1>.metar34compass-line1,.metar34compass>.metar34compass-line{right:25px;-webkit-clip-path:polygon(100%0,100%100%,100%100%,0100%,00);-ms-clip-path:polygon(100%0,100%100%,100%100%,0100%,00)}
@@ -40,6 +41,8 @@ spancalm{postion:relative;font-family:weathertext,Arial;font-size:26px;}.weather
 .weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
 
 .metartempcontainer1{left:70px;top:0}
+.metartempcontainer2{left:10px;top:60px;position:absolute}
+.metartempcontainer3{left:100px;top:60px;position:absolute}
 .kpcaution,.uvtrend{position:absolute;font-size:1rem}
 .kpcaution{margin-left:28px;margin-top:-14px;font-family:Arial,Helvetica,system}.kptrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}
 .metartemptoday0,.metartemptoday5,.metartemptoday10,.metartemptoday20,.metartemptoday25,.metartemptoday30{font-family:weathertext,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.metartemptoday0,.metartemptoday5,.metartemptoday10,.metartemptoday15,.metartemptoday20,.metartemptoday25,.metartemptoday30{font-size:1.5rem;padding-top:0;color:#fff;border-bottom:10px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:21px;}
@@ -58,10 +61,25 @@ spancalm{postion:relative;font-family:weathertext,Arial;font-size:26px;}.weather
 .metardewtoday25{background:rgba(255, 124, 57, 0.7)}
 .metardewtoday30{background:rgba(211, 93, 78, 1.000)}
 .metarhumcontainer1{left:70px;margin-top:10px}
+.metarhumcontainer2{left:90px;margin-top:10px}
 .metarhumtoday0-35,.metarhumtoday35-70,.metarhumtoday70-85,.metarhumtoday85-100{font-family:weathertext,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.metarhumtoday0-35,.metarhumtoday35-70,.metarhumtoday70-85,.metarhumtoday85-100{font-size:1.5rem;padding-top:2px;color:#fff;border-bottom:10px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:21px;}
 .metarhumtoday0-35{background:rgba(211, 93, 78, 1.000)}.metarhumtoday35-70{background:rgba(230, 161, 65, 1.000)}.metarhumtoday70-85{background:rgba(230, 161, 65, 1.000)}.metarhumtoday85-100{background:rgba(68, 166, 181, 1.000)}
 .maxword,.tword{position:absolute;margin-top:-31px;font-size:.75rem;z-index:1;color:#fff}.maxword{margin-left:10px}.tword{margin-left:10px}.windword{position:absolute;margin-top:-30px;font-size:.75rem;z-index:1;color:#fff;margin-left:10px}
-.metarwindtoday0,.metarwindtoday5,.metarwindtoday10,.metarwindtoday20,.metarwindtoday25,.metarwindtoday30{font-family:weathertext,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.metarwindtoday0,.metarwindtoday5,.metarwindtoday10,.metarwindtoday15,.metarwindtoday20,.metarwindtoday25,.metarwindtoday30{font-size:1.5rem;padding-top:0;color:#fff;border-bottom:10px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:20px;}
+.metarwindtoday0,.metarwindtoday5,.metarwindtoday10,.metarwindtoday20,.metarwindtoday25,.metarwindtoday30{font-family:weathertext,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}
+.metarwindtoday0,.metarwindtoday5,.metarwindtoday10,.metarwindtoday15,.metarwindtoday20,.metarwindtoday25,.metarwindtoday30{font-size:1.5rem;padding-top:0;color:#fff;border-bottom:10px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:20px;}
+
+.metarwindtodaykts0,.metarwindtodaykts5,.metarwindtodaykts10,.metarwindtodaykts20,.metarwindtodaykts25,.metarwindtodaykts30{font-family:weathertext,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}
+.metarwindtodaykts0,.metarwindtodaykts5,.metarwindtodaykts10,.metarwindtodaykts15,.metarwindtodaykts20,.metarwindtodaykts25,.metarwindtodaykts30{font-size:1.5rem;padding-top:0;color:#fff;border-bottom:10px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:20px;}
+
+
+.metarwindtodaykts0{background:rgba(68, 166, 181, 1.000)}
+.metarwindtodaykts5{background:rgba(144, 177, 42, 1.000)}
+.metarwindtodaykts10{background:rgba(230, 161, 65, 1.000)}
+.metarwindtodaykts20{background:rgba(255, 124, 57, 1.000)}
+.metarwindtodaykts25{background:rgba(255, 124, 57, 0.7)}
+.metarwindtodaykts30{background:rgba(211, 93, 78, 1.000)}
+
+
 .metarwindtoday0{background:rgba(68, 166, 181, 1.000)}
 .metarwindtoday5{background:rgba(144, 177, 42, 1.000)}
 .metarwindtoday10{background:rgba(230, 161, 65, 1.000)}
@@ -168,12 +186,13 @@ else if ($metar34humidity =='') {echo '<div class=metarhumtoday0-35>N/A<smalluvu
 </div></div></div> </div>      
 <div class="weather34card weather34card--earthquake2">  <div class="weather34card_weather34-container"> <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
 
-<div class="metartempcontainer1"><?php 
+
+<div class="metartempcontainer2"><?php 
 if ($metar34windspeedkmh >50) {echo '<div class=metarwindtoday30>'.$metar34windspeedkmh."<smalluvunit> &nbsp;km/h";}
 else if ($metar34windspeedkmh >40) {echo '<div class=metarwindtoday25>'.$metar34windspeedkmh."<smalluvunit>&nbsp; km/h";}
 else if ($metar34windspeedkmh >30) {echo '<div class=metarwindtoday20>'.$metar34windspeedkmh."<smalluvunit>&nbsp; km/h";}
 else if ($metar34windspeedkmh >0) {echo '<div class=metarwindtoday10>'.$metar34windspeedkmh."<smalluvunit>&nbsp; km/h";}
-?></smalluvunit></div></div>
+?></smalluvunit></div>
 <div class="windword">Wind Speed</div>
 <?php 
 //mph
@@ -182,7 +201,11 @@ else if ($metar34windspeedmph >=24.85) {echo '<div class=metarwindtoday25>'.$met
 else if ($metar34windspeedmph >=18.6) {echo '<div class=metarwindtoday20>'.$metar34windspeedmph."<smalluvunit> &nbsp;mph";}
 else if ($metar34windspeedmph >=0) {echo '<div class=metarwindtoday10>'.$metar34windspeedmph."<smalluvunit> &nbsp;mph";}
 ?></smalluvunit></div>
-<div class="windword">Wind Speed</div>
+<div class="windword">Wind Speed</div></div>
+
+
+
+<div class="metartempcontainer3">
 <?php 
 //kts
 if ($metar34windspeedkts >=26.9) {echo '<div class=metarwindtoday30>'.$metar34windspeedkts."<smalluvunit> &nbsp;kts";}
@@ -191,6 +214,15 @@ else if ($metar34windspeedkts >=16.19) {echo '<div class=metarwindtoday20>'.$met
 else if ($metar34windspeedkts >=0) {echo '<div class=metarwindtoday10>'.$metar34windspeedkts."<smalluvunit> &nbsp;kts";}
 ?></smalluvunit></div>
 <div class="windword">Wind Speed</div>
+
+<?php 
+//m|s
+if ($metar34windspeedkts >=26.9) {echo '<div class=metarwindtoday30>'.$metar34windspeedms."<smalluvunit> &nbsp;m/s";}
+else if ($metar34windspeedkts >=21.5) {echo '<div class=metarwindtoday25>'.$metar34windspeedms."<smalluvunit> &nbsp;m/s";}
+else if ($metar34windspeedkts >=16.19) {echo '<div class=metarwindtoday20>'.$metar34windspeedms."<smalluvunit> &nbsp;m/s";}
+else if ($metar34windspeedkts >=0) {echo '<div class=metarwindtoday10>'.$metar34windspeedms."<smalluvunit> &nbsp;m/s";}
+?></smalluvunit></div>
+<div class="windword">Wind Speed</div></div>
 
 <div class="metar34compass1"><div class="metar34compass-line1"><div class="thearrow2"></div></div>
 <div class="text1"><div class="windvalue1" id="windvalue"><?php 
@@ -218,7 +250,7 @@ else{echo "Due <span> North</span>";}?>
 <div class="weather34card__count-container"> <div class="weather34card__count-textuv"><span class="weather34card__count-text--bigs"> </div>
 </div><br>
  <div class="weather34card__stuff-container">
-<actual>Wind Speed</actual>
+<actualwind>Wind Speed</actualwind>
 <div class="icon"><img src=css/icons/gust.svg width=20px></div>
 </section>
 <section class="weather34cards">
@@ -260,6 +292,6 @@ $date=str_replace('Z', ' ', $date);$date1 = strtotime($date) + 60*60*$UTC;echo d
 </section>
 <div class="provided">   
 &nbsp;<?php echo $info?> 
-Metar Aviation API Data Provided by <a href="https://www.checkwx.com/" title="https://www.checkwx.com/" target="_blank">https://www.checkwx.com/</a> <?php echo $info;?> CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
+Metar Aviation API Data Provided by <a href="https://www.checkwx.com/" title="https://www.checkwx.com/" target="_blank">https://www.checkwx.com/</a> <?php echo $info;?> Original CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
 </body>
 </html>
