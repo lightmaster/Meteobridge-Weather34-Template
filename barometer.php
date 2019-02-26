@@ -15,9 +15,13 @@ transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barome
 </style>
 <div class="updatedtime"><span><?php if(file_exists($livedata)&&time()- filemtime($livedata)>300)echo $offline. '<offline> Offline </offline>';else echo $online." ".$weather["time"];?></div>  
 <div class='barometermax'>
-<?php echo '<div class=barometerorange><valuetext>Max ('.$weather["thb0seapressmaxtime"].')<br><maxred><value>',$weather["barometer_max"],'</maxred>&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
+<?php $barometermax=number_format($weather["barometer_max"]*0.029529983071445,2)?>
+<?php $barometer2max=number_format($barometermax*33.863886666667,2,'.','')?>
+<?php $barometermin=number_format($weather["barometer_min"]*0.029529983071445,2)?>
+<?php $barometer2min=number_format($barometermin*33.863886666667,2,'.','')?>
+<?php echo '<div class=barometerorange><valuetext>Max ('.$weather["thb0seapressmaxtime"].')<br><maxred><value>',$barometer2max,'&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
 <div class='barometermin'>
-<?php echo '<div class=barometerblue><valuetext>Min ('.$weather["thb0seapressmintime"].')<br><minblue><value>',$weather["barometer_min"],'</minblue>&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
+<?php echo '<div class=barometerblue><valuetext>Min ('.$weather["thb0seapressmintime"].')<br><minblue><value>',$barometer2min,'&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
 
 <div class="barometertrend2">
 <?php  echo "<valuetext>Trend";
