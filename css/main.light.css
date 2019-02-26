@@ -9,3 +9,9 @@ gustorange{font-weight:500}.raincontainer1,.rainconvertercircle,.rainratecircleh
 .heatcircle7{padding:0;width:170px;position:relative;margin-top:50px;margin-left:49px}
 .intemphumcircle0-25,.intemphumcircle25-35,.intemphumcircle35-60,.intemphumcircle60-80,.intemphumcircle80-100{display:flex;align-items:center;justify-content:center;height:1.1rem;width:4rem;overflow:hidden;line-height:16px;font-family:weathertext2;font-size:.85em;color:#c0c0c0}
 .intemphumcircle60-80{border:1px solid #393d40;border-left:0;box-shadow:inset 4px 0 0 0 #e6a141;-webkit-border-top-right-radius:2px;-webkit-border-bottom-right-radius:2px;border-top-right-radius:2px;border-bottom-right-radius:2px}.intemphumcircle25-35{border:1px solid #393d40;border-left:0;box-shadow:inset 4px 0 0 0 #d05f2d;-webkit-border-top-right-radius:2px;-webkit-border-bottom-right-radius:2px;border-top-right-radius:2px;border-bottom-right-radius:2px}.intemphumcircle35-60{border:1px solid #393d40;border-left:0;box-shadow:inset 4px 0 0 0 #90b12a;-webkit-border-top-right-radius:2px;-webkit-border-bottom-right-radius:2px;border-top-right-radius:2px;border-bottom-right-radius:2px}.intemphumcircle80-100{border:1px solid #393d40;border-left:0;box-shadow:inset 4px 0 0 0 #4e95a0;-webkit-border-top-right-radius:2px;-webkit-border-bottom-right-radius:2px;border-top-right-radius:2px;border-bottom-right-radius:2px}.intemphumcircle0-25{border:1px solid #393d40;border-left:0;box-shadow:inset 4px 0 0 0 #d35d4e;-webkit-border-top-right-radius:2px;-webkit-border-bottom-right-radius:2px;border-top-right-radius:2px;border-bottom-right-radius:2px}
+greyu{font-size:.55rem;font-family:weathertext2;color:#2d3a4b}
+orangeu{color:#d05f2d}
+greenu{color:#90b12a}
+yellowu{color:#e6a141;}
+redu{color:#cd5245}
+purpleu{color:#b600b0}
