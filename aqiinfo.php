@@ -261,6 +261,6 @@ else if ($aqiweather["aqi"]>=0){echo "<div class=indoorgreen1>PM10" ; }
 <div class="weather34browser-footer">
 <div class="provided">   
 &nbsp; <?php echo $info?>
-Air Quality data provided by <a href="https://www.airvisual.com/api" title="https://www.airvisual.com/api" target="_blank">https://www.airvisual.com/api</a> <?php echo $info?> CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
+Air Quality data provided by <a href="https://www.airvisual.com/api" title="https://www.airvisual.com/api" target="_blank">https://www.airvisual.com/api</a> <?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
 </body>
 </html>

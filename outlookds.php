@@ -104,6 +104,6 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
                   
  <div style="position:absolute;bottom:5px;z-index:9999;font-weight:normal;font-size:10px;color:#aaa;text-decoration:none !important;float:right;font-family:arial;">
   
-   &nbsp;&nbsp;data provided by <a href="https://darksky.net/about" title="https://darksky.net/about" target="_blank">DarkSky</a> -- <?php echo $info;?> <?php echo $scriptcredits ?></div>
+   &nbsp;&nbsp;data provided by <a href="https://darksky.net/about" title="https://darksky.net/about" target="_blank">DarkSky</a> -- <?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
   </body>
   </html>

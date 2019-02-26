@@ -1,4 +1,5 @@
 <?php error_reporting(0);
+$copyYear = 2015;$curYear = date('Y');$copyrightcredit='&copy; weather34.com original CSS/SVG/PHP '.$copyYear . (($copyYear != $curYear) ? '-' . $curYear : 'Copyright');
 // Speed
 function ktsTokmh(&$weather, $field){
 	if(!isset($weather[$field])) return;

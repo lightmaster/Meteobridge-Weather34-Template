@@ -294,6 +294,6 @@ else if ($aqiweather["aqi"]>=0){echo "<div class=indoorgreen1>PM2.5" ; }
 </section>
 <div class="provided">   
 &nbsp;
-Air Quality data provided by <a href="https://purpleair.com/" title="https://purpleair.com/" target="_blank">https://purpleair.com</a> <?php echo $scriptcredits ?></div>
+Air Quality data provided by <a href="https://purpleair.com/" title="https://purpleair.com/" target="_blank">https://purpleair.com</a> <?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
 </body>
 </html>

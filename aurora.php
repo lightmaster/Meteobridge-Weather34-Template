@@ -154,6 +154,6 @@ else if ($kp>=0) {echo 'Quiet';}
 <div class="provided">   
 <a href="https://services.swpc.noaa.gov" title="https://services.swpc.noaa.gov" target="_blank">Data Provided by https://services.swpc.noaa.gov</a>
 &nbsp;
-<?php echo $info?> CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
+<?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
 </body>
 </html>

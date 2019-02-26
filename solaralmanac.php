@@ -274,7 +274,6 @@ smalluvunit{font-size:.65rem;font-family:Arial,Helvetica,system;}
 <actual>Year <?php echo date('Y');?></actual>
 </section><br><br>
 <div class="provided">   
-&nbsp;<?php echo $info?> 
-Almanac Meteobridge CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
+&nbsp;<?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
 </body>
 </html>

@@ -379,6 +379,6 @@ smalluvunit{font-size:.85rem;font-family:Arial,Helvetica,system;}
 </section><br><br>
 <div class="provided">   
 &nbsp;
-<?php echo $info?> Wind Almanac Meteobridge CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
+<?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
 </body>
 </html>

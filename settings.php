@@ -32,7 +32,7 @@ $theme              = $theme1;
 // Refresh Data Main Page  //																	   #
 // Automatic refresh times (in seconds) of each panel on the main dashboard						   #
 ####################################################################################################
-
+$copyYear = 2015;$curYear = date('Y');$copyrightcredit='&copy; weather34.com original CSS/SVG/PHP '.$copyYear . (($copyYear != $curYear) ? '-' . $curYear : 'Copyright');
 $indoorRefresh      = 120; // 2 minutes
 $notifyRefresh      = 17; // 17 seconds
 $tempRefresh        = 60; // 60 secondss
@@ -66,7 +66,7 @@ $notifyFlooding     = 25.4; // dewpoint comfortable zone alert 22 degrees C or 7
 ####################################################################################################
 // Probably won't have to change anything past this line IF SO BE VER VERY CAREFUL!!!!!!		   #
 ####################################################################################################
-$scriptcredits     = "CSS/SVG/PHP scripts by <a href='https://weather34.com' title='weather34.com' target='_blank'>weather34.com 2015 - ".date('Y').""; // for modules
+$scriptcredits     = "CSS/SVG ICONS/PHP scripts by <a href='https://weather34.com' title='weather34.com' target='_blank'>weather34.com 2015 - ".date('Y').""; // for modules
 $creditsEnabled     = "true"; // for chart pages only
 $creditsmysql       = "Weather Data Recorded from $stationName Database"; //for chart pages only
 $wucredits          = "Data provided by Weather Underground"; // for chart pages only
@@ -74,6 +74,6 @@ $creditschart       = "Charts compiled with CanvasJs.js (CC BY-NC 3.0)"; // for 
 $creditsURL         = ""; // for chart pages only
 $credits            = "Data Supplied via Weather Underground"; // for chart pages only
 $templateinfo       = ''; // template information page
-$templateversion    = 'MB-UB<maxred>40</maxred>-SO ';
+$templateversion    = 'MB-UB<maxred>40</maxred>-SO';
 $software    = 'Meteobridge <span>Hardware</span> Users';$designedfor='<br>For Meteobridge Users';$chartversion='(WUDATACHARTS)';$somethinggoeshere ='d4586dec-e7a2-47ae-99b6-25527b2563c9';$chartversionmysql  =  '(DATACHARTS version Final MYSQL-Meteobridge)';
 if (array_key_exists('theme', $_GET) && ($_GET['theme'] == 'dark' || $_GET['theme'] == 'light')) { SetCookie('theme', $_GET['theme'], time()+15552000); $theme = $_GET['theme']; } else if (array_key_exists('theme', $_COOKIE) && ($_COOKIE['theme'] == 'dark' || $_COOKIE['theme'] == 'light' )) { $theme = $_COOKIE['theme']; } $units = ""; if (array_key_exists('units', $_COOKIE)) { $units = $_COOKIE['units']; } ini_set('session.use_cookies', '0'); if (array_key_exists('units', $_GET) && ($_GET['units'] == 'us' || $_GET['units'] == 'uk' || $_GET['units'] == 'metric' || $_GET['units'] == 'scandinavia')) { SetCookie('units', $_GET['units'], time()+15552000); $units = $_GET['units']; } if ($units == 'uk') { $windunit = 'mph'; $tempunit = 'C'; $rainunit = 'mm'; $pressureunit = "mb"; $windconv = "0.621371"; $rainfallconv='10'; $pressureinterval= "0.5"; $rainfallconvmm='10'; } else if ($units == 'scandinavia') { $windunit = 'm/s'; $tempunit = 'C'; $rainunit = 'mm'; $pressureunit = "hPa"; $windconv = "0.277778"; $rainfallconv='10'; $pressureinterval= "0.5"; $rainfallconvmm='10'; } else if ($units == 'metric') { $windunit = 'km/h'; $tempunit = 'C'; $rainunit = 'mm'; $pressureunit = "hPa"; $windconv = "1"; $rainfallconv='10'; $pressureinterval= "0.5"; $rainfallconvmm='10'; } else if ($units == 'us') { $windunit = 'mph'; $tempunit = 'F'; $rainunit = 'in'; $pressureunit = "inHg"; $windconv = "1"; $rainfallconv='1'; $pressureinterval= "0.5"; $rainfallconvmm='1'; }; ?>

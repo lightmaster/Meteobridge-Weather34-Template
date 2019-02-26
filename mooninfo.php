@@ -120,5 +120,5 @@ $moon = new MoonPhase();$moonage =round($moon->age(),2);echo "Current Moon cycle
 
 <div class="provided">   
 &nbsp;
-<?php echo $info;?> <?php echo "PHP scripts by weather34.com 2015-".date('Y');?></a></div>
+<?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
 </body>

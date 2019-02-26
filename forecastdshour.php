@@ -73,7 +73,7 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
             $darkskyhourlyPrecipProb = $cond['precipProbability']*100;
             if (isset($cond['precipType'])){
             $darkskyhourlyPrecipType = $cond['precipType'];}
-			$darkskyhourlyprecipIntensity = number_format($cond['precipIntensityMax'],1);         
+			$darkskyhourlyprecipIntensity = number_format($cond['precipIntensity'],1);         
             $darkskyhourlyWindSpeed = round($cond['windSpeed'],0);
 			$darkskyhourlyWindGust = round($cond['windGust'],0);
 			  if ($hi++ == 10) break; 
@@ -97,7 +97,7 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
                   
  <div style="position:absolute;bottom:5px;z-index:9999;font-weight:normal;font-size:10px;color:#aaa;text-decoration:none !important;float:right;font-family:arial;">
   
-   &nbsp;&nbsp;data provided by <a href="https://darksky.net/about" title="https://darksky.net" target="_blank">https://darksky.net/</a> -- <?php echo $info;?> <?php echo $scriptcredits ?></div>
+   &nbsp;&nbsp;data provided by <a href="https://darksky.net/about" title="https://darksky.net" target="_blank">https://darksky.net/</a> -- <?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
   </div>
   </body>
   </html>
