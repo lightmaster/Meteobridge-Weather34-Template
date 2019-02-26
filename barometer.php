@@ -41,7 +41,10 @@ echo '<div class="pressuretext"> <oblue>'.$lang['Falling'].'</oblue> <fall> '.$f
 else if ($weather["barometer_trend"] > 0) {
 echo '<div class="pressuretext"> <oorange>'.$lang['Rising'].'</orange> <rise> '.$risingsymbol.' </rise></div>';}
 else echo '<div class="pressuretext"> <ogreen>'.$lang['Steady'].'</ogreen> </div>';?>
-<?php echo "<darkgrey>".$weather["barometer"],"&nbsp;<span>".$weather["barometer_units"]."</span>";?>
+<?php $barometer1=number_format($weather["barometer"]*0.029529983071445,2)?>
+<?php $barometer2=number_format($barometer1*33.863886666667,2,'.','')?>
+<?php echo "<darkgrey>";if ($weather["temp_units"]=='C'){echo "&nbsp;".$barometer2;}if ($weather["temp_units"]=='F'){echo $weather["barometer"];}
+echo "</darkgrey>&nbsp;<span>".$weather["barometer_units"]."</span>";?>
 </div></div></div>
 
 <div class="barometerconverter">
