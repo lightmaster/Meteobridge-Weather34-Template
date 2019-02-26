@@ -10,7 +10,7 @@ $nextset = $result['sunset']; if ($now > $nextset) { $nextset = date('H:i',$resu
 if ($weather["solar"]==0){echo "<div class=solarluxtodaydark>".$weather["solar"];}
 else if ($weather["solar"]>0){echo "<div class=solarluxtoday>".$weather["solar"];}?></div></div></div>
 <div class="solarluxtodayword"><valuetext>Solar Radiation</valuetext></div><div class="solarwrap"></div>
-
+<div class="uvsolarwordbig">Currently</div>
 
 <div class="uvcontainer1"><?php if ($weather["uv"]>10) {echo '<div class=uvtoday11>'.number_format($weather["uv"],1)."<smalluvunit> &nbsp;UVI";}else if ($weather["uv"]>8) {echo '<div class=uvtoday9-10>'.number_format($weather["uv"],1)."<smalluvunit> &nbsp;UVI";}else if ($weather["uv"]>5) {echo '<div class=uvtoday6-8>'.number_format($weather["uv"],1)."<smalluvunit> &nbsp;UVI";}else if ($weather["uv"]>3) {echo '<div class=uvtoday4-5>'.number_format($weather["uv"],1)."<smalluvunit> &nbsp;UVI";}
 else if (date('Hi')>$sunset && $weather["uv"]==0) {echo '<div class=uvtodaydark>'.number_format($weather["uv"],1)."<smalluvunit> &nbsp;UVI";}

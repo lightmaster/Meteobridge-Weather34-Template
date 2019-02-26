@@ -45,6 +45,7 @@ $aqiweather["label"]     = $parsed_json->{'results'}[0]->{'Label'};
 $a="";if($aqiweather["aqi"]==$a){$aqiweather["aqi"] = "0" ;}
 ?>
 <div class="updatedtime"><span><?php if(file_exists($json_string)&&time()- filemtime($json_string)>300)echo $offline. '<offline> Offline </offline>';else echo $online." ".$aqiweather["time"];?></div> 
+<div class="airqualitywordbig">Air Quality</div>
 <div class="tempconverter2">
 <?php //WEATHER34 AIR QAULITY SVG
 if ($aqiweather["aqi"]>200){echo "<div class=tempconvertercirclepurple>PM2.5"; }
