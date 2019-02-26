@@ -249,7 +249,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  else if ($wuskydayUV>7){echo 	"<red>".$wuskydayUV. '</red><grey> '.$wuskydayUVdesc;}
 				  else if ($wuskydayUV>5){echo 	"<orange>".$wuskydayUV. '</orange><grey> '.$wuskydayUVdesc;}
 				  else if ($wuskydayUV>2){echo 	"<yellow>".$wuskydayUV. '</yellow><grey> '.$wuskydayUVdesc;}
-				  else if ($wuskydayUV==0){echo 	"<green>".$wuskydayUV. '</green><grey> '.$wuskydayUVdesc;}				  
+				  else if ($wuskydayUV>=0){echo 	"<green>".$wuskydayUV. '</green><grey> '.$wuskydayUVdesc;}				  
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast.' <thunder>'.$wuskythunder.'</thunder></grey>	 				  
 				  </value></darkskytemplohome>';   
@@ -289,7 +289,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  else if ($wuskydayUV1>7){echo 	"<red>".$wuskydayUV1. '</red><grey> '.$wuskydayUVdesc1;}
 				  else if ($wuskydayUV1>5){echo 	"<orange>".$wuskydayUV1. '</orange><grey> '.$wuskydayUVdesc1;}
 				  else if ($wuskydayUV1>2){echo 	"<yellow>".$wuskydayUV1. '</yellow><grey> '.$wuskydayUVdesc1;}
-				  else if ($wuskydayUV1==0){echo 	"<green>".$wuskydayUV1. '</green><grey> '.$wuskydayUVdesc1;}				  
+				  else if ($wuskydayUV1>=0){echo 	"<green>".$wuskydayUV1. '</green><grey> '.$wuskydayUVdesc1;}				  
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast.' <thunder>'.$wuskythunder1.'</thunder></grey>	 				  
 				  </value></darkskytemplohome>';  
@@ -330,7 +330,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  else if ($wuskydayUV2>7){echo 	"<red>".$wuskydayUV2. '</red><grey> '.$wuskydayUVdesc2;}
 				  else if ($wuskydayUV2>5){echo 	"<orange>".$wuskydayUV2. '</orange><grey> '.$wuskydayUVdesc2;}
 				  else if ($wuskydayUV2>2){echo 	"<yellow>".$wuskydayUV2. '</yellow><grey> '.$wuskydayUVdesc2;}
-				  else if ($wuskydayUV2==0){echo 	"<green>".$wuskydayUV2. '</green><grey> '.$wuskydayUVdesc2;}				  
+				  else if ($wuskydayUV2>=0){echo 	"<green>".$wuskydayUV2. '</green><grey> '.$wuskydayUVdesc2;}				  
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast.' <thunder>'.$wuskythunder2.'</thunder></grey>	 				  
 				  </value></darkskytemplohome>';  
@@ -370,7 +370,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  else if ($wuskydayUV3>7){echo 	"<red>".$wuskydayUV3. '</red><grey> '.$wuskydayUVdesc3;}
 				  else if ($wuskydayUV3>5){echo 	"<orange>".$wuskydayUV3. '</orange><grey> '.$wuskydayUVdesc3;}
 				  else if ($wuskydayUV3>1){echo 	"<yellow>".$wuskydayUV3. '</yellow><grey> '.$wuskydayUVdesc3;}
-				  else if ($wuskydayUV3==0){echo "<green>".$wuskydayUV3. '</green><grey> '.$wuskydayUVdesc3;}				  
+				  else if ($wuskydayUV3>=0){echo "<green>".$wuskydayUV3. '</green><grey> '.$wuskydayUVdesc3;}				  
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast.' <thunder>'.$wuskythunder3.'</thunder></grey>	 				  
 				  </value></darkskytemplohome>';  
@@ -410,7 +410,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  else if ($wuskydayUV4>7){echo 	"<red>".$wuskydayUV4. '</red><grey> '.$wuskydayUVdesc4;}
 				  else if ($wuskydayUV4>5){echo 	"<orange>".$wuskydayUV4. '</orange><grey> '.$wuskydayUVdesc4;}
 				  else if ($wuskydayUV4>2){echo 	"<yellow>".$wuskydayUV4. '</yellow><grey> '.$wuskydayUVdesc4;}
-				  else if ($wuskydayUV4==0){echo 	"<green>".$wuskydayUV4. '</green><grey> '.$wuskydayUVdesc4;}				  
+				  else if ($wuskydayUV4>=0){echo 	"<green>".$wuskydayUV4. '</green><grey> '.$wuskydayUVdesc4;}				  
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast.' <thunder>'.$wuskythunder4.'</thunder></grey>	 				  
 				  </value></darkskytemplohome>';  		  
@@ -451,7 +451,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  else if ($wuskydayUV5>7){echo 	"<red>".$wuskydayUV5. '</red><grey> '.$wuskydayUVdesc5;}
 				  else if ($wuskydayUV5>5){echo 	"<orange>".$wuskydayUV5. '</orange><grey> '.$wuskydayUVdesc5;}
 				  else if ($wuskydayUV5>2){echo 	"<yellow>".$wuskydayUV5. '</yellow><grey> '.$wuskydayUVdesc5;}
-				  else if ($wuskydayUV5==0){echo 	"<green>".$wuskydayUV5. '</green><grey> '.$wuskydayUVdesc5;}				  
+				  else if ($wuskydayUV5>=0){echo 	"<green>".$wuskydayUV5. '</green><grey> '.$wuskydayUVdesc5;}				  
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast.' <thunder>'.$wuskythunder5.'</thunder></grey>	 				  
 				  </value></darkskytemplohome>';  
@@ -490,7 +490,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  else if ($wuskydayUV6>7){echo 	"<red>".$wuskydayUV6. '</red><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>5){echo 	"<orange>".$wuskydayUV6. '</orange><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>2){echo 	"<yellow>".$wuskydayUV6. '</yellow><grey> '.$wuskydayUVdesc6;}
-				  else if ($wuskydayUV6==0){echo 	"<green>".$wuskydayUV6. '</green><grey> '.$wuskydayUVdesc6;}				  
+				  else if ($wuskydayUV6>=0){echo 	"<green>".$wuskydayUV6. '</green><grey> '.$wuskydayUVdesc6;}				  
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast.' <thunder>'.$wuskythunder6.'</thunder></grey>	 				  
 				  </value></darkskytemplohome>';  			  
@@ -529,7 +529,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  else if ($wuskydayUV7>7){echo 	"<red>".$wuskydayUV7. '</red><grey> '.$wuskydayUVdesc7;}
 				  else if ($wuskydayUV7>5){echo 	"<orange>".$wuskydayUV7. '</orange><grey> '.$wuskydayUVdesc7;}
 				  else if ($wuskydayUV7>2){echo 	"<yellow>".$wuskydayUV7. '</yellow><grey> '.$wuskydayUVdesc7;}
-				  else if ($wuskydayUV7==0){echo 	"<green>".$wuskydayUV7. '</green><grey> '.$wuskydayUVdesc7;}				  
+				  else if ($wuskydayUV7>=0){echo 	"<green>".$wuskydayUV7. '</green><grey> '.$wuskydayUVdesc7;}				  
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast.' <thunder>'.$wuskythunder7.'</thunder></grey>	 				  
 				  </value></darkskytemplohome>';  	  
