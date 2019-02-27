@@ -116,11 +116,18 @@ echo '<div class="darkskyforecastinghome">';echo '<div class="darkskyweekdayhome
 if ($wuskydaynight=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon.'.svg" width="40"></img><br>';}
 if ($wuskydaynight=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon.'.svg" width="40"></img><br>';}	
 echo '<darkskytempdesc><value>'.$wuskydesc.'<value></darkskytempdesc><br>';
-//temp
-if($tempunit=='F' && $wuskydayTempHigh<45){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh.'°</oblue></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh>=45){echo '<darkskytemphihome>'.$wuskydayTempHigh.'°</darkskytemphihome>';}
+//temp non metric
+if($tempunit=='F' && $wuskydayTempHigh<44){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh.'°</oblue></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh>=75){echo '<darkskytemphihome><redu>'.$wuskydayTempHigh.'°</redu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh>=64){echo '<darkskytemphihome><orangeu>'.$wuskydayTempHigh.'°</orangeu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh>=53){echo '<darkskytemphihome><yellowu>'.$wuskydayTempHigh.'°</yellowu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh>=44){echo '<darkskytemphihome><greenu>'.$wuskydayTempHigh.'°</greenu></darkskytemphihome>';}
+//temp metric
 else if($wuskydayTempHigh<7){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh.'°</oblue></darkskytemphihome>';}
-else if($wuskydayTempHigh>=7){echo '<darkskytemphihome>'.$wuskydayTempHigh.'°</darkskytemphihome>';}
+else if($wuskydayTempHigh>=24){echo '<darkskytemphihome><redu>'.$wuskydayTempHigh.'°</redu></darkskytemphihome>';}
+else if($wuskydayTempHigh>=18){echo '<darkskytemphihome><orangeu>'.$wuskydayTempHigh.'°</orangeu></darkskytemphihome>';}
+else if($wuskydayTempHigh>=12){echo '<darkskytemphihome><yellowu>'.$wuskydayTempHigh.'°</yellowu></darkskytemphihome>';}
+else if($wuskydayTempHigh>=7){echo '<darkskytemphihome><greenu>'.$wuskydayTempHigh.'°</greenu></darkskytemphihome>';}
 //wind
 echo "<div class='darkskywindspeedicon'>";
 echo $wuskydayWinddircardinal; 
@@ -149,11 +156,18 @@ echo '<div class="darkskyforecastinghome">';echo '<div class="darkskyweekdayhome
 if ($wuskydaynight1=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon1.'.svg" width="40"></img><br>';}
 if ($wuskydaynight1=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon1.'.svg" width="40"></img><br>';}	
 echo '<darkskytempdesc><value>'.$wuskydesc1.'<value></darkskytempdesc><br>';
-//temp
-if($tempunit=='F' && $wuskydayTempHigh1<45){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh1.'°</oblue></darkskytemphihome>';}
-else if($tempunit=='F' &&$wuskydayTempHigh1>=45){echo '<darkskytemphihome>'.$wuskydayTempHigh1.'°</darkskytemphihome>';}
+//temp non metric
+if($tempunit=='F' && $wuskydayTempHigh1<44){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh1.'°</oblue></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh1>=75){echo '<darkskytemphihome><redu>'.$wuskydayTempHigh1.'°</redu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh1>=64){echo '<darkskytemphihome><orangeu>'.$wuskydayTempHigh1.'°</orangeu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh1>=53){echo '<darkskytemphihome><yellowu>'.$wuskydayTempHigh1.'°</yellowu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh1>=44){echo '<darkskytemphihome><greenu>'.$wuskydayTempHigh1.'°</greenu></darkskytemphihome>';}
+//temp metric
 else if($wuskydayTempHigh1<7){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh1.'°</oblue></darkskytemphihome>';}
-else if($wuskydayTempHigh1>=7){echo '<darkskytemphihome>'.$wuskydayTempHigh1.'°</darkskytemphihome>';}
+else if($wuskydayTempHigh1>=24){echo '<darkskytemphihome><redu>'.$wuskydayTempHigh1.'°</redu></darkskytemphihome>';}
+else if($wuskydayTempHigh1>=18){echo '<darkskytemphihome><orangeu>'.$wuskydayTempHigh1.'°</orangeu></darkskytemphihome>';}
+else if($wuskydayTempHigh1>=12){echo '<darkskytemphihome><yellowu>'.$wuskydayTempHigh1.'°</yellowu></darkskytemphihome>';}
+else if($wuskydayTempHigh1>=7){echo '<darkskytemphihome><greenu>'.$wuskydayTempHigh1.'°</greenu></darkskytemphihome>';}
 //wind
 echo "<div class='darkskywindspeedicon'>";echo $wuskydayWinddircardinal1;
 echo " ".$wuskydayWindGust1," <valuewindunit>".$windunit;echo  '</div>';'<br>';
@@ -180,11 +194,18 @@ echo '<div class="darkskyforecastinghome">';echo '<div class="darkskyweekdayhome
 if ($wuskydaynight2=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon2.'.svg" width="40"></img><br>';}
 if ($wuskydaynight2=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon2.'.svg" width="40"></img><br>';}	
 echo '<darkskytempdesc><value>'.$wuskydesc2.'<value></darkskytempdesc><br>';
-//temp
-if($tempunit=='F' && $wuskydayTempHigh2<45){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh2.'°</oblue></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh2>=45){echo '<darkskytemphihome>'.$wuskydayTempHigh2.'°</darkskytemphihome>';}
+//temp non metric
+if($tempunit=='F' && $wuskydayTempHigh2<44){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh2.'°</oblue></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh2>=75){echo '<darkskytemphihome><redu>'.$wuskydayTempHigh2.'°</redu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh2>=64){echo '<darkskytemphihome><orangeu>'.$wuskydayTempHigh2.'°</orangeu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh2>=53){echo '<darkskytemphihome><yellowu>'.$wuskydayTempHigh2.'°</yellowu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh2>=44){echo '<darkskytemphihome><greenu>'.$wuskydayTempHigh2.'°</greenu></darkskytemphihome>';}
+//temp metric
 else if($wuskydayTempHigh2<7){echo '<darkskytemphihome><oblue>'.$wuskydayTempHigh2.'°</oblue></darkskytemphihome>';}
-else if($wuskydayTempHigh2>=7){echo '<darkskytemphihome>'.$wuskydayTempHigh2.'°</darkskytemphihome>';}
+else if($wuskydayTempHigh2>=24){echo '<darkskytemphihome><redu>'.$wuskydayTempHigh2.'°</redu></darkskytemphihome>';}
+else if($wuskydayTempHigh2>=18){echo '<darkskytemphihome><orangeu>'.$wuskydayTempHigh2.'°</orangeu></darkskytemphihome>';}
+else if($wuskydayTempHigh2>=12){echo '<darkskytemphihome><yellowu>'.$wuskydayTempHigh2.'°</yellowu></darkskytemphihome>';}
+else if($wuskydayTempHigh2>=7){echo '<darkskytemphihome><greenu>'.$wuskydayTempHigh2.'°</greenu></darkskytemphihome>';}
 //wind
 echo "<div class='darkskywindspeedicon'>";
 echo $wuskydayWinddircardinal2;
