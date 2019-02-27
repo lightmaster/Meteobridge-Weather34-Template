@@ -40,6 +40,8 @@ http://creativecommons.org/licenses/by-nc-nd/4.0/
  
  Boris at smartbedded (meteobridge) for ongoing support and upkeep of meteobridge 
  
+ Wim van der Kuil for the original meteobridge script (now offers Weather Display and other versions of template)
+ 
  David St John at weatherflow for providing hardware for testing and his non bias logical views 
  
  Paul Wilman , Tina Thomas, Vaggos , Chuck M , Aaron Gersztoff , Ian Millard, and many many more for continous constructive supportive feedback .. 
