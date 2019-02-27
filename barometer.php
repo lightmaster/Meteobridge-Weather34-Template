@@ -22,12 +22,12 @@ transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barome
 <?php echo '<div class=barometerblue><valuetext>Min ('.$weather["thb0seapressmintime"].')<br><minblue><value>',$weather["barometer_min"],'</minblue>&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
 
 <div class="barometertrend2">
-<?php  echo "<valuetext>Trend";
+<?php  echo "<valuetext>&nbsp;&nbsp;Trend";
 if ($weather["barometer_trend"] > 20  && $weather["barometer_trend"] < 100)  {echo '<rising><rise> '.$risingsymbol.' </rise><span><value>';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}
 else if ($weather["barometer_trend"] < 0) {
 echo '<falling><fall> '.$fallingsymbol.'</fall><value> '; echo number_format($weather["barometer_trend"],2), '</falling><units> ';echo $weather["barometer_units"], '</units>';}
 else if ($weather["barometer_trend"] > 0 && $weather["barometer_trend"] < 100) {
-echo '<rising><rise> '.$risingsymbol.' </rise><value>';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}	  
+echo '<rising><rise>'.$risingsymbol.' </rise><value>&nbsp;';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}	  
 else echo '<ogreen> '.$steadysymbol.'</ogreen><steady><ogreen><value>Steady</ogreen></steady></div>';?></valuetext>
 </div>
 
