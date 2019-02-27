@@ -43,10 +43,19 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 
   <div class="temperaturecontainer1">
 			  
-			  <?php
+			
+<?php $barometermax=number_format($weather["barometer_max"]*0.02952998,2)?>
+<?php $barometer2max=number_format($barometermax*33.863886666667,2,'.','')?>
+<?php $barometermin=number_format($weather["barometer_min"]*0.02952998,2)?>
+<?php $barometer2min=number_format($barometermin*33.863886666667,2,'.','')?>
+  <?php
 	////pressure max today
-	if ($weather["barometer_max"]>=0)  {
-	echo "<div class='temperaturetoday24'>",$weather["barometer_max"] . "</value>";} 	
+	if ($weather["barometer_units"]=='inHg' && $weather["barometer_max"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$weather["barometer_max"]. "</value>";} 
+	else if ($weather["barometer_units"]=='hPa' && $weather["barometer_max"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$barometer2max. "</value>";} 
+	else if ($weather["barometer_units"]=='mb' && $weather["barometer_max"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$barometer2max. "</value>";} 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
     
@@ -57,9 +66,12 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 <div class="temperaturecontainer2">
  <?php
 	//pressure min today
-	if ($weather["barometer_min"]>=0)  {
-	echo "<div class='temperaturetoday0'>",$weather["barometer_min"] . "</value>";} 	
-	
+	if ($weather["barometer_units"]=='inHg' && $weather["barometer_min"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$weather["barometer_min"]. "</value>";} 
+	else if ($weather["barometer_units"]=='hPa' && $weather["barometer_min"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$barometer2min. "</value>";} 
+	else if ($weather["barometer_units"]=='mb' && $weather["barometer_min"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$barometer2min. "</value>";} 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
     
@@ -128,11 +140,20 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 
 
 <div class="temperaturecontainer1">
+
+<?php $barometermmax=number_format($weather["thb0seapressmmax"]*0.02952998,2)?>
+<?php $barometer2mmax=number_format($barometermmax*33.863886666667,2,'.','')?>
+<?php $barometermmin=number_format($weather["thb0seapressmmin"]*0.02952998,2)?>
+<?php $barometer2mmin=number_format($barometermmin*33.863886666667,2,'.','')?>
 			  
 			  <?php
 	//pressure max month
-	if ($weather["thb0seapressmmax"]>=0)  {
-	echo "<div class='temperaturetoday24'>",$weather["thb0seapressmmax"] . "</value>";} 	
+	if ($weather["barometer_units"]=='inHg' && $weather["thb0seapressmmax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$weather["thb0seapressmmax"]. "</value>";} 
+	else if ($weather["barometer_units"]=='hPa' && $weather["thb0seapressmmax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$barometer2mmax. "</value>";} 
+	else if ($weather["barometer_units"]=='mb' && $weather["thb0seapressmmax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$barometer2mmax. "</value>";} 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
     
@@ -143,9 +164,12 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 <div class="temperaturecontainer2">
  <?php
 	//pressure min month
-	if ($weather["thb0seapressmmin"]>=0)  {
-	echo "<div class='temperaturetoday0'>",$weather["thb0seapressmmin"] . "</value>";} 	
-	
+	if ($weather["barometer_units"]=='inHg' && $weather["thb0seapressmmin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$weather["thb0seapressmmin"]. "</value>";} 
+	else if ($weather["barometer_units"]=='hPa' && $weather["thb0seapressmmin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$barometer2mmin. "</value>";} 
+	else if ($weather["barometer_units"]=='mb' && $weather["thb0seapressmmin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$barometer2mmin. "</value>";} 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
     
@@ -195,11 +219,18 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
  
  
  <div class="temperaturecontainer1">
-			  
+<?php $barometerydmax=number_format($weather["thb0seapressydmax"]*0.02952998,2)?>
+<?php $barometer2ydmax=number_format($barometerydmax*33.863886666667,2,'.','')?>
+<?php $barometerydmin=number_format($weather["thb0seapressydmin"]*0.02952998,2)?>
+<?php $barometer2ydmin=number_format($barometerydmin*33.863886666667,2,'.','')?>  
 			  <?php
 	//pressure max yesterday
-	if ($weather["thb0seapressydmax"]>=0)  {
-	echo "<div class='temperaturetoday24'>",$weather["thb0seapressydmax"] . "</value>";} 	
+	if ($weather["barometer_units"]=='inHg' && $weather["thb0seapressydmax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$weather["thb0seapressydmax"]. "</value>";} 
+	else if ($weather["barometer_units"]=='hPa' && $weather["thb0seapressydmax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$barometer2ydmax. "</value>";} 
+	else if ($weather["barometer_units"]=='mb' && $weather["thb0seapressydmax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$barometer2ydmax. "</value>";} 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
     
@@ -209,12 +240,18 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 			  
 <div class="temperaturecontainer2">
  <?php
-	//pressure min yesterday
-	if ($weather["thb0seapressydmin"]>=0)  {
-	echo "<div class='temperaturetoday0'>",$weather["thb0seapressydmin"] . "</value>";} 	
-	
+	//pressure min yesterday	
+	if ($weather["barometer_units"]=='inHg' && $weather["thb0seapressydmin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$weather["thb0seapressydmin"]. "</value>";} 
+	else if ($weather["barometer_units"]=='hPa' && $weather["thb0seapressydmin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$barometer2ydmin. "</value>";} 
+	else if ($weather["barometer_units"]=='mb' && $weather["thb0seapressydmin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$barometer2ydmin. "</value>";}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
-	?>  </div>
+	?> </div>
+	
+	
+	
     
     <div class="temperaturetrend1">Min: <?php echo $weather["thb0seapressydmintime"];?></span></div>	
 
@@ -253,11 +290,20 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 
 
 <div class="temperaturecontainer1">
+
+<?php $barometerymax=number_format($weather["thb0seapressymax"]*0.02952998,2)?>
+<?php $barometer2ymax=number_format($barometerymax*33.863886666667,2,'.','')?>
+<?php $barometerymin=number_format($weather["thb0seapressymin"]*0.02952998,2)?>
+<?php $barometer2ymin=number_format($barometerymin*33.863886666667,2,'.','')?>  
 			  
 			  <?php
 	//pressure max year
-	if ($weather["thb0seapressymax"]>=0)  {
-	echo "<div class='temperaturetoday24'>",$weather["thb0seapressymax"] . "</value>";} 	
+	if ($weather["barometer_units"]=='inHg' && $weather["thb0seapressymax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$weather["thb0seapressymax"]. "</value>";} 
+	else if ($weather["barometer_units"]=='hPa' && $weather["thb0seapressymax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$barometer2ymax. "</value>";} 
+	else if ($weather["barometer_units"]=='mb' && $weather["thb0seapressymax"]>=0)  {
+	echo "<div class='temperaturetoday24'>",$barometer2ymax. "</value>";} 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
     
@@ -268,9 +314,12 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 <div class="temperaturecontainer2">
  <?php
 	//pressure min year
-	if ($weather["thb0seapressymin"]>=0)  {
-	echo "<div class='temperaturetoday0'>",$weather["thb0seapressymin"] . "</value>";} 	
-	
+	if ($weather["barometer_units"]=='inHg' && $weather["thb0seapressymin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$weather["thb0seapressymin"]. "</value>";} 
+	else if ($weather["barometer_units"]=='hPa' && $weather["thb0seapressymin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$barometer2ymin. "</value>";} 
+	else if ($weather["barometer_units"]=='mb' && $weather["thb0seapressymin"]>=0)  {
+	echo "<div class='temperaturetoday0'>",$barometer2ymin. "</value>";}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
     
@@ -295,19 +344,25 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
             <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
   </span> <div class="hitemp">
 <div class=hitempalltimepos> 
-<div class="hitempa"><orange>Max</orange> alltime <orange><?php echo $weather["thb0seapressamax"],"</orange> ",$weather["barometer_units"]," ",$weather["thb0seapressamaxtime"];?></span></div>
-<div class="hitempa"><blue>Min</blue> alltime <blue><?php echo $weather["thb0seapressamin"],"</blue> ", $weather["barometer_units"]," ",$weather["thb0seapressamintime"];?></span></div>
+
+<?php $barometeramax=number_format($weather["thb0seapressamax"]*0.02952998,2)?>
+<?php $barometer2amax=number_format($barometeramax*33.863886666667,2,'.','')?>
+<?php $barometeramin=number_format($weather["thb0seapressamin"]*0.02952998,2)?>
+<?php $barometer2amin=number_format($barometeramin*33.863886666667,2,'.','')?>  
+
+<div class="hitempa">Max<orange> <?php echo $barometer2amax,"</orange> ",$weather["barometer_units"]," ",$weather["thb0seapressamaxtime"];?></span></div>
+<div class="hitempa">Min<blue> <?php echo $barometer2amin,"</blue> ", $weather["barometer_units"]," ",$weather["thb0seapressamintime"];?></span></div>
 </div></div></div>
         </div>
         <div class="weather34card__count-container">
             <div class="weather34card__count-textuv">
                 <span class="weather34card__count-text--big">  </span></div>  
           <div class="weather34card__stuff-container"><br>
-<div class="actual1"><orange>Barometeric pressure </orange> 2018-<?php echo date('Y')?></div></div></div></div></div>
+<div class="actual1"><orange>Barometeric <blue>pressure</blue> </orange> 2018-<?php echo date('Y')?></div></div></div></div></div>
   
 </section>
 <div class="provided">   
-&nbsp;<?php echo $info;?> <a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a>
-</div>
+&nbsp;<?php echo $info?> 
+Barometric Pressure Almanac Meteobridge CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
 </body>
 </html>
