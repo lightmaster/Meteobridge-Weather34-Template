@@ -1,56 +1,34 @@
-<?php include_once('common.php');include_once('livedata.php');
+<?php 
+//original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
+include_once('common.php');include_once('livedata.php');
 # 27th Jan 2019 file edited by Ken True based on barometer units for non standard configurations by lightmaster https://www.wxforum.net/index.php?topic=36011.0
 header('Content-type: text/html; charset=utf-8');?>
 <meta http-equiv="Content-Type: text/html; charset=UTF-8" />
 <style>
 .weather34barometerarrowactual{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C'){echo $weather["barometer"]*0.02953*50.6;}else if ($weather["temp_units"]=='F'){echo $weather["barometer"]*50.6;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C'){echo $weather["barometer"]*0.02953*50.6;}else if ($weather["temp_units"]=='F'){echo $weather["barometer"]*50.6;}?>deg);}
+if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa"){echo $weather["barometer"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer"]*50.6;}?>deg);
+transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa"){echo $weather["barometer"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer"]*50.6;}?>deg);}
 .weather34barometerarrowmin{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo $weather["barometer_min"]*0.02953*50.6;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_min"]*50.6;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["barometer_min"]*0.02953*50.6;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_min"]*50.6;}?>deg);}
+if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa" ){echo $weather["barometer_min"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer_min"]*50.6;}?>deg);
+transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa" ){echo $weather["barometer_min"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer_min"]*50.6;}?>deg);}
 .weather34barometerarrowmax{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo $weather["barometer_max"]*0.02953*50.6;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_max"]*50.6;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["barometer_max"]*0.02953*50.6;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_max"]*50.6;}?>deg);}
+if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa" ){echo $weather["barometer_max"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer_max"]*50.6;}?>deg);
+transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa" ){echo $weather["barometer_max"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer_max"]*50.6;}?>deg);}
 </style>
 <div class="updatedtime"><span><?php if(file_exists($livedata)&&time()- filemtime($livedata)>300)echo $offline. '<offline> Offline </offline>';else echo $online." ".$weather["time"];?></div>  
 <div class='barometermax'>
-<?php $barometermax=number_format($weather["barometer_max"]*0.02952998,2)?>
-<?php $barometer2max=number_format($barometermax*33.863886666667,2,'.','')?>
-<?php $barometermin=number_format($weather["barometer_min"]*0.02952998,2)?>
-<?php $barometer2min=number_format($barometermin*33.863886666667,2,'.','')?>
-<?php  //today max
-if ($weather["barometer_units"]=='inHg' && $weather["thb0seapressmmax"]>=0){
-echo '<div class=barometerorange><valuetext>Max ('.$weather["thb0seapressmaxtime"].')<br><maxred><value>',$weather["barometer_max"],'&nbsp;',$weather["barometer_units"],' </valuetext></div>';}
-else if ($weather["barometer_units"]=='hPa' && $weather["thb0seapressmmax"]>=0){
-echo '<div class=barometerorange><valuetext>Max ('.$weather["thb0seapressmaxtime"].')<br><maxred><value>',$barometer2max,'&nbsp;',$weather["barometer_units"],' </valuetext></div>';
-}
-else if ($weather["barometer_units"]=='mb' && $weather["thb0seapressmmax"]>=0){
-echo '<div class=barometerorange><valuetext>Max ('.$weather["thb0seapressmaxtime"].')<br><maxred><value>',$barometer2max,'&nbsp;',$weather["barometer_units"],' </valuetext></div>';
-}?></div>
-
+<?php echo '<div class=barometerorange><valuetext>Max ('.$weather["thb0seapressmaxtime"].')<br><maxred><value>',$weather["barometer_max"],'</maxred>&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
 <div class='barometermin'>
-<?php  //today min
-if ($weather["barometer_units"]=='inHg' && $weather["thb0seapressmmax"]>=0){
-echo '<div class=barometerblue><valuetext>Min ('.$weather["thb0seapressmintime"].')<br><minblue><value>',$weather["barometer_min"],'&nbsp;',$weather["barometer_units"],' </valuetext></div>';}
-if ($weather["barometer_units"]=='mb' && $weather["thb0seapressmmax"]>=0){
-echo '<div class=barometerblue><valuetext>Min ('.$weather["thb0seapressmintime"].')<br><minblue><value>',$barometer2min,'&nbsp;',$weather["barometer_units"],' </valuetext></div>';}
-
-if ($weather["barometer_units"]=='hPa' && $weather["thb0seapressmmax"]>=0){
-echo '<div class=barometerblue><valuetext>Min ('.$weather["thb0seapressmintime"].')<br><minblue><value>',$barometer2min,'&nbsp;',$weather["barometer_units"],' </valuetext></div>';}
-
-
-
-?></div>
+<?php echo '<div class=barometerblue><valuetext>Min ('.$weather["thb0seapressmintime"].')<br><minblue><value>',$weather["barometer_min"],'</minblue>&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
 
 <div class="barometertrend2">
-<?php  echo "<valuetext>&nbsp;&nbsp;Trend";
-if ($weather["barometer_trend"] > 20  && $weather["barometer_trend"] < 100)  {echo '<rising><rise> '.$risingsymbol.' </rise><span>';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}
+<?php  echo "<valuetext>Trend";
+if ($weather["barometer_trend"] > 20  && $weather["barometer_trend"] < 100)  {echo '<rising><rise> '.$risingsymbol.' </rise><span><value>';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}
 else if ($weather["barometer_trend"] < 0) {
 echo '<falling><fall> '.$fallingsymbol.'</fall><value> '; echo number_format($weather["barometer_trend"],2), '</falling><units> ';echo $weather["barometer_units"], '</units>';}
 else if ($weather["barometer_trend"] > 0 && $weather["barometer_trend"] < 100) {
-echo '<rising><rise> '.$risingsymbol.'&nbsp;</rise><value>';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}	  
-else echo '<ogreen> '.$steadysymbol.'</ogreen><steady><ogreen>Steady</ogreen></steady></div>';?></valuetext>
+echo '<rising><rise> '.$risingsymbol.' </rise><value>';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}	  
+else echo '<ogreen> '.$steadysymbol.'</ogreen><steady><ogreen><value>Steady</ogreen></steady></div>';?></valuetext>
 </div>
 
 <div class="homeweathercompass2" >
@@ -59,32 +37,24 @@ else echo '<ogreen> '.$steadysymbol.'</ogreen><steady><ogreen>Steady</ogreen></s
 <div class="weather34barometerarrowmin"></div>
 <div class="weather34barometerarrowmax"></div>
 </div>
-<div class="text2">
-<?php if ($weather["barometer_trend"]>20){echo '<div class="pressuretext"> <ogreen>Steady</ogreen> </div>';}
-else if ($weather["barometer_trend"] < -1.3) {
-echo '<div class="pressuretextfast"><oblue>Falling Rapidly</oblue> <fall> '.$fallingsymbol.'</fall></div>';}
+<div class="text2"><?php if ($weather["barometer_trend"]>20){echo '<div class="pressuretext"> <ogreen>Steady</ogreen> </div>';}
 else if ($weather["barometer_trend"] < 0) {
-echo '<div class="pressuretext"><oblue>Falling</oblue> <fall> '.$fallingsymbol.'</fall></div>';}
-else if ($weather["barometer_trend"] > 1.3) {
-echo '<div class="pressuretextfast">Rising Rapidly<rise> '.$risingsymbol.' </rise></div>';}	  
+echo '<div class="pressuretext"> <oblue>'.$lang['Falling'].'</oblue> <fall> '.$fallingsymbol.'</fall></div>';}
 else if ($weather["barometer_trend"] > 0) {
-echo '<div class="pressuretext"> <oorange>Rising</orange> <rise> '.$risingsymbol.' </rise></div>';}	  
-else echo '<div class="pressuretext"> <ogreen>Steady</ogreen> </div>';?>
-
-<?php $barometer1=number_format($weather["barometer"]*0.02952998,2)?>
-<?php $barometer2=number_format($barometer1*33.863886666667,2,'.','')?>
-<?php echo "<darkgrey>";if ($weather["temp_units"]=='C'){echo "&nbsp;".$barometer2;}if ($weather["temp_units"]=='F'){echo $weather["barometer"];}
-echo "</darkgrey>&nbsp;<span>".$weather["barometer_units"]."</span>";?>
+echo '<div class="pressuretext"> <oorange>'.$lang['Rising'].'</orange> <rise> '.$risingsymbol.' </rise></div>';}
+else echo '<div class="pressuretext"> <ogreen>'.$lang['Steady'].'</ogreen> </div>';?>
+<?php echo "<darkgrey>".$weather["barometer"],"&nbsp;<span>".$weather["barometer_units"]."</span>";?>
 </div></div></div>
-<div class="barometerlimits"><div class='weather34-barometerruler'>
-<?php if ($weather["temp_units"]=='C'){echo "<weather34-barometerlimitmin><value>950</weather34-barometerlimitmin><weather34-barometerlimitmax><value>1050</weather34-barometerlimitmax>";}
-else echo "<weather34-barometerlimitminf><value>28</barometerlimitminf><weather34-barometerlimitmaxf><value>31</weather34-barometerlimitmaxf>";?></div></div>
 
 <div class="barometerconverter">
 <?php echo "";
-if ($weather["temp_units"]=='C'){echo "<div class=barometerconvertercircleblue>" .number_format($weather["barometer"]*0.02952998,2),"<smallrainunit>inHg</smallrainunit>";}
-else if ($weather["temp_units"]=='F'){echo "<div class=barometerconvertercircleblue>".number_format($weather["barometer"]*33.863886666667,2,'.',''),"<smallrainunit>hPa</smallrainunit>";}
-?></div>
+if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa"){echo "<div class=barometerconvertercircleblue>" .number_format($weather["barometer"]*0.029529983071445,2),"<smallrainunit>inHg</smallrainunit>";}
+else if ($weather["barometer_units"]=='inHg'){echo "<div class=barometerconvertercircleblue>".round($weather["barometer"]*33.863886666667,1),"<smallrainunit>hPa</smallrainunit>";}
+?></div></div>
+</span>
+<div class="barometerlimits"><div class='weather34-barometerruler'>
+<?php if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa"){echo "<weather34-barometerlimitmin><value>950</weather34-barometerlimitmin><weather34-barometerlimitmax><value>1050</weather34-barometerlimitmax>";}
+else echo "<weather34-barometerlimitminf><value>28</barometerlimitminf><weather34-barometerlimitmaxf><value>31</weather34-barometerlimitmaxf>";?></div></div>
 <?php //WEATHER34 pure css UV-Index above 8  pop up alert 
  if ($notifications=='yes' && $weather["uv"]>=8){?><div id="weather34lightningdialog-notify">  <div class="weather34lightningdialog-box">
 <div class="weather34lightningbackground-alert"></div><div class="header"> <div class="weather34lightningbackground-alert"></div>
