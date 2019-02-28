@@ -434,8 +434,8 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if($tempunit=='F' && $wuskydayTempHigh>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh>=45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh,0);}
 				  else if($wuskydayTempHigh<7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh,0);}
-				  else if($wuskydayTempHigh>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh,0);}
-				  else if($wuskydayTempHigh>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh,0);}				  
+				  else if($wuskydayTempHigh>17.7){echo "<div class=valuehi>".number_format($wuskydayTempHigh,0);}
+				  else if($wuskydayTempHigh>12.7){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh,0);}				  
 				  else if($wuskydayTempHigh>=7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh,0);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
@@ -470,13 +470,13 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				   else echo ' <thunder><orange1>'.$wuskythunder1.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
 				  //temp
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh1<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh1,0);}
+				  if($tempunit=='F' && $wuskydayTempHigh1<44.6){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh1,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh1>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh1,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh1>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh1,0);}
-				  else if($tempunit=='F' && $wuskydayTempHigh1>=45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh1,0);}
+				  else if($tempunit=='F' && $wuskydayTempHigh1>=44.6){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh1,0);}
 				  else if($wuskydayTempHigh1<7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh1,0);}
-				  else if($wuskydayTempHigh1>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh1,0);}
-				  else if($wuskydayTempHigh1>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh1,0);}			  
+				  else if($wuskydayTempHigh1>17.7){echo "<div class=valuehi>".number_format($wuskydayTempHigh1,0);}
+				  else if($wuskydayTempHigh1>12.7){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh1,0);}			  
 				  else if($wuskydayTempHigh1>=7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh1,0);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
@@ -512,13 +512,13 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				   else echo ' <thunder><orange1>'.$wuskythunder2.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    
 				  //temp				  
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh2<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh2,0);}
+				  if($tempunit=='F' && $wuskydayTempHigh2<44.6){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh2,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh2>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh2,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh2>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh2,0);}
-				  else if($tempunit=='F' && $wuskydayTempHigh2>=45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh2,0);}
+				  else if($tempunit=='F' && $wuskydayTempHigh2>=44.6){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh2,0);}
 				  else if($wuskydayTempHigh2<7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh2,0);}
-				  else if($wuskydayTempHigh2>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh2,0);}
-				  else if($wuskydayTempHigh2>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh2,0);}				  
+				  else if($wuskydayTempHigh2>17.7){echo "<div class=valuehi>".number_format($wuskydayTempHigh2,0);}
+				  else if($wuskydayTempHigh2>12.7){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh2,0);}				  
 				  else if($wuskydayTempHigh2>=7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh2,0);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
@@ -553,13 +553,13 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				   else echo ' <thunder><orange1>'.$wuskythunder3.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
 				  //temp				  
 				 echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh3<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh3,0);}
+				  if($tempunit=='F' && $wuskydayTempHigh3<44.6){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh3,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh3>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh3,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh3>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh3,0);}
-				  else if($tempunit=='F' && $wuskydayTempHigh3>=45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh3,0);}
+				  else if($tempunit=='F' && $wuskydayTempHigh3>=44.6){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh3,0);}
 				  else if($wuskydayTempHigh3<7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh3,0);}
-				  else if($wuskydayTempHigh3>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh3,0);}
-				  else if($wuskydayTempHigh3>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh3,0);}				  
+				  else if($wuskydayTempHigh3>17.7){echo "<div class=valuehi>".number_format($wuskydayTempHigh3,0);}
+				  else if($wuskydayTempHigh3>12.7){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh3,0);}				  
 				  else if($wuskydayTempHigh3>=7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh3,0);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
@@ -594,13 +594,13 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				   else echo ' <thunder><orange1>'.$wuskythunder4.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    		  
 				  //temp
 				 echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh4<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh4,0);}
+				  if($tempunit=='F' && $wuskydayTempHigh4<44.6){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh4,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh4>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh4,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh4>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh4,0);}
-				  else if($tempunit=='F' && $wuskydayTempHigh4>=45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh4,0);}
+				  else if($tempunit=='F' && $wuskydayTempHigh4>=44.6){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh4,0);}
 				  else if($wuskydayTempHigh4<7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh4,0);}
-				  else if($wuskydayTempHigh4>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh4,0);}
-				  else if($wuskydayTempHigh4>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh4,0);}				  
+				  else if($wuskydayTempHigh4>17.7){echo "<div class=valuehi>".number_format($wuskydayTempHigh4,0);}
+				  else if($wuskydayTempHigh4>12.7){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh4,0);}				  
 				  else if($wuskydayTempHigh4>=7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh4,0);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
@@ -636,13 +636,13 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				   else echo ' <thunder><orange1>'.$wuskythunder5.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
 				  //temp				  
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh5<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh5,0);}
+				  if($tempunit=='F' && $wuskydayTempHigh5<44.6){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh5,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh5>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh5,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh5>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh5,0);}
-				  else if($tempunit=='F' && $wuskydayTempHigh5>=45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh5,0);}
+				  else if($tempunit=='F' && $wuskydayTempHigh5>=44.6){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh5,0);}
 				  else if($wuskydayTempHigh5<7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh5,0);}
-				  else if($wuskydayTempHigh5>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh5,0);}
-				  else if($wuskydayTempHigh5>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh5,0);}				  
+				  else if($wuskydayTempHigh5>17.7){echo "<div class=valuehi>".number_format($wuskydayTempHigh5,0);}
+				  else if($wuskydayTempHigh5>12.7){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh5,0);}				  
 				  else if($wuskydayTempHigh5>=7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh5,0);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
@@ -677,13 +677,13 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				 
 				  //temp
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh6<=45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh6,0);}
+				  if($tempunit=='F' && $wuskydayTempHigh6<=44.6){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh6,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh6>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh6,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh6>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh6,0);}
-				  else if($tempunit=='F' && $wuskydayTempHigh6>=45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh6,0);}
+				  else if($tempunit=='F' && $wuskydayTempHigh6>=44.6){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh6,0);}
 				  else if($wuskydayTempHigh6<7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh6,0);}
-				  else if($wuskydayTempHigh6>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh6,0);}
-				  else if($wuskydayTempHigh6>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh6,0);}				  
+				  else if($wuskydayTempHigh6>17.7){echo "<div class=valuehi>".number_format($wuskydayTempHigh6,0);}
+				  else if($wuskydayTempHigh6>12.7){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh6,0);}				  
 				  else if($wuskydayTempHigh6>=7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh6,0);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary  
@@ -716,13 +716,13 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				   else echo ' <thunder><orange1>'.$wuskythunder.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    	  
 				 //temp
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh7<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh7,0);}
+				  if($tempunit=='F' && $wuskydayTempHigh7<44.6){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh7,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh7>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh7,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh7>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh7,0);}
-				  else if($tempunit=='F' && $wuskydayTempHigh7>=45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh7,0);}
+				  else if($tempunit=='F' && $wuskydayTempHigh7>=44.6){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh7,0);}
 				  else if($wuskydayTempHigh7<7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh7,0);}
-				  else if($wuskydayTempHigh7>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh7,0);}
-				  else if($wuskydayTempHigh7>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh7,0);}				  
+				  else if($wuskydayTempHigh7>17.7){echo "<div class=valuehi>".number_format($wuskydayTempHigh7,0);}
+				  else if($wuskydayTempHigh7>12.7){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh7,0);}				  
 				  else if($wuskydayTempHigh7>=7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh7,0);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";		  
 				  //text summary
