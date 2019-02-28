@@ -8,6 +8,7 @@
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
+ //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
  include('settings.php');include('shared.php');error_reporting(0); 
  	
 	
@@ -36,6 +37,7 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["barometer_max"]      = $meteobridgeapi[34];
 	$weather["barometer_min"]      = $meteobridgeapi[36];
 	$weather["barometer_units"]    = $meteobridgeapi[15]; // mb or hPa or in
+	//$weather["barometer_units"]    = 'mmHg'; // mmHg
 	$weather["barometer_trend"]    = $meteobridgeapi[10] - $meteobridgeapi[18];
 	$weather["temp_units"]         = 'C'; // C or F
 	$weather["temp_indoor"]        = $meteobridgeapi[22];

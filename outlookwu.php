@@ -5,77 +5,44 @@ include_once('settings.php');include('livedata.php');
 	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at https://weather34.com/homeweatherstation/index.html # 
 	# 	                                                                                               #
 	# 	                                                                                               #
-	# 	FORECAST WU WEATHER FORECAST: FEB 2019						 	                               #
+	# 	FORECAST WU WEATHER FORECAST: Original FEB 2019									               #
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
-?>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title><?php echo "${stationName}";?> <?php echo 'Forecast' ;?> </title>
-			
-		<style>
-		@font-face{font-family:system;font-style:normal;src:local(".SFNSText-Light"),local("Arial")}
-		@font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(css/fonts/verbatim-regular.woff2) format("woff2"),url(css/fonts/verbatim-regular.ttf) format("truetype")}
-body{background:rgba(11, 12, 12, 0.4)}		
-.darkskyforecasting{float:left;display:block;margin-right:0;width:43%;border-radius:4px;margin:2px;margin-top:-10px;font-family:Arial;margin-left:5px;height:300px;padding:2px;background-color:rgba(253, 166, 16, 1.000);border:1px solid rgba(153,155,156,0.3);color:#c5c5c5;font-size:12px;color:#c5c5c5;font-family:Arial;line-height:12px}
-
-darkskyweekday{position:absolute;margin:3px;background-color:rgba(253, 166, 16, 1.000);text-align:center;padding:5px;color:#c5c5c5;font-family:Arial;font-size:11px;margin-bottom:20px;border-radius:4px;font-size:12px;color:#c5c5c5;font-family:Arial;line-height:15px}darkskytemphi{margin-top:5px;font-size:14px;color:rgba(255,124,57,1);font-family:Arial;margin-left:10%}darkskytemphi span{font-size:14px;color:#c5c5c5}darkskytemplo{margin-top:5px;font-size:12px;color:#00a4b4;font-family:Arial}darkskytemplo span{font-size:12px;color:#c5c5c5;font-family:Arial}darkskysummary{font-size:12px;color:#c5c5c5;font-family:Arial;line-height:11px}darkskywindspeed{font-size:12px;color:#c5c5c5;font-family:Arial;line-height:11px}.darkskywindspeedicon{position:absolute;font-size:10px;color:#c5c5c5;font-family:Arial;line-height:11px;margin-top:-55px;margin-left:67px}.darkskywindgust{position:absolute;font-size:10px;color:#c5c5c5;font-family:Arial;line-height:11px;margin-top:-55px;margin-left:97px}
-.darkskydiv{position:relative;width:725px;overflow:hidden!important;height:378px;float:none;margin-left:-5px;margin-top:-5px}
-
-.darkskyforecastinghome{font-size:12px;float:left;display:inline;margin-right:0;width:23.3%;border-radius:3px;margin:3px;margin-top:0;font-family:Arial,system;margin-left:0px;height:175px;padding:3px;padding-top:5px;
-background: rgba(29, 32, 34, 1.000);background: linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34, 0) 11%,rgba(29, 32, 34, 0) 100%,rgba(229, 77, 11, 0) 0%);
-background: -webkit-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34, 0) 11%,rgba(29, 32, 34,0) 100%,rgba(229, 77, 11, 0) 0%);
-background: -moz-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34, 0) 11%,rgba(29, 32, 34, 0) 100%,rgba(229, 77, 11, 0) 0%);
-background: -o-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34,0) 11%,rgba(29, 32, 34, 0) 100%,rgba(229, 77, 11, 0) 0%);
-border:0;color:#c5c5c5;overflow:hidden!important;margin-bottom:8px;border:solid 1px #444;border-bottom:solid 1px #444;border-top:1px solid rgba(97, 106, 114, 1.000);}
-.greydesc{color:#c5c5c5;margin-left:0px;margin-top:-10px;position:absolute}
-.none{float:none;margin-top:10px;position:absolute}
-.valuehi{font-size:1.25em;padding:5px;background:rgba(86, 95, 103,0.2);border-radius:3px;margin-top:-15px;color:#ff7c39;font-family:weathertext2;}spantemp{font-size:0.75em;color:#777;font-family:weathertext2;}
-.darkskyweekdayhome{postion:absolutue;text-align:center;padding:0;color:#fff;font-family:Arial;font-size:0.7rem;;margin:0;background:0;margin-bottom:12px;}
-.darkskyforecasthome darkskytemphihome{font-size:0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}
-.darkskyforecasthome darkskytemphihome span{font-size::0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}
-.darkskyforecasthome darkskytemplohome{font-size:0.7rem;color:#ff7c39;font-family:Arial;line-height:15px;}
-.darkskyforecasthome darkskytemplohome span{font-size:0.7rem;color:#01a4b5;font-family:Arial}
-
-.darkskyforecasthome darkskytempwindhome{font-size:0.6rem;color:#c5c5c5;font-family:Arial;line-height:10px}
-.darkskyforecasthome darkskytempwindhome span{font-size:0.6rem;color:#c5c5c5;font-family:Arial;line-height:10px; display:block;}
-.darkskyforecasthome darkskytempwindhome span2{font-size:0.7rem;color:#c5c5c5;font-family:Arial;line-height:10px;margin-top:3px}
-.darkskyforecastinghome img{position:relative;margin-top:-5px;margin-bottom:10px;}
-
-.darkskynexthours{line-height:12px}.darkskynexthours span2{line-height:12px}body{line-height:11px}
-grey{color:#c5c5c5}
-blue1{color:#01a4b5;text-transform:capitalize}
-orange1{color:#ff7c39}
-orange{color:#d05f2d}
-green{color:#90b12a}
-yellow{color:#e6a141;}
-red{color:#cd5245}
-purple{color:#b600b0}
-
-a{font-size:10px;color:#c5c5c5;text-decoration:none!important;font-family:arial}.forecastupdated{position:absolute;font-size:10px;color:#c5c5c5;font-family:arial;bottom:25px;float:right;margin-left:575px}	
-.weather34darkbrowser{font-family:Arial, Helvetica, sans-serif;position:relative;background:0;width:103%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}
-.weather34darkbrowser[url]:after{content:attr(url);color:#c5c5c5;font-size:14px;position:absolute;left:0;right:0;top:0;padding:5px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}precip{position:relative;top:2px;padding:2px;border-radius:3px;background:0;font-size:.8em;}
-value{font-size:.85em;font-family:weathertext2}valuer{font-size:.8em;font-family:weathertext2}value1{font-size:1em;font-family:weathertext2}thunder{color:#c0c0c0;font-size:0.85em}
-</style>
-</head>
-<body>
-<div class="weather34darkbrowser" url="<?php echo "${stationName} \n";?> Forecast  (<?php echo $weather["temp_units"]?>&deg;)"></div>
-		<div style="position:absolute;width:725px;background:none;margin:0 auto;margin-left:7%;margin-top:5px;">
-			
-        <br>
-		<script src="js/jquery.js"></script>
-		 <div class="darkskyforecasthome">
-		<div class="darkskydiv"><value>
-		<?php //begin wu stuff 
+	//original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
+	
+//start the wu output
 $json='jsondata/wuforecast.txt';
 $weather34wuurl=file_get_contents($json);
 $parsed_weather34wujson = json_decode($weather34wuurl,false);
 $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 {
+	//weather34 wu null fallback
+	 	 
+	 if ($wuskydayTime = $parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[0]==null){
+	 $wuskydayIcon=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[1];	 
+	 $wuskydayTime = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[1];	
+	 $wuskydayTempHigh = $parsed_weather34wujson->{'daypart'}[0]->{'temperature'}[1];	
+	 $wuskydayTempLow = $parsed_weather34wujson->{'daypart'}[0]->{'temperatureWindChill'}[1];	 
+	 $wuskydayWindGust = $parsed_weather34wujson->{'daypart'}[0]->{'windSpeed'}[1];
+	 $wuskydayWinddir = $parsed_weather34wujson->{'daypart'}[0]->{'windDirection'}[1];
+	 $wuskydayWinddircardinal = $parsed_weather34wujson->{'daypart'}[0]->{'windDirectionCardinal'}[1];
+	 $wuskydayacumm = $parsed_weather34wujson->{'daypart'}[0]->{'snowRange'}[1];
+	 $wuskydayPrecipType = $parsed_weather34wujson->{'daypart'}[0]->{'precipType'}[1];
+	 $wuskydayprecipIntensity = $parsed_weather34wujson->{'daypart'}[0]->{'qpf'}[1];
+	 $wuskydayPrecipProb = $parsed_weather34wujson->{'daypart'}[0]->{'precipChance'}[1];
+	 $wuskydayUV = $parsed_weather34wujson->{'daypart'}[0]->{'uvIndex'}[1];
+	 $wuskydayUVdesc = $parsed_weather34wujson->{'daypart'}[0]->{'uvDescription'}[1];	
+	 $wuskydaysnow = $parsed_weather34wujson->{'daypart'}[0]->{'qpfSnow'}[1];
+	 $wuskydaysummary = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[1];
+	 $wuskydaynight = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[1];
+	 $wuskydesc = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseShort'}[1];
+	 $wuskythunder = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[1];}
+	
+	
+	
+	
+	
 	//weather34 wu 
 	 $wuskydayIcon=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[1];	 
 	 $wuskydayTime = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[1];	
@@ -234,6 +201,245 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 
 }
 
+	
+	
+	
+	
+	
+?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title><?php echo "${stationName}";?> <?php echo 'Forecast' ;?> </title>
+	<style>
+		@font-face{font-family:system;font-style:normal;src:local(".SFNSText-Light"),local("Arial")}
+		@font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(css/fonts/verbatim-regular.woff2) format("woff2"),url(css/fonts/verbatim-regular.ttf) format("truetype")}
+body{background:rgba(11, 12, 12, 0.4)}		
+.darkskyforecasting{float:left;display:block;margin-right:0;width:43%;border-radius:4px;margin:2px;margin-top:-15px;font-family:Arial;margin-left:5px;height:300px;padding:10px;background-color:rgba(253, 166, 16, 1.000);border:1px solid rgba(153,155,156,0.3);color:#c5c5c5;font-size:12px;color:#c5c5c5;font-family:Arial;line-height:12px}
+
+darkskyweekday{position:absolute;margin:3px;background-color:rgba(253, 166, 16, 1.000);text-align:center;padding:2px;color:#c5c5c5;font-family:Arial;font-size:11px;margin-bottom:10px;border-radius:4px;font-size:12px;color:#c5c5c5;font-family:Arial;line-height:15px}
+darkskytemphi{margin-top:5px;font-size:14px;color:rgba(255,124,57,1);font-family:Arial;margin-left:10%}darkskytemphi span{font-size:14px;color:#c5c5c5}darkskytemplo{margin-top:5px;font-size:12px;color:#00a4b4;font-family:Arial}darkskytemplo span{font-size:12px;color:#c5c5c5;font-family:Arial}darkskysummary{font-size:12px;color:#c5c5c5;font-family:Arial;line-height:11px}darkskywindspeed{font-size:12px;color:#c5c5c5;font-family:Arial;line-height:11px}.darkskywindspeedicon{position:absolute;font-size:10px;color:#c5c5c5;font-family:weathertext2;line-height:11px;margin-top:-50px;margin-left:67px}.darkskywindgust{position:absolute;font-size:10px;color:#c5c5c5;font-family:Arial;line-height:11px;margin-top:-55px;margin-left:97px}
+.darkskydiv{position:relative;width:725px;overflow:hidden!important;height:378px;float:none;margin-left:-5px;margin-top:-5px}
+
+.darkskyforecastinghome{font-size:13px;float:left;display:inline;margin-right:0;width:23.3%;border-radius:3px;margin:3px;margin-top:0;font-family:Arial,system;margin-left:0px;height:175px;padding:3px;padding-top:5px;
+background: rgba(29, 32, 34, 1.000);background: linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34, 0) 11%,rgba(29, 32, 34, 0) 100%,rgba(229, 77, 11, 0) 0%);
+background: -webkit-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34, 0) 11%,rgba(29, 32, 34,0) 100%,rgba(229, 77, 11, 0) 0%);
+background: -moz-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34, 0) 11%,rgba(29, 32, 34, 0) 100%,rgba(229, 77, 11, 0) 0%);
+background: -o-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34,0) 11%,rgba(29, 32, 34, 0) 100%,rgba(229, 77, 11, 0) 0%);
+border:0;color:#c5c5c5;overflow:hidden!important;margin-bottom:5px;border:solid 1px #444;border-bottom:solid 1px #444;border-top:1px solid rgba(97, 106, 114, 1.000);}
+.greydesc{color:#c5c5c5;margin-left:0px;margin-top:-10px;position:absolute;font-size:0.85em}
+.none{float:none;margin-top:10px;position:absolute}
+.valuehi{font-size:1.25em;padding:5px;background:rgba(86, 95, 103,0.2);border-radius:3px;margin-top:-15px;color:#ff7c39;font-family:weathertext2;}spantemp{font-size:0.75em;color:#777;font-family:weathertext2;}
+.darkskyweekdayhome{postion:absolutue;text-align:center;padding:0;color:#fff;font-family:Arial;font-size:0.7rem;;margin:0;background:0;margin-bottom:12px;}
+.darkskyforecasthome darkskytemphihome{font-size:0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}
+.darkskyforecasthome darkskytemphihome span{font-size::0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}
+.darkskyforecasthome darkskytemplohome{font-size:0.65rem;color:#ff7c39;font-family:Arial;line-height:15px;}
+.darkskyforecasthome darkskytemplohome span{font-size:0.65rem;color:#01a4b5;font-family:Arial}
+
+.darkskyforecasthome darkskytempwindhome{font-size:0.6rem;color:#c5c5c5;font-family:Arial;line-height:10px}
+.darkskyforecasthome darkskytempwindhome span{font-size:0.6rem;color:#c5c5c5;font-family:Arial;line-height:10px; display:block;}
+.darkskyforecasthome darkskytempwindhome span2{font-size:0.7rem;color:#c5c5c5;font-family:Arial;line-height:10px;margin-top:3px}
+.darkskyforecastinghome img{position:relative;margin-top:-5px;margin-bottom:10px;}
+
+.darkskynexthours{line-height:12px}.darkskynexthours span2{line-height:12px}body{line-height:11px}
+grey{color:#c5c5c5}
+blue1{color:#01a4b5;text-transform:capitalize}
+orange1{color:#ff7c39}
+orange{color:#d05f2d}
+green{color:#90b12a}
+yellow{color:#e6a141;}
+red{color:#cd5245}
+purple{color:#b600b0}
+img{padding-top:3px;}
+
+a{font-size:10px;color:#c5c5c5;text-decoration:none!important;font-family:arial}.forecastupdated{position:absolute;font-size:10px;color:#c5c5c5;font-family:arial;bottom:25px;float:right;margin-left:575px}	
+.weather34darkbrowser{font-family:Arial, Helvetica, sans-serif;position:relative;background:0;width:103%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}
+.weather34darkbrowser[url]:after{content:attr(url);color:#c5c5c5;font-size:14px;position:absolute;left:0;right:0;top:0;padding:5px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}precip{position:relative;top:2px;padding:2px;border-radius:3px;background:0;font-size:.8em;}
+value{font-size:.85em;font-family:weathertext2}valuer{font-size:.8em;font-family:weathertext2}value1{font-size:1em;font-family:weathertext2}thunder{color:#c0c0c0;font-size:0.85em}
+</style>
+</head>
+<body>
+<div class="weather34darkbrowser" url="<?php echo "${stationName} \n";?> Forecast  (<?php echo $weather["temp_units"]?>&deg;)"></div>
+		<div style="position:absolute;width:725px;background:none;margin:0 auto;margin-left:7%;margin-top:5px;">
+			
+        <br>
+		<script src="js/jquery.js"></script>
+		 <div class="darkskyforecasthome">
+		<div class="darkskydiv"><value>
+		<?php //begin wu stuff 
+
+//wu convert temps-rain-wind
+//metric to F
+if ($tempunit=='F' && $wuapiunit=='m' ){
+$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='m' ){
+$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='m' ){
+$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='m' ){
+$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='m' ){
+$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='m' ){
+$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='m' ){
+$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='m' ){
+$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}
+
+
+
+// metric to F UK
+if ($tempunit=='F' && $wuapiunit=='h' ){
+$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='h' ){
+$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='h' ){
+$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='h' ){
+$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='h' ){
+$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='h' ){
+$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='h' ){
+$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='h' ){
+$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}
+
+
+
+
+// ms non metric to c Scandinavia 
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
+$wuskydayTempHigh=($wuskydayTempHigh-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
+$wuskydayTempHigh1=($wuskydayTempHigh1-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
+$wuskydayTempHigh2=($wuskydayTempHigh2-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
+$wuskydayTempHigh3=($wuskydayTempHigh3-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
+$wuskydayTempHigh4=($wuskydayTempHigh4-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
+$wuskydayTempHigh5=($wuskydayTempHigh5-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
+$wuskydayTempHigh6=($wuskydayTempHigh6-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
+$wuskydayTempHigh7=($wuskydayTempHigh7-32)/1.8;}
+
+
+
+
+// ms non metric to c UK
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
+$wuskydayTempHigh=($wuskydayTempHigh-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
+$wuskydayTempHigh1=($wuskydayTempHigh1-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
+$wuskydayTempHigh2=($wuskydayTempHigh2-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
+$wuskydayTempHigh3=($wuskydayTempHigh3-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
+$wuskydayTempHigh4=($wuskydayTempHigh4-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
+$wuskydayTempHigh5=($wuskydayTempHigh5-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
+$wuskydayTempHigh6=($wuskydayTempHigh6-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
+$wuskydayTempHigh7=($wuskydayTempHigh7-32)/1.8;}
+
+
+
+// non metric to c US
+if ($tempunit=='C' && $wuapiunit=='e' ){
+$wuskydayTempHigh=($wuskydayTempHigh-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='e' ){
+$wuskydayTempHigh1=($wuskydayTempHigh1-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='e' ){
+$wuskydayTempHigh2=($wuskydayTempHigh2-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='e' ){
+$wuskydayTempHigh3=($wuskydayTempHigh3-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='e' ){
+$wuskydayTempHigh4=($wuskydayTempHigh4-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='e' ){
+$wuskydayTempHigh5=($wuskydayTempHigh5-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='e' ){
+$wuskydayTempHigh6=($wuskydayTempHigh6-32)/1.8;}
+if ($tempunit=='C' && $wuapiunit=='e' ){
+$wuskydayTempHigh7=($wuskydayTempHigh7-32)/1.8;}
+
+
+//rain inches to mm
+if ($rainunit=='mm' && $wuapiunit=='e' ){
+$wuskydayprecipIntensity=$wuskydayprecipIntensity*25.4;}
+if ($rainunit=='mm' && $wuapiunit=='e' ){
+$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*25.4;}
+if ($rainunit=='mm' && $wuapiunit=='e' ){
+$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*25.4;}
+if ($rainunit=='mm' && $wuapiunit=='e' ){
+$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*25.4;}
+if ($rainunit=='mm' && $wuapiunit=='e' ){
+$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*25.4;}
+if ($rainunit=='mm' && $wuapiunit=='e' ){
+$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*25.4;}
+if ($rainunit=='mm' && $wuapiunit=='e' ){
+$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*25.4;}
+if ($rainunit=='mm' && $wuapiunit=='e' ){
+$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*25.4;}
+//rain mm to inches scandinavia
+if ($rainunit=='in' && $wuapiunit=='s' ){
+$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='s' ){
+$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='s' ){
+$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='s' ){
+$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='s' ){
+$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='s' ){
+$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='s' ){
+$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='s' ){
+$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
+//rain mm to inches uk
+if ($rainunit=='in' && $wuapiunit=='h' ){
+$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='h' ){
+$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='h' ){
+$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='h' ){
+$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='h' ){
+$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='h' ){
+$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='h' ){
+$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='h' ){
+$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
+//rain mm to inches metric
+if ($rainunit=='in' && $wuapiunit=='m' ){
+$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='m' ){
+$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='m' ){
+$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='m' ){
+$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='m' ){
+$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='m' ){
+$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='m' ){
+$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}
+if ($rainunit=='in' && $wuapiunit=='m' ){
+$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 
 
 // weather34 lets make it look pretty 
@@ -255,14 +461,14 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  </value></darkskytemplohome>';   
 				  //temp				  
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh<45){echo "<div class=valuehi><blue1>".$wuskydayTempHigh;}
-				  else if($tempunit=='F' && $wuskydayTempHigh>64){echo "<div class=valuehi>".$wuskydayTempHigh;}
-				  else if($tempunit=='F' && $wuskydayTempHigh>55){echo "<div class=valuehi><yellow>".$wuskydayTempHigh;}
-				  else if($tempunit=='F' && $wuskydayTempHigh>45){echo "<div class=valuehi><green>".$wuskydayTempHigh;}
-				  else if($wuskydayTempHigh<=7){echo "<div class=valuehi><blue1>".$wuskydayTempHigh;}
-				  else if($wuskydayTempHigh>18){echo "<div class=valuehi>".$wuskydayTempHigh;}
-				  else if($wuskydayTempHigh>12.5){echo "<div class=valuehi><yellow>".$wuskydayTempHigh;}				  
-				  else if($wuskydayTempHigh>7){echo "<div class=valuehi><green>".$wuskydayTempHigh;}
+				  if($tempunit=='F' && $wuskydayTempHigh<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh>45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh,1);}
+				  else if($wuskydayTempHigh<=7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh,1);}
+				  else if($wuskydayTempHigh>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh,1);}
+				  else if($wuskydayTempHigh>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh,1);}				  
+				  else if($wuskydayTempHigh>7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh,1);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary.' </darkskywindhome></span>';		
@@ -295,14 +501,14 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  </value></darkskytemplohome>';  
 				  //temp
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh1<45){echo "<div class=valuehi><blue1>".$wuskydayTempHigh1;}
-				  else if($tempunit=='F' && $wuskydayTempHigh1>64){echo "<div class=valuehi>".$wuskydayTempHigh1;}
-				  else if($tempunit=='F' && $wuskydayTempHigh1>55){echo "<div class=valuehi><yellow>".$wuskydayTempHigh1;}
-				  else if($tempunit=='F' && $wuskydayTempHigh1>45){echo "<div class=valuehi><green>".$wuskydayTempHigh1;}
-				  else if($wuskydayTempHigh1<=7){echo "<div class=valuehi><blue1>".$wuskydayTempHigh1;}
-				  else if($wuskydayTempHigh1>18){echo "<div class=valuehi>".$wuskydayTempHigh1;}
-				  else if($wuskydayTempHigh1>12.5){echo "<div class=valuehi><yellow>".$wuskydayTempHigh1;}				  
-				  else if($wuskydayTempHigh1>7){echo "<div class=valuehi><green>".$wuskydayTempHigh1;}
+				  if($tempunit=='F' && $wuskydayTempHigh1<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh1,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh1>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh1,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh1>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh1,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh1>45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh1,1);}
+				  else if($wuskydayTempHigh1<=7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh1,1);}
+				  else if($wuskydayTempHigh1>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh1,1);}
+				  else if($wuskydayTempHigh1>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh1,1);}			  
+				  else if($wuskydayTempHigh1>7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh1,1);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary1.' </span></darkskytempwindhome>'; 
@@ -336,14 +542,14 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  </value></darkskytemplohome>';  
 				  //temp				  
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh2<45){echo "<div class=valuehi><blue1>".$wuskydayTempHigh2;}
-				  else if($tempunit=='F' && $wuskydayTempHigh2>64){echo "<div class=valuehi>".$wuskydayTempHigh2;}
-				  else if($tempunit=='F' && $wuskydayTempHigh2>55){echo "<div class=valuehi><yellow>".$wuskydayTempHigh2;}
-				  else if($tempunit=='F' && $wuskydayTempHigh2>45){echo "<div class=valuehi><green>".$wuskydayTempHigh2;}
-				  else if($wuskydayTempHigh2<=7){echo "<div class=valuehi><blue1>".$wuskydayTempHigh2;}
-				  else if($wuskydayTempHigh2>18){echo "<div class=valuehi>".$wuskydayTempHigh2;}
-				  else if($wuskydayTempHigh2>12.5){echo "<div class=valuehi><yellow>".$wuskydayTempHigh2;}				  
-				  else if($wuskydayTempHigh2>7){echo "<div class=valuehi><green>".$wuskydayTempHigh2;}
+				  if($tempunit=='F' && $wuskydayTempHigh2<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh2,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh2>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh2,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh2>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh2,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh2>45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh2,1);}
+				  else if($wuskydayTempHigh2<=7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh2,1);}
+				  else if($wuskydayTempHigh2>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh2,1);}
+				  else if($wuskydayTempHigh2>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh2,1);}				  
+				  else if($wuskydayTempHigh2>7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh2,1);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary2.' </span></darkskytempwindhome>';
@@ -376,14 +582,14 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  </value></darkskytemplohome>';  
 				  //temp				  
 				 echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh3<45){echo "<div class=valuehi><blue1>".$wuskydayTempHigh3;}
-				  else if($tempunit=='F' && $wuskydayTempHigh3>64){echo "<div class=valuehi>".$wuskydayTempHigh3;}
-				  else if($tempunit=='F' && $wuskydayTempHigh3>55){echo "<div class=valuehi><yellow>".$wuskydayTempHigh3;}
-				  else if($tempunit=='F' && $wuskydayTempHigh3>45){echo "<div class=valuehi><green>".$wuskydayTempHigh3;}
-				  else if($wuskydayTempHigh3<=7){echo "<div class=valuehi><blue1>".$wuskydayTempHigh3;}
-				  else if($wuskydayTempHigh3>18){echo "<div class=valuehi>".$wuskydayTempHigh3;}
-				  else if($wuskydayTempHigh3>12.5){echo "<div class=valuehi><yellow>".$wuskydayTempHigh3;}				  
-				  else if($wuskydayTempHigh3>7){echo "<div class=valuehi><green>".$wuskydayTempHigh3;}
+				  if($tempunit=='F' && $wuskydayTempHigh3<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh3,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh3>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh3,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh3>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh3,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh3>45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh3,1);}
+				  else if($wuskydayTempHigh3<=7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh3,1);}
+				  else if($wuskydayTempHigh3>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh3,1);}
+				  else if($wuskydayTempHigh3>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh3,1);}				  
+				  else if($wuskydayTempHigh3>7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh3,1);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary3.' </span></darkskytempwindhome>';
@@ -416,14 +622,14 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  </value></darkskytemplohome>';  		  
 				  //temp
 				 echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh4<45){echo "<div class=valuehi><blue1>".$wuskydayTempHigh4;}
-				  else if($tempunit=='F' && $wuskydayTempHigh4>64){echo "<div class=valuehi>".$wuskydayTempHigh4;}
-				  else if($tempunit=='F' && $wuskydayTempHigh4>55){echo "<div class=valuehi><yellow>".$wuskydayTempHigh4;}
-				  else if($tempunit=='F' && $wuskydayTempHigh4>45){echo "<div class=valuehi><green>".$wuskydayTempHigh4;}
-				  else if($wuskydayTempHigh4<=7){echo "<div class=valuehi><blue1>".$wuskydayTempHigh4;}
-				  else if($wuskydayTempHigh4>18){echo "<div class=valuehi>".$wuskydayTempHigh4;}
-				  else if($wuskydayTempHigh4>12.5){echo "<div class=valuehi><yellow>".$wuskydayTempHigh4;}				  
-				  else if($wuskydayTempHigh4>7){echo "<div class=valuehi><green>".$wuskydayTempHigh4;}
+				  if($tempunit=='F' && $wuskydayTempHigh4<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh4,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh4>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh4,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh4>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh4,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh4>45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh4,1);}
+				  else if($wuskydayTempHigh4<=7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh4,1);}
+				  else if($wuskydayTempHigh4>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh4,1);}
+				  else if($wuskydayTempHigh4>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh4,1);}				  
+				  else if($wuskydayTempHigh4>7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh4,1);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary4.' </darkskywindhome></span>';
@@ -457,14 +663,14 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  </value></darkskytemplohome>';  
 				  //temp				  
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh5<45){echo "<div class=valuehi><blue1>".$wuskydayTempHigh5;}
-				  else if($tempunit=='F' && $wuskydayTempHigh5>64){echo "<div class=valuehi>".$wuskydayTempHigh5;}
-				  else if($tempunit=='F' && $wuskydayTempHigh5>55){echo "<div class=valuehi><yellow>".$wuskydayTempHigh5;}
-				  else if($tempunit=='F' && $wuskydayTempHigh5>45){echo "<div class=valuehi><green>".$wuskydayTempHigh5;}
-				  else if($wuskydayTempHigh5<=7){echo "<div class=valuehi><blue1>".$wuskydayTempHigh5;}
-				  else if($wuskydayTempHigh5>18){echo "<div class=valuehi>".$wuskydayTempHigh5;}
-				  else if($wuskydayTempHigh5>12.5){echo "<div class=valuehi><yellow>".$wuskydayTempHigh5;}				  
-				  else if($wuskydayTempHigh5>7){echo "<div class=valuehi><green>".$wuskydayTempHigh5;}
+				  if($tempunit=='F' && $wuskydayTempHigh5<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh5,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh5>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh5,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh5>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh5,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh5>45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh5,1);}
+				  else if($wuskydayTempHigh5<=7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh5,1);}
+				  else if($wuskydayTempHigh5>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh5,1);}
+				  else if($wuskydayTempHigh5>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh5,1);}				  
+				  else if($wuskydayTempHigh5>7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh5,1);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary5.' </darkskywindhome></span>';
@@ -497,14 +703,14 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				 
 				  //temp
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh6<45){echo "<div class=valuehi><blue1>".$wuskydayTempHigh6;}
-				  else if($tempunit=='F' && $wuskydayTempHigh6>64){echo "<div class=valuehi>".$wuskydayTempHigh6;}
-				  else if($tempunit=='F' && $wuskydayTempHigh6>55){echo "<div class=valuehi><yellow>".$wuskydayTempHigh6;}
-				  else if($tempunit=='F' && $wuskydayTempHigh6>45){echo "<div class=valuehi><green>".$wuskydayTempHigh6;}
-				  else if($wuskydayTempHigh6<=7){echo "<div class=valuehi><blue1>".$wuskydayTempHigh6;}
-				  else if($wuskydayTempHigh6>18){echo "<div class=valuehi>".$wuskydayTempHigh6;}
-				  else if($wuskydayTempHigh6>12.5){echo "<div class=valuehi><yellow>".$wuskydayTempHigh6;}				  
-				  else if($wuskydayTempHigh6>7){echo "<div class=valuehi><green>".$wuskydayTempHigh6;}
+				  if($tempunit=='F' && $wuskydayTempHigh6<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh6,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh6>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh6,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh6>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh6,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh6>45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh6,1);}
+				  else if($wuskydayTempHigh6<=7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh6,1);}
+				  else if($wuskydayTempHigh6>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh6,1);}
+				  else if($wuskydayTempHigh6>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh6,1);}				  
+				  else if($wuskydayTempHigh6>7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh6,1);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
 				  //text summary  
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary6.' </darkskywindhome></span>';
@@ -535,14 +741,14 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 				  </value></darkskytemplohome>';  	  
 				 //temp
 				  echo "<div class='darkskywindgust'>"; 				  
-				  if($tempunit=='F' && $wuskydayTempHigh7<45){echo "<div class=valuehi><blue1>".$wuskydayTempHigh7;}
-				  else if($tempunit=='F' && $wuskydayTempHigh7>64){echo "<div class=valuehi>".$wuskydayTempHigh7;}
-				  else if($tempunit=='F' && $wuskydayTempHigh7>55){echo "<div class=valuehi><yellow>".$wuskydayTempHigh7;}
-				  else if($tempunit=='F' && $wuskydayTempHigh7>45){echo "<div class=valuehi><green>".$wuskydayTempHigh7;}
-				  else if($wuskydayTempHigh7<=7){echo "<div class=valuehi><blue1>".$wuskydayTempHigh7;}
-				  else if($wuskydayTempHigh7>18){echo "<div class=valuehi>".$wuskydayTempHigh7;}
-				  else if($wuskydayTempHigh7>12.5){echo "<div class=valuehi><yellow>".$wuskydayTempHigh7;}				  
-				  else if($wuskydayTempHigh7>7){echo "<div class=valuehi><green>".$wuskydayTempHigh7;}
+				  if($tempunit=='F' && $wuskydayTempHigh7<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh7,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh7>64){echo "<div class=valuehi>".number_format($wuskydayTempHigh7,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh7>55){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh7,1);}
+				  else if($tempunit=='F' && $wuskydayTempHigh7>45){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh7,1);}
+				  else if($wuskydayTempHigh7<=7){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh7,1);}
+				  else if($wuskydayTempHigh7>18){echo "<div class=valuehi>".number_format($wuskydayTempHigh7,1);}
+				  else if($wuskydayTempHigh7>12.5){echo "<div class=valuehi><yellow>".number_format($wuskydayTempHigh7,1);}				  
+				  else if($wuskydayTempHigh7>7){echo "<div class=valuehi><green>".number_format($wuskydayTempHigh7,1);}
 				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";		  
 				  //text summary
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary7.' </darkskywindhome></span>';
