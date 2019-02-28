@@ -309,47 +309,24 @@ $wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}
 if ($tempunit=='F' && $wuapiunit=='h' ){
 $wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}
 
+// ms non metric Scandinavia 
+if ($tempunit=='F' && $wuapiunit=='s'){
+$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='s' ){
+$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='s' ){
+$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='s' ){
+$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='s' ){
+$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='s' ){
+$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='s' ){
+$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}
+if ($tempunit=='F' && $wuapiunit=='s' ){
+$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}
 
-
-
-// ms non metric to c Scandinavia 
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
-$wuskydayTempHigh=($wuskydayTempHigh-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
-$wuskydayTempHigh1=($wuskydayTempHigh1-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
-$wuskydayTempHigh2=($wuskydayTempHigh2-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
-$wuskydayTempHigh3=($wuskydayTempHigh3-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
-$wuskydayTempHigh4=($wuskydayTempHigh4-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
-$wuskydayTempHigh5=($wuskydayTempHigh5-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
-$wuskydayTempHigh6=($wuskydayTempHigh6-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='m/s'){
-$wuskydayTempHigh7=($wuskydayTempHigh7-32)/1.8;}
-
-
-
-
-// ms non metric to c UK
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
-$wuskydayTempHigh=($wuskydayTempHigh-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
-$wuskydayTempHigh1=($wuskydayTempHigh1-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
-$wuskydayTempHigh2=($wuskydayTempHigh2-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
-$wuskydayTempHigh3=($wuskydayTempHigh3-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
-$wuskydayTempHigh4=($wuskydayTempHigh4-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
-$wuskydayTempHigh5=($wuskydayTempHigh5-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
-$wuskydayTempHigh6=($wuskydayTempHigh6-32)/1.8;}
-if ($tempunit=='C' && $wuapiunit=='s' && $windunit=='mph'){
-$wuskydayTempHigh7=($wuskydayTempHigh7-32)/1.8;}
 
 
 
