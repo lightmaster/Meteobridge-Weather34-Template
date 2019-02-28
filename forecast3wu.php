@@ -49,7 +49,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 $wuskydaysummary = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[1];
 	 $wuskydaynight = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[1];
 	 $wuskydesc = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[1];
-	 $wuskythunder = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[1];
+	 $wuskythunder = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[1];
 	 
 	 //weather34 wu 1st
 	 $wuskydayIcon1=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[2];	 
@@ -69,7 +69,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 $wuskydaysummary1 = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[2];
 	 $wuskydaynight1 = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[2];
 	 $wuskydesc1 = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[2];
-	 $wuskythunder1 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[2];
+	 $wuskythunder1 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[2];
 	 
 	 //weather34 wu 2nd
 	 $wuskydayIcon2=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[3];	 
@@ -89,7 +89,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 $wuskydaysummary2 = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[3];
 	 $wuskydaynight2 = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[3]; 
 	 $wuskydesc2 = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[3];
-	 $wuskythunder2 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[3];	 
+	 $wuskythunder2 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[3];	 
 	
 	 //weather34 wu 3rd
 	 $wuskydayIcon3=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[4];	 
@@ -109,7 +109,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 $wuskydaysummary3 = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[4];
 	 $wuskydaynight3 = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[4];	
 	 $wuskydesc3 = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[4]; 
-	 $wuskythunder3 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[4];	
+	 $wuskythunder3 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[4];	
 	  //weather34 wu 4th
 	 $wuskydayIcon4=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[5];	 
 	 $wuskydayTime4 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[5];	
@@ -128,7 +128,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 $wuskydaysummary4 = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[5];
 	 $wuskydaynight4 = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[5];
 	 $wuskydesc4 = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[5];
-	 $wuskythunder4 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[5];
+	 $wuskythunder4 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[5];
 	  //weather34 wu 5th
 	 $wuskydayIcon5=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[6];	 
 	 $wuskydayTime5 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[6];	
@@ -147,7 +147,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 $wuskydaysummary5 = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[6];
 	 $wuskydaynight5 = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[6];	
 	 $wuskydesc5 = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[6]; 
-	 $wuskythunder5 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[6];
+	 $wuskythunder5 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[6];
 	  //weather34 wu 6th
 	 $wuskydayIcon6=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[7];	 
 	 $wuskydayTime6 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[7];	
@@ -166,7 +166,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 $wuskydaysummary6 = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[7];
 	 $wuskydaynight6 = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[7];
 	 $wuskydesc6 = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[7];
-	 $wuskythunder6 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[7];
+	 $wuskythunder6 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[7];
 	  //weather34 wu 7th
 	 $wuskydayIcon7=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[8];	 
 	 $wuskydayTime7 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[8];	
@@ -185,7 +185,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 	 $wuskydaysummary7 = $parsed_weather34wujson->{'daypart'}[0]->{'narrative'}[8];	 
 	 $wuskydaynight7 = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[8];
 	 $wuskydesc7 = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[8];
-	 $wuskythunder7 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[8];
+	 $wuskythunder7 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[8];
 	 
 }
 
@@ -336,23 +336,22 @@ $wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
 if ($rainunit=='in' && $wuapiunit=='m' ){
 $wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
 
-
 //icon + day
 echo '<div class="darkskyforecastinghome">';echo '<div class="darkskyweekdayhome">'.$wuskydayTime.'</div>';
 if ($wuskydaynight=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon.'.svg" width="40"></img><br>';}
 if ($wuskydaynight=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon.'.svg" width="40"></img><br>';}	
 echo '<darkskytempdesc><value>'.$wuskydesc.'<value></darkskytempdesc><br>';
 //temp non metric
-if($tempunit=='F' && $wuskydayTempHigh<44){echo '<darkskytemphihome><oblue>'.number_format($wuskydayTempHigh,0).'°</oblue></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh>=75.2){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh,0).'°</redu></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh>=64){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh,0).'°</orangeu></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh>=53){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh,0).'°</yellowu></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh>=44){echo '<darkskytemphihome><greenu>'.number_format($wuskydayTempHigh,0).'°</greenu></darkskytemphihome>';}
+if($tempunit=='F' && $wuskydayTempHigh<45){echo '<darkskytemphihome><oblue>'.number_format($wuskydayTempHigh,0).'°</oblue></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh>80.6){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh,0).'°</redu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh>64){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh,0).'°</orangeu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh>55){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh,0).'°</yellowu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh>=45){echo '<darkskytemphihome><greenu>'.number_format($wuskydayTempHigh,0).'°</greenu></darkskytemphihome>';}
 //temp metric
 else if($wuskydayTempHigh<7){echo '<darkskytemphihome><oblue>'.number_format($wuskydayTempHigh,0).'°</oblue></darkskytemphihome>';}
-else if($wuskydayTempHigh>=24){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh,0).'°</redu></darkskytemphihome>';}
-else if($wuskydayTempHigh>=18){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh,0).'°</orangeu></darkskytemphihome>';}
-else if($wuskydayTempHigh>=12){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh,0).'°</yellowu></darkskytemphihome>';}
+else if($wuskydayTempHigh>27){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh,0).'°</redu></darkskytemphihome>';}
+else if($wuskydayTempHigh>18){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh,0).'°</orangeu></darkskytemphihome>';}
+else if($wuskydayTempHigh>12){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh,0).'°</yellowu></darkskytemphihome>';}
 else if($wuskydayTempHigh>=7){echo '<darkskytemphihome><greenu>'.number_format($wuskydayTempHigh,0).'°</greenu></darkskytemphihome>';}
 //wind
 echo "<div class='darkskywindspeedicon'>";
@@ -382,19 +381,17 @@ echo '<div class="darkskyforecastinghome">';echo '<div class="darkskyweekdayhome
 if ($wuskydaynight1=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon1.'.svg" width="40"></img><br>';}
 if ($wuskydaynight1=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon1.'.svg" width="40"></img><br>';}	
 echo '<darkskytempdesc><value>'.$wuskydesc1.'<value></darkskytempdesc><br>';
-
-
 //temp non metric
 if($tempunit=='F' && $wuskydayTempHigh1<45){echo '<darkskytemphihome><oblue>'.number_format($wuskydayTempHigh1,0).'°</oblue></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh1>=75.2){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh1,0).'°</redu></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh1>=64){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh1,0).'°</orangeu></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh1>=53){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh1,0).'°</yellowu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh1>80.6){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh1,0).'°</redu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh1>64){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh1,0).'°</orangeu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh1>55){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh1,0).'°</yellowu></darkskytemphihome>';}
 else if($tempunit=='F' && $wuskydayTempHigh1>=45){echo '<darkskytemphihome><greenu>'.number_format($wuskydayTempHigh1,0).'°</greenu></darkskytemphihome>';}
 //temp metric
 else if($wuskydayTempHigh1<7){echo '<darkskytemphihome><oblue>'.number_format($wuskydayTempHigh1,0).'°</oblue></darkskytemphihome>';}
-else if($wuskydayTempHigh1>=24){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh1,0).'°</redu></darkskytemphihome>';}
+else if($wuskydayTempHigh1>=27){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh1,0).'°</redu></darkskytemphihome>';}
 else if($wuskydayTempHigh1>=18){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh1,0).'°</orangeu></darkskytemphihome>';}
-else if($wuskydayTempHigh1>=12.5){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh1,0).'°</yellowu></darkskytemphihome>';}
+else if($wuskydayTempHigh1>=12){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh1,0).'°</yellowu></darkskytemphihome>';}
 else if($wuskydayTempHigh1>=7){echo '<darkskytemphihome><greenu>'.number_format($wuskydayTempHigh1,0).'°</greenu></darkskytemphihome>';}
 //wind
 echo "<div class='darkskywindspeedicon'>";echo $wuskydayWinddircardinal1;
@@ -416,21 +413,20 @@ else if ($wuskydayUV1>=0){echo 	"<greenu>".$wuskydayUV1. '</greenu><greyu> '.$wu
 //lightning
 echo '<br><thunder>'.$wuskythunder1;echo '</darkskytemplohome></div>';
 //next period 3
-
 //icon
 echo '<div class="darkskyforecastinghome">';echo '<div class="darkskyweekdayhome">'.$wuskydayTime2.'</div>';
 if ($wuskydaynight2=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon2.'.svg" width="40"></img><br>';}
 if ($wuskydaynight2=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon2.'.svg" width="40"></img><br>';}	
 echo '<darkskytempdesc><value>'.$wuskydesc2.'<value></darkskytempdesc><br>';
 //temp non metric
-if($tempunit=='F' && $wuskydayTempHigh2<44){echo '<darkskytemphihome><oblue>'.number_format($wuskydayTempHigh2,0).'°</oblue></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh2>=75.2){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh2,0).'°</redu></darkskytemphihome>';}
+if($tempunit=='F' && $wuskydayTempHigh2<45){echo '<darkskytemphihome><oblue>'.number_format($wuskydayTempHigh2,0).'°</oblue></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh2>=80.6){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh2,0).'°</redu></darkskytemphihome>';}
 else if($tempunit=='F' && $wuskydayTempHigh2>=64){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh2,0).'°</orangeu></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh2>=53){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh2,0).'°</yellowu></darkskytemphihome>';}
-else if($tempunit=='F' && $wuskydayTempHigh2>=44){echo '<darkskytemphihome><greenu>'.number_format($wuskydayTempHigh2,0).'°</greenu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh2>=55){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh2,0).'°</yellowu></darkskytemphihome>';}
+else if($tempunit=='F' && $wuskydayTempHigh2>=45){echo '<darkskytemphihome><greenu>'.number_format($wuskydayTempHigh2,0).'°</greenu></darkskytemphihome>';}
 //temp metric
 else if($wuskydayTempHigh2<7){echo '<darkskytemphihome><oblue>'.number_format($wuskydayTempHigh2,0).'°</oblue></darkskytemphihome>';}
-else if($wuskydayTempHigh2>=24){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh2,0).'°</redu></darkskytemphihome>';}
+else if($wuskydayTempHigh2>=27){echo '<darkskytemphihome><redu>'.number_format($wuskydayTempHigh2,0).'°</redu></darkskytemphihome>';}
 else if($wuskydayTempHigh2>=18){echo '<darkskytemphihome><orangeu>'.number_format($wuskydayTempHigh2,0).'°</orangeu></darkskytemphihome>';}
 else if($wuskydayTempHigh2>=12){echo '<darkskytemphihome><yellowu>'.number_format($wuskydayTempHigh2,0).'°</yellowu></darkskytemphihome>';}
 else if($wuskydayTempHigh2>=7){echo '<darkskytemphihome><greenu>'.number_format($wuskydayTempHigh2,0).'°</greenu></darkskytemphihome>';}
