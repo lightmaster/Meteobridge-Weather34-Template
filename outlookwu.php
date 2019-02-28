@@ -434,8 +434,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV>2){echo 	"<yellow>".$wuskydayUV. '</yellow><grey> '.$wuskydayUVdesc;}
 				  else if ($wuskydayUV>=0){echo 	"<green>".$wuskydayUV. '</green><grey> '.$wuskydayUVdesc;}				  
 				  echo '</grey><br>				 
-				   '.$lightningalertforecast.' <thunder>'.$wuskythunder.'</thunder></grey>	 				  
-				  </value></darkskytemplohome>';   
+				   '.$lightningalertforecast;
+				   if ($wuskythunder=="No thunder"){ echo ' <thunder>'.$wuskythunder.'</thunder></grey>	 </value></darkskytemplohome>';}
+				   else echo ' <thunder><orange1>'.$wuskythunder.'</orange1></thunder></grey>	 </value></darkskytemplohome>';      
 				  //temp				  
 				  echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh,1);}
@@ -474,8 +475,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV1>2){echo 	"<yellow>".$wuskydayUV1. '</yellow><grey> '.$wuskydayUVdesc1;}
 				  else if ($wuskydayUV1>=0){echo 	"<green>".$wuskydayUV1. '</green><grey> '.$wuskydayUVdesc1;}				  
 				  echo '</grey><br>				 
-				   '.$lightningalertforecast.' <thunder>'.$wuskythunder1.'</thunder></grey>	 				  
-				  </value></darkskytemplohome>';  
+				   '.$lightningalertforecast;
+				   if ($wuskythunder1=="No thunder"){ echo ' <thunder>'.$wuskythunder1.'</thunder></grey>	 </value></darkskytemplohome>';}
+				   else echo ' <thunder><orange1>'.$wuskythunder1.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
 				  //temp
 				  echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh1<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh1,1);}
@@ -514,9 +516,10 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV2>5){echo 	"<orange>".$wuskydayUV2. '</orange><grey> '.$wuskydayUVdesc2;}
 				  else if ($wuskydayUV2>2){echo 	"<yellow>".$wuskydayUV2. '</yellow><grey> '.$wuskydayUVdesc2;}
 				  else if ($wuskydayUV2>=0){echo 	"<green>".$wuskydayUV2. '</green><grey> '.$wuskydayUVdesc2;}				  
-				  echo '</grey><br>				 
-				   '.$lightningalertforecast.' <thunder>'.$wuskythunder2.'</thunder></grey>	 				  
-				  </value></darkskytemplohome>';  
+				 echo '</grey><br>				 
+				   '.$lightningalertforecast;
+				   if ($wuskythunder2=="No thunder"){ echo ' <thunder>'.$wuskythunder2.'</thunder></grey>	 </value></darkskytemplohome>';}
+				   else echo ' <thunder><orange1>'.$wuskythunder2.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    
 				  //temp				  
 				  echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh2<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh2,1);}
@@ -555,8 +558,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV3>1){echo 	"<yellow>".$wuskydayUV3. '</yellow><grey> '.$wuskydayUVdesc3;}
 				  else if ($wuskydayUV3>=0){echo "<green>".$wuskydayUV3. '</green><grey> '.$wuskydayUVdesc3;}				  
 				  echo '</grey><br>				 
-				   '.$lightningalertforecast.' <thunder>'.$wuskythunder3.'</thunder></grey>	 				  
-				  </value></darkskytemplohome>';  
+				   '.$lightningalertforecast;
+				   if ($wuskythunder3=="No thunder"){ echo ' <thunder>'.$wuskythunder3.'</thunder></grey>	 </value></darkskytemplohome>';}
+				   else echo ' <thunder><orange1>'.$wuskythunder3.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
 				  //temp				  
 				 echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh3<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh3,1);}
@@ -595,8 +599,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV4>2){echo 	"<yellow>".$wuskydayUV4. '</yellow><grey> '.$wuskydayUVdesc4;}
 				  else if ($wuskydayUV4>=0){echo 	"<green>".$wuskydayUV4. '</green><grey> '.$wuskydayUVdesc4;}				  
 				  echo '</grey><br>				 
-				   '.$lightningalertforecast.' <thunder>'.$wuskythunder4.'</thunder></grey>	 				  
-				  </value></darkskytemplohome>';  		  
+				   '.$lightningalertforecast;
+				   if ($wuskythunder4=="No thunder"){ echo ' <thunder>'.$wuskythunder4.'</thunder></grey>	 </value></darkskytemplohome>';}
+				   else echo ' <thunder><orange1>'.$wuskythunder4.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    		  
 				  //temp
 				 echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh4<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh4,1);}
@@ -636,8 +641,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV5>2){echo 	"<yellow>".$wuskydayUV5. '</yellow><grey> '.$wuskydayUVdesc5;}
 				  else if ($wuskydayUV5>=0){echo 	"<green>".$wuskydayUV5. '</green><grey> '.$wuskydayUVdesc5;}				  
 				  echo '</grey><br>				 
-				   '.$lightningalertforecast.' <thunder>'.$wuskythunder5.'</thunder></grey>	 				  
-				  </value></darkskytemplohome>';  
+				   '.$lightningalertforecast;
+				   if ($wuskythunder5=="No thunder"){ echo ' <thunder>'.$wuskythunder5.'</thunder></grey>	 </value></darkskytemplohome>';}
+				   else echo ' <thunder><orange1>'.$wuskythunder5.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
 				  //temp				  
 				  echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh5<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh5,1);}
@@ -675,8 +681,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV6>2){echo 	"<yellow>".$wuskydayUV6. '</yellow><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>=0){echo 	"<green>".$wuskydayUV6. '</green><grey> '.$wuskydayUVdesc6;}				  
 				  echo '</grey><br>				 
-				   '.$lightningalertforecast.' <thunder>'.$wuskythunder6.'</thunder></grey>	 				  
-				  </value></darkskytemplohome>';  			  
+				   '.$lightningalertforecast;
+				   if ($wuskythunder6=="No thunder"){ echo ' <thunder>'.$wuskythunder6.'</thunder></grey>	 </value></darkskytemplohome>';}
+				   else echo ' <thunder><orange1>'.$wuskythunder6.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   		  
 				 
 				  //temp
 				  echo "<div class='darkskywindgust'>"; 				  
@@ -714,8 +721,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV7>2){echo 	"<yellow>".$wuskydayUV7. '</yellow><grey> '.$wuskydayUVdesc7;}
 				  else if ($wuskydayUV7>=0){echo 	"<green>".$wuskydayUV7. '</green><grey> '.$wuskydayUVdesc7;}				  
 				  echo '</grey><br>				 
-				   '.$lightningalertforecast.' <thunder>'.$wuskythunder7.'</thunder></grey>	 				  
-				  </value></darkskytemplohome>';  	  
+				   '.$lightningalertforecast;
+				   if ($wuskythunder7=="No thunder"){ echo ' <thunder>'.$wuskythunder7.'</thunder></grey>	 </value></darkskytemplohome>';}
+				   else echo ' <thunder><orange1>'.$wuskythunder7.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    	  
 				 //temp
 				  echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh7<45){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh7,1);}
