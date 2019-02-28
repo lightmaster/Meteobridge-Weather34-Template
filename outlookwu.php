@@ -453,9 +453,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  if ( $wuskydayacumm>0){echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Snow <blue1>&nbsp;'.$wuskydayacumm.'</blue1><value> cm     			  </darkskywindhome><br></span2></precip>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType='rain' && $rainunit=='in'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;        		  <blue1>'.$wuskydayPrecipProb.'</blue1>%</darkskywindhome></span2></precip>';} 				  
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;        		  <blue1>'.$wuskydayPrecipProb.'</blue1>%</darkskywindhome></span2></precip>';} 				  
 				  else if ($wuskydayPrecipType='rain'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;       			  <blue1>'.$wuskydayPrecipProb.'</blue1>%</darkskywindhome></span2></precip><br>';}  
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;       			  <blue1>'.$wuskydayPrecipProb.'</blue1>%</darkskywindhome></span2></precip><br>';}  
 				  echo  '</div>';				  
 				                      
                   //period1
@@ -494,9 +494,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Snow <blue1>&nbsp;'.$wuskydayacumm1.'</blue1><value> cm</darkskywindhome><br>		 				  </span2></precip>';} 
 				  //rain
 				  else if ($wuskydayPrecipType1='rain' && $rainunit=='in'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity1.'</blue1><value>&nbsp;'.$rainunit.'&nbsp; 		  				  <blue1>'.$wuskydayPrecipProb1.'</blue1>%</darkskywindhome></span2></precip>';} 				 
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity1,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp; 		  				  <blue1>'.$wuskydayPrecipProb1.'</blue1>%</darkskywindhome></span2></precip>';} 				 
 				  else if ($wuskydayPrecipType1='rain'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity1.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;									 				  <blue1>'.$wuskydayPrecipProb1.'</blue1>%</darkskywindhome></span2></precip><br>';}  				   
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity1,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;									 				  <blue1>'.$wuskydayPrecipProb1.'</blue1>%</darkskywindhome></span2></precip><br>';}  				   
 				  echo  '</div>';
 				  
 				   
@@ -535,7 +535,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Snow <blue1>&nbsp;'.$wuskydayacumm2.'</blue1><value> cm</darkskywindhome><br>		 			      </span2></precip>';}  
 				  //rain
 				  else if ($wuskydayPrecipType2='rain' && $rainunit=='in'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity2.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;       			  <blue1>'.$wuskydayPrecipProb2.'</blue1>%</darkskywindhome></span2></precip>';} 				  
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity2,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;       			  <blue1>'.$wuskydayPrecipProb2.'</blue1>%</darkskywindhome></span2></precip>';} 				  
 				  else if ($wuskydayPrecipType2='rain'){
 				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity2.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;       	          <blue1>'.$wuskydayPrecipProb2.'</blue1>%</darkskywindhome></span2></precip><br>';}  
 				  echo  '</div>';		  
@@ -577,7 +577,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayPrecipType3='rain' && $rainunit=='in'){
 				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'.$wuskydayprecipIntensity3.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;     					 				  <blue1>'.$wuskydayPrecipProb3.'</blue1>%</darkskywindhome></span2></precip>';} 	
 				  else if ($wuskydayPrecipType3='rain'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity3.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;      			  <blue1>'.$wuskydayPrecipProb3.'</blue1>%</darkskywindhome></span2></precip><br>';} 				   
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity3,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;      			  <blue1>'.$wuskydayPrecipProb3.'</blue1>%</darkskywindhome></span2></precip><br>';} 				   
 				  echo  '</div>';
 				  
                   //period4
@@ -615,9 +615,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Snow <blue1>&nbsp;'. $wuskydaysnow4.'</blue1><value> cm</darkskywindhome><br>      			  </span2></precip>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType4='rain' && $rainunit=='in'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity4.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;					      			  <blue1>'.$wuskydayPrecipProb4.'</blue1>%</darkskywindhome></span2></precip>';}
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity4,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;					      			  <blue1>'.$wuskydayPrecipProb4.'</blue1>%</darkskywindhome></span2></precip>';}
 				  else if ($wuskydayPrecipType4='rain'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity4.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;      			  <blue1>'.$wuskydayPrecipProb4.'</blue1>%</darkskywindhome></span2></precip><br>';}  
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity4,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;      			  <blue1>'.$wuskydayPrecipProb4.'</blue1>%</darkskywindhome></span2></precip><br>';}  
 				  echo  '</div>';
 				  			     
                   //period5
@@ -655,9 +655,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Snow <blue1>&nbsp;'.$wuskydayacumm5.'</blue1><value> cm</darkskywindhome><br>					   				  </span></precip>';}  
 				  //rain
 				  else if ($wuskydayPrecipType5='rain' && $rainunit=='in'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity5.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;				   				  <blue1>'.$wuskydayPrecipProb5.'</blue1>%</darkskywindhome></span2></precip>';} 				  
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity7,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;				   				  <blue1>'.$wuskydayPrecipProb5.'</blue1>%</darkskywindhome></span2></precip>';} 				  
 				  else if ($wuskydayPrecipType5='rain'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity5.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;     			 				  <blue1>'.$wuskydayPrecipProb5.'</blue1>%</darkskywindhome></span></precip>';}
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity5,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;     			 				  <blue1>'.$wuskydayPrecipProb5.'</blue1>%</darkskywindhome></span></precip>';}
 				  echo  '</div>';
 				  
                   //period6
@@ -695,9 +695,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  if ( $wuskydayacumm6>0){echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Snow <blue1>&nbsp;'.$wuskydayacumm6.'</blue1><value> cm			   				  </darkskywindhome>2</span></precip>';}  
 				  //rain
 				  else if ($wuskydayPrecipType6='rain' && $rainunit=='in'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity6.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;			   				  <blue1>'.$wuskydayPrecipProb6.'</blue1>%</darkskywindhome></span2></precip>';}				  
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity6,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;			   				  <blue1>'.$wuskydayPrecipProb6.'</blue1>%</darkskywindhome></span2></precip>';}				  
 				  else if ($wuskydayPrecipType6='rain'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity6.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;     					  				  <blue1>'.$wuskydayPrecipProb6.'</blue1>%</darkskywindhome></span></precip>';}echo  '</div>';
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity6,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;     					  				  <blue1>'.$wuskydayPrecipProb6.'</blue1>%</darkskywindhome></span></precip>';}echo  '</div>';
 				  
                   //period7
                   echo '<div class="darkskyforecastinghome"><value>';  
@@ -734,9 +734,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<precip><value>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Snow <blue1>&nbsp;'.$wuskydayacumm7.'</blue1><value> cm</darkskywindhome></span2>				 			 	  </precip>';} 
 				  //rain
 				  else if ($wuskydayPrecipType7='rain' && $rainunit=='in'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'.$wuskydayprecipIntensity7.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;				     			  <blue1>'.$wuskydayPrecipProb7.'</blue1>%</darkskywindhome></span2></precip>';} 				  
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'.number_format($wuskydayprecipIntensity7,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;				     			  <blue1>'.$wuskydayPrecipProb7.'</blue1>%</darkskywindhome></span2></precip>';} 				  
 				  else if ($wuskydayPrecipType7='rain'){
-				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. $wuskydayprecipIntensity7.'</blue1><value>&nbsp;'.$rainunit.'&nbsp;  				 				  <blue1>'.$wuskydayPrecipProb7.'</blue1>%</darkskywindhome></span2></precip>';}  
+				  echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><value><span2><valuer>Rain <blue1>&nbsp;'. number_format($wuskydayprecipIntensity7,2).'</blue1><value>&nbsp;'.$rainunit.'&nbsp;  				 				  <blue1>'.$wuskydayPrecipProb7.'</blue1>%</darkskywindhome></span2></precip>';}  
 				  echo  '</div>';	
 				  //end weather34 wu forecast
 				  ?></div></div></div>                   
