@@ -44,6 +44,7 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
 <meta name="theme-color" content="#ffffff">
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="favicon.ico" rel="icon" type="image/x-icon">
+<link rel="preload" href="css/fonts/verbatim-regular.woff" as="font" type="font/woff" crossorigin>
 <link href="css/main.<?php echo $theme;?>.css?version=<?php echo filemtime('css/main.'.$theme.'.css');?>" rel="stylesheet prefetch">
 </head>
 <body>

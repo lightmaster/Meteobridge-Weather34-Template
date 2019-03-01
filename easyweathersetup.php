@@ -5,6 +5,7 @@ include('settings1.php');
  // DEVELOPED BY BRIAN UNDERDOWN //
  // RELEASED NOVEMBER 2016 //
  // Meteobridge //
+ //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
 
 IF (ISSET($_POST["Submit"])) {
  
@@ -1295,7 +1296,7 @@ your nearly there :-) keep going<br><br>
     <path d="M30 12 L16 24 2 12" />
 </svg>   
         <label name="position6title"></label>
-       <input name="position6title" type="text" id="position6title" value="<?php echo $position6title ;?>" class="choose"> 
+       <input name="position6title" type="text" id="position6title" value="<?php echo $position6title;?>" class="choose"> 
            
             
         </select>
@@ -1325,6 +1326,7 @@ your nearly there :-) keep going<br><br>
             <option>moonphase.php</option>  
             <option>weather34uvsolar.php</option>  
             <option>solaruvds.php</option> 
+            <option>solaruvwu.php</option>
             <option>eq.php</option>    
                      </select>
                
@@ -1359,7 +1361,8 @@ your nearly there :-) keep going<br><br>
             <option>webcamsmall.php</option> 
             <option>moonphase.php</option>  
             <option>weather34uvsolar.php</option>  
-            <option>solaruvds.php</option>  
+            <option>solaruvds.php</option> 
+             <option>solaruvwu.php</option>  
             <option>eq.php</option>   
                      </select>
                
@@ -1424,6 +1427,8 @@ your nearly there :-) keep going<br><br>
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> weather34uvsolar.php</span> <orange>display uv and solar radiation if you have hardware</orange> <br></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> solaruvds.php</span> <orange>display Darksky UV forecast and if you have only solar radiation </orange> <br></span>
+     <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> solaruvwu.php</span> <orange>display Weather Underground Day UV forecast and if you have only solar radiation </orange> <br></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> eq.php</span> <orange>display last earthquake from earthquakereport.com</orange>   <br>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
