@@ -18,32 +18,19 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
 <meta itemprop="name" content="Home Weather Station <?php echo $stationlocation;?>">
 <meta itemprop="description" content="Home weather station providing current weather conditions for <?php echo $stationlocation;?>">
 <meta itemprop="image" content="img/weather34_meta.png">
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Home Weather Station <?php echo $stationlocation;?>">
-<meta property="og:description" content="Home weather station providing current weather conditions for <?php echo $stationlocation;?>">
-<meta property="og:image" content="img/weather34_meta.png">
-<!-- Twitter Meta Tags -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="">
-<meta property="twitter:title" content="Home Weather Station <?php echo $stationlocation;?>">
-<meta property="twitter:description" content="Home Weather Station <?php echo $stationlocation;?>">
-<meta property="twitter:image" content="img/weather34_meta.png">
-    <meta content="place" property="og:type">
-    <meta content="weather34" name="author">
+<meta content="place" property="og:type">
+<meta content="weather34" name="author">
     <meta content="INDEX,FOLLOW" name="robots">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name=apple-mobile-web-app-title content="HOME WEATHER STATION">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 <link rel="manifest" href="img/manifest.json">
 <meta name="theme-color" content="#ffffff">
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="favicon.ico" rel="icon" type="image/x-icon">
+<link rel="preload" href="css/fonts/clock3-webfont.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="css/fonts/verbatim-regular.woff" as="font" type="font/woff" crossorigin>
 <link href="css/main.<?php echo $theme;?>.css?version=<?php echo filemtime('css/main.'.$theme.'.css');?>" rel="stylesheet prefetch">
 </head>
