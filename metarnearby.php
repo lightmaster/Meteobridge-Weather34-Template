@@ -34,7 +34,7 @@ actualwind{font-size:0.95rem;float:right;position:absolute;left:225px;top:10px;-
 .windseparator{color:rgba(57,61,64,1)}
 .text1,.windvalue1{color:#aaa}
 .windirection1{width:100%;margin:60px 0 0 85px}
-.metar34compass1{position:absolute;width:150px;height:150px;text-align:center;top:30px;margin-left:140px;z-index:1}
+.metar34compass1{position:absolute;width:150px;height:150px;text-align:center;top:25px;margin-left:160px;z-index:1}
 .text1{z-index:10;text-align:center;margin:55px 0 auto}
 .metar34compass1>.metar34compass-line1{position:absolute;z-index:10;left:25px;top:25px;bottom:25px;-o-border-radius:100%;border-radius:100%;border-left:8px solid rgba(95,96,97,.5);border-top:8px solid rgba(95,96,97,.8);border-right:8px solid rgba(95,96,97,.5);border-bottom:8px solid rgba(95,96,97,.8);margin:auto}
 .thearrow1:before{width:6px;height:6px;position:absolute;z-index:9;left:2px;top:-3px;border:2px solid #fff;-webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;-ms-border-radius:100%;border-radius:100%}
@@ -49,6 +49,20 @@ spancalm{postion:relative;font-family:weathertext,Arial;font-size:26px;}.weather
 .metartempcontainer3{left:100px;top:60px;position:absolute}
 .metartempcontainer4{left:100px;top:10px;position:absolute}
 .metartempcontainer5{left:100px;top:66px;position:absolute}
+
+
+
+
+
+.metarwindcontainer1{left:70px;top:0}
+.metarwindcontainer2{left:10px;top:10px;position:absolute}
+.metarwindcontainer3{left:100px;top:10px;position:absolute}
+.metarwindcontainer4{left:100px;top:10px;position:absolute}
+.metarwindcontainer5{left:100px;top:66px;position:absolute}
+
+
+
+
 .kpcaution,.uvtrend{position:absolute;font-size:1rem}
 .kpcaution{margin-left:28px;margin-top:-14px;font-family:Arial,Helvetica,system}.kptrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}
 .metartemptoday0,.metartemptoday5,.metartemptoday10,.metartemptoday20,.metartemptoday25,.metartemptoday30{font-family:weathertext,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.metartemptoday0,.metartemptoday5,.metartemptoday10,.metartemptoday15,.metartemptoday20,.metartemptoday25,.metartemptoday30{font-size:1.5rem;padding-top:0;color:#fff;border-bottom:10px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:21px;}
@@ -191,7 +205,7 @@ else if ($metar34humidity =='') {echo '<div class=metarhumtoday0-35>N/A<smalluvu
 <div class="weather34card weather34card--earthquake2">  <div class="weather34card_weather34-container"> <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
 
 
-<div class="metartempcontainer2"><?php 
+<div class="metarwindcontainer2"><?php 
 if ($metar34windspeedkmh >50) {echo '<div class=metarwindtoday30>'.$metar34windspeedkmh."<smalluvunit> &nbsp;km/h";}
 else if ($metar34windspeedkmh >40) {echo '<div class=metarwindtoday25>'.$metar34windspeedkmh."<smalluvunit>&nbsp; km/h";}
 else if ($metar34windspeedkmh >30) {echo '<div class=metarwindtoday20>'.$metar34windspeedkmh."<smalluvunit>&nbsp; km/h";}
@@ -209,7 +223,7 @@ else if ($metar34windspeedmph >=0) {echo '<div class=metarwindtoday10>'.$metar34
 
 
 
-<div class="metartempcontainer3">
+<div class="metarwindcontainer3">
 <?php 
 //kts
 if ($metar34windspeedkts >=26.9) {echo '<div class=metarwindtoday30>'.$metar34windspeedkts."<smalluvunit> &nbsp;kts";}
