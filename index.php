@@ -126,6 +126,8 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
 <?php if ($position12=='weather34uvsolar.php') {echo '<span class="yearpopup"> <a alt="Solar Alamanac" title="Solar Alamanac" href="solaralmanac.php" data-featherlight="iframe">'. $chartinfo. " Solar Alamanac </a></span>";}?>
 <?php if ($position12=='solaruvds.php') {echo ' <a alt="UV Guide" title="UV Guide" href="uvindexds.php" data-featherlight="iframe">'. $chartinfo. " UV Guide </a></span>";}?>
 <?php if ($position12=='solaruvds.php') {echo ' <span class="yearpopup"><a alt="Solar Alamanac" title="Solar Alamanac" href="solaralmanac.php" data-featherlight="iframe">'. $chartinfo. " Solar Alamanac </a></span>";}?>
+<?php if ($position12=='solaruvwu.php') {echo ' <a alt="UV Guide" title="UV Guide" href="uvindexwu.php" data-featherlight="iframe">'. $chartinfo. " UV Guide </a></span>";}?>
+<?php if ($position12=='solaruvwu.php') {echo ' <span class="yearpopup"><a alt="Solar Alamanac" title="Solar Alamanac" href="solaralmanac.php" data-featherlight="iframe">'. $chartinfo. " Solar Alamanac </a></span>";}?>
 <?php if ($position12=='eq.php') {echo ' <a alt="Earthquakes Worldwide" title="Earthquakes Worldwide" href="eqlist.php" data-featherlight="iframe">'. $chartinfo. " Worldwide Earthquakes </a></span>";}?>
 </div><span class='moduletitle'><?php echo $position12title?></span></span><div id="solar"></div></div>
  <!--position last module for homeweatherstation template-->
@@ -140,6 +142,8 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
 <?php if ($positionlastmodule=='weather34uvsolar.php') {echo '<span class="yearpopup"> <a alt="Solar Alamanac" title="Solar Alamanac" href="solaralmanac.php" data-featherlight="iframe">'. $chartinfo. " Solar Alamanac </a></span>";}?>
 <?php if ($positionlastmodule=='solaruvds.php') {echo ' <a alt="UV Guide" title="UV Guide" href="uvindexds.php" data-featherlight="iframe">'. $chartinfo. " UV Guide </a></span>";}?>
 <?php if ($positionlastmodule=='solaruvds.php') {echo ' <span class="yearpopup"><a alt="Solar Alamanac" title="Solar Alamanac" href="solaralmanac.php" data-featherlight="iframe">'. $chartinfo. " Solar Alamanac </a></span>";}?>
+<?php if ($positionlastmodule=='solaruvwu.php') {echo ' <a alt="UV Guide" title="UV Guide" href="uvindexwu.php" data-featherlight="iframe">'. $chartinfo. " UV Guide </a></span>";}?>
+<?php if ($positionlastmodule=='solaruvwu.php') {echo ' <span class="yearpopup"><a alt="Solar Alamanac" title="Solar Alamanac" href="solaralmanac.php" data-featherlight="iframe">'. $chartinfo. " Solar Alamanac </a></span>";}?>
 <?php if ($positionlastmodule=='eq.php') {echo ' <a alt="Earthquakes Worldwide" title="Earthquakes Worldwide" href="eqlist.php" data-featherlight="iframe">'. $chartinfo. " Worldwide Earthquakes </a></span>";}?>
 </div><span class='moduletitle'><?php echo $positionlastmoduletitle?></span></span><div id="dldata"></div>
 </div></div>

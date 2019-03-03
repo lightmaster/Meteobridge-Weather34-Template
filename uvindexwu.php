@@ -14,7 +14,7 @@ body,section{padding:10px}.weather34title,body,html{font-family:Arial,sans-serif
 </style>
 </head>
 <body>
-<div class="weather34darkbrowser" url="UV-Index | Solar Radiation | Lux for <?php echo $stationlocation;?>"></div>     
+<div class="weather34darkbrowser" url="UV-Index Forecast | Solar Radiation | Lux for <?php echo $stationlocation;?>"></div>     
 
   
 
@@ -24,15 +24,25 @@ body,section{padding:10px}.weather34title,body,html{font-family:Arial,sans-serif
                
             <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
              
-	<?php $hi = 0;
-      foreach ($darkskyhourlyCond as $cond) {     
-            
-			$darkskyhourlyuv = $cond['uvIndex'];
-			
-			
-			  if ($hi++ == 0) break; 
-}
-$weather["uv3"]=$darkskyhourlyuv ;?>
+	<?php 
+	
+$json='jsondata/wuforecast.txt';
+$weather34wuurl=file_get_contents($json);
+$parsed_weather34wujson = json_decode($weather34wuurl,false);
+$parsed_weather34wujson1 = json_decode($weather34wuurl,true);
+{    if ($parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[0]==null){
+	 $wuskydayUV = $parsed_weather34wujson->{'daypart'}[0]->{'uvIndex'}[1];
+	 $wuskydayUVdesc = $parsed_weather34wujson->{'daypart'}[0]->{'uvDescription'}[1];}	 
+	 else {
+	 $wuskydayIcon=$parsed_weather34wujson->{'daypart'}[0]->{'iconCode'}[0];	 
+	 $wuskydayUV = $parsed_weather34wujson->{'daypart'}[0]->{'uvIndex'}[0];
+	 $wuskydayUVdesc = $parsed_weather34wujson->{'daypart'}[0]->{'uvDescription'}[0];	 
+	 }}	 
+
+	
+	
+	
+$weather["uv3"]=$wuskydayUV ;?>
 <div class="uvindexpyramid">
 <svg id="weather34 uvindex pyramid module" width="100pt" height="100pt" viewBox="0 0 980 792" version="27-09-2018" >
 <path fill="<?php if ($weather["uv3"]>=11){echo 'rgba(116, 100, 192, 0.8)';}	else echo 'currentcolor';?>" d=" M 394.17 49.10 C 458.08 48.90 522.01 48.99 585.92 49.06 C 589.55 57.30 594.93 64.39 598.17 72.85 C 601.66 76.94 603.46 82.25 605.95 87.01 C 528.65 86.97 451.34 87.04 374.03 86.97 C 380.77 74.37 386.86 61.39 394.17 49.10 Z" />
