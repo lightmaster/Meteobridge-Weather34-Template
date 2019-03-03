@@ -159,7 +159,7 @@ $parsed_weather34wujson1 = json_decode($weather34wuurl,true);
 //convert lightning index
 if ( $wuskythunder==0 ){$wuskythunder='';}
 else if ( $wuskythunder==1 ){$wuskythunder=$lightningalert4.' Thunder Risk';}
-else if ( $wuskythunder0==2 ){$wuskythunder=$lightningalert4.' Thunder';}
+else if ( $wuskythunder==2 ){$wuskythunder=$lightningalert4.' Thunder';}
 else if ( $wuskythunder>=3 ){$wuskythunder=$lightningalert4.' Severe Tstorm';}
 if ( $wuskythunder1==0 ){$wuskythunder1='';}
 else if ($wuskythunder1==1 ){$wuskythunder1=$lightningalert4.'Thunder Risk';}
