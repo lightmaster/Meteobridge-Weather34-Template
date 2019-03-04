@@ -3,7 +3,9 @@
 <style>
 uppercase{ text-transform:capitalize;}
 </style>
-<?php include('metar34get.php'); error_reporting(0);$weather["cloudbase3"] = round((anyToC($weather["temp"]) - anyToC($weather["dewpoint"])) * 1000 /2.4444) ;
+<?php 
+//original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
+include('metar34get.php'); error_reporting(0);$weather["cloudbase3"] = round((anyToC($weather["temp"]) - anyToC($weather["dewpoint"])) * 1000 /2.4444) ;
 $result = date_sun_info(time(), $lat, $lon);$sunr=date_sunrise(time(), SUNFUNCS_RET_STRING, $lat, $lon, $rise_zenith, $UTC);$suns=date_sunset(time(), SUNFUNCS_RET_STRING, $lat, $lon, $set_zenith, $UTC);
 $sunr1=date_sunrise(strtotime('+1 day', time()), SUNFUNCS_RET_STRING, $lat, $lon, $rise_zenith, $UTC);$suns1=date_sunset(strtotime('+1 day', time()), SUNFUNCS_RET_STRING, $lat, $lon, $set_zenith, $UTC);
 $tw=date_sunrise(strtotime('+1 day', time()), SUNFUNCS_RET_STRING, $lat, $lon, 96, $UTC);$twe=date_sunset(strtotime('+1 day', time()), SUNFUNCS_RET_STRING, $lat, $lon, 96, $UTC);
@@ -43,9 +45,7 @@ else if($weather["wind_speed_avg"]>=15 && $now <$sunr2){echo "<img rel='prefetch
 else if($weather["wind_speed_avg"]>=15){echo "<img rel='prefetch' src='css/icons/windy.svg' width='70px' height='60px' alt='weather34 windy icon'>";}
 //metar with darksky fallback-weather34
 else if(filesize('jsondata/metar34.txt')<160){
-if($now >$suns2){echo "<img rel='prefetch' src='css/darkskyicons/nt_".$darkskycurIcon.".svg'width='70px' height='60px' alt='weather34 darksky night icon'>";}
-else if($now <$sunr2){echo "<img rel='prefetch' src='css/darkskyicons/nt_".$darkskycurIcon.".svg'width='70px' height='60px' alt='weather34 darksky after midnight icon'>";}
-else echo "<img rel='prefetch' src='css/darkskyicons/".$darkskycurIcon.".svg'width='70px' height='60px' alt='weather34 darksky current icon'>";} 	
+echo "<img rel='prefetch' src='css/icons/offline.svg'width='70px' height='60px' alt='weather34 offline icon'>";} 	
 else echo "<img rel='prefetch' src='css/icons/".$sky_icon."' width='70px' height='60px'>";
 ?></div>
 <div class="darkskysummary"><span>
@@ -71,7 +71,7 @@ else if($weather["wind_speed_avg"]>=40){echo "Strong Wind ".$alert."<br>Conditio
 else if($weather["wind_speed_avg"]>=30){echo "Very Windy ".$alert."<br>Conditions";}
 else if($weather["wind_speed_avg"]>=22){echo "Moderate Wind <br>Conditions";}
 else if($weather["wind_speed_avg"]>=15){echo "Breezy <br>Conditions";}
-else if(filesize('jsondata/metar34.txt')<160){echo "<uppercase>",$darkskycurSummary ,"<br>Conditions</uppercase>";} 
+else if(filesize('jsondata/metar34.txt')<160){echo "<uppercase>Conditions<br>Not Available</uppercase>";} 
 //metar conditions-weather34
 else echo '<uppercase>',$sky_desc.'</uppercase><br>'; 
 ?>

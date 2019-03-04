@@ -3,7 +3,9 @@
 <style>
 uppercase{ text-transform:capitalize;}
 </style>
-<?php include('metar34get.php');include('common.php');error_reporting(0);
+<?php 
+//original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
+include('metar34get.php');include('common.php');error_reporting(0);
 $result = date_sun_info(time(), $lat, $lon);
 $sunr=date_sunrise(time(), SUNFUNCS_RET_STRING, $lat, $lon, $rise_zenith, $UTC);
 $suns=date_sunset(time(), SUNFUNCS_RET_STRING, $lat, $lon, $set_zenith, $UTC);
@@ -27,8 +29,6 @@ $now =date('G.i');?>
 <div class="darkskyiconcurrent"><span1>
 <?php 
 
-//rain
-  
 //lightning
 if ($weather["lightningtimeago"]>0 && $weather["lightningtimeago"]<600 && $weather["rain_rate"]>0){echo "<img rel='prefetch' src='css/icons/tstorm.svg' width='70px' height='60px' alt='weather34 rain lightning icon'>";}
 else if ($weather["lightningtimeago"]>0 && $weather["lightningtimeago"]<600 ){echo "<img rel='prefetch' src='css/icons/lightning.svg' width='70px' height='60px' alt='weather34 rain lightning icon'>";}
@@ -52,9 +52,7 @@ else if($weather["wind_speed_avg"]>20){echo "<img rel='prefetch' src='css/icons/
 
 //metar with darksky fallback
 else if(filesize('jsondata/metar34.txt')<160){
-if($now >$suns2){echo "<img rel='prefetch' src='css/darkskyicons/nt_".$darkskycurIcon.".svg'width='70px' height='60px' alt='weather34 darksky night icon'>";}
-else if($now <$sunr2){echo "<img rel='prefetch' src='css/darkskyicons/nt_".$darkskycurIcon.".svg'width='70px' height='60px' alt='weather34 darksky after midnight icon'>";}
-else echo "<img rel='prefetch' src='css/darkskyicons/".$darkskycurIcon.".svg'width='70px' height='60px' alt='weather34 darksky current icon'>";} 	
+echo "<img rel='prefetch' src='css/icons/offline.svg'width='70px' height='60px' alt='weather34 offline icon'>";} 	
 else echo "<img rel='prefetch' src='css/icons/".$sky_icon."' width='70px' height='60px'>";
 ?></div>
 <div class="darkskysummary"><span>
@@ -85,8 +83,7 @@ else if($weather["temp"] -$weather["dewpoint"] <0.5  && $weather["temp"]>5){echo
 else if($weather["wind_speed_avg"]>40){echo "Strong Wind ".$alert."<br>Conditions" ;}
 else if($weather["wind_speed_avg"]>30){echo "Very Windy ".$alert."<br>Conditions";}
 else if($weather["wind_speed_avg"]>20){echo "Moderate Wind <br>Conditions";}
-
-else if(filesize('jsondata/metar34.txt')<160){echo "<uppercase>",$darkskycurSummary ," <br>Conditions</uppercase>";}
+else if(filesize('jsondata/metar34.txt')<160){echo "<uppercase>Conditions<br>Not Available</uppercase>";}
 //metar conditions
 else echo '<uppercase>',$sky_desc.'</uppercase>'; 
 
