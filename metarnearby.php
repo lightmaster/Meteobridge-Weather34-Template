@@ -93,6 +93,7 @@ spancalm{postion:relative;font-family:weathertext,Arial;font-size:26px;}.weather
 .metarwindtoday25{background:rgba(255, 124, 57, 0.7)}
 .metarwindtoday30{background:rgba(211, 93, 78, 1.000)}
 smalluvunit{font-size:.90rem;font-family:Arial,Helvetica,system;}
+valuecalm{font-size:.8em;font-family:weathertext;}
 </style>
 </head>
 <body>
@@ -294,7 +295,7 @@ echo $$metarspot4;
 
 <div class="metar34compass1"><div class="metar34compass-line1"><div class="thearrow2"></div></div>
 <div class="text1"><div class="windvalue1" id="windvalue"><?php 
-if( $metar34windir==0){echo "<spancalm>Calm</spancalm>";}else echo $metar34windir,"&deg;";?></div></div>
+if( $metar34windir==0){echo "<valuecalm>Calm</valuecalm>";}else echo $metar34windir,"&deg;";?></div></div>
 <div class="windirectiontext1">
 <?php 
 if($metar34windir<=11.25){echo "Due <span>North<br></span>";}
