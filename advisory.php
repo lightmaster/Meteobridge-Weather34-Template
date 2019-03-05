@@ -91,3 +91,5 @@
  //WEATHER34 solar eclipse events and no alerts 
  else {echo '<spanelightning><alertvalue>'.$eclipse_default.'</spanelightning></div></div></div>';}   
   
+ 
+  ?></noalert></div></div>
