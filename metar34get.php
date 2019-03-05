@@ -1,4 +1,4 @@
-<?php
+<?php //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
 include('settings.php');include('livedata.php');error_reporting(0); 
 $result = date_sun_info(time(), $lat, $lon);
 $sunr=date_sunrise(time(), SUNFUNCS_RET_STRING, $lat, $lon, $rise_zenith, $UTC);
@@ -12,7 +12,8 @@ $parsed_json             = json_decode($json_string);
 $metar34time       = $parsed_json->{'data'}[0]->{'observed'};
 $metar34raw       = $parsed_json->{'data'}[0]->{'raw_text'};
 $metar34stationid       = $parsed_json->{'data'}[0]->{'icao'};	
-$metar34stationname       = $parsed_json->{'data'}[0]->{'name'};	
+//$metar34stationname       = $parsed_json->{'data'}[0]->{'name'};
+$metar34stationname       = $airport1;	
 $metar34pressurehg       = $parsed_json->{'data'}[0]->{'barometer'}->{'hg'};	
 $metar34pressuremb       = $parsed_json->{'data'}[0]->{'barometer'}->{'mb'};
 $metar34conditions         = $parsed_json->{'data'}[0]->{'conditions'}[0]->{'code'};
