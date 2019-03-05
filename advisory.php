@@ -34,7 +34,7 @@
    
    
     else if ($darkskydayIcon=='rain')
-  {echo '<spanelightning>'.$rainalert.'<alertvalue> Expect <blue>Rain Showers</blue> This Week <alertadvisory>'.$newalertcold.'</alertadvisory>
+  {echo '<spanelightning><alertvalue> Expect <blue>Rain Showers</blue> This Week <alertadvisory>'.$newalertcold.'</alertadvisory>
    </spanelightning></div></div></div>';}     
    
   
