@@ -4,7 +4,7 @@ Github repository for the Meteobridge version of the weather34 template
 Weather Template for Meteobridge users only , original info page found at https://weather34.com/homeweatherstation/
 all icons are produced and made by weather34 in svg format .
 
-#Kindly ask do not use meteobridge version code in other versions without agreement , the sole reason to offer other versions was for those to be maintained by reliable enthusiasts and knowledgeable enthusiasts .It only takes an email to make a request to use .
+# Kindly ask do not use meteobridge version code in other versions without agreement , the sole reason to offer other versions was for those to be maintained by reliable enthusiasts and knowledgeable enthusiasts .It only takes a moment via  email to make a request .
 
 you may also find the Cumulus version maintained by Ken True (Saratoga) at https://github.com/ktrue/CU-HWS
 
