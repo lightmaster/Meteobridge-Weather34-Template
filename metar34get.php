@@ -206,36 +206,36 @@ $sky_desc='Thunderstorm <br>Conditions';
 }
 //Thunderstorms
 else if($metar34conditions=='-TS'){
-if ($now >$suns2 ){$sky_icon='tstorm.svg';} 
-else if ($now <$sunrs2 ){$sky_icon='tstorm.svg';} 
+if ($now >$suns2 ){$sky_icon='nt_tstorm.svg';} 
+else if ($now <$sunrs2 ){$sky_icon='nt_tstorm.svg';} 
 else $sky_icon='tstorm.svg'; 
 $sky_desc='Thunderstorm <br>Conditions';
 }
 //Thunderstorms
 else if($metar34conditions=='+TS'){
-if ($now >$suns2 ){$sky_icon='tstorm.svg';} 
-else if ($now <$sunrs2 ){$sky_icon='tstorm.svg';} 
+if ($now >$suns2 ){$sky_icon='nt_tstorm.svg';} 
+else if ($now <$sunrs2 ){$sky_icon='nt_tstorm.svg';} 
 else $sky_icon='tstorm.svg'; 
 $sky_desc='Heavy <br>Thunderstorms';
 }
 //Thunderstorms
 else if($metar34conditions=='TSRA'){
-if ($now >$suns2 ){$sky_icon='tstorm.svg';} 
-else if ($now <$sunrs2 ){$sky_icon='tstorm.svg';} 
+if ($now >$suns2 ){$sky_icon='nt_tstorm.svg';} 
+else if ($now <$sunrs2 ){$sky_icon='nt_tstorm.svg';} 
 else $sky_icon='tstorm.svg'; 
 $sky_desc='Thunderstorm <br>Conditions';
 }
 //Scattered Thunderstorms
 else if($metar34conditions=='SCTTSRA'){
-if ($now >$suns2 ){$sky_icon='tstorm.svg';} 
-else if ($now <$sunrs2 ){$sky_icon='tstorm.svg';} 
+if ($now >$suns2 ){$sky_icon='nt_tstorm.svg';} 
+else if ($now <$sunrs2 ){$sky_icon='nt_tstorm.svg';} 
 else $sky_icon='tstorm.svg'; 
 $sky_desc='Scattered <br>Thunderstorms';
 }
 //Scattered Thunderstorms
 else if($metar34conditions=='NTSRA'){
-if ($now >$suns2 ){$sky_icon='tstorm.svg';} 
-else if ($now <$sunrs2 ){$sky_icon='tstorm.svg';} 
+if ($now >$suns2 ){$sky_icon='nt_tstorm.svg';} 
+else if ($now <$sunrs2 ){$sky_icon='nt_tstorm.svg';} 
 else $sky_icon='tstorm.svg'; 
 $sky_desc='Scattered <br>Thunderstorms';
 }
