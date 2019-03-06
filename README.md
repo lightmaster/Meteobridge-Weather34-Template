@@ -1,20 +1,22 @@
 # Meteobridge-Weather34-Template
-Github repository for the Meteobridge version of the weather34 template 
+Github repository for the Meteobridge version of the original weather34 template 
 
 Weather Template for Meteobridge users only , original info page found at https://weather34.com/homeweatherstation/
 all icons are produced and made by weather34 in svg format .
 
-# Kindly ask do not use meteobridge version code/css/svg in other versions without prior agreement , the sole reason to offer other versions was for those to be maintained by reliable enthusiasts and knowledgeable enthusiasts .I would like to keep meteobridge version unique and seperate from existing versions found in numerous flavors .It only takes a moment via  email to make a request .
-
-you may also find the Cumulus version maintained by Ken True (Saratoga) at https://github.com/ktrue/CU-HWS
-
-you may also find a weewx version maintained by Ian Millard is also avaialble via https://github.com/steepleian/WX-HWS
-
-
+# Meteobridge Version Screenshot 
 <p align="center">
   <img src="https://res.cloudinary.com/brian-underdown/image/upload/v1550403213/weather34dark_bs7btd.png" width="550" title="weather34 meteobridge template ">
  
 </p>
+
+
+# Alternative versions 
+you may also find the Cumulus version maintained by Ken True (Saratoga) at https://github.com/ktrue/CU-HWS
+
+you may also find a Weewx version maintained by Ian Millard is also avaialble via https://github.com/steepleian/WX-HWS
+
+
 
 
 # This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
