@@ -911,7 +911,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '</grey><br>				 
 				   '.$lightningalertforecast;
 				   if ($wuskythunder7=="No thunder"){ echo ' <thunder>'.$wuskythunder7.'</thunder></grey>	 </value></darkskytemplohome>';}
-				   else echo ' <thunder><orange1>'.$wuskythunder.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    	  
+				   else echo ' <thunder><orange1>'.$wuskythunder7.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    	  
 				 //temp
 				  echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh7<44.6){echo "<div class=valuehi><blue1>".number_format($wuskydayTempHigh7,0);}
