@@ -45,6 +45,12 @@ greenu{color:#90b12a}
 yellowu{color:#e6a141;}
 redu{color:#cd5245}
 purpleu{color:#b600b0}
+bluet{color:#01a4b5;}
+yellowt{color:#e6a141;}
+oranget{color:#d05f2d;}
+greent{color:#90b12a;}
+redt{color:#cd5245;}
+purplet{color:#b600b0;}
 .uvsolarwordbig{position:absolute;margin-left:110px;margin-top:35px;font-size:1.4rem;color:rgba(86,95,103,.2);width:200px;font-family:weathertext2}
 .airqualitywordbig{position:absolute;margin-left:50px;margin-top:15px;font-size:1.4rem;color:rgba(86,95,103,.2);width:200px;font-family:weathertext2}
 .tempconvertercircleminus,.tempconvertercircleminus10,.tempconvertercircleminus5,.tempconvertercircle0-5,.tempconvertercircle6-10,.tempconvertercircle11-15,.tempconvertercircle16-20,.tempconvertercircle21-25,.tempconvertercircle26-30,.tempconvertercircle31-35,.tempconvertercircle36-40,.tempconvertercircle41-45,.tempconvertercircle50{display:flex;align-items:center;justify-content:center;height:1rem;width:3.4rem;border:1px solid #393d40;overflow:hidden;-webkit-border-radius:2px;border-radius:2px;color:#c0c0c0;line-height:16px;font-family:weathertext2;font-size:.85em;background:0}
