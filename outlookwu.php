@@ -7,11 +7,11 @@
 	<style>
 		@font-face{font-family:system;font-style:normal;src:local(".SFNSText-Light"),local("Arial")}
 		@font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(css/fonts/verbatim-regular.woff2) format("woff2"),url(css/fonts/verbatim-regular.ttf) format("truetype")}
-body{background:#fff}		
-.darkskyforecasting{float:left;display:block;margin-right:0;width:43%;border-radius:4px;margin:2px;margin-top:-15px;font-family:Arial;margin-left:5px;height:300px;padding:10px;background-color:rgba(253, 166, 16, 1.000);border:1px solid rgba(153,155,156,0.1);font-size:12px;color:#111;font-family:Arial;line-height:12px}
+body{background:rgba(11, 12, 12, 0.4);color:#c0c0c0;}		
+.darkskyforecasting{float:left;display:block;margin-right:0;width:43%;border-radius:4px;margin:2px;margin-top:-15px;font-family:Arial;margin-left:5px;height:300px;padding:10px;background-color:rgba(253, 166, 16, 1.000);border:1px solid rgba(153,155,156,0.1);font-size:12px;color:#c0c0c0;font-family:Arial;line-height:12px}
 
-darkskyweekday{position:absolute;margin:3px;background-color:rgba(253, 166, 16, 1.000);text-align:center;padding:2px;color:#111;font-family:Arial;font-size:11px;margin-bottom:10px;border-radius:4px;font-size:12px;color:#111;font-family:Arial;line-height:15px}
-darkskytemphi{margin-top:5px;font-size:14px;color:rgba(255,124,57,1);font-family:Arial;margin-left:10%}darkskytemphi span{font-size:14px;color:#111}darkskytemplo{margin-top:5px;font-size:12px;color:#00a4b4;font-family:Arial}darkskytemplo span{font-size:12px;color:#111;font-family:Arial}darkskysummary{font-size:12px;color:#111;font-family:Arial;line-height:11px}darkskywindspeed{font-size:12px;color:#111;font-family:Arial;line-height:11px}.darkskywindspeedicon{position:absolute;font-size:10px;color:#111;font-family:weathertext2;line-height:11px;margin-top:-50px;margin-left:67px}.darkskywindgust{position:absolute;font-size:10px;color:#111;font-family:Arial;line-height:11px;margin-top:-55px;margin-left:97px}
+darkskyweekday{position:absolute;margin:3px;background-color:rgba(253, 166, 16, 1.000);text-align:center;padding:2px;color:#c0c0c0;font-family:Arial;font-size:11px;margin-bottom:10px;border-radius:4px;font-size:12px;color:#c0c0c0;font-family:Arial;line-height:15px}
+darkskytemphi{margin-top:5px;font-size:14px;color:rgba(255,124,57,1);font-family:Arial;margin-left:10%}darkskytemphi span{font-size:14px;color:#111}darkskytemplo{margin-top:5px;font-size:12px;color:#00a4b4;font-family:Arial}darkskytemplo span{font-size:12px;color:#c0c0c0;font-family:Arial}darkskysummary{font-size:12px;color:#c0c0c0;font-family:Arial;line-height:11px}darkskywindspeed{font-size:12px;color:#c0c0c0;font-family:Arial;line-height:11px}.darkskywindspeedicon{position:absolute;font-size:10px;color:#c0c0c0;font-family:weathertext2;line-height:11px;margin-top:-50px;margin-left:67px}.darkskywindgust{position:absolute;font-size:10px;color:#c0c0c0;font-family:Arial;line-height:11px;margin-top:-55px;margin-left:97px}
 .darkskydiv{position:relative;width:725px;overflow:hidden!important;height:378px;float:none;margin-left:-5px;margin-top:-5px}
 
 .darkskyforecastinghome{font-size:13px;float:left;display:inline;margin-right:0;width:23.3%;border-radius:3px;margin:3px;margin-top:0;font-family:Arial,system;margin-left:0px;height:175px;padding:3px;padding-top:5px;
@@ -19,27 +19,27 @@ background: rgba(29, 32, 34, 1.000);background: linear-gradient(to bottom, rgba(
 background: -webkit-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34, 0) 11%,rgba(29, 32, 34,0) 100%,rgba(229, 77, 11, 0) 0%);
 background: -moz-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34, 0) 11%,rgba(29, 32, 34, 0) 100%,rgba(229, 77, 11, 0) 0%);
 background: -o-linear-gradient(to bottom, rgba(97, 106, 114, 1.000) 12%,rgba(29, 32, 34,0) 11%,rgba(29, 32, 34, 0) 100%,rgba(229, 77, 11, 0) 0%);
-border:0;color:#111;overflow:hidden!important;margin-bottom:5px;border:solid 1px rgba(74, 99, 111, 1.000);border-bottom:solid 1px rgba(74, 99, 111, 1.000);border-top:1px solid rgba(97, 106, 114, 1.000);}
-.greydesc{color:#111;margin-left:0px;margin-top:-10px;position:absolute;font-size:0.85em}
+border:0;color:#c0c0c0;overflow:hidden!important;margin-bottom:5px;border:solid 1px #333;border-bottom:solid 1px #333;border-top:1px solid #333;}
+.greydesc{color:#c0c0c0;margin-left:0px;margin-top:-10px;position:absolute;font-size:0.85em}
 .none{float:none;margin-top:10px;position:absolute}
-.valuehi{font-size:1.25em;padding:5px;background:rgba(230, 232, 239, 0.2);border-radius:3px;margin-top:-15px;color:#ff7c39;font-family:weathertext2;}spantemp{font-size:0.75em;color:#fff;font-family:weathertext2;}
+.valuehi{font-size:1.25em;padding:5px;background:0;border-radius:3px;margin-top:-15px;color:#ff7c39;font-family:weathertext2;}spantemp{font-size:0.75em;color:#fff;font-family:weathertext2;}
 .darkskyweekdayhome{postion:absolutue;text-align:center;padding:0;color:#fff;font-family:Arial;font-size:0.7rem;;margin:0;background:0;margin-bottom:12px;}
 .darkskyforecasthome darkskytemphihome{font-size:0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}
 .darkskyforecasthome darkskytemphihome span{font-size::0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}
 .darkskyforecasthome darkskytemplohome{font-size:0.65rem;color:#ff7c39;font-family:Arial;line-height:15px;}
 .darkskyforecasthome darkskytemplohome span{font-size:0.65rem;color:#01a4b5;font-family:Arial}
 
-.darkskyforecasthome darkskytempwindhome{font-size:0.6rem;color:#111;font-family:Arial;line-height:10px}
-.darkskyforecasthome darkskytempwindhome span{font-size:0.6rem;color:#111;font-family:Arial;line-height:10px; display:block;}
-.darkskyforecasthome darkskytempwindhome span2{font-size:0.7rem;color:#111;font-family:Arial;line-height:10px;margin-top:3px}
+.darkskyforecasthome darkskytempwindhome{font-size:0.6rem;color:#c0c0c0;font-family:Arial;line-height:10px}
+.darkskyforecasthome darkskytempwindhome span{font-size:0.6rem;color:#c0c0c0;font-family:Arial;line-height:10px; display:block;}
+.darkskyforecasthome darkskytempwindhome span2{font-size:0.7rem;color:#c0c0c0;font-family:Arial;line-height:10px;margin-top:3px}
 .darkskyforecastinghome img{position:relative;margin-top:-5px;margin-bottom:10px;}
 .darkskyforecastinghomeicon{margin-bottom:-5px;}
 
 
 .darkskynexthours{line-height:12px}.darkskynexthours span2{line-height:12px}body{line-height:11px}
-grey{color:#111}
-blue1{color:#39739f;}
-orange1{color:#000;font-size:1.2em}
+grey{color:#c0c0c0}
+blue1{color:#009bac;}
+orange1{color:#c0c0c0;font-size:1.2em}
 orange{color:#d05f2d}
 green{color:#90b12a}
 yellow{color:#e6a141;}
@@ -47,28 +47,28 @@ red{color:#cd5245}
 purple{color:#b600b0}
 img{padding-top:3px;}
 
-bluet{color:#fff;text-transform:capitalize;background:#01a4b5;border-radius:2px;width:35px;padding:5px;}
-yellowt{color:#fff;text-transform:capitalize;background:#e6a141;border-radius:2px;width:35px;padding:5px;}
-oranget{color:#fff;text-transform:capitalize;background:#d05f2d;border-radius:2px;width:35px;padding:5px;}
-greent{color:#fff;text-transform:capitalize;background:#90b12a;border-radius:2px;width:35px;padding:5px;}
-redt{color:#fff;text-transform:capitalize;background:#cd5245;border-radius:2px;width:35px;padding:5px;}
-purplet{color:#fff;text-transform:capitalize;background:#b600b0;border-radius:2px;width:35px;padding:5px;}
+bluet{color:#fff;background:#01a4b5;border-radius:2px;width:35px;padding:5px;}
+yellowt{color:#fff;background:#e6a141;border-radius:2px;width:35px;padding:5px;}
+oranget{color:#fff;background:#d05f2d;border-radius:2px;width:35px;padding:5px;}
+greent{color:#fff;background:#90b12a;border-radius:2px;width:35px;padding:5px;}
+redt{color:#fff;background:#cd5245;border-radius:2px;width:35px;padding:5px;}
+purplet{color:#fff;background:#b600b0;border-radius:2px;width:35px;padding:5px;}
 
-blueu{color:#fff;text-transform:capitalize;background:#01a4b5;border-radius:2px;width:35px;padding:0 3px 0 3px;}
-yellowu{color:#fff;text-transform:capitalize;background:#e6a141;border-radius:2px;width:35px;padding:0 3px 0 3px;}
-orangeu{color:#fff;text-transform:capitalize;background:#d05f2d;border-radius:2px;width:35px;padding:0 3px 0 3px;}
-greenu{color:#fff;text-transform:capitalize;background:#90b12a;border-radius:2px;width:35px;padding:0 3px 0 3px;}
-redu{color:#fff;text-transform:capitalize;background:#cd5245;border-radius:2px;width:35px;padding:0 3px 0 3px;}
-purpleu{color:#fff;text-transform:capitalize;background:#b600b0;border-radius:2px;width:35px;padding:0 3px 0 3px;}
 
-a{font-size:10px;color:#111;text-decoration:none!important;font-family:arial}.forecastupdated{position:absolute;font-size:10px;color:#111;font-family:arial;bottom:25px;float:right;margin-left:575px}	
+blueu{color:#fff;background:#01a4b5;border-radius:2px;width:35px;padding:0 3px 0 3px;}
+yellowu{color:#fff;background:#e6a141;border-radius:2px;width:35px;padding:0 3px 0 3px;}
+orangeu{color:#fff;background:#d05f2d;border-radius:2px;width:35px;padding:0 3px 0 3px;}
+greenu{color:#fff;background:#90b12a;border-radius:2px;width:35px;padding:0 3px 0 3px;}
+redu{color:#fff;background:#cd5245;border-radius:2px;width:35px;padding:0 3px 0 3px;}
+purpleu{color:#fff;background:#b600b0;border-radius:2px;width:35px;padding:0 3px 0 3px;}
+
+
+a{font-size:10px;color:#c0c0c0;text-decoration:none!important;font-family:arial}.forecastupdated{position:absolute;font-size:10px;color:#c0c0c0;font-family:arial;bottom:25px;float:right;margin-left:575px}	
 .weather34darkbrowser{font-family:Arial, Helvetica, sans-serif;position:relative;background:rgba(56, 56, 60, 1.000);width:102.5%;max-height:25px;margin:auto;margin-top:-15px;margin-left:-12px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}
 
 .weather34darkbrowser[url]:after{content:attr(url);color:#fff;font-size:12px;position:absolute;left:0;right:0;top:0;padding:5px 5px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:23px;box-sizing:border-box;font-family:weathertext2,Arial,Helvetica,system;}precip{position:relative;top:2px;padding:2px;border-radius:3px;background:0;font-size:.8em;}
-value{font-size:.85em;font-family:weathertext2}valuer{font-size:.8em;font-family:weathertext2}value1{font-size:1em;font-family:weathertext2}thunder{color:#111;font-size:0.85em}
+value{font-size:.85em;font-family:weathertext2}valuer{font-size:.55rem;font-family:weathertext2}value1{font-size:1em;font-family:weathertext2}thunder{color:#c0c0c0;font-size:0.85em}
 </style>
-
-
 <?php
 include_once('settings.php');include('livedata.php');
 	####################################################################################################
@@ -972,6 +972,6 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo  '</div>';	
 				  //end weather34 wu forecast
 				  ?></div></div></div>                   
- <div style="position:absolute;bottom:5px;z-index:9999;font-weight:normal;font-size:10px;color:#111;text-decoration:none !important;float:right;font-family:arial;">  
+ <div style="position:absolute;bottom:5px;z-index:9999;font-weight:normal;font-size:10px;color:#c0c0c0;text-decoration:none !important;float:right;font-family:arial;">  
  &nbsp;&nbsp;data provided by <a href="" title="" target="_blank">Weather Underground</a> <?php echo $info;?> <a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a>
   </div>  </body>  </html>
