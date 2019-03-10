@@ -4,6 +4,8 @@ Github repository for the Meteobridge version of the original weather34 template
 Weather Template for Meteobridge users only , original info page found at https://weather34.com/homeweatherstation/
 all icons are produced and made by weather34 in svg format .
 
+# 10th FEB 2019 new values added to the meteobridge API . requires reboot of meteobridge to pick up new values..
+
 # Meteobridge Version Screenshot 
 <p align="center">
   <img src="https://res.cloudinary.com/brian-underdown/image/upload/v1550403213/weather34dark_bs7btd.png" width="550" title="weather34 meteobridge template ">
