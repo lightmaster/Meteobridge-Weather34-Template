@@ -47,12 +47,7 @@ red{color:#cd5245}
 purple{color:#b600b0}
 img{padding-top:3px;}
 
-bluet{color:#fff;background:#01a4b5;border-radius:2px;width:35px;padding:5px;}
-yellowt{color:#fff;background:#e6a141;border-radius:2px;width:35px;padding:5px;}
-oranget{color:#fff;background:#d05f2d;border-radius:2px;width:35px;padding:5px;}
-greent{color:#fff;background:#90b12a;border-radius:2px;width:35px;padding:5px;}
-redt{color:#fff;background:#cd5245;border-radius:2px;width:35px;padding:5px;}
-purplet{color:#fff;background:#b600b0;border-radius:2px;width:35px;padding:5px;}
+
 
 
 blueu{color:#fff;background:#01a4b5;border-radius:2px;width:35px;padding:0 3px 0 3px;}
@@ -61,6 +56,17 @@ orangeu{color:#fff;background:#d05f2d;border-radius:2px;width:35px;padding:0 3px
 greenu{color:#fff;background:#90b12a;border-radius:2px;width:35px;padding:0 3px 0 3px;}
 redu{color:#fff;background:#cd5245;border-radius:2px;width:35px;padding:0 3px 0 3px;}
 purpleu{color:#fff;background:#b600b0;border-radius:2px;width:35px;padding:0 3px 0 3px;}
+
+
+
+bluet,yellowt,oranget,greent,redt,purplet{position:absolute;color:#fff;border-radius:2px;width:3em;padding:5px;top:-15px;display:flex;align-items:center;justify-content:center;}
+bluet{background:#01a4b5;}
+yellowt{background:#e6a141;}
+oranget{background:#d05f2d;}
+greent{background:#90b12a;}
+redt{background:#cd5245;}
+purplet{background:#b600b0;}
+
 
 
 a{font-size:10px;color:#c0c0c0;text-decoration:none!important;font-family:arial}.forecastupdated{position:absolute;font-size:10px;color:#c0c0c0;font-family:arial;bottom:25px;float:right;margin-left:575px}	
