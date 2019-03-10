@@ -34,8 +34,8 @@ include('livedata.php');?>
 margin-bottom:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}
 .hitemp{color:#aaa;font-size:0.7rem;display:inline;}
 .hitemp span{color:rgba(255, 124, 57, 1.000)}
-.hitempy{position:relative;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:170px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:flex;margin-top:5px;align-items:center;justify-content:center;}
-.hitempd{position:relative;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:170px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:flex;margin-top:5px;align-items:center;justify-content:center;}
+.hitempy{position:relative;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:180px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:flex;margin-top:5px;align-items:center;justify-content:center;}
+.hitempd{position:relative;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:180px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:flex;margin-top:5px;align-items:center;justify-content:center;}
 
 
 .hitempa{font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:200px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:3px;margin-left:0;padding-left:3px;display:block}
