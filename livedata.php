@@ -192,9 +192,9 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	
 	//dewpoint year
 	$originalDate44 = $meteobridgeapi[55];
-    $dewymaxtime = date('jS M H:i', strtotime($originalDate44));	
+    $dewymaxtime = date('jS M', strtotime($originalDate44));	
 	$originalDate45 = $meteobridgeapi[57];
-    $dewymintime =  date('jS M H:i', strtotime($originalDate45));	
+    $dewymintime =  date('jS M', strtotime($originalDate45));	
 	$weather["dewymax"]		    = $meteobridgeapi[54]; //temp max year
 	$weather["dewymaxtime"]		= $dewymaxtime; //seconds	
 	$weather["dewymin"]		    = $meteobridgeapi[56]; //temp min year
@@ -210,18 +210,18 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["dewmintime"]		= $dewmintime; //seconds
 	//dewpoint month
 	$originalDate74 = $meteobridgeapi[49];
-    $dewmmaxtime = date('jS M H:i', strtotime($originalDate74));	
+    $dewmmaxtime = date('jS M', strtotime($originalDate74));	
 	$originalDate75 = $meteobridgeapi[51];
-    $dewmmintime =  date('jS M H:i', strtotime($originalDate75));	
+    $dewmmintime =  date('jS M', strtotime($originalDate75));	
 	$weather["dewmmax"]		    = $meteobridgeapi[48]; //dew max month
 	$weather["dewmmaxtime"]		= $dewmmaxtime; //seconds	
 	$weather["dewmmin"]		    = $meteobridgeapi[50]; //dew min month
 	$weather["dewmmintime"]		= $dewmmintime; //seconds	
 	//dewpoint yesterday
 	$originalDate84 = $meteobridgeapi[53];
-    $dewydmaxtime = date('jS M H:i', strtotime($originalDate84));	
+    $dewydmaxtime = date('H:i', strtotime($originalDate84));	
 	$originalDate85 = $meteobridgeapi[121];
-    $dewydmintime =  date('jS M H:i', strtotime($originalDate85));	
+    $dewydmintime =  date('H:i', strtotime($originalDate85));	
 	$weather["dewydmax"]		    = $meteobridgeapi[52]; //temp max year
 	$weather["dewydmaxtime"]		= $dewydmaxtime; //seconds	
 	$weather["dewydmin"]		    = $meteobridgeapi[120]; //temp min year

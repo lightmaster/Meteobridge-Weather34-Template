@@ -22,12 +22,7 @@ include('livedata.php');?>
 .weather34card__stuff-container{margin:0 auto;width:99%;height:18%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:15px;color:#aaa;background:RGBA(37,41,45,0);border:solid RGBA(156,156,156,0.1) 0;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;font-family:"weathertext",Helvetica, Arial, sans-serif;text-align:center;font-size:12px}
 .weather34card:after{content:"";display:block;position:absolute;top:0;left:0;width:16rem;height:4.625rem;padding:10px}.weather34card--earthquake1:after{background-image:radial-gradient(to bottom,rgba(106,122,135,0.5),transparent 70%)}.weather34card--earthquake2:after{background-image:radial-gradient(to bottom,rgba(106,191,96,0.5),transparent 70%)}.weather34card--earthquake3:after{background-image:radial-gradient(to bottom,rgba(96,203,231,0.5),transparent 70%)}blue{color:#01a4b4}orange{color:#ff8841}green{color:#9aba2f}red{color:#f37867}red6{color:#d65b4a}darkred{color:#f47264}value{color:#fff}yellow{color:RGBA(163,133,58,1)}purple{color:#916392}time{color:#aaa;font-weight:normal;font-family:"weathertext",Helvetica, Arial, sans-serif;}time span{color:#ff8841;font-weight:normal;font-family:"weathertext",Helvetica, Arial, sans-serif;}a{color:#aaa;font-size:11px;top:5px;margin-top:10px;text-decoration:none}
 .provided{position:absolute;color:#aaa;font-size:10px;bottom:3px;text-decoration:none;margin-left:100px;}updated{position:absolute;bottom:5px;float:right}.weather34-solarrate-bar{background:0;position:absolute;height:100px;width:30px;margin-left:235px;margin-top:-6px}
-.weather34solarrate{color:#ff8841;position:absolute;margin-left:36px;margin-top:17px;font-size:12px;width:20px;font-family:weathertext,arial,sans-serif;max-height:100px;line-height:10px;font-weight:normal}.weather34solarrate span{color:#777;font-family:weathertext,arial,sans-serif;font-size:12px}solarwm2{font-size:10px;font-weight:normal}.solarmaxi{position:absolute;margin-left:100px;float:right;color:#ff8841;margin-top:15px;width:100px;font-size:11px}.solarmaxi span{color:#aaa}.weather34-uvrate-bar{background:0;position:absolute;height:100px;width:30px;margin-left:235px;margin-top:-49px;color:RGBA(57,61,64,1)}.weather34-uvrate-bar .bar{shape-rendering:crispEdges;background:url(css/rain/temprulerw34.svg) no-repeat;width:37px;border:1px solid RGBA(57,61,64,1.00);border-bottom:5px solid RGBA(57,61,64,1.00);border-top:3px solid RGBA(57,61,64,1.00);-webkit-border-radius:1px 1px 2px 2px;position:absolute;bottom:0}.weather34-uvrate-bar .bar-1{height:100px;max-height:100px}
-.weather34-uvrate-bar .bar-inner10{shape-rendering:crispEdges;background:RGBA(128,105,152,0.5);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}
-.weather34-uvrate-bar .bar-inner8{shape-rendering:crispEdges;background:RGBA(174,81,82,0.6);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}
-.weather34-uvrate-bar .bar-inner5{shape-rendering:crispEdges;background:rgba(255, 124, 57, 0.8);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}
-.weather34-uvrate-bar .bar-inner3{shape-rendering:crispEdges;background:rgba(144, 177, 42, 0.6);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}
-.weather34-uvrate-bar .bar-inner{shape-rendering:crispEdges;background:rgba(0, 154, 171, 0.6);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34uvrate{color:#ff8841;position:absolute;margin-left:238px;margin-top:17px;font-size:12px;width:20px;font-family:weathertext,arial,sans-serif;max-height:100px;line-height:10px;font-weight:normal}.weather34uvrate span{color:#777;font-family:weathertext,arial,sans-serif;font-size:12px;font-weight:normal}purpleuv{color:#a475cb}reduv{color:#d65b4a}orangeuv{color:#ff8841}greenuv{color:#9aba2f}greyuv{color:#aaa}.uvmaxi{position:absolute;left:10px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:200px;}.uvmaxi span{color:#aaa}.weather34-luxrate-bar{background:0;position:absolute;height:100px;width:30px;margin-left:245px;margin-top:-6px}.weather34-luxrate-bar .bar{shape-rendering:crispEdges;background:url(css/rain/luxrulerw34.svg) no-repeat;width:37px;border:1px solid RGBA(57,61,64,1.00);border-bottom:5px solid RGBA(57,61,64,1.00);border-top:3px solid RGBA(57,61,64,1.00);-webkit-border-radius:1px 1px 2px 2px;position:absolute;bottom:0}.weather34-luxrate-bar .bar-1{height:100px;max-height:100px}.weather34-luxrate-bar .bar-inner1000{shape-rendering:crispEdges;background:RGBA(164,117,203,0.7);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner700{shape-rendering:crispEdges;background:RGBA(211,93,78,0.7);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner600{shape-rendering:crispEdges;background:RGBA(211,93,78,0.7);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner400{shape-rendering:crispEdges;background:RGBA(233,145,65,0.5);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner300{shape-rendering:crispEdges;background:RGBA(233,145,65,0.5);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner1{shape-rendering:crispEdges;background:RGBA(255,136,65,0.7);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34luxrate{color:#ff8841;position:absolute;margin-left:238px;margin-top:17px;font-size:12px;width:20px;font-family:weathertext,arial,sans-serif;max-height:100px;line-height:10px;font-weight:normal}.weather34luxrate span{color:#777;font-family:weathertext,arial,sans-serif;font-size:12px;font-weight:normal}.uvsun{position:absolute;top:10px;margin-left:175px}.sunfade{opacity:.8}unit{font-size:13px;color:#aaa;}.uvmaxi2{position:absolute;left:-10px;color:rgba(0, 154, 171, 1.000);margin-top:-60px;font-size:16px;width:200px;}.uvmaxi2 span{color:#aaa}
+.uvsun{position:absolute;top:10px;margin-left:175px}.sunfade{opacity:.8}unit{font-size:13px;color:#aaa;}.uvmaxi2{position:absolute;left:-10px;color:rgba(0, 154, 171, 1.000);margin-top:-60px;font-size:16px;width:200px;}.uvmaxi2 span{color:#aaa}
 .hitempypos{position:absolute;margin-top:20px;margin-left:90px}
 .hitempypos1{position:absolute;margin-top:-105px;margin-left:90px}
 .hitempypos2{position:absolute;margin-top:60px;margin-left:90px}
@@ -39,11 +34,11 @@ include('livedata.php');?>
 margin-bottom:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}
 .hitemp{color:#aaa;font-size:0.7rem;display:inline;}
 .hitemp span{color:rgba(255, 124, 57, 1.000)}
-.hitempy{font-family:Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:180px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:block;margin-top:5px}
-.hitempd{font-family:Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:180px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:block;margin-top:5px}
+.hitempy{position:relative;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:180px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:flex;margin-top:5px;align-items:center;justify-content:center;}
+.hitempd{position:relative;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:180px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:flex;margin-top:5px;align-items:center;justify-content:center;}
 
 
-.hitempa{font-family:Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:200px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:3px;margin-left:0;padding-left:3px;display:block}
+.hitempa{font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:200px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:3px;margin-left:0;padding-left:3px;display:block}
 .lotemp{font-size:26px;font-family:weathertext;}blue{color:rgba(0, 154, 171, 1.000)}.icon{position:absolute;right:0;bottom:10px;}
 .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}.weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:100%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}.weather34browser-footer{flex-basis:auto;height:35px;background:#ebebeb;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-20px;width:97.4%;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#fff;text-decoration:none;font-size:10px;}
 .weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
@@ -98,15 +93,7 @@ position:absolute;margin-bottom:20px}
 			  
 			  <?php		  
 			  
-		if($weather["humidity_max"]==''){$weather["humidity_max"]= 'N/A';}
-		if($weather["humidity_min"]==''){$weather["humidity_min"]= 'N/A';}
-		if($weather["humidity_mmax"]==''){$weather["humidity_mmax"]= 'N/A';}
-		if($weather["humidity_mmin"]==''){$weather["humidity_mmin"]= 'N/A';}
-		if($weather["humidity_ydmax"]==''){$weather["humidity_ydmax"]= 'N/A';}
-		if($weather["humidity_ydmin"]==''){$weather["humidity_ydmin"]= 'N/A';}
-		if($weather["humidity_ymax"]==''){$weather["humidity_ymax"]= 'N/A';}
-		if($weather["humidity_ymin"]==''){$weather["humidity_ymin"]= 'N/A';}
-		
+			  
 
 			  
 	//temp max today
@@ -164,7 +151,7 @@ position:absolute;margin-bottom:20px}
 	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
 	?> </div>
     
-    <div class="temperaturetrend">Max: <?php echo $weather["tempdmaxtime"];?></span></div>	
+    <div class="temperaturetrend">Max:<?php echo $weather["tempdmaxtime"];?></span></div>	
 			</div>  
 			  
 			  
@@ -226,7 +213,7 @@ position:absolute;margin-bottom:20px}
 	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
 	?> </div>
     
-    <div class="temperaturetrend">Min: <?php echo $weather["tempdmintime"];?></span></div>	
+    <div class="temperaturetrend">Min:<?php echo $weather["tempdmintime"];?></span></div>	
 </div>
 
 </span> 
@@ -234,14 +221,14 @@ position:absolute;margin-bottom:20px}
  
  
 
-    <div class=hitempypos >        
-  <div class="hitempy">Dewpoint <orange>Max</orange> <orange><?php echo $weather["dewmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmaxtime"];?></span></div>
-<div class="hitempy">Dewpoint <blue>Min</blue> <blue><?php echo $weather["dewmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmintime"];?></span></div>
+    <div class=hitempypos> 
+ <div class="hitempy">Dewpoint Max <orange><?php echo "&nbsp; ".$weather["dewmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmaxtime"];?></span></div>
+ <div class="hitempy">Dewpoint Min <blue><?php echo "&nbsp; ".$weather["dewmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmintime"];?></span></div>
 
 
-        
-  <div class="hitempd">Humidity  <orange>Max</orange> <orange>&nbsp;<?php echo $weather["humidity_max"],"</orange>% ",$weather["humidity_maxtime"];?></span></div>
-<div class="hitempd">Humidity  <blue>Min</blue> <blue> &nbsp;<?php echo $weather["humidity_min"],"</blue>% ",$weather["humidity_mintime"];?></span></div>
+
+<div class="hitempd">Humidity Max<orange><?php echo "&nbsp; ".$weather["humidity_max"],"</orange>% ",$weather["humidity_maxtime"];?></span></div>
+<div class="hitempd">Humidity Min<blue><?php echo "&nbsp; ".$weather["humidity_min"],"</blue>% ",$weather["humidity_mintime"];?></span></div>
 </div>
   
               </div>          
@@ -398,13 +385,13 @@ position:absolute;margin-bottom:20px}
             
 
 <div class=hitempypos1> 
- <div class="hitempy">Dewpoint <orange>Max</orange> <orange><?php echo $weather["dewmmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmmaxtime"];?></span></div>
-<div class="hitempy">Dewpoint <blue>Min</blue> <blue><?php echo $weather["dewmmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmmintime"];?></span></div>
+ <div class="hitempy">Dewpoint Max <orange><?php echo "&nbsp; ".$weather["dewmmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmmaxtime"];?></span></div>
+ <div class="hitempy">Dewpoint Min <blue><?php echo "&nbsp; ".$weather["dewmmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmmintime"];?></span></div>
 
 
 
-<div class="hitempd">Humidity  <orange>Max</orange> <orange>&nbsp;<?php echo $weather["humidity_mmax"],"</orange>% ",$weather["humidity_mmaxtime"];?></span></div>
-<div class="hitempd">Humidity  <blue>Min</blue> <blue> &nbsp;<?php echo $weather["humidity_mmin"],"</blue>% ",$weather["humidity_mmintime"];?></span></div>
+<div class="hitempd">Humidity Max<orange><?php echo "&nbsp; ".$weather["humidity_mmax"],"</orange>% ",$weather["humidity_mmaxtime"];?></span></div>
+<div class="hitempd">Humidity Min<blue><?php echo "&nbsp; ".$weather["humidity_mmin"],"</blue>% ",$weather["humidity_mmintime"];?></span></div>
 </div>
             </div>
         </div>
@@ -553,13 +540,14 @@ position:absolute;margin-bottom:20px}
     <div class="temperaturetrend">Min: <?php echo $weather["tempydmintime"];?></span></div>	         
             
             
-    <div class=hitempypos1>        
-  <div class="hitempy">Dewpoint <orange>Max</orange> <orange><?php echo $weather["dewydmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewydmaxtime"];?></span></div>
-<div class="hitempy">Dewpoint <blue>Min</blue> <blue><?php echo $weather["dewydmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewydmintime"];?></span></div>
+  <div class=hitempypos1> 
+ <div class="hitempy">Dewpoint Max <orange><?php echo "&nbsp; ".$weather["dewydmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewydmaxtime"];?></span></div>
+ <div class="hitempy">Dewpoint Min <blue><?php echo "&nbsp; ".$weather["dewydmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewydmintime"];?></span></div>
 
 
-<div class="hitempd">Humidity  <orange>Max</orange> <orange>&nbsp;<?php echo $weather["humidity_ydmax"],"</orange>% ",$weather["humidity_ydmaxtime"];?></span></div>
-<div class="hitempd">Humidity  <blue>Min</blue> <blue> &nbsp;<?php echo $weather["humidity_ydmin"],"</blue>% ",$weather["humidity_ydmintime"];?></span></div>
+
+<div class="hitempd">Humidity Max<orange><?php echo "&nbsp; ".$weather["humidity_ydmax"],"</orange>% ",$weather["humidity_ydmaxtime"];?></span></div>
+<div class="hitempd">Humidity Min<blue><?php echo "&nbsp; ".$weather["humidity_mmin"],"</blue>% ",$weather["humidity_ydmintime"];?></span></div>
 </div>
 
             </div> </div>
@@ -699,15 +687,14 @@ position:absolute;margin-bottom:20px}
             
             
 <div class=hitempypos1> 
-<div class="hitempy">Dewpoint <orange>Max</orange> <orange><?php echo $weather["dewymax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewymaxtime"];?></span></div>
-<div class="hitempy">Dewpoint <blue>Min</blue> <blue><?php echo $weather["dewymin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewymintime"];?></span></div>
-
-<div class="hitempd">Humidity  <orange>Max</orange> <orange>&nbsp;<?php echo $weather["humidity_ymax"],"</orange>% ",$weather["humidity_ymaxtime"];?></span></div>
-<div class="hitempd">Humidity  <blue>Min</blue> <blue> &nbsp;<?php echo $weather["humidity_ymin"],"</blue>% ",$weather["humidity_ymintime"];?></span></div>
+ <div class="hitempy">Dewpoint Max <orange><?php echo "&nbsp; ".$weather["dewymax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewymaxtime"];?></span></div>
+ <div class="hitempy">Dewpoint Min <blue><?php echo "&nbsp; ".$weather["dewymin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewymintime"];?></span></div>
 
 
+
+<div class="hitempd">Humidity Max<orange><?php echo "&nbsp; ".$weather["humidity_ymax"],"</orange>% ",$weather["humidity_ymaxtime"];?></span></div>
+<div class="hitempd">Humidity Min<blue><?php echo "&nbsp; ".$weather["humidity_ymin"],"</blue>% ",$weather["humidity_ymintime"];?></span></div>
 </div>
-
 
 
 
