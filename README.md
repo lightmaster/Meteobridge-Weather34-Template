@@ -8,7 +8,7 @@ all icons are produced and made by weather34 in svg format .
 
 # Meteobridge Version Screenshot 
 <p align="center">
-  <img src="https://res.cloudinary.com/brian-underdown/image/upload/v1550403213/weather34dark_bs7btd.png" width="550" title="weather34 meteobridge template ">
+  <img src="https://res.cloudinary.com/brian-underdown/image/upload/v1552294077/mbdark_xycyz0.png" width="550" title="weather34 meteobridge template ">
  
 </p>
 
