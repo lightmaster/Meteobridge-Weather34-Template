@@ -72,7 +72,7 @@ bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d0
 				  else if ($darkskydayIcon == 'partly-cloudy-night'){echo '<img src="css/darkskyicons/partly-cloudy-day.svg" width="50"></img><br>';}  
 				  else echo '<img src="css/darkskyicons/'.$darkskydayIcon.'.svg" width="50"></img><br>';	  
 				  
-				  echo '<darkskytemphihome><span><img src=css/icons/temp34.svg width=10px>';
+				  echo '<darkskytemphihome><span>';
 				  
 				   echo " <hilo> </hilo>";
 if($tempunit=='F' && $darkskydayTempHigh<44.6){echo '<bluetds>'.number_format($darkskydayTempHigh,0).'°</bluetds>';}

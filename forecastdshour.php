@@ -88,7 +88,7 @@ bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d0
 			  if ($hi++ == 10) break; 
             	  echo '<div class="darkskyforecastinghome"><value>';  
                   echo '<div class="darkskyweekdayhome"><value>'.date("H:i", $darkskyhourlyTime).'</div>';  
-				  echo '<darkskytemphihome><value><img src=css/icons/temp34.svg width=10px>
+				  echo '<darkskytemphihome><value>
 				  
 				  <span><value>';
 				  if($tempunit=='F' && $darkskyhourlyTemp<44.6){echo '<darkskytemphihome><bluetds>'.number_format($darkskyhourlyTemp,0).'°</bluetds></darkskytemphihome>';}
