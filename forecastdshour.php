@@ -48,6 +48,10 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
 
 .weather34darkbrowser{font-family:Arial, Helvetica, sans-serif;position:relative;background:0;width:103%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}
 .weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:5px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}value{font-size:.9em;font-family:weathertext2}value1{font-size:1em;font-family:weathertext2}
+blue{color:#3b9cac;}green{color:#90b12a;}yellow{color:#e6a141}
+
+bluetds,greentds,orangetds,purpletds,redtds,yellowtds{color:#fff;text-transform:capitalize;border-radius:2px;width:35px;padding:0 3px}
+bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d05f2d}greentds{background:#90b12a}redtds{background:-webkit-linear-gradient(90deg,#d86858,rgba(211,93,78,.7));background:linear-gradient(90deg,#d86858,rgba(211,93,78,.7))}purpletds{background:-webkit-linear-gradient(90deg,#d86858,rgba(157,59,165,.4));background:linear-gradient(90deg,#d86858,rgba(157,59,165,.4))}
 </style>
 </head>
 <body>
@@ -64,7 +68,8 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
             $darkskyhourlyTime = $cond['time'];
             $darkskyhourlySummary = $cond['summary'];
             $darkskyhourlyIcon = $cond['icon'];
-            $darkskyhourlyTemp = round($cond['temperature']);
+            if ($weather["temp_units"]=='F'){ $darkskyhourlyTemp = round(32 +(9*$cond['temperature']/5));}
+			else $darkskyhourlyTemp = round($cond['temperature']);
             //$darkskyhourlyTempLow = round($cond['temperatureMin']);
 			$darkskyhourlyWinddir = $cond['windBearing'];
 			$darkskyhourlyuv = $cond['uvIndex'];
@@ -72,32 +77,48 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
             $darkskyhourlyHumidity = $cond['humidity']*100;
             $darkskyhourlyPrecipProb = $cond['precipProbability']*100;
             if (isset($cond['precipType'])){
-            $darkskyhourlyPrecipType = $cond['precipType'];}
-			$darkskyhourlyprecipIntensity = number_format($cond['precipIntensity'],1);         
-            $darkskyhourlyWindSpeed = round($cond['windSpeed'],0);
-			$darkskyhourlyWindGust = round($cond['windGust'],0);
+            $darkskyhourlyPrecipType = $cond['precipType'];}			
+			if ($rainunit=='in'){ $darkskyhourlyprecipIntensity=number_format($cond['precipIntensity']*0.0393701,2);} 
+			else $darkskyhourlyprecipIntensity = number_format($cond['precipIntensity'],1);		
+			
+			
+			       
+            $darkskyhourlyWindSpeed = round($cond['windSpeed']*$windconversion,0);
+			$darkskyhourlyWindGust = round($cond['windGust']*$windconversion,0);
 			  if ($hi++ == 10) break; 
-            	  echo '<div class="darkskyforecastinghome">';  
-                  echo '<div class="darkskyweekdayhome">'.date("H:i", $darkskyhourlyTime).'</div>';  
-				  echo '<darkskytemphihome><img src=css/icons/temp34.svg width=10px><span>'.$darkskyhourlyTemp.'°<grey>'.$temp_units.'</grey> &nbsp;</span>';
-				  echo '<grey>&nbsp;UVI:</grey><orange>'.$darkskyhourlyuv.' </orange></darkskytemphihome><br>';  
+            	  echo '<div class="darkskyforecastinghome"><value>';  
+                  echo '<div class="darkskyweekdayhome"><value>'.date("H:i", $darkskyhourlyTime).'</div>';  
+				  echo '<darkskytemphihome><value><img src=css/icons/temp34.svg width=10px>
+				  
+				  <span><value>';
+				  if($tempunit=='F' && $darkskyhourlyTemp<44.6){echo '<darkskytemphihome><bluetds>'.number_format($darkskyhourlyTemp,0).'°</bluetds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskyhourlyTemp>104){echo '<darkskytemphihome><purpletds>'.number_format($darkskyhourlyTemp,0).'°</purpletds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskyhourlyTemp>80.6){echo '<darkskytemphihome><redtds>'.number_format($darkskyhourlyTemp,0).'°</redtds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskyhourlyTemp>64){echo '<darkskytemphihome><orangetds>'.number_format($darkskyhourlyTemp,0).'°</orangetds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskyhourlyTemp>55){echo '<darkskytemphihome><yellowtsd>'.number_format($darkskyhourlyTemp,0).'°</yellowtds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskyhourlyTemp>=44.6){echo '<darkskytemphihome><greentds>'.number_format($darkskyhourlyTemp,0).'°</greentds></darkskytemphihome>';}
+				  
+else if($darkskyhourlyTemp<7){echo '<darkskytemphihome><bluetds>'.number_format($darkskyhourlyTemp,0).'°</bluet></darkskytemphihome>';}
+else if($darkskyhourlyTemp>40){echo '<darkskytemphihome><purpletsd>'.number_format($darkskyhourlyTemp,0).'°</purpletds></darkskytemphihome>';}
+else if($darkskyhourlyTemp>27){echo '<darkskytemphihome><redtds>'.number_format($darkskyhourlyTemp,0).'°</redtds></darkskytemphihome>';}
+else if($darkskyhourlyTemp>17.7){echo '<darkskytemphihome><orangetds>'.number_format($darkskyhourlyTemp,0).'°</orangetds></darkskytemphihome>';}
+else if($darkskyhourlyTemp>12.7){echo '<darkskytemphihome><yellowtds>'.number_format($darkskyhourlyTemp,0).'°</yellowtds></darkskytemphihome>';}
+else if($darkskyhourlyTemp>=7){echo '<darkskytemphihome><greentds>'.number_format($darkskyhourlyTemp,0).'°</greentds></darkskytemphihome>';}
 				  
 				  
+				  echo '<grey> '.$weather["temp_units"].'</grey> &nbsp;</span>';
+				  echo '<value1><grey>&nbsp;UVI:</grey><orange>'.$darkskyhourlyuv.' </orange></darkskytemphihome><br>';  
 				  if (date("G", $darkskyhourlyTime) >$suns2){echo '<darkskyiconcurrent><img src="css/darkskyicons/nt_'. $darkskyhourlyIcon.'.svg" width="50"></img></darkskyiconcurrent>';}
 			      else if (date("G", $darkskyhourlyTime) <$sunr2){echo '<darkskyiconcurrent><img src="css/darkskyicons/nt_'. $darkskyhourlyIcon.'.svg" width="50"></img></darkskyiconcurrent>';}			  
 				  else  echo '<darkskyiconcurrent><img src="css/darkskyicons/'.$darkskyhourlyIcon.'.svg" width="50" ></img></darkskyiconcurrent>';
-				  
-				  
-				  echo '<darkskytempwindhome><span2 style="color:#ff8841;">';				 			 
+				  echo '<darkskytempwindhome><span2 style="color:#ff7c39;"><value>';				 			 
 				  echo "<img src = 'css/windicons/avgw.svg' width='20' style='-webkit-transform:rotate(".$darkskyhourlyWinddir."deg);-moz-transform:rotate(".$darkskyhourlyWinddir."deg);-o-transform:rotate(".$darkskyhourlyWinddir."deg);transform:rotate(".$darkskyhourlyWinddir."deg)'></span>";				 
-				  echo  '</span2><span4> '.$darkskyhourlyWindSpeed.' | <gust>'.$darkskyhourlyWindGust.'</gust></span4> <windunit>'.$windunit.'</windunit><br>';				 		 
-				  echo '&nbsp;<darkskyrainhome><span>'.$darkskyhourlyPrecipType.' </darkskyrainhome><br><darkskyrainhome1>'. $darkskyhourlyPrecipProb.'% <blue1>'.$rainsvg.' '. $darkskyhourlyprecipIntensity.'</blue1><unit> '.$rainunit.'</unit></darkskyrainhome1></span>';
+				  echo  '</span2><span4><value> '.$darkskyhourlyWindSpeed.' | <gust>'.$darkskyhourlyWindGust.'</gust></span4> <windunit>'.$windunit.'</windunit><br>';				 		 
+				  echo '&nbsp;<darkskyrainhome><span><value>'.$darkskyhourlyPrecipType.' </darkskyrainhome><br><darkskyrainhome1><value>'. $darkskyhourlyPrecipProb.'% <blue1>'.$rainsvg.' '. $darkskyhourlyprecipIntensity.'</blue1><unit> '.$rainunit.'</unit></darkskyrainhome1></span>';
 				  echo  '</div>';}?></div></div>
-                  
-                  
  <div style="position:absolute;bottom:5px;z-index:9999;font-weight:normal;font-size:10px;color:#aaa;text-decoration:none !important;float:right;font-family:arial;">
   
-   &nbsp;&nbsp;data provided by <a href="https://darksky.net/about" title="https://darksky.net" target="_blank">https://darksky.net/</a> -- <?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
+   &nbsp;&nbsp;data provided by <a href="https://darksky.net/about" title="https://darksky.net" target="_blank">https://darksky.net/</a> -- CSS/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com</a>  &copy;<?php echo date('Y');?>
   </div>
   </body>
   </html>

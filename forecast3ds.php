@@ -1,4 +1,4 @@
-<?php
+<?php //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
 include_once('livedata.php');
 error_reporting(0); date_default_timezone_set($TZ);include('common.php');
 
@@ -12,6 +12,8 @@ error_reporting(0); date_default_timezone_set($TZ);include('common.php');
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
 ?> 
+<style>
+hilo{font-size:.8em}</style>
 	<div class="updatedtimecurrent">
 <?php $forecastime=filemtime('jsondata/darksky.txt');$weather34wuurl = file_get_contents("jsondata/dark.txt");
 if(filesize('jsondata/darksky.txt')<1){echo "".$offline. " Offline<br>";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
@@ -38,9 +40,39 @@ if(filesize('jsondata/darksky.txt')<1){echo "".$offline. " Offline<br>";}else ec
                   echo '<div class="darkskyweekdayhome">'.strftime("%a %b %e", $darkskydayTime).'<br>';  				  
 				  if ($darkskydayacumm>0 ){echo '<img src="css/darkskyicons/snow.svg" width="40"></img><br>';} 
 				  else if ($darkskydayIcon == 'partly-cloudy-night'){echo '<img src="css/darkskyicons/partly-cloudy-day.svg" width="40"></img><br>';}     
-				  else echo '<img src="css/darkskyicons/'.$darkskydayIcon.'.svg" width="40"></img><br>';
-				  echo '</div><darkskytemphihome><span>&nbsp;'.$darkskydayTempHigh.'° </span></darkskytemphihome>|  ';
-				  echo '<darkskytemplohome><oblue>'.$darkskydayTempLow.'° &nbsp;</darkskytemplohome><br></oblue>'; 	  
+				  else echo '<img src="css/darkskyicons/'.$darkskydayIcon.'.svg" width="40"></img><br></div>';
+				  
+//Hi temp non metric
+echo " <hilo> </hilo>";
+if($tempunit=='F' && $darkskydayTempHigh<44.6){echo '<darkskytemphihome><bluetds>'.number_format($darkskydayTempHigh,0).'°</bluetds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempHigh>104){echo '<darkskytemphihome><purpletds>'.number_format($darkskydayTempHigh,0).'°</purpletds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempHigh>80.6){echo '<darkskytemphihome><redtds>'.number_format($darkskydayTempHigh,0).'°</redtds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempHigh>64){echo '<darkskytemphihome><orangetds>'.number_format($darkskydayTempHigh,0).'°</orangetds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempHigh>55){echo '<darkskytemphihome><yellowtsd>'.number_format($darkskydayTempHigh,0).'°</yellowtds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempHigh>=44.6){echo '<darkskytemphihome><greentds>'.number_format($darkskydayTempHigh,0).'°</greentds></darkskytemphihome>';}
+//temp metric
+else if($darkskydayTempHigh<7){echo '<darkskytemphihome><bluetds>'.number_format($darkskydayTempHigh,0).'°</bluet></darkskytemphihome>';}
+else if($darkskydayTempHigh>40){echo '<darkskytemphihome><purpletsd>'.number_format($darkskydayTempHigh,0).'°</purpletds></darkskytemphihome>';}
+else if($darkskydayTempHigh>27){echo '<darkskytemphihome><redtds>'.number_format($darkskydayTempHigh,0).'°</redtds></darkskytemphihome>';}
+else if($darkskydayTempHigh>17.7){echo '<darkskytemphihome><orangetds>'.number_format($darkskydayTempHigh,0).'°</orangetds></darkskytemphihome>';}
+else if($darkskydayTempHigh>12.7){echo '<darkskytemphihome><yellowtds>'.number_format($darkskydayTempHigh,0).'°</yellowtds></darkskytemphihome>';}
+else if($darkskydayTempHigh>=7){echo '<darkskytemphihome><greentds>'.number_format($darkskydayTempHigh,0).'°</greentds></darkskytemphihome>';}
+echo " <hilo> </hilo>";
+//low
+if($tempunit=='F' && $darkskydayTempLow<44.6){echo '<darkskytemphihome><bluetds>'.number_format($darkskydayTempLow,0).'°</bluetds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempLow>104){echo '<darkskytemphihome><purpletds>'.number_format($darkskydayTempLow,0).'°</purpletds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempLow>80.6){echo '<darkskytemphihome><redtds>'.number_format($darkskydayTempLow,0).'°</red></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempLow>64){echo '<darkskytemphihome><orangetds>'.number_format($darkskydayTempLow,0).'°</orangetds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempLow>55){echo '<darkskytemphihome><yellowtds>'.number_format($darkskydayTempLow,0).'°</yellowtds></darkskytemphihome>';}
+else if($tempunit=='F' && $darkskydayTempLow>=44.6){echo '<darkskytemphihome><greentds>'.number_format($darkskydayTempLow,0).'°</greentds></darkskytemphihome>';}
+//temp metric
+else if($darkskydayTempLow<7){echo '<darkskytemphihome><bluetds>'.number_format($darkskydayTempLow,0).'°</bluetds></darkskytemphihome>';}
+else if($darkskydayTempLow>40){echo '<darkskytemphihome><purpletds>'.number_format($darkskydayTempLow,0).'°</purpletds></darkskytemphihome>';}
+else if($darkskydayTempLow>27){echo '<darkskytemphihome><redtds>'.number_format($darkskydayTempLow,0).'°</redtds></darkskytemphihome>';}
+else if($darkskydayTempLow>17.7){echo '<darkskytemphihome><orangetds>'.number_format($darkskydayTempLow,0).'°</orangetds></darkskytemphihome>';}
+else if($darkskydayTempLow>12.7){echo '<darkskytemphihome><yellowtds>'.number_format($darkskydayTempLow,0).'°</yellowtds></darkskytemphihome>';}
+else if($darkskydayTempLow>=7){echo '<darkskytemphihome><greentds>'.number_format($darkskydayTempLow,0).'°</greentds></darkskytemphihome>';}				  
+ echo '<br></oblue>'; 	  
 				   	
 				  echo '<darkskytempwindhome><grey>';				  
 				  if ($darkskydayWinddir <15 ) echo $lang['North'];elseif ($darkskydayWinddir <45 ) echo $lang['NNE'];elseif ($darkskydayWinddir <90 ) echo $lang['ENE'];elseif ($darkskydayWinddir <110 ) echo $lang['East'];

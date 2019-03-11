@@ -9,6 +9,7 @@ include_once('settings.php');include('livedata.php');
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
+	//original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -33,6 +34,8 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
 .darkskyforecasthome darkskytemphihome{font-size:0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}.darkskyforecasthome darkskytemphihome span{font-size::0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}.darkskyforecasthome darkskytemplohome{font-size:0.7rem;color:#ff7c39;font-family:Arial;line-height:10px}.darkskyforecasthome darkskytemplohome span{font-size:0.7rem;color:#01a4b5;font-family:Arial}.darkskyforecasthome darkskytempwindhome{font-size:0.7rem;color:#aaa;font-family:Arial;line-height:10px}.darkskyforecasthome darkskytempwindhome span{font-size:0.7rem;color:#aaa;font-family:Arial;line-height:10px}.darkskyforecasthome darkskytempwindhome span2{font-size:0.7rem;color:#aaa;font-family:Arial;line-height:10px;margin-top:3px}.darkskyiconcurrent img{position:relative;width:80px;margin-top:-50px;margin-left:0;margin-bottom:-10px;margin-right:0;padding-right:0;float:left}.darkskynexthours{line-height:12px}.darkskynexthours span2{line-height:12px}body{line-height:11px}grey{color:#aaa}blue1{color:#01a4b5;text-transform:capitalize}orange1{color:#ff7c39}green{color:rgba(144,177,42,1)}a{font-size:10px;color:#aaa;text-decoration:none!important;font-family:arial}.forecastupdated{position:absolute;font-size:10px;color:#aaa;font-family:arial;bottom:25px;float:right;margin-left:575px}	
 .weather34darkbrowser{font-family:Arial, Helvetica, sans-serif;position:relative;background:0;width:103%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}
 .weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:5px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}precip{position:relative;top:5px;padding:2px;border-radius:3px;background:rgba(97,106,114,0.2);}value{font-size:.85em;font-family:weathertext2}value1{font-size:1em;font-family:weathertext2}
+bluetds,greentds,orangetds,purpletds,redtds,yellowtds{color:#fff;text-transform:capitalize;border-radius:2px;width:35px;padding:0 3px}
+bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d05f2d}greentds{background:#90b12a}redtds{background:-webkit-linear-gradient(90deg,#d86858,rgba(211,93,78,.7));background:linear-gradient(90deg,#d86858,rgba(211,93,78,.7))}purpletds{background:-webkit-linear-gradient(90deg,#d86858,rgba(157,59,165,.4));background:linear-gradient(90deg,#d86858,rgba(157,59,165,.4))}
 </style>
 </head>
 <body>
@@ -69,8 +72,48 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
 				  else if ($darkskydayIcon == 'partly-cloudy-night'){echo '<img src="css/darkskyicons/partly-cloudy-day.svg" width="50"></img><br>';}  
 				  else echo '<img src="css/darkskyicons/'.$darkskydayIcon.'.svg" width="50"></img><br>';	  
 				  
-				  echo '<darkskytemphihome><span><img src=css/icons/temp34.svg width=10px> '.$darkskydayTempHigh.'°<grey> | </grey></span></darkskytemphihome>';
-				  echo '<darkskytemplohome><span>'.$darkskydayTempLow.'° &nbsp;</span></darkskytemplohome>';  
+				  echo '<darkskytemphihome><span><img src=css/icons/temp34.svg width=10px>';
+				  
+				   echo " <hilo> </hilo>";
+if($tempunit=='F' && $darkskydayTempHigh<44.6){echo '<bluetds>'.number_format($darkskydayTempHigh,0).'°</bluetds>';}
+else if($tempunit=='F' && $darkskydayTempHigh>104){echo '<purpletds>'.number_format($darkskydayTempHigh,0).'°</purpletds>';}
+else if($tempunit=='F' && $darkskydayTempHigh>80.6){echo '<darkskytemphihome><redtds>'.number_format($darkskydayTempHigh,0).'°</redtds>';}
+else if($tempunit=='F' && $darkskydayTempHigh>64){echo '<darkskytemphihome><orangetds>'.number_format($darkskydayTempHigh,0).'°</orangetds>';}
+else if($tempunit=='F' && $darkskydayTempHigh>55){echo '<darkskytemphihome><yellowtsd>'.number_format($darkskydayTempHigh,0).'°</yellowtds>';}
+else if($tempunit=='F' && $darkskydayTempHigh>=44.6){echo '<darkskytemphihome><greentds>'.number_format($darkskydayTempHigh,0).'°</greentds>';}
+//temp metric
+else if($darkskydayTempHigh<7){echo '<bluetds>'.number_format($darkskydayTempHigh,0).'°</bluet>';}
+else if($darkskydayTempHigh>40){echo '<purpletsd>'.number_format($darkskydayTempHigh,0).'°</purpletds';}
+else if($darkskydayTempHigh>27){echo '<redtds>'.number_format($darkskydayTempHigh,0).'°</redtds>';}
+else if($darkskydayTempHigh>17.7){echo '<orangetds>'.number_format($darkskydayTempHigh,0).'°</orangetds>';}
+else if($darkskydayTempHigh>12.7){echo '<yellowtds>'.number_format($darkskydayTempHigh,0).'°</yellowtds>';}
+else if($darkskydayTempHigh>=7){echo '<greentds>'.number_format($darkskydayTempHigh,0).'°</greentds>';}
+
+'°<grey> | </grey></span></darkskytemphihome>';
+				   
+				   
+				   
+				  echo '<darkskytemplohome><span>';
+				  
+			 echo " <hilo> </hilo>";
+if($tempunit=='F' && $darkskydayTempLow<44.6){echo '<bluetds>'.number_format($darkskydayTempLow,0).'°</bluetds>';}
+else if($tempunit=='F' && $darkskydayTempLow>104){echo '<purpletds>'.number_format($darkskydayTempLow,0).'°</purpletds>';}
+else if($tempunit=='F' && $darkskydayTempLow>80.6){echo '<darkskytemphihome><redtds>'.number_format($darkskydayTempLow,0).'°</redtds>';}
+else if($tempunit=='F' && $darkskydayTempLow>64){echo '<darkskytemphihome><orangetds>'.number_format($darkskydayTempLow,0).'°</orangetds>';}
+else if($tempunit=='F' && $darkskydayTempLow>55){echo '<darkskytemphihome><yellowtsd>'.number_format($darkskydayTempLow,0).'°</yellowtds>';}
+else if($tempunit=='F' && $darkskydayTempLow>=44.6){echo '<darkskytemphihome><greentds>'.number_format($darkskydayTempLow,0).'°</greentds>';}
+//temp metric
+else if($darkskydayTempLow<7){echo '<bluetds>'.number_format($darkskydayTempLow,0).'°</bluet>';}
+else if($darkskydayTempLow>40){echo '<purpletsd>'.number_format($darkskydayTempLow,0).'°</purpletds';}
+else if($darkskydayTempLow>27){echo '<redtds>'.number_format($darkskydayTempLow,0).'°</redtds>';}
+else if($darkskydayTempLow>17.7){echo '<orangetds>'.number_format($darkskydayTempLow,0).'°</orangetds>';}
+else if($darkskydayTempLow>12.7){echo '<yellowtds>'.number_format($darkskydayTempLow,0).'°</yellowtds>';}
+else if($darkskydayTempLow>=7){echo '<greentds>'.number_format($darkskydayTempLow,0).'°</greentds>';}
+	 
+				 
+				 
+				 
+				 echo '</span></darkskytemplohome>';  
 				  echo '<darkskytemplohome><grey> '.$sunlight.' UVI <orange1>'.$darkskydayUV.'</orange1></grey></darkskytemplohome><br>';  
 				  
 				   echo "<div class='darkskywindspeedicon'><img src = 'css/windicons/avgw.svg' width='30' style='-webkit-transform:rotate(".$darkskydayWinddir."deg);-moz-transform:rotate(".$darkskydayWinddir."deg);-o-transform:rotate(".$darkskydayWinddir."deg);transform:rotate(".$darkskydayWinddir."deg)'>					   
