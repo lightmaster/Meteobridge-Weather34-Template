@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Forecast </title>
+		<title>Weather34 Weather Underground Forecast </title>
 	<style>
 		.darkskyforecasting,darkskyweekday{background-color:rgba(253,166,16,1);font-size:12px;font-family:Arial;color:silver}body,darkskytemplo span,darkskyweekday{color:silver}@font-face{font-family:system;font-style:normal;src:local(".SFNSText-Light"),local("Arial")}@font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(css/fonts/verbatim-regular.woff2) format("woff2"),url(css/fonts/verbatim-regular.ttf) format("truetype")}body{background:rgba(11,12,12,.4)}.darkskyforecasting{float:left;display:block;width:43%;border-radius:4px;margin:-15px 2px 2px 5px;height:300px;padding:10px;border:1px solid rgba(153,155,156,.1);line-height:12px}darkskyweekday{position:absolute;margin:3px 3px 10px;text-align:center;padding:2px;border-radius:4px;line-height:15px}darkskytemphi{margin-top:5px;font-size:14px;color:rgba(255,124,57,1);font-family:Arial;margin-left:10%}darkskytemphi span{font-size:14px;color:#111}darkskysummary,darkskytemplo,darkskytemplo span,darkskywindspeed{font-size:12px;font-family:Arial}darkskytemplo{margin-top:5px;color:#00a4b4}darkskysummary,darkskywindspeed{color:silver;line-height:11px}.darkskywindgust,.darkskywindspeedicon{position:absolute;font-size:10px;line-height:11px;color:silver}.darkskywindspeedicon{font-family:weathertext2;margin-top:-50px;margin-left:67px}.darkskywindgust{font-family:Arial;margin-top:-55px;margin-left:97px}.darkskydiv{position:relative;width:725px;overflow:hidden!important;height:378px;float:none;margin-left:-5px;margin-top:-5px}.greydesc,.none{position:absolute}.darkskyforecastinghome{font-size:13px;float:left;display:inline;width:23.3%;border-radius:3px;margin:0 3px 5px 0;font-family:Arial,system;height:175px;padding:5px 3px 3px;background:rgba(29,32,34,1);background:linear-gradient(to bottom,rgba(97,106,114,1) 12%,rgba(29,32,34,0) 11%,rgba(29,32,34,0) 100%,rgba(229,77,11,0) 0);background:-webkit-linear-gradient(to bottom,rgba(97,106,114,1) 12%,rgba(29,32,34,0) 11%,rgba(29,32,34,0) 100%,rgba(229,77,11,0) 0);background:-moz-linear-gradient(to bottom,rgba(97,106,114,1) 12%,rgba(29,32,34,0) 11%,rgba(29,32,34,0) 100%,rgba(229,77,11,0) 0);background:-o-linear-gradient(to bottom,rgba(97,106,114,1) 12%,rgba(29,32,34,0) 11%,rgba(29,32,34,0) 100%,rgba(229,77,11,0) 0);color:silver;overflow:hidden!important;border:1px solid #333;border-bottom:solid 1px #333;border-top:1px solid #333}.valuehi,spantemp{font-family:weathertext2}.greydesc{color:silver;margin-left:0;margin-top:-10px;font-size:.85em}.none{float:none;margin-top:10px}.valuehi{font-size:1.25em;padding:5px;background:0;border-radius:3px;margin-top:-15px;color:#ff7c39}spantemp{font-size:.75em;color:#fff}.darkskyweekdayhome{postion:absolutue;text-align:center;padding:0;color:#fff;font-family:Arial;font-size:.7rem;margin:0 0 12px;background:0}blueu,greenu,orangeu,purpleu,redu,yellowu{padding:0 3px}bluet,blueu{background:#01a4b5}yellowt,yellowu{background:#e6a141}oranget,orangeu{background:#d05f2d}greent,greenu{background:#90b12a}redt,redu{background:#cd5245}purplet,purpleu{background:#b600b0}.darkskyforecasthome darkskytemphihome{font-size:.7rem;color:#ff7c39;font-family:Arial;line-height:10px}.darkskyforecasthome darkskytemphihome span{font-size::.7rem;color:#ff7c39;font-family:Arial;line-height:10px}.darkskyforecasthome darkskytemplohome{font-size:.65rem;color:#ff7c39;font-family:Arial;line-height:15px}.darkskyforecasthome darkskytemplohome span{font-size:.65rem;color:#01a4b5;font-family:Arial}.darkskyforecasthome darkskytempwindhome{font-size:.6rem;color:silver;font-family:Arial;line-height:10px}.darkskyforecasthome darkskytempwindhome span{font-size:.6rem;color:silver;font-family:Arial;line-height:10px;display:block}.darkskyforecasthome darkskytempwindhome span2{font-size:.7rem;color:silver;font-family:Arial;line-height:10px;margin-top:3px}blueu,greenu,orangeu,purpleu,redu,yellowu{color:#fff;border-radius:2px}.darkskyforecastinghome img{position:relative;margin-top:-5px;margin-bottom:10px}.darkskyforecastinghomeicon{margin-bottom:-5px}.darkskynexthours,.darkskynexthours span2{line-height:12px}body{line-height:11px}grey{color:silver}blue1{color:#009bac}orange1{color:silver;font-size:1.2em}orange{color:#d05f2d}green{color:#90b12a}yellow{color:#e6a141}red{color:#cd5245}purple{color:#b600b0}img{padding-top:3px}blueu,greenu,orangeu,purpleu,redu,yellowu{width:35px}bluet,greent,oranget,purplet,redt,yellowt{position:absolute;color:#fff;border-radius:2px;width:3em;padding:5px;top:-15px;display:flex;align-items:center;justify-content:center}.forecastupdated,a{font-size:10px;color:silver;font-family:arial}a{text-decoration:none!important}.forecastupdated{position:absolute;bottom:25px;float:right;margin-left:575px}.weather34darkbrowser{font-family:Arial,Helvetica,sans-serif;position:relative;background:rgba(56,56,60,1);width:102.5%;max-height:25px;margin:-15px auto auto -12px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#fff;font-size:12px;position:absolute;left:0;right:0;top:0;padding:5px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97,106,114,.3);height:23px;box-sizing:border-box;font-family:weathertext2,Arial,Helvetica,system}value,value1,valuer{font-family:weathertext2}precip{position:relative;top:2px;padding:2px;border-radius:3px;background:0;font-size:.8em}value{font-size:.85em}valuer{font-size:.55rem}value1{font-size:1em}thunder{color:silver;font-size:.85em}
 </style>
@@ -580,7 +580,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV>2){echo 	"<yellowu>".$wuskydayUV. '</yellowu><grey> '.$wuskydayUVdesc;}
 				  else if ($wuskydayUV>=0){echo 	"<greenu>".$wuskydayUV. '</greenu><grey> '.$wuskydayUVdesc;}				  
 				  if ( $wuskydayacumm>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm."cm</bluet></blueu><br>";}	
-				  else if ($wuskydayPrecipType=='rain'){echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity,2)."<value> ". $rainunit." </value></blueu><br>";}				   			 
+				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity,2)."<value> ". $rainunit." </value></blueu><br>";				   			 
 				   echo $lightningalert4;
 				   if ($wuskythunder=="No thunder"){ echo ' <thunder>'.$wuskythunder.'</thunder></grey>	 </value></darkskytemplohome>';}
 				   else echo ' <thunder><orange1>'.$wuskythunder.'</orange1></thunder></grey>	 </value></darkskytemplohome>';      
@@ -617,7 +617,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV1>2){echo 	"<yellowu>".$wuskydayUV1. '</yellowu><grey> '.$wuskydayUVdesc1;}
 				  else if ($wuskydayUV1>=0){echo 	"<greenu>".$wuskydayUV1. '</greenu><grey> '.$wuskydayUVdesc1;}				  
 				  if ( $wuskydayacumm1>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm1."cm</bluet></blueu><br>";}	
-				  else if ($wuskydayPrecipType1=='rain'){echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity1,2)."<value> ". $rainunit." </value></blueu><br>";}			   			 
+				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity1,2)."<value> ". $rainunit." </value></blueu><br>";			   			 
 				  echo $lightningalert4;
 				   if ($wuskythunder1=="No thunder"){ echo ' <thunder>'.$wuskythunder1.'</thunder></grey>	 </value></darkskytemplohome>';}
 				   else echo ' <thunder><orange1>'.$wuskythunder1.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
@@ -654,7 +654,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV2>2){echo 	"<yellowu>".$wuskydayUV2. '</yellowu><grey> '.$wuskydayUVdesc2;}
 				  else if ($wuskydayUV2>=0){echo 	"<greenu>".$wuskydayUV2. '</greenu><grey> '.$wuskydayUVdesc2;}				  
 				  if ( $wuskydayacumm2>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm2."cm</bluet></blueu><br>";}	
-				  else if ($wuskydayPrecipType2=='rain'){echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity2,2)."<value> ". $rainunit." </value></blueu><br>";}				   			 
+				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity2,2)."<value> ". $rainunit." </value></blueu><br>";				   			 
 				  echo $lightningalert4;
 				   if ($wuskythunder2=="No thunder"){ echo ' <thunder>'.$wuskythunder2.'</thunder></grey>	 </value></darkskytemplohome>';}
 				   else echo ' <thunder><orange1>'.$wuskythunder2.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    
@@ -691,7 +691,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV3>1){echo 	"<yellowu>".$wuskydayUV3. '</yellowu><grey> '.$wuskydayUVdesc3;}
 				  else if ($wuskydayUV3>=0){echo "<greenu>".$wuskydayUV3. '</greenu><grey> '.$wuskydayUVdesc3;}				  
 				  if ( $wuskydayacumm3>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm3."cm</bluet></blueu><br>";}	
-				  else if ($wuskydayPrecipType3=='rain'){echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity3,2)."<value> ". $rainunit." </value></blueu><br>";}				   			 
+				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity3,2)."<value> ". $rainunit." </value></blueu><br>";				   			 
 				   echo $lightningalert4;
 				   if ($wuskythunder3=="No thunder"){ echo ' <thunder>'.$wuskythunder3.'</thunder></grey>	 </value></darkskytemplohome>';}
 				   else echo ' <thunder><orange1>'.$wuskythunder3.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
@@ -728,7 +728,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV4>2){echo 	"<yellowu>".$wuskydayUV4. '</yellowu><grey> '.$wuskydayUVdesc4;}
 				  else if ($wuskydayUV4>=0){echo 	"<greenu>".$wuskydayUV4. '</greenu><grey> '.$wuskydayUVdesc4;}				  
 				  if ( $wuskydayacumm4>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm4."cm</bluet></blueu><br>";}	
-				  else if ($wuskydayPrecipType4=='rain'){echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity4,2)."<value> ". $rainunit." </value></blueu><br>";}					   			 
+				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity4,2)."<value> ". $rainunit." </value></blueu><br>";					   			 
 				   echo $lightningalert4;
 				   if ($wuskythunder4=="No thunder"){ echo ' <thunder>'.$wuskythunder4.'</thunder></grey>	 </value></darkskytemplohome>';}
 				   else echo ' <thunder><orange1>'.$wuskythunder4.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    		  
@@ -765,7 +765,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV5>2){echo 	"<yellowu>".$wuskydayUV5. '</yellowu><grey> '.$wuskydayUVdesc5;}
 				  else if ($wuskydayUV5>=0){echo 	"<greenu>".$wuskydayUV5. '</greenu><grey> '.$wuskydayUVdesc5;}				  
 				  if ( $wuskydayacumm5>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm5."cm</bluet></blueu><br>";}	
-				  else if ($wuskydayPrecipType5=='rain'){echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity5,2)."<value> ". $rainunit." </value></blueu><br>";}					   			 
+				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity5,2)."<value> ". $rainunit." </value></blueu><br>";					   			 
 				   echo $lightningalert4;
 				   if ($wuskythunder5=="No thunder"){ echo ' <thunder>'.$wuskythunder5.'</thunder></grey>	 </value></darkskytemplohome>';}
 				   else echo ' <thunder><orange1>'.$wuskythunder5.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   
@@ -787,7 +787,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				 
 				  echo  '</div>';
 				  
-                  //period6
+               //period6
                   echo '<div class="darkskyforecastinghome"><value>';  
                   echo '<div class="darkskyweekdayhome"><value>'.$wuskydayTime6.'</div>';  
 				  if ($wuskydaynight6=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon6.'.svg" width="40"></img>';}
@@ -797,33 +797,34 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				   //uvi	+ tstorm		  
 				  echo '<darkskytemplohome><grey><value> '.$sunlight.' UVI ';				 
 				  if ($wuskydayUV6>10){echo 	"<purpleu>".$wuskydayUV6. '</purpleu><grey> '.$wuskydayUVdesc6;}
-				  else if ($wuskydayUV6>7){echo 	"<redu>".$wuskydayUV6. '</redu><grey> '.$wuskydayUVdesc6;}
+				  else if ($wuskydayUV6>6){echo 	"<redu>".$wuskydayUV6. '</redu><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>5){echo 	"<orangeu>".$wuskydayUV6. '</orangeu><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>2){echo 	"<yellowu>".$wuskydayUV6. '</yellowu><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>=0){echo 	"<greenu>".$wuskydayUV6. '</greenu><grey> '.$wuskydayUVdesc6;}				  
 				  if ( $wuskydayacumm6>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm6."cm</bluet></blueu><br>";}	
-				  else if ($wuskydayPrecipType6=='rain'){echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity6,2)."<value> ". $rainunit." </value></blueu><br>";}					   			 
+				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity6,2)."<value> ". $rainunit." </value></blueu><br>";	
+				  				   			 
 				   echo $lightningalert4;
 				   if ($wuskythunder6=="No thunder"){ echo ' <thunder>'.$wuskythunder6.'</thunder></grey>	 </value></darkskytemplohome>';}
-				   else echo ' <thunder><orange1>'.$wuskythunder6.'</orange1></thunder></grey>	 </value></darkskytemplohome>';   		  
-				 
-				  //temp
+				   else echo ' <thunder><orange1>'.$wuskythunder6.'</orange1></thunder></grey>	 </value></darkskytemplohome>';    	  
+				 //temp
 				  echo "<div class='darkskywindgust'>"; 				  
 				  if($tempunit=='F' && $wuskydayTempHigh6<44.6){echo "<div class=valuehi><bluet>".number_format($wuskydayTempHigh6,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh6>80.6){echo "<div class=valuehi><redt>".number_format($wuskydayTempHigh6,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh6>64.4){echo "<div class=valuehi><oranget>".number_format($wuskydayTempHigh6,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh6>55){echo "<div class=valuehi><yellowt>".number_format($wuskydayTempHigh6,0);}
 				  else if($tempunit=='F' && $wuskydayTempHigh6>=44.6){echo "<div class=valuehi><greent>".number_format($wuskydayTempHigh6,0);}
-				  else if($wuskydayTempHigh6<7){echo "<div class=valuehi><bluet>".number_format($wuskydayTempHigh6,0);}
-				  else if($wuskydayTempHigh6>27){echo "<div class=valuehi><redt>".number_format($wuskydayTempHigh6,0);}
+				  else if($wuskydayTempHigh6<6){echo "<div class=valuehi><bluet>".number_format($wuskydayTempHigh6,0);}
+				  else if($wuskydayTempHigh6>26){echo "<div class=valuehi><redt>".number_format($wuskydayTempHigh6,0);}
 				  else if($wuskydayTempHigh6>18){echo "<div class=valuehi><oranget>".number_format($wuskydayTempHigh6,0);}
-				  else if($wuskydayTempHigh6>12.7){echo "<div class=valuehi><yellowt>".number_format($wuskydayTempHigh6,0);}			  
-				  else if($wuskydayTempHigh6>=7){echo "<div class=valuehi><greent>".number_format($wuskydayTempHigh6,0);}
-				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";
-				  //text summary  
+				  else if($wuskydayTempHigh6>12.6){echo "<div class=valuehi><yellowt>".number_format($wuskydayTempHigh6,0);}			  
+				  else if($wuskydayTempHigh6>=6){echo "<div class=valuehi><greent>".number_format($wuskydayTempHigh6,0);}
+				    echo "°<spantemp>" .$tempunit. "</spantemp></div></div>";		  
+				  //text summary
 				  echo '<darkskytempwindhome><span>'.$wuskydaysummary6.' </darkskywindhome></span>';
-				  echo  '</div>';
-				  
+				 
+				  echo  '</div>';	
+				  //end weather34 wu forecast
                   //period7
                   echo '<div class="darkskyforecastinghome"><value>';  
                   echo '<div class="darkskyweekdayhome"><value>'.$wuskydayTime7.'</div>';  
@@ -839,7 +840,7 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  else if ($wuskydayUV7>2){echo 	"<yellowu>".$wuskydayUV7. '</yellowu><grey> '.$wuskydayUVdesc7;}
 				  else if ($wuskydayUV7>=0){echo 	"<greenu>".$wuskydayUV7. '</greenu><grey> '.$wuskydayUVdesc7;}				  
 				  if ( $wuskydayacumm7>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm7."cm</bluet></blueu><br>";}	
-				  else if ($wuskydayPrecipType7=='rain'){echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity7,2)."<value> ". $rainunit." </value></blueu><br>";}	
+				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity7,2)."<value> ". $rainunit." </value></blueu><br>";	
 				  				   			 
 				   echo $lightningalert4;
 				   if ($wuskythunder7=="No thunder"){ echo ' <thunder>'.$wuskythunder7.'</thunder></grey>	 </value></darkskytemplohome>';}
