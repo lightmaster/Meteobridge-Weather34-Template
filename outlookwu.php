@@ -573,9 +573,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<div class=greydesc>'. $wuskydesc.'</div><br>';	
 				  //uvi	+ tstorm		  
 				  echo '<darkskytemplohome><grey><value> '.$sunlight.' UVI ';				 
-				  if ($wuskydayUV>10){echo 	"<purpleu>".$wuskydayUV. '</purpleu><grey> '.$wuskydayUVdesc;}
-				  else if ($wuskydayUV>7){echo 	"<redu>".$wuskydayUV. '</redu><grey> '.$wuskydayUVdesc;}
-				  else if ($wuskydayUV>5){echo 	"<orangeu>".$wuskydayUV. '</orangeu><grey> '.$wuskydayUVdesc;}
+				  if ($wuskydayUV>=10){echo 	"<purpleu>".$wuskydayUV. '</purpleu><grey> '.$wuskydayUVdesc;}
+				  else if ($wuskydayUV>=7){echo 	"<redu>".$wuskydayUV. '</redu><grey> '.$wuskydayUVdesc;}
+				  else if ($wuskydayUV>=5){echo 	"<orangeu>".$wuskydayUV. '</orangeu><grey> '.$wuskydayUVdesc;}
 				  else if ($wuskydayUV>2){echo 	"<yellowu>".$wuskydayUV. '</yellowu><grey> '.$wuskydayUVdesc;}
 				  else if ($wuskydayUV>=0){echo 	"<greenu>".$wuskydayUV. '</greenu><grey> '.$wuskydayUVdesc;}				  
 				  if ( $wuskydayacumm>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm."cm</bluet></blueu><br>";}	
@@ -647,9 +647,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<div class=greydesc>'. $wuskydesc2.'</value></div><br>';
 				  //uvi	+ tstorm		  
 				  echo '<darkskytemplohome><grey><value> '.$sunlight.' UVI ';				 
-				  if ($wuskydayUV2>10){echo 	"<purpleu>".$wuskydayUV2. '</purpleu><grey> '.$wuskydayUVdesc2;}
-				  else if ($wuskydayUV2>7){echo 	"<redu>".$wuskydayUV2. '</redu><grey> '.$wuskydayUVdesc2;}
-				  else if ($wuskydayUV2>5){echo 	"<orangeu>".$wuskydayUV2. '</orangeu><grey> '.$wuskydayUVdesc2;}
+				  if ($wuskydayUV2>=10){echo 	"<purpleu>".$wuskydayUV2. '</purpleu><grey> '.$wuskydayUVdesc2;}
+				  else if ($wuskydayUV2>=7){echo 	"<redu>".$wuskydayUV2. '</redu><grey> '.$wuskydayUVdesc2;}
+				  else if ($wuskydayUV2>=5){echo 	"<orangeu>".$wuskydayUV2. '</orangeu><grey> '.$wuskydayUVdesc2;}
 				  else if ($wuskydayUV2>2){echo 	"<yellowu>".$wuskydayUV2. '</yellowu><grey> '.$wuskydayUVdesc2;}
 				  else if ($wuskydayUV2>=0){echo 	"<greenu>".$wuskydayUV2. '</greenu><grey> '.$wuskydayUVdesc2;}				  
 				  if ( $wuskydayacumm2>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm2."cm</bluet></blueu><br>";}	
@@ -685,9 +685,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  //uvi	+ tstorm		  
 				  echo '<darkskytemplohome><grey><value> '.$sunlight.' UVI ';				 
 				  if ($wuskydayUV3>=10){echo 	"<purpleu>".$wuskydayUV3. '</purpleu><grey> '.$wuskydayUVdesc3;}
-				  else if ($wuskydayUV3>7){echo 	"<redu>".$wuskydayUV3. '</redu><grey> '.$wuskydayUVdesc3;}
-				  else if ($wuskydayUV3>5){echo 	"<orangeu>".$wuskydayUV3. '</orangeu><grey> '.$wuskydayUVdesc3;}
-				  else if ($wuskydayUV3>1){echo 	"<yellowu>".$wuskydayUV3. '</yellowu><grey> '.$wuskydayUVdesc3;}
+				  else if ($wuskydayUV3>=7){echo 	"<redu>".$wuskydayUV3. '</redu><grey> '.$wuskydayUVdesc3;}
+				  else if ($wuskydayUV3>=5){echo 	"<orangeu>".$wuskydayUV3. '</orangeu><grey> '.$wuskydayUVdesc3;}
+				  else if ($wuskydayUV3>2){echo 	"<yellowu>".$wuskydayUV3. '</yellowu><grey> '.$wuskydayUVdesc3;}
 				  else if ($wuskydayUV3>=0){echo "<greenu>".$wuskydayUV3. '</greenu><grey> '.$wuskydayUVdesc3;}				  
 				  if ( $wuskydayacumm3>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm3."cm</bluet></blueu><br>";}	
 				  else echo " ".$rainsvg." <blueu>".number_format($wuskydayprecipIntensity3,2)."<value> ". $rainunit." </value></blueu><br>";				   			 
@@ -721,9 +721,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<div class=greydesc>'. $wuskydesc4.'</div><br>';					  
 				  //uvi	+ tstorm		  
 				  echo '<darkskytemplohome><grey><value> '.$sunlight.' UVI ';				 
-				  if ($wuskydayUV4>10){echo 	"<purpleu>".$wuskydayUV4. '</purpleu><grey> '.$wuskydayUVdesc4;}
-				  else if ($wuskydayUV4>7){echo 	"<redu>".$wuskydayUV4. '</redu><grey> '.$wuskydayUVdesc4;}
-				  else if ($wuskydayUV4>5){echo 	"<orangeu>".$wuskydayUV4. '</orangeu><grey> '.$wuskydayUVdesc4;}
+				  if ($wuskydayUV4>=10){echo 	"<purpleu>".$wuskydayUV4. '</purpleu><grey> '.$wuskydayUVdesc4;}
+				  else if ($wuskydayUV4>=7){echo 	"<redu>".$wuskydayUV4. '</redu><grey> '.$wuskydayUVdesc4;}
+				  else if ($wuskydayUV4>=5){echo 	"<orangeu>".$wuskydayUV4. '</orangeu><grey> '.$wuskydayUVdesc4;}
 				  else if ($wuskydayUV4>2){echo 	"<yellowu>".$wuskydayUV4. '</yellowu><grey> '.$wuskydayUVdesc4;}
 				  else if ($wuskydayUV4>=0){echo 	"<greenu>".$wuskydayUV4. '</greenu><grey> '.$wuskydayUVdesc4;}				  
 				  if ( $wuskydayacumm4>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm4."cm</bluet></blueu><br>";}	
@@ -758,9 +758,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  
 				  //uvi	+ tstorm		  
 				  echo '<darkskytemplohome><grey><value> '.$sunlight.' UVI ';				 
-				  if ($wuskydayUV5>10){echo 	"<purpleu>".$wuskydayUV5. '</purpleu><grey> '.$wuskydayUVdesc5;}
-				  else if ($wuskydayUV5>7){echo 	"<redu>".$wuskydayUV5. '</redu><grey> '.$wuskydayUVdesc5;}
-				  else if ($wuskydayUV5>5){echo 	"<orangeu>".$wuskydayUV5. '</orangeu><grey> '.$wuskydayUVdesc5;}
+				  if ($wuskydayUV5>=10){echo 	"<purpleu>".$wuskydayUV5. '</purpleu><grey> '.$wuskydayUVdesc5;}
+				  else if ($wuskydayUV5>=7){echo 	"<redu>".$wuskydayUV5. '</redu><grey> '.$wuskydayUVdesc5;}
+				  else if ($wuskydayUV5>=5){echo 	"<orangeu>".$wuskydayUV5. '</orangeu><grey> '.$wuskydayUVdesc5;}
 				  else if ($wuskydayUV5>2){echo 	"<yellowu>".$wuskydayUV5. '</yellowu><grey> '.$wuskydayUVdesc5;}
 				  else if ($wuskydayUV5>=0){echo 	"<greenu>".$wuskydayUV5. '</greenu><grey> '.$wuskydayUVdesc5;}				  
 				  if ( $wuskydayacumm5>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm5."cm</bluet></blueu><br>";}	
@@ -795,9 +795,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<div class=greydesc>'. $wuskydesc6.'</div><br>';
 				   //uvi	+ tstorm		  
 				  echo '<darkskytemplohome><grey><value> '.$sunlight.' UVI ';				 
-				  if ($wuskydayUV6>10){echo 	"<purpleu>".$wuskydayUV6. '</purpleu><grey> '.$wuskydayUVdesc6;}
-				  else if ($wuskydayUV6>6){echo 	"<redu>".$wuskydayUV6. '</redu><grey> '.$wuskydayUVdesc6;}
-				  else if ($wuskydayUV6>5){echo 	"<orangeu>".$wuskydayUV6. '</orangeu><grey> '.$wuskydayUVdesc6;}
+				  if ($wuskydayUV6>=10){echo 	"<purpleu>".$wuskydayUV6. '</purpleu><grey> '.$wuskydayUVdesc6;}
+				  else if ($wuskydayUV6>=7){echo 	"<redu>".$wuskydayUV6. '</redu><grey> '.$wuskydayUVdesc6;}
+				  else if ($wuskydayUV6>=5){echo 	"<orangeu>".$wuskydayUV6. '</orangeu><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>2){echo 	"<yellowu>".$wuskydayUV6. '</yellowu><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>=0){echo 	"<greenu>".$wuskydayUV6. '</greenu><grey> '.$wuskydayUVdesc6;}				  
 				  if ( $wuskydayacumm6>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm6."cm</bluet></blueu><br>";}	
@@ -833,9 +833,9 @@ $wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 				  echo '<div class=greydesc>'. $wuskydesc7.'</div><br>';
 				   //uvi	+ tstorm		  
 				  echo '<darkskytemplohome><grey><value> '.$sunlight.' UVI ';				 
-				  if ($wuskydayUV7>10){echo 	"<purpleu>".$wuskydayUV7. '</purpleu><grey> '.$wuskydayUVdesc7;}
-				  else if ($wuskydayUV7>7){echo 	"<redu>".$wuskydayUV7. '</redu><grey> '.$wuskydayUVdesc7;}
-				  else if ($wuskydayUV7>5){echo 	"<orangeu>".$wuskydayUV7. '</orangeu><grey> '.$wuskydayUVdesc7;}
+				  if ($wuskydayUV7>=10){echo 	"<purpleu>".$wuskydayUV7. '</purpleu><grey> '.$wuskydayUVdesc7;}
+				  else if ($wuskydayUV7>=7){echo 	"<redu>".$wuskydayUV7. '</redu><grey> '.$wuskydayUVdesc7;}
+				  else if ($wuskydayUV7>=5){echo 	"<orangeu>".$wuskydayUV7. '</orangeu><grey> '.$wuskydayUVdesc7;}
 				  else if ($wuskydayUV7>2){echo 	"<yellowu>".$wuskydayUV7. '</yellowu><grey> '.$wuskydayUVdesc7;}
 				  else if ($wuskydayUV7>=0){echo 	"<greenu>".$wuskydayUV7. '</greenu><grey> '.$wuskydayUVdesc7;}				  
 				  if ( $wuskydayacumm7>0){ echo " ".$snowflakesvg." <blueu> ".$wuskydayacumm7."cm</bluet></blueu><br>";}	
