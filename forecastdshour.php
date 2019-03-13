@@ -3,7 +3,7 @@ include_once('settings.php');include('livedata.php');header('Content-type: text/
 	####################################################################################################
 	#	HOME WEATHER STATION TEMPLATE by BRIAN UNDERDOWN 2016                                          #
 	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  # 
-	# 	Hourly Darksky 												 	                               #
+	# 	Hourly Darksky 	updated 11 March 2019						 	                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
 ?>
@@ -80,7 +80,22 @@ bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d0
             $darkskyhourlyPrecipType = $cond['precipType'];}			
 			if ($rainunit=='in'){ $darkskyhourlyprecipIntensity=number_format($cond['precipIntensity']*0.0393701,2);} 
 			else $darkskyhourlyprecipIntensity = number_format($cond['precipIntensity'],1);		
-			
+//si wind is m/s
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='si') {$windspeedconversion =2.23694;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='si') {$windspeedconversion = 3.6000059687997;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='si') {$windspeedconversion = 1;}
+//ca wind is m/s
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='ca') {$windspeedconversion = 2.23694;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='ca') {$windspeedconversion = 3.6000059687997;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='ca') {$windspeedconversion = 1;} 
+//us wind is mph
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='us') {$windspeedconversion =1;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='us') {$windspeedconversion = 1.6093466682922179523;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='us') {$windspeedconversion = 0.4470407411923185137;} 
+//uk2 wund is mph
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='uk2') {$windspeedconversion =1;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='uk2') {$windspeedconversion = 1.6093466682922179523;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='uk2') {$windspeedconversion = 0.4470407411923185137;}  
 			
 			       
             $darkskyhourlyWindSpeed = round($cond['windSpeed']*$windconversion,0);
@@ -111,8 +126,8 @@ else if($darkskyhourlyTemp>=7){echo '<darkskytemphihome><greentds>'.number_forma
 				  if (date("G", $darkskyhourlyTime) >$suns2){echo '<darkskyiconcurrent><img src="css/darkskyicons/nt_'. $darkskyhourlyIcon.'.svg" width="50"></img></darkskyiconcurrent>';}
 			      else if (date("G", $darkskyhourlyTime) <$sunr2){echo '<darkskyiconcurrent><img src="css/darkskyicons/nt_'. $darkskyhourlyIcon.'.svg" width="50"></img></darkskyiconcurrent>';}			  
 				  else  echo '<darkskyiconcurrent><img src="css/darkskyicons/'.$darkskyhourlyIcon.'.svg" width="50" ></img></darkskyiconcurrent>';
-				  echo '<darkskytempwindhome><span2 style="color:#ff7c39;"><value>';				 			 
-				  echo "<img src = 'css/windicons/avgw.svg' width='20' style='-webkit-transform:rotate(".$darkskyhourlyWinddir."deg);-moz-transform:rotate(".$darkskyhourlyWinddir."deg);-o-transform:rotate(".$darkskyhourlyWinddir."deg);transform:rotate(".$darkskyhourlyWinddir."deg)'></span>";				 
+				  echo '<darkskytempwindhome><span2 style="color:#d05f2d;"><value>';				 			 
+				  echo "<img src = 'css/windicons/avgw.svg' width='15' style='-webkit-transform:rotate(".$darkskyhourlyWinddir."deg);-moz-transform:rotate(".$darkskyhourlyWinddir."deg);-o-transform:rotate(".$darkskyhourlyWinddir."deg);transform:rotate(".$darkskyhourlyWinddir."deg)'></span>";				 
 				  echo  '</span2><span4><value> '.$darkskyhourlyWindSpeed.' | <gust>'.$darkskyhourlyWindGust.'</gust></span4> <windunit>'.$windunit.'</windunit><br>';				 		 
 				  echo '&nbsp;<darkskyrainhome><span><value>'.$darkskyhourlyPrecipType.' </darkskyrainhome><br><darkskyrainhome1><value>'. $darkskyhourlyPrecipProb.'% <blue1>'.$rainsvg.' '. $darkskyhourlyprecipIntensity.'</blue1><unit> '.$rainunit.'</unit></darkskyrainhome1></span>';
 				  echo  '</div>';}?></div></div>

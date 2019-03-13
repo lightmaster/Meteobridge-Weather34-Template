@@ -1,47 +1,59 @@
-<?php //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
-include_once('livedata.php');
-error_reporting(0); date_default_timezone_set($TZ);include('common.php');
-
+<?php include_once('livedata.php');error_reporting(0); date_default_timezone_set($TZ);
 	####################################################################################################
 	#	HOME WEATHER STATION TEMPLATE by BRIAN UNDERDOWN 2016-17                                       #
 	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at https://weather34.com/homeweatherstation/           # 
 	# 	                                                                                               #
 	# 	                                                                                               #
-	# 	Darksky 3 DAY WEATHER FORECAST:  May 2016-February 2019 				                       #
+	# 	3 DAY WEATHER FORECAST:  December 2017  	 			   		                               #
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
-?> 
-<style>
-hilo{font-size:.8em}</style>
-	<div class="updatedtimecurrent">
-<?php $forecastime=filemtime('jsondata/darksky.txt');$weather34wuurl = file_get_contents("jsondata/dark.txt");
-if(filesize('jsondata/darksky.txt')<1){echo "".$offline. " Offline<br>";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
-	
-      <div class="darkskyforecasthome">
-		<div class="darkskydiv">
-		  <?php 
-        foreach ($darkskydayCond as $cond) {   
-            $darkskydayTime = $cond['time'];
-            $darkskydaySummary = $cond['summary'];
-            $darkskydayIcon = $cond['icon'];
-            $darkskydayTempHigh = round($cond['temperatureMax']);
-            $darkskydayTempLow = round($cond['temperatureMin']);
-			$darkskydayWinddir = $cond['windBearing'];
-			$darkskydayClouds = $cond['cloudCover']*100;
-            $darkskydayHumidity = $cond['humidity']*100;
-            $darkskydayPrecipProb = $cond['precipProbability']*100;
-			$darkskydayprecipIntensity = number_format($cond['precipIntensityMax'],1);      
-            if (isset($cond['precipType'])){$darkskydayPrecipType = $cond['precipType'];}   
-			$darkskydayacumm=round($cond['precipAccumulation'],1);			
-            $darkskydayWindSpeed = round($cond['windSpeed'],0);
-			$darkskydayUV = $cond['uvIndex'];
-			   	  echo '<div class="darkskyforecastinghome">';  
-                  echo '<div class="darkskyweekdayhome">'.strftime("%a %b %e", $darkskydayTime).'<br>';  				  
-				  if ($darkskydayacumm>0 ){echo '<img src="css/darkskyicons/snow.svg" width="40"></img><br>';} 
-				  else if ($darkskydayIcon == 'partly-cloudy-night'){echo '<img src="css/darkskyicons/partly-cloudy-day.svg" width="40"></img><br>';}     
-				  else echo '<img src="css/darkskyicons/'.$darkskydayIcon.'.svg" width="40"></img><br></div>';
-				  
+?>
+
+<style>hilo{font-size:.8em}</style>
+<div class="updatedtime1"><?php $forecastime=filemtime('jsondata/darksky.txt');$weather34wuurl = file_get_contents("jsondata/dark.txt");if(filesize('jsondata/darksky.txt')<1){echo "".$offline. " Offline<br>";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
+<div class="darkskyforecasthome"><div class="darkskydiv">
+<?php //begin darksky stuff        
+foreach ($darkskydayCond as $cond) {
+$darkskydayTime = $cond['time'];$darkskydaySummary = $cond['summary'];$darkskydayIcon = $cond['icon'];
+
+if ($weather["temp_units"]=='F'){ $darkskydayTempHigh = round(32 +(9*$cond['temperatureMax']/5));}
+else $darkskydayTempHigh = round($cond['temperatureMax']);
+if ($weather["temp_units"]=='F'){ $darkskydayTempLow = round(32 +(9*$cond['temperatureMin']/5));}
+else $darkskydayTempLow = round($cond['temperatureMin']);
+
+
+$darkskydayWinddir = $cond['windBearing'];$darkskydayClouds = $cond['cloudCover']*100;$darkskydayHumidity = $cond['humidity']*100;$darkskydayUV = $cond['uvIndex'];$darkskydayPrecipProb = $cond['precipProbability']*100;
+if (isset($cond['precipType'])){$darkskydayPrecipType = $cond['precipType'];}
+if ($rainunit=='in'){ $darkskydayprecipIntensity=number_format($cond['precipIntensity'],2);} 
+else $darkskydayprecipIntensity = number_format($cond['precipIntensity']*25.4,1);
+if ($rainunit=='in'){$darkskydayacumm=round($cond['precipAccumulation']*0.393701,1);}
+else {$darkskydayacumm=round($cond['precipAccumulation'],1);}
+
+//si wind is m/s
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='si') {$windspeedconversion =2.23694;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='si') {$windspeedconversion = 3.6;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='si') {$windspeedconversion = 1;}
+//ca wind is m/s
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='ca') {$windspeedconversion = 2.23694;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='ca') {$windspeedconversion = 3.6;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='ca') {$windspeedconversion = 1;} 
+//us wind is mph
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='us') {$windspeedconversion =1;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='us') {$windspeedconversion = 1.6093466682922179523;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='us') {$windspeedconversion = 0.4470407411923185137;} 
+//uk2 wund is mph
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='uk2') {$windspeedconversion =1;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='uk2') {$windspeedconversion = 1.6093466682922179523;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='uk2') {$windspeedconversion = 0.4470407411923185137;}  
+
+    
+$darkskydayWindSpeed = round($cond['windSpeed']*$windspeedconversion,0);
+$darkskydayWindGust = round($cond['windGust']*$windspeedconversion,0);
+echo '<div class="darkskyforecastinghome">';echo '<div class="darkskyweekdayhome">'.strftime("%a %b %e", $darkskydayTime).'</div>';if ($darkskydayacumm>0 ){echo '<img src="css/darkskyicons/snow.svg" width="40rem" height="38rem"></img><br>';} 
+else if ($darkskydayIcon == 'partly-cloudy-night'){echo '<img src="css/darkskyicons/partly-cloudy-day.svg" width="40rem" height="38rem"></img><br>';}else echo '<img src="css/darkskyicons/'.$darkskydayIcon.'.svg" width="40rem" height="38rem"></img><br>';
+
+
 //Hi temp non metric
 echo " <hilo> </hilo>";
 if($tempunit=='F' && $darkskydayTempHigh<44.6){echo '<darkskytemphihome><bluetds>'.number_format($darkskydayTempHigh,0).'°</bluetds></darkskytemphihome>';}
@@ -72,17 +84,14 @@ else if($darkskydayTempLow>27){echo '<darkskytemphihome><redtds>'.number_format(
 else if($darkskydayTempLow>17.7){echo '<darkskytemphihome><orangetds>'.number_format($darkskydayTempLow,0).'°</orangetds></darkskytemphihome>';}
 else if($darkskydayTempLow>12.7){echo '<darkskytemphihome><yellowtds>'.number_format($darkskydayTempLow,0).'°</yellowtds></darkskytemphihome>';}
 else if($darkskydayTempLow>=7){echo '<darkskytemphihome><greentds>'.number_format($darkskydayTempLow,0).'°</greentds></darkskytemphihome>';}				  
- echo '<br></oblue>'; 	  
-				   	
-				  echo '<darkskytempwindhome><grey>';				  
-				  if ($darkskydayWinddir <15 ) echo $lang['North'];elseif ($darkskydayWinddir <45 ) echo $lang['NNE'];elseif ($darkskydayWinddir <90 ) echo $lang['ENE'];elseif ($darkskydayWinddir <110 ) echo $lang['East'];
-				  elseif ($darkskydayWinddir <150 )  echo $lang['SE'];elseif ($darkskydayWinddir <170 )  echo $lang['SSE'];elseif ($darkskydayWinddir <190 ) echo $lang['South'];elseif ($darkskydayWinddir <220 ) echo $lang['SSW'];
-				  elseif ($darkskydayWinddir <250 ) echo $lang['SW'];elseif ($darkskydayWinddir <270 ) echo $lang['West'];elseif ($darkskydayWinddir <300 ) echo $lang['NW']; elseif ($darkskydayWinddir <340 ) echo $lang['NWN'];
-				  elseif ($darkskydayWinddir <360 ) echo $lang['North'];
-				  echo  '<span4><grey> '.$darkskydayWindSpeed.'<valuewindunit> '.$windunit.'<br>';
-				  echo  '</valuewindunit>';'';
-if ( $darkskydayacumm>0 && $weather['temp_units']=='F'){echo $snowflakesvg.'&nbsp;Snow<darkskytempwindhome><br><span><oblue>'.$darkskydayacumm.'</oblue></span><valuewindunit> in</valuewindunit>&nbsp;</darkskywindhome></span>';} 
-else if ( $darkskydayacumm>0 && $weather['temp_units']=='C'){echo $snowflakesvg.'&nbsp;Snow<darkskytempwindhome><br><span><oblue>'.$darkskydayacumm.'</oblue></span><valuewindunit> cm</valuewindunit>&nbsp;</darkskywindhome></span>';} 				  
-else if ( $darkskydayacumm==0){echo '&nbsp;'.$rainsvg.'&nbsp;Rain<br><darkskytempwindhome><oblue>'. $darkskydayprecipIntensity. "</oblue><valuewindunit><grey> ".$weather["rain_units"].'</valuewindunit>&nbsp;<oblue>'.$darkskydayPrecipProb.'</oblue><valuewindunit><grey>%</valuewindunit></darkskywindhome></span>';}
-echo '<br><darkskytemplohome><uv>UVI <uvspan>'.$darkskydayUV.'</uvspan></uv></darkskytemplohome></div>';}?>
+ echo '<br></oblue>'; 	
+
+
+
+echo "<div class='darkskywindspeedicon'>";if ($darkskydayWinddir <15 ) echo 'North';elseif ($darkskydayWinddir <45 ) echo 'NNE';elseif ($darkskydayWinddir <90 ) echo 'ENE';elseif ($darkskydayWinddir <110 ) echo 'East';elseif ($darkskydayWinddir <150 )  echo 'SE';elseif ($darkskydayWinddir <170 )  echo 'SSE';elseif ($darkskydayWinddir <190 ) echo 'South';elseif ($darkskydayWinddir <220 ) echo 'SSW'; elseif ($darkskydayWinddir <250 ) echo 'SW';elseif ($darkskydayWinddir <270 ) echo 'West'; elseif ($darkskydayWinddir <300 ) echo 'NW'; elseif ($darkskydayWinddir <340 ) echo 'NWN';elseif ($darkskydayWinddir <360 ) echo 'North'; 
+if ($weather["wind_units"] == 'km/h' && $darkskydayWindGust>=45){echo "<gustorange> ".$darkskydayWindGust,"</gustorange><valuewindunit> ".$windunit;}else if ($weather["wind_units"] == 'mph' && $darkskydayWindGust>=30){echo "<gustorange> ".$darkskydayWindGust,"</gustorange><valuewindunit> ".$windunit;}else echo " ".$darkskydayWindGust," <valuewindunit>".$windunit;echo  '</div>';'<br>';
+if ( $darkskydayacumm>0 && $rainunit=='in'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span>Snow<br> <oblue>&nbsp;'.$darkskydayacumm.'</oblue> in</darkskywindhome></span></precip>';}
+else if ( $darkskydayacumm>0 && $rainunit=='mm'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span>Snow<br> <oblue>&nbsp;'.$darkskydayacumm.'</oblue> cm</darkskywindhome></span></precip>';}
+
+else if ($darkskydayPrecipType='rain'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span>Rain <oblue>&nbsp;'. $darkskydayprecipIntensity.'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit>&nbsp;<oblue>'.$darkskydayPrecipProb.'</oblue><valuewindunit>%</valuewindunit></darkskywindhome></span></precip>';}echo '<br><darkskytemplohome><uv>UVI <uvspan>'.$darkskydayUV.'</uvspan></uv></darkskytemplohome></div>';}?>
 </div></div></div>
