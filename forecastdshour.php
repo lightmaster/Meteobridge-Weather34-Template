@@ -35,7 +35,7 @@ $now =date('G.i');
  <style>body{background:rgba(11, 12, 12, 0.4)}
  @font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(css/fonts/verbatim-regular.woff2) format("woff2"),url(css/fonts/verbatim-regular.ttf) format("truetype")}
 body{background:rgba(11, 12, 12, 0.4)}	
-.darkskyforecasting{float:left;display:block;margin-right:0;width:50%;border-radius:4px;margin:2px;margin-top:5px;font-family:Arial;margin-left:5px;height:350px;padding:5px;background-color:#3d3d3d;border:1px solid rgba(153,155,156,1);color:#777}darkskyweekday{position:absolute;margin:3px;background-color:#494a4b;text-align:center;padding:5px;color:#aaa;font-family:Arial;font-size:12px;margin-bottom:15px;border-radius:4px}darkskytemphi{margin-top:5px;font-size:13px;color:#ff7c39;font-family:Arial;margin-left:10%}darkskytemphi span{font-size:13px;color:#aaa}darkskytemplo{margin-top:5px;font-size:13px;color:#00a4b4;font-family:Arial}darkskytemplo span{font-size:13px;color:#aaa;font-family:Arial}darkskysummary{font-size:12px;color:#aaa;font-family:Arial}darkskywindspeed{font-size:12px;color:#ff7c39;font-family:Arial;line-height:10px}.darkskydiv{position:relative;width:650px;overflow:hidden!important;height:375px;float:none;margin-left:7%;margin-top:1%}.darkskyforecasthome darkskytemphihome{margin-top:5px;font-size:12px;color:#ff7c39;font-family:Arial;margin-left:15%;width:200px}.darkskyforecasthome darkskytemphihome span{font-size:12px;font-family:Arial;color:#ff7c39;width:300px}.darkskyforecasthome darkskytemplohome{font-size:12px;color:#01a4b5;font-family:Arial}.darkskyforecasthome darkskytemplohome span{font-size:12px;color:#01a4b5;font-family:Arial}.darkskyforecasthome darkskytempwindhome{position:absolute;font-size:12px;color:#aaa;font-family:Arial;margin-top:40px}.darkskyforecasthome darkskyrainhome{position:absolute;font-size:12px;color:#aaa;font-family:Arial;margin-top:5px;margin-left:30px;line-height:11px}.darkskyforecasthome darkskyrainhome1{position:absolute;font-size:12px;color:#aaa;font-family:Arial;margin-top:8px;margin-left:15px;line-height:11px;width:200px}.darkskyforecasthome darkskytempwindhome span{font-size:12px;color:#01a4b5;font-family:Arial;margin-top:30px;text-transform:capitalize}.darkskyforecasthome darkskytempwindhome span2{font-size:12px;color:#ff7c39;font-family:Arial;margin-top:30px;margin-left:5px}darkskyiconcurrent{margin-left:30px;position:absolute;margin-top:5px;margin-bottom:30px}.darkskyiconcurrent span1{font-size:12px;color:#ff7c39;margin-left:10px;display:block}.darkskyiconcurrent span2{font-size:12px;color:#01a4b5;margin-left:10px}.darkskyiconcurrent img{position:relative;width:110px;margin-top:-40px;margin-left:40%;margin-bottom:-10px;margin-right:0;padding-right:0;float:left}.darkskynexthours{postion:absolute;margin-top:30px;font-family:arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-moz-font-smoothing:antialiased;-o-font-smoothing:antialiased;-ms-font-smoothing:antialiased;font-size:12px;line-height:10px;margin-left:0}.darkskynexthours span2{font-size:12px;color:#00a4b4;margin-left:0;margin-top:-5px;padding:0}body{line-height:11px}grey{color:#aaa}blue1{color:rgba(0,154,170,1.000);line-height:11px}orange{color:#ff7c39}green{color:rgba(144,177,42,1.000)}gust{color:#ff7c39;line-height:11px}unit{color:#aaa;font-size:10px}windunit{color:#aaa;font-size:10px}a{font-size:10px;color:#aaa;text-decoration:none!important;font-family:arial}.forecastupdated{position:absolute;font-size:10px;color:#aaa;font-family:arial;bottom:5px;float:right;margin-left:575px}
+.darkskyforecasting{float:left;display:block;margin-right:0;width:50%;border-radius:4px;margin:2px;margin-top:5px;font-family:Arial;margin-left:5px;height:350px;padding:5px;background-color:#3d3d3d;border:1px solid rgba(153,155,156,1);color:#777}darkskyweekday{position:absolute;margin:3px;background-color:#494a4b;text-align:center;padding:5px;color:#aaa;font-family:Arial;font-size:12px;margin-bottom:15px;border-radius:4px}darkskytemphi{margin-top:5px;font-size:13px;color:#ff7c39;font-family:Arial;margin-left:10%}darkskytemphi span{font-size:13px;color:#aaa}darkskytemplo{margin-top:5px;font-size:13px;color:#00a4b4;font-family:Arial}darkskytemplo span{font-size:13px;color:#aaa;font-family:Arial}darkskysummary{font-size:12px;color:#aaa;font-family:Arial}darkskywindspeed{font-size:12px;color:#ff7c39;font-family:Arial;line-height:10px}.darkskydiv{position:relative;width:650px;overflow:hidden!important;height:375px;float:none;margin-left:7%;margin-top:1%}.darkskyforecasthome darkskytemphihome{margin-top:5px;font-size:12px;color:#ff7c39;font-family:Arial;margin-left:5%;width:200px}.darkskyforecasthome darkskytemphihome span{font-size:12px;font-family:Arial;color:#ff7c39;width:300px}.darkskyforecasthome darkskytemplohome{font-size:12px;color:#01a4b5;font-family:Arial}.darkskyforecasthome darkskytemplohome span{font-size:12px;color:#01a4b5;font-family:Arial}.darkskyforecasthome darkskytempwindhome{position:absolute;font-size:12px;color:#aaa;font-family:Arial;margin-top:40px}.darkskyforecasthome darkskyrainhome{position:absolute;font-size:12px;color:#aaa;font-family:Arial;margin-top:5px;margin-left:30px;line-height:11px}.darkskyforecasthome darkskyrainhome1{position:absolute;font-size:12px;color:#aaa;font-family:Arial;margin-top:8px;margin-left:15px;line-height:11px;width:200px}.darkskyforecasthome darkskytempwindhome span{font-size:12px;color:#01a4b5;font-family:Arial;margin-top:30px;text-transform:capitalize}.darkskyforecasthome darkskytempwindhome span2{font-size:12px;color:#ff7c39;font-family:Arial;margin-top:30px;margin-left:5px}darkskyiconcurrent{margin-left:30px;position:absolute;margin-top:5px;margin-bottom:30px}.darkskyiconcurrent span1{font-size:12px;color:#ff7c39;margin-left:10px;display:block}.darkskyiconcurrent span2{font-size:12px;color:#01a4b5;margin-left:10px}.darkskyiconcurrent img{position:relative;width:110px;margin-top:-40px;margin-left:40%;margin-bottom:-10px;margin-right:0;padding-right:0;float:left}.darkskynexthours{postion:absolute;margin-top:30px;font-family:arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-moz-font-smoothing:antialiased;-o-font-smoothing:antialiased;-ms-font-smoothing:antialiased;font-size:12px;line-height:10px;margin-left:0}.darkskynexthours span2{font-size:12px;color:#00a4b4;margin-left:0;margin-top:-5px;padding:0}body{line-height:11px}grey{color:#aaa}blue1{color:rgba(0,154,170,1.000);line-height:11px}orange{color:#ff7c39}green{color:rgba(144,177,42,1.000)}gust{color:#ff7c39;line-height:11px}unit{color:#aaa;font-size:10px}windunit{color:#aaa;font-size:10px}a{font-size:10px;color:#aaa;text-decoration:none!important;font-family:arial}.forecastupdated{position:absolute;font-size:10px;color:#aaa;font-family:arial;bottom:5px;float:right;margin-left:575px}
 .darkskyforecastinghome{
 float:left;display:inline;margin-right:0;width:15%;border-radius:4px;margin:5px;font-family:Arial;margin-left:0;height:140px;padding:5px;
 background:rgba(11, 12, 12, 0.4);
@@ -50,8 +50,8 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
 .weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:5px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}value{font-size:.9em;font-family:weathertext2}value1{font-size:1em;font-family:weathertext2}
 blue{color:#3b9cac;}green{color:#90b12a;}yellow{color:#e6a141}
 
-bluetds,greentds,orangetds,purpletds,redtds,yellowtds{color:#fff;text-transform:capitalize;border-radius:2px;width:35px;padding:0 3px}
-bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d05f2d}greentds{background:#90b12a}redtds{background:-webkit-linear-gradient(90deg,#d86858,rgba(211,93,78,.7));background:linear-gradient(90deg,#d86858,rgba(211,93,78,.7))}purpletds{background:-webkit-linear-gradient(90deg,#d86858,rgba(157,59,165,.4));background:linear-gradient(90deg,#d86858,rgba(157,59,165,.4))}
+zerotds,bluetds,greentds,orangetds,purpletds,redtds,yellowtds{color:#fff;text-transform:capitalize;border-radius:2px;width:35px;padding:0 3px}
+bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d05f2d}greentds{background:#90b12a}redtds{background:-webkit-linear-gradient(90deg,#d86858,rgba(211,93,78,.7));background:linear-gradient(90deg,#d86858,rgba(211,93,78,.7))}purpletds{background:-webkit-linear-gradient(90deg,#d86858,rgba(157,59,165,.4));background:linear-gradient(90deg,#d86858,rgba(157,59,165,.4))}zerotds{background:#777}
 </style>
 </head>
 <body>
@@ -82,11 +82,11 @@ bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d0
 			else $darkskyhourlyprecipIntensity = number_format($cond['precipIntensity'],1);		
 //si wind is m/s
 if ($weather["wind_units"] == 'mph' && $darkskyunit=='si') {$windspeedconversion =2.23694;} 
-else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='si') {$windspeedconversion = 3.6000059687997;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='si') {$windspeedconversion = 3.6;} 
 else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='si') {$windspeedconversion = 1;}
 //ca wind is m/s
 if ($weather["wind_units"] == 'mph' && $darkskyunit=='ca') {$windspeedconversion = 2.23694;} 
-else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='ca') {$windspeedconversion = 3.6000059687997;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='ca') {$windspeedconversion = 3.6;} 
 else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='ca') {$windspeedconversion = 1;} 
 //us wind is mph
 if ($weather["wind_units"] == 'mph' && $darkskyunit=='us') {$windspeedconversion =1;} 
@@ -96,10 +96,10 @@ else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='us') {$windspeedconve
 if ($weather["wind_units"] == 'mph' && $darkskyunit=='uk2') {$windspeedconversion =1;} 
 else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='uk2') {$windspeedconversion = 1.6093466682922179523;} 
 else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='uk2') {$windspeedconversion = 0.4470407411923185137;}  
-			
+
 			       
-            $darkskyhourlyWindSpeed = round($cond['windSpeed']*$windconversion,0);
-			$darkskyhourlyWindGust = round($cond['windGust']*$windconversion,0);
+            $darkskyhourlyWindSpeed = round($cond['windSpeed']*$windspeedconversion,0);
+			$darkskyhourlyWindGust = round($cond['windGust']*$windspeedconversion,0);
 			  if ($hi++ == 10) break; 
             	  echo '<div class="darkskyforecastinghome"><value>';  
                   echo '<div class="darkskyweekdayhome"><value>'.date("H:i", $darkskyhourlyTime).'</div>';  
@@ -121,11 +121,25 @@ else if($darkskyhourlyTemp>12.7){echo '<darkskytemphihome><yellowtds>'.number_fo
 else if($darkskyhourlyTemp>=7){echo '<darkskytemphihome><greentds>'.number_format($darkskyhourlyTemp,0).'°</greentds></darkskytemphihome>';}
 				  
 				  
-				  echo '<grey> '.$weather["temp_units"].'</grey> &nbsp;</span>';
-				  echo '<value1><grey>&nbsp;UVI:</grey><orange>'.$darkskyhourlyuv.' </orange></darkskytemphihome><br>';  
-				  if (date("G", $darkskyhourlyTime) >$suns2){echo '<darkskyiconcurrent><img src="css/darkskyicons/nt_'. $darkskyhourlyIcon.'.svg" width="50"></img></darkskyiconcurrent>';}
-			      else if (date("G", $darkskyhourlyTime) <$sunr2){echo '<darkskyiconcurrent><img src="css/darkskyicons/nt_'. $darkskyhourlyIcon.'.svg" width="50"></img></darkskyiconcurrent>';}			  
-				  else  echo '<darkskyiconcurrent><img src="css/darkskyicons/'.$darkskyhourlyIcon.'.svg" width="50" ></img></darkskyiconcurrent>';
+				  echo '<grey> '.$weather["temp_units"].'</grey> </span>';
+				  
+				  echo '<value1><grey>&nbsp;UVI:</grey>&nbsp;';
+				  
+				  if ($darkskyhourlyuv>10){echo '<purpletsd>' .$darkskyhourlyuv;}
+				  else if ($darkskyhourlyuv>7){echo '<redtds>' .$darkskyhourlyuv;}
+				  else if ($darkskyhourlyuv>5){echo '<orangetds>' .$darkskyhourlyuv;}
+				  else if ($darkskyhourlyuv>2){echo '<yellowtds>' .$darkskyhourlyuv;}
+				  else if ($darkskyhourlyuv>0){echo '<greentds>' .$darkskyhourlyuv;}
+				  elseif ($darkskyhourlyuv==0){echo '<zerotds>' .$darkskyhourlyuv;}
+				  
+				  echo '</orange></darkskytemphihome><br>';  
+				  
+				  
+				  
+				  
+				  if (date("G", $darkskyhourlyTime) >$suns2){echo '<darkskyiconcurrent><img src="css/darkskyicons/nt_'. $darkskyhourlyIcon.'.svg" width="40"></img></darkskyiconcurrent>';}
+			      else if (date("G", $darkskyhourlyTime) <$sunr2){echo '<darkskyiconcurrent><img src="css/darkskyicons/nt_'. $darkskyhourlyIcon.'.svg" width="40"></img></darkskyiconcurrent>';}			  
+				  else  echo '<darkskyiconcurrent><img src="css/darkskyicons/'.$darkskyhourlyIcon.'.svg" width="40" ></img></darkskyiconcurrent>';
 				  echo '<darkskytempwindhome><span2 style="color:#d05f2d;"><value>';				 			 
 				  echo "<img src = 'css/windicons/avgw.svg' width='15' style='-webkit-transform:rotate(".$darkskyhourlyWinddir."deg);-moz-transform:rotate(".$darkskyhourlyWinddir."deg);-o-transform:rotate(".$darkskyhourlyWinddir."deg);transform:rotate(".$darkskyhourlyWinddir."deg)'></span>";				 
 				  echo  '</span2><span4><value> '.$darkskyhourlyWindSpeed.' | <gust>'.$darkskyhourlyWindGust.'</gust></span4> <windunit>'.$windunit.'</windunit><br>';				 		 

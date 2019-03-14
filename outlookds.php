@@ -38,7 +38,7 @@ bluetds,greentds,orangetds,purpletds,redtds,yellowtds{color:#fff;text-transform:
 bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d05f2d}greentds{background:#90b12a}redtds{background:-webkit-linear-gradient(90deg,#d86858,rgba(211,93,78,.7));background:linear-gradient(90deg,#d86858,rgba(211,93,78,.7))}purpletds{background:-webkit-linear-gradient(90deg,#d86858,rgba(157,59,165,.4));background:linear-gradient(90deg,#d86858,rgba(157,59,165,.4))}
 blueu,greenu,orangeu,purpleu,redu,yellowu,zerou{color:#fff;border-radius:2px;width:35px;font-size:11px;}
 blueu,greenu,orangeu,purpleu,redu,yellowu,zerou{padding:0 3px}
-blueu{background:#01a4b5}zerou{color:#4a636f}yellowu{background:#e6a141}orangeu{background:#d05f2d}greenu{background:#90b12a}redu{background:#cd5245}purpleu{background:#b600b0}zerou{background:#777}
+blueu{background:#01a4b5}zerou{color:#777}yellowu{background:#e6a141}orangeu{background:#d05f2d}greenu{background:#90b12a}redu{background:#cd5245}purpleu{background:#b600b0}zerou{background:#777}
 
 </style>
 </head>
@@ -133,11 +133,12 @@ else if($darkskydayTempLow>=7){echo '<greentds>'.number_format($darkskydayTempLo
 echo '</span></darkskytemplohome>';  
 //uvindex
 echo '<darkskytemplohome><grey> '.$sunlight.' UVI <orange1>';
-if ($darkskydayUV>10){echo "<purpleu>".$darkskydayUV;}
-else if ($darkskydayUV>8){echo "<redu>".$darkskydayUV;}
+if ($darkskydayUV>=10){echo "<purpleu>".$darkskydayUV;}
+else if ($darkskydayUV>7){echo "<redu>".$darkskydayUV;}
 else if ($darkskydayUV>5){echo "<orangeu>".$darkskydayUV;}
 else if ($darkskydayUV>2){echo "<yellowu>".$darkskydayUV;}
-else if ($darkskydayUV>0){echo "<greenu>".$darkskydayUV;}				  
+else if ($darkskydayUV>0){echo "<greenu>".$darkskydayUV;}	
+else if ($darkskydayUV==0){echo "<zerou>".$darkskydayUV;}				  
 echo '</orange1></grey></darkskytemplohome><br>';  
 //wind			  
 echo "<br><div class='darkskywindspeedicon'><img src = 'css/windicons/avgw.svg' width='20' style='-webkit-transform:rotate(".$darkskydayWinddir."deg);-moz-transform:rotate(".$darkskydayWinddir."deg);-o-transform:rotate(".$darkskydayWinddir."deg);transform:rotate(".$darkskydayWinddir."deg)'>					   

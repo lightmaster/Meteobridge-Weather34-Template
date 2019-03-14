@@ -93,5 +93,16 @@ if ($weather["wind_units"] == 'km/h' && $darkskydayWindGust>=45){echo "<gustoran
 if ( $darkskydayacumm>0 && $rainunit=='in'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span>Snow<br> <oblue>&nbsp;'.$darkskydayacumm.'</oblue> in</darkskywindhome></span></precip>';}
 else if ( $darkskydayacumm>0 && $rainunit=='mm'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span>Snow<br> <oblue>&nbsp;'.$darkskydayacumm.'</oblue> cm</darkskywindhome></span></precip>';}
 
-else if ($darkskydayPrecipType='rain'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span>Rain <oblue>&nbsp;'. $darkskydayprecipIntensity.'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit>&nbsp;<oblue>'.$darkskydayPrecipProb.'</oblue><valuewindunit>%</valuewindunit></darkskywindhome></span></precip>';}echo '<br><darkskytemplohome><uv>UVI <uvspan>'.$darkskydayUV.'</uvspan></uv></darkskytemplohome></div>';}?>
+else if ($darkskydayPrecipType='rain'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span>Rain <oblue>&nbsp;'. $darkskydayprecipIntensity.'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit>&nbsp;<oblue>'.$darkskydayPrecipProb.'</oblue><valuewindunit>%</valuewindunit></darkskywindhome></span></precip>';}
+
+echo '<br><darkskytemplohome><uv>UVI <uvspan>';
+
+if ($darkskydayUV>=10){echo "<purpleu>".$darkskydayUV;}
+else if ($darkskydayUV>7){echo "<redu>".$darkskydayUV;}
+else if ($darkskydayUV>5){echo "<orangeu>".$darkskydayUV;}
+else if ($darkskydayUV>2){echo "<yellowu>".$darkskydayUV;}
+else if ($darkskydayUV>0){echo "<greenu>".$darkskydayUV;}	
+else if ($darkskydayUV==0){echo "<zerou>".$darkskydayUV;}		
+
+echo '</uvspan></uv></darkskytemplohome></div>';}?>
 </div></div></div>
