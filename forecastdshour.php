@@ -68,8 +68,18 @@ bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d0
             $darkskyhourlyTime = $cond['time'];
             $darkskyhourlySummary = $cond['summary'];
             $darkskyhourlyIcon = $cond['icon'];
-            $darkskyhourlyTemp = round($cond['temperature']);
-            $darkskyhourlyTempLow = round($cond['temperatureMin']);
+			
+			//convert all the scenarios
+if ($weather["temp_units"]=='C' && $darkskyunit=='us'){ $darkskyhourlyTemp = round($cond['temperature']-32)*5/9;}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='si'){ $darkskyhourlyTemp = round(32 +(9*$cond['temperature']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='uk2'){ $darkskyhourlyTemp = round(32 +(9*$cond['temperature']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='ca'){ $darkskyhourlyTemp = round(32 +(9*$cond['temperature']/5));}
+else $darkskyhourlyTemp = round($cond['temperature']);
+
+			
+			
+            //$darkskyhourlyTemp = round($cond['temperature']);
+            //$darkskyhourlyTempLow = round($cond['temperatureMin']);
 			$darkskyhourlyWinddir = $cond['windBearing'];
 			$darkskyhourlyuv = $cond['uvIndex'];
 			$darkskyhourlyClouds = $cond['cloudCover']*100;

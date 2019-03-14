@@ -68,7 +68,35 @@ if ($rainunit=='in'){ $darkskydayprecipIntensity=number_format($cond['precipInte
 else $darkskydayprecipIntensity = number_format($cond['precipIntensity']*25.4,1);
 if ($rainunit=='in'){$darkskydayacumm=round($cond['precipAccumulation']*0.393701,1);}
 else {$darkskydayacumm=round($cond['precipAccumulation'],1);}
-$darkskydayTempHigh = round($cond['temperatureMax']);$darkskydayTempLow = round($cond['temperatureMin']); 
+//convert all the scenarios
+if ($weather["temp_units"]=='C' && $darkskyunit=='us'){ $darkskydayTempHigh = round($cond['temperatureMax']-32)*5/9;}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='si'){ $darkskydayTempHigh = round(32 +(9*$cond['temperatureMax']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='uk2'){ $darkskydayTempHigh = round(32 +(9*$cond['temperatureMax']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='ca'){ $darkskydayTempHigh = round(32 +(9*$cond['temperatureMax']/5));}
+else $darkskydayTempHigh = round($cond['temperatureMax']);
+if ($weather["temp_units"]=='C' && $darkskyunit=='us'){ $darkskydayTempLow = round($cond['temperatureMin']-32)*5/9;}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='si'){ $darkskydayTempLow = round(32 +(9*$cond['temperatureMin']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='uk2'){ $darkskydayTempLow = round(32 +(9*$cond['temperatureMin']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='ca'){ $darkskydayTempLow = round(32 +(9*$cond['temperatureMin']/5));}
+else $darkskydayTempLow = round($cond['temperatureMin']);
+
+
+   //si wind is m/s
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='si') {$windspeedconversion =2.23694;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='si') {$windspeedconversion = 3.6000059687997;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='si') {$windspeedconversion = 1;}
+//ca wind is m/s
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='ca') {$windspeedconversion = 2.23694;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='ca') {$windspeedconversion = 3.6000059687997;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='ca') {$windspeedconversion = 1;} 
+//us wind is mph
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='us') {$windspeedconversion =1;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='us') {$windspeedconversion = 1.6093466682922179523;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='us') {$windspeedconversion = 0.4470407411923185137;} 
+//uk2 wund is mph
+if ($weather["wind_units"] == 'mph' && $darkskyunit=='uk2') {$windspeedconversion =1;} 
+else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='uk2') {$windspeedconversion = 1.6093466682922179523;} 
+else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='uk2') {$windspeedconversion = 0.4470407411923185137;}     
 $darkskydayWindSpeed = round($cond['windGust']*$windspeedconversion,0);
 $darkskydayWindGust = round($cond['windGust']*$windspeedconversion,0);
             	  echo '<div class="darkskyforecastinghome">';  

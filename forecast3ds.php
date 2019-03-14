@@ -17,7 +17,17 @@
 foreach ($darkskydayCond as $cond) {
 $darkskydayTime = $cond['time'];$darkskydaySummary = $cond['summary'];$darkskydayIcon = $cond['icon'];
 
-$darkskydayTempHigh = round($cond['temperatureMax']);$darkskydayTempLow = round($cond['temperatureMin']);
+if ($weather["temp_units"]=='C' && $darkskyunit=='us'){ $darkskydayTempHigh = round($cond['temperatureMax']-32)*5/9;}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='si'){ $darkskydayTempHigh = round(32 +(9*$cond['temperatureMax']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='uk2'){ $darkskydayTempHigh = round(32 +(9*$cond['temperatureMax']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='ca'){ $darkskydayTempHigh = round(32 +(9*$cond['temperatureMax']/5));}
+else $darkskydayTempHigh = round($cond['temperatureMax']);
+if ($weather["temp_units"]=='C' && $darkskyunit=='us'){ $darkskydayTempLow = round($cond['temperatureMin']-32)*5/9;}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='si'){ $darkskydayTempLow = round(32 +(9*$cond['temperatureMin']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='uk2'){ $darkskydayTempLow = round(32 +(9*$cond['temperatureMin']/5));}
+else if ($weather["temp_units"]=='F' && $darkskyunit=='ca'){ $darkskydayTempLow = round(32 +(9*$cond['temperatureMin']/5));}
+else $darkskydayTempLow = round($cond['temperatureMin']);
+
 
 
 $darkskydayWinddir = $cond['windBearing'];$darkskydayClouds = $cond['cloudCover']*100;$darkskydayHumidity = $cond['humidity']*100;$darkskydayUV = $cond['uvIndex'];$darkskydayPrecipProb = $cond['precipProbability']*100;
