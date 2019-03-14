@@ -36,6 +36,7 @@ windgusts{position:absolute;font-size:15px;margin-top:20px;left:50px;color:#444}
 
 .uvcaution{margin-left:120px;margin-top:112px;font-family:Arial,Helvetica,system}.uvtrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}.simsekcontainer{float:left;font-family:weathertext,system;-o-font-smoothing:antialiasedleft:0;bottom:0;right:0;position:relative;margin:40px 10px 10px 40px;left:-10px;top:13px}.simsek{font-size:1.55rem;padding-top:12px;color:#f8f8f8;background:rgba(230,161,65,1);border-bottom:18px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px}
 smalluvunit{font-size:.65rem;font-family:Arial,Helvetica,system;}
+sup{font-size:0.85em}
 
 
 </style>
