@@ -630,6 +630,7 @@ if ($windunit != $weather["wind_units"]) {
 		ktsTomph($weather, "windydmax");
 		ktsTomph($weather, "windmmax");
 		ktsTomph($weather, "windymax");
+		ktsTomph($weather, "windrun34");
 		
 		$weather["wind_units"] = $windunit;
 	}
@@ -651,6 +652,7 @@ if ($windunit != $weather["wind_units"]) {
 		kmhTomph($weather, "windydmax");
 		kmhTomph($weather, "windmmax");
 		kmhTomph($weather, "windymax");
+		kmhTomph($weather, "windrun34");
 		$weather["wind_units"] = $windunit;
 	}
 	else if ($windunit == 'mph' && $weather["wind_units"] == 'm/s') {
@@ -671,6 +673,7 @@ if ($windunit != $weather["wind_units"]) {
 		msTomph($weather, "windydmax");
 		msTomph($weather, "windmmax");
 		msTomph($weather, "windymax");
+		msTomph($weather, "windrun34");
 		
 		$weather["wind_units"] = $windunit;
 	}
@@ -692,6 +695,7 @@ if ($windunit != $weather["wind_units"]) {
 		ktsTokmh($weather, "windydmax");
 		ktsTokmh($weather, "windmmax");
 		ktsTokmh($weather, "windymax");
+		ktsTokmh($weather, "windrun34");
 		$weather["wind_units"] = $windunit;
 	}
 	else if ($windunit == 'km/h' && $weather["wind_units"] == 'mph') {
@@ -712,6 +716,7 @@ if ($windunit != $weather["wind_units"]) {
 		mphTokmh($weather, "windydmax");
 		mphTokmh($weather, "windmmax");
 		mphTokmh($weather, "windymax");
+		mphTokmh($weather, "windrun34");
 		$weather["wind_units"] = $windunit;
 	}
 	else if ($windunit == 'km/h' && $weather["wind_units"] == 'm/s') {
@@ -732,6 +737,7 @@ if ($windunit != $weather["wind_units"]) {
 		msTokmh($weather, "windydmax");
 		msTokmh($weather, "windmmax");
 		msTokmh($weather, "windymax");
+		msTokmh($weather, "windrun34");
 		$weather["wind_units"] = $windunit;
 	}
 	else if ($windunit == 'm/s' && $weather["wind_units"] == 'kts') {
@@ -753,6 +759,7 @@ if ($windunit != $weather["wind_units"]) {
 		ktsToms($weather, "windydmax");
 		ktsToms($weather, "windmmax");
 		ktsToms($weather, "windymax");
+		ktsTokmh($weather, "windrun34");
 		$weather["wind_units"] = $windunit;
 	}
 	else if ($windunit == 'm/s' && $weather["wind_units"] == 'mph') {
@@ -773,6 +780,7 @@ if ($windunit != $weather["wind_units"]) {
 		mphTokmh($weather, "windydmax");
 		mphTokmh($weather, "windmmax");
 		mphTokmh($weather, "windymax");
+		mphTokmh($weather, "windrun34");
 		$weather["wind_units"] = $windunit;
 	}
 	else if ($windunit == 'm/s' && $weather["wind_units"] == 'km/h') {
@@ -793,6 +801,7 @@ if ($windunit != $weather["wind_units"]) {
 		kmhTokmh($weather, "windydmax");
 		kmhTokmh($weather, "windmmax");
 		kmhTokmh($weather, "windymax");
+		kmhTokmh($weather, "windrun34");
 		
 		$weather["wind_units"] = $windunit;
 	}
@@ -814,6 +823,7 @@ if ($windunit != $weather["wind_units"]) {
 		msTokts($weather, "windydmax");
 		msTokts($weather, "windmmax");
 		msTokts($weather, "windymax");
+		msTokts($weather, "windrun34");
 		$weather["wind_units"] = $windunit;
 	}
 	else if ($windunit == 'kts' && $weather["wind_units"] == 'mph') {
@@ -834,7 +844,7 @@ if ($windunit != $weather["wind_units"]) {
 		mphTokts($weather, "windydmax");
 		mphTokts($weather, "windmmax");
 		mphTokts($weather, "windymax");
-		
+		mphTokts($weather, "windrun34");		
 		$weather["wind_units"] = $windunit;
 	}
 	else if ($windunit == 'kts' && $weather["wind_units"] == 'km/h') {
@@ -855,6 +865,7 @@ if ($windunit != $weather["wind_units"]) {
 		kmhTokts($weather, "windydmax");
 		kmhTokts($weather, "windmmax");
 		kmhTokts($weather, "windymax");	
+		kmhTokts($weather, "windrun34");		
 		$weather["wind_units"] = $windunit;
 	}
 }
@@ -900,14 +911,8 @@ if ($response != null) {
     }}
 //end darksky api and convert winspeed below
 
-if ($weather["wind_units"] == 'mph') {
-	$darkskywind = 2.23694;
-} else if ($weather["wind_units"] == 'km/h') {
-	$darkskywind = 3.6;
-} else if ($weather["wind_units"] == 'm/s') {
-	$darkskywind = 1;
-}
-$windconversion = $darkskywind;
+
+
 $o='Designed by weather34.com';
 ?>
 <?php 

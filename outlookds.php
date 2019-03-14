@@ -36,9 +36,8 @@ border:0;color:#aaa;overflow:hidden!important;margin-bottom:5px;border:solid 1px
 .weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:11px;position:absolute;left:0;right:0;top:0;padding:5px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}precip{position:relative;top:5px;padding:2px;border-radius:3px;background:rgba(97,106,114,0.2);}value{font-size:.8em;font-family:weathertext2}value1{font-size:1em;font-family:weathertext2}
 bluetds,greentds,orangetds,purpletds,redtds,yellowtds{color:#fff;text-transform:capitalize;border-radius:2px;width:35px;padding:0 3px;font-size:11px;}
 bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d05f2d}greentds{background:#90b12a}redtds{background:-webkit-linear-gradient(90deg,#d86858,rgba(211,93,78,.7));background:linear-gradient(90deg,#d86858,rgba(211,93,78,.7))}purpletds{background:-webkit-linear-gradient(90deg,#d86858,rgba(157,59,165,.4));background:linear-gradient(90deg,#d86858,rgba(157,59,165,.4))}
-blueu,greenu,orangeu,purpleu,redu,yellowu,zerou{color:#fff;border-radius:2px;width:35px;font-size:11px;}
-blueu,greenu,orangeu,purpleu,redu,yellowu,zerou{padding:0 3px}
-blueu{background:#01a4b5}zerou{color:#777}yellowu{background:#e6a141}orangeu{background:#d05f2d}greenu{background:#90b12a}redu{background:#cd5245}purpleu{background:#b600b0}zerou{background:#777}
+blueu,greenu,orangeu,purpleu,redu,yellowu,zerou{color:#fff;border-radius:2px;width:35px;font-size:11px;padding:0 3px}
+blueu{background:#01a4b5}zerou{color:#777}yellowu{background:#e6a141}orangeu{background:#d05f2d}greenu{background:#90b12a}redu{background:#cd5245}purpleu{background:#b600b0}zerou{background:#4a636f}
 
 </style>
 </head>
