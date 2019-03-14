@@ -1,10 +1,10 @@
 <?php 
 	####################################################################################################
-	#	HOME WEATHER STATION TEMPLATE by BRIAN UNDERDOWN 2015-2016-2017-2018                           #
+	#	HOME WEATHER STATION TEMPLATE by BRIAN UNDERDOWN 2015-2016-2017-2018-2019                      #
 	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at https://weather34.com/homeweatherstation            # 
 	# 	                                                                                               #
 	# 	                                                                                               #
-	# 	updated Nov 2018 LIVEDATA.PHP ITS WHERE A LOT HAPPENS SO DONT MESS IT UP	  		           #
+	# 	updated Mar 2019 LIVEDATA.PHP ITS WHERE A LOT HAPPENS SO DONT MESS IT UP	  		           #
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
@@ -17,7 +17,7 @@
 if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$file_live = file_get_contents($livedata);
 	$meteobridgeapi = explode(" ", $file_live);
-	$meteobridgeapi1 = explode("_",$file_live);
+	$meteobridgeapi1 = explode("_",$file_live);//split for davis consoe forecast
 	
 		$year = substr($meteobridgeapi[0], 6);
 	if ($livedataFormat == 'meteobridge-api') {
@@ -39,7 +39,7 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["barometer_units"]    = $meteobridgeapi[15]; // mb or hPa or in
 	//$weather["barometer_units"]    = 'mmHg'; // mmHg
 	$weather["barometer_trend"]    = $meteobridgeapi[10] - $meteobridgeapi[18];
-	$weather["temp_units"]         = 'C'; // C or F
+	$weather["temp_units"]         = 'C'; // C
 	$weather["temp_indoor"]        = $meteobridgeapi[22];
 	$weather["temp_indoor_feel"]   = heatIndex($meteobridgeapi[22], $meteobridgeapi[23]); // must set temp_units first
 	$weather["temp_indoormax"]     = $meteobridgeapi[120];
@@ -94,11 +94,12 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["actualhardware"]	   = $meteobridgeapi[42];
 	$weather["mbplatform"]	       = $meteobridgeapi[41];
 	$weather["uptime"]		       = $meteobridgeapi[81];//uptime in seconds
-	$weather["vpforecasttext"]	   = $meteobridgeapi1[1];
+	$weather["vpforecasttext"]	   = $meteobridgeapi1[1];//davis console forecast text
 	$weather["temp_avgtoday"]=$meteobridgeapi[152];
 	$weather['wind_speed_avg30']=$meteobridgeapi[158];
 	//weather34 windrun
-	$windrunhr=date('G');$windrunmin=(($windrunmin=date('i')/60));$windrunformula=$windrunhr=date('G')+$windrunmin;
+	$windrunhr=date('G');$windrunmin=(($windrunmin=date('i')/60));
+	$windrunformula=$windrunhr=date('G')+$windrunmin;
 	$weather["windrun34"]=$weather['wind_speed_avg30']*number_format($windrunformula,1);
 	//weather34 meteobridge moon sun data 
     $weather["moonphase"]=$meteobridgeapi[153];$weather["luminance"]=$meteobridgeapi[154];$weather["daylight"]=$meteobridgeapi[155];if ($meteobridgeapi[156]=='--'){$weather["moonrise"]='In Transit';}
@@ -921,10 +922,12 @@ date_default_timezone_set($TZ);
 $meteor_default="No Meteor";
 $meteor_events[]=array("event_start"=>mktime(0, 0, 0, 1, 3),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 4),);
 $meteor_events[]=array("event_start"=>mktime(0, 0, 0, 1, 5),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 12),);
-$meteor_events[]=array("event_start"=>mktime(0, 0, 0, 12, 28,2018),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 2,2019),);
 $meteor_events[]=array("event_start"=>mktime(0, 0, 0, 12, 28,2019),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 2,2020),);
 $meteor_events[]=array("event_start"=>mktime(0, 0, 0, 12, 28,2020),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 2,2021),);
 $meteor_events[]=array("event_start"=>mktime(0, 0, 0, 12, 28,2021),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 2,2022),);
+$meteor_events[]=array("event_start"=>mktime(0, 0, 0, 12, 28,2022),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 2,2023),);
+$meteor_events[]=array("event_start"=>mktime(0, 0, 0, 12, 28,2023),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 2,2024),);
+$meteor_events[]=array("event_start"=>mktime(0, 0, 0, 12, 28,2024),"event_title"=>"Quadrantids Meteor","event_end"=>mktime(23, 59, 59, 1, 2,2025),);
 $meteor_events[]=array("event_start"=>mktime(0, 0, 0, 4, 9),"event_title"=>"Lyrids Meteor","event_end"=>mktime(20, 59, 59, 4, 20),);
 $meteor_events[]=array("event_start"=>mktime(0, 0, 0, 4, 21),"event_title"=>"Lyrids Meteor","event_end"=>mktime(23, 59, 59, 4, 22),);
 $meteor_events[]=array("event_start"=>mktime(0, 0, 0, 5, 5),"event_title"=>"ETA Aquarids","event_end"=>mktime(23, 59, 59, 5, 6),);
