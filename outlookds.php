@@ -63,26 +63,12 @@ blueu{background:#01a4b5}zerou{color:#777}yellowu{background:#e6a141}orangeu{bac
 			$darkskydayUV = $cond['uvIndex'];
 			$darkskydayPrecipProb = $cond['precipProbability']*100;
 			
-            if (isset($cond['precipType'])){
-            $darkskydayPrecipType = $cond['precipType'];}
-			$darkskydayacumm=round($cond['precipAccumulation'],1);
-			$darkskydayprecipIntensity = number_format($cond['precipIntensityMax'],1);         
-           //si wind is m/s
-if ($weather["wind_units"] == 'mph' && $darkskyunit=='si') {$windspeedconversion =2.23694;} 
-else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='si') {$windspeedconversion = 3.6000059687997;} 
-else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='si') {$windspeedconversion = 1;}
-//ca wind is m/s
-if ($weather["wind_units"] == 'mph' && $darkskyunit=='ca') {$windspeedconversion = 2.23694;} 
-else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='ca') {$windspeedconversion = 3.6000059687997;} 
-else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='ca') {$windspeedconversion = 1;} 
-//us wind is mph
-if ($weather["wind_units"] == 'mph' && $darkskyunit=='us') {$windspeedconversion =1;} 
-else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='us') {$windspeedconversion = 1.6093466682922179523;} 
-else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='us') {$windspeedconversion = 0.4470407411923185137;} 
-//uk2 wund is mph
-if ($weather["wind_units"] == 'mph' && $darkskyunit=='uk2') {$windspeedconversion =1;} 
-else if ($weather["wind_units"] == 'km/h' && $darkskyunit=='uk2') {$windspeedconversion = 1.6093466682922179523;} 
-else if ($weather["wind_units"] == 'm/s' && $darkskyunit=='uk2') {$windspeedconversion = 0.4470407411923185137;}     
+           if (isset($cond['precipType'])){$darkskydayPrecipType = $cond['precipType'];}
+if ($rainunit=='in'){ $darkskydayprecipIntensity=number_format($cond['precipIntensity'],2);} 
+else $darkskydayprecipIntensity = number_format($cond['precipIntensity']*25.4,1);
+if ($rainunit=='in'){$darkskydayacumm=round($cond['precipAccumulation']*0.393701,1);}
+else {$darkskydayacumm=round($cond['precipAccumulation'],1);}
+$darkskydayTempHigh = round($cond['temperatureMax']);$darkskydayTempLow = round($cond['temperatureMin']); 
 $darkskydayWindSpeed = round($cond['windGust']*$windspeedconversion,0);
 $darkskydayWindGust = round($cond['windGust']*$windspeedconversion,0);
             	  echo '<div class="darkskyforecastinghome">';  

@@ -68,9 +68,8 @@ bluetds{background:#01a4b5}yellowtds{background:#e6a141}orangetds{background:#d0
             $darkskyhourlyTime = $cond['time'];
             $darkskyhourlySummary = $cond['summary'];
             $darkskyhourlyIcon = $cond['icon'];
-            if ($weather["temp_units"]=='F'){ $darkskyhourlyTemp = round(32 +(9*$cond['temperature']/5));}
-			else $darkskyhourlyTemp = round($cond['temperature']);
-            //$darkskyhourlyTempLow = round($cond['temperatureMin']);
+            $darkskyhourlyTemp = round($cond['temperature']);
+            $darkskyhourlyTempLow = round($cond['temperatureMin']);
 			$darkskyhourlyWinddir = $cond['windBearing'];
 			$darkskyhourlyuv = $cond['uvIndex'];
 			$darkskyhourlyClouds = $cond['cloudCover']*100;
@@ -144,7 +143,7 @@ else if($darkskyhourlyTemp>=7){echo '<darkskytemphihome><greentds>'.number_forma
 				  else if ($darkskyhourlyuv>5){echo '<orangetds>' .$darkskyhourlyuv;}
 				  else if ($darkskyhourlyuv>2){echo '<yellowtds>' .$darkskyhourlyuv;}
 				  else if ($darkskyhourlyuv>0){echo '<greentds>' .$darkskyhourlyuv;}
-				  elseif ($darkskyhourlyuv==0){echo '<zerotds>' .$darkskyhourlyuv;}
+				  else if ($darkskyhourlyuv==0){echo '<zerotds>' .$darkskyhourlyuv;}
 				  
 				  echo '</orange></darkskytemphihome><br>';  
 				  
