@@ -36,7 +36,7 @@ windgusts{position:absolute;font-size:15px;margin-top:20px;left:50px;color:#444}
 
 .uvcaution{margin-left:120px;margin-top:112px;font-family:Arial,Helvetica,system}.uvtrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}.simsekcontainer{float:left;font-family:weathertext,system;-o-font-smoothing:antialiasedleft:0;bottom:0;right:0;position:relative;margin:40px 10px 10px 40px;left:-10px;top:13px}.simsek{font-size:1.55rem;padding-top:12px;color:#f8f8f8;background:rgba(230,161,65,1);border-bottom:18px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px}
 smalluvunit{font-size:.65rem;font-family:Arial,Helvetica,system;}
-sup{font-size:0.85em}
+sup{font-size:1em}supwm2{font-size:0.7em;vertical-align:super}
 
 
 </style>
@@ -85,13 +85,13 @@ sup{font-size:0.85em}
 <path fill="<?php if($weather["solardmax"]>50){echo " #ff8841";} else echo "currentcolor"?>"  opacity="1.00" d=" M 7.00 66.00 C 17.00 66.00 27.00 66.00 37.00 66.00 C 37.00 67.67 37.00 69.33 37.00 71.00 C 27.00 71.00 17.00 71.00 7.00 71.00 C 7.00 69.33 7.00 67.67 7.00 66.00 Z" />
 <path fill="<?php if($weather["solardmax"]>0){echo " #ff8841";} else echo "currentcolor"?>"  opacity="1.00" d=" M 7.00 72.00 C 17.00 72.00 27.00 72.00 37.00 72.00 C 37.00 73.67 37.00 75.33 37.00 77.00 C 27.00 77.00 17.00 77.00 7.00 77.00 C 7.00 75.33 7.00 73.67 7.00 72.00 Z" /></svg>
 </svg></div></div>
- <div class="higust">Highest Solar W/m<sup>2</sup> Measured at <span><?php echo $weather["solardmaxtime"];?></span></div>
+ <div class="higust">Highest Solar W/m<supwm2>2</supwm2> Measured at <span><?php echo $weather["solardmaxtime"];?></span></div>
  
     
  <br>
 <div class="hitempy">  
-  <?php if ($weather["solardmax"] < $weather["solarydmax"]){echo "Max Solar <orange>W/m<sup>2</sup></orange> Today was <blue>Less</blue> than Yesterday"; echo " ",$weather["solarydmax"] - $weather["solardmax"], " <orange>W/m<sup>2</sup></orange> <blue>".$fallingsymbol."</blue>";}  
-  else if ($weather["solardmax"] > $weather["solarydmax"]){echo "Max Solar W/m<sup>2</sup> Today was <orange>Higher</orange> than Yesterday";echo " ",$weather["solardmax"] - $weather["solarydmax"], " <orange>W/m<sup>2</sup> ".$risingsymbol."</orange>";}
+  <?php if ($weather["solardmax"] < $weather["solarydmax"]){echo "Max Solar <orange>W/m<supwm2>2</sup></orange> Today was <blue>Less</blue> than Yesterday"; echo " ",$weather["solarydmax"] - $weather["solardmax"], " <orange>W/m<supwm2>2</sup></orange> <blue>".$fallingsymbol."</blue>";}  
+  else if ($weather["solardmax"] > $weather["solarydmax"]){echo "Max Solar W/m<supwm2>2</sup> Today was <orange>Higher</orange> than Yesterday";echo " ",$weather["solardmax"] - $weather["solarydmax"], " <orange>W/m<supwm2>2</sup> ".$risingsymbol."</orange>";}
   ?></span>
             </div> 
 
@@ -158,9 +158,9 @@ sup{font-size:0.85em}
 ?>
 </div>
 
-</span>  <div class="higust">Highest Solar W/m<sup>2</sup> <span><?php echo $weather["solarmmaxtime"];?></span></div>
+</span>  <div class="higust">Highest Solar W/m<supwm2>2</supwm2> <span><?php echo $weather["solarmmaxtime"];?></span></div>
 <br>
-<img src="css/icons/clear.svg" width="40px" > <windgusts> SOLAR RADIATION W/m<sup>2</sup></windgusts>
+<img src="css/icons/clear.svg" width="40px" > <windgusts> SOLAR RADIATION W/m<supwm2>2</sup></windgusts>
 
             </div>
         </div>
@@ -218,9 +218,9 @@ sup{font-size:0.85em}
 </div>
 
 
-</span> <div class="higust">Highest Solar W/m<sup>2</sup> Measured  at <span><?php echo $weather["solarydmaxtime"];?></span></div>
+</span> <div class="higust">Highest Solar W/m<supwm2>2</supwm2> Measured  at <span><?php echo $weather["solarydmaxtime"];?></span></div>
 <br>
-<img src="css/icons/clear.svg" width="40px" > <windgusts> SOLAR RADIATION W/m<sup>2</sup></windgusts> <windgusts> SOLAR RADIATION W/m<sup>2</sup></windgusts>
+<img src="css/icons/clear.svg" width="40px" > <windgusts> SOLAR RADIATION W/m<supwm2>2</sup></windgusts> <windgusts> SOLAR RADIATION W/m<supwm2>2</sup></windgusts>
 
             </div>
         </div>
@@ -271,9 +271,9 @@ sup{font-size:0.85em}
 ?>
 </div>
 
-</span> <div class="higust">Highest Solar W/m<sup>2</sup> <span><?php echo $weather["solarymaxtime"];?></span></div>
+</span> <div class="higust">Highest Solar W/m<supwm2>2</supwm2> <span><?php echo $weather["solarymaxtime"];?></span></div>
 <br>
-<img src="css/icons/clear.svg" width="40px" > <windgusts> SOLAR RADIATION W/m<sup>2</sup></windgusts>
+<img src="css/icons/clear.svg" width="40px" > <windgusts> SOLAR RADIATION W/m<supwm2>2</sup></windgusts>
             </div>
         </div>
         <div class="weather34card__count-container">
