@@ -34,6 +34,8 @@ for ($i = 0; $i < 100; $i++) {
 	$longi[$i]=$parsed_json{$i}['longitude'];
 	$eventime[$i]=date($timeFormatShort, strtotime($time[$i]) );
 	$eqdist[$i] = round(distance($lat, $lon, $lati[$i], $longi[$i])) ;
+	
+	
 }
 $eqalert='<svg id="i-activity" viewBox="0 0 32 32" width="52" height="52" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M4 16 L11 16 14 29 18 3 21 16 28 16" />
@@ -52,6 +54,7 @@ $eqalert6='<svg id="i-activity" viewBox="0 0 32 32" width="28" height="28" fill=
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
     <style>
+@font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff")}
 @font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;
 background:rgba(11, 12, 12, 0.4); background-repeat:no-repeat}body{color:#aaa;overflow:hidden;height:105vh;padding:10px}
 section{width:80vw;max-width:64rem;min-width:58.9rem;margin:0 auto;padding:5px}
@@ -60,31 +63,24 @@ section{width:80vw;max-width:64rem;min-width:58.9rem;margin:0 auto;padding:5px}
 .weather34card{width:20.5rem;height:17.5rem;background-color:0;border-radius:4px;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#aaa;font-size:11px;font-weight:normal;padding:10px;border:solid #444 1px}
 .weather34card__weather34-container{height:50%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;padding:10px;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;}
 .weather34card__weather34-wrapper{width:8.5rem;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;}
-.weather34card__count-container{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:10px;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;}.weather34card__count-text{font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;}.weather34card__count-text--big{font-size:4rem;font-weight:200;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;}.weather34card__count-text--bigs{font-size:0.95rem;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;font-weight:normal;color:#aaa}
-.weather34card__stuff-container{margin:0 auto;width:101%;height:17%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:15px;color:#aaa;background:RGBA(37, 41, 45, 0.6);border:solid RGBA(156, 156, 156, 0.1) 0;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;font-family:Arial, sans-serif;}.weather34card:after{content:"";display:block;position:absolute;top:0;left:0;width:16rem;height:4.625rem;padding:10px}.weather34card--earthquake1:after{background-image:radial-gradient(to bottom,rgba(106,122,135,0.5),transparent 70%)}.weather34card--earthquake2:after{background-image:radial-gradient(to bottom,rgba(106,191,96,0.5),transparent 70%)}
+.weather34card__count-container{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:10px;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;}.weather34card__count-text{font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;}.weather34card__count-text--big{font-size:4rem;font-weight:200;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;}
+.weather34card__count-text--bigs{font-size:0.95rem;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;font-weight:normal;color:#aaa}
+.weather34card__stuff-container{margin:0 auto;font-size:0.9rem;padding-top:0;color:#aaa;border-bottom:5px solid rgba(56,56,60,1);align-items:center;justify-content:center;
+font-family:weathertext2,Arial,Helvetica,system;width:15rem;height:3.45rem;display:flex;background:rgba(56,56,60,0.2)}
+.weather34card:after{content:"";display:block;position:absolute;top:0;left:0;width:16rem;height:4.625rem;padding:10px}.weather34card--earthquake1:after{background-image:radial-gradient(to bottom,rgba(106,122,135,0.5),transparent 70%)}.weather34card--earthquake2:after{background-image:radial-gradient(to bottom,rgba(106,191,96,0.5),transparent 70%)}
 .weather34card--earthquake3:after{background-image:radial-gradient(to bottom,rgba(96,203,231,0.5),transparent 70%)}
 .weather34card--earthquakelast:after{background-image:radial-gradient(to bottom,rgba(96,203,231,0.5),transparent 70%)}
 .weather34card--earthquakelast:before {content: "";position: absolute;top: 0px;right: 0px;background: 0;width:0;height:0;border-style:solid;border-width: 0 30px 30px 0;border-color:transparent #d65b4a transparent transparent;}
 blue{color:#01a4b4}orange{color:#ff8841}green{color:#9aba2f}red{color:#f37867}red6{color:#d65b4a;}value{color:#fff}yellow{color:#CC0}purple{color:#916392}
-
-.time{color:#bbb;font-weight:normal;font-family:-apple-system, BlinkMacSystemFont, "weathertext", Roboto, Helvetica, Arial, sans-serif;position:absolute;top:52px;margin-left:5px;}
+.time{color:#bbb;font-weight:normal;font-family:"weathertext2",Helvetica, Arial, sans-serif;position:absolute;top:43px;margin-left:10px;}
 a{color:#aaa;font-size:11px;top:5px;margin-top:10px;text-decoration:none;}.provided{position:absolute;color:#aaa;font-size:11px;bottom:7px;text-decoration:none;margin-left:100px;}
 updated{position:absolute;bottom:30px;float:right;color:#aaa}
 .nosig{font-size:16px;text-align:center;line-height:17px;margin-top:5px;}magnitude{font-size:12px;}
 .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}.weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:100%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}.weather34browser-footer{flex-basis:auto;height:35px;background:#ebebeb;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-20px;width:97.4%;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#aaa;text-decoration:none}
 .weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
-
-smalluvunit{font-size:.55rem;font-family:Arial,Helvetica,system;font-weight:600}
-
-.uvcontainer1{left:70px;top:0}.simsek,.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-family:weathertext,Arial,Helvetica,system;width:6rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-size:2.5rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px}
-.uvcaution,.uvtrend{position:absolute;font-size:1rem}
-.uvtoday1-3{background:#9aba2f}.uvtoday4-5{background:rgba(230,161,65,1)}.uvtoday6-8{background:rgba(255,124,57,.8)}.uvtoday9-10{background:rgba(211,93,78,.8)}.uvtoday11{background:rgba(204,135,248,.7)}
-.uvcaution{margin-left:120px;margin-top:112px;font-family:Arial,Helvetica,system}.uvtrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}.simsekcontainer{float:left;font-family:weathertext,system;-o-font-smoothing:antialiasedleft:0;bottom:0;right:0;position:relative;margin:40px 10px 10px 40px;left:-10px;top:13px}.simsek{font-size:1.55rem;padding-top:12px;color:#f8f8f8;background:rgba(230,161,65,1);border-bottom:18px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px}.
-
-
-
-
-</style>
+smallmagunit{font-size:.55rem;font-family:Arial,Helvetica,system;font-weight:600}
+.magcontainer1{left:70px;top:0}.simsek,.mag1,.mag1-3,.mag11,.mag4-5,.mag6-8,.mag9-10{font-family:weathertext2,Arial,Helvetica,system;width:6.5rem;height:4.5rem;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;display:flex}.mag1,.mag1-3,.mag11,.mag4-5,.mag6-8,.mag9-10{font-size:2rem;padding-top:2px;color:#fff;border-bottom:11px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px}.magcaution,.magtrend{position:absolute;font-size:1rem}.mag1-3{background:#9aba2f}.mag4-5{background:rgba(230,161,65,1)}.mag6-8{background:rgba(255,124,57,.8)}.mag9-10{background:rgba(211,93,78,.8)}.mag11{background:rgba(204,135,248,.7)}
+.magcaution{margin-left:120px;margin-top:105px;font-family:weathertext2}.magtrend{margin-left:135px;margin-top:40px;z-index:1;color:#fff}.simsekcontainer{float:left;font-family:weathertext,system;-o-font-smoothing:antialiasedleft:0;bottom:0;right:0;position:relative;margin:40px 10px 10px 40px;left:-10px;top:13px}.simsek{font-size:1.55rem;padding-top:12px;color:#f8f8f8;background:rgba(230,161,65,1);border-bottom:18px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px}</style>
 </head>
 <body>
 <div class="weather34darkbrowser" url="Minor to Significant World Wide & Regional Earthquakes"></div> 
@@ -93,11 +89,13 @@ smalluvunit{font-size:.55rem;font-family:Arial,Helvetica,system;font-weight:600}
                <div class="weather34card_weather34-container">
             <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
                 <?php 
-				if($magnitude[0]>=7){echo "<div class=uvtoday9-10>",$magnitude[0],"";}
-				else if($magnitude[0]>=5.8){echo "<div class=uvtoday9-10>",$magnitude[0],"";}
-				else if($magnitude[0]>=5){echo "<div class=uvtoday6-8>",$magnitude[0],"";}
-				else if($magnitude[0]>=4){echo "<div class=uvtoday4-5>",$magnitude[0],"";}
-				else if($magnitude[0]>=2){echo "<div class=uvtoday1-3>",$magnitude[0],"";}				
+				if($magnitude[0]>=7){echo "<div class=mag9-10>",$magnitude[0],"";}
+				else if($magnitude[0]>=5.8){echo "<div class=mag9-10>",$magnitude[0],"";}
+				else if($magnitude[0]>=5){echo "<div class=mag6-8>",$magnitude[0],"";}
+				else if($magnitude[0]>=4){echo "<div class=mag4-5>",$magnitude[0],"";}
+				else if($magnitude[0]>=2){echo "<div class=mag1-3>",$magnitude[0],"";}	
+				else if($magnitude[0]<2){echo "<div class=mag1-3>N/A";}		
+						
 				?></span> </div>
             </div>
         </div>
@@ -174,11 +172,13 @@ else if ($windunit == 'mph') {
                <div class="weather34card_weather34-container">
             <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
                <?php 
-				if($magnitude[1]>=7){echo "<div class=uvtoday9-10>",$magnitude[1],"";}
-				else if($magnitude[1]>=5.8){echo "<div class=uvtoday9-10>",$magnitude[1],"";}
-				else if($magnitude[1]>=5){echo "<div class=uvtoday6-8>",$magnitude[1],"";}
-				else if($magnitude[1]>=4){echo "<div class=uvtoday4-5>",$magnitude[1],"";}
-				else if($magnitude[1]>=2){echo "<div class=uvtoday1-3>",$magnitude[1],"";}				
+				if($magnitude[1]>=7){echo "<div class=mag9-10>",$magnitude[1],"";}
+				else if($magnitude[1]>=5.8){echo "<div class=mag9-10>",$magnitude[1],"";}
+				else if($magnitude[1]>=5){echo "<div class=mag6-8>",$magnitude[1],"";}
+				else if($magnitude[1]>=4){echo "<div class=mag4-5>",$magnitude[1],"";}
+				else if($magnitude[1]>=2){echo "<div class=mag1-3>",$magnitude[1],"";}	
+				else if($magnitude[1]<2){echo "<div class=mag1-3>N/A";}		
+						
 				?></span> </div>
             </div>
         </div>
@@ -259,11 +259,12 @@ else if ($windunit == 'mph') {
         <div class="weather34card_weather34-container">
             <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
                <?php 
-				if($magnitude[2]>=7){echo "<div class=uvtoday9-10>",$magnitude[2],"";}
-				else if($magnitude[2]>=5.8){echo "<div class=uvtoday9-10>",$magnitude[2],"";}
-				else if($magnitude[2]>=5){echo "<div class=uvtoday6-8>",$magnitude[2],"";}
-				else if($magnitude[2]>=4){echo "<div class=uvtoday4-5>",$magnitude[2],"";}
-				else if($magnitude[2]>=2){echo "<div class=uvtoday1-3>",$magnitude[2],"";}				
+				if($magnitude[2]>=7){echo "<div class=mag9-10>",$magnitude[2],"";}
+				else if($magnitude[2]>=5.8){echo "<div class=mag9-10>",$magnitude[2],"";}
+				else if($magnitude[2]>=5){echo "<div class=mag6-8>",$magnitude[2],"";}
+				else if($magnitude[2]>=4){echo "<div class=mag4-5>",$magnitude[2],"";}
+				else if($magnitude[2]>=2){echo "<div class=mag1-3>",$magnitude[2],"";}	
+				else if($magnitude[2]<2){echo "<div class=mag1-3>N/A";}			
 				?></span> </div>
             </div>
         </div>
@@ -350,11 +351,12 @@ else if ($windunit == 'mph') {
         <div class="weather34card_weather34-container">
             <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
                <?php 
-				if($magnitude[3]>=7){echo "<div class=uvtoday9-10>",$magnitude[3],"";}
-				else if($magnitude[3]>=5.8){echo "<div class=uvtoday9-10>",$magnitude[3],"";}
-				else if($magnitude[3]>=5){echo "<div class=uvtoday6-8>",$magnitude[3],"";}
-				else if($magnitude[3]>=4){echo "<div class=uvtoday4-5>",$magnitude[3],"";}
-				else if($magnitude[3]>=2){echo "<div class=uvtoday1-3>",$magnitude[3],"";}				
+				if($magnitude[3]>=7){echo "<div class=mag9-10>",$magnitude[3],"";}
+				else if($magnitude[3]>=5.8){echo "<div class=mag9-10>",$magnitude[3],"";}
+				else if($magnitude[3]>=5){echo "<div class=mag6-8>",$magnitude[3],"";}
+				else if($magnitude[3]>=4){echo "<div class=mag4-5>",$magnitude[3],"";}
+				else if($magnitude[3]>=2){echo "<div class=mag1-3>",$magnitude[3],"";}		
+				else if($magnitude[3]<2){echo "<div class=mag1-3>N/A";}		
 				?></span> </div>
             </div>
         </div>
@@ -435,11 +437,12 @@ else if ($windunit == 'mph') {
                <div class="weather34card_weather34-container">
             <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
                 <?php 
-				if($magnitude[4]>=7){echo "<div class=uvtoday9-10>",$magnitude[4],"";}
-				else if($magnitude[4]>=5.8){echo "<div class=uvtoday9-10>",$magnitude[4],"";}
-				else if($magnitude[4]>=5){echo "<div class=uvtoday6-8>",$magnitude[4],"";}
-				else if($magnitude[4]>=4){echo "<div class=uvtoday4-5>",$magnitude[4],"";}
-				else if($magnitude[4]>=2){echo "<div class=uvtoday1-3>",$magnitude[4],"";}				
+				if($magnitude[4]>=7){echo "<div class=mag9-10>",$magnitude[4],"";}
+				else if($magnitude[4]>=5.8){echo "<div class=mag9-10>",$magnitude[4],"";}
+				else if($magnitude[4]>=5){echo "<div class=mag6-8>",$magnitude[4],"";}
+				else if($magnitude[4]>=4){echo "<div class=mag4-5>",$magnitude[4],"";}
+				else if($magnitude[4]>=2){echo "<div class=mag1-3>",$magnitude[4],"";}	
+				else if($magnitude[4]<2){echo "<div class=mag1-3>N/A";}		
 				?></span> </div>
             </div>
         </div>
@@ -520,101 +523,101 @@ else if ($windunit == 'mph') {
         <div class="weather34card_weather34-container">
             <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
 <?php //weather34 last 100 of greater than 6 if exist
-if($magnitude[100]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[100],"</div>";}
-else if($magnitude[99]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[99],"</div>";}
-else if($magnitude[98]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[98],"</div>";}
-else if($magnitude[97]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[97],"</div>";}
-else if($magnitude[96]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[96],"</div>";}
-else if($magnitude[95]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[95],"</div>";}
-else if($magnitude[94]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[94],"</div>";}
-else if($magnitude[93]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[93],"</div>";}
-else if($magnitude[92]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[92],"</div>";}
-else if($magnitude[91]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[91],"</div>";}
-else if($magnitude[90]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[90],"</div>";}
-else if($magnitude[89]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[89],"</div>";}
-else if($magnitude[88]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[88],"</div>";}
-else if($magnitude[87]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[87],"</div>";}
-else if($magnitude[86]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[86],"</div>";}
-else if($magnitude[85]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[85],"</div>";}
-else if($magnitude[84]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[84],"</div>";}
-else if($magnitude[83]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[83],"</div>";}
-else if($magnitude[82]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[82],"</div>";}
-else if($magnitude[81]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[81],"</div>";}
-else if($magnitude[80]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[80],"</div>";}
-else if($magnitude[79]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[79],"</div>";}
-else if($magnitude[78]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[78],"</div>";}
-else if($magnitude[77]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[77],"</div>";}
-else if($magnitude[76]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[76],"</div>";}
-else if($magnitude[75]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[75],"</div>";}
-else if($magnitude[74]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[74],"</div>";}
-else if($magnitude[73]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[73],"</div>";}
-else if($magnitude[72]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[72],"</div>";}
-else if($magnitude[71]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[71],"</div>";}
-else if($magnitude[70]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[70],"</div>";}
-else if($magnitude[69]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[69],"</div>";}
-else if($magnitude[68]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[68],"</div>";}
-else if($magnitude[67]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[67],"</div>";}
-else if($magnitude[66]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[66],"</div>";}
-else if($magnitude[65]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[65],"</div>";}
-else if($magnitude[64]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[64],"</div>";}
-else if($magnitude[63]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[63],"</div>";}
-else if($magnitude[62]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[62],"</div>";}
-else if($magnitude[61]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[61],"</div>";}
-else if($magnitude[60]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[60],"</div>";}
-else if($magnitude[59]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[59],"</div>";}
-else if($magnitude[58]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[58],"</div>";}
-else if($magnitude[57]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[57],"</div>";}
-else if($magnitude[56]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[56],"</div>";}
-else if($magnitude[55]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[55],"</div>";}
-else if($magnitude[54]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[54],"</div>";}
-else if($magnitude[53]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[53],"</div>";}
-else if($magnitude[52]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[52],"</div>";}
-else if($magnitude[51]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[51],"</div>";}
-else if($magnitude[50]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[50],"</div>";}
-else if($magnitude[49]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[49],"</div>";}
-else if($magnitude[48]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[48],"</div>";}
-else if($magnitude[47]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[47],"</div>";}
-else if($magnitude[46]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[46],"</div>";}
-else if($magnitude[45]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[45],"</div>";}
-else if($magnitude[44]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[44],"</div>";}
-else if($magnitude[43]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[43],"</div>";}
-else if($magnitude[42]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[42],"</div>";}
-else if($magnitude[41]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[41],"</div>";}
-else if($magnitude[40]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[40],"</div>";}
-else if($magnitude[39]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[39],"</div>";}
-else if($magnitude[38]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[38],"</div>";}
-else if($magnitude[37]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[37],"</div>";}
-else if($magnitude[36]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[36],"</div>";}
-else if($magnitude[35]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[35],"</div>";}
-else if($magnitude[34]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[34],"</div>";}
-else if($magnitude[33]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[33],"</div>";}
-else if($magnitude[32]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[32],"</div>";}
-else if($magnitude[31]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[31],"</div>";}
-else if($magnitude[30]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[30],"</div>";}
-else if($magnitude[29]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[29],"</div>";}
-else if($magnitude[28]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[28],"</div>";}
-else if($magnitude[27]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[27],"</div>";}
-else if($magnitude[26]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[26],"</div>";}
-else if($magnitude[25]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[25],"</div>";}
-else if($magnitude[24]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[24],"</div>";}
-else if($magnitude[23]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[23],"</div>";}
-else if($magnitude[22]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[22],"</div>";}
-else if($magnitude[21]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[21],"</div>";}
-else if($magnitude[20]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[20],"</div>";}
-else if($magnitude[19]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[19],"</div>";}
-else if($magnitude[18]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[18],"</div>";}
-else if($magnitude[17]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[17],"</div>";}
-else if($magnitude[16]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[16],"</div>";}
-else if($magnitude[15]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[15],"</div>";}
-else if($magnitude[14]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[14],"</div>";}
-else if($magnitude[12]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[13],"</div>";}
-else if($magnitude[11]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[11],"</div>";}
-else if($magnitude[10]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[10],"</div>";}
-else if($magnitude[9]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[9],"</div>";}
-else if($magnitude[8]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[8],"</div>";}
-else if($magnitude[7]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[7],"</div>";}
-else if($magnitude[6]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[6],"</div>";}
-else if($magnitude[5]>=5.7){echo "<div class=uvtoday9-10>",$magnitude[5],"</div>";}
+if($magnitude[100]>=5.7){echo "<div class=mag9-10>",$magnitude[100],"</div>";}
+else if($magnitude[99]>=5.7){echo "<div class=mag9-10>",$magnitude[99],"</div>";}
+else if($magnitude[98]>=5.7){echo "<div class=mag9-10>",$magnitude[98],"</div>";}
+else if($magnitude[97]>=5.7){echo "<div class=mag9-10>",$magnitude[97],"</div>";}
+else if($magnitude[96]>=5.7){echo "<div class=mag9-10>",$magnitude[96],"</div>";}
+else if($magnitude[95]>=5.7){echo "<div class=mag9-10>",$magnitude[95],"</div>";}
+else if($magnitude[94]>=5.7){echo "<div class=mag9-10>",$magnitude[94],"</div>";}
+else if($magnitude[93]>=5.7){echo "<div class=mag9-10>",$magnitude[93],"</div>";}
+else if($magnitude[92]>=5.7){echo "<div class=mag9-10>",$magnitude[92],"</div>";}
+else if($magnitude[91]>=5.7){echo "<div class=mag9-10>",$magnitude[91],"</div>";}
+else if($magnitude[90]>=5.7){echo "<div class=mag9-10>",$magnitude[90],"</div>";}
+else if($magnitude[89]>=5.7){echo "<div class=mag9-10>",$magnitude[89],"</div>";}
+else if($magnitude[88]>=5.7){echo "<div class=mag9-10>",$magnitude[88],"</div>";}
+else if($magnitude[87]>=5.7){echo "<div class=mag9-10>",$magnitude[87],"</div>";}
+else if($magnitude[86]>=5.7){echo "<div class=mag9-10>",$magnitude[86],"</div>";}
+else if($magnitude[85]>=5.7){echo "<div class=mag9-10>",$magnitude[85],"</div>";}
+else if($magnitude[84]>=5.7){echo "<div class=mag9-10>",$magnitude[84],"</div>";}
+else if($magnitude[83]>=5.7){echo "<div class=mag9-10>",$magnitude[83],"</div>";}
+else if($magnitude[82]>=5.7){echo "<div class=mag9-10>",$magnitude[82],"</div>";}
+else if($magnitude[81]>=5.7){echo "<div class=mag9-10>",$magnitude[81],"</div>";}
+else if($magnitude[80]>=5.7){echo "<div class=mag9-10>",$magnitude[80],"</div>";}
+else if($magnitude[79]>=5.7){echo "<div class=mag9-10>",$magnitude[79],"</div>";}
+else if($magnitude[78]>=5.7){echo "<div class=mag9-10>",$magnitude[78],"</div>";}
+else if($magnitude[77]>=5.7){echo "<div class=mag9-10>",$magnitude[77],"</div>";}
+else if($magnitude[76]>=5.7){echo "<div class=mag9-10>",$magnitude[76],"</div>";}
+else if($magnitude[75]>=5.7){echo "<div class=mag9-10>",$magnitude[75],"</div>";}
+else if($magnitude[74]>=5.7){echo "<div class=mag9-10>",$magnitude[74],"</div>";}
+else if($magnitude[73]>=5.7){echo "<div class=mag9-10>",$magnitude[73],"</div>";}
+else if($magnitude[72]>=5.7){echo "<div class=mag9-10>",$magnitude[72],"</div>";}
+else if($magnitude[71]>=5.7){echo "<div class=mag9-10>",$magnitude[71],"</div>";}
+else if($magnitude[70]>=5.7){echo "<div class=mag9-10>",$magnitude[70],"</div>";}
+else if($magnitude[69]>=5.7){echo "<div class=mag9-10>",$magnitude[69],"</div>";}
+else if($magnitude[68]>=5.7){echo "<div class=mag9-10>",$magnitude[68],"</div>";}
+else if($magnitude[67]>=5.7){echo "<div class=mag9-10>",$magnitude[67],"</div>";}
+else if($magnitude[66]>=5.7){echo "<div class=mag9-10>",$magnitude[66],"</div>";}
+else if($magnitude[65]>=5.7){echo "<div class=mag9-10>",$magnitude[65],"</div>";}
+else if($magnitude[64]>=5.7){echo "<div class=mag9-10>",$magnitude[64],"</div>";}
+else if($magnitude[63]>=5.7){echo "<div class=mag9-10>",$magnitude[63],"</div>";}
+else if($magnitude[62]>=5.7){echo "<div class=mag9-10>",$magnitude[62],"</div>";}
+else if($magnitude[61]>=5.7){echo "<div class=mag9-10>",$magnitude[61],"</div>";}
+else if($magnitude[60]>=5.7){echo "<div class=mag9-10>",$magnitude[60],"</div>";}
+else if($magnitude[59]>=5.7){echo "<div class=mag9-10>",$magnitude[59],"</div>";}
+else if($magnitude[58]>=5.7){echo "<div class=mag9-10>",$magnitude[58],"</div>";}
+else if($magnitude[57]>=5.7){echo "<div class=mag9-10>",$magnitude[57],"</div>";}
+else if($magnitude[56]>=5.7){echo "<div class=mag9-10>",$magnitude[56],"</div>";}
+else if($magnitude[55]>=5.7){echo "<div class=mag9-10>",$magnitude[55],"</div>";}
+else if($magnitude[54]>=5.7){echo "<div class=mag9-10>",$magnitude[54],"</div>";}
+else if($magnitude[53]>=5.7){echo "<div class=mag9-10>",$magnitude[53],"</div>";}
+else if($magnitude[52]>=5.7){echo "<div class=mag9-10>",$magnitude[52],"</div>";}
+else if($magnitude[51]>=5.7){echo "<div class=mag9-10>",$magnitude[51],"</div>";}
+else if($magnitude[50]>=5.7){echo "<div class=mag9-10>",$magnitude[50],"</div>";}
+else if($magnitude[49]>=5.7){echo "<div class=mag9-10>",$magnitude[49],"</div>";}
+else if($magnitude[48]>=5.7){echo "<div class=mag9-10>",$magnitude[48],"</div>";}
+else if($magnitude[47]>=5.7){echo "<div class=mag9-10>",$magnitude[47],"</div>";}
+else if($magnitude[46]>=5.7){echo "<div class=mag9-10>",$magnitude[46],"</div>";}
+else if($magnitude[45]>=5.7){echo "<div class=mag9-10>",$magnitude[45],"</div>";}
+else if($magnitude[44]>=5.7){echo "<div class=mag9-10>",$magnitude[44],"</div>";}
+else if($magnitude[43]>=5.7){echo "<div class=mag9-10>",$magnitude[43],"</div>";}
+else if($magnitude[42]>=5.7){echo "<div class=mag9-10>",$magnitude[42],"</div>";}
+else if($magnitude[41]>=5.7){echo "<div class=mag9-10>",$magnitude[41],"</div>";}
+else if($magnitude[40]>=5.7){echo "<div class=mag9-10>",$magnitude[40],"</div>";}
+else if($magnitude[39]>=5.7){echo "<div class=mag9-10>",$magnitude[39],"</div>";}
+else if($magnitude[38]>=5.7){echo "<div class=mag9-10>",$magnitude[38],"</div>";}
+else if($magnitude[37]>=5.7){echo "<div class=mag9-10>",$magnitude[37],"</div>";}
+else if($magnitude[36]>=5.7){echo "<div class=mag9-10>",$magnitude[36],"</div>";}
+else if($magnitude[35]>=5.7){echo "<div class=mag9-10>",$magnitude[35],"</div>";}
+else if($magnitude[34]>=5.7){echo "<div class=mag9-10>",$magnitude[34],"</div>";}
+else if($magnitude[33]>=5.7){echo "<div class=mag9-10>",$magnitude[33],"</div>";}
+else if($magnitude[32]>=5.7){echo "<div class=mag9-10>",$magnitude[32],"</div>";}
+else if($magnitude[31]>=5.7){echo "<div class=mag9-10>",$magnitude[31],"</div>";}
+else if($magnitude[30]>=5.7){echo "<div class=mag9-10>",$magnitude[30],"</div>";}
+else if($magnitude[29]>=5.7){echo "<div class=mag9-10>",$magnitude[29],"</div>";}
+else if($magnitude[28]>=5.7){echo "<div class=mag9-10>",$magnitude[28],"</div>";}
+else if($magnitude[27]>=5.7){echo "<div class=mag9-10>",$magnitude[27],"</div>";}
+else if($magnitude[26]>=5.7){echo "<div class=mag9-10>",$magnitude[26],"</div>";}
+else if($magnitude[25]>=5.7){echo "<div class=mag9-10>",$magnitude[25],"</div>";}
+else if($magnitude[24]>=5.7){echo "<div class=mag9-10>",$magnitude[24],"</div>";}
+else if($magnitude[23]>=5.7){echo "<div class=mag9-10>",$magnitude[23],"</div>";}
+else if($magnitude[22]>=5.7){echo "<div class=mag9-10>",$magnitude[22],"</div>";}
+else if($magnitude[21]>=5.7){echo "<div class=mag9-10>",$magnitude[21],"</div>";}
+else if($magnitude[20]>=5.7){echo "<div class=mag9-10>",$magnitude[20],"</div>";}
+else if($magnitude[19]>=5.7){echo "<div class=mag9-10>",$magnitude[19],"</div>";}
+else if($magnitude[18]>=5.7){echo "<div class=mag9-10>",$magnitude[18],"</div>";}
+else if($magnitude[17]>=5.7){echo "<div class=mag9-10>",$magnitude[17],"</div>";}
+else if($magnitude[16]>=5.7){echo "<div class=mag9-10>",$magnitude[16],"</div>";}
+else if($magnitude[15]>=5.7){echo "<div class=mag9-10>",$magnitude[15],"</div>";}
+else if($magnitude[14]>=5.7){echo "<div class=mag9-10>",$magnitude[14],"</div>";}
+else if($magnitude[12]>=5.7){echo "<div class=mag9-10>",$magnitude[13],"</div>";}
+else if($magnitude[11]>=5.7){echo "<div class=mag9-10>",$magnitude[11],"</div>";}
+else if($magnitude[10]>=5.7){echo "<div class=mag9-10>",$magnitude[10],"</div>";}
+else if($magnitude[9]>=5.7){echo "<div class=mag9-10>",$magnitude[9],"</div>";}
+else if($magnitude[8]>=5.7){echo "<div class=mag9-10>",$magnitude[8],"</div>";}
+else if($magnitude[7]>=5.7){echo "<div class=mag9-10>",$magnitude[7],"</div>";}
+else if($magnitude[6]>=5.7){echo "<div class=mag9-10>",$magnitude[6],"</div>";}
+else if($magnitude[5]>=5.7){echo "<div class=mag9-10>",$magnitude[5],"</div>";}
 				else {
 	echo "<div class=nosig>No Additional Major or Earlier <red6>Significant</red6> Events 
 	</div>";	
@@ -1033,7 +1036,7 @@ echo $eqalert;
 </section> 
 <div class="provided"> <?php echo $info?>  
 <a href="http://earthquake-report.com" title="Earthquake-Report.com" target="_blank">Data © <?php echo date('Y');?> Earthquake-Report.com</a>
-&nbsp;<?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
+&nbsp;<?php echo $info?> Original CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
 <updated>               
  <?php echo '<svg viewBox="0 0 32 32" width=7 height=7 fill=#9aba2f stroke=#9aba2f stroke-linecap=round stroke-linejoin=round stroke-width=6.25%><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx=16 cy=16 r=14 /></svg>';
 ; echo " Last Updated: ".date("H:i:s",filemtime('jsondata/eqnotification.txt'));?>
