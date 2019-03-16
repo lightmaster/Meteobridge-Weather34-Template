@@ -36,8 +36,8 @@ if ($weather["luminance"]==100) {$luminance1="<div class=percent100>";}else if (
 <div class="sunlightday"><currentdaylight></currentdaylight>&nbsp;&nbsp;<value> '.$daylight.' hrs<br /><period><value>&nbsp;Daylight</period></div>
 <div class="sundarkday"><value> '. $darkhours,":", $darkminutes.' hrs&nbsp;<currentdarkness></currentdarkness><br></value><period><value>&nbsp;Darkness</period></div>
 
-<div class="sunriseday"><div class=sunup34></div><value>Sunrise<br><value>'.$nextrise.'</value></div>
-<div class="sunsetday"><value>Sunset<div class=sundown34></div><br>&nbsp;&nbsp;<value>'.$nextset.'</value></div>
+<div class="sunriseday"><div class=sunup34></div><value>Sunrise<br><value>&nbsp;'.$nextrise.'<br>&nbsp;&nbsp;Begin (<blueu>'.$nextfirstlight.'</blueu>)</value></div>
+<div class="sunsetday"><value>Sunset<div class=sundown34></div><br><value> '.$nextset.'<br>&nbsp;&nbsp;End (<blueu>'.$nextlastlight.'</blueu>)</value></div>
 
 <div class="daylightword"><value>Daylight</div><div class="elevationword"><value>Sun Elevation<span><value><maxred> '.$elev1.'</maxred></value></span></div><div class="circleborder"></div>
 <div class="sundialcontainerdiv2" ><div id="sundialcontainer" class=sundialcontainer><canvas id="sundial" class="suncanvasstyle"></canvas><div class="weather34sunclock"><div id="poscircircle"></div></div></div>
