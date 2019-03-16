@@ -3,16 +3,20 @@
 $result = date_sun_info(time(), $lat, $lon);time(); 
 $nextday = time() + 24*60*60; 
 $result2 = date_sun_info($nextday,$lat, $lon);
-//weather34 sunrise
-$nextrise = $result['sunrise']; $now = time();if ($now > $nextrise) { $nextrise = date('D H:i',$result2['sunrise']);}else {$nextrise = date('D H:i',$nextrise);} 
+//weather34 sunrise 
+$nextrise = $result['sunrise']; $now = time(); if ($now > $nextrise) { $nextrise = date('H:i',$result2['sunrise']);
+$nextrisetxt = '<value>Tomorrow';} else { $nextrisetxt = '<value>&nbsp;&nbsp;Today'; 
+$nextrise = date('H:i',$nextrise);} 
+//weather34 sunset
+$nextset = $result['sunset']; 
+if ($now > $nextset) { $nextset = date('H:i',$result2['sunset']); 
+$nextsettxt = '<value>&nbsp;Tomorrow';} 
+else { $nextsettxt = '<value>&nbsp;&nbsp;Today'; $nextset = date('H:i',$nextset);} 
 //weather34 sunrise firstlight
 $nextfirstlight = $result['civil_twilight_begin']; $now = time();if ($now > $nextfirstlight) {$nextfirstlight = date('H:i',$result2['civil_twilight_begin']); 
 } else {$nextfirstlight = date('H:i',$nextfirstlight);} 
-//weather34 sunset
-$nextset = $result['sunset'];if ($now > $nextset) {$nextset = date('D H:i',$result2['sunset']);}else {$nextset = date('D H:i',$nextset);} 
 //weather34 sunset last light
-$nextlastlight = $result['civil_twilight_end'];if ($now > $nextlastlight) { $nextlastlight = date('H:i',$result2['civil_twilight_end']);}else {$nextlastlight = date('H:i',$nextlastlight);}
- 
+$nextlastlight = $result['civil_twilight_end'];if ($now > $nextlastlight) { $nextlastlight = date('H:i',$result2['civil_twilight_end']);}else {$nextlastlight = date('H:i',$nextlastlight);}  
 $firstrise = $result['sunrise']; $secondrise = $result2['sunrise']; $firstset = $result ['sunset']; 
 if ($now < $firstrise) { $time = $firstrise - $now; $hrs = gmdate ('G',$time); $min = gmdate ('i',$time); $txt = '<value>&nbsp;Till Sunrise';} elseif ($now < $firstset) { $time = $firstset - $now; $hrs = gmdate ('G',$time); $min = gmdate ('i',$time); $txt = ' &nbsp;<value>Till Sunset';} else { $time = $secondrise - $now; $hrs = gmdate ('G',$time); $min = gmdate ('i',$time); $txt ='&nbsp;<value>Till Sunrise';}echo "</value>";
 //sun position based on https://github.com/KiboOst/php-sunPos
@@ -29,8 +33,8 @@ if ($weather["luminance"]==100) {$luminance1="<div class=percent100>";}else if (
 <div class="sunlightday"><currentdaylight></currentdaylight>&nbsp;&nbsp;&nbsp;<value> '.$daylight.' hrs<br /><period><value>&nbsp;Daylight</period></div>
 <div class="sundarkday"><value> '. $darkhours,":", $darkminutes.' hrs &nbsp;<currentdarkness></currentdarkness><br></value><period><value>&nbsp;Darkness</period></div>
 
-<div class="sunriseday"><div class=sunup34></div><value>Sunrise<br><value>&nbsp;'.$nextrise.'<br>&nbsp;&nbsp;Begin (<blueu>'.$nextfirstlight.'</blueu>)</value></div>
-<div class="sunsetday"><value>Sunset<div class=sundown34></div><br><value> '.$nextset.'<br>&nbsp;&nbsp;End (<blueu>'.$nextlastlight.'</blueu>)</value></div>
+<div class="sunriseday"><div class=sunup34></div><value>Sunrise<br><value>&nbsp;'.$nextrisetxt.' '.$nextrise.'<br>&nbsp;&nbsp;Begin (<blueu>'.$nextfirstlight.'</blueu>)</value></div>
+<div class="sunsetday"><value>Sunset<div class=sundown34></div><br><value>&nbsp;'.$nextsettxt.' '.$nextset.'<br>&nbsp;&nbsp;End (<blueu>'.$nextlastlight.'</blueu>)</value></div>
 
 <div class="daylightword"><value>Daylight</div><div class="elevationword"><value>Sun Elevation<span><value><maxred> '.$elev1.'</maxred></value></span></div><div class="circleborder"></div>
 <div class="sundialcontainerdiv2" ><div id="sundialcontainer" class=sundialcontainer><canvas id="sundial" class="suncanvasstyle"></canvas><div class="weather34sunclock"><div id="poscircircle"></div></div></div>
