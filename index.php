@@ -96,8 +96,8 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
       <!--moonphase for homeweatherstation template includes reverse for southern hemisohere-->
 <div class=weather-item><div class=chartforecast>
 <?php if ($purpleairhardware=='yes'){echo''?>
-  <span class="yearpopup" style="-webkit-transform:rotate(<?php echo $hemisphere;?>deg);-moz-transform:rotate(<?php echo $hemisphere;?>deg);-ms-transform:rotate(<?php echo $hemisphere;?>deg);-o-transform:rotate(<?php echo $hemisphere;?>deg);transform:rotate(<?php echo $hemisphere;?>deg);">
-<a alt="current moonphase" title="current moonphase" href=mooninfo.php data-featherlight=iframe><?php echo $weather['moonphase'];}?></a></span>  
+  <span class="yearpopup">
+<a alt="moonphase" title="moonphase" href=mooninfo.php data-featherlight=iframe><?php echo $chartinfo?> <?php echo $lang['Moon'];}?> Info</a></span>  
 <span class="yearpopup"><a alt="meteor showers" title="meteor showers" href="meteorshowers.php" data-featherlight="iframe"><?php echo $meteorinfo;?> &nbsp;<?php if ($meteor_default=='No Meteor') {echo "Meteor Showers";} else {	echo $meteor_default;}?></a></span>
 <span class="yearpopup"><a alt="aurora information" title="aurora information" href=aurora.php data-featherlight=iframe><?php echo $info;?> Aurora <?php if ($kp>=5) {echo '<oorange>Active</oorange>';}else {echo "";}?></a></span>
 

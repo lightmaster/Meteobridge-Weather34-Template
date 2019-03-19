@@ -112,9 +112,13 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["dewpoint2"] = round(((pow(($weather["humidity_indoor"]/100), 0.125))*(112+0.9*$weather["temp_indoor"] )+(0.1*$weather["temp_indoor"] )-112),1);
 	//humidex josep
 	$t=7.5*$weather["temp"]/(237.7+$weather["temp"]); $et= pow(10,$t);$e=6.112*$et*($weather["humidity"]/100);$weather["humidex"] =number_format($weather["temp"]+(5/9)*($e-10),1);	
-	//weather34 convert meteobridge lunar segment
-   if ($weather["moonphase"]==0) {$weather["moonphase"]=$newmoonsvg.' New Moon';}else if ($weather["moonphase"]==1) {$weather["moonphase"]=$waxingcrescentsvg.' Waxing Crescent';}else if ($weather["moonphase"]==2 ) {$weather["moonphase"]=$firstquartersvg.' First Quarter';}else if ($weather["moonphase"]==3 ) {$weather["moonphase"]=$waxinggibboussvg.' Waxing Gibbous';}else if ($weather["moonphase"]==4 ) {$weather["moonphase"]=$fullmoonsvg.' Full Moon';}
-   else if ($weather["moonphase"]==5) {$weather["moonphase"]=$waninggibboussvg.' Waning Gibbous';}else if ($weather["moonphase"]==6) {$weather["moonphase"]=$lastquartersvg.' Last Quarter';}else if ($weather["moonphase"]==7) {$weather["moonphase"]=$waningcrescentsvg.' Waning Crescent';}
+	//weather34 meteobridge moon data 
+$weather["moonphase"]=$meteobridgeapi[153];$weather["luminance"]=$meteobridgeapi[154];$weather["daylight"]=$meteobridgeapi[155];if ($meteobridgeapi[156]=='--'){$weather["moonrise"]='In Transit';}
+else $weather["moonrise"]=''.date('g:ia', strtotime($meteobridgeapi[156]));$weather["moonset"]='<moonsetcolor> '.date('g:ia', strtotime($meteobridgeapi[157]));
+if ($weather['luminance']>99.9){$weather['luminance']=100;}
+if ($weather['luminance']<100){$weather['luminance']=$weather['luminance'];}
+//weather34 convert meteobridge lunar segment
+if ($weather["moonphase"]==0) {$weather["moonphase"]='New Moon';}else if ($weather["moonphase"]==1) {$weather["moonphase"]='Waxing Crescent';}else if ($weather["moonphase"]==2 ) {$weather["moonphase"]='First Quarter';}else if ($weather["moonphase"]==3 ) {$weather["moonphase"]='Waxing Gibbous';}else if ($weather["moonphase"]==4 ) {$weather["moonphase"]='Full Moon';}else if ($weather["moonphase"]==5) {$weather["moonphase"]='Waning Gibbous';}else if ($weather["moonphase"]==6) {$weather["moonphase"]='Last Quarter';}else if ($weather["moonphase"]==7){$weather["moonphase"]='Waning Crescent';}
 	
 	// weatherflow lightning
 	$weather["lightning"]          = $meteobridgeapi[76];

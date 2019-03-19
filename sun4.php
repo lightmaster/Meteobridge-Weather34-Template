@@ -5,13 +5,13 @@ $nextday = time() + 24*60*60;
 $result2 = date_sun_info($nextday,$lat, $lon);
 //weather34 sunrise 
 $nextrise = $result['sunrise']; $now = time(); if ($now > $nextrise) { $nextrise = date('H:i',$result2['sunrise']);
-$nextrisetxt = '<value>Tomorrow';} else { $nextrisetxt = '<value>&nbsp;&nbsp;Today'; 
+$nextrisetxt = 'Tomorrow';} else { $nextrisetxt = 'Today'; 
 $nextrise = date('H:i',$nextrise);} 
 //weather34 sunset
 $nextset = $result['sunset']; 
 if ($now > $nextset) { $nextset = date('H:i',$result2['sunset']); 
-$nextsettxt = '<value>&nbsp;Tomorrow';} 
-else { $nextsettxt = '<value>&nbsp;&nbsp;Today'; $nextset = date('H:i',$nextset);} 
+$nextsettxt = 'Tomorrow';} 
+else { $nextsettxt = 'Today'; $nextset = date('H:i',$nextset);} 
 //weather34 sunrise firstlight
 $nextfirstlight = $result['civil_twilight_begin']; $now = time();if ($now > $nextfirstlight) {$nextfirstlight = date('H:i',$result2['civil_twilight_begin']); 
 } else {$nextfirstlight = date('H:i',$nextfirstlight);} 
@@ -29,21 +29,27 @@ $darkhours = 23 - $lighthours; $darkminutes = 60 - $lightmins;
 if ($darkminutes<10) $darkminutes= '0' .$darkminutes;
 else $darkminutes=$darkminutes;
 $thehour=date('H');$theminute=date('i');
-//convert meteobridge lunar luminance output with a color shade of yellow
-if ($weather["luminance"]==100) {$luminance1="<div class=percent100>";}else if ($weather["luminance"]>90) {$luminance1="<div class=percent90>";}else if ($weather["luminance"]>80) {$luminance1="<div class=percent80>";}else if ($weather["luminance"]>70) {$luminance1="<div class=percent70>";}else if ($weather["luminance"]>60) {$luminance1="<div class=percent60>";}else if ($weather["luminance"]>50) {$luminance1="<div class=percent50>";}else if ($weather["luminance"]>40) {$luminance1="<div class=percent40>";}else if ($weather["luminance"]>30) {$luminance1="<div class=percent30>";}else if ($weather["luminance"]>20) {$luminance1= "<div class=percent20>";}else if ($weather["luminance"]>=10) {$luminance1="<div class=percent10>";}else if ($weather["luminance"]>=0) {$luminance1="<div class=percent0>";}?>
+?>
 <style>.weather34sunclock {-webkit-transform:rotate(<?php echo ((($thehour*15)+($theminute/4))-86)?>deg);transform:rotate(<?php echo ((($thehour*15)+($theminute/4))-86)?>deg);border:5px solid rgba(255, 255,255,0);width:110px; height:110px;top:-9px;margin-left:104px}.weather34sunclock #poscircircle {display:none;}</style>
 <?php if($elev>=0){$elev1=$_SunPos->elevation."&deg;<div class=sunaboveweather34>&nbsp;</div>";}else if($elev<0){$elev1=$_SunPos->elevation."&deg;<div class=sunbelowweather34>&nbsp;</div>";}?>
 <div class="updatedtime1"><?php echo $online.' '.date($timeFormat);?></div>
 <div class="daylightmoduleposition" > 
 <?php echo '
-<div class="sunlightday"><currentdaylight></currentdaylight>&nbsp;&nbsp;<value> '.$daylight.' hrs<br /><period><value>&nbsp;Daylight</period></div>
-<div class="sundarkday"><value> '. $darkhours,":", $darkminutes.' hrs&nbsp;<currentdarkness></currentdarkness><br></value><period><value>&nbsp;Darkness</period></div>
+<div class="weather34sunlightday"><weather34daylightdaycircle></weather34daylightdaycircle> '.$daylight.' hrs<br>Daylight</div>
+<div class="weather34sundarkday">'. $darkhours,":", $darkminutes.' hrs <weather34darkdaycircle></weather34darkdaycircle><br>Darkness</div>
 
-<div class="sunriseday"><div class=sunup34></div><value>Sunrise<br><value>&nbsp;'.$nextrisetxt.' '.$nextrise.'<br>&nbsp;&nbsp;Begin (<blueu>'.$nextfirstlight.'</blueu>)</value></div>
-<div class="sunsetday"><value>Sunset<div class=sundown34></div><br><value>&nbsp;'.$nextsettxt.' '.$nextset.'<br>&nbsp;&nbsp;End (<blueu>'.$nextlastlight.'</blueu>)</value></div>
+<div class="weather34sunriseday"><weather34sunupcircle></weather34sunupcircle>Sunrise<br>'.$nextrisetxt.' '.$nextrise.'<br>Begin (<blueu>'.$nextfirstlight.'</blueu>)</div>
+<div class="weather34sunsetday">Sunset<weather34sundowncircle></weather34sundowncircle><br>'.$nextsettxt.' '.$nextset.'<br>End (<blueu>'.$nextlastlight.'</blueu>)</div>
 
 <div class="daylightword"><value>Daylight</div><div class="elevationword"><value>Sun Elevation<span><value><maxred> '.$elev1.'</maxred></value></span></div><div class="circleborder"></div>
 <div class="sundialcontainerdiv2" ><div id="sundialcontainer" class=sundialcontainer><canvas id="sundial" class="suncanvasstyle"></canvas><div class="weather34sunclock"><div id="poscircircle"></div></div></div>
 <div class="daylightvalue1" ><hrs>hrs</hrs><hours>&nbsp;&nbsp;'.$hrs.'</hours> <minutes>'.$min.'</minutes> <br>&nbsp;<period>'.$txt.'</period><min>min</min>
-<div class="moonphasem">Moon Phase <span>'.$weather["moonphase"].'</span><currentmoonrise>'.$weather['moonrise'].'</currentmoonrise></div><div class="luminancem">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Luminance<span> '.$weather["luminance"].'% '.$luminance1.'</span><currentmoonset>'.$weather['moonset'].'</currentmoonrise></div></div></div></div>';
+</div>
+
+
+<div class="weather34moonphasem">Moon Phase <br>'.$weather["moonphase"].'<br>'.$weather['moonrise'].'</div>
+<div class="weather34luminancem">Luminance<br> '.$weather["luminance"].'% '.$luminance.'<br>'.$weather['moonset'].'</div></div></div></div>';
+
+
+
 $d_crcl = 24*60/2;function clc_crcl ($integer){  global $d_crcl ;$h= (int) date ('H',$integer);$m = (int) date ('i',$integer);$calc = $m + $h*60; $calc= (float) 0.5 + ($calc / $d_crcl );if ($calc > 2.0) { $calc = $calc - 2;}return round ($calc,5);}$start  = clc_crcl ($result['sunrise']);$end    = clc_crcl ($result['sunset']);$pos    = clc_crcl ($now);if ($now > $result['sunset'] || $now < $result['sunrise'] ){$sn_clr = 'rgba(86,95,103,0)';}else {$sn_clr = 'rgba(255, 112,50,1)';}echo '<script>var c = document.getElementById("sundial");var ctx = c.getContext("2d");ctx.imageSmoothingEnabled =false;ctx.beginPath();ctx.arc(63, 65, 55, 0, 2 * Math.PI);ctx.lineWidth = 0;ctx.strokeStyle = "#565f67";ctx.stroke();ctx.beginPath();ctx.arc(63, 65, 55, '.$start.' * Math.PI, '.$end.' * Math.PI);ctx.lineWidth = 2;ctx.strokeStyle ="#3b9cac";ctx.stroke();ctx.beginPath();ctx.arc(63, 65, 55, '.$pos.'* Math.PI, '.$pos.' * Math.PI);ctx.lineWidth = 0;ctx.strokeStyle = "'.$sn_clr.'";ctx.stroke();</script> ';?>

@@ -134,48 +134,16 @@ foreach ($meteor_events as $meteor_check) {
 
 <div class="moonphasemoduleposition">
 <div class="moonrise1">
-<svg id="i-chevron-top" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="#ff9350" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">
-    <path d="M30 20 L16 8 2 20" />
-</svg>
-  <?php echo $lang['Moon'];?> <div class="nextmoonrise"><value><moonm>
-<?php  echo $weather['moonrise'];?></value></div> 
-</div>
- <div class="mooncircle1"><div id='mooncircleinner'></div><luminance1>
- <?php echo $lang['Luminance'];?></luminance1>
+<svg id="i-chevron-top" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="#ff9350" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">    <path d="M30 20 L16 8 2 20" /></svg> <?php echo $lang['Moon'];?> <br /><blueu><?php  echo $weather['moonrise'];?>
+
  
- 
-<?php  // moon phase for homeweather station //
-echo $weather['luminance']?>%<br />
-
-<div class="moonphase">
-<?php // homeweatherstation create an instance of the age of moon
-echo "";
-$day = date('l jS F Y');
-if($day===date("l jS F Y",strtotime('2018-2-15'))){echo 'Partial Solar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2018-7-13'))){echo 'Partial Solar <oorange>Eclipse</oorange>>';}
-else if($day===date("l jS F Y",strtotime('2018-7-27'))){echo 'Lunar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2018-7-28'))){echo 'Lunar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2018-8-11'))){echo 'Partial Solar <oorange>Eclipse</oorange>';}
-
-else if($day===date("l jS F Y",strtotime('2019-1-5'))){echo 'Solar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2019-1-6'))){echo 'Solar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2019-1-20'))){echo 'Lunar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2019-1-21'))){echo 'Lunar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2019-7-2'))){echo 'Solar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2019-7-16'))){echo 'Lunar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2019-7-17'))){echo 'Lunar <oorange>Eclipse</oorange>';}
-else if($day===date("l jS F Y",strtotime('2019-12-26'))){echo 'Solar <oorange>Eclipse</oorange>';}
-
-else echo $weather['moonphase'];
-?></span>
+ <div class="pos" style="position:absolute;top:-20px;left:75px">    
+<?php 
+ //weather34 convert meteobridge lunar segment with large svg 
+if ($meteobridgeapi[153]==0){ echo $newmoonsvg1;}if ($meteobridgeapi[153]==1){ echo $waxingcrescentsvg1;}if ($meteobridgeapi[153]==2){ echo $firstquartersvg1;}if ($meteobridgeapi[153]==3){ echo $waxinggibboussvg1;}if ($meteobridgeapi[153]==4){ echo $fullmoonsvg1;}if ($meteobridgeapi[153]==5){ echo $waninggibboussvg1;}if ($meteobridgeapi[153]==6){ echo $lastquartersvg1;}if ($meteobridgeapi[153]==7){ echo $waningcrescentsvg1;}?></div>
 </div>
-
-
-
-<div class "moonposition" style="font-size:16px;line-height:20px;padding-top:2px;-webkit-transform:rotate(<?php echo $hemisphere;?>deg);-moz-transform:rotate(<?php echo $hemisphere;?>deg);-ms-transform:rotate(<?php echo $hemisphere;?>deg);-o-transform:rotate(<?php echo $hemisphere;?>deg);transform:rotate(<?php echo $hemisphere;?>deg);">
-</span></div>
-</div>
-
+<?php echo'<div class="weather34moonphasemhome">Moon Phase<br>'.$weather["moonphase"].'</div>
+<div class="weather34lumhome">Luminance<br>'.$weather["luminance"].'% </div>';?>
 
 <div class="fullmoon1">
 <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#aaa" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg>
@@ -206,10 +174,10 @@ echo "$nextnewmoon";
  </span>
 </div>
 <div class="moonset1">
-<svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="#f26c4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">
+<svg id="i-chevron-bottom" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="#f26c4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">
     <path d="M30 12 L16 24 2 12" /></svg>
-<?php echo $lang['Moon']?><div class="nextnewmoon"><value><moonm>
-<?php echo  $weather['moonset'];?></value></span> 
+<?php echo $lang['Moon']?><div class="nextnewmoon">
+<?php echo  $weather['moonset'];?></span> 
 
 </div></div>
 <div class="meteorshower"><svg xmlns='http://www.w3.org/2000/svg' width='12px' height='12px' viewBox='0 0 16 16'><path fill='currentcolor' d='M0 0l14.527 13.615s.274.382-.081.764c-.355.382-.82.055-.82.055L0 0zm4.315 1.364l11.277 10.368s.274.382-.081.764c-.355.382-.82.055-.82.055L4.315 1.364zm-3.032 2.92l11.278 10.368s.273.382-.082.764c-.355.382-.819.054-.819.054L1.283 4.284zm6.679-1.747l7.88 7.244s.19.267-.058.534-.572.038-.572.038l-7.25-7.816zm-5.68 5.13l7.88 7.244s.19.266-.058.533-.572.038-.572.038l-7.25-7.815zm9.406-3.438l3.597 3.285s.094.125-.029.25c-.122.125-.283.018-.283.018L11.688 4.23zm-7.592 7.04l3.597 3.285s.095.125-.028.25-.283.018-.283.018l-3.286-3.553z'/></svg>
