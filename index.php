@@ -97,7 +97,7 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
 <div class=weather-item><div class=chartforecast>
 <?php if ($purpleairhardware=='yes'){echo''?>
   <span class="yearpopup">
-<a alt="moonphase" title="moonphase" href=mooninfo.php data-featherlight=iframe><?php echo $chartinfo?> <?php echo $lang['Moon'];}?> Info</a></span>  
+<a alt="moonphase" title="moonphase" href=mooninfo.php data-featherlight=iframe><?php echo $chartinfo?> <?php echo $lang['Moon'],"Info";}?></a></span>  
 <span class="yearpopup"><a alt="meteor showers" title="meteor showers" href="meteorshowers.php" data-featherlight="iframe"><?php echo $meteorinfo;?> &nbsp;<?php if ($meteor_default=='No Meteor') {echo "Meteor Showers";} else {	echo $meteor_default;}?></a></span>
 <span class="yearpopup"><a alt="aurora information" title="aurora information" href=aurora.php data-featherlight=iframe><?php echo $info;?> Aurora <?php if ($kp>=5) {echo '<oorange>Active</oorange>';}else {echo "";}?></a></span>
 
