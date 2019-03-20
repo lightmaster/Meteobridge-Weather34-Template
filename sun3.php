@@ -31,8 +31,8 @@ $darkhours = 23 - $lighthours; $darkminutes = 60 - $lightmins;if ($darkminutes<1
 <div class="weather34sunlightday"><weather34daylightdaycircle></weather34daylightdaycircle> '.$daylight.' hrs<br>'.$lang['TotalDaylight'].'</div>
 <div class="weather34sundarkday">'. $darkhours,":", $darkminutes.' hrs <weather34darkdaycircle></weather34darkdaycircle><br>'.$lang['TotalDarkness'].'</div>
 
-<div class="weather34sunriseday">'.$lang['Sunrise'].'<br>'.$nextrisetxt.' '.$nextrise.'<br>Begin (<blueu>'.$nextfirstlight.'</blueu>)</div>
-<div class="weather34sunsetday">'.$lang['Sunset'].'<br>'.$nextsettxt.' '.$nextset.'<br>End (<blueu>'.$nextlastlight.'</blueu>)</div>
+<div class="weather34sunriseday">'.$sunuphalf.''.$lang['Sunrise'].'<br>'.$nextrisetxt.' '.$nextrise.'<br>First Light (<blueu>'.$nextfirstlight.'</blueu>)</div>
+<div class="weather34sunsetday">'.$sundownhalf.''.$lang['Sunset'].'<br>'.$nextsettxt.' '.$nextset.'<br>Last Light (<blueu>'.$nextlastlight.'</blueu>)</div>
 <div class="daylightword"><value>Daylight</div>
 
 <div class="elevationword"><value>Sun Elevation<span><value><maxred> '.$elev1.'</maxred></value></span></div>

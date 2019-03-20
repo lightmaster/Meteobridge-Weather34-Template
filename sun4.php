@@ -38,8 +38,8 @@ $thehour=date('H');$theminute=date('i');
 <div class="weather34sunlightday"><weather34daylightdaycircle></weather34daylightdaycircle> '.$daylight.' hrs<br>Daylight</div>
 <div class="weather34sundarkday">'. $darkhours,":", $darkminutes.' hrs <weather34darkdaycircle></weather34darkdaycircle><br>Darkness</div>
 
-<div class="weather34sunriseday"><weather34sunupcircle></weather34sunupcircle>Sunrise<br>'.$nextrisetxt.' '.$nextrise.'<br>Begin (<blueu>'.$nextfirstlight.'</blueu>)</div>
-<div class="weather34sunsetday">Sunset<weather34sundowncircle></weather34sundowncircle><br>'.$nextsettxt.' '.$nextset.'<br>End (<blueu>'.$nextlastlight.'</blueu>)</div>
+<div class="weather34sunriseday">'.$sunuphalf.''.$lang['Sunrise'].'<br>'.$nextrisetxt.' '.$nextrise.'<br>First Light (<blueu>'.$nextfirstlight.'</blueu>)</div>
+<div class="weather34sunsetday">'.$sundownhalf.''.$lang['Sunset'].'<br>'.$nextsettxt.' '.$nextset.'<br>Last Light (<blueu>'.$nextlastlight.'</blueu>)</div>
 
 <div class="daylightword"><value>Daylight</div><div class="elevationword"><value>Sun Elevation<span><value><maxred> '.$elev1.'</maxred></value></span></div><div class="circleborder"></div>
 <div class="sundialcontainerdiv2" ><div id="sundialcontainer" class=sundialcontainer><canvas id="sundial" class="suncanvasstyle"></canvas><div class="weather34sunclock"><div id="poscircircle"></div></div></div>
