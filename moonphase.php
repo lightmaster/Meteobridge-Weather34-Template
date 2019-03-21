@@ -142,8 +142,6 @@ foreach ($meteor_events as $meteor_check) {
  //weather34 convert meteobridge lunar segment with large svg 
 if ($meteobridgeapi[153]==0){ echo $newmoonsvg1;}if ($meteobridgeapi[153]==1){ echo $waxingcrescentsvg1;}if ($meteobridgeapi[153]==2){ echo $firstquartersvg1;}if ($meteobridgeapi[153]==3){ echo $waxinggibboussvg1;}if ($meteobridgeapi[153]==4){ echo $fullmoonsvg1;}if ($meteobridgeapi[153]==5){ echo $waninggibboussvg1;}if ($meteobridgeapi[153]==6){ echo $lastquartersvg1;}if ($meteobridgeapi[153]==7){ echo $waningcrescentsvg1;}?></div>
 </div>
-<?php echo'<div class="weather34moonphasemhome">Moon Phase<br>'.$weather["moonphase"].'</div>
-<div class="weather34lumhome">Luminance<br>'.$weather["luminance"].'% </div>';?>
 
 <div class="fullmoon1">
 <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#aaa" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg>
@@ -156,6 +154,8 @@ if ($now1 < $moon1->full_moon()) {echo date($dateFormat, $moon1->full_moon() );}
 //else {echo date($dateFormat, $moon1->next_full_moon() );}
 else echo date( $dateFormat, $moon1->next_full_moon() );
 ?></value></div>
+
+
 
  </span>
 </div>
@@ -184,3 +184,6 @@ echo "$nextnewmoon";
 <?php // homeweather station simple meteor shower output of major shower events  august 18 2016 beetlejuice //
 echo $meteor_default;?>
 </div>
+
+<?php echo'<div class="weather34moonphasem2">Moon Phase<br>'.$weather["moonphase"].'</div>
+<div class="weather34luminancem2">Luminance<br>'.$weather["luminance"].'% </div>';?>
