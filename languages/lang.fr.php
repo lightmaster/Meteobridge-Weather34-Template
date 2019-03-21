@@ -174,8 +174,8 @@ $lang['Moonrise'] = 'Lever de lune ';
 $lang['Moonset'] = 'Coucher de lune';
 $lang['Night'] = 'Nuit ';
 $lang['Day'] = 'Le Jour';
-$lang['Nextnewmoon'] = 'Prochaine nouvelle lune';
-$lang['Nextfullmoon'] = 'Prochaine pleine lune';
+$lang['Nextnewmoon'] = 'Nouvelle lune';
+$lang['Nextfullmoon'] = 'Pleine lune';
 $lang['Luminance'] = 'Luminance';
 $lang['Moonphase'] = 'Ephémérides';
 $lang['Estimated'] = 'Luminosité';
@@ -187,8 +187,8 @@ $lang['Mintill'] = '<br>Jusqu à min:';
 $lang['Minago'] = ' Il y a min:';
 $lang['Hrs'] = ' Hrs';
 $lang['Min'] = ' Min';
-$lang['TotalDarkness'] = 'Obscurité totale';
-$lang['TotalDaylight'] = 'Journée très ensoleillée';
+$lang['TotalDarkness'] = 'Obscurité <br>totale';
+$lang['TotalDaylight'] = 'Journée très <br>ensoleillée';
 
 
 $lang['SOLAR'] = 'SOLEIL';
