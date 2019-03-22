@@ -327,12 +327,13 @@ else if ($wuskydayPrecipType='rain' && $rainunit=='in'){echo '<precip>'.$rainsvg
 else if ($wuskydayPrecipType='rain' && $rainunit=='mm'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'. number_format($wuskydayprecipIntensity,2).'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit></darkskywindhome></span></precip>';}
 
 //uvi
-echo '<br><darkskytemplohome><uv>UV <uvspan>';
-if ($wuskydayUV>=10){echo 	"<purpleu>".$wuskydayUV. '</purpleu><greyu> '.$wuskydayUVdesc;}
-else  if ($wuskydayUV>=7){echo 	"<redu>".$wuskydayUV. '</redu><greyu> '.$wuskydayUVdesc;}
-else if ($wuskydayUV>=5){echo 	"<orangeu>".$wuskydayUV. '</orangeu><greyu> '.$wuskydayUVdesc;}
-else if ($wuskydayUV>2){echo 	"<yellowu>".$wuskydayUV. '</yellowu><greyu> '.$wuskydayUVdesc;}
-else if ($wuskydayUV>=0){echo 	"<greenu>".$wuskydayUV. '</greenu><greyu> '.$wuskydayUVdesc;}				  
+echo '<br><darkskytemplohome>';
+if ($wuskydayUV>=10){echo 	"<uv>UV <uvspan><purpleu>".$wuskydayUV. '</purpleu><greyu> '.$wuskydayUVdesc;}
+else  if ($wuskydayUV>7){echo 	"<uv>UV <uvspan><redu>".$wuskydayUV. '</redu><greyu> '.$wuskydayUVdesc;}
+else if ($wuskydayUV>5){echo 	"<uv>UV <uvspan><orangeu>".$wuskydayUV. '</orangeu><greyu> '.$wuskydayUVdesc;}
+else if ($wuskydayUV>2){echo 	"<uv>UV <uvspan><yellowu>".$wuskydayUV. '</yellowu><greyu> '.$wuskydayUVdesc;}
+else if ($wuskydayUV>0){echo 	"<uv>UV <uvspan><greenu>".$wuskydayUV. '</greenu><greyu> '.$wuskydayUVdesc;}
+else if ($wuskydayUV==0){echo "";}						  
 '</greyu></uv>';
 //lightning
 echo '<br><thunder>'.$wuskythunder;echo '</darkskytemplohome></div>';
@@ -364,15 +365,16 @@ echo " ".number_format($wuskydayWindGust1,0)," <valuewindunit>".$windunit;echo  
 if ( $wuskydaysnow1>0 && $rainunit=='in'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.$wuskydaysnow1.'</oblue><valuewindunit>in</darkskywindhome></span></precip>';}
 else if ( $wuskydaysnow1>0 && $rainunit=='mm'){ echo '<precip>'.$snowflakesvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.$wuskydaysnow1.'</oblue><valuewindunit> cm</darkskywindhome></span></precip>';}
 //rain
-else if ($wuskydayPrecipType='rain' && $rainunit=='in'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.number_format($wuskydayprecipIntensity1,2).'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit></darkskywindhome></span></precip>';}
-else if ($wuskydayPrecipType='rain' && $rainunit=='mm'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.number_format($wuskydayprecipIntensity1,2).'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit></darkskywindhome></span></precip>';}
+else if ($wuskydayPrecipType1='rain' && $rainunit=='in'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.number_format($wuskydayprecipIntensity1,2).'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit></darkskywindhome></span></precip>';}
+else if ($wuskydayPrecipType1='rain' && $rainunit=='mm'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.number_format($wuskydayprecipIntensity1,2).'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit></darkskywindhome></span></precip>';}
 //uvi
-echo '<br><darkskytemplohome><uv>UV <uvspan>';
-if ($wuskydayUV1>=10){echo 	"<purpleu>".$wuskydayUV1. '</purpleu><greyu> '.$wuskydayUVdesc1;}
-else  if ($wuskydayUV1>=7){echo 	"<redu>".$wuskydayUV1. '</redu><greyu> '.$wuskydayUVdesc1;}
-else if ($wuskydayUV1>=5){echo 	"<orangeu>".$wuskydayUV1. '</orangeu><greyu> '.$wuskydayUVdesc1;}
-else if ($wuskydayUV1>2){echo 	"<yellowu>".$wuskydayUV1. '</yellowu><greyu> '.$wuskydayUVdesc1;}
-else if ($wuskydayUV1>=0){echo 	"<greenu>".$wuskydayUV1. '</greenu><greyu> '.$wuskydayUVdesc1;}				  
+echo '<br><darkskytemplohome>';
+if ($wuskydayUV1>=10){echo 	"<uv>UV <uvspan><purpleu>".$wuskydayUV1. '</purpleu><greyu> '.$wuskydayUVdesc1;}
+else  if ($wuskydayUV1>7){echo 	"<uv>UV <uvspan><redu>".$wuskydayUV1. '</redu><greyu> '.$wuskydayUVdesc1;}
+else if ($wuskydayUV1>5){echo 	"<uv>UV <uvspan><orangeu>".$wuskydayUV1. '</orangeu><greyu> '.$wuskydayUVdesc1;}
+else if ($wuskydayUV1>2){echo 	"<uv>UV <uvspan><yellowu>".$wuskydayUV1. '</yellowu><greyu> '.$wuskydayUVdesc1;}
+else if ($wuskydayUV1>0){echo 	"<uv>UV <uvspan><greenu>".$wuskydayUV1. '</greenu><greyu> '.$wuskydayUVdesc1;}
+else if ($wuskydayUV1==0){echo "";}
 '</greyu></uv>';
 //lightning
 echo '<br><thunder>'.$wuskythunder1;echo '</darkskytemplohome></div>';
@@ -407,12 +409,13 @@ else if ( $wuskydaysnow2>0 && $rainunit=='mm'){ echo '<precip>'.$snowflakesvg.'&
 else if ($wuskydayPrecipType2='rain' && $rainunit=='in'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.number_format($wuskydayprecipIntensity2,2).'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit></darkskywindhome></span></precip>';}
 else if ($wuskydayPrecipType2='rain' && $rainunit=='mm'){echo '<precip>'.$rainsvg.'&nbsp;<darkskytempwindhome><span><oblue>&nbsp;'.number_format($wuskydayprecipIntensity2,2).'</oblue>&nbsp;<valuewindunit>'.$rainunit.'</valuewindunit></darkskywindhome></span></precip>';}
 //uvi
-echo '<br><darkskytemplohome><uv>UV <uvspan>';
-if ($wuskydayUV2>=10){echo 	"<purpleu>".$wuskydayUV2. '</purpleu><greyu> '.$wuskydayUVdesc2;}
-else  if ($wuskydayUV2>=7){echo 	"<redu>".$wuskydayUV2. '</redu><greyu> '.$wuskydayUVdesc2;}
-else if ($wuskydayUV2>=5){echo 	"<orangeu>".$wuskydayUV2. '</orangeu><greyu> '.$wuskydayUVdesc2;}
-else if ($wuskydayUV2>2){echo 	"<yellowu>".$wuskydayUV2. '</yellowu><greyu> '.$wuskydayUVdesc2;}
-else if ($wuskydayUV2>=0){echo 	"<greenu>".$wuskydayUV2. '</greenu><greyu> '.$wuskydayUVdesc2;}				  
+echo '<br><darkskytemplohome>';
+if ($wuskydayUV2>=10){echo 	"<uv>UV <uvspan><purpleu>".$wuskydayUV2. '</purpleu><greyu> '.$wuskydayUVdesc2;}
+else  if ($wuskydayUV2>7){echo 	"<uv>UV <uvspan><redu>".$wuskydayUV2. '</redu><greyu> '.$wuskydayUVdesc2;}
+else if ($wuskydayUV2>5){echo 	"<uv>UV <uvspan><orangeu>".$wuskydayUV2. '</orangeu><greyu> '.$wuskydayUVdesc2;}
+else if ($wuskydayUV2>2){echo 	"<uv>UV <uvspan><yellowu>".$wuskydayUV2. '</yellowu><greyu> '.$wuskydayUVdesc2;}
+else if ($wuskydayUV2>0){echo 	"<uv>UV <uvspan><greenu>".$wuskydayUV2. '</greenu><greyu> '.$wuskydayUVdesc2;}
+else if ($wuskydayUV2==0){echo 	"";}				  
 '</greyu></uv>';
 //lightning
 echo '<br><thunder>'.$wuskythunder2;echo '</darkskytemplohome></div>';
