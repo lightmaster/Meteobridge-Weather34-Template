@@ -137,11 +137,20 @@ foreach ($meteor_events as $meteor_check) {
 <svg id="i-chevron-top" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="#ff9350" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">    <path d="M30 20 L16 8 2 20" /></svg> <?php echo $lang['Moon'];?> <br /><blueu><?php  echo $weather['moonrise'];?>
 
  
- <div class="pos" style="position:absolute;top:-20px;left:75px">    
-<?php 
- //weather34 convert meteobridge lunar segment with large svg 
-if ($meteobridgeapi[153]==0){ echo $newmoonsvg1;}if ($meteobridgeapi[153]==1){ echo $waxingcrescentsvg1;}if ($meteobridgeapi[153]==2){ echo $firstquartersvg1;}if ($meteobridgeapi[153]==3){ echo $waxinggibboussvg1;}if ($meteobridgeapi[153]==4){ echo $fullmoonsvg1;}if ($meteobridgeapi[153]==5){ echo $waninggibboussvg1;}if ($meteobridgeapi[153]==6){ echo $lastquartersvg1;}if ($meteobridgeapi[153]==7){ echo $waningcrescentsvg1;}?></div>
-</div>
+<div class="pos" style="position:absolute;top:-20px;left:75px">
+<div id="weather34moonphases"></div>
+<div style="margin-left:25px;margin-top:25px;">
+<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="#565f67"/><path id="shapePath" fill="#c0c0c0"/></svg></div>
+<script>
+showMoon();function showMoon() {var day = Date.now() / 86400000;var referenceMoon = Date.UTC(2018, 0, 17, 2, 17, 0, 0);
+var refDay = referenceMoon / 86400000;var phase = (day - refDay) % 29.530588853;var phaseStr;var s=String;
+	switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases").innerHTML = "";	
+	var val=15;	var moonCurve;	
+	var lf=Math.min(3-4*(phase/30),1);	var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
+	var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";	
+	moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
+	document.getElementById("shapePath").setAttribute("d",moonCurve);}</script>
+</div></div>
 
 <div class="fullmoon1">
 <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#aaa" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg>
