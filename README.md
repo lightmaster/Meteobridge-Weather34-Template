@@ -15,11 +15,17 @@ all icons are produced and made by weather34 in svg format .
 # Thanks to the following sites which I monitor for anomalies this helps due to different scenarios and hardware
 
 Singapore Weather
+
 Bath(UK) Weather
+
 Myrtle Beach WX
+
 Milehighweather
+
 Okawville WX
+
 Baxley, GA Weather Station
+
 Toulouse Meteo
 
 
