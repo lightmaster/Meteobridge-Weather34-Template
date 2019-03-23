@@ -12,7 +12,7 @@ all icons are produced and made by weather34 in svg format .
  
 </p>
 
-# Thanks to the following sites which I monitor for anomalies this helps due to different scenarios and hardware
+# Thanks to the following sites which I have monitored for anomalies this helps due to different scenarios and hardware which is not always obvious when changes happen.
 
 Singapore Weather
 
