@@ -105,7 +105,7 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 </span> 
 <div class="hitemp">of <blue>Rain</blue> has been recorded for <?php echo date('F Y');?></div>
 <?php if ($meteobridgeapi[124]=='--'){echo "";}else echo '<div class="hitempy" style="width:200px;margin-top:0.5rem;font-size:1em">'.$raininfo," Last <blue>Rainfall</blue>";?>
-<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo $rainlasttime?></orange></div>
+<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo " ".$rainlasttime?></orange></div>
 <div class="lotemp" ><windgusts> Rainfall <?php echo date("F Y");?></windgusts></div></div>
 <div class="weather34card__count-container">
 <div class="weather34card__count-textuv">
