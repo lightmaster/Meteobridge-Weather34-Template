@@ -45,7 +45,7 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
 
 <?php
-	// UV INDEX
+	// rain today
 		echo "<div class='rainfalltoday1'>",$weather["rain_today"] . "</value>";
 	echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"
 ?>
@@ -53,7 +53,7 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 
 </span>
 <div class="weather34-uvrate-bar">	
- <svg iopacity="0.8"  d="weather34 solar radiation svg" width="40pt" height="80pt" viewBox="0 0 44 84">
+ <svg opacity="0.8"  d="weather34 solar radiation svg" width="40pt" height="80pt" viewBox="0 0 44 84">
 <path fill="currentcolor"  opacity="0.8"  d=" M 0.00 7.99 C 1.33 8.00 2.67 8.00 4.00 8.01 C 4.01 31.34 3.99 54.67 4.00 77.99 C 16.00 78.01 28.00 78.00 40.00 78.00 C 40.01 54.67 39.99 31.34 40.00 8.01 C 41.34 8.00 42.67 8.00 44.00 7.99 L 44.00 9.95 C 43.50 9.97 42.50 10.02 42.00 10.05 C 42.00 33.36 42.00 56.68 42.00 80.00 C 28.67 80.01 15.34 80.00 2.01 80.00 C 1.99 56.70 2.00 33.40 2.00 10.10 C 1.50 10.04 0.50 9.92 0.00 9.86 L 0.00 7.99 Z" />
 <path fill="<?php if( $weather["rain_today"]>60){echo "rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 8.01 C 17.00 8.00 27.00 8.00 37.00 8.00 C 37.00 8.75 37.00 10.25 37.00 11.00 C 27.00 11.00 17.00 11.00 7.00 11.00 C 7.00 10.25 7.00 8.75 7.00 8.01 Z" />
 <path fill="<?php if($weather["rain_today"]>50){echo "rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 12.00 C 17.00 12.00 27.00 12.00 37.00 12.00 C 37.00 13.67 37.00 15.33 37.00 17.00 C 27.00 17.00 17.00 17.00 7.00 17.00 C 7.00 15.33 7.00 13.67 7.00 12.00 Z" />
@@ -97,31 +97,21 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 </div>
 
 <?php
-	// UV INDEX
+	// rain month
 		echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";
 	echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"
 ?>
 </div>
 </span> 
 <div class="hitemp">of <blue>Rain</blue> has been recorded for <?php echo date('F Y');?></div>
-<?php
-if ($meteobridgeapi[124]=='--'){echo "";}
-else echo '<div class="hitempy" style="width:200px;margin-top:0.5rem;font-size:1em">'.$raininfo," Last <blue>Rainfall</blue>";?>
-<?php 
-if ($meteobridgeapi[124]=='--'){echo "";}
-else echo $rainlasttime?></orange></div>
-<div class="lotemp" >
-<windgusts> Rainfall <?php echo date("F Y");?></windgusts> 
-
-
-            </div>
-        </div>
+<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo '<div class="hitempy" style="width:200px;margin-top:0.5rem;font-size:1em">'.$raininfo," Last <blue>Rainfall</blue>";?>
+<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo $rainlasttime?></orange></div>
+<div class="lotemp" ><windgusts> Rainfall <?php echo date("F Y");?></windgusts></div></div>
 <div class="weather34card__count-container">
 <div class="weather34card__count-textuv">
 <span class="weather34card__count-text--bigs">   
 </div></div><br>
-<div class="weather34card__stuff-container">   
-
+<div class="weather34card__stuff-container">
 </section>
 
 <section class="weather34cards">
@@ -129,7 +119,7 @@ else echo $rainlasttime?></orange></div>
 <div class="weather34card_weather34-container">
 <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
 <div class="weather34-uvrate-bar" style="margin-top:0;"> 	
-  <svg iopacity="0.8"  d="weather34 solar radiation svg" width="40pt" height="80pt" viewBox="0 0 44 84">
+  <svg opacity="0.8"  d="weather34 solar radiation svg" width="40pt" height="80pt" viewBox="0 0 44 84">
 <path fill="currentcolor"  opacity="0.8"  d=" M 0.00 7.99 C 1.33 8.00 2.67 8.00 4.00 8.01 C 4.01 31.34 3.99 54.67 4.00 77.99 C 16.00 78.01 28.00 78.00 40.00 78.00 C 40.01 54.67 39.99 31.34 40.00 8.01 C 41.34 8.00 42.67 8.00 44.00 7.99 L 44.00 9.95 C 43.50 9.97 42.50 10.02 42.00 10.05 C 42.00 33.36 42.00 56.68 42.00 80.00 C 28.67 80.01 15.34 80.00 2.01 80.00 C 1.99 56.70 2.00 33.40 2.00 10.10 C 1.50 10.04 0.50 9.92 0.00 9.86 L 0.00 7.99 Z" />
 <path fill="<?php if($weather["rainydmax"]>60){echo "rgba(0, 153, 170, 1)";} else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 8.01 C 17.00 8.00 27.00 8.00 37.00 8.00 C 37.00 8.75 37.00 10.25 37.00 11.00 C 27.00 11.00 17.00 11.00 7.00 11.00 C 7.00 10.25 7.00 8.75 7.00 8.01 Z" />
 <path fill="<?php if($weather["rainydmax"]>50){echo "rgba(0, 153, 170, 1)";} else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 12.00 C 17.00 12.00 27.00 12.00 37.00 12.00 C 37.00 13.67 37.00 15.33 37.00 17.00 C 27.00 17.00 17.00 17.00 7.00 17.00 C 7.00 15.33 7.00 13.67 7.00 12.00 Z" />
