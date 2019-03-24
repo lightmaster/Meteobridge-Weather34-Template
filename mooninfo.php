@@ -42,16 +42,14 @@ moonposition{margin-left:80px;margin-top:20px;position:absolute}
             
 <moonposition>            
 <div id="weather34moonphases"></div>
-<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="#505050"/><path id="shapePath" fill="#c0c0c0"/></svg>
-<script>
+<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, 1.000)"/><path id="shapePath" fill="rgba(230, 232, 239, 1)"/></svg>
+<script> //simple moonphase for weather34
 showMoon();function showMoon() {var day = Date.now() / 86400000;var referenceMoon = Date.UTC(2018, 0, 17, 2, 17, 0, 0);
-var refDay = referenceMoon / 86400000;var phase = (day - refDay) % 29.530588853;var phaseStr;var s=String;
-	switch (Math.round(phase / 3.75)) {}document.getElementById("weather34moonphases").innerHTML = "";	
-	var val=15;	var moonCurve;	
-	var lf=Math.min(3-4*(phase/30),1);	var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
-	var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";	
-	moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
-	document.getElementById("shapePath").setAttribute("d",moonCurve);}</script>
+var refDay = referenceMoon / 86400000;var phase = (day - refDay) % 29.530588853;var s=String;
+switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases");
+var val=15;	var moonCurve;var lf=Math.min(3-4*(phase/30),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
+var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
+document.getElementById("shapePath").setAttribute("d",moonCurve);}</script>
 </moonposition>
              
               <span class="weather34card__count-text--big"> 

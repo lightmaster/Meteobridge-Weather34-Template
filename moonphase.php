@@ -134,33 +134,30 @@ foreach ($meteor_events as $meteor_check) {
 
 <div class="moonphasemoduleposition">
 <div class="moonrise1">
-<svg id="i-chevron-top" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="#ff9350" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">    <path d="M30 20 L16 8 2 20" /></svg> <?php echo $lang['Moon'];?> <br /><blueu><?php  echo $weather['moonrise'];?>
+<svg id="weather34 moon rise" viewBox="0 0 32 32" width="6" height="6" fill="none" stroke="#ff9350" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">    <path d="M30 20 L16 8 2 20" /></svg> <?php echo $lang['Moon'];?> <br /><blueu><?php  echo $weather['moonrise'];?>
 
  
-<div class="pos" style="position:absolute;top:-20px;left:75px">
+<div class="weather34moonmodulepos">
 <div id="weather34moonphases"></div>
-<div style="margin-left:25px;margin-top:25px;">
-<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="#565f67"/><path id="shapePath" fill="#c0c0c0"/></svg></div>
-<script>
+<div class="weather34moonmodule">
+<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, 1.000)"/><path id="shapePath" fill="currentcolor"/></svg></div>
+<script> //simple moonphase for weather34
 showMoon();function showMoon() {var day = Date.now() / 86400000;var referenceMoon = Date.UTC(2018, 0, 17, 2, 17, 0, 0);
-var refDay = referenceMoon / 86400000;var phase = (day - refDay) % 29.530588853;var phaseStr;var s=String;
-	switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases").innerHTML = "";	
-	var val=15;	var moonCurve;	
-	var lf=Math.min(3-4*(phase/30),1);	var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
-	var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";	
-	moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
-	document.getElementById("shapePath").setAttribute("d",moonCurve);}</script>
+var refDay = referenceMoon / 86400000;var phase = (day - refDay) % 29.530588853;var s=String;
+switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases");
+var val=15;	var moonCurve;var lf=Math.min(3-4*(phase/30),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
+var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
+document.getElementById("shapePath").setAttribute("d",moonCurve);}</script>
 </div></div>
 
 <div class="fullmoon1">
-<svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#aaa" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg>
+<svg id="weather34 full moon" viewBox="0 0 32 32" width="6" height="6" fill="#aaa" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg>
 <?php echo $lang['Nextfullmoon'];?>	<br /> <div class="nextfullmoon"><value><moonm>
 <?php  // homeweatherstation fullmoon info output 18th Aug
 $now1 = time();
 $moon1 = new MoonPhase();
 echo "";
 if ($now1 < $moon1->full_moon()) {echo date($dateFormat, $moon1->full_moon() );}
-//else {echo date($dateFormat, $moon1->next_full_moon() );}
 else echo date( $dateFormat, $moon1->next_full_moon() );
 ?></value></div>
 
@@ -171,7 +168,7 @@ else echo date( $dateFormat, $moon1->next_full_moon() );
 
 
 <div class="newmoon1">
-<svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><circle cx="16" cy="16" r="14" /> <path d="M6 6 L26 26" /></svg>
+<svg id="weather34 new moon" viewBox="0 0 32 32" width="6" height="6" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><circle cx="16" cy="16" r="14" /> <path d="M6 6 L26 26" /></svg>
 <?php echo $lang['Nextnewmoon'];?> <div class="nextnewmoon"><value><moonm>
 <?php // homeweatherstation create an instance of the next new moon
 $moon = new MoonPhase();
@@ -183,13 +180,13 @@ echo "$nextnewmoon";
  </span>
 </div>
 <div class="moonset1">
-<svg id="i-chevron-bottom" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="#f26c4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">
+<svg id="weather34 moon set" viewBox="0 0 32 32" width="6" height="6" fill="none" stroke="#f26c4f" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">
     <path d="M30 12 L16 24 2 12" /></svg>
 <?php echo $lang['Moon']?><div class="nextnewmoon">
 <?php echo  $weather['moonset'];?></span> 
 
 </div></div>
-<div class="meteorshower"><svg xmlns='http://www.w3.org/2000/svg' width='12px' height='12px' viewBox='0 0 16 16'><path fill='currentcolor' d='M0 0l14.527 13.615s.274.382-.081.764c-.355.382-.82.055-.82.055L0 0zm4.315 1.364l11.277 10.368s.274.382-.081.764c-.355.382-.82.055-.82.055L4.315 1.364zm-3.032 2.92l11.278 10.368s.273.382-.082.764c-.355.382-.819.054-.819.054L1.283 4.284zm6.679-1.747l7.88 7.244s.19.267-.058.534-.572.038-.572.038l-7.25-7.816zm-5.68 5.13l7.88 7.244s.19.266-.058.533-.572.038-.572.038l-7.25-7.815zm9.406-3.438l3.597 3.285s.094.125-.029.25c-.122.125-.283.018-.283.018L11.688 4.23zm-7.592 7.04l3.597 3.285s.095.125-.028.25-.283.018-.283.018l-3.286-3.553z'/></svg>
+<div class="meteorshower"><svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' viewBox='0 0 16 16'><path fill='currentcolor' d='M0 0l14.527 13.615s.274.382-.081.764c-.355.382-.82.055-.82.055L0 0zm4.315 1.364l11.277 10.368s.274.382-.081.764c-.355.382-.82.055-.82.055L4.315 1.364zm-3.032 2.92l11.278 10.368s.273.382-.082.764c-.355.382-.819.054-.819.054L1.283 4.284zm6.679-1.747l7.88 7.244s.19.267-.058.534-.572.038-.572.038l-7.25-7.816zm-5.68 5.13l7.88 7.244s.19.266-.058.533-.572.038-.572.038l-7.25-7.815zm9.406-3.438l3.597 3.285s.094.125-.029.25c-.122.125-.283.018-.283.018L11.688 4.23zm-7.592 7.04l3.597 3.285s.095.125-.028.25-.283.018-.283.018l-3.286-3.553z'/></svg>
 <?php // homeweather station simple meteor shower output of major shower events  august 18 2016 beetlejuice //
 echo $meteor_default;?>
 </div>
