@@ -104,12 +104,13 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 </div>
 </span> 
 <div class="hitemp">of <blue>Rain</blue> has been recorded for <?php echo date('F Y');?></div>
-<div class="hitempy" style="width:200px;margin-top:0.5rem;font-size:1em">
-
-<?php echo $raininfo?> Last <blue>Rainfall</blue> <?php 
-echo $rainlasttime?></orange></div>
+<?php
+if ($meteobridgeapi[124]=='--'){echo "";}
+else echo '<div class="hitempy" style="width:200px;margin-top:0.5rem;font-size:1em">'.$raininfo," Last <blue>Rainfall</blue>";?>
+<?php 
+if ($meteobridgeapi[124]=='--'){echo "";}
+else echo $rainlasttime?></orange></div>
 <div class="lotemp" >
-
 <windgusts> Rainfall <?php echo date("F Y");?></windgusts> 
 
 
@@ -178,7 +179,9 @@ echo $rainlasttime?></orange></div>
 ?></span></div>
 </span> 
 <div class="hitemp">of <blue>Rain</blue> has been recorded for <?php echo date('Y');?></div>
-<div class="lotemp" >
+<div class="alltime">Total <blue>Rainfall</blue><br> 2018-<?php echo date('Y');?> <br><blue><?php echo $weather["rain_alltime"];echo "</blue><supunit>",$weather["rain_units"];?> </div>
+
+ <div class="lotemp" >
 <windgusts> Rainfall Year <?php echo date("Y");?></windgusts> </windgusts>
 </div> </div>  </div>
 <div class="weather34card__count-container">
@@ -190,6 +193,7 @@ echo $rainlasttime?></orange></div>
 
 </section><br>
 <div class="provided">   
-&nbsp;<?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div></div>
+&nbsp;<?php echo $raininfo?> 
+Rain Almanac Meteobridge CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div></div>
 </body>
 </html>
