@@ -123,7 +123,7 @@
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
-		interval:1,
+		interval:'auto',
 		lineThickness: 1,		
 		gridThickness: 0,	
 		gridDashType: "dot",	
@@ -134,7 +134,7 @@
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
-         return e.value .toFixed(1) +"<?php echo $rainunit ;?>" ;  
+         return e.value .toFixed(2) +"<?php echo $rainunit ;?>" ;  
          },		 
 		crosshair: {
 			enabled: true,
@@ -165,7 +165,7 @@
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
-         return e.value .toFixed(0) + "<?php echo $rainunit ?>" ;  
+         return e.value .toFixed(2) + "<?php echo $rainunit ?>" ;  
 		},
 		crosshair: {
 			enabled: true,
