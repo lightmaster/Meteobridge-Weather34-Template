@@ -1,8 +1,6 @@
-<header style="z-index:auto"><!---start menu.php 23-02-2018--><h1><ogreyh1><?php echo $stationName;?>&nbsp; Home &#8226; Weather &#8226; Station </ogreyh1></h1>
-<button class="button right"></button><div class='w34logo'><?php if($units!='us'){echo' <a  class="menucolor" href="./?units=us">'.$weatherunitfmenu.'</a>';}
-else if($units!='metric'){echo' <a  class="menucolor" href="./?units=metric">'.$weatherunitcmenu.'</a>';}
-else echo' <a class="menucolor" href="./?units=metric">Units</a>';?></div>
-<div class="w34uptime"><?php echo $info." Uptime: "?><?php if ($uptimedays <1 ){echo "$uptimehours Hours";} else echo "$uptimedays Days";?></div>
+<header style="z-index:auto"><!---start menu.php 23-02-2018--><h1><ogreyh1><?php echo $stationName;?>&nbsp; Home Weather Station</h1>
+<button class="button right"></button><div class='w34logo'><?php if($units!='us'){echo' <div class="menucolor"><a href="./?units=us">&deg;F<spanunit> &nbsp;(US Imperial)</spanunit></a></div>';}else if($units!='metric'){echo' <div class="menucolor"><a  href="./?units=metric">&deg;C<spanunit> &nbsp;(Metric)</spanunit></a></div>';}
+else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?></div><div class="w34uptime"><?php echo $info." Uptime: "?><?php if ($uptimedays <1 ){echo "$uptimehours Hours";} else echo $uptimedays," Days";?></div>
  <input type="checkbox" class="openweather34sidebarMenu" id="openweather34sidebarMenu">
   <label for="openweather34sidebarMenu" class="weather34sidebarIconToggle">
     <div class="weather34spinner weather34cross part-1"></div>
