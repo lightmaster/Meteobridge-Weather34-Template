@@ -1,7 +1,7 @@
 <header style="z-index:auto"><!---start menu.php 23-02-2018--><h1><ogreyh1><?php echo $stationName;?>&nbsp; Home Weather Station</h1>
 <button class="button right"></button><div class='w34logo'>
-<?php if($units!='us'){echo' <a href="./?units=us" alt="select fahrenhiet" title="select fahrenhiet">'.$fahrenheitsymbol.'</a></div>';}
-else if($units!='metric'){echo' <a  alt="select metric" title="select metric" href="./?units=metric">'.$celsiussymbol.'</a></div>';}
+<?php if($units!='us'){echo' <a href="./?units=us" alt="select fahrenhiet" title="select fahrenhiet"><topbarimperial>&deg;F</topbarimperial></a></div>';}
+else if($units!='metric'){echo' <a  alt="select metric" title="select metric" href="./?units=metric"><topbarmetric>&deg;C</topbarmetric></a></div>';}
 else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?></div>
 <div class="w34uptime"><?php echo $info." Uptime: "?><?php if ($uptimedays <1 ){echo "$uptimehours Hours";} else echo $uptimedays," Days";?></div>
  <input type="checkbox" class="openweather34sidebarMenu" id="openweather34sidebarMenu">
