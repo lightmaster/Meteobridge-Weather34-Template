@@ -3,7 +3,7 @@
 <?php if($units!='us'){echo' <a href="./?units=us" alt="select fahrenhiet" title="select fahrenhiet"><topbarimperial>&deg;F</topbarimperial></a></div>';}
 else if($units!='metric'){echo' <a  alt="select metric" title="select metric" href="./?units=metric"><topbarmetric>&deg;C</topbarmetric></a></div>';}
 else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?></div>
-<div class="w34uptime"><?php echo $info." Uptime: "?><?php if ($uptimedays <1 ){echo "$uptimehours Hours";} else echo $uptimedays," Days";?></div>
+<div class="w34uptime"><?php echo $info."&nbsp; Uptime: "?><?php if ($uptimedays <1 ){echo "$uptimehours Hours";} else echo $uptimedays," Days";?></div>
  <input type="checkbox" class="openweather34sidebarMenu" id="openweather34sidebarMenu">
   <label for="openweather34sidebarMenu" class="weather34sidebarIconToggle">
     <div class="weather34spinner weather34cross part-1"></div>
