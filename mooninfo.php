@@ -19,7 +19,7 @@ body,section{padding:10px}.weather34card,.weather34cards{display:-webkit-box;dis
 .date,.weather34card__count-text--bigs{font-weight:400;line-height:15px}
 .weather34card__count-text--big{position:absolute;left:-15%;margin-top:-25px;font-size:0.8em}
 
-.weather34card__stuff-container{margin:0 auto;width:99%;height:16%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:15px;background:rgba(37,41,45,0);border:0 solid rgba(156,156,156,.1);-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px}.weather34browser-footer,.weather34browser-header{flex-basis:auto;border-bottom:0;display:flex;height:35px}orange,time span{color:#ff8841}.weather34card:after{content:"";display:block;position:absolute;top:0;left:0;width:16rem;height:4.625rem;padding:10px}.provided,a{font-size:10px;bottom:5px;position:fixed;width:600px;display:inline}.weather34card--earthquake1:after{background-image:radial-gradient(to bottom,rgba(106,122,135,.5),transparent 70%)}.weather34card--earthquake2:after{background-image:radial-gradient(to bottom,rgba(106,191,96,.5),transparent 70%)}.weather34card--earthquake3:after{background-image:radial-gradient(to bottom,rgba(96,203,231,.5),transparent 70%)}blue{color:#01a4b4}green{color:#9aba2f}red{color:#db7660}red6{color:#d65b4a}value{color:#fff}yellow{color:#CC0}purple{color:#916392}time{color:#aaa;font-family:Arial,Helvetica,sans-serif}time span{font-family:Arial,Helvetica,sans-serif}.provided{color:#aaa;text-decoration:none;margin-left:10px}.weather34mooncontainer{width:0;height:0;font-size:0;background:0;margin-left:-55px;position:absolute;margin-top:-55px}.weather34card__count-text--big{font-size:12px;font-weight:100;font-family:weathertext2,sans-serif;position:absolute;top:180px;margin-left:85px;width:200px;text-align:center;z-index:20}mydate{font-size:12px}sup{font-size:10px}sup{color:#aaa}mydate{color:#aaa;margin-left:2%}sunset{color:#ff8841}
+.weather34card__stuff-container{margin:0 auto;width:99%;height:16%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:15px;background:rgba(37,41,45,0);border:0 solid rgba(156,156,156,.1);-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px}.weather34browser-footer,.weather34browser-header{flex-basis:auto;border-bottom:0;display:flex;height:35px}orange,time span{color:#ff8841}.weather34card:after{content:"";display:block;position:absolute;top:0;left:0;width:16rem;height:4.625rem;padding:10px}.weather34card--earthquake1:after{background-image:radial-gradient(to bottom,rgba(106,122,135,.5),transparent 70%)}.weather34card--earthquake2:after{background-image:radial-gradient(to bottom,rgba(106,191,96,.5),transparent 70%)}.weather34card--earthquake3:after{background-image:radial-gradient(to bottom,rgba(96,203,231,.5),transparent 70%)}blue{color:#01a4b4}green{color:#9aba2f}red{color:#db7660}red6{color:#d65b4a}value{color:#fff}yellow{color:#CC0}purple{color:#916392}time{color:#aaa;font-family:Arial,Helvetica,sans-serif}time span{font-family:Arial,Helvetica,sans-serif}.provided{color:#aaa;text-decoration:none;margin-left:10px}.weather34mooncontainer{width:0;height:0;font-size:0;background:0;margin-left:-55px;position:absolute;margin-top:-55px}.weather34card__count-text--big{font-size:12px;font-weight:100;font-family:weathertext2,sans-serif;position:absolute;top:180px;margin-left:85px;width:200px;text-align:center;z-index:20}mydate{font-size:12px}sup{font-size:10px}sup{color:#aaa}mydate{color:#aaa;margin-left:2%}sunset{color:#ff8841}
 a{color:#aaa;text-decoration:none}
 .weather34darkbrowser{font-family:weathertext2,Arial, Helvetica, sans-serif;position:relative;background:rgba(56, 56, 60, 1.000);width:105%;max-height:25px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat;margin-bottom:10px}
 
@@ -30,7 +30,7 @@ body{font-family:weathertext2,Arial,Helvetica,system;font-weight:500}
 moonposition{margin-left:80px;margin-top:20px;position:absolute}
 .advisory{position:absolute;font-size:1rem;line-height:10px;display:inline;width:550px;margin-top:30px;left:120px;} 
 .advisoryguide{position:absolute;font-size:1.1rem;line-height:1.3rem;display:inline;width:550px;margin-top:5px;left:3px;text-align:left;font-weight:500} 
-
+.credit{position:absolute;margin-top:35px;margin-left:295px;font-size:.85em}
 </style>
 </head>
 <body>
@@ -125,12 +125,11 @@ $moon = new MoonPhase();$moonage =round($moon->age(),2);echo "Current Moon cycle
 <circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg> When the sunlight hits the moon's surface,temperatures can reach 260&deg;F (127&deg;C).<br>
 <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#3b9cac" stroke="#3b9cac" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg> When the sun goes down,temperatures can drop to minus -280&deg;F (-173&deg;C)..<br>
+<div class=credit>
+&nbsp;
+&nbsp; <a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $info;?> <?php echo $copyrightcredit;?></a></div>
 			</span></div>
         </div></div>
         
 </section>
-
-<div class="provided">   
-&nbsp;
-<?php echo $info;?>&nbsp; <a href="https://weather34.com" title="weather34.com" target="_blank"> <?php echo $copyrightcredit;?> 2015-<?php echo date('Y')?></a></div>
 </body>
