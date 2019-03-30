@@ -1,5 +1,5 @@
 <?php include('livedata.php');date_default_timezone_set($TZ);?>
-<div class="updatedtime"><span><?php if(file_exists($livedata2)&&time()- filemtime($livedata2)>300)echo '<offlinenew></offlinenew> Offline';else echo "<onlinenew></onlinenew> ".$weather["time"];?></div>   
+<div class="updatedtime"><span><?php if(file_exists($livedata)&&time()- filemtime($livedata)>300)echo $offline. '<offline> Offline </offline>';else echo $online." ".$weather["time"];?></div>  
 <?php //weather34 timeago lightning
 $lightningseconds = $weather["lightningtimeago"];
 function convert($lightningseconds){
