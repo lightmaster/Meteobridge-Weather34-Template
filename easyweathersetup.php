@@ -1328,6 +1328,7 @@ your nearly there :-) keep going<br><br>
             <option>solaruvds.php</option> 
             <option>solaruvwu.php</option>
             <option>eq.php</option>    
+            <option>lightning34.php</option>  
                      </select>
                
         
@@ -1364,6 +1365,7 @@ your nearly there :-) keep going<br><br>
             <option>solaruvds.php</option> 
              <option>solaruvwu.php</option>  
             <option>eq.php</option>   
+            <option>lightning34.php</option>  
                      </select>
                
         
@@ -1438,7 +1440,9 @@ your nearly there :-) keep going<br><br>
    <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> forecas3wu.php</span> <orange>display 3 period day/night forecast from Weather Underground</orange>   <br>    
      </span>
-        
+        <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> lightning34.php</span> <orange>Lightning for those using weatherflow direct with meteobridge</orange>   <br>    
+     </span>
         
         <br>
         <div class= "stationvalue">Webcam Add Your Path/Url to your webcam (i.e https://something.com/webcam.jpg)</div> 
