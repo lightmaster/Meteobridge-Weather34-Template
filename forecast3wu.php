@@ -11,12 +11,12 @@ header('Content-type: text/html; charset=UTF-8');
 	# 	3 DAY WU WEATHER FORECAST:  original FEB 2019
 	#      https://www.weather34.com
 	#
-	# 	Code Improved and simplified by ktrue - 30-Mar-2019
+	# 	Code simplified by ktrue - 30-Mar-2019
 	####################################################################################################
 
 $jsonfile="jsondata/wuforecast.txt";if(!file_exists($jsonfile)) {return;}
 ?>
-<div class="updatedtimecurrent"><?php $forecastime=filemtime($jsonfile);$weather34wuurl = file_get_contents($jsonfile);if(filesize($jsonfile)<1){echo "".$offline. " Offline<br>";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
+<div class="updatedtime1"><?php $forecastime=filemtime('jsondata/wuforecast.txt');$weather34wuurl = file_get_contents("jsondata/wuforecast.txt");if(filesize('jsondata/wuforecast.txt')<1){echo "<offlinenew></offlinenew> Offline<br>";}else echo "<onlinenew></onlinenew> ",	date($timeFormat,$forecastime);	?></div> 
 <div class="darkskyforecasthome" ><div class="darkskydiv">
 <?php //begin wu stuff 
 $weather34wuurl=file_get_contents($jsonfile);$parsed_weather34wujson = json_decode($weather34wuurl,false);$wucount = 0;
@@ -66,7 +66,7 @@ for ($k=0;$k<=4;$k++) {if(empty($parsed_weather34wujson->{'daypart'}[0]->{'iconC
 	echo '<div class="darkskyforecastinghome">';echo '<div class="darkskyweekdayhome">'.$wuskydayTime.'</div><div class=darkskyhomeicons>';
 	if ($wuskydaynight=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon.'.svg" width="40px" height="35px" ></img>';}
 	if ($wuskydaynight=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon.'.svg" width="40px" height="35px"></img>';}	
-	echo '</div><darkskytempdesc><value>'.$wuskydesc.'<value></darkskytempdesc><br>';
+	echo '</div><div class=darkskytempdesc>'.$wuskydesc.'</div>';
 	//temp non metric
 	if($tempunit=='F' && $wuskydayTempHigh<44.6){echo '<darkskytemphihome><bluet>'.number_format($wuskydayTempHigh,0).'°</bluet></darkskytemphihome>';}
 	else if($tempunit=='F' && $wuskydayTempHigh>104){echo '<darkskytemphihome><purplet>'.number_format($wuskydayTempHigh,0).'°</purplet></darkskytemphihome>';}
@@ -96,7 +96,7 @@ for ($k=0;$k<=4;$k++) {if(empty($parsed_weather34wujson->{'daypart'}[0]->{'iconC
 	//uvi
 if ($wuskydaynight=='D'){echo '<br><darkskytemplohome><uv>UV <uvspan>';if ($wuskydayUV>=10){echo "<purpleu>".$wuskydayUV. '</purpleu><greyu> '.$wuskydayUVdesc;}else  if ($wuskydayUV>=7){echo "<redu>".$wuskydayUV. '</redu><greyu> '.$wuskydayUVdesc;}else if ($wuskydayUV>5){ echo "<orangeu>".$wuskydayUV. '</orangeu><greyu> '.$wuskydayUVdesc;}else if ($wuskydayUV>2){  echo "<yellowu>".$wuskydayUV. '</yellowu><greyu> '.$wuskydayUVdesc;}else if ($wuskydayUV>=0){ echo "<greenu>".$wuskydayUV. '</greenu><greyu> '.$wuskydayUVdesc;}echo '</uvspan></uv>';}
 	//lightning
-	echo '<br><thunder>'.$wuskythunder;echo '</darkskytemplohome></div>';
+	echo '<thunder>'.$wuskythunder;echo '</darkskytemplohome></div>';
 } // end for loop for icons
 ?>
 </div></div></div>
