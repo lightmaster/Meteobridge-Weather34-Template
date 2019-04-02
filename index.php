@@ -62,6 +62,8 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
 <span class="yearpopup">
 <?php if ($position6=='forecast3ds.php'){echo'<a alt="Dark Sky Forecast " title="Dark Sky Forecast " href="outlookds.php" data-featherlight="iframe">'. $chartinfo. " Forecast </a></span>";}?>
 <?php if ($position6=='forecast3wu.php') {echo ' <a alt="weather underground forecast" title="weather underground forecast" href="outlookwu.php" data-featherlight="iframe">'. $chartinfo. " Forecast </a></span>";}?>
+
+<?php if ($position6=='forecast3wularge.php') {echo ' <a alt="weather underground forecast" title="weather underground forecast" href="outlookwu.php" data-featherlight="iframe">'. $chartinfo. " Forecast </a></span>";}?>
 <?php if ($position6=='forecast3ds.php') {echo ' <span class="yearpopup"><a alt="Hourly Forecast" title="Hourly Forecast" href="forecastdshour.php" data-featherlight="iframe">&nbsp;'. $chartinfo. " Hourly Forecast</a></span>";}?></span>
       </div>
   <span class='moduletitle'>
