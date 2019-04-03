@@ -117,9 +117,9 @@ else if ($wuskydayUV==0){echo 	"<greywuv>".$wuskydayUV. '</greywuv><wuinfo> No C
 //heatindex wu
 echo "<div class=wulargeheatindex>";
 if ($tempunit=='F' && $wuskyheatindex>=84.2){echo "Heat Index ".$heatindex."&nbsp;<heatindexwu>".number_format($wuskyheatindex,1). '°<wuunits>F</wuunits></heatindexwu>';}
-if ($tempunit=='C' && $wuskyheatindex>=29){echo "Heat Index ".$heatindex."&nbsp; <heatindexwu>".number_format($wuskyheatindex,1). '°<wuunits>C</wuunits></heatindexwu>';}
+if ($tempunit=='C' && $wuskyheatindex>=29){echo "Heat Index ".$heatindex."&nbsp; <heatindexwu>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}
 //windchill wu
-if ($tempunit=='F' && $wuskywindchill<41){echo "Wind Chill &nbsp;".$freezing."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>F</wuunits></windchillwu>';}
+if ($tempunit=='F' && $wuskywindchill<41){echo "Wind Chill &nbsp;".$freezing."&nbsp;<windchillwu>".number_format($wuskywindchill,1). '°<wuunits>F</wuunits></windchillwu>';}
 if ($tempunit=='C' && $wuskywindchill<5){echo "Wind Chill &nbsp;".$freezing."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>C</wuunits></windchillwu>';}
 //lightning
 echo '</div><div class=wuthunder>'.$wuskythunder;echo '</div>';?></div></div></div>
