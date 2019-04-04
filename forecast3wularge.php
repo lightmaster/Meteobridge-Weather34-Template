@@ -103,7 +103,7 @@ else if ( $wuskydaysnow>0 && $rainunit=='mm'){ echo 'Snowfall Accumulation '.$sn
 else if ($wuskydayPrecipType='rain' && $rainunit=='in'){echo 'Rainfall Accumulation '.$rainsvg.'&nbsp;<div class=wurainfall>'. number_format($wuskydayprecipIntensity,2).'&nbsp;<wuunits>'.$rainunit.'</wuunits></div>';}
 else if ($wuskydayPrecipType='rain' && $rainunit=='mm'){echo 'Rainfall Accumulation '.$rainsvg.'&nbsp;<div class=wurainfall>'. number_format($wuskydayprecipIntensity,1).'&nbsp;<wuunits>'.$rainunit.'</wuunits></div>';}
 //uvindex wu
-echo '<br><div class=wulargeuvindex>UV Index &nbsp;';
+echo '<br><div class=wulargeuvindex>UV Index &nbsp;<wuuvicon>&#9788;</wuuvicon>';
 if ($wuskydayUV>=10){echo "<purplewuv>".$wuskydayUV. '</purplewuv><wuinfo>'.$wuskydayUVdesc;}else  if ($wuskydayUV>7){echo 	"<redwuv>".$wuskydayUV. '</redwuv><wuinfo> '.$wuskydayUVdesc;}else if ($wuskydayUV>5){echo "<orangewuv>".$wuskydayUV. '</orangewuv><wuinfo> '.$wuskydayUVdesc;}else if ($wuskydayUV>2){echo "<yellowwuv>".$wuskydayUV. '</yellowwuv><wuinfo> '.$wuskydayUVdesc;}else if ($wuskydayUV>0){echo "<greenwuv>".$wuskydayUV. '</greenwuv><wuinfo>'.$wuskydayUVdesc;}else if ($wuskydayUV==0){echo 	"<greywuv>".$wuskydayUV. '</greywuv><wuinfo> No Caution';}echo '</div>';
 ///heatindex wu F
 echo "<div class=wulargeheatindex>";
