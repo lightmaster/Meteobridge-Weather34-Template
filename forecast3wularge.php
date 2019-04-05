@@ -35,7 +35,14 @@ $parsed_weather34wujson = json_decode($weather34wuurl,false);
 	 $wuskydesc = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[0];$wuskythunder = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[0];
 	 $wuskyhumidity = $parsed_weather34wujson->{'daypart'}[0]->{'relativeHumidity'}[0];$wuskyheatindex = $parsed_weather34wujson->{'daypart'}[0]->{'temperatureHeatIndex'}[0];
 	 $wuskywindchill = $parsed_weather34wujson->{'daypart'}[0]->{'temperatureWindChill'}[0];
-	 }}?>
+	 }
+	 $wuskythunder1 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[2];$wuskythunder2 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[3];
+	 $wuskythunder3 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[4];$wuskythunder4 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[5];
+	 $wuskythunder5 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[6];$wuskythunder6 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[7];	 
+	 $wuskydayTime1 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[2];$wuskydayTime2 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[3];
+	 $wuskydayTime3 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[4];$wuskydayTime4 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[5];
+	 $wuskydayTime5 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[6];$wuskydayTime6 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[7];	 
+	 }?>
 <div class="updatedtime1"><?php $forecastime=filemtime('jsondata/wuforecast.txt');$weather34wuurl = file_get_contents("jsondata/wuforecast.txt");if(filesize('jsondata/wuforecast.txt')<1){echo "".$offline. " Offline";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
 <div class="wulargeforecasthome"><div class="wulargediv">
 <?php //begin wu stuff 
@@ -118,4 +125,6 @@ else if ($tempunit=='C' && $wuskyheatindex<=12 && $wuskywindchill>=5){echo "Feel
 if ($tempunit=='F' && $wuskywindchill<41){echo "Wind Chill &nbsp;".$windchillwu."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>F</wuunits></windchillwu>';}
 if ($tempunit=='C' && $wuskywindchill<5){echo "Wind Chill &nbsp;".$windchillwu."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>C</wuunits></windchillwu>';}
 //lightning wu
-echo '</div><div class=wuthunder>'.$wuskythunder;echo '</div>';?></div></div></div>
+echo '</div><div class=wuthunder>';
+if ($wuskythunder1>0 )  {echo '<wustormalert>'.$lightningalert8.'</wustormalert><wuthunder2>Thunderstorms expected '.$wuskydayTime1.' </wuthunder2>';}else if ($wuskythunder2>0 )  {echo '<wustormalert>'.$lightningalert8.'</wustormalert><wuthunder2>Thunderstorms expected '.$wuskydayTime2.' </wuthunder2>';}else if ($wuskythunder3>0 )  {echo '<wustormalert>'.$lightningalert8.'</wustormalert><wuthunder2>Thunderstorms expected '.$wuskydayTime3.' </wuthunder2>';}else if ($wuskythunder4>0 )  {echo '<wustormalert>'.$lightningalert8.'</wustormalert><wuthunder2>Thunderstorms expected '.$wuskydayTime4.' </wuthunder2>';}else if ($wuskythunder5>0 )  {echo '<wustormalert>'.$lightningalert8.'</wustormalert><wuthunder2>Thunderstorms expected '.$wuskydayTime5.' </wuthunder2>';}else if ($wuskythunder6>0 )  {echo '<wustormalert>'.$lightningalert8.'</wustormalert><wuthunder2>Thunderstorms expected '.$wuskydayTime6.' </wuthunder2>';}else echo $wuskythunder;
+echo '</div>';?></div></div></div>
