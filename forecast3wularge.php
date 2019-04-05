@@ -42,15 +42,12 @@ $parsed_weather34wujson = json_decode($weather34wuurl,false);
 	 $wuskythunder4 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[4];
 	 $wuskythunder5 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[5];
 	 $wuskythunder6 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[6];
-	 $wuskythunder7 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderIndex'}[7];
 	 $wuskydayTime1 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[1];
 	 $wuskydayTime2 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[2];
 	 $wuskydayTime3 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[3];
 	 $wuskydayTime4 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[4];
 	 $wuskydayTime5 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[5];
-	 $wuskydayTime6 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[6];
-	 $wuskydayTime7 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[7];
-	 	  
+	 $wuskydayTime6 = $parsed_weather34wujson->{'daypart'}[0]->{'daypartName'}[6];	  
 	 }?>
 <div class="updatedtime1"><?php $forecastime=filemtime('jsondata/wuforecast.txt');$weather34wuurl = file_get_contents("jsondata/wuforecast.txt");if(filesize('jsondata/wuforecast.txt')<1){echo "".$offline. " Offline";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
 <div class="wulargeforecasthome"><div class="wulargediv">
@@ -125,14 +122,18 @@ if ($wuskydayUV>=10){echo "<purplewuv>".$wuskydayUV. '</purplewuv><wuinfo>'.$wus
 echo "<div class=wulargeheatindex>";
 if ($tempunit=='F' && $wuskyheatindex>=84.2){echo "Heat Index ".$heatindexwu."&nbsp;<heatindexwu>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
 //feels wu F
-else if ($tempunit=='F' && $wuskyheatindex<53.6 && $wuskywindchill>=41){echo "Feels Like ".$feelslikewu."&nbsp; <feelswugreen>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}else if ($tempunit=='F' && $wuskyheatindex<68 && $wuskywindchill>=41){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuyellow>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}else  if ($tempunit=='F' && $wuskyheatindex<84.2 && $wuskywindchill>=41){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuorange>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
+else if ($tempunit=='F' && $wuskyheatindex<53.6 && $wuskywindchill>41){echo "Feels Like ".$feelslikewu."&nbsp; <feelswugreen>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
+else if ($tempunit=='F' && $wuskyheatindex<68 && $wuskywindchill>41){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuyellow>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
+else  if ($tempunit=='F' && $wuskyheatindex<84.2 && $wuskywindchill>41){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuorange>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
 //heat index wu C
 if ($tempunit=='C' && $wuskyheatindex>=29){echo "Heat Index ".$heatindexwu."&nbsp; <heatindexwu>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}
 //feels wu C
-else if ($tempunit=='C' && $wuskyheatindex<=12 && $wuskywindchill>=5){echo "Feels Like ".$feelslikewu."&nbsp; <feelswugreen>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}else if ($tempunit=='C' && $wuskyheatindex<=20 && $wuskywindchill>=5){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuyellow>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}else  if ($tempunit=='C' && $wuskyheatindex<29 && $wuskywindchill>=5){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuorange>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}
+else if ($tempunit=='C' && $wuskyheatindex<=12 && $wuskywindchill>5){echo "Feels Like ".$feelslikewu."&nbsp; <feelswugreen>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}
+else if ($tempunit=='C' && $wuskyheatindex<=20 && $wuskywindchill>5){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuyellow>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}
+else  if ($tempunit=='C' && $wuskyheatindex<29 && $wuskywindchill>5){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuorange>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}
 //windchill wu
-if ($tempunit=='F' && $wuskywindchill<41){echo "Wind Chill &nbsp;".$windchillwu."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>F</wuunits></windchillwu>';}
-if ($tempunit=='C' && $wuskywindchill<5){echo "Wind Chill &nbsp;".$windchillwu."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>C</wuunits></windchillwu>';}
+if ($tempunit=='F' && $wuskywindchill<=41){echo "Wind Chill &nbsp;".$windchillwu."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>F</wuunits></windchillwu>';}
+if ($tempunit=='C' && $wuskywindchill<=5){echo "Wind Chill &nbsp;".$windchillwu."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>C</wuunits></windchillwu>';}
 //lightning wu
 echo '</div><div class=wuthunder>';
 if ($wuskythunder>0 )  {echo '<wustormalert>'.$lightningalert8.'</wustormalert><wuthunder2>Thunderstorms expected '.$wuskydayTime.' </wuthunder2>';}
