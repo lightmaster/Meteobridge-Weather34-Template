@@ -71,14 +71,14 @@ for ($k=0;$k<=4;$k++) {if(empty($parsed_weather34wujson->{'daypart'}[0]->{'iconC
 	if($tempunit=='F' && $wuskydayTempHigh<44.6){echo '<darkskytemphihome><bluet>'.number_format($wuskydayTempHigh,0).'°</bluet></darkskytemphihome>';}
 	else if($tempunit=='F' && $wuskydayTempHigh>104){echo '<darkskytemphihome><purplet>'.number_format($wuskydayTempHigh,0).'°</purplet></darkskytemphihome>';}
 	else if($tempunit=='F' && $wuskydayTempHigh>80.6){echo '<darkskytemphihome><redt>'.number_format($wuskydayTempHigh,0).'°</redt></darkskytemphihome>';}
-	else if($tempunit=='F' && $wuskydayTempHigh>64){echo '<darkskytemphihome><oranget>'.number_format($wuskydayTempHigh,0).'°</oranget></darkskytemphihome>';}
+	else if($tempunit=='F' && $wuskydayTempHigh>64.4){echo '<darkskytemphihome><oranget>'.number_format($wuskydayTempHigh,0).'°</oranget></darkskytemphihome>';}
 	else if($tempunit=='F' && $wuskydayTempHigh>55){echo '<darkskytemphihome><yellowt>'.number_format($wuskydayTempHigh,0).'°</yellowt></darkskytemphihome>';}
 	else if($tempunit=='F' && $wuskydayTempHigh>=44.6){echo '<darkskytemphihome><greent>'.number_format($wuskydayTempHigh,0).'°</greent></darkskytemphihome>';}
 	//temp metric
 	else if($wuskydayTempHigh<7){echo '<darkskytemphihome><bluet>'.number_format($wuskydayTempHigh,0).'°</bluet></darkskytemphihome>';}
 	else if($wuskydayTempHigh>40){echo '<darkskytemphihome><purplet>'.number_format($wuskydayTempHigh,0).'°</purplet></darkskytemphihome>';}
 	else if($wuskydayTempHigh>27){echo '<darkskytemphihome><redt>'.number_format($wuskydayTempHigh,0).'°</redt></darkskytemphihome>';}
-	else if($wuskydayTempHigh>17.7){echo '<darkskytemphihome><oranget>'.number_format($wuskydayTempHigh,0).'°</oranget></darkskytemphihome>';}
+	else if($wuskydayTempHigh>18){echo '<darkskytemphihome><oranget>'.number_format($wuskydayTempHigh,0).'°</oranget></darkskytemphihome>';}
 	else if($wuskydayTempHigh>12.7){echo '<darkskytemphihome><yellowt>'.number_format($wuskydayTempHigh,0).'°</yellowt></darkskytemphihome>';}
 	else if($wuskydayTempHigh>=7){echo '<darkskytemphihome><greent>'.number_format($wuskydayTempHigh,0).'°</greent></darkskytemphihome>';}
 	//wind

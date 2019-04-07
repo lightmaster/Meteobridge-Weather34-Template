@@ -40,7 +40,7 @@ $darkhours = 23 - $lighthours; $darkminutes = 60 - $lightmins;if ($darkminutes<1
 <div class="sundialcontainerdiv2" ><div id="sundialcontainer" class=sundialcontainer><canvas id="sundial" class="suncanvasstyle"></canvas><div class="weather34sunclock"><div id="poscircircle"></div></div></div>
 <div class="daylightvalue1" ><hrs>hrs</hrs><hours>&nbsp;&nbsp;'.$hrs.'</hours> <minutes>'.$min.'</minutes> <br>&nbsp;<period>'.$txt.'</period><min>min</min></div>';
 
-if ($positionlastmodule == 'moonphase.php'){echo '';} else echo'
+if ($position12 == 'moonphase.php' OR $positionlastmodule == 'moonphase.php'){echo '';} else echo'
 <div class="weather34moonphasem">Moon Phase <br>'.$weather["moonphase"].'<br>'.$lang['Moonrise'].'<br>'.$weather['moonrise'].'</div>
 <div class="weather34luminancem">Luminance<br> '.$weather["luminance"].'% '.$luminance.'<br>'.$lang['Moonset'].'<br>'.$weather['moonset'].'</div></div></div></div>';
 
