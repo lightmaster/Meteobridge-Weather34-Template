@@ -112,9 +112,7 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["dewpoint2"] = round(((pow(($weather["humidity_indoor"]/100), 0.125))*(112+0.9*$weather["temp_indoor"] )+(0.1*$weather["temp_indoor"] )-112),1);
 	//humidex josep
 	$t=7.5*$weather["temp"]/(237.7+$weather["temp"]); $et= pow(10,$t);$e=6.112*$et*($weather["humidity"]/100);$weather["humidex"] =number_format($weather["temp"]+(5/9)*($e-10),1);	
-	//weather34 meteobridge moon data 
-$weather["moonphase"]=$meteobridgeapi[153];$weather["luminance"]=$meteobridgeapi[154];$weather["daylight"]=$meteobridgeapi[155];if ($meteobridgeapi[156]=='--'){$weather["moonrise"]='In Transit';}
-else $weather["moonrise"]=''.date('g:ia', strtotime($meteobridgeapi[156]));$weather["moonset"]='<moonsetcolor> '.date('g:ia', strtotime($meteobridgeapi[157]));
+	
 if ($weather['luminance']>99.9){$weather['luminance']=100;}
 if ($weather['luminance']<100){$weather['luminance']=$weather['luminance'];}
 //weather34 convert meteobridge lunar segment
