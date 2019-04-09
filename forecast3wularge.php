@@ -162,45 +162,40 @@ echo "<div class=wulargeheatindex>";
 if ($tempunit=='F' && $wuskyheatindex>=84.2){echo "Heat Index ".$heatindex."&nbsp;<heatindexwu>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
 //feels wu
 else if ($tempunit=='F' && $wuskywindchill<=41){echo "Wind Chill &nbsp;".$windchillwu."&nbsp;<windchillwu>".number_format($wuskywindchill,0). '°<wuunits>F</wuunits></windchillwu>';}
-else if ($tempunit=='F' && $wuskywindchill>41){echo "Feels Like ".$feelslikewu."&nbsp; <feelswugreen>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
-else if ($tempunit=='F' && $wuskywindchill>50){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuyellow>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
-else  if ($tempunit=='F' && $wuskywindchill>64.4){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuorange>".number_format($wuskyheatindex,0). '°<wuunits>F</wuunits></heatindexwu>';}
+
 //heat index
 if ($tempunit=='C' && $wuskyheatindex>=29){echo "Heat Index ".$heatindex."&nbsp; <heatindexwu>".number_format($wuskyheatindex,0). '°<wuunits>C</wuunits></heatindexwu>';}
 //feels wu
 else if ($tempunit=='C' &&  $wuskywindchill<=5){echo "Feels Like ".$feelslikewu."&nbsp; <windchillwu>".number_format($wuskywindchill,0). '°<wuunits>C</wuunits></heatindexwu>';}
-else if ($tempunit=='C' &&  $wuskywindchill>5){echo "Feels Like ".$feelslikewu."&nbsp; <feelswugreen>".number_format($wuskywindchill,0). '°<wuunits>C</wuunits></heatindexwu>';}
-else if ($tempunit=='C' &&  $wuskywindchill>10){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuyellow>".number_format($wuskywindchill,0). '°<wuunits>C</wuunits></heatindexwu>';}
-else  if ($tempunit=='C' && $wuskywindchill>18){echo "Feels Like ".$feelslikewu."&nbsp; <feelswuorange>".number_format($wuskywindchill,0). '°<wuunits>C</wuunits></heatindexwu>';}
 
 //lightning wu
 echo '</div><div class=wuthunder>';
-if ($wuskythunder>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected'.$wuskydayTime.' </wuthunder2>';}
+if ($wuskythunder>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected '.$wuskydayTime.' </wuthunder2>';}
 else if ($wuskythunder1>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected '.$wuskydayTime1.' </wuthunder2>';}
-else if ($wuskythunder2>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected'.$wuskydayTime2.' </wuthunder2>';}
-else if ($wuskythunder3>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected'.$wuskydayTime3.' </wuthunder2>';}
-else if ($wuskythunder4>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected'.$wuskydayTime4.' </wuthunder2>';}
-else if ($wuskythunder5>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected'.$wuskydayTime5.' </wuthunder2>';}
-else if ($wuskythunder6>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected'.$wuskydayTime6.' </wuthunder2>';}
-else if ($wuskythunder7>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected'.$wuskydayTime7.' </wuthunder2>';}
+else if ($wuskythunder2>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected '.$wuskydayTime2.' </wuthunder2>';}
+else if ($wuskythunder3>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected '.$wuskydayTime3.' </wuthunder2>';}
+else if ($wuskythunder4>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected '.$wuskydayTime4.' </wuthunder2>';}
+else if ($wuskythunder5>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected '.$wuskydayTime5.' </wuthunder2>';}
+else if ($wuskythunder6>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected '.$wuskydayTime6.' </wuthunder2>';}
+else if ($wuskythunder7>0 )  {echo '<wuthunder2>'.$lightningalert8.' Thunderstorms expected '.$wuskydayTime7.' </wuthunder2>';}
 
 //snowfall wu
-else if ($wuskysnow>0 )  {echo '<wuthunder2>'.$freezing.' Snow forecasted '.$wuskydayTime.' </wuthunder2>';}
-else if ($wuskysnow1>0 )  {echo '<wuthunder2>'.$freezing.' Snow forecasted '.$wuskydayTime1.' </wuthunder2>';}
-else if ($wuskysnow2>0 )  {echo '<wuthunder2>'.$freezing.' Snow forecasted '.$wuskydayTime2.' </wuthunder2>';}
-else if ($wuskysnow3>0 )  {echo '<wuthunder2>'.$freezing.' Snow forecasted '.$wuskydayTime3.' </wuthunder2>';}
-else if ($wuskysnow4>0 )  {echo '<wuthunder2>'.$freezing.' Snow forecasted '.$wuskydayTime4.' </wuthunder2>';}
-else if ($wuskysnow5>0 )  {echo '<wuthunder2>'.$freezing.' Snow forecasted '.$wuskydayTime5.' </wuthunder2>';}
-else if ($wuskysnow6>0 )  {echo '<wuthunder2>'.$freezing.' Snow forecasted '.$wuskydayTime6.' </wuthunder2>';}
-else if ($wuskysnow7>0 )  {echo '<wuthunder2>'.$freezing.' Snow forecasted '.$wuskydayTime7.' </wuthunder2>';}
+else if ($wuskysnow>0 )  {echo '<wustormalert>'.$freezing.'</wustormalert><wuthunder2>Snow forecasted '.$wuskydayTime.' </wuthunder2>';}
+else if ($wuskysnow1>0 )  {echo '<wustormalert>'.$freezing.'</wustormalert><wuthunder2>Snow forecasted '.$wuskydayTime1.' </wuthunder2>';}
+else if ($wuskysnow2>0 )  {echo '<wustormalert>'.$freezing.'</wustormalert><wuthunder2>Snow forecasted '.$wuskydayTime2.' </wuthunder2>';}
+else if ($wuskysnow3>0 )  {echo '<wustormalert>'.$freezing.'</wustormalert><wuthunder2>Snow forecasted '.$wuskydayTime3.' </wuthunder2>';}
+else if ($wuskysnow4>0 )  {echo '<wustormalert>'.$freezing.'</wustormalert><wuthunder2>Snow forecasted '.$wuskydayTime4.' </wuthunder2>';}
+else if ($wuskysnow5>0 )  {echo '<wustormalert>'.$freezing.'</wustormalert><wuthunder2>Snow forecasted '.$wuskydayTime5.' </wuthunder2>';}
+else if ($wuskysnow6>0 )  {echo '<wustormalert>'.$freezing.'</wustormalert><wuthunder2>Snow forecasted '.$wuskydayTime6.' </wuthunder2>';}
+else if ($wuskysnow7>0 )  {echo '<wustormalert>'.$freezing.'</wustormalert><wuthunder2>Snow forecasted '.$wuskydayTime7.' </wuthunder2>';}
 //rainfall wu
-else if ($wuskyrain>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain expected '.$wuskydayTime.' </wuthunder2>';}
-else if ($wuskyrain1>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain expected '.$wuskydayTime1.' </wuthunder2>';}
-else if ($wuskyrain2>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain expected '.$wuskydayTime2.' </wuthunder2>';}
-else if ($wuskyrain3>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain expected '.$wuskydayTime3.' </wuthunder2>';}
-else if ($wuskyrain4>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain expected '.$wuskydayTime4.' </wuthunder2>';}
-else if ($wuskyrain5>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain expected '.$wuskydayTime5.' </wuthunder2>';}
-else if ($wuskyrain6>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain expected '.$wuskydayTime6.' </wuthunder2>';}
-else if ($wuskyrain7>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain expected '.$wuskydayTime7.' </wuthunder2>';}
+else if ($wuskyrain>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain Showers '.$wuskydayTime. ' </wuthunder2>';}
+else if ($wuskyrain1>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain Showers '.$wuskydayTime1. ' </wuthunder2>';}
+else if ($wuskyrain2>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain Showers '.$wuskydayTime2. ' </wuthunder2>';}
+else if ($wuskyrain3>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain Showers '.$wuskydayTime3. ' </wuthunder2>';}
+else if ($wuskyrain4>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain Showers '.$wuskydayTime4. ' </wuthunder2>';}
+else if ($wuskyrain5>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain Showers '.$wuskydayTime5. ' </wuthunder2>';}
+else if ($wuskyrain6>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain Showers '.$wuskydayTime6. ' </wuthunder2>';}
+else if ($wuskyrain7>0 )  {echo '<wuthunder2>'.$rainfallalert8.' Rain Showers '.$wuskydayTime7. ' </wuthunder2>';}
 else echo $lightningalert8. "&nbsp;No Cautions";
 echo '</div>';?></div></div></div>
