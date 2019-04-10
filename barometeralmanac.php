@@ -44,11 +44,11 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 .weather34barometerarrowmin:after{-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
 .weather34barometerarrowmin{z-index:200;-o-transform-origin:50% 100%;-ms-transform-origin:50% 100%}
 .weather34barometerarrowmin{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo $weather["barometer_min"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_min"]*50.40;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["barometer_min"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_min"]*50.40;}?>deg);}
+if ($weather["temp_units"]=='C' ){echo $weather["barometer_min"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_min"]*50.25;}?>deg);
+transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["barometer_min"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_min"]*50.25;}?>deg);}
 .weather34barometerarrowmax{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo $weather["barometer_max"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_max"]*50.40;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["barometer_max"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_max"]*50.40;}?>deg);}
+if ($weather["temp_units"]=='C' ){echo $weather["barometer_max"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_max"]*50.25;}?>deg);
+transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["barometer_max"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["barometer_max"]*50.25;}?>deg);}
 
 <!-- month-->
 .weather34barometerarrowminmonth{z-index:200;-o-transform-origin:50% 100%;-ms-transform-origin:50% 100%}
@@ -62,11 +62,11 @@ transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["baromete
 .weather34barometerarrowminmonth{z-index:200;-o-transform-origin:50% 100%;-ms-transform-origin:50% 100%}
 .weather34barometerarrowmaxmonth:before{width:0;left:5px;top:-5px;border:0;color:rgba(255,121,58,.6);font-size:5px}
 .weather34barometerarrowminmonth{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressmmin"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressmmin"]*50.40;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressmmin"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressmmin"]*50.40;}?>deg);}
+if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressmmin"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressmmin"]*50.25;}?>deg);
+transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressmmin"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressmmin"]*50.25;}?>deg);}
 .weather34barometerarrowmaxmonth{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo$weather["thb0seapressmmax"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressmmax"]*50.40;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressmmax"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressmmax"]*50.40;}?>deg);}
+if ($weather["temp_units"]=='C' ){echo$weather["thb0seapressmmax"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressmmax"]*50.25;}?>deg);
+transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressmmax"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressmmax"]*50.25;}?>deg);}
 
 <!-- yesterday-->
 .weather34barometerarrowminyd{z-index:200;-o-transform-origin:50% 100%;-ms-transform-origin:50% 100%}
@@ -80,11 +80,11 @@ transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seap
 .weather34barometerarrowminyd{z-index:200;-o-transform-origin:50% 100%;-ms-transform-origin:50% 100%}
 .weather34barometerarrowmaxyd:before{width:0;left:5px;top:-5px;border:0;color:rgba(255,121,58,.6);font-size:5px}
 .weather34barometerarrowminyd{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressydmin"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressydmin"]*50.40;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressydmin"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressydmin"]*50.40;}?>deg);}
+if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressydmin"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressydmin"]*50.25;}?>deg);
+transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressydmin"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressydmin"]*50.25;}?>deg);}
 .weather34barometerarrowmaxyd{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo$weather["thb0seapressydmax"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressydmax"]*50.40;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressydmax"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressydmax"]*50.40;}?>deg);}
+if ($weather["temp_units"]=='C' ){echo$weather["thb0seapressydmax"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressydmax"]*50.25;}?>deg);
+transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressydmax"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressydmax"]*50.25;}?>deg);}
 
 <!-- year-->
 .weather34barometerarrowminy{z-index:200;-o-transform-origin:50% 100%;-ms-transform-origin:50% 100%}
@@ -98,11 +98,11 @@ transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seap
 .weather34barometerarrowminy{z-index:200;-o-transform-origin:50% 100%;-ms-transform-origin:50% 100%}
 .weather34barometerarrowmaxy:before{width:0;left:5px;top:-5px;border:0;color:rgba(255,121,58,.6);font-size:5px}
 .weather34barometerarrowminy{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressymin"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressymin"]*50.40;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressymin"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressymin"]*50.40;}?>deg);}
+if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressymin"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressymin"]*50.25;}?>deg);
+transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressymin"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressymin"]*50.25;}?>deg);}
 .weather34barometerarrowmaxy{-webkit-transform:rotate(<?php 
-if ($weather["temp_units"]=='C' ){echo$weather["thb0seapressymax"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressymax"]*50.40;}?>deg);
-transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressymax"]*0.029535*50.40;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressymax"]*50.40;}?>deg);}
+if ($weather["temp_units"]=='C' ){echo$weather["thb0seapressymax"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressymax"]*50.25;}?>deg);
+transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seapressymax"]*0.029535*50.25;}else if ($weather["temp_units"]=='F'){echo $weather["thb0seapressymax"]*50.25;}?>deg);}
 
 weather34-barometerlimitmax,weather34-barometerlimitmin,weather34-barometerlimitminf{margin-top:-6px;position:absolute;font-size:11px;color:silver}
 weather34-barometerlimitmin{left:-20px;color:color:silver}
