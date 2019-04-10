@@ -107,8 +107,8 @@ transform:rotate(<?php if ($weather["temp_units"]=='C' ){echo $weather["thb0seap
 weather34-barometerlimitmax,weather34-barometerlimitmin,weather34-barometerlimitminf{margin-top:-6px;position:absolute;font-size:11px;color:silver}
 weather34-barometerlimitmin{left:-20px;color:color:silver}
 weather34-barometerlimitmax{left:98px;color:color:silver}
-weather34-barometerlimitminf{left:-17px;color:silver}
-weather34-barometerlimitmaxf{position:absolute;margin-top:0;left:118px;font-size:11px;color:silver}
+weather34-barometerlimitminf{left:-15px;color:silver}
+weather34-barometerlimitmaxf{position:absolute;margin-top:0;left:116px;font-size:11px;color:silver}
 
 .barometerlimits{position:absolute;font-size:12px;margin-top:25px;margin-left:16px;width:95px;color:#777;font-family:Helvetica,Arial;}
 .weather34-barometerruler{position:absolute;width:96px;height:1px;border:1px dashed rgba(53,56,58,1);margin-left:135px;margin-top:58px;color:#565f67}
