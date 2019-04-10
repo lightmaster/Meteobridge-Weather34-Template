@@ -116,7 +116,7 @@ value{color:#777;font-family:weathertext2,Arial,Helvetica,system;font-size:.85em
 </style>
 </head>
 <body>
-<div class="weather34darkbrowser" url="Almanac Barometric Pressure Data <?php echo $stationlocation;?>"></div> 
+<div class="weather34darkbrowser" url="Almanac Barometric Pressure Data <?php echo $stationlocation;?> <?php echo "(".$weather["barometer_units"].")";?>"></div> 
   
 <section class="weather34cards">
    <div class="weather34card weather34card--earthquake1">
