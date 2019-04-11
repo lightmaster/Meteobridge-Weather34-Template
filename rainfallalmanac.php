@@ -17,23 +17,35 @@
 .weather34-uvrate-bar .bar-inner{shape-rendering:crispEdges;background:rgba(0, 154, 171, 0.6);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34uvrate{color:#ff8841;position:absolute;margin-left:238px;margin-top:17px;font-size:12px;width:20px;font-family:weathertext,arial,sans-serif;max-height:100px;line-height:10px;font-weight:normal}.weather34uvrate span{color:#777;font-family:weathertext,arial,sans-serif;font-size:12px;font-weight:normal}purpleuv{color:#a475cb}reduv{color:#d65b4a}orangeuv{color:#ff8841}greenuv{color:#9aba2f}greyuv{color:#aaa}.uvmaxi{position:absolute;left:10px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:200px;}.uvmaxi span{color:#aaa}.weather34-luxrate-bar{background:0;position:absolute;height:100px;width:30px;margin-left:245px;margin-top:-6px}.weather34-luxrate-bar .bar{shape-rendering:crispEdges;background:url(css/rain/luxrulerw34.svg) no-repeat;width:37px;border:1px solid RGBA(57,61,64,1.00);border-bottom:5px solid RGBA(57,61,64,1.00);border-top:3px solid RGBA(57,61,64,1.00);-webkit-border-radius:1px 1px 2px 2px;position:absolute;bottom:0}.weather34-luxrate-bar .bar-1{height:100px;max-height:100px}.weather34-luxrate-bar .bar-inner1000{shape-rendering:crispEdges;background:RGBA(164,117,203,0.7);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner700{shape-rendering:crispEdges;background:RGBA(211,93,78,0.7);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner600{shape-rendering:crispEdges;background:RGBA(211,93,78,0.7);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner400{shape-rendering:crispEdges;background:RGBA(233,145,65,0.5);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner300{shape-rendering:crispEdges;background:RGBA(233,145,65,0.5);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34-luxrate-bar .bar-inner1{shape-rendering:crispEdges;background:RGBA(255,136,65,0.7);width:100%;-webkit-border-radius:1px 1px 2px 2px;border:0}.weather34luxrate{color:#ff8841;position:absolute;margin-left:238px;margin-top:17px;font-size:12px;width:20px;font-family:weathertext,arial,sans-serif;max-height:100px;line-height:10px;font-weight:normal}.weather34luxrate span{color:#777;font-family:weathertext,arial,sans-serif;font-size:12px;font-weight:normal}.uvsun{position:absolute;top:10px;margin-left:175px}.sunfade{opacity:.8}unit{font-size:13px;color:#aaa;}.uvmaxi2{position:absolute;left:-10px;color:rgba(0, 154, 171, 1.000);margin-top:-60px;font-size:16px;width:200px;}.uvmaxi2 span{color:#aaa}
 actual{font-size:13px;float:right;position:absolute;left:130px;top:20px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px;background:rgba(61, 64, 66, 1.000);padding:5px;font-weight:normal;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}.hitemp{color:#aaa;font-size:12px;}.hitemp span{color:rgba(255, 124, 57, 1.000)}
 .hitempy{background:rgba(61, 64, 66, 0.5);color:#aaa;font-size:12px;width:240px;padding:1px;-webit-border-radius:2px;border-radius:2px;margin-top:2px;margin-left:0;padding-left:3px;line-height:11px;}
+.alltime{background:rgba(61, 64, 66, 0.5);color:#aaa;font-size:1.2rem;padding:1px;-webit-border-radius:2px;border-radius:2px;left:40px;padding-left:3px;line-height:11px;width:100px;bottom:3rem;font-size:1rem;text-align:center;position:absolute;font-family:weathertext2,arial,sans-serif;}
 
-.alltime{background:rgba(61, 64, 66, 0.5);color:#aaa;font-size:1.2rem;padding:1px;-webit-border-radius:2px;border-radius:2px;margin-left:170px;padding-left:3px;line-height:11px;width:100px;top:1.5rem;font-size:1rem;text-align:center;position:absolute;font-family:weathertext2,arial,sans-serif;}
+
 .lotemp{font-size:26px;font-family:weathertext;}blue{color:rgba(0, 154, 171, 1.000)}.icon{position:absolute;right:20px;bottom:10px;opacity:.7}
 .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:normal}.weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:100%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}
 .weather34browser-footer{flex-basis:auto;height:25px;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-40px;width:100%;}
 .weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#aaa;text-decoration:none}
-.weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}windgusts{opacity:0.8;position:absolute;bottom:10px;font-size:0.8em;color:rgba(86, 95, 103, 0.5)}
+.weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
+
+windgusts{position:absolute;top:10px;left:150px;font-size:0.4em;color:#aaa;background:rgba(86, 95, 103, 0.5);padding:4px;-webkit-border-radius:3px;border-radius:3px;font-family:"weathertext2",Helvetica, Arial, sans-serif;}
 grey{color:#aaa}supunit{font-size:0.9rem;vertical-align:top;}
-.rainfallcontainer1{left:70px;top:0}.rainfalltoday1{font-family:weathertext2,Arial,Helvetica,system;width:8.5rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}
+
+
+.rainfallcontainer1{left:10px;top:0}
+.rainfalltoday1{font-family:weathertext2,Arial,Helvetica,system;width:8.5rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}
 .rainfalltoday1{font-size:1.9rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
 .rainfallcaution,.rainfalltrend{position:absolute;font-size:1rem}
 .rainfalltoday1{background:rgba(68, 166, 181, 1.000)}
 .rainfallcaution{margin-left:120px;margin-top:112px;font-family:Arial,Helvetica,system}.rainfalltrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}
 smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 
-
-
+#weather34rainbeaker:before{left:-10px}
+.weather34i-rairate-bar{position:absolute;height:100px;width:100px;margin-left:-35px;margin-top:40px}
+#raincontainer{height:170px;overflow:hidden;position:absolute;width:208px;top:-15px;left:170px}
+#raincontainer div{position:absolute}
+#weather34rainbeaker{border:4px solid #393d40;border-top:0;-webkit-border-radius:0 0 2px 2px;-moz-border-radius:0 0 2px 2px;-o-border-radius:0 0 2px 2px;-ms-border-radius:0 0 2px 2px;border-radius:0 0 2px 2px;height:100px;left:14px;bottom:0;width:100px;background:url(css/rain/rainmarker.svg) center no-repeat}
+#weather34rainbeaker:after,#weather34rainbeaker:before{border:5px solid #393d40;border-bottom:0;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;-ms-border-radius:2px;border-radius:2px;content:'';height:5px;position:absolute;top:0;width:10px}
+#weather34rainbeaker:after{right:-10px}
+#weather34rainwater{background-color:rgba(0,154,171,.6);border:0;-webkit-border-radius:0 0 2px 2px;-moz-border-radius:0 0 2px 2px;-o-border-radius:0 0 2px 2px;-ms-border-radius:0 0 2px 2px;border-radius:0 0 2px 2px;bottom:0;max-height:90px;overflow:hidden;width:92px}
 </style>
 </head>
 <body>
@@ -52,36 +64,16 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 </div>
 
 </span>
-<div class="weather34-uvrate-bar">	
- <svg opacity="0.8"  d="weather34 solar radiation svg" width="40pt" height="80pt" viewBox="0 0 44 84">
-<path fill="currentcolor"  opacity="0.8"  d=" M 0.00 7.99 C 1.33 8.00 2.67 8.00 4.00 8.01 C 4.01 31.34 3.99 54.67 4.00 77.99 C 16.00 78.01 28.00 78.00 40.00 78.00 C 40.01 54.67 39.99 31.34 40.00 8.01 C 41.34 8.00 42.67 8.00 44.00 7.99 L 44.00 9.95 C 43.50 9.97 42.50 10.02 42.00 10.05 C 42.00 33.36 42.00 56.68 42.00 80.00 C 28.67 80.01 15.34 80.00 2.01 80.00 C 1.99 56.70 2.00 33.40 2.00 10.10 C 1.50 10.04 0.50 9.92 0.00 9.86 L 0.00 7.99 Z" />
-<path fill="<?php if( $weather["rain_today"]>60){echo "rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 8.01 C 17.00 8.00 27.00 8.00 37.00 8.00 C 37.00 8.75 37.00 10.25 37.00 11.00 C 27.00 11.00 17.00 11.00 7.00 11.00 C 7.00 10.25 7.00 8.75 7.00 8.01 Z" />
-<path fill="<?php if($weather["rain_today"]>50){echo "rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 12.00 C 17.00 12.00 27.00 12.00 37.00 12.00 C 37.00 13.67 37.00 15.33 37.00 17.00 C 27.00 17.00 17.00 17.00 7.00 17.00 C 7.00 15.33 7.00 13.67 7.00 12.00 Z" />
-<path fill="<?php if($weather["rain_today"]>44){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 18.00 C 17.00 18.00 27.00 18.00 37.00 18.00 C 37.00 19.67 37.00 21.33 37.00 23.00 C 27.00 23.00 17.00 23.00 7.00 23.00 C 7.00 21.33 7.00 19.67 7.00 18.00 Z" />
-<path fill="<?php if($weather["rain_today"]>40){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 24.00 C 17.00 24.00 27.00 24.00 37.00 24.00 C 37.00 25.67 37.00 27.33 37.00 29.00 C 27.00 29.00 17.00 29.00 7.00 29.00 C 7.00 27.33 7.00 25.67 7.00 24.00 Z" />
-<path fill="<?php if($weather["rain_today"]>36){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 30.00 C 17.00 30.00 27.00 30.00 37.00 30.00 C 37.00 31.67 37.00 33.33 37.00 35.00 C 27.00 35.00 17.00 35.00 7.00 35.00 C 7.00 33.33 7.00 31.67 7.00 30.00 Z" />
-<path fill="<?php if($weather["rain_today"]>30){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 36.00 C 17.00 36.00 27.00 36.00 37.00 36.00 C 37.00 37.67 37.00 39.33 37.00 41.00 C 27.00 41.00 17.00 41.00 7.00 41.00 C 7.00 39.33 7.00 37.67 7.00 36.00 Z" />
-<path fill="<?php if($weather["rain_today"]>24){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 42.00 C 17.00 41.99 27.00 42.00 37.00 42.00 C 37.00 43.67 37.00 45.33 37.00 47.00 C 27.00 47.00 17.00 47.00 7.00 47.00 C 7.00 45.33 7.00 43.67 7.00 42.00 Z" />
-<path fill="<?php if($weather["rain_today"]>18){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 48.00 C 17.00 48.00 27.00 48.00 37.00 48.00 C 37.00 49.67 37.00 51.33 37.00 53.00 C 27.00 53.00 17.00 53.00 7.00 53.00 C 7.00 51.33 7.00 49.67 7.00 48.00 Z" />
-<path fill="<?php if($weather["rain_today"]>12){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 54.00 C 17.00 54.00 27.00 54.00 37.00 54.00 C 37.00 55.67 37.00 57.33 37.00 59.00 C 27.00 59.00 17.00 59.00 7.00 59.00 C 7.00 57.33 7.00 55.67 7.00 54.00 Z" />
-<path fill="<?php if($weather["rain_today"]>=6){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 60.00 C 17.00 60.00 27.00 60.00 37.00 60.00 C 37.00 61.67 37.00 63.33 37.00 65.00 C 27.00 65.00 17.00 65.00 7.00 65.00 C 7.00 63.33 7.00 61.67 7.00 60.00 Z" />
-<path fill="<?php if($weather["rain_today"]>=2){echo " rgba(0, 153, 170, 1)";} else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 66.00 C 17.00 66.00 27.00 66.00 37.00 66.00 C 37.00 67.67 37.00 69.33 37.00 71.00 C 27.00 71.00 17.00 71.00 7.00 71.00 C 7.00 69.33 7.00 67.67 7.00 66.00 Z" />
-<path fill="<?php if($weather["rain_today"]>0){echo "rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 72.00 C 17.00 72.00 27.00 72.00 37.00 72.00 C 37.00 73.67 37.00 75.33 37.00 77.00 C 27.00 77.00 17.00 77.00 7.00 77.00 C 7.00 75.33 7.00 73.67 7.00 72.00 Z" /></svg>
-</svg></div></div>
- <div class="hitemp"><?php echo $raininfo?> <blue>Rainfall</blue> Total for <?php echo date('jS F');?></div>
- 
- 
- 
- 
- <div class="hitempy" style="width:190px;margin-top:0.5rem;font-size:1em"><?php if (date('jS')==$rainlasttoday1){ echo $raininfo ." Last <blue>Rainfall </blue>",$rainlasttoday;} else echo $raininfo . "<blue>Rainfall</blue> Last Hour<blue> ", $weather["rain_lasthour"]."</blue> " .$weather["rain_units"] ?></div>
- 
- <div class="lotemp">            
- 
- <windgusts> Rainfall Today <?php echo date("l");?></windgusts> 
- 
-  
-            </div>  
-        </div>
+
+ <!--rain beaker today-->
+ <div id="raincontainer"><div id="weather34rainbeaker">
+<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rain_today"]>0){echo $weather["rain_today"]*0.0393701*10+1;}else if ($weather["rain_units"] =='in' && $weather["rain_today"]>0){echo $weather["rain_today"]*10+1;}
+else echo '0'?>px;">      
+</div></div></div>
+</div>
+<div class="lotemp" ><windgusts>Today <?php echo date("l jS");?></windgusts></div>
+ <!--end rain beaker today-->
+ <div class="hitempy" style="width:160px;margin-top:0.5rem;font-size:1em"><?php if (date('jS')==$rainlasttoday1){ echo $raininfo ." Last <blue>Rainfall </blue>",$rainlasttoday;} else echo $raininfo . "<blue>Rainfall</blue> Last Hour<blue> ", $weather["rain_lasthour"]."</blue> " .$weather["rain_units"] ?></div></div>
 <div class="weather34card__count-container">
 <div class="weather34card__count-text"></div> </div>
 <div class="weather34card__stuff-container">            
@@ -92,21 +84,24 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
     
 <div class="weather34card weather34card--earthquake2">
 <div class="weather34card_weather34-container">
-<div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">            
-<div class="weather34-uvrate-bar" style="margin-top:0;"> 	
+<div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">  
+<!--rain beaker month-->          
+ <div id="raincontainer"><div id="weather34rainbeaker">
+<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rain_month"]>0){echo $weather["rain_month"]*0.0393701*10+1;}
+else if ($weather["rain_units"] =='in' && $weather["rain_month"]>0){echo $weather["rain_month"]*10+1;}else echo '0'?>px;">
+      
+</div></div></div>
 </div>
+ 
 
 <?php
 	// rain month
-		echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";
-	echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"
-?>
+		echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
 </div>
-</span> 
-<div class="hitemp">of <blue>Rain</blue> has been recorded for <?php echo date('F Y');?></div>
-<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo '<div class="hitempy" style="width:200px;margin-top:0.5rem;font-size:1em">'.$raininfo," Last <blue>Rainfall</blue>";?>
-<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo " ".$rainlasttime?></orange></div>
-<div class="lotemp" ><windgusts> Rainfall <?php echo date("F Y");?></windgusts></div></div>
+</span>
+<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo '<div class="hitempy" style="width:160px;margin-top:0.5rem;font-size:1em">'.$raininfo," Last <blue>Rainfall </blue>";?>
+<?php if ($meteobridgeapi[124]=='--'){echo '<div class="hitempy" style="width:160px;margin-top:0.5rem;font-size:1em">'.$raininfo," Last <blue>Rainfall</blue> N/A";}else echo " ".$rainlasttime?></orange></div>
+<div class="lotemp" ><windgusts>Rainfall Accumulated <?php echo date("F");?></windgusts></div>
 <div class="weather34card__count-container">
 <div class="weather34card__count-textuv">
 <span class="weather34card__count-text--bigs">   
@@ -118,41 +113,28 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 <div class="weather34card weather34card--earthquake1">
 <div class="weather34card_weather34-container">
 <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-<div class="weather34-uvrate-bar" style="margin-top:0;"> 	
-  <svg opacity="0.8"  d="weather34 solar radiation svg" width="40pt" height="80pt" viewBox="0 0 44 84">
-<path fill="currentcolor"  opacity="0.8"  d=" M 0.00 7.99 C 1.33 8.00 2.67 8.00 4.00 8.01 C 4.01 31.34 3.99 54.67 4.00 77.99 C 16.00 78.01 28.00 78.00 40.00 78.00 C 40.01 54.67 39.99 31.34 40.00 8.01 C 41.34 8.00 42.67 8.00 44.00 7.99 L 44.00 9.95 C 43.50 9.97 42.50 10.02 42.00 10.05 C 42.00 33.36 42.00 56.68 42.00 80.00 C 28.67 80.01 15.34 80.00 2.01 80.00 C 1.99 56.70 2.00 33.40 2.00 10.10 C 1.50 10.04 0.50 9.92 0.00 9.86 L 0.00 7.99 Z" />
-<path fill="<?php if($weather["rainydmax"]>60){echo "rgba(0, 153, 170, 1)";} else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 8.01 C 17.00 8.00 27.00 8.00 37.00 8.00 C 37.00 8.75 37.00 10.25 37.00 11.00 C 27.00 11.00 17.00 11.00 7.00 11.00 C 7.00 10.25 7.00 8.75 7.00 8.01 Z" />
-<path fill="<?php if($weather["rainydmax"]>50){echo "rgba(0, 153, 170, 1)";} else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 12.00 C 17.00 12.00 27.00 12.00 37.00 12.00 C 37.00 13.67 37.00 15.33 37.00 17.00 C 27.00 17.00 17.00 17.00 7.00 17.00 C 7.00 15.33 7.00 13.67 7.00 12.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>44){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 18.00 C 17.00 18.00 27.00 18.00 37.00 18.00 C 37.00 19.67 37.00 21.33 37.00 23.00 C 27.00 23.00 17.00 23.00 7.00 23.00 C 7.00 21.33 7.00 19.67 7.00 18.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>40){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 24.00 C 17.00 24.00 27.00 24.00 37.00 24.00 C 37.00 25.67 37.00 27.33 37.00 29.00 C 27.00 29.00 17.00 29.00 7.00 29.00 C 7.00 27.33 7.00 25.67 7.00 24.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>34){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 30.00 C 17.00 30.00 27.00 30.00 37.00 30.00 C 37.00 31.67 37.00 33.33 37.00 35.00 C 27.00 35.00 17.00 35.00 7.00 35.00 C 7.00 33.33 7.00 31.67 7.00 30.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>30){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 36.00 C 17.00 36.00 27.00 36.00 37.00 36.00 C 37.00 37.67 37.00 39.33 37.00 41.00 C 27.00 41.00 17.00 41.00 7.00 41.00 C 7.00 39.33 7.00 37.67 7.00 36.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>24){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 42.00 C 17.00 41.99 27.00 42.00 37.00 42.00 C 37.00 43.67 37.00 45.33 37.00 47.00 C 27.00 47.00 17.00 47.00 7.00 47.00 C 7.00 45.33 7.00 43.67 7.00 42.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>18){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 48.00 C 17.00 48.00 27.00 48.00 37.00 48.00 C 37.00 49.67 37.00 51.33 37.00 53.00 C 27.00 53.00 17.00 53.00 7.00 53.00 C 7.00 51.33 7.00 49.67 7.00 48.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>12){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 54.00 C 17.00 54.00 27.00 54.00 37.00 54.00 C 37.00 55.67 37.00 57.33 37.00 59.00 C 27.00 59.00 17.00 59.00 7.00 59.00 C 7.00 57.33 7.00 55.67 7.00 54.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>=6){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 60.00 C 17.00 60.00 27.00 60.00 37.00 60.00 C 37.00 61.67 37.00 63.33 37.00 65.00 C 27.00 65.00 17.00 65.00 7.00 65.00 C 7.00 63.33 7.00 61.67 7.00 60.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>=2){echo " rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 66.00 C 17.00 66.00 27.00 66.00 37.00 66.00 C 37.00 67.67 37.00 69.33 37.00 71.00 C 27.00 71.00 17.00 71.00 7.00 71.00 C 7.00 69.33 7.00 67.67 7.00 66.00 Z" />
-<path fill="<?php if($weather["rainydmax"]>0){echo "rgba(0, 153, 170, 1)";}else echo "currentcolor"?>"   opacity="0.8"  d=" M 7.00 72.00 C 17.00 72.00 27.00 72.00 37.00 72.00 C 37.00 73.67 37.00 75.33 37.00 77.00 C 27.00 77.00 17.00 77.00 7.00 77.00 C 7.00 75.33 7.00 73.67 7.00 72.00 Z" /></svg>
-</svg></div>            
+
+<!--rain beaker yesterday-->
+ <div id="raincontainer"><div id="weather34rainbeaker">
+<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*0.0393701*10+1;}else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*10+1;}else echo '0'?>px;">      
+</div></div></div>
+</div>
+ <!--end rain beaker yesterday-->       
 <?php
 	//rain yesterday
 		echo "<div class='rainfalltoday1'>",$weather["rainydmax"] . "</value>";
 	echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"
 ?>
-</div> <div class="hitemp"><?php echo $raininfo?> <blue>Rainfall</blue> Yesterday <?php echo date("jS F", time() - 60 * 60 * 24);?>
-
-<div class="lotemp" >
-<div class="hitempy" style="width:200px;margin-top:0.5rem;"> <?php echo $raininfo?> 
-  <blue>Rainfall</blue> last 24 hours <blue><?php echo $weather["rain_24hrs"] ."</blue> " .$weather["rain_units"];?>
+</div> 
+<div class="hitempy" style="width:160px;margin-top:0.5rem;"> <?php echo $raininfo?> 
+  <blue>Rainfall</blue> last 24 hrs <blue><?php echo $weather["rain_24hrs"] ."</blue> " .$weather["rain_units"];?>
   </span>  
-</div>
-<windgusts> Rainfall Yesterday <?php echo date("l", strtotime( '-1 days' ) );?></windgusts> 
-
-
- </div> </div> </div>
+</div></div>
+<div class="lotemp" ><windgusts> Yesterday <?php echo date("l jS", strtotime( '-1 days' ) );?></windgusts> </div>
 <div class="weather34card__count-container">
 <div class="weather34card__count-textuv">
 <span class="weather34card__count-text--big">  </span></div>  
+
 <div class="weather34card__stuff-container"><br>  
 </div></div></div></div>
 <div class="weather34card weather34card--earthquake2">
@@ -168,17 +150,27 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 	echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"
 ?></span></div>
 </span> 
-<div class="hitemp">of <blue>Rain</blue> has been recorded for <?php echo date('Y');?></div>
-<div class="alltime">Total <blue>Rainfall</blue><br> 2018-<?php echo date('Y');?> <br><blue><?php echo $weather["rain_alltime"];echo "</blue><supunit>",$weather["rain_units"];?> </div>
 
- <div class="lotemp" >
-<windgusts> Rainfall Year <?php echo date("Y");?></windgusts> </windgusts>
-</div> </div>  </div>
+  </div>  </div>
 <div class="weather34card__count-container">
 <div class="weather34card__count-textuv">
-<span class="weather34card__count-text--big">  </span></div>  
+<span class="weather34card__count-text--big">
+<!--rain beaker yesterday-->
+ <div id="raincontainer"><div id="weather34rainbeaker">
+<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rainymax"]>0){echo $weather["rainymax"]*0.0393701*10+1;}else if ($weather["rain_units"] =='in' && $weather["rainymax"]>0){echo $weather["rainymax"]*10+1;}else echo '0'?>px;">      
+</div></div></div>
+</div>
+ <!--end rain beaker yesterday--> 
+
+
+
+  </span></div>  
+  
+  <div class="lotemp" ><windgusts>Rainfall Accumulated <?php echo date("Y");?></windgusts></div>
+  
  <div class="weather34card__stuff-container"><br>
-           
+          <div class="alltime">Total <blue>Rainfall</blue><br> 2018-<?php echo date('Y');?> <br><blue><?php echo $weather["rain_alltime"];echo "</blue><supunit>",$weather["rain_units"];?> </div>
+ 
 
 
 </section><br>
