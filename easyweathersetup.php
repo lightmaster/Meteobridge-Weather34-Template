@@ -347,6 +347,7 @@ Choose the default Language to display and use..</div>
        <label name="flag"></label>
         <select id="flag" name="flag" class="choose1">           
            <option><?php echo $flag ;?></option>
+           <option>ar</option>
            <option>aus</option>
            <option>en</option>
            <option>can</option>  
