@@ -47,7 +47,7 @@ else if ($weather["rain_units"] =='mm' &&  $weather["rain_today"]>=500){echo $we
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_today"]>=400){echo $weather["rain_today"]*0.0393701*2.25+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_today"]>=300){echo $weather["rain_today"]*0.0393701*3.15+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_today"]>=200){echo $weather["rain_today"]*0.0393701*3.65+1;}
-else if ($weather["rain_units"] =='mm' &&  $weather["rain_today"]>=100){echo $weather["rain_today"]*0.0393701*5+1;}
+else if ($weather["rain_units"] =='mm' &&  $weather["rain_today"]>=100){echo $weather["rain_today"]*0.0393701*5.75+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_today"]>=50){echo $weather["rain_today"]*0.0393701*9.95+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_today"]>0){echo $weather["rain_today"]*0.0393701*14+1;}
 //no metric
@@ -60,7 +60,7 @@ else if ($weather["rain_units"] =='in' && $weather["rain_today"]>=19.685){echo $
 else if ($weather["rain_units"] =='in' && $weather["rain_today"]>=15.748){echo $weather["rain_today"]*2.25+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_today"]>=11.811){echo $weather["rain_today"]*3.15+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_today"]>=7.87402){echo $weather["rain_today"]*3.65+1;}
-else if ($weather["rain_units"] =='in' && $weather["rain_today"]>=3.93701){echo $weather["rain_today"]*5+1;}
+else if ($weather["rain_units"] =='in' && $weather["rain_today"]>=3.93701){echo $weather["rain_today"]*5.75+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_today"]>=1.9685){echo $weather["rain_today"]*9.95+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_today"]>0){echo $weather["rain_today"]*14+1;}
 else echo '0'?>px;">      
@@ -90,7 +90,7 @@ else if ($weather["rain_units"] =='mm' &&  $weather["rain_month"]>=500){echo $we
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_month"]>=400){echo $weather["rain_month"]*0.0393701*2.25+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_month"]>=300){echo $weather["rain_month"]*0.0393701*3.15+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_month"]>=200){echo $weather["rain_month"]*0.0393701*3.65+1;}
-else if ($weather["rain_units"] =='mm' &&  $weather["rain_month"]>=100){echo $weather["rain_month"]*0.0393701*5+1;}
+else if ($weather["rain_units"] =='mm' &&  $weather["rain_month"]>=100){echo $weather["rain_month"]*0.0393701*5.75+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_month"]>=50){echo $weather["rain_month"]*0.0393701*9.95+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_month"]>0){echo $weather["rain_month"]*0.0393701*14+1;}
 //no metric
@@ -103,7 +103,7 @@ else if ($weather["rain_units"] =='in' && $weather["rain_month"]>=19.685){echo $
 else if ($weather["rain_units"] =='in' && $weather["rain_month"]>=15.748){echo $weather["rain_month"]*2.25+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_month"]>=11.811){echo $weather["rain_month"]*3.15+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_month"]>=7.87402){echo $weather["rain_month"]*3.65+1;}
-else if ($weather["rain_units"] =='in' && $weather["rain_month"]>=3.93701){echo $weather["rain_month"]*5+1;}
+else if ($weather["rain_units"] =='in' && $weather["rain_month"]>=3.93701){echo $weather["rain_month"]*5.75+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_month"]>=1.9685){echo $weather["rain_month"]*9.95+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_month"]>0){echo $weather["rain_month"]*14+1;}else echo '0'?>px;">      
 </div></div></div></div>
@@ -137,7 +137,7 @@ else if ($weather["rain_units"] =='mm' &&  $weather["rainydmax"]>=500){echo $wea
 else if ($weather["rain_units"] =='mm' &&  $weather["rainydmax"]>=400){echo $weather["rainydmax"]*0.0393701*2.25+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rainydmax"]>=300){echo $weather["rainydmax"]*0.0393701*3.15+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rainydmax"]>=200){echo $weather["rainydmax"]*0.0393701*3.65+1;}
-else if ($weather["rain_units"] =='mm' &&  $weather["rainydmax"]>=100){echo $weather["rainydmax"]*0.0393701*5+1;}
+else if ($weather["rain_units"] =='mm' &&  $weather["rainydmax"]>=100){echo $weather["rainydmax"]*0.0393701*5.75+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rainydmax"]>=50){echo $weather["rainydmax"]*0.0393701*9.95+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rainydmax"]>0){echo $weather["rainydmax"]*0.0393701*14+1;}
 //no metric
@@ -150,7 +150,7 @@ else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>=19.685){echo $w
 else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>=15.748){echo $weather["rainydmax"]*2.25+1;}
 else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>=11.811){echo $weather["rainydmax"]*3.15+1;}
 else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>=7.87402){echo $weather["rainydmax"]*3.65+1;}
-else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>=3.93701){echo $weather["rainydmax"]*5+1;}
+else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>=3.93701){echo $weather["rainydmax"]*5.75+1;}
 else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>=1.9685){echo $weather["rainydmax"]*9.95+1;}
 else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*14+1;}else echo '0'?>px;">      
 </div></div></div></div>
@@ -189,7 +189,7 @@ else if ($weather["rain_units"] =='mm' &&  $weather["rain_year"]>=500){echo $wea
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_year"]>=400){echo $weather["rain_year"]*0.0393701*2.25+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_year"]>=300){echo $weather["rain_year"]*0.0393701*3.15+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_year"]>=200){echo $weather["rain_year"]*0.0393701*3.65+1;}
-else if ($weather["rain_units"] =='mm' &&  $weather["rain_year"]>=100){echo $weather["rain_year"]*0.0393701*5.5+1;}
+else if ($weather["rain_units"] =='mm' &&  $weather["rain_year"]>=100){echo $weather["rain_year"]*0.0393701*5.75+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_year"]>=50){echo $weather["rain_year"]*0.0393701*9.95+1;}
 else if ($weather["rain_units"] =='mm' &&  $weather["rain_year"]>0){echo $weather["rain_year"]*0.0393701*14+1;}
 //no metric
@@ -202,7 +202,7 @@ else if ($weather["rain_units"] =='in' && $weather["rain_year"]>=19.685){echo $w
 else if ($weather["rain_units"] =='in' && $weather["rain_year"]>=15.748){echo $weather["rain_year"]*2.25+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_year"]>=11.811){echo $weather["rain_year"]*3.15+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_year"]>=7.87402){echo $weather["rain_year"]*3.65+1;}
-else if ($weather["rain_units"] =='in' && $weather["rain_year"]>=3.93701){echo $weather["rain_year"]*5.5+1;}
+else if ($weather["rain_units"] =='in' && $weather["rain_year"]>=3.93701){echo $weather["rain_year"]*5.75+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_year"]>=1.9685){echo $weather["rain_year"]*9.95+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_year"]>0){echo $weather["rain_year"]*14+1;}
 else echo '0'?>px;">      
