@@ -36,7 +36,11 @@ echo "<div class='rainfalltoday1'>",$weather["rain_today"] . "</value>";echo "<s
 </div></span>
  <!--weather34 rain beaker today-->
  <div id="raincontainer"><div id="weather34rainbeaker">
-<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rain_today"]>0){echo $weather["rain_today"]*0.0393701*15+1;}else if ($weather["rain_units"] =='in' && $weather["rain_today"]>0){echo $weather["rain_today"]*15+1;}
+<div id="weather34rainwater" style="height:<?php 
+if ($weather["rain_units"] =='mm' && $weather["rain_today"]>100){echo $weather["rain_today"]*0.0393701*9+1;}
+else if ($weather["rain_units"] =='in' && $weather["rain_today"]>3.93701){echo $weather["rain_today"]*9+1;}
+else if ($weather["rain_units"] =='mm' && $weather["rain_today"]>0){echo $weather["rain_today"]*0.0393701*15+1;}
+else if ($weather["rain_units"] =='in' && $weather["rain_today"]>0){echo $weather["rain_today"]*15+1;}
 else echo '0'?>px;">      
 </div></div></div></div>
 <div class="lotemp" ><windgusts>Today <?php echo date("l jS");?></windgusts></div>
@@ -53,7 +57,10 @@ else echo '0'?>px;">
 <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">  
 <!--weather34 rain beaker month-->          
  <div id="raincontainer"><div id="weather34rainbeaker">
-<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rain_month"]>0){echo $weather["rain_month"]*0.0393701*15+1;}
+<div id="weather34rainwater" style="height:<?php 
+if ($weather["rain_units"] =='mm' && $weather["rainmmax"]>100){echo $weather["rainmmax"]*0.0393701*9+1;}
+else if ($weather["rain_units"] =='in' && $weather["rainmmax"]>3.93701){echo $weather["rainmmax"]*9+1;}
+else if ($weather["rain_units"] =='mm' && $weather["rain_month"]>0){echo $weather["rain_month"]*0.0393701*15+1;}
 else if ($weather["rain_units"] =='in' && $weather["rain_month"]>0){echo $weather["rain_month"]*15+1;}else echo '0'?>px;">      
 </div></div></div></div>
 <?php // rain month
@@ -75,7 +82,10 @@ echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";echo "<s
 <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
 <!--weather34 rain beaker yesterday-->
  <div id="raincontainer"><div id="weather34rainbeaker">
-<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*0.0393701*15+1;}else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*15+1;}else echo '0'?>px;">      
+<div id="weather34rainwater" style="height:<?php 
+if ($weather["rain_units"] =='mm' && $weather["rainydmax"]>100){echo $weather["rainydmax"]*0.0393701*9+1;}
+else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>3.93701){echo $weather["rainydmax"]*9+1;}
+else if ($weather["rain_units"] =='mm' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*0.0393701*15+1;}else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*15+1;}else echo '0'?>px;">      
 </div></div></div></div>
 <!--weather34 end rain beaker yesterday-->       
 <?php //rain yesterday
@@ -102,7 +112,9 @@ echo "<div class='rainfalltoday1'>",$weather["rain_year"] . "</value>";echo "<sm
 <!--weather34 rain beaker year-->
  <div id="raincontainer"><div id="weather34rainbeaker">
 <div id="weather34rainwater" style="height:<?php 
-if ($weather["rain_units"] =='mm' && $weather["rainymax"]>0){echo $weather["rainymax"]*0.0393701*15+1;}
+if ($weather["rain_units"] =='mm' && $weather["rainymax"]>100){echo $weather["rainymax"]*0.0393701*9+1;}
+else if ($weather["rain_units"] =='in' && $weather["rainymax"]>3.93701){echo $weather["rainymax"]*9+1;}
+else if ($weather["rain_units"] =='mm' && $weather["rainymax"]>0){echo $weather["rainymax"]*0.0393701*15+1;}
 else if ($weather["rain_units"] =='in' && $weather["rainymax"]>0){echo $weather["rainymax"]*15+1;}else echo '0'?>px;">      
 </div></div></div></div>
  <!--weather34 end rain beaker year--> 
