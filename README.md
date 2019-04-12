@@ -1,7 +1,7 @@
 # This repository is maintained jointly by Brian Underdown & William Bailey (aka lightmaster)
 
 William will be maintaining on behalf of Brian Underdown whilst he ventures off for the next 6-12 months
-support is avaialble via the Github issues function or via email support@lightmaster.pw
+support is available via the Github issues function or via email support@lightmaster.pw
 
 
 # Meteobridge-Weather34-Template MB-UB40-FFT
