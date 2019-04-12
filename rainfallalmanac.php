@@ -12,7 +12,15 @@ actual{font-size:11px;float:right;position:absolute;left:130px;top:20px;-webkit-
 windgusts{position:absolute;top:10px;left:135px;font-size:0.4em;color:#aaa;background:rgba(86, 95, 103, 0.5);padding:4px;-webkit-border-radius:3px;border-radius:3px;font-family:"weathertext2",Helvetica, Arial, sans-serif;}grey{color:#aaa}supunit{font-size:0.9rem;vertical-align:top;}
 <!--weather34 rain beaker csss-->
 .rainfallcontainer1{left:10px;top:0}.rainfalltoday1{font-family:weathertext2,Arial,Helvetica,system;width:8.5rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.rainfalltoday1{font-size:1.9rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}.rainfallcaution,.rainfalltrend{position:absolute;font-size:1rem}.rainfalltoday1{background:rgba(68, 166, 181, 1.000)}.rainfallcaution{margin-left:120px;margin-top:112px;font-family:Arial,Helvetica,system}.rainfalltrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
-#weather34rainbeaker:before{left:-10px}.weather34i-rairate-bar{position:absolute;height:100px;width:100px;margin-left:-35px;margin-top:40px}#raincontainer{height:170px;overflow:hidden;position:absolute;width:208px;top:-15px;left:170px}#raincontainer div{position:absolute}#weather34rainbeaker{border:4px solid #393d40;border-top:0;-webkit-border-radius:0 0 2px 2px;-moz-border-radius:0 0 2px 2px;-o-border-radius:0 0 2px 2px;-ms-border-radius:0 0 2px 2px;border-radius:0 0 2px 2px;height:100px;left:14px;bottom:0;width:100px;background:url(css/rain/rainmarker.svg) center no-repeat}#weather34rainbeaker:after,#weather34rainbeaker:before{border:5px solid #393d40;border-bottom:0;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;-ms-border-radius:2px;border-radius:2px;content:'';height:5px;position:absolute;top:0;width:10px}#weather34rainbeaker:after{right:-10px}#weather34rainwater{background-color:rgba(0,154,171,.6);border:0;-webkit-border-radius:0 0 2px 2px;-moz-border-radius:0 0 2px 2px;-o-border-radius:0 0 2px 2px;-ms-border-radius:0 0 2px 2px;border-radius:0 0 2px 2px;bottom:0;max-height:90px;overflow:hidden;width:92px}.almanac{font-size:1.5em;margin-top:30px;color:rgba(56, 56, 60, 1.000);width:8em}
+#weather34rainbeaker:before{left:-10px}
+.weather34i-rairate-bar{position:absolute;height:70px;width:70px;margin-left:-35px;margin-top:40px}
+#raincontainer{height:70px;overflow:hidden;position:absolute;width:168px;top:70px;left:180px}
+#raincontainer div{position:absolute}
+#weather34rainbeaker{border:4px solid #393d40;border-top:0;-webkit-border-radius:0 0 2px 2px;-moz-border-radius:0 0 2px 2px;-o-border-radius:0 0 2px 2px;-ms-border-radius:0 0 2px 2px;border-radius:0 0 2px 2px;height:70px;left:14px;bottom:0;width:70px;background:url(css/rain/rainmarker.svg) center no-repeat}
+#weather34rainbeaker:after,#weather34rainbeaker:before{border:5px solid #393d40;border-bottom:0;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;-ms-border-radius:2px;border-radius:2px;content:'';height:5px;position:absolute;top:0;width:10px}
+#weather34rainbeaker:after{right:-10px}
+#weather34rainwater{background-color:rgba(0,154,171,.6);border:0;-webkit-border-radius:0 0 2px 2px;-moz-border-radius:0 0 2px 2px;-o-border-radius:0 0 2px 2px;-ms-border-radius:0 0 2px 2px;border-radius:0 0 2px 2px;bottom:0;max-height:70px;overflow:hidden;width:62px}
+.almanac{font-size:1.5em;margin-top:30px;color:rgba(56, 56, 60, 1.000);width:8em}
 </style>
 </head>
 <body>
@@ -28,7 +36,7 @@ echo "<div class='rainfalltoday1'>",$weather["rain_today"] . "</value>";echo "<s
 </div></span>
  <!--weather34 rain beaker today-->
  <div id="raincontainer"><div id="weather34rainbeaker">
-<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rain_today"]>0){echo $weather["rain_today"]*0.0393701*10+1;}else if ($weather["rain_units"] =='in' && $weather["rain_today"]>0){echo $weather["rain_today"]*10+1;}
+<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rain_today"]>0){echo $weather["rain_today"]*0.0393701*15+1;}else if ($weather["rain_units"] =='in' && $weather["rain_today"]>0){echo $weather["rain_today"]*15+1;}
 else echo '0'?>px;">      
 </div></div></div></div>
 <div class="lotemp" ><windgusts>Today <?php echo date("l jS");?></windgusts></div>
@@ -45,8 +53,8 @@ else echo '0'?>px;">
 <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">  
 <!--weather34 rain beaker month-->          
  <div id="raincontainer"><div id="weather34rainbeaker">
-<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rain_month"]>0){echo $weather["rain_month"]*0.0393701*10+1;}
-else if ($weather["rain_units"] =='in' && $weather["rain_month"]>0){echo $weather["rain_month"]*10+1;}else echo '0'?>px;">      
+<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rain_month"]>0){echo $weather["rain_month"]*0.0393701*15+1;}
+else if ($weather["rain_units"] =='in' && $weather["rain_month"]>0){echo $weather["rain_month"]*15+1;}else echo '0'?>px;">      
 </div></div></div></div>
 <?php // rain month
 echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
@@ -67,7 +75,7 @@ echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";echo "<s
 <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
 <!--weather34 rain beaker yesterday-->
  <div id="raincontainer"><div id="weather34rainbeaker">
-<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*0.0393701*10+1;}else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*10+1;}else echo '0'?>px;">      
+<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*0.0393701*15+1;}else if ($weather["rain_units"] =='in' && $weather["rainydmax"]>0){echo $weather["rainydmax"]*15+1;}else echo '0'?>px;">      
 </div></div></div></div>
 <!--weather34 end rain beaker yesterday-->       
 <?php //rain yesterday
@@ -93,7 +101,9 @@ echo "<div class='rainfalltoday1'>",$weather["rain_year"] . "</value>";echo "<sm
 <span class="weather34card__count-text--big">
 <!--weather34 rain beaker year-->
  <div id="raincontainer"><div id="weather34rainbeaker">
-<div id="weather34rainwater" style="height:<?php if ($weather["rain_units"] =='mm' && $weather["rainymax"]>0){echo $weather["rainymax"]*0.0393701*10+1;}else if ($weather["rain_units"] =='in' && $weather["rainymax"]>0){echo $weather["rainymax"]*10+1;}else echo '0'?>px;">      
+<div id="weather34rainwater" style="height:<?php 
+if ($weather["rain_units"] =='mm' && $weather["rainymax"]>0){echo $weather["rainymax"]*0.0393701*15+1;}
+else if ($weather["rain_units"] =='in' && $weather["rainymax"]>0){echo $weather["rainymax"]*15+1;}else echo '0'?>px;">      
 </div></div></div></div>
  <!--weather34 end rain beaker year--> 
   </span></div>
