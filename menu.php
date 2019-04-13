@@ -21,11 +21,13 @@ else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?><
 <li><a href=<?php if($theme=='dark'){echo'?theme=light';}else{echo'?theme=dark';}?>><?php echo $arrow34icon;?><?php if($theme=='dark'){echo' Light Theme';}else{echo' Dark Theme';}?></a></li>
 <p>
 <li><a href="#">UNITS</a></li>
-<?php if($units!='us'){
-	echo '<li> <a  href="./?units=us"> '.$arrow34icon.'  Non Metric  '.$weatherunitfm.'</a><br />  ';}if($units!='metric'){
-	echo '<li> <a  href="./?units=metric"> '.$arrow34icon.' Metric '.$weatherunitcm.'</a><br />  ';}if($units!='uk'){
-	echo '<li> <a  href="./?units=uk">  '.$arrow34icon.' UK ( MPH)  '.$weatherunitcm.'</a><br /> ';}if($units!='scandinavia'){
-	echo '<li> <a  href="./?units=scandinavia"> '.$arrow34icon.' M/S  '.$weatherunitcm.'</a>';}?>
+<?php 
+  if($units!=Null && $units!='default'){echo '<li> <a  href="./?units=default"> '.$arrow34icon.' Default Units</a><br />';}
+  if($units!='us'){echo '<li> <a  href="./?units=us"> '.$arrow34icon.'  Imperial  '.$weatherunitfm.'</a><br />  ';}
+  if($units!='metric'){echo '<li> <a  href="./?units=metric"> '.$arrow34icon.' Metric '.$weatherunitcm.'</a><br />  ';}
+  if($units!='uk'){echo '<li> <a  href="./?units=uk">  '.$arrow34icon.' UK ( MPH)  '.$weatherunitcm.'</a><br /> ';}
+  if($units!='scandinavia'){echo '<li> <a  href="./?units=scandinavia"> '.$arrow34icon.' M/S  '.$weatherunitcm.'</a>';}
+?>
 
 <li><a href="#">EXTRAS</a></li>
 <li>
