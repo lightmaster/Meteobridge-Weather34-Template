@@ -9,7 +9,7 @@ actual{font-size:11px;float:right;position:absolute;left:130px;top:20px;-webkit-
 .weather34browser-footer{flex-basis:auto;height:25px;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-40px;width:100%;}
 .weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#aaa;text-decoration:none}
 .weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:12px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
-windgusts{position:absolute;top:10px;left:135px;font-size:0.3em;color:#aaa;background:rgba(86, 95, 103, 0.5);padding:4px;-webkit-border-radius:3px;border-radius:3px;font-family:"weathertext2",Helvetica, Arial, sans-serif;}grey{color:#aaa}supunit{font-size:0.9rem;vertical-align:top;}
+windgusts{position:absolute;top:10px;left:135px;font-size:0.4em;color:#aaa;background:rgba(86, 95, 103, 0.5);padding:4px;-webkit-border-radius:3px;border-radius:3px;font-family:"weathertext2",Helvetica, Arial, sans-serif;}grey{color:#aaa}supunit{font-size:0.9rem;vertical-align:top;}
 <!--weather34 rain beaker csss-->
 .rainfallcontainer1{left:10px;top:0}.rainfalltoday1{font-family:weathertext2,Arial,Helvetica,system;width:7rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.rainfalltoday1{font-size:1.5rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}.rainfallcaution,.rainfalltrend{position:absolute;font-size:1rem}.rainfalltoday1{background:rgba(68, 166, 181, 1.000)}.rainfallcaution{margin-left:120px;margin-top:112px;font-family:Arial,Helvetica,system}.rainfalltrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 #weather34rainbeaker:before{left:-10px}
@@ -75,7 +75,7 @@ else echo '0'?>px;">
 </div></div></div></div>
 <div class="lotemp" ><windgusts>Today <?php echo date("l jS");?></windgusts></div>
  <!--weather34 end rain beaker today-->
-<div class="hitempy" style="width:165px;margin-top:0.5rem;font-size:.9em"><?php if (date('jS')==$rainlasttoday1){ echo $raininfo ." Last <blue>Rainfall </blue>",$rainlasttoday;} else echo $raininfo . "<blue>Rainfall</blue> Last Hour<blue> ", $weather["rain_lasthour"]."</blue> " .$weather["rain_units"] ?></div></div>
+<div class="hitempy" style="width:165px;margin-top:0.5rem;font-size:.85em"><?php if (date('jS')==$rainlasttoday1){ echo $raininfo ." Last <blue>Rainfall </blue>",$rainlasttoday;} else echo $raininfo . "<blue>Rainfall</blue> Last Hour<blue> ", $weather["rain_lasthour"]."</blue> " .$weather["rain_units"] ?></div></div>
 <div class=almanac>Precipitation Unit <metricsblue><?php echo $weather["rain_units"]?></metricsblue></div>
 <div class="weather34card__count-container"><div class="weather34card__count-text"></div></div>
 <div class="weather34card__stuff-container"><div class="weather34card__stuff-text"></div></div>
@@ -123,8 +123,8 @@ if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_month"]*0.0
 if($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]*25.400013716,2)."mm";}
 ?>
 </w34convertrain></div></span>
-<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo '<div class="hitempy" style="width:165px;margin-top:0.5rem;font-size:.9em">'.$raininfo," Last <blue>Rainfall </blue>";?>
-<?php if ($meteobridgeapi[124]=='--'){echo '<div class="hitempy" style="width:165px;margin-top:0.5rem;font-size:.9em">'.$raininfo," Last <blue>Rainfall</blue> N/A";}else echo " ".$rainlasttime?></orange></div>
+<?php if ($meteobridgeapi[124]=='--'){echo "";}else echo '<div class="hitempy" style="width:165px;margin-top:0.5rem;font-size:.85em">'.$raininfo," Last <blue>Rainfall </blue>";?>
+<?php if ($meteobridgeapi[124]=='--'){echo '<div class="hitempy" style="width:165px;margin-top:0.5rem;font-size:.85em">'.$raininfo," Last <blue>Rainfall</blue> N/A";}else echo " ".$rainlasttime?></orange></div>
 <div class="lotemp" ><windgusts>Rainfall Accumulated <?php echo date("F");?></windgusts></div>
 <div class=almanac>Precipitation Unit <metricsblue><?php echo $weather["rain_units"]?></metricsblue></div>
 <div class="weather34card__count-container"><div class="weather34card__count-textuv"><span class="weather34card__count-text--bigs">   
@@ -176,7 +176,7 @@ if($weather["rain_units"] =='mm'){ echo number_format($weather["rainydmax"]*0.03
 if($weather["rain_units"] =='in'){ echo number_format($weather["rainydmax"]*25.400013716,2)."mm";}
 ?>
 </w34convertrain></div> 
-<div class="hitempy" style="width:165px;margin-top:0.5rem;font-size:.9em"> <?php echo $raininfo?> 
+<div class="hitempy" style="width:165px;margin-top:0.5rem;font-size:.85em"> <?php echo $raininfo?> 
   <blue>Rainfall</blue> last 24 hrs <blue><?php echo $weather["rain_24hrs"] ."</blue> " .$weather["rain_units"];?></span>  
 </div></div>
 <div class="lotemp" ><windgusts> Yesterday <?php echo date("l jS", strtotime( '-1 days' ) );?></windgusts> </div>
