@@ -10,6 +10,12 @@ Github repository for the Meteobridge version of the original weather34 template
 Weather Template for Meteobridge users only , original info page found at https://weather34.com/homeweatherstation/
 all icons are produced and made by weather34 in svg format .
 
+# Basic Setup guide 
+https://weather34.com/homeweatherstation/guides/setup.html
+
+# Myqsl Setup Guide
+https://weather34.com/homeweatherstation/guides/setupmeteobridge.html
+
 # Weather34 Historic Timeline of design 2014-2019 
 https://weather34.com/homeweatherstation/weather34timeline/weather34timeline.html
 
