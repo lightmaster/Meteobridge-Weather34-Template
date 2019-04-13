@@ -69,7 +69,7 @@ $parsed_weather34wujson = json_decode($weather34wuurl,false);
    
    
    //weather34 wu alerts rain  
-  if ($wuskythunder1>0 ){echo '<spanelightning><alertvalue>Expect<orange> Thunder Storms</orange> This Week <alertadvisory>'.$newalert.'</alertadvisory>
+    else if ($wuskythunder1>0 ){echo '<spanelightning><alertvalue>Expect<orange> Thunder Storms</orange> This Week <alertadvisory>'.$newalert.'</alertadvisory>
    </spanelightning></div></div></div>';}
     else if ($wuskythunder2>0 ){echo '<spanelightning><alertvalue>Expect<orange> Thunder Storms</orange> This Week <alertadvisory>'.$newalert.'</alertadvisory>
    </spanelightning></div></div></div>';}
