@@ -22,7 +22,7 @@ else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?><
 <p>
 <li><a href="#">UNITS</a></li>
 <?php 
-  if($units!=Null && $units!='default'){echo '<li> <a  href="./?units=default"> '.$arrow34icon.' Default Units</a><br />';}
+  if($units!=Null && $units!='default'){echo '<li> <a  href="./?units=default"> '.$arrow34icon.' Default Units '.(($tempunit=='F')?$weatherunitfm:$weatherunitcm).'</a><br />';}
   if($units!='us'){echo '<li> <a  href="./?units=us"> '.$arrow34icon.'  Imperial  '.$weatherunitfm.'</a><br />  ';}
   if($units!='metric'){echo '<li> <a  href="./?units=metric"> '.$arrow34icon.' Metric '.$weatherunitcm.'</a><br />  ';}
   if($units!='uk'){echo '<li> <a  href="./?units=uk">  '.$arrow34icon.' UK ( MPH)  '.$weatherunitcm.'</a><br /> ';}
