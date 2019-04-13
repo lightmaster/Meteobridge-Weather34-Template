@@ -6,9 +6,7 @@ support is available via the Github issues function or via email support@lightma
 
 # Meteobridge-Weather34-Template MB-UB40-FFT
 Github repository for the Meteobridge version of the original weather34 template 
-
-Weather Template for Meteobridge users only , original info page found at https://weather34.com/homeweatherstation/
-all icons are produced and made by weather34 in svg format .
+Weather Template for Meteobridge users only 
 
 # Basic Setup guide 
 https://weather34.com/homeweatherstation/guides/setup.html
