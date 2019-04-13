@@ -20,11 +20,13 @@ else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?><
 <?php if($theme=='dark'){echo' <weather34menumarkerlight></weather34menumarkerlight> Light Mode';}else{echo'<weather34menumarkerbluegrey></weather34menumarkerbluegrey> Dark Mode';}?></a></li>
 <p>
 <li><a href="#">UNITS</a></li>
-<?php
-if($units!='us'){echo '<li> <a  href="./?units=us"> <weather34menumarkerorange></weather34menumarkerorange>  Imperial <topbarimperialf>&deg;F</topbarimperialf> </a><br />  ';}
-if($units!='metric'){echo '<li> <a  href="./?units=metric"> <weather34menumarkerblue></weather34menumarkerblue> Metric <topbarmetricc>&deg;C</topbarmetricc></a><br />  ';}
-if($units!='uk'){echo '<li> <a  href="./?units=uk"> <weather34menumarkeryellow></weather34menumarkeryellow> UK ( MPH) <topbarmetricc>&deg;C</topbarmetricc></a><br /> ';}
-if($units!='scandinavia'){echo '<li> <a  href="./?units=scandinavia"><weather34menumarkerred></weather34menumarkerred> M/S  <topbarmetricc>&deg;C</topbarmetricc></a><br /> ';}?>
+<?php 
+  if($units!=Null && $units!='default'){echo '<li> <a  href="./?units=default"> <weather34menumarkerred></weather34menumarkerred> Default Units '.(($tempunit=='F')?echo '<topbarimperialf>&deg;F</topbarimperialf>':echo '<topbarmetricc>&deg;C</topbarmetricc>').'</a><br />';}
+  if($units!='us'){echo '<li> <a  href="./?units=us"> <weather34menumarkerorange></weather34menumarkerorange>  Imperial  <topbarimperialf>&deg;F</topbarimperialf> </a><br />  ';}
+  if($units!='metric'){echo '<li> <a  href="./?units=metric"> <weather34menumarkerblue></weather34menumarkerblue> Metric <topbarmetricc>&deg;C</topbarmetricc></a><br />  ';}
+  if($units!='uk'){echo '<li> <a  href="./?units=uk">  <weather34menumarkeryellow></weather34menumarkeryellow> UK ( MPH)  <topbarmetricc>&deg;C</topbarmetricc></a><br /> ';}
+  if($units!='scandinavia'){echo '<li> <a  href="./?units=scandinavia"> <weather34menumarkerred></weather34menumarkerred> M/S  <topbarmetricc>&deg;C</topbarmetricc></a>';}
+?>
 
 <li><a href="#">EXTRAS</a></li>
 <li>
