@@ -41,11 +41,18 @@ Toulouse Meteo
 
 
 # Alternative versions 
-you may also find the Cumulus version maintained by Ken True (Saratoga) at https://github.com/ktrue/CU-HWS
 
-you may also find a Weewx version maintained by Ian Millard is also avaialble via https://github.com/steepleian/WX-HWS
+# Cumulus
+you can find the Cumulus version maintained by Ken True (Saratoga) at 
+https://github.com/ktrue/CU-HWS
 
+# Weewx
+you can find a Weewx version maintained by Ian Millard is also avaialble via 
+https://github.com/steepleian/WX-HWS
 
+# Weatherflow
+you can find a Weatherflow version not maintained fully tested as of April 13th 2019 
+https://github.com/weather34/Weather34-Weatherflow
 
 
 # This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
