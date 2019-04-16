@@ -2,7 +2,7 @@
 
 William will be maintaining the weather34 template from now on .
 Support is available via the Github issues function or via email support@lightmaster.pw
-Weather34 will no longer make any more contributuions as not to confuse ideas going forward and allow
+.Weather34 will no longer make any more contributuions as not to confuse ideas going forward and allow
 new ideas ideas and improvements to existing code to be implemented without delay..
 It has been an enjoyable challenging ride and feel free to contribute via 
 https://github.com/weather34/Meteobridge-Weather34-Template/issues
