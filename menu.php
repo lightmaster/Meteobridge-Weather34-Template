@@ -64,6 +64,6 @@ else echo "";?>
      <!---credits---> 
      <?php // please do not remove this and if so no support is given and your domain will be blacklisted it is not much to ask //?>
      <li><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="https://github.com/weather34/Meteobridge-Weather34-Template/" target="_blank"><?php echo $github;?> Designed by weather34.com</a></li>
-     <?php // Maintained by William Bailey https://lightmaster.pw //?>
-     <li><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="https://github.com/weather34/Meteobridge-Weather34-Template/" target="_blank"><?php echo $github;?> Maintained by William Bailey</a></li>
+     <?php // Maintained by Lightmaster https://lightmaster.pw //?>
+     <li><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="https://github.com/weather34/Meteobridge-Weather34-Template/" target="_blank"><?php echo $github;?> Maintained by Lightmaster</a></li>
      </div></div></header>  
