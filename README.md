@@ -1,4 +1,4 @@
-# This repository is maintained jointly by Brian Underdown & William Bailey (aka lightmaster)
+# This repository is maintained William (aka lightmaster)
 
 William will be maintaining on behalf of Brian Underdown whilst he ventures off for the next 6-12 months
 support is available via the Github issues function or via email support@lightmaster.pw
@@ -6,9 +6,13 @@ support is available via the Github issues function or via email support@lightma
 
 # Meteobridge-Weather34-Template MB-UB40-FFT
 Github repository for the Meteobridge version of the original weather34 template 
+Weather Template for Meteobridge users only 
 
-Weather Template for Meteobridge users only , original info page found at https://weather34.com/homeweatherstation/
-all icons are produced and made by weather34 in svg format .
+# Basic Setup guide 
+https://weather34.com/homeweatherstation/guides/setup.html
+
+# Myqsl Setup Guide
+https://weather34.com/homeweatherstation/guides/setupmeteobridge.html
 
 # Weather34 Historic Timeline of design 2014-2019 
 https://weather34.com/homeweatherstation/weather34timeline/weather34timeline.html
@@ -37,11 +41,18 @@ Toulouse Meteo
 
 
 # Alternative versions 
-you may also find the Cumulus version maintained by Ken True (Saratoga) at https://github.com/ktrue/CU-HWS
 
-you may also find a Weewx version maintained by Ian Millard is also avaialble via https://github.com/steepleian/WX-HWS
+# Cumulus
+you can find the Cumulus version maintained by Ken True (Saratoga) at 
+https://github.com/ktrue/CU-HWS
 
+# Weewx
+you can find a Weewx version maintained by Ian Millard is also avaialble via 
+https://github.com/steepleian/WX-HWS
 
+# Weatherflow
+you can find a Weatherflow version not maintained fully tested as of April 13th 2019 
+https://github.com/weather34/Weather34-Weatherflow
 
 
 # This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
