@@ -46,7 +46,7 @@ curl_close ($ch);
 ?>
 
 <?php
-if ($position6=="forecast3ds.php" || $position6=='forecast3wu.php' || $position6=='forecast3wularge.php'){
+if ($position6=="forecast3ds.php" || $position6=='forecast3wu.php' || $position6=='forecast3wularge.php' || $position4   = "advisory.php"){
 // weather34 darksky  curl based
 $url4a = 'https://api.forecast.io/forecast/'.$apikey.'/'.$lat.','.$lon.'?lang='.$language.'&units='.$darkskyunit ;
 $ch4a = curl_init($url4a);
