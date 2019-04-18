@@ -1,20 +1,23 @@
 # This repository is maintained William (aka lightmaster)
 
-William will be maintaining on behalf of Brian Underdown whilst he ventures off for the next 6-12 months
-support is available via the Github issues function or via email support@lightmaster.pw
-
+William will be maintaining the weather34 template from now on .
+Support is available via the Github issues function or via email support@lightmaster.pw
+.Weather34 will no longer make any more contributuions as not to confuse ideas going forward and allow
+new ideas ideas and improvements to existing code to be implemented without delay..
+It has been an enjoyable challenging ride and feel free to contribute via 
+https://github.com/weather34/Meteobridge-Weather34-Template/issues
 
 # Meteobridge-Weather34-Template MB-UB40-FFT
 Github repository for the Meteobridge version of the original weather34 template 
 Weather Template for Meteobridge users only 
 
-# Basic Setup guide 
+# Basic Setup guide (url valid upto May30th 2019)
 https://weather34.com/homeweatherstation/guides/setup.html
 
-# Myqsl Setup Guide
+# Myqsl Setup Guide (url valid upto May30th 2019)
 https://weather34.com/homeweatherstation/guides/setupmeteobridge.html
 
-# Weather34 Historic Timeline of design 2014-2019 
+# Weather34 Historic Timeline of design 2014-2019 (url valid upto May30th 2019)
 https://weather34.com/homeweatherstation/weather34timeline/weather34timeline.html
 
 # Meteobridge Version Screenshot MB-UB40-FFT
