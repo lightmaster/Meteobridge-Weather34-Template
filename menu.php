@@ -36,7 +36,7 @@ else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?><
       <li><!---webcam---> <a href="cam.php" data-featherlight="iframe" title="WEATHERSTATION WEBCAM"> <?php echo $webcam34icon;?> Web Cam </a></li>  
       <li><!--info---> <a href="bio.php" data-featherlight="iframe" title="Contact WEATHERSTATION Info"> <?php echo $svgmailmenu;?> Contact Info</a></li> 
       <li><!--info---> <a href="stationinfo.php" data-featherlight="iframe" title="Hardware WEATHERSTATION Info"> <?php echo $info;?> Hardware Info</a></li>   
-
+      <li><!--info---> <a href="weather34_template_info.php" data-featherlight="iframe" title="weather34 Template Info"> <?php echo $info;?> Template Info</a></li>
       <!---languages---> 
       <br>
       <?php if($languages=="yes") echo '<li><a href="">
