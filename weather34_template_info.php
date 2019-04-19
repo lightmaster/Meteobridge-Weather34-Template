@@ -3,7 +3,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Weather34 Weather Station Hardware Info card</title>  
+  <title>Weather34 Weather Station Template Info card</title>  
  <style>
  @charset "UTF-8";/*!
  * Flexgrid v2.2.0 (https://flexgrid.co)
