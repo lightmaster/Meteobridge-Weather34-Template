@@ -10,20 +10,19 @@
  * Copyright 2015-2017 Morten Sørensen (morten@moso.io)
  * Licensed under MIT (https://github.com/moso/flexgrid/blob/master/LICENSE)
  */*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}body{margin:0}.container,.container\:fluid{margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem}.container{width:100%}@media (min-width:34rem){.container{width:36rem}}@media (min-width:48rem){.container{width:45rem}}@media (min-width:62rem){.container{width:59rem}}@media (min-width:75rem){.container{width:72rem}}.container\:fluid{width:100%}.row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-1rem;margin-left:-1rem}.lg,.lg\:1,.lg\:10,.lg\:11,.lg\:12,.lg\:2,.lg\:3,.lg\:4,.lg\:5,.lg\:6,.lg\:7,.lg\:8,.lg\:9,.lg\:auto,.md,.md\:1,.md\:10,.md\:11,.md\:12,.md\:2,.md\:3,.md\:4,.md\:5,.md\:6,.md\:7,.md\:8,.md\:9,.md\:auto,.sm,.sm\:1,.sm\:10,.sm\:11,.sm\:12,.sm\:2,.sm\:3,.sm\:4,.sm\:5,.sm\:6,.sm\:7,.sm\:8,.sm\:9,.sm\:auto,.xl,.xl\:1,.xl\:10,.xl\:11,.xl\:12,.xl\:2,.xl\:3,.xl\:4,.xl\:5,.xl\:6,.xl\:7,.xl\:8,.xl\:9,.xl\:auto,.xs,.xs\:1,.xs\:10,.xs\:11,.xs\:12,.xs\:2,.xs\:3,.xs\:4,.xs\:5,.xs\:6,.xs\:7,.xs\:8,.xs\:9,.xs\:auto{position:relative;min-height:1px;width:100%;padding-left:1rem;padding-right:1rem}.xs{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}.xs\:auto{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;max-width:none}.xs\:1{-webkit-box-flex:0;-ms-flex:0 0 8.33333333%;flex:0 0 8.33333333%;max-width:8.33333333%}.xs\:2,.xs\:3{-webkit-box-flex:0}.xs\:2{-ms-flex:0 0 16.66666667%;flex:0 0 16.66666667%;max-width:16.66666667%}.xs\:3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.xs\:4,.xs\:5{-webkit-box-flex:0}.xs\:4{-ms-flex:0 0 33.33333333%;flex:0 0 33.33333333%;max-width:33.33333333%}.xs\:5{-ms-flex:0 0 41.66666667%;flex:0 0 41.66666667%;max-width:41.66666667%}.xs\:6,.xs\:7{-webkit-box-flex:0}.xs\:6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.xs\:7{-ms-flex:0 0 58.33333333%;flex:0 0 58.33333333%;max-width:58.33333333%}.xs\:8,.xs\:9{-webkit-box-flex:0}.xs\:8{-ms-flex:0 0 66.66666667%;flex:0 0 66.66666667%;max-width:66.66666667%}.xs\:9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.xs\:10,.xs\:11{-webkit-box-flex:0}.xs\:10{-ms-flex:0 0 83.33333333%;flex:0 0 83.33333333%;max-width:83.33333333%}.xs\:11{-ms-flex:0 0 91.66666667%;flex:0 0 91.66666667%;max-width:91.66666667%}.xs\:12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.xs\:pull\:1{right:8.33333333%}.xs\:pull\:2{right:16.66666667%}.xs\:pull\:3{right:25%}.xs\:pull\:4{right:33.33333333%}.xs\:pull\:5{right:41.66666667%}.xs\:pull\:6{right:50%}.xs\:pull\:7{right:58.33333333%}.xs\:pull\:8{right:66.66666667%}.xs\:pull\:9{right:75%}.xs\:pull\:10{right:83.33333333%}.xs\:pull\:11{right:91.66666667%}.xs\:pull\:12{right:100%}.xs\:push\:1{left:8.33333333%}.xs\:push\:2{left:16.66666667%}.xs\:push\:3{left:25%}.xs\:push\:4{left:33.33333333%}.xs\:push\:5{left:41.66666667%}.xs\:push\:6{left:50%}.xs\:push\:7{left:58.33333333%}.xs\:push\:8{left:66.66666667%}.xs\:push\:9{left:75%}.xs\:push\:10{left:83.33333333%}.xs\:push\:11{left:91.66666667%}.xs\:push\:12{left:100%}.xs\:offset\:0{margin-left:0}.xs\:offset\:1{margin-left:8.33333333%}.xs\:offset\:2{margin-left:16.66666667%}.xs\:offset\:3{margin-left:25%}.xs\:offset\:4{margin-left:33.33333333%}.xs\:offset\:5{margin-left:41.66666667%}.xs\:offset\:6{margin-left:50%}.xs\:offset\:7{margin-left:58.33333333%}.xs\:offset\:8{margin-left:66.66666667%}.xs\:offset\:9{margin-left:75%}.xs\:offset\:10{margin-left:83.33333333%}.xs\:offset\:11{margin-left:91.66666667%}@media (min-width:34rem){.sm{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}.sm\:auto{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;max-width:none}.sm\:1{-webkit-box-flex:0;-ms-flex:0 0 8.33333333%;flex:0 0 8.33333333%;max-width:8.33333333%}.sm\:2,.sm\:3{-webkit-box-flex:0}.sm\:2{-ms-flex:0 0 16.66666667%;flex:0 0 16.66666667%;max-width:16.66666667%}.sm\:3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.sm\:4,.sm\:5{-webkit-box-flex:0}.sm\:4{-ms-flex:0 0 33.33333333%;flex:0 0 33.33333333%;max-width:33.33333333%}.sm\:5{-ms-flex:0 0 41.66666667%;flex:0 0 41.66666667%;max-width:41.66666667%}.sm\:6,.sm\:7{-webkit-box-flex:0}.sm\:6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.sm\:7{-ms-flex:0 0 58.33333333%;flex:0 0 58.33333333%;max-width:58.33333333%}.sm\:8,.sm\:9{-webkit-box-flex:0}.sm\:8{-ms-flex:0 0 66.66666667%;flex:0 0 66.66666667%;max-width:66.66666667%}.sm\:9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.sm\:10,.sm\:11{-webkit-box-flex:0}.sm\:10{-ms-flex:0 0 83.33333333%;flex:0 0 83.33333333%;max-width:83.33333333%}.sm\:11{-ms-flex:0 0 91.66666667%;flex:0 0 91.66666667%;max-width:91.66666667%}.sm\:12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.sm\:pull\:1{right:8.33333333%}.sm\:pull\:2{right:16.66666667%}.sm\:pull\:3{right:25%}.sm\:pull\:4{right:33.33333333%}.sm\:pull\:5{right:41.66666667%}.sm\:pull\:6{right:50%}.sm\:pull\:7{right:58.33333333%}.sm\:pull\:8{right:66.66666667%}.sm\:pull\:9{right:75%}.sm\:pull\:10{right:83.33333333%}.sm\:pull\:11{right:91.66666667%}.sm\:pull\:12{right:100%}.sm\:push\:1{left:8.33333333%}.sm\:push\:2{left:16.66666667%}.sm\:push\:3{left:25%}.sm\:push\:4{left:33.33333333%}.sm\:push\:5{left:41.66666667%}.sm\:push\:6{left:50%}.sm\:push\:7{left:58.33333333%}.sm\:push\:8{left:66.66666667%}.sm\:push\:9{left:75%}.sm\:push\:10{left:83.33333333%}.sm\:push\:11{left:91.66666667%}.sm\:push\:12{left:100%}.sm\:offset\:0{margin-left:0}.sm\:offset\:1{margin-left:8.33333333%}.sm\:offset\:2{margin-left:16.66666667%}.sm\:offset\:3{margin-left:25%}.sm\:offset\:4{margin-left:33.33333333%}.sm\:offset\:5{margin-left:41.66666667%}.sm\:offset\:6{margin-left:50%}.sm\:offset\:7{margin-left:58.33333333%}.sm\:offset\:8{margin-left:66.66666667%}.sm\:offset\:9{margin-left:75%}.sm\:offset\:10{margin-left:83.33333333%}.sm\:offset\:11{margin-left:91.66666667%}}@media (min-width:48rem){.md{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}.md\:auto{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;max-width:none}.md\:1{-webkit-box-flex:0;-ms-flex:0 0 8.33333333%;flex:0 0 8.33333333%;max-width:8.33333333%}.md\:2,.md\:3{-webkit-box-flex:0}.md\:2{-ms-flex:0 0 16.66666667%;flex:0 0 16.66666667%;max-width:16.66666667%}.md\:3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.md\:4,.md\:5{-webkit-box-flex:0}.md\:4{-ms-flex:0 0 33.33333333%;flex:0 0 33.33333333%;max-width:33.33333333%}.md\:5{-ms-flex:0 0 41.66666667%;flex:0 0 41.66666667%;max-width:41.66666667%}.md\:6,.md\:7{-webkit-box-flex:0}.md\:6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.md\:7{-ms-flex:0 0 58.33333333%;flex:0 0 58.33333333%;max-width:58.33333333%}.md\:8,.md\:9{-webkit-box-flex:0}.md\:8{-ms-flex:0 0 66.66666667%;flex:0 0 66.66666667%;max-width:66.66666667%}.md\:9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.md\:10,.md\:11{-webkit-box-flex:0}.md\:10{-ms-flex:0 0 83.33333333%;flex:0 0 83.33333333%;max-width:83.33333333%}.md\:11{-ms-flex:0 0 91.66666667%;flex:0 0 91.66666667%;max-width:91.66666667%}.md\:12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.md\:pull\:1{right:8.33333333%}.md\:pull\:2{right:16.66666667%}.md\:pull\:3{right:25%}.md\:pull\:4{right:33.33333333%}.md\:pull\:5{right:41.66666667%}.md\:pull\:6{right:50%}.md\:pull\:7{right:58.33333333%}.md\:pull\:8{right:66.66666667%}.md\:pull\:9{right:75%}.md\:pull\:10{right:83.33333333%}.md\:pull\:11{right:91.66666667%}.md\:pull\:12{right:100%}.md\:push\:1{left:8.33333333%}.md\:push\:2{left:16.66666667%}.md\:push\:3{left:25%}.md\:push\:4{left:33.33333333%}.md\:push\:5{left:41.66666667%}.md\:push\:6{left:50%}.md\:push\:7{left:58.33333333%}.md\:push\:8{left:66.66666667%}.md\:push\:9{left:75%}.md\:push\:10{left:83.33333333%}.md\:push\:11{left:91.66666667%}.md\:push\:12{left:100%}.md\:offset\:0{margin-left:0}.md\:offset\:1{margin-left:8.33333333%}.md\:offset\:2{margin-left:16.66666667%}.md\:offset\:3{margin-left:25%}.md\:offset\:4{margin-left:33.33333333%}.md\:offset\:5{margin-left:41.66666667%}.md\:offset\:6{margin-left:50%}.md\:offset\:7{margin-left:58.33333333%}.md\:offset\:8{margin-left:66.66666667%}.md\:offset\:9{margin-left:75%}.md\:offset\:10{margin-left:83.33333333%}.md\:offset\:11{margin-left:91.66666667%}}@media (min-width:62rem){.lg{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}.lg\:auto{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;max-width:none}.lg\:1{-webkit-box-flex:0;-ms-flex:0 0 8.33333333%;flex:0 0 8.33333333%;max-width:8.33333333%}.lg\:2,.lg\:3{-webkit-box-flex:0}.lg\:2{-ms-flex:0 0 16.66666667%;flex:0 0 16.66666667%;max-width:16.66666667%}.lg\:3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.lg\:4,.lg\:5{-webkit-box-flex:0}.lg\:4{-ms-flex:0 0 33.33333333%;flex:0 0 33.33333333%;max-width:33.33333333%}.lg\:5{-ms-flex:0 0 41.66666667%;flex:0 0 41.66666667%;max-width:41.66666667%}.lg\:6,.lg\:7{-webkit-box-flex:0}.lg\:6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.lg\:7{-ms-flex:0 0 58.33333333%;flex:0 0 58.33333333%;max-width:58.33333333%}.lg\:8,.lg\:9{-webkit-box-flex:0}.lg\:8{-ms-flex:0 0 66.66666667%;flex:0 0 66.66666667%;max-width:66.66666667%}.lg\:9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.lg\:10,.lg\:11{-webkit-box-flex:0}.lg\:10{-ms-flex:0 0 83.33333333%;flex:0 0 83.33333333%;max-width:83.33333333%}.lg\:11{-ms-flex:0 0 91.66666667%;flex:0 0 91.66666667%;max-width:91.66666667%}.lg\:12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.lg\:pull\:1{right:8.33333333%}.lg\:pull\:2{right:16.66666667%}.lg\:pull\:3{right:25%}.lg\:pull\:4{right:33.33333333%}.lg\:pull\:5{right:41.66666667%}.lg\:pull\:6{right:50%}.lg\:pull\:7{right:58.33333333%}.lg\:pull\:8{right:66.66666667%}.lg\:pull\:9{right:75%}.lg\:pull\:10{right:83.33333333%}.lg\:pull\:11{right:91.66666667%}.lg\:pull\:12{right:100%}.lg\:push\:1{left:8.33333333%}.lg\:push\:2{left:16.66666667%}.lg\:push\:3{left:25%}.lg\:push\:4{left:33.33333333%}.lg\:push\:5{left:41.66666667%}.lg\:push\:6{left:50%}.lg\:push\:7{left:58.33333333%}.lg\:push\:8{left:66.66666667%}.lg\:push\:9{left:75%}.lg\:push\:10{left:83.33333333%}.lg\:push\:11{left:91.66666667%}.lg\:push\:12{left:100%}.lg\:offset\:0{margin-left:0}.lg\:offset\:1{margin-left:8.33333333%}.lg\:offset\:2{margin-left:16.66666667%}.lg\:offset\:3{margin-left:25%}.lg\:offset\:4{margin-left:33.33333333%}.lg\:offset\:5{margin-left:41.66666667%}.lg\:offset\:6{margin-left:50%}.lg\:offset\:7{margin-left:58.33333333%}.lg\:offset\:8{margin-left:66.66666667%}.lg\:offset\:9{margin-left:75%}.lg\:offset\:10{margin-left:83.33333333%}.lg\:offset\:11{margin-left:91.66666667%}}@media (min-width:75rem){.xl{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}.xl\:auto{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;max-width:none}.xl\:1{-webkit-box-flex:0;-ms-flex:0 0 8.33333333%;flex:0 0 8.33333333%;max-width:8.33333333%}.xl\:2,.xl\:3{-webkit-box-flex:0}.xl\:2{-ms-flex:0 0 16.66666667%;flex:0 0 16.66666667%;max-width:16.66666667%}.xl\:3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.xl\:4,.xl\:5{-webkit-box-flex:0}.xl\:4{-ms-flex:0 0 33.33333333%;flex:0 0 33.33333333%;max-width:33.33333333%}.xl\:5{-ms-flex:0 0 41.66666667%;flex:0 0 41.66666667%;max-width:41.66666667%}.xl\:6,.xl\:7{-webkit-box-flex:0}.xl\:6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.xl\:7{-ms-flex:0 0 58.33333333%;flex:0 0 58.33333333%;max-width:58.33333333%}.xl\:8,.xl\:9{-webkit-box-flex:0}.xl\:8{-ms-flex:0 0 66.66666667%;flex:0 0 66.66666667%;max-width:66.66666667%}.xl\:9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.xl\:10,.xl\:11{-webkit-box-flex:0}.xl\:10{-ms-flex:0 0 83.33333333%;flex:0 0 83.33333333%;max-width:83.33333333%}.xl\:11{-ms-flex:0 0 91.66666667%;flex:0 0 91.66666667%;max-width:91.66666667%}.xl\:12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.xl\:pull\:1{right:8.33333333%}.xl\:pull\:2{right:16.66666667%}.xl\:pull\:3{right:25%}.xl\:pull\:4{right:33.33333333%}.xl\:pull\:5{right:41.66666667%}.xl\:pull\:6{right:50%}.xl\:pull\:7{right:58.33333333%}.xl\:pull\:8{right:66.66666667%}.xl\:pull\:9{right:75%}.xl\:pull\:10{right:83.33333333%}.xl\:pull\:11{right:91.66666667%}.xl\:pull\:12{right:100%}.xl\:push\:1{left:8.33333333%}.xl\:push\:2{left:16.66666667%}.xl\:push\:3{left:25%}.xl\:push\:4{left:33.33333333%}.xl\:push\:5{left:41.66666667%}.xl\:push\:6{left:50%}.xl\:push\:7{left:58.33333333%}.xl\:push\:8{left:66.66666667%}.xl\:push\:9{left:75%}.xl\:push\:10{left:83.33333333%}.xl\:push\:11{left:91.66666667%}.xl\:push\:12{left:100%}.xl\:offset\:0{margin-left:0}.xl\:offset\:1{margin-left:8.33333333%}.xl\:offset\:2{margin-left:16.66666667%}.xl\:offset\:3{margin-left:25%}.xl\:offset\:4{margin-left:33.33333333%}.xl\:offset\:5{margin-left:41.66666667%}.xl\:offset\:6{margin-left:50%}.xl\:offset\:7{margin-left:58.33333333%}.xl\:offset\:8{margin-left:66.66666667%}.xl\:offset\:9{margin-left:75%}.xl\:offset\:10{margin-left:83.33333333%}.xl\:offset\:11{margin-left:91.66666667%}}.xs\:first{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.xs\:last{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}.xs\:top{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.xs\:middle{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.xs\:bottom{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.xs\:start{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.xs\:center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.xs\:end{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.xs\:around{-ms-flex-pack:distribute;justify-content:space-around}.xs\:between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}@media (min-width:34rem){.sm\:first{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.sm\:last{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}.sm\:top{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.sm\:middle{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.sm\:bottom{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.sm\:start{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.sm\:center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.sm\:end{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.sm\:around{-ms-flex-pack:distribute;justify-content:space-around}.sm\:between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}@media (min-width:48rem){.md\:first{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.md\:last{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}.md\:top{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.md\:middle{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.md\:bottom{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.md\:start{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.md\:center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.md\:end{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.md\:around{-ms-flex-pack:distribute;justify-content:space-around}.md\:between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}@media (min-width:62rem){.lg\:first{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.lg\:last{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}.lg\:top{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.lg\:middle{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.lg\:bottom{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.lg\:start{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.lg\:center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.lg\:end{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.lg\:around{-ms-flex-pack:distribute;justify-content:space-around}.lg\:between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}@media (min-width:75rem){.xl\:first{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.xl\:last{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}.xl\:top{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.xl\:middle{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.xl\:bottom{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.xl\:start{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.xl\:center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.xl\:end{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.xl\:around{-ms-flex-pack:distribute;justify-content:space-around}.xl\:between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}html{font-size:15px}.container\:fluid,.container\:fluid>.row,body,html{height:95%}body{background-color:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:1rem;color:#222}@media (min-width:576px){.container\:fluid>.row .xl{max-width:460px}}
- .card{display:flex;flex-direction:column;margin:1rem 0;background-color:#f8f8f8;height:400px;margin-top:10px}
+ .card{display:flex;flex-direction:column;margin:1rem 0;background-color:#f8f8f8;height:380px;margin-top:35px;text-align:left;}
  .card .card\:header{display:flex;width:100%;padding:1rem;background-color:rgba(86, 95, 103, 1.000);color:#eee}
- .card .card\:header .card\:info{height:57px;display:flex;flex-direction:column;justify-content:center}
- .card .card\:header .card\:info h3{margin:0 0 5px;font-weight:600;line-height:1;font-size:.9em}
+ .card .card\:header .card\:info{hdisplay:flex;flex-direction:column;justify-content:left}
+ .card .card\:header .card\:info h3{margin:0 0 5px;font-weight:500;line-height:1;font-size:.85em;text-align:left;}
  .card .card\:header .card\:info p{margin:0;font-weight:500;line-height:1
- }.card .card\:header .card\:image{display:flex;align-items:center;height:57px;margin-left:auto}
+ }.card .card\:header .card\:image{display:flex;align-items:left;height:57px;margin-left:auto}
  .card .card\:header .card\:image img{width:auto;height:57px;border-radius:0;border:0}
  .card .card\:content ul{margin:0;padding:0;list-style:none}
- .card .card\:content ul li{margin-top:60px;height:70px;display:flex;padding:1rem 1.5rem;text-decoration:none;outline:0}
+ .card .card\:content ul li{margin-top:20px;height:80px;display:flex;padding:1rem;text-decoration:none;outline:0}
  .card .card\:content ul li,.card .card\:content ul li a:focus{background-color:rgba(45,56,68,0)}
- .card .card\:content ul li .collection{display:flex;flex-direction:row}
- .card .card\:content ul li .collection .collection\:icon{display:flex;align-items:center;width:43px;height:47px}.card .card\:content ul li .collection .collection\:data{display:flex;flex-direction:column;justify-content:center;height:47px;margin-left:1.5rem}.card .card\:content ul li .collection .collection\:data h3{margin:0;font-size:1.1rem;color:#565f67}
- .card .card\:content ul li .collection .collection\:data span{font-size:.8rem;font-weight:500;color:#38383c;float:left;text-align:left;}
- 
+ .card .card\:content ul li .collection{display:flex;flex-direction:row;text-align:left;}
+ .card .card\:content ul li .collection .collection\:icon{display:flex;align-items:left;}.card .card\:content ul li .collection .collection\:data{display:flex;flex-direction:column;justify-content:left;height:47px;margin-left:1.5rem;text-align:left;}.card .card\:content ul li .collection .collection\:data h3{margin:0;font-size:1rem;color:#565f67;text-align:left;}
+ .card .card\:content ul li .collection .collection\:data span{font-size:.8rem;font-weight:500;color:#38383c;float:left;text-align:left;} 
  .card .card\:content ul li .collection svg{max-width:43px;height:calc(80px - 2rem)}.card .card\:content ul li .collection svg.ghost{height:calc(70px - 2rem)}.card .card\:content ul li:last-of-type{border-bottom:0;padding:calc(1rem + .5px) 1.5rem}
  a{text-decoration:none;color:#aaa;font-size:.875rem;font-weight:500;color:rgba(45,56,68,1)}.weather34darkbrowser{position:relative;background:0;width:100%;max-height:30px;margin:auto;margin-top:-10px;margin-left:-0px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat;margin-bottom:-20px;}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}orange{color:#d35d4e}blue{color:#44a6b5}
  .davishardwaresvg{position:absolute;margin-left:240px;}.nanohardwaresvg{position:absolute;margin-left:270px;}.wfhardwaresvg{position:absolute;margin-left:260px;margin-top:10px}
@@ -32,11 +31,11 @@
 <body>
 <div class="weather34darkbrowser" url="Weather34 Template Information"></div>
  
-  <div class="container:fluid">
+  <div class="container:fluid" style="margin-top:30px;">
     <div class="row xs:center xs:middle">
         <div class="xl">
             
-            <div class="card" style="margin-top:50px;overflow:hidden;max-height:370px;">
+            <div class="card" >
                 <div class="card:header">
                     <div class="card:info">
                         <h3>Weather34</h3>
@@ -48,35 +47,25 @@
                 </div>
                 <div class="card:content">
                     <ul>
-                    
-                        <li>
-                           
-                                <div class="collection">
+                    <li>
+                         <div class="collection">
                                     <div class="collection:icon">
-                                    
-                                    
-                                    <svg id="i-info" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="rgba(255, 93, 46, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg>
+<img src="img/weather34logo.svg" alt="weather34 logo" title="weather34 logo" width="42pt">
 
                                     </div>
-                                    
-                                    
                                     <div class="collection:data">
-                                        <h3>  Original Design </h3>
-                                        <span>
-                                       
-										This is the original <orange>Meteobridge</orange> version design by weather34 you can find variants of this template supporting 
+                                        <h3>Weather34 Original Design</h3>
+                                      <a href="https://github.com/weather34/Meteobridge-Weather34-Template" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank"> This is the original <orange>Meteobridge</orange> version design by weather34 you can find variants of this template supporting 
                                         software like <blue>Cumulus,Weewx</blue> maintained by enthusiasts and experienced template designers/coders.
                                     </div>
                                 </div>
-                           
+                            </a>
                         </li>
+                        
                        
                         <li>
                             <a href="https://weather34.com/homeweatherstation" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank">
-                                <div class="collection">
+                                <div class="collection" style="margin-top:5px;">
                                     <div class="collection:icon">
                                         <svg width="60pt" height="60pt" viewBox="0 0 320 320" version="1.1" xmlns="http://www.w3.org/2000/svg">
 <g id="#00bcd4ff">
@@ -94,9 +83,64 @@
                                 </div>
                             </a>
                         </li>
+                        
+                        
+                        
+    <li>
+                            <a href="https://weather34.com/homeweatherstation" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank">
+                                <div class="collection" style="margin-top:-30px;">
+                                    <div class="collection:icon">
+                                        <svg width="25pt" height="25pt" version="1.1" id="Layer_1" x="0px" y="0px" 
+	 viewBox="0 0 305 305" style="enable-background:new 0 0 305 305;" xml:space="preserve">
+<g id="XMLID_231_"><path fill="#00bcd4" id="XMLID_232_" d="M152.248,0C110.826,0,73.791,15.302,45.143,44.256C16.032,73.824,0,112.266,0,152.5
+		c0,40.978,15.494,78.094,44.804,107.329C73.833,288.958,111.99,305,152.248,305c40.679,0,79.463-16.175,109.205-45.543
+		C289.941,231.415,305,194.43,305,152.5c0-41.796-15.214-79.075-43.996-107.806C231.714,15.455,194.106,0,152.248,0z
+		 M152.674,272.476c-31.746,0-61.812-12.57-84.656-35.394c-23.139-23.126-35.881-53.165-35.881-84.581
+		c0-31.503,12.748-61.831,35.895-85.396c22.554-22.909,51.823-35.018,84.643-35.018c32.663,0,62.219,12.266,85.473,35.471
+		c22.67,22.609,34.652,51.986,34.652,84.954c0,33.027-11.813,62.106-34.164,84.093C215.106,259.736,184.578,272.476,152.674,272.476
+		z"/><path fill="#ff832f" id="XMLID_236_" d="M152.435,173.38l-18.711-9.414c-0.619-0.311-1.338-0.351-1.987-0.113c-0.649,0.239-1.171,0.737-1.44,1.374
+		c-3.37,7.988-8.196,11.396-16.136,11.396c-15.896,0-17.612-16.871-17.612-24.124c0-16,5.926-24.112,17.612-24.112
+		c1.567,0,9.629,0.515,14.385,10.684c0.289,0.618,0.818,1.091,1.464,1.309c0.646,0.219,1.355,0.163,1.958-0.152l19.953-10.425
+		c0.596-0.311,1.041-0.849,1.235-1.492c0.195-0.643,0.122-1.337-0.201-1.927c-8.209-14.954-22.708-22.858-41.931-22.858
+		c-27.342,0-46.437,20.138-46.437,48.973c0,29.796,18.543,49.049,47.239,49.049c17.276,0,32.85-9.233,41.657-24.698
+		c0.34-0.596,0.42-1.304,0.222-1.96C153.506,174.234,153.047,173.688,152.435,173.38z"/>
+	<path fill="#ff832f" id="XMLID_237_" d="M240.344,174.893c-0.196-0.657-0.655-1.204-1.268-1.514l-18.65-9.423
+		c-0.619-0.313-1.342-0.354-1.993-0.114c-0.652,0.241-1.174,0.742-1.441,1.383c-3.331,7.99-8.165,11.398-16.165,11.398
+		c-15.953,0-17.676-16.871-17.676-24.124c0-15.967,5.947-24.064,17.676-24.064c1.571,0,9.649,0.513,14.398,10.638
+		c0.29,0.617,0.818,1.089,1.464,1.307c0.647,0.218,1.353,0.163,1.956-0.152l19.949-10.412c0.596-0.311,1.041-0.848,1.236-1.49
+		c0.194-0.643,0.123-1.336-0.198-1.925c-8.294-15.18-22.424-22.878-41.995-22.878c-27.341,0-46.436,20.14-46.436,48.976
+		c0,29.796,18.566,49.049,47.3,49.049c17.196,0,32.754-9.232,41.618-24.695C240.459,176.259,240.541,175.549,240.344,174.893z"/>
+</g></svg>
+
+                                    </div>
+                                    <div class="collection:data">
+                                        <h3>Creative Commons</h3>
+                                        <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" title="weather34 http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                     </ul>
                 </div>
             </div>
+            
+            
+            
+            
+            
+            
+            
+            
         
         </div>
     </div>
