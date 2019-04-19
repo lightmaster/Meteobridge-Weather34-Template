@@ -87,7 +87,7 @@
                         
                         
     <li>
-                            <a href="https://weather34.com/homeweatherstation" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank">
+                            <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" alt="weather34 http://creativecommons.org/licenses/by-nc-nd/4.0/" title="weather34 http://creativecommons.org/licenses/by-nc-nd/4.0/ Download" target="_blank">
                                 <div class="collection" style="margin-top:-30px;">
                                     <div class="collection:icon">
                                         <svg width="25pt" height="25pt" version="1.1" id="Layer_1" x="0px" y="0px" 
