@@ -48,7 +48,7 @@
                 <div class="card:content">
                     <ul>
                     <li>
-                         <div class="collection">
+                         <div class="collection" style="margin-top:-10px;">
                                     <div class="collection:icon">
 <img src="img/weather34logo.svg" alt="weather34 logo" title="weather34 logo" width="42pt">
 
