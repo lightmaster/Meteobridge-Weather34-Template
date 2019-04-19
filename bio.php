@@ -19,7 +19,7 @@
     <div class="row xs:center xs:middle">
         <div class="xl">
             
-            <div class="card" style="margin-top:80px;overflow:hidden;max-height:400px;">
+            <div class="card" style="margin-top:50px;overflow:hidden;max-height:370px;">
                 <div class="card:header">
                     <div class="card:info">
                         <h3><?php echo $stationlocation ;?></h3>
@@ -79,7 +79,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#!">
                                 <div class="collection">
                                     <div class="collection:icon">
@@ -98,7 +98,7 @@
                                     </div>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

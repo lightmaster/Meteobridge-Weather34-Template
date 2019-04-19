@@ -19,7 +19,7 @@
     <div class="row xs:center xs:middle">
         <div class="xl">
             
-            <div class="card" style="margin-top:80px;overflow:hidden;max-height:400px;">
+            <div class="card" style="margin-top:50px;overflow:hidden;max-height:370px;">
                 <div class="card:header">
                     <div class="card:info">
                         <h3><?php echo $stationName;?></h3>
