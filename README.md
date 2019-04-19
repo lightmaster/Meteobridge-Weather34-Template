@@ -11,13 +11,13 @@ https://github.com/weather34/Meteobridge-Weather34-Template/issues
 Github repository for the Meteobridge version of the original weather34 template 
 Weather Template for Meteobridge users only 
 
-# Basic Setup guide (url valid upto May30th 2019)
+# Basic Setup guide 
 https://weather34.com/homeweatherstation/guides/setup.html
 
-# Myqsl Setup Guide (url valid upto May30th 2019)
+# Myqsl Setup Guide 
 https://weather34.com/homeweatherstation/guides/setupmeteobridge.html
 
-# Weather34 Historic Timeline of design 2014-2019 (url valid upto May30th 2019)
+# Weather34 Historic Timeline of design 2014-2019 
 https://weather34.com/homeweatherstation/weather34timeline/weather34timeline.html
 
 # Meteobridge Version Screenshot MB-UB40-FFT
