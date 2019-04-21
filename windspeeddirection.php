@@ -11,9 +11,9 @@ require_once('livedata.php');require_once('common.php');?>
 <div class="updatedtime"><span><?php if(file_exists($livedata)&&time()- filemtime($livedata)>300)echo $offline. '<offline> Offline </offline>';else echo $online." ".$weather["time"];?></div> <br />
 <div class="windspeedvalues"><div class="windspeedvalue">
 <?php  
-//weather34-windspeed avg
+//weather34-windspeed instantaneous
 if ($weather["wind_speed"]<10){echo "&nbsp;".number_format($weather["wind_speed"],1);}else echo number_format($weather["wind_speed"],1);?>
-<div class="windunitidspeed"><?php echo $lang['Average'];?></div><div class="windunitspeed"><?php echo $weather["wind_units"]?></div></div>
+<div class="windunitidspeed"><?php echo $lang['Current'];?></div><div class="windunitspeed"><?php echo $weather["wind_units"]?></div></div>
 <div class="windgustvalue">
 <?php 
 //weather34-windgust

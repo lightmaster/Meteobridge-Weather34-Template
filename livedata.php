@@ -66,11 +66,11 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["temp_today_low"]     = $meteobridgeapi[28];
 	$weather["temp_avg15"]         = $meteobridgeapi[67];
 	$weather["temp_avg"]           = $meteobridgeapi[123]; // last 60 minutes
-	$weather["wind_speed_avg"]     = $meteobridgeapi[5];
+	$weather["wind_speed_avg"]     = $meteobridgeapi[5]; // Console's average
 	$weather["wind_direction"]     = number_format($meteobridgeapi[7],0);
 	$weather["wind_direction_avg"] = number_format($meteobridgeapi[46],0);
-	$weather["wind_speed"]         = number_format($meteobridgeapi[5]);
-	$weather["wind_gust_speed"]    = $meteobridgeapi[6];
+	$weather["wind_speed"]         = number_format($meteobridgeapi[6]); // Instantaneous
+	$weather["wind_gust_speed"]    = $meteobridgeapi[40]; // Max last 10 mins
 	$weather["wind_speed_bft"]     = $meteobridgeapi[12];
 	$weather["wind_speed_max"]     = $meteobridgeapi[30];	
 	$weather["wind_gust_speed_max"]= $meteobridgeapi[32];	

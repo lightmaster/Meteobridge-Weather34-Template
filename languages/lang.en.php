@@ -79,6 +79,7 @@ $lang['Direction'] = 'Direction';
 $lang['Gusting'] = 'Gusting at';
 $lang['Blowing'] = 'Blowing at';
 $lang['Wind'] = 'Wind';
+$lang['Current'] = 'Current';
 
 // Wind phrases for Beaufort scale for windspeed area
 $lang['Calm'] = 'Calm';

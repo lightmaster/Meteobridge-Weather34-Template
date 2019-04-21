@@ -83,7 +83,7 @@ $lang['Gusting']                              = 'Windvlaag';
 $lang['Blowing']                              = 'Wind';
 $lang['Wind']                                 = 'Wind';
 $lang['Winddirection']                        = 'Wind Richting';
-$lang ['Wind Run'] = 'Wind Run';
+$lang['Wind Run']                             = 'Wind Run';
 
 $lang['Calm']                                 = 'Kalm';
 $lang['Lightair']                             = 'Zeer zwak ';
