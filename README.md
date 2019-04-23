@@ -11,8 +11,12 @@ https://github.com/weather34/Meteobridge-Weather34-Template/issues
 Github repository for the Meteobridge version of the original weather34 template 
 Weather Template for Meteobridge users only 
 
+# Installation
+It is best to install and update using **git** (guide for this will be created when I have a chance). If you are unable to use **git** on your server, follow the guide below.
+
 # Basic Setup guide 
-https://weather34.com/homeweatherstation/guides/setup.html
+ 1. Download the Zip at https://github.com/weather34/Meteobridge-Weather34-Template/archive/master.zip
+ 1. Follow the guide at https://weather34.com/homeweatherstation/guides/setup.html
 
 # Myqsl Setup Guide 
 https://weather34.com/homeweatherstation/guides/setupmeteobridge.html
