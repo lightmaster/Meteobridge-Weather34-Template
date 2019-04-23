@@ -106,9 +106,7 @@ $moon = new MoonPhase();$moonage =round($moon->age(),2);echo "Current Moon cycle
 <circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg> When the sunlight hits the moon's surface,temperatures can reach 260&deg;F (127&deg;C).<br>
 <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#3b9cac" stroke="#3b9cac" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg> When the sun goes down,temperatures can drop to minus -280&deg;F (-173&deg;C)..<br>
-<credit>
-&nbsp;
-&nbsp; <a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $info;?> <?php echo $copyrightcredit;?></a></credit>
+<credit><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $info;?> <?php echo $copyrightcredit;?></a></credit>
 			</span></div>
         </div></div>
         
