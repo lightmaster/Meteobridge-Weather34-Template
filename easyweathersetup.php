@@ -345,13 +345,14 @@ Choose the default Language to display and use..</div>
 </svg>
       
        <label name="flag"></label>
-        <select id="flag" name="flag" class="choose1">           
+         <select id="flag" name="flag" class="choose1">           
            <option><?php echo $flag ;?></option>
            <option>ar</option>
            <option>aus</option>
            <option>en</option>
            <option>can</option>  
            <option>cat</option>             
+           <option>ch</option>
            <option>dk</option>
            <option>dl</option>
            <option>fi</option>  
@@ -375,7 +376,7 @@ Choose the default Language to display and use..</div>
            <option>tr</option> 
            <option>us</option>
            <option>wal</option>     
-        </select>
+          </select>
         <br><br>
   <div class= "stationvalue">DARK SKY Forecast Language  full list here <a href="https://darksky.net/dev/docs" title="https://darksky.net/dev/docs" target="_blank"><white>https://darksky.net/dev/docs</white></a></div> 
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
