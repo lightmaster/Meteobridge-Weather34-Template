@@ -43,7 +43,7 @@ smalluvunit{font-size:.85rem;font-family:Arial,Helvetica,system;}
 
 
 .homeweathercompass-line1,.homeweathercompass2>.homeweathercompass-line2,.homeweathercompass>.homeweathercompass-line{right:25px;-webkit-clip-path:polygon(100%0,100%100%,100%100%,0100%,0);-ms-clip-path:polygon(100%0,100%100%,100%100%,0100%,0)}
-.homeweathercompass2{position:absolute;width:115px;height:115px;top:-45px;left:-140px;color:silver}
+.homeweathercompass2{position:absolute;width:115px;height:115px;top:-75px;left:-140px;color:silver}
 .homeweathercompass2>.homeweathercompass-line2{-webkit-border-radius:100%;-moz-border-radius:100%;-ms-border-radius:100%;position:absolute;left:25px;top:25px;bottom:25px;width:110px;height:110px;border:5px solid rgba(86, 95, 103,0);border-top:5px solid rgba(61,64,66,1);border-right:5px solid rgba(61,64,66,1);border-radius:50%;border-bottom-color:transparent;border-left-color:transparent;transform:rotate(-45deg);margin:auto}
 .homeweathercompass2{display:block;text-align:center;font-family:Arial,system;font-weight:600;line-height:12px;z-index:10;margin:25px 0 auto 40px}
 
@@ -116,19 +116,19 @@ weather34-barometerlimitmin{margin-top:-7px;position:absolute;font-size:11px;col
 weather34-barometerlimitmin{left:-10px;color:color:silver}
 weather34-barometerlimitmax{left:102px;color:color:silver}
 
-.barometerlimits{position:absolute;font-size:12px;margin-top:25px;margin-left:16px;width:95px;color:#777;font-family:Helvetica,Arial;}
+.barometerlimits{position:absolute;font-size:12px;margin-top:-5px;margin-left:16px;width:95px;color:#777;font-family:Helvetica,Arial;}
 .weather34-barometerruler{position:absolute;width:90px;height:1px;border:1px dashed rgba(53,56,58,1);margin-left:152px;margin-top:47px;color:#565f67}
-.barometerlimits2{position:absolute;font-size:12px;margin-top:25px;margin-left:16px;width:95px;color:#777;font-family:Helvetica,Arial;}
+.barometerlimits2{position:absolute;font-size:12px;margin-top:-5px;margin-left:16px;width:95px;color:#777;font-family:Helvetica,Arial;}
 .weather34-barometerruler2{position:absolute;width:90px;height:1px;border:1px dashed rgba(53,56,58,1);margin-left:152px;margin-top:110px;color:#565f67}
 
 
 
 value{color:#777;font-family:weathertext2,Arial,Helvetica,system;font-size:.85em}
 .actual{align-items:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;position:absolute;font-family:weathertext2;padding-top:0;color:#fff;display:flex;
-	width:6.75rem;height:1.2rem;font-size:10px;justify-content:center;border-radius:2px;margin-left:180px;top:123px;color:#bbb;background:rgba(86, 95, 103,.4)}
+	width:6.75rem;height:1.2rem;font-size:10px;justify-content:center;border-radius:2px;margin-left:180px;top:100px;color:#bbb;background:rgba(86, 95, 103,.4)}
 img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border:0;}
-.max{position:absolute;margin-left:190px;top:25px;color:rgba(50, 53, 57, 1.000);font-family:weathertext2,Arial,Helvetica,system;font-size:22px}
-
+.max{position:absolute;margin-left:150px;top:25px;color:rgba(50, 53, 57, 1.000);font-family:weathertext2,Arial,Helvetica,system;font-size:18px}
+w34convertrain{position:absolute;font-size:.6em;top:56px;color:#c0c0c0}
 </style>
 </head>
 <body>
@@ -178,12 +178,19 @@ img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border
 	echo "<smalluvunit>".$weather["wind_units"]."</smalluvunit>";	
 	
 ?>
-</div>
+
+
+<w34convertrain>
+<?php //convert rain
+if($weather["wind_units"] =='km/h'){echo number_format($weather["winddmax"]*0.621371,1)." <smalluvunit>mph</smalluvunit";}
+if($weather["wind_units"] =='mph'){ echo number_format($weather["winddmax"]*0.609343502101025,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='m/s'){ echo number_format($weather["winddmax"]*3.5999988862317131577,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='kts'){ echo number_format($weather["winddmax"]*1.8519994254280931489,1)."<smalluvunit>km/h</smalluvunit>";}
+?>
+</w34convertrain></span></div></span>
 
 
 
-
-</span> 
 
 <!--today-->
 <div class="weather34-uvrate-bar" style="margin-top:30px;"> 
@@ -194,7 +201,7 @@ img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border
 </div></div>
 <div class="barometerlimits"><div class='weather34-barometerruler'>
 <?php echo "<weather34-barometerlimitmin><value>0</barometerlimitmin><weather34-barometerlimitmax><value>180</weather34-barometerlimitmax>";?></div></div>
- <div class=max>MAX</div>
+ <div class=max>Max Wind Speed</div>
  
  <div class="higust">Max Wind Speed <br>Recorded <span><?php echo $weather["winddmaxtime"];?></span></div>
  
@@ -239,7 +246,7 @@ img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border
 </div></div>
 <div class="barometerlimits2"><div class='weather34-barometerruler2'>
 <?php echo "<weather34-barometerlimitmin><value>0</barometerlimitmin><weather34-barometerlimitmax><value>180</weather34-barometerlimitmax>";?></div></div>
- <div class=max>MAX</div>
+ <div class=max>Max Wind Speed</div>
             
             
             
@@ -281,6 +288,15 @@ img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border
 	echo "<div class='windtoday'>",$weather["windmmax"] . "</value>";}
 	echo "<smalluvunit>".$weather["wind_units"]."</smalluvunit>";	
 ?>
+
+<w34convertrain>
+<?php //convert rain
+if($weather["wind_units"] =='km/h'){echo number_format($weather["windmmax"]*0.621371,1)." <smalluvunit>mph</smalluvunit";}
+if($weather["wind_units"] =='mph'){ echo number_format($weather["windmmax"]*0.609343502101025,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='m/s'){ echo number_format($weather["windmmax"]*3.5999988862317131577,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='kts'){ echo number_format($weather["windmmax"]*1.8519994254280931489,1)."<smalluvunit>km/h</smalluvunit>";}
+?>
+</w34convertrain></span>
 </div>
 
 </span>  <div class="higust">Max Wind Speed <br>Recorded <span><?php echo $weather["windmmaxtime"];?></span></div>
@@ -318,7 +334,7 @@ img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border
 </div></div>
 <div class="barometerlimits2"><div class='weather34-barometerruler2'>
 <?php echo "<weather34-barometerlimitmin><value>0</barometerlimitmin><weather34-barometerlimitmax><value>180</weather34-barometerlimitmax>";?></div></div>
- <div class=max>MAX</div>
+ <div class=max>Max Wind Speed</div>
  
             
             
@@ -362,6 +378,15 @@ img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border
 	echo "<smalluvunit>".$weather["wind_units"]."</smalluvunit>";	
 	
 ?>
+
+<w34convertrain>
+<?php //convert rain
+if($weather["wind_units"] =='km/h'){echo number_format($weather["windydmax"]*0.621371,1)." <smalluvunit>mph</smalluvunit";}
+if($weather["wind_units"] =='mph'){ echo number_format($weather["windydmax"]*0.609343502101025,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='m/s'){ echo number_format($weather["windydmax"]*3.5999988862317131577,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='kts'){ echo number_format($weather["windydmax"]*1.8519994254280931489,1)."<smalluvunit>km/h</smalluvunit>";}
+?>
+</w34convertrain></span>
 </div>
 
 
@@ -393,7 +418,7 @@ img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border
 </div></div>
 <div class="barometerlimits2"><div class='weather34-barometerruler2'>
 <?php echo "<weather34-barometerlimitmin><value>0</barometerlimitmin><weather34-barometerlimitmax><value>180</weather34-barometerlimitmax>";?></div></div>
- <div class=max>MAX</div>
+ <div class=max>Max Wind Speed</div>
 
            <?php
 	// wind year km/h
@@ -434,7 +459,16 @@ img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border
 	echo "<smalluvunit>".$weather["wind_units"]."</smalluvunit>";	
 	
 ?>
-</div>
+
+<w34convertrain>
+<?php //convert rain
+if($weather["wind_units"] =='km/h'){echo number_format($weather["windymax"]*0.621371,1)." <smalluvunit>mph</smalluvunit";}
+if($weather["wind_units"] =='mph'){ echo number_format($weather["windymax"]*0.609343502101025,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='m/s'){ echo number_format($weather["windymax"]*3.5999988862317131577,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='kts'){ echo number_format($weather["windymax"]*1.8519994254280931489,1)."<smalluvunit>km/h</smalluvunit>";}
+?>
+</w34convertrain></span></div>
+
 
 
 </span> <div class="higust">Max Wind Speed <br>Recorded <span><?php echo $weather["windymaxtime"];?></span></div>
