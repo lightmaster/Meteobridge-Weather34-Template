@@ -89,7 +89,7 @@ date_default_timezone_set($TZ);?>
 <div class="chartforecast">
 
 <!--Insert link to pop up module here-->
-         <a rel='prefetch' href="http://www.meteociel.fr/modeles/ecmwf/runs/<?php echo date('Ymd')?>00/ECM0-0.GIF" data-featherlight="image" style="margin-left:0;text-transform:uppercase !important;" >
+         <a rel='prefetch' href="http://www.meteociel.fr/modeles/ecmwf/runs/<?php echo date('Ymd')?>00/ECM0-0.GIF" data-lity  >
  <!--end Insert link to pop up module here-->  
        
          <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -113,7 +113,7 @@ date_default_timezone_set($TZ);?>
   <div class="chartforecast">
   
   <!--Insert link to pop up module here-->
-         <a rel='prefetch' href="http://modeles.meteociel.fr/modeles/gfs/runs/<?php echo date('Ymd')?>00/gfs-2-18.png" data-featherlight="image" style="margin-left:0;text-transform:uppercase !important;">
+         <a rel='prefetch' href="http://modeles.meteociel.fr/modeles/gfs/runs/<?php echo date('Ymd')?>00/gfs-2-18.png" data-lity >
 	<!-- end Insert link to pop up module here-->	
      
 		 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -135,7 +135,7 @@ date_default_timezone_set($TZ);?>
    <div class="chartforecast">
       
       <!--Insert link to pop up module here--> 
-       <a rel='prefetch' href="https://www.mgm.gov.tr/FTPDATA/uzal/radar/ist/istmax15.jpg" data-featherlight="image" style="margin-left:0;text-transform:uppercase !important;">
+       <a rel='prefetch' href="https://www.mgm.gov.tr/FTPDATA/uzal/radar/ist/istmax15.jpg" data-lity >
 	  <!--end Insert link to pop up module here--> 
 		 
 		 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -157,7 +157,7 @@ date_default_timezone_set($TZ);?>
   <div class="weather-item">
   <div class="chartforecast">
   <!--Insert link to pop up module here-->
-   <a rel='prefetch' href="https://www.windy.com/?clouds,<?php echo $lat ;?>,<?php echo $lon ;?>,8" data-featherlight="iframe" style="margin-left:0;text-transform:uppercase !important;">
+   <a href="https://www.windy.com/?clouds,<?php echo $lat ;?>,<?php echo $lon ;?>,8" data-lity>
 	<!--end Insert link to pop up module here-->	 
 		 
 		 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -178,7 +178,7 @@ date_default_timezone_set($TZ);?>
    <div class="chartforecast">
    
    <!--Insert link to pop up module here-->
-         <a rel='prefetch' href="https://www.windy.com/?rain,<?php echo $lat ;?>,<?php echo $lon ;?>,8" data-featherlight="iframe" style="margin-left:0;text-transform:uppercase !important;">
+         <a href="https://www.windy.com/?rain,<?php echo $lat ;?>,<?php echo $lon ;?>,8" lity-iframe>
 	<!--end Insert link to pop up module here-->	 
 		 
 		 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -200,7 +200,7 @@ date_default_timezone_set($TZ);?>
   <div class="chartforecast">
   
   <!--Insert link to pop up module here-->
-  <a rel='prefetch' href="https://www.windy.com/?temp,<?php echo $lat ;?>,<?php echo $lon ;?>,8" data-featherlight="iframe" style="margin-left:0;text-transform:uppercase !important;">  
+  <a rel='prefetch' href="https://www.windy.com/?temp,<?php echo $lat ;?>,<?php echo $lon ;?>,8" data-lity >  
   <!--end Insert link to pop up module here-->
   
          <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -225,7 +225,7 @@ date_default_timezone_set($TZ);?>
   <div class="chartforecast">
   
   <!--Insert link to pop up module here-->
-         <a rel='prefetch' href="http://wxcharts.eu/charts/arpege/europe/00/850temp_003.jpg?<?php echo date('Ymd')?>00" data-featherlight="iframe" style="margin-left:0;text-transform:uppercase !important;">
+         <a rel='prefetch' href="http://wxcharts.eu/charts/arpege/europe/00/850temp_003.jpg?<?php echo date('Ymd')?>00" data-lity >
 	<!--end Insert link to pop up module here-->	 
 		 
 		 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -248,7 +248,7 @@ date_default_timezone_set($TZ);?>
   <div class="chartforecast">
   
   <!--Insert link to pop up module here-->  
-    <a rel='prefetch' href="http://wxcharts.eu/charts/gfs/europe/00/850temp_anom_024.jpg?<?php echo date('Ymd')?>00" data-featherlight="image" style="margin-left:0;text-transform:uppercase !important;">
+    <a rel='prefetch' href="http://wxcharts.eu/charts/gfs/europe/00/850temp_anom_024.jpg?<?php echo date('Ymd')?>00" data-lity >
   <!--end Insert link to pop up module here-->  
     
     <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -270,7 +270,7 @@ date_default_timezone_set($TZ);?>
   <div class="chartforecast">
   
   <!--Insert link to pop up module here-->
-        <a rel='prefetch' href="img/iframe.jpg" width="775px" height="420px" data-featherlight="image" style="margin-left:0;text-transform:uppercase !important;">
+        <a rel='prefetch' href="img/iframe.jpg" width="775px" height="420px" data-lity >
         <!--edit Insert link to pop up module here-->
     <svg id="i-activity" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M4 16 L11 16 14 29 18 3 21 16 28 16" />

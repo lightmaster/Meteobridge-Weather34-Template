@@ -131,7 +131,7 @@ foreach ($meteor_events as $meteor_check) {
         $meteor_default=$meteor_check["event_title"];
     }
 };?>
-
+<div class="updatedtime1"><?php echo $online," ",date($timeFormat);	?></div>
 <div class="moonphasemoduleposition">
 <div class="moonrise1">
 <svg id="weather34 moon rise" viewBox="0 0 32 32" width="6" height="6" fill="none" stroke="#ff9350" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">    <path d="M30 20 L16 8 2 20" /></svg> <?php echo $lang['Moon'];?> <br /><blueu><?php  echo $weather['moonrise'];?>

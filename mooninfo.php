@@ -25,8 +25,8 @@ body,section{padding:10px}.weather34card,.weather34cards{display:-webkit-box;dis
 <div id="weather34moonphases"></div>
 <svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, 1.000)"/><path id="weather34shape" fill="rgba(230, 232, 239, 1)"/></svg>
 <script> //simple moonphase for weather34
-weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 2, 17, 0, 0);
-var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) % 29.5;var s=String;
+weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 2, 12, 0, 0);
+var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) % 29.47;var s=String;
 switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases");
 var val=15;	var weather34moonCurve;var lf=Math.min(3-4*(phase/30),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
 var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";weather34moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
@@ -106,7 +106,9 @@ $moon = new MoonPhase();$moonage =round($moon->age(),2);echo "Current Moon cycle
 <circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg> When the sunlight hits the moon's surface,temperatures can reach 260&deg;F (127&deg;C).<br>
 <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#3b9cac" stroke="#3b9cac" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg> When the sun goes down,temperatures can drop to minus -280&deg;F (-173&deg;C)..<br>
-<credit><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $info;?> <?php echo $copyrightcredit;?></a></credit>
+<credit>
+&nbsp;
+&nbsp; <a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $info;?> <?php echo $copyrightcredit;?></a></credit>
 			</span></div>
         </div></div>
         

@@ -31,7 +31,7 @@
 <body>
 <div class="weather34darkbrowser" url="Weather34 Template Information"></div>
  
-  <div class="container:fluid" style="margin-top:5px;">
+  <div class="container:fluid" style="margin-top:30px;">
     <div class="row xs:center xs:middle">
         <div class="xl">
             
