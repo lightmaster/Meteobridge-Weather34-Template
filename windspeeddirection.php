@@ -61,7 +61,7 @@ else if ($weather["wind_direction"] <= 258.75) {echo $lang['WSWdir'];}
 else if ($weather["wind_direction"] <= 281.25) {echo $lang['Westdir'];}
 else if ($weather["wind_direction"] <= 303.75) {echo $lang['WNWdir'];}
 else if ($weather["wind_direction"] <= 326.25) {echo $lang['NWdir'];}
-else if ($weather["wind_direction"] <= 348.75) {echo $lang['NNWdir'];}
+else if ($weather["wind_direction"] <= 348.75) {echo $lang['NWNdir'];}
 else {echo $lang['Northdir'];}
 ?>
  </div></div> 
