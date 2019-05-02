@@ -8,7 +8,7 @@
   
  <style>
 @font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff")}
-@font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:"weathertext",Helvetica, Arial, sans-serif;background:rgba(11, 12, 12, 0.4)}
+@font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:"weathertext",Helvetica, Arial, sans-serif;background:0}
 body{color:#aaa;overflow-x:hidden;min-height:80vh;padding:10px}
 section{width:90vw;max-width:100rem;min-width:76rem;margin:0;padding:5px;margin-bottom:-5px}
 .weather34title{font-size:14px;font-weight:normal;padding-top:3px;font-family:'Arial',sans-serif;width:400px}
@@ -32,7 +32,7 @@ section{width:90vw;max-width:100rem;min-width:76rem;margin:0;padding:5px;margin-
 windgusts{position:absolute;font-size:1.4em;margin-top:40px;left:20px;color:rgba(74, 99, 111, 1.000)}
 todaywindgusts{position:absolute;font-size:1.4em;margin-top:5px;left:20px;color:rgba(74, 99, 111, 1.000)}.hitempy{background:rgba(86, 95, 103, 0.2);color:#aaa;font-size:12px;width:180px;padding:3px;border-radius:4px;margin-top:0;margin-left:10px;}
 .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}.weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:100%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}.weather34browser-footer{flex-basis:auto;height:35px;background:#ebebeb;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-20px;width:97.4%;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#aaa;text-decoration:none}
-.weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:13px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
+.weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:12px;position:absolute;left:0;right:0;top:0;padding:5px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
 
 .windcontainer1{left:70px;top:0}
 .windtoday,.windtoday10,.windtoday30,.windtoday40,.windtoday60{font-family:weathertext2,Arial,Helvetica,system;width:7rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.windtoday,.windtoday10,.windtoday30,.windtoday40,.windtoday60{font-size:1.75rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
@@ -128,7 +128,7 @@ value{color:#777;font-family:weathertext2,Arial,Helvetica,system;font-size:.85em
 	width:6.75rem;height:1.2rem;font-size:10px;justify-content:center;border-radius:2px;margin-left:180px;top:100px;color:#bbb;background:rgba(86, 95, 103,.4)}
 img{opacity:1;background:#323539;width:30px;padding:5px;border-radius:2px;border:0;}
 .max{position:absolute;margin-left:150px;top:25px;color:rgba(50, 53, 57, 1.000);font-family:weathertext2,Arial,Helvetica,system;font-size:18px}
-w34convertrain{position:absolute;font-size:.6em;top:56px;color:#c0c0c0}
+w34convertrain{font-family:weathertext2;position:absolute;font-size:.55em;top:56px;color:#c0c0c0}
 </style>
 </head>
 <body>
@@ -183,7 +183,7 @@ w34convertrain{position:absolute;font-size:.6em;top:56px;color:#c0c0c0}
 <w34convertrain>
 <?php //convert rain
 if($weather["wind_units"] =='km/h'){echo number_format($weather["winddmax"]*0.621371,1)." <smalluvunit>mph</smalluvunit";}
-if($weather["wind_units"] =='mph'){ echo number_format($weather["winddmax"]*0.609343502101025,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='mph'){ echo number_format($weather["winddmax"]*1.60934,1)."<smalluvunit>km/h</smalluvunit>";}
 if($weather["wind_units"] =='m/s'){ echo number_format($weather["winddmax"]*3.5999988862317131577,1)."<smalluvunit>km/h</smalluvunit>";}
 if($weather["wind_units"] =='kts'){ echo number_format($weather["winddmax"]*1.8519994254280931489,1)."<smalluvunit>km/h</smalluvunit>";}
 ?>
@@ -292,7 +292,7 @@ if($weather["wind_units"] =='kts'){ echo number_format($weather["winddmax"]*1.85
 <w34convertrain>
 <?php //convert rain
 if($weather["wind_units"] =='km/h'){echo number_format($weather["windmmax"]*0.621371,1)." <smalluvunit>mph</smalluvunit";}
-if($weather["wind_units"] =='mph'){ echo number_format($weather["windmmax"]*0.609343502101025,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='mph'){ echo number_format($weather["windmmax"]*1.60934,1)."<smalluvunit>km/h</smalluvunit>";}
 if($weather["wind_units"] =='m/s'){ echo number_format($weather["windmmax"]*3.5999988862317131577,1)."<smalluvunit>km/h</smalluvunit>";}
 if($weather["wind_units"] =='kts'){ echo number_format($weather["windmmax"]*1.8519994254280931489,1)."<smalluvunit>km/h</smalluvunit>";}
 ?>
@@ -382,7 +382,7 @@ if($weather["wind_units"] =='kts'){ echo number_format($weather["windmmax"]*1.85
 <w34convertrain>
 <?php //convert rain
 if($weather["wind_units"] =='km/h'){echo number_format($weather["windydmax"]*0.621371,1)." <smalluvunit>mph</smalluvunit";}
-if($weather["wind_units"] =='mph'){ echo number_format($weather["windydmax"]*0.609343502101025,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='mph'){ echo number_format($weather["windydmax"]*1.60934,1)."<smalluvunit>km/h</smalluvunit>";}
 if($weather["wind_units"] =='m/s'){ echo number_format($weather["windydmax"]*3.5999988862317131577,1)."<smalluvunit>km/h</smalluvunit>";}
 if($weather["wind_units"] =='kts'){ echo number_format($weather["windydmax"]*1.8519994254280931489,1)."<smalluvunit>km/h</smalluvunit>";}
 ?>
@@ -463,7 +463,7 @@ if($weather["wind_units"] =='kts'){ echo number_format($weather["windydmax"]*1.8
 <w34convertrain>
 <?php //convert rain
 if($weather["wind_units"] =='km/h'){echo number_format($weather["windymax"]*0.621371,1)." <smalluvunit>mph</smalluvunit";}
-if($weather["wind_units"] =='mph'){ echo number_format($weather["windymax"]*0.609343502101025,1)."<smalluvunit>km/h</smalluvunit>";}
+if($weather["wind_units"] =='mph'){ echo number_format($weather["windymax"]*1.60934,1)."<smalluvunit>km/h</smalluvunit>";}
 if($weather["wind_units"] =='m/s'){ echo number_format($weather["windymax"]*3.5999988862317131577,1)."<smalluvunit>km/h</smalluvunit>";}
 if($weather["wind_units"] =='kts'){ echo number_format($weather["windymax"]*1.8519994254280931489,1)."<smalluvunit>km/h</smalluvunit>";}
 ?>

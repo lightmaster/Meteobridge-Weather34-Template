@@ -10,7 +10,7 @@
   
  <style>
   @font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff")}
-@font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:"weathertext",Helvetica, Arial, sans-serif;background:rgba(11, 12, 12, 0.4)}
+@font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:"weathertext",Helvetica, Arial, sans-serif;0}
 body{color:#aaa;overflow-x:hidden;min-height:80vh;padding:10px}
 section{width:90vw;max-width:100rem;min-width:76rem;margin:0;padding:5px;margin-bottom:-5px;}
 .weather34title{font-size:14px;font-weight:normal;padding-top:3px;font-family:'Arial',sans-serif;width:400px}

@@ -70,7 +70,7 @@ $scriptcredits     = "Original CSS/SVG ICONS/PHP scripts by <a href='https://wea
 $creditsEnabled     = "true"; // for chart pages only
 $creditsmysql       = "Weather Data Recorded from $stationName Database"; //for chart pages only
 $wucredits          = "Data provided by Weather Underground"; // for chart pages only
-$creditschart       = "Charts compiled with CanvasJs.js (CC BY-NC 3.0)"; // for chart pages only
+$creditschart 		= "CanvasJs.com v2.3.1 GA (CC BY-NC 3.0) Non-Commercial-Version"; 
 $creditsURL         = ""; // for chart pages only
 $credits            = "Data Supplied via Weather Underground"; // for chart pages only
 $templateinfo       = ''; // template information page

@@ -15,7 +15,7 @@
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
 	
-	include('../settings.php');header('Content-type: text/html; charset=utf-8');
+	include('chartslivedata.php');header('Content-type: text/html; charset=utf-8');	
 	$conv = 1;
 	if ($uk == true) {$conv= '1';}
 	if ($units == 'uk' && $windunit == 'mph') {$conv= '1';}
@@ -115,10 +115,10 @@
 			crosshair: {
 			enabled: true,
 			snapToDataPoint: true,
-			color: "#9aba2f",
+			color: "#009bab",
 			labelFontColor: "#F8F8F8",
-			labelFontSize:14,
-			labelBackgroundColor: "#FF8841",
+			labelFontSize:10,
+			labelBackgroundColor: "#009bab",
 		}
 			
 			},
@@ -146,10 +146,10 @@
 		crosshair: {
 			enabled: true,
 			snapToDataPoint: true,
-			color: "#9aba2f",
+			color: "#ff832f",
 			labelFontColor: "#fff",
-			labelFontSize:12,
-			labelBackgroundColor: "#FF8841",
+			labelFontSize:11,
+			labelBackgroundColor: "#ff832f",
 			valueFormatString: "#0.# °<?php echo $tempunit ;?>",
 		}	 
       },
@@ -197,19 +197,19 @@
 });
 
     </script>
-     <link rel="stylesheet" href="weather34chartstyle.css?ver=8.0">
+    <link rel="stylesheet" href="weather34chartstyle.css?ver=<?php echo date('jSHi') ;?>">
 <body>
-<div class="weather34darkbrowser" url="<?php echo $stationlocation;?> Temperature/Dewpoint Recorded (°<?php echo $tempunit ;?>) <?php echo date('D F jS Y') ;?>"></div>
+<div class="weather34darkbrowser" url="<?php echo date('l') ;?> Temp Hi:<?php echo $weather["temp_today_high"]. "$tempunit" ;?> Temp Lo:<?php echo $weather["temp_today_low"]. "$tempunit" ;?> | Dew Hi:<?php echo $weather["dewmax"]. "$tempunit" ;?> Dew Lo:<?php echo $weather["dewmin"]."$tempunit" ;?>"></div> 
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">
 <div id="chartContainer" class="chartContainer"></div></div>
 <div class="weather34browser-footer">
-<span style="position:absolute;color:#fff;font-size:10px;font-family:arial;padding-top:5px;margin-left:25px;border-radius:3px;">
+<span style="position:absolute;color:#fff;font-family:arial;padding-top:5px;margin-left:25px;border-radius:3px;">
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
 <a href="https://weather34.com/homeweatherstation/" title="https://weather34.com" target="_blank"> 
 <span style="color:#00A4B4;"><?php echo $chartversionmysql  ;?> CSS & PHP scripts by weather34</span> </a></span>
-<span style="position:absolute;color:#aaa;font-size:10px;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
+<span style="position:absolute;color:#aaa;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 

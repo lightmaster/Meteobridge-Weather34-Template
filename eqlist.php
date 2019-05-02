@@ -56,7 +56,7 @@ $eqalert6='<svg id="i-activity" viewBox="0 0 32 32" width="28" height="28" fill=
     <style>
 @font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff")}
 @font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:"weathertext2",Helvetica, Arial, sans-serif;
-background:rgba(11, 12, 12, 0.4); background-repeat:no-repeat}body{color:#aaa;overflow:hidden;height:105vh;padding:10px}
+background:0; background-repeat:no-repeat}body{color:#aaa;overflow:hidden;height:105vh;padding:10px}
 section{width:80vw;max-width:64rem;min-width:58.9rem;margin:0 auto;padding:5px}
 .weather34title{font-size:13px;font-weight:normal;padding-top:3px;font-family:"weathertext2",Helvetica, Arial, sans-serif;width:400px}
 .weather34cards{padding-top:2rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:5px}

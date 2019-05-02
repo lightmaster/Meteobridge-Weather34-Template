@@ -39,7 +39,7 @@ $currentconditions   = "currentconditionsmetar34davis.php";
 
 $chartsource   = "mbcharts";
 $extralinks   = "no";
-$languages   = "no";
+$languages   = "yes";
 
 $dateFormat   = "d-m-Y";
 $timeFormat    = "g:i:s a";
@@ -51,11 +51,11 @@ $temperaturemodule   = "temperature.php";
 $position1   = "weather34clock.php";
 $position2   = "windgustyear.php";
 $position3   = "wflightning.php";
-$position4   = "advisory.php";
+$position4   = "davisconsoleoutlook.php";
 $position1title   = "Station <ored> Time";
 $position2title   = "Wind <orange> Speed</orange>";
 $position3title   = "Lightning <oblue> Strikes";
-$position4title   = "Max-Min <ored>Temperature</orange> Annual";
+$position4title   = "Davis Console <ored>Forecast";
 $position6title   = "Forecast";
 $position6   = "forecast3wularge.php";
 $position12title   = "UV Index | Solar Radiation";

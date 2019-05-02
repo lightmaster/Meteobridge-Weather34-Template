@@ -1,7 +1,7 @@
 <?php include('livedata.php');?>
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Weather34 Almanac Rainfall Data Popup </title>  <meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
 @font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff")}
-@font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:"weathertext",Helvetica, Arial, sans-serif;background:rgba(11, 12, 12, 0.4)}
+@font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:"weathertext",Helvetica, Arial, sans-serif;background:0}
 body{color:#aaa;overflow-x:hidden;min-height:80vh;padding:10px}
 section{width:90vw;max-width:100rem;min-width:76rem;margin:0;padding:5px;margin-bottom:-5px}
 .weather34title{font-size:14px;font-weight:normal;padding-top:3px;font-family:'Arial',sans-serif;width:400px}
@@ -23,7 +23,7 @@ windgusts{position:absolute;top:10px;left:135px;font-size:0.4em;color:#aaa;backg
 .rainfallcontainer1{left:10px;top:0}.rainfalltoday1{font-family:weathertext2,Arial,Helvetica,system;width:7rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.rainfalltoday1{font-size:1.5rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}.rainfallcaution,.rainfalltrend{position:absolute;font-size:1rem}.rainfalltoday1{background:rgba(68, 166, 181, 1.000)}.rainfallcaution{margin-left:120px;margin-top:112px;font-family:Arial,Helvetica,system}.rainfalltrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 #weather34rainbeaker:before{left:-10px}
 .weather34i-rairate-bar{position:absolute;height:70px;width:70px;margin-left:-35px;margin-top:40px}
-#raincontainer{height:70px;overflow:hidden;position:absolute;width:168px;top:70px;left:180px}
+#raincontainer{height:70px;overflow:hidden;position:absolute;width:168px;top:70px;left:220px}
 #raincontainer div{position:absolute}
 #weather34rainbeaker{border:4px solid #393d40;border-top:0;-webkit-border-radius:0 0 2px 2px;-moz-border-radius:0 0 2px 2px;-o-border-radius:0 0 2px 2px;-ms-border-radius:0 0 2px 2px;border-radius:0 0 2px 2px;height:70px;left:14px;bottom:0;width:70px;background:url(css/rain/rainmarker.svg) center no-repeat}
 #weather34rainbeaker:after,#weather34rainbeaker:before{border:5px solid #393d40;border-bottom:0;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;-ms-border-radius:2px;border-radius:2px;content:'';height:5px;position:absolute;top:0;width:10px}

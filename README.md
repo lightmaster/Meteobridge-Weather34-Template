@@ -1,41 +1,23 @@
-# This repository is maintained William (aka lightmaster)
+# This repository is maintained William Bailey (aka lightmaster)
 
-William will be maintaining the weather34 template from now on .
-Support is available via the Github issues function or via email support@lightmaster.pw
-.Weather34 will no longer make any more contributuions as not to confuse ideas going forward and allow
-new ideas ideas and improvements to existing code to be implemented without delay..
-It has been an enjoyable challenging ride and feel free to contribute via 
-https://github.com/weather34/Meteobridge-Weather34-Template/issues
+William will be maintaining on behalf of Brian Underdown whilst he ventures off for the next 6-12 months
+support is available via the Github issues function or via email support@lightmaster.pw
 
-# NEW Mobile landscape view for charts on mobile devices 
-works ok in landscape mode not portrait mode charts become to compressed and hard to read
-especially charts with lots of data like yearly .
 
-# Tip 
-use meteobridge built in mysql option and use 10 minute interval  data instead of every 10 seconds for smoother cleaner daily charts.
-you can call 10 minute max and min data periods so you dont miss any max or lo data also get average 10 minute data.
-this is used at weather34.com over the last 2 years. if time permits will add how to the mysql guide.
-using 10 second instant intervals it is possible to miss max wind speed data as the max could have occured before as the  10second interval only inserts actual value at that given time..so if the max was 5-7 seconds ago it is missed.
-confused :-) ? 
-
-# Meteobridge-Weather34-Template MB-UB40-RRW
+# Meteobridge-Weather34-Template MB-UB40-FFT
 Github repository for the Meteobridge version of the original weather34 template 
 Weather Template for Meteobridge users only 
 
-# Installation
-It is best to install and update using **git** (guide for this will be created when I have a chance). If you are unable to use **git** on your server, follow the guide below.
-
 # Basic Setup guide 
- 1. Download the Zip at https://github.com/weather34/Meteobridge-Weather34-Template/archive/master.zip
- 1. Follow the guide at https://weather34.com/homeweatherstation/guides/setup.html
+https://weather34.com/homeweatherstation/guides/setup.html
 
-# Myqsl Setup Guide 
+# Myqsl Setup Guide
 https://weather34.com/homeweatherstation/guides/setupmeteobridge.html
 
 # Weather34 Historic Timeline of design 2014-2019 
 https://weather34.com/homeweatherstation/weather34timeline/weather34timeline.html
 
-# Meteobridge Version Screenshot MB-UB40-RRW
+# Meteobridge Version Screenshot MB-UB40-FFT
 <p align="center">
   <img src="https://res.cloudinary.com/brian-underdown/image/upload/v1553679424/weather34_meteobridge2019_bzq4sa.png" width="550" title="weather34 meteobridge template ">
  
