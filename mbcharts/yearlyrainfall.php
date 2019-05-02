@@ -29,9 +29,8 @@
 	else if ($restoftheworld == true && $windunit == 'mph') {$conv= '0.0393701';}
 	else $conv;
 	$interval = 1;
-	if ($windunit == 'mph') {$interval= '0.5';}
-	else if ($windunit == 'm/s') {$interval= '1';}
-	else if ($windunit == 'km/h'){$interval= '1';}
+	if ($rainunit == 'in') {$interval= '1';}
+	else if ($rainunit == 'mm'){$interval= "'auto'";}
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
