@@ -15,21 +15,25 @@
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
 	
-	include('chartslivedata.php');header('Content-type: text/html; charset=utf-8');
+	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$conv = 1;
-	if ($uk == true && $windunit == 'mph') {$conv= '1';}	
-	else if ($windunit == 'mph'){$conv= '0.0393701';}
-	else if ($usa == true) {$conv= '0.0393701';}
-	else if ($usa == true && $windunit == 'mph') {$conv= '0.0393701';}
-	else if ($restoftheworld == true && $metric == 'true') {$conv= '1';}
-	else if ($restoftheworld == true && $metric == 'false') {$conv= '0.0393701';}
-	else if ($restoftheworld == true && $windunit == 'mph') {$conv= '0.0393701';}
-	else $conv;
-	$interval = 1;
+	if ($rainunit == 'in') {
+    $conv = '0.0393701';
+  } else if ($rainunit == 'mm') {
+    $conv = '1';
+  }
+	
+	if ($rainunit == 'mm'){
+		$raindecimal = '0';
+	} else {
+		$raindecimal = '2';
+	}
+
+	/*$interval = 1;
 	if ($uk == true && $windunit == 'mph') {$interval= '1';}
 	else if ($windunit == 'mph') {$interval= '0.5';}
 	else if ($windunit == 'm/s') {$interval= '1';}
-	else if ($windunit == 'km/h'){$interval= '1';}
+	else if ($windunit == 'km/h'){$interval= '1';}*/
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -85,28 +89,35 @@
 
 		function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer", {
-		 backgroundColor: "#fff",
-		 animationEnabled: false,
+		 backgroundColor: '<?php echo $backgroundcolor;?>',
+		 animationEnabled: true,
 		
 		title: {
             text: " ",
 			fontSize: 11,
-			fontColor:' #555',
+			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
         },
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
-			   backgroundColor: "#fff",			   
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label} ",
+			   backgroundColor: '<?php echo $backgroundcolor;?>',
+			   contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(2) + "<?php echo ' '.$rainunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
 			   shared: true, 
 			   
     
  },
 		axisX: {
-			gridColor: "#aaa",
+			gridColor: '<?php echo $gridcolor;?>',
 		    labelFontSize: 10,
-			labelFontColor:' #555',
+			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 0.5,
 			gridThickness: 1,	
 			titleFontFamily: "arial",	
@@ -119,7 +130,7 @@
 			
 		axisY:{
 		title: "Rainfall Recorded (<?php echo $rainunit ;?>)",
-		titleFontColor: "#555",
+		titleFontColor: '<?php echo $fontcolor;?>',
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
@@ -128,13 +139,13 @@
 		gridThickness: 0,	
 		gridDashType: "dot",	
         includeZero: false,
-		gridColor: "#ff9350",
+		gridColor: '<?php echo $gridcolor;?>',
 		labelFontSize: 11,
-		labelFontColor:' #555',
+		labelFontColor: '<?php echo $fontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
-         return e.value .toFixed(2) +"<?php echo $rainunit ;?>" ;  
+         return e.value .toFixed(<?php echo $raindecimal;?>) + " <?php echo $rainunit ;?> " ;
          },		 
 		crosshair: {
 			enabled: true,
@@ -143,13 +154,13 @@
 			labelFontColor: "#fff",
 			labelFontSize:12,
 			labelBackgroundColor: "#d05f2d",
-			valueFormatString: "#0.#<?php echo $rainunit ;?>",
+			valueFormatString: "##0.##<?php echo $rainunit ;?>",
 		}	 
       },
 	  
 	     axisY2:{
 		title: "Rain Rate (<?php echo $rainunit ;?>)",
-		titleFontColor: "#555",
+		titleFontColor: '<?php echo $fontcolor;?>',
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
@@ -159,13 +170,13 @@
 		gridThickness: 1,	
 		gridDashType: "dot",	
         includeZero: true,
-		gridColor: "#00A4B4",
+		gridColor: "RGBA(64, 65, 66, 0.8)",
 		labelFontSize: 11,
-		labelFontColor:' #555',
+		labelFontColor: '<?php echo $fontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
-         return e.value .toFixed(2) + "<?php echo $rainunit ?>" ;  
+        return e.value .toFixed(<?php echo $raindecimal;?>) + " <?php echo $rainunit ;?> " ;
 		},
 		crosshair: {
 			enabled: true,
@@ -174,13 +185,13 @@
 			labelFontColor: "#fff",
 			labelFontSize:12,
 			labelBackgroundColor: "#3b9cac",
-			valueFormatString: "# '<?php echo $rainunit ?>'",
+			valueFormatString: "##0.## '<?php echo $rainunit ?>'",
 		}	 
       },
 	  
 	  legend:{
       fontFamily: "arial",
-      fontColor:"#555",
+      fontColor: '<?php echo $fontcolor;?>',
   
  },
 		
@@ -190,10 +201,12 @@
 		{
 			
 			type: "column",
-			color:"#3b9cac",
+			color: '<?php echo $line2color;?>',
 			markerSize:2,
+      markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,			
 			lineThickness: 2,
+      //lineColor: '<?php echo $line2markercolor;?>',
 			markerType: "circle",
 			name:"Rainfall",
 			dataPoints: dataPoints1,
@@ -202,7 +215,7 @@
 		},
 		{
 			type: "column",
-			color:"#cd5245",
+			color: '<?php echo $line1color;?>',
 			markerSize:2,
 			showInLegend:true,			
 			axisYType: "secondary",
@@ -224,7 +237,7 @@
 
 
     </script>
-   <link rel="stylesheet" href="weather34chartstyle.css?ver=<?php echo date('jSHi') ;?>">
+     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="Rainfall Recorded <?php echo date('M jS D') ;?> | Total: (<?php echo $weather["rain_today"] ;?> <?php echo $rainunit ;?>)"></div> 
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

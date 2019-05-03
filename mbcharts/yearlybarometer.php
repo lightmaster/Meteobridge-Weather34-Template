@@ -15,19 +15,22 @@
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
 	
-	include('chartslivedata.php');header('Content-type: text/html; charset=utf-8');
+	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
-	$conv = 1;
-	if ($pressureunit  == "mb" && $windunit == 'mph'){$conv= '1';}
-	else if ($pressureunit  == "hPa" && $windunit == 'mph'){$conv= '1';}
-	else if ($windunit == 'mph') {$conv= '0.02953';}
-	else if ($windunit == 'm/s') {$conv= '1';}
-	else if ($windunit == 'km/h'){$conv= '1';}
 	
-	$int = 1;
-	if ($pressureunit == 'mb') {$int= '5';}
+  $conv = 1;
+	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
+    $conv = '1';
+  } else if ($pressureunit == 'inHg') {
+    $conv = '0.02953';
+  }
+	
+  $animationduration = 500;
+
+	$int = 'auto';
+	/*if ($pressureunit == 'mb') {$int= '5';}
 	else if ($pressureunit == 'hPa') {$int= '5';}
-	else if ($pressureunit == 'inHg') {$int= '0.25';}
+	else if ($pressureunit == 'inHg') {$int= '0.25';}*/
 	
 	$limit = '0';
 	if ($windunit == 'mph') {$limit= '20';}
@@ -89,64 +92,72 @@
 	
 	function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer", {
-		 backgroundColor: "#fff",
-		  animationEnabled: false,
+		 backgroundColor: '<?php echo $backgroundcolor;?>',
+		  animationEnabled: true,
+      animationDuration: '<?php echo $animationduration;?>',
 		 
 		title: {
             text: "",
 			fontSize: 12,
-			fontColor:' #555',
+			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
         },
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
-			   backgroundColor: "#fff",
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label}",
+			   backgroundColor: '<?php echo $backgroundcolor;?>',
+			   contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $fontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' '.$pressureunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
 			   shared: true, 
  },
 		axisX: {
-			gridColor: "#ccc",
+			gridColor: '<?php echo $gridcolor;?>',
 		    labelFontSize: 10,
-			labelFontColor:' #555',
+			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
-			gridThickness: 1,
-			gridDashType: "dot",	
+			gridThickness: 1,	
 			titleFontFamily: "arial",	
 			labelFontFamily: "arial",	
-			minimum:0,		
-			intervalType:"day",
+			minimum:0,
+			gridDashType: "dot",
+			intervalType:"month",
 			xValueType: "dateTime",	
 			crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: "#009bab",
-			labelFontColor: "#F8F8F8",
-			labelFontSize:10,
-			labelBackgroundColor: "#009bab",
-		}
+				enabled: true,
+				snapToDataPoint: true,
+				color: "#009bab",
+				labelFontColor: "#F8F8F8",
+				labelFontSize:10,
+				labelBackgroundColor: "#009bab",
+			}
 			
 			},
 			
 		axisY:{
 		title: "Barometer (<?php echo $pressureunit ;?>) Recorded",
-		titleFontColor: "#555",
+		titleFontColor: '<?php echo $fontcolor;?>',
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
 		lineThickness: 1,		
 		gridThickness: 1,
-		gridDashType: "dot",
-		interval:<?php echo $int;?>,		
+		interval: '<?php echo $int;?>',		
         includeZero: false,
-		gridColor: "#aaa",
+		gridColor: '<?php echo $gridcolor;?>',
 		labelFontSize: 11,
-		labelFontColor:' #555',
+		gridDashType: "dot",
+		labelFontColor: '<?php echo $fontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
-        return e.value .toFixed(1) + " <?php echo $pressureunit ;?> " ;  
-         },		
+        return e.value .toFixed(0) + " <?php echo $pressureunit ;?> " ;  
+       },
 		crosshair: {
 			enabled: true,
 			snapToDataPoint: true,	
@@ -154,44 +165,46 @@
 			labelFontColor: "#F8F8F8",
 			labelFontSize:10,
 			labelBackgroundColor: "#ff832f",
-			valueFormatString:"##.## <?php echo $pressureunit ;?>",
+			valueFormatString:"##0.## <?php echo $pressureunit ;?>",
 		}		 
 		
       },
 	  
 	  legend:{
       fontFamily: "arial",
-      fontColor:"#555",
+      fontColor: '<?php echo $fontcolor;?>',
   
  },
 		
 		
 		data: [
 		{
-			//Barometer
+			// High Barometer
 			type: "spline",
-			color:"#FF8841",
+			color: '<?php echo $line1color;?>',
 			markerSize:0,
 			showInLegend:true,
 			legendMarkerType: "circle",
-			lineThickness: 0,
-			markerType: "none",
+			lineThickness: 2,
+			markerType: "circle",
 			name:"Hi Barometer",
 			dataPoints: dataPoints1,
-			yValueFormatString:"##.## <?php echo $pressureunit ;?>",
+			yValueFormatString:"##0.## <?php echo $pressureunit ;?>",
 		},
 		{
-			// not used
+			// Low Barometer
 			type: "spline",			
-			color:"#00A4B4",
+			color: '<?php echo $line2color;?>',
 			markerSize:0,
+      markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",
-			lineThickness: 0,
-			markerType: "none",
+			lineThickness: 2,
+      lineColor: '<?php echo $line2markercolor;?>',
+			markerType: "circle",
 			name:"Lo Barometer",
 			dataPoints: dataPoints2,
-			yValueFormatString:"##.## <?php echo $pressureunit ;?>",
+			yValueFormatString:"##0.## <?php echo $pressureunit ;?>",
 		}
 
 		]
@@ -202,7 +215,7 @@
 });
 
     </script>
-<link rel="stylesheet" href="weather34chartstyle.css?ver=<?php echo date('jSHi') ;?>">
+     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="Barometer <?php echo date('Y') ;?> | Hi: <?php echo $weather["thb0seapressymax"];?> <?php echo $pressureunit ;?> Lo: <?php echo $weather["thb0seapressymin"];?> <?php echo $pressureunit ;?>"></div> 
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

@@ -15,18 +15,14 @@
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
 	
-	include('chartslivedata.php');header('Content-type: text/html; charset=utf-8');	
-	$conv = 1;
-	if ($uk == true) {$conv= '1';}
-	if ($units == 'uk' && $windunit == 'mph') {$conv= '1';}
-	else if ($windunit == 'mph') {$conv= '(1.8) +32';}
-	else if ($windunit == 'm/s') {$conv= '1';}
-	else if ($windunit == 'km/h'){$conv= '1';}
-	$interval = 1;
-	if ($uk == true && $windunit == 'mph') {$conv= '1';}
-	if ($windunit == 'mph') {$interval= '0.5';}
-	else if ($windunit == 'm/s') {$interval= '1';}
-	else if ($windunit == 'km/h'){$interval= '1';}
+	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
+	
+	if ($tempunit == 'F') {
+	$conv = '(9 / 5) + 32';
+	} else {
+	$conv = '1';
+	}
+	
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -82,28 +78,35 @@
 
 		function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer", {
-		 backgroundColor: "#fff",
-		 animationEnabled: false,
+		 backgroundColor: '<?php echo $backgroundcolor;?>', //backgroundcolor
+		 animationEnabled: true,
 		
 		title: {
             text: " ",
 			fontSize: 11,
-			fontColor:' #555',
+			fontColor: '<?php echo $fontcolor;?>', //font color
 			fontFamily: "arial",
         },
 		toolTip:{
-			   fontStyle: "normal",
-			   cornerRadius: 4,
-			   backgroundColor: "#fff",			   
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label} ",
-			   shared: true, 
+      fontStyle: "normal",
+      cornerRadius: 4,
+      backgroundColor: '<?php echo $backgroundcolor;?>', //backgroundcolor
+      contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>'; //font colors
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' °'.$tempunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
+      shared: true, 
 			   
     
  },
 		axisX: {
-			gridColor: "#555",
-		    labelFontSize: 10,
-			labelFontColor:' #555',
+			gridColor: '<?php echo $gridcolor;?>', //grid color
+			labelFontSize: 10,
+			labelFontColor: '<?php echo $fontcolor;?>', //font color
 			lineThickness: 1,
 			gridThickness: 1,
 			gridDashType: "dot",	
@@ -113,31 +116,31 @@
    			intervalType: "hour",
 			minimum:0,
 			crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: "#009bab",
-			labelFontColor: "#F8F8F8",
-			labelFontSize:10,
-			labelBackgroundColor: "#009bab",
-		}
+        enabled: true,
+        snapToDataPoint: true,
+        color: "#009bab",
+        labelFontColor: "#F8F8F8",
+        labelFontSize:10,
+        labelBackgroundColor: "#009bab",
+      }
 			
 			},
 			
 		axisY:{
 		title: "Temperature (°<?php echo $tempunit ;?>) Recorded",
-		titleFontColor: "#555",
+		titleFontColor: '<?php echo $fontcolor;?>', //font color
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
-		interval:1,
+		interval: 'auto',
 		//maximum: <?php echo $max ;?>,		
 		lineThickness: 1,		
 		gridThickness: 1,	
 		gridDashType: "dot",	
         includeZero: false,
-		gridColor: "#aaa",
+		gridColor: '<?php echo $gridcolor;?>', //grid color
 		labelFontSize: 11,
-		labelFontColor:' #555',
+		labelFontColor: '<?php echo $fontcolor;?>', //font color
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
@@ -156,7 +159,7 @@
 	  
 	  legend:{
       fontFamily: "arial",
-      fontColor:"#555",
+      fontColor: '<?php echo $fontcolor;?>', //font color
   
  },
 		
@@ -164,7 +167,7 @@
 		data: [
 		{
 			type: "splineArea",
-			color:"rgba(255, 124, 57, 0.8)",
+			color: '<?php echo $line1color;?>', //line1color
 			markerSize:0,
 			showInLegend:true,
 			legendMarkerType: "circle",
@@ -177,11 +180,13 @@
 		},
 		{
 			type: "splineArea",
-			color:"#00A4B4",
+			color: '<?php echo $line2color;?>', //line2color
 			markerSize:0,
+			markerColor: '<?php echo $line2markercolor;?>', //line2markercolor
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 0,
+			lineColor: '<?php echo $line2markercolor;?>',
 			markerType: "circle",
 			name:" DewPoint",
 			dataPoints: dataPoints2,
@@ -197,7 +202,7 @@
 });
 
     </script>
-    <link rel="stylesheet" href="weather34chartstyle.css?ver=<?php echo date('jSHi') ;?>">
+     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="<?php echo date('l') ;?> Temp Hi:<?php echo $weather["temp_today_high"]. "$tempunit" ;?> Temp Lo:<?php echo $weather["temp_today_low"]. "$tempunit" ;?> | Dew Hi:<?php echo $weather["dewmax"]. "$tempunit" ;?> Dew Lo:<?php echo $weather["dewmin"]."$tempunit" ;?>"></div> 
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

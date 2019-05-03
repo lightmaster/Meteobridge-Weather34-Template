@@ -28,6 +28,7 @@ $timeFormatShort    = 'H:i'; // time format to use when showing times ('g:i a' f
 $showFeelsLike      = true; // whether to always show either the heat index (when temp > 80F/27C) or real feel (when temp between 50F/10C and 80F/27C) even when no concern
 $lightLeft          = true; // shows amount of light/darkness left rather than total amount per day in the moon display
 $theme              = $theme1;
+$charttheme         = $theme;
 ####################################################################################################
 // Refresh Data Main Page  //																	   #
 // Automatic refresh times (in seconds) of each panel on the main dashboard						   #
@@ -79,8 +80,10 @@ $software    = 'Meteobridge <span>Hardware</span> Users';$designedfor='<br>For M
 if (array_key_exists('theme', $_GET) && ($_GET['theme'] == 'dark' || $_GET['theme'] == 'light')) {
   SetCookie('theme', $_GET['theme'], time() + 15552000);
   $theme = $_GET['theme'];
+  $charttheme = $theme;
 } else if (array_key_exists('theme', $_COOKIE) && ($_COOKIE['theme'] == 'dark' || $_COOKIE['theme'] == 'light')) {
   $theme = $_COOKIE['theme'];
+  $charttheme = $theme;
 }
 $units = "";
 if (array_key_exists('units', $_COOKIE)) {

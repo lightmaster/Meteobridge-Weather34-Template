@@ -15,15 +15,17 @@
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
 	
-	include('chartslivedata.php');header('Content-type: text/html; charset=utf-8');
+	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('M');
 	
 	$conv = 1;
-	if ($uk == true) {$conv= '2.23694';}
-	else if ($usa == true) {$conv= '2.23694';}
-	else if ($windunit == 'mph') {$conv= '2.23694';}
-	else if ($windunit == 'm/s') {$conv= '1';}
-	else if ($windunit == 'km/h'){$conv= '3.6';}
+  if ($windunit == 'mph') {
+    $conv= '2.23694';
+  } else if ($windunit == 'm/s') {
+    $conv= '1';
+  } else if ($windunit == 'km/h'){
+    $conv= '3.6';
+  }
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -79,26 +81,33 @@
 	
 	function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer", {
-		 backgroundColor: "#fff",
-		  animationEnabled: false,
+		 backgroundColor: '<?php echo $backgroundcolor;?>',
+		  animationEnabled: true,
 		 
 		title: {
             text: "",
 			fontSize: 12,
-			fontColor:' #555',
+			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
         },
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
-			   backgroundColor: "#fff",
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label}",
+			   backgroundColor: '<?php echo $backgroundcolor;?>',
+			   contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $fontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' '.$windunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
 			   shared: true, 
  },
 		axisX: {
-			gridColor: "#aaa",
+			gridColor: '<?php echo $gridcolor;?>',
 		    labelFontSize: 10,
-			labelFontColor:' #555',
+			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,	
 			titleFontFamily: "arial",	
@@ -120,17 +129,18 @@
 			
 		axisY:{
 		title: "Wind - Gusts (<?php echo $windunit ;?>) Recorded",
-		titleFontColor: "#555",
+		titleFontColor: '<?php echo $fontcolor;?>',
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
+    interval: 'auto',
 		gridDashType: "dot",
 		lineThickness: 1,		
 		gridThickness: 1,		
-        includeZero:true,
-		gridColor: "#aaa",
+        includeZero: true,
+		gridColor: '<?php echo $gridcolor;?>',
 		labelFontSize: 11,
-		labelFontColor:' #555',
+		labelFontColor: '<?php echo $fontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
@@ -146,39 +156,39 @@
 			valueFormatString: "#0.# <?php echo $windunit ;?>",
 		}		 
 		 
-      },	 
-		 
-      
+      },
 	  
 	  legend:{
       fontFamily: "arial",
-      fontColor:"#555",
+      fontColor: '<?php echo $fontcolor;?>',
   
  },
 		
 		
 		data: [
 		{
-			//wind gust
-			type: "column",
-			color:"rgba(166, 65, 56, 0.8)",
+			// Max Wind Gust
+			type: "splineArea",
+			color: '<?php echo $line1color;?>',
 			markerSize:0,
 			showInLegend:true,
 			legendMarkerType: "circle",
-			lineThickness: 0,
-			markerType: "none",
+			lineThickness: 2,
+			markerType: "circle",
 			name:"Max Wind Gust",
 			dataPoints: dataPoints1,
 			yValueFormatString:"#0.# <?php echo $windunit ;?>",
 		},
 		{
-			// wind speed
-			type: "line",
-			color:"#00A4B4",
+			// Average Wind Speed
+			type: "splineArea",
+			color: '<?php echo $line2color;?>',
 			markerSize:0,
+      markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",
-			lineThickness: 5,
+			lineThickness: 2,
+      lineColor:  '<?php echo $line2markercolor;?>',
 			markerType: "circle",
 			name:"Avg Wind Speed",
 			dataPoints: dataPoints2,
@@ -193,7 +203,8 @@
 });
 
     </script>
-   <link rel="stylesheet" href="weather34chartstyle.css?ver=<?php echo date('jSHi') ;?>">
+    
+     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="Wind Speed <?php echo date(' F Y') ;?> | Max: <?php echo $weather["windmmax"];?> <?php echo $windunit ;?>"></div> 
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

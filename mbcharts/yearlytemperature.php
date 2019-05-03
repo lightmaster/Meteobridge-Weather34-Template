@@ -15,18 +15,16 @@
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
 	
-	include('chartslivedata.php');header('Content-type: text/html; charset=utf-8');
+	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
-	$conv = 1;
-	if ($uk == true) {$conv= '1';}
-	if ($units == 'uk' && $windunit == 'mph') {$conv= '1';}
-	else if ($windunit == 'mph') {$conv= '(1.8) +32';}
-	else if ($windunit == 'm/s') {$conv= '1';}
-	else if ($windunit == 'km/h'){$conv= '1';}
-	$interval = 1;
-	if ($windunit == 'mph') {$interval= '0.5';}
-	else if ($windunit == 'm/s') {$interval= '1';}
-	else if ($windunit == 'km/h'){$interval= '1';}
+	
+	if ($tempunit == 'F') {
+	$conv = '(9 / 5) + 32';
+	} else {
+	$conv = '1';
+	}
+	
+	$animationduration = 500;
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -79,32 +77,40 @@
 
 		function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer", {
-		 backgroundColor: "#fff",
-		 animationEnabled: false,
+		 backgroundColor: '<?php echo $backgroundcolor;?>',
+		 animationEnabled: true,
+		 animationDuration: '<?php echo $animationduration;?>',
 		
 		
 		title: {
             text: " ",
 			fontSize: 11,
-			fontColor:' #555',
+			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
         },
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
-			   backgroundColor: "#fff",			   
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label} ",
+			   backgroundColor: '<?php echo $backgroundcolor;?>',
+			   contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $fontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' °'.$tempunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
 			   shared: true, 
 			   
     
  },
 		axisX: {
-			gridColor: "#aaa",	
+			gridColor: '<?php echo $gridcolor;?>',
 		    labelFontSize: 10,
-			labelFontColor:' #555',
+			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
-			gridThickness: 1,	
 			gridDashType: "dot",
+			gridThickness: 1,	
 			titleFontFamily: "arial",	
 			labelFontFamily: "arial",
 			minimum:-0.5,
@@ -112,63 +118,62 @@
 			intervalType:"month",
 			xValueType: "dateTime",	
 			crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: "#ff832f",			
-			labelFontColor: "#F8F8F8",
-			labelFontSize:10,
-			labelBackgroundColor: "#ff832f",
-		}
+        enabled: true,
+        snapToDataPoint: true,
+        color: "#ff832f",			
+        labelFontColor: "#F8F8F8",
+        labelFontSize:10,
+        labelBackgroundColor: "#ff832f",
+      }
 			
 			},
 			
 		axisY:{
 		title: "Temperature (°<?php echo $tempunit ;?>) Recorded",
-		titleFontColor: "#555",
+		titleFontColor: '<?php echo $fontcolor;?>',
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
+		interval: 'auto',
 		lineThickness: 1,		
-		gridThickness: 1,	
-		gridDashType: "dot",	
-        includeZero: false,		
-		interval:'auto',		
-		gridColor: "#aaa",	
+		gridThickness: 1,		
+        includeZero: false,
+		gridColor: '<?php echo $gridcolor;?>',
+		gridDashType: "dot",
 		labelFontSize: 11,
-		labelFontColor:' #555',
+		labelFontColor: '<?php echo $fontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
         return e.value .toFixed(0) + " °<?php echo $tempunit ;?> " ;  
          },	
-		 crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: "#ff832f",
-			labelFontColor: "#F8F8F8",
-			labelFontSize:10,
-			labelBackgroundColor: "#ff832f",
-			valueFormatString: "#0.# °<?php echo $tempunit ;?>",
-		}		 
+      crosshair: {
+       enabled: true,
+       snapToDataPoint: true,
+       color: "#ff832f",
+       labelFontColor: "#F8F8F8",
+       labelFontSize:10,
+       labelBackgroundColor: "#ff832f",
+       valueFormatString: "#0.# °<?php echo $tempunit ;?>",
+      }		 
 		 
       },
 	  
 	  legend:{
       fontFamily: "arial",
-      fontColor:"#555",
+      fontColor: '<?php echo $fontcolor;?>',
   
  },
 		
 		
 		data: [
 		{
-			//type: "spline",
-			type: "column",
-			color:"#ff9350",
+			type: "splineArea",
+			color: '<?php echo $line1color;?>',
 			markerSize:0,
 			showInLegend:true,
 			legendMarkerType: "circle",
-			lineThickness: 0,
+			lineThickness: 2,
 			markerType: "circle",
 			name:" Hi Temp",
 			dataPoints: dataPoints1,
@@ -177,12 +182,14 @@
 		},
 		{
 			
-			type: "line",
-			color:"#00A4B4",
+			type: "splineArea",
+			color: '<?php echo $line2color;?>',
 			markerSize:0,
+      markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,
+      lineColor:  '<?php echo $line2markercolor;?>',
 			markerType: "circle",
 			name:" Lo Temp",
 			dataPoints: dataPoints2,
@@ -197,9 +204,8 @@
 	}
 });
 
-    
     </script>
-<link rel="stylesheet" href="weather34chartstyle.css?ver=<?php echo date('jSHi') ;?>">
+     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="<?php echo date('Y') ;?> Temperature Hi:<?php echo $weather["tempymax"]. "$tempunit" ;?> Lo:<?php echo $weather["tempymin"]. "$tempunit" ;?>"></div> 
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

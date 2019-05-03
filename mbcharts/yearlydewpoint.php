@@ -14,19 +14,16 @@
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
-	include('../settings.php');header('Content-type: text/html; charset=utf-8');
+	include('../settings.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
-	$conv = 1;
 	
-	if ($uk == true) {$conv= '1';}
-	if ($units == 'uk' && $windunit == 'mph') {$conv= '1';}
-	else if ($windunit == 'mph') {$conv= '(1.8) +32';}
-	else if ($windunit == 'm/s') {$conv= '1';}
-	else if ($windunit == 'km/h'){$conv= '1';}
-	$interval = 1;
-	if ($windunit == 'mph') {$interval= '0.5';}
-	else if ($windunit == 'm/s') {$interval= '1';}
-	else if ($windunit == 'km/h'){$interval= '1';}
+	if ($tempunit == 'F') {
+	$conv = '(9 / 5) + 32';
+	} else {
+	$conv = '1';
+	}
+	
+	$animationduration = 500;
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -79,65 +76,91 @@
 
 		function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer", {
-		 backgroundColor: "RGBA(37, 41, 45, 0.9)",
-		  animationEnabled: false,
+		 backgroundColor: '<?php echo $backgroundcolor;?>',
+		  animationEnabled: true,
+		  animationDuration: '<?php echo $animationduration;?>',
 		
 		
 		title: {
             text: " ",
 			fontSize: 11,
-			fontColor:' #ccc',
+			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
         },
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
-			   backgroundColor: "RGBA(37, 41, 45, 0.9)",			   
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label} ",
+			   backgroundColor: '<?php echo $backgroundcolor;?>',
+			   contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $fontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' °'.$tempunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
 			   shared: true, 
 			   
     
  },
 		axisX: {
-			gridColor: "RGBA(37, 41, 45, 1.00)",
+			gridColor: '<?php echo $gridcolor;?>',
 		    labelFontSize: 10,
-			labelFontColor:' #ccc',
+			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 0.5,
 			gridThickness: 1,	
+      gridDashType: "dot",
 			titleFontFamily: "arial",	
 			labelFontFamily: "arial",
 			minimum:0,	
 			interval:31,
 			intervalType:"month",
-			xValueType: "dateTime",	
+			xValueType: "dateTime",
+			crosshair: {
+        enabled: true,
+        snapToDataPoint: true,
+        color: "#009bab",
+        labelFontColor: "#F8F8F8",
+        labelFontSize:10,
+        labelBackgroundColor: "#009bab",
+      }
 			
 			},
 			
 		axisY:{
 		title: "Dewpoint (°<?php echo $tempunit ;?>) Recorded",
-		titleFontColor: "#ccc",
+		titleFontColor: '<?php echo $fontcolor;?>',
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
-		lineThickness: 0.5,		
-		gridThickness: 1,		
+		lineThickness: 0.5,
+		gridThickness: 1,
+      gridDashType: "dot",
         includeZero: true,
-		interval:5,
+		interval:10,
 		//minimum:-5,
-		gridColor: "RGBA(37, 41, 45, 1.00)",
+		gridColor: '<?php echo $gridcolor;?>',
 		labelFontSize: 11,
-		labelFontColor:' #ccc',
+		labelFontColor: '<?php echo $fontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
         return e.value .toFixed(1) + " °<?php echo $tempunit ;?> " ;  
          },		 
-		 
+		crosshair: {
+			enabled: true,
+			snapToDataPoint: true,
+			color: "#ff9350",
+			labelFontColor: "#fff",
+			labelFontSize:12,
+			labelBackgroundColor: "#d05f2d",
+			valueFormatString: "##0.##<?php echo $rainunit ;?>",
+		}	 
       },
 	  
 	  legend:{
       fontFamily: "arial",
-      fontColor:"#ccc",
+      fontColor: '<?php echo $fontcolor;?>',
   
  },
 		
@@ -145,12 +168,12 @@
 		data: [
 		{
 			//type: "spline",
-			type: "column",
-			color:"#ff9350",
+			type: "splineArea",
+			color: '<?php echo $line1color;?>',
 			markerSize:0,
 			showInLegend:true,
 			legendMarkerType: "circle",
-			lineThickness: 0,
+			lineThickness: 2,
 			markerType: "circle",
 			name:" Hi Dewpoint",
 			dataPoints: dataPoints1,
@@ -160,11 +183,13 @@
 		{
 			
 			type: "splineArea",
-			color:"#00A4B4",
+			color: '<?php echo $line2color;?>',
 			markerSize:0,
+      markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",
-			lineThickness: 0,
+			lineThickness: 2,
+      lineColor: '<?php echo $line2markercolor;?>',
 			markerType: "circle",
 			name:" Lo Dewpoint",
 			dataPoints: dataPoints2,
@@ -180,19 +205,18 @@
 });
 
     </script>
-     <link rel="stylesheet" href="weather34chartstyle.css?ver=8.0">
+     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="<?php echo $stationlocation;?> Dewpoint Recorded (°<?php echo $tempunit ;?>) <?php echo date('Y') ;?>"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">
 <div id="chartContainer" class="chartContainer"></div></div>
 <div class="weather34browser-footer">
-<span style="position:absolute;color:#fff;font-family:arial;padding-top:5px;margin-left:25px;border-radius:3px;">
-&nbsp;
+<span style="position:absolute;color:#fff;font-size:10px;font-family:arial;padding-top:5px;margin-left:25px;border-radius:3px;">&nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
 <a href="https://weather34.com/homeweatherstation/" title="https://weather34.com" target="_blank"> 
 <span style="color:#00A4B4;"><?php echo $chartversionmysql  ;?> CSS & PHP scripts by weather34</span> </a></span>
-<span style="position:absolute;color:#aaa;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
+<span style="position:absolute;color:#aaa;font-size:10px;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 
