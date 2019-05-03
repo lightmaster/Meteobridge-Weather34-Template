@@ -129,7 +129,7 @@
 		labelFontFamily: "arial",
 		maximum:360,
       minimum:0,
-		interval: 20,		
+		interval: 40,		
 		labelFormatter: function ( e ) {
         return e.value .toFixed(0) + '°' ;  
          },

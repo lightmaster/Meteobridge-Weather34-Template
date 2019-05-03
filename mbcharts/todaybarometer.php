@@ -155,7 +155,7 @@
 			labelFontColor: "#fff",
 			labelFontSize:12,
 			labelBackgroundColor: "#d05f2d",
-			valueFormatString: "##0.##<?php echo $rainunit ;?>",
+			valueFormatString: "##0.##<?php echo $pressureunit ;?>",
 		}	 
       },
 	  
