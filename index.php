@@ -121,10 +121,10 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
   <!--position 12th module (second to last) for homeweatherstation template-->
   <div class="weather-item"><div class="chartforecast" >
   <span class="almanacpopup">
-<?php if ($position12=='webcamsmall.php'){echo'<a alt="Webcam " title="Webcam " href="cam.php" data-lity>'. $webcamicon. " Live Webcam </a></span>";}?>
+<?php if ($position12=='webcamsmall.php' OR $position12=='indoortemperature.php' OR $position12=='moonphase.php'){echo'<a alt="Webcam " title="Webcam " href="cam.php" data-lity>'. $webcamicon. ' Live Webcam </a></span>
+  <span class="yearpopup"> <a alt="Indoor Guide" title="Indoor Guide" href="homeindoor.php" data-lity>'. $chartinfo. ' Indoor Guide </a></span>
+  <span class="yearpopup"> <a alt="Moon Info" title="Moon Info" href="mooninfo.php" data-lity>'. $chartinfo. ' Moon Info </a></span>';}?>
 <?php if ($position12=='airqualitymodule.php') {echo ' <a alt="air quality information" title="air quality information" href="purpleair.php" data-lity>'. $chartinfo. " Air Quality | Cloudbase </a></span>";}?>
-<?php if ($position12=='indoortemperature.php') {echo ' <a alt="Indoor Guide" title="Indoor Guide" href="homeindoor.php" data-lity>'. $chartinfo. " Indoor Guide </a></span>";}?>
-<?php if ($position12=='moonphase.php') {echo ' <a alt="Moon Info" title="Moon Info" href="mooninfo.php" data-lity>'. $chartinfo. " Moon Info </a></span>";}?>
 <?php if ($position12=='weather34uvsolar.php') {echo ' <a alt="UV Guide" title="UV Guide" href="uvindex.php" data-lity>'. $chartinfo. " UV Guide  </a></span>";} ?>
 <?php if ($position12=='weather34uvsolar.php') {echo ' <span class="yearpopup"><a alt="UV Alamanac" title="UV Alamanac" href="uvalmanac.php" data-lity>&nbsp;'. $chartinfo. " UV Alamanac </a></span>";}?>
 <?php if ($position12=='weather34uvsolar.php') {echo '<span class="yearpopup"> <a alt="Solar Alamanac" title="Solar Alamanac" href="solaralmanac.php" data-lity>'. $chartinfo. " Solar Alamanac </a></span>";}?>
@@ -139,10 +139,10 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
  <!--position last module for homeweatherstation template-->
   <div class="weather-item"><div class="chartforecast" >
   <span class="almanacpopup">
-<?php if ($positionlastmodule=='webcamsmall.php'){echo'<a alt="Webcam " title="Webcam " href="cam.php" data-lity>'. $webcamicon. " Live Webcam </a></span>";}?>
+<?php if ($positionlastmodule=='webcamsmall.php' OR $positionlastmodule=='indoortemperature.php' OR $positionlastmodule=='moonphase.php'){echo'<a alt="Webcam " title="Webcam " href="cam.php" data-lity>'. $webcamicon. ' Live Webcam </a></span>
+  <span class="yearpopup"> <a alt="Indoor Guide" title="Indoor Guide" href="homeindoor.php" data-lity>'. $chartinfo. ' Indoor Guide </a></span>
+  <span class="yearpopup"> <a alt="Moon Info" title="Moon Info" href="mooninfo.php" data-lity>'. $chartinfo. ' Moon Info </a></span>';}?>
 <?php if ($positionlastmodule=='airqualitymodule.php') {echo ' <a alt="air quality" title="air quality" href="purpleair.php" data-lity>'. $chartinfo. " Air Quality | Cloudbase </a></span>";}?>
-<?php if ($positionlastmodule=='indoortemperature.php') {echo ' <a alt="Indoor Guide" title="Indoor Guide" href="homeindoor.php" data-lity>'. $chartinfo. " Indoor Guide </a></span>";} ?>
-<?php if ($positionlastmodule=='moonphase.php') {echo ' <a alt="Moon Info" title="Moon Info" href="mooninfo.php" data-lity>'. $chartinfo. " Moon Info </a></span>";}?>
 <?php if ($positionlastmodule=='weather34uvsolar.php') {echo ' <a alt="UV Guide" title="UV Guide" href="uvindex.php" data-lity>'. $chartinfo. " UV Guide  </a></span>";} ?>
 <?php if ($positionlastmodule=='weather34uvsolar.php') {echo ' <span class="yearpopup"><a alt="UV Alamanac" title="UV Alamanac" href="uvalmanac.php" data-lity>&nbsp;'. $chartinfo. " UV Alamanac </a></span>";} ?>
 <?php if ($positionlastmodule=='weather34uvsolar.php') {echo '<span class="yearpopup"> <a alt="Solar Alamanac" title="Solar Alamanac" href="solaralmanac.php" data-lity>'. $chartinfo. " Solar Alamanac </a></span>";}?>
