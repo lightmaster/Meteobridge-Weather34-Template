@@ -19,9 +19,9 @@ if ($weather["wind_speed"]<10){echo "&nbsp;".number_format($weather["wind_speed"
 //weather34-windgust
 if ($weather["wind_gust_speed"]*$toKnots>=26.9978){echo "<windred>",number_format($weather["wind_gust_speed"],1),"</span>";}else if ($weather["wind_gust_speed"]*$toKnots>=21.5983){echo "<windorange>",number_format($weather["wind_gust_speed"],1),"</span>";}else if ($weather["wind_gust_speed"]*$toKnots>=16.1987){echo "<windgreen>",number_format($weather["wind_gust_speed"],1),"</span>";}else if ($weather["wind_gust_speed"]<10){echo "&nbsp;",number_format($weather["wind_gust_speed"],1);}else echo number_format($weather["wind_gust_speed"],1);?>
 <div class="windunitgust"><?php echo  $weather["wind_units"]?></div>
-<div class="windunitidgust">Wind Speed</div></span></div></div>
+<div class="windunitidgust"><?php echo $lang['Currently']; ?></div></span></div></div>
 <div class="windspeedtrend1">
-<?php echo "<valuetext>Max "."<max><value><maxred>".number_format($weather["wind_gust_speed_max"],1)."</maxred></max></span>"."<supmb> ".$weather["wind_units"]."</supmb><br> ".$lang['Wind']." (".$weather["winddmaxtime"].")</valuetext>";?></div>
+<?php echo "<valuetext>Max "."<max><value><maxred>".number_format($weather["wind_gust_speed_max"],1)."</maxred></max></span>"."<supmb> ".$weather["wind_units"]."</supmb><br> ".$lang['Gust']." (".$weather["winddmaxtime"].")</valuetext>";?></div>
 <div class="windconverter"><?php 
 //weather34-convert kmh to mph
 if ($weather["wind_units"]=="km/h" && $weather["wind_gust_speed"]*$toKnots>=26.9978){echo "<div class=windconvertercirclered1><tred>".number_format($weather["wind_gust_speed"]*0.621371,1)." </tred><smallrainunit>mph
@@ -47,13 +47,67 @@ else if ($weather["wind_units"]=="m/s" && $weather["wind_gust_speed"]*$toKnots<1
 <?php  //weather34 wind direction value output   
 if($weather["wind_direction"]<=11.25){echo $lang['Northdir'] ;}else if($weather["wind_direction"]<=33.75){echo $lang['NNEdir'];}else if($weather["wind_direction"]<=56.25){echo $lang['NEdir'];}else if($weather["wind_direction"]<=78.75){echo $lang['ENEdir'];}else if($weather["wind_direction"]<=101.25){echo $lang['Eastdir'];}else if($weather["wind_direction"]<=123.75){echo $lang['ESEdir'];}else if($weather["wind_direction"]<=146.25){echo $lang['SEdir'];}else if($weather["wind_direction"]<=168.75){echo $lang['SSEdir'];}else if($weather["wind_direction"]<=191.25){echo $lang['Southdir'];}  else if($weather["wind_direction"]<=213.75){echo $lang['SSWdir'];}else if($weather["wind_direction"]<=236.25){echo $lang['SWdir'];}else if($weather["wind_direction"]<=258.75){echo $lang['WSWdir'];}else if($weather["wind_direction"]<=281.25){echo $lang['Westdir'];}else if($weather["wind_direction"]<=303.75){echo $lang['WNWdir'];}else if($weather["wind_direction"]<=326.25){echo $lang['NWdir'];}else if($weather["wind_direction"]<=348.75){echo $lang['NWNdir'];}else {echo $lang['Northdir'];}?>
  </div></div> 
-<?php echo ' <div class=weather34windrun>'.$windrunicon."&nbsp;<valuetext1>".$weather['wind_speed_avgday'];?></valuetext1>
-<grey><weather34windrunspan><valuetext>
-<?php echo $weather["wind_units"];?></weather34windrunspan>
-</div></div><br /><div class=windrun1>Avg Speed Today</div>
+<?php echo ' <div class=weather34windrun>'.$windrunicon.' &nbsp;<grey><valuetext1>',number_format($weather["windrun34"],1);?>
+<grey><weather34windrunspan></valuetext>
+<?php if ($weather["wind_units"] == 'mph') echo 'mi'; else if ($weather["wind_units"] == 'm/s') echo ''; else if ($weather["wind_units"] == 'kts') echo 'kts';else echo 'km';?></weather34windrunspan>
+</div></div><br /><div class=windrun1><?php echo  $lang['Wind Run']?></div>
 <?php ///weather34 beaufort
-if($weather["wind_speed_bft"]>=12){echo '<div class=weather34beaufort6>'.$beaufort12. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=11){echo '<div class=weather34beaufort6>'.$beaufort11. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=10){echo '<div class=weather34beaufort6>'.$beaufort10. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=9){echo '<div class=weather34beaufort6>'.$beaufort9. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=8){echo '<div class=weather34beaufort6>'.$beaufort8. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=7){echo '<div class=weather34beaufort6>'.$beaufort7. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=6){echo '<div class=weather34beaufort6>'.$beaufort6. "&nbsp; " .$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=5){echo '<div class=weather34beaufort4-5>'.$beaufort5. "&nbsp; " .$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=4){echo '<div class=weather34beaufort4-5>'.$beaufort4. "&nbsp; " .$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=3){echo '<div class=weather34beaufort3-4>'.$beaufort3. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=2){echo '<div class=weather34beaufort1-3>'.$beaufort2. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=1){echo '<div class=weather34beaufort1-3>'.$beaufort1. "&nbsp; ".$weather["wind_speed_bft"];}else if($weather["wind_speed_bft"]>=0){echo '<div class=weather34beaufort1-3>'.$beaufort0. "&nbsp; ".$weather["wind_speed_bft"];}?>
+if ($weather["wind_speed_bft"] >= 12) {
+  echo '<div class=weather34beaufort6>' . $beaufort12 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 11) {
+  echo '<div class=weather34beaufort6>' . $beaufort11 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 10) {
+  echo '<div class=weather34beaufort6>' . $beaufort10 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 9) {
+  echo '<div class=weather34beaufort6>' . $beaufort9 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 8) {
+  echo '<div class=weather34beaufort6>' . $beaufort8 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 7) {
+  echo '<div class=weather34beaufort6>' . $beaufort7 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 6) {
+  echo '<div class=weather34beaufort6>' . $beaufort6 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 5) {
+  echo '<div class=weather34beaufort4-5>' . $beaufort5 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 4) {
+  echo '<div class=weather34beaufort4-5>' . $beaufort4 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 3) {
+  echo '<div class=weather34beaufort3-4>' . $beaufort3 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 2) {
+  echo '<div class=weather34beaufort1-3>' . $beaufort2 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 1) {
+  echo '<div class=weather34beaufort1-3>' . $beaufort1 . "&nbsp; " . $weather["wind_speed_bft"];
+} else if ($weather["wind_speed_bft"] >= 0) {
+  echo '<div class=weather34beaufort1-3>' . $beaufort0 . "&nbsp; " . $weather["wind_speed_bft"];
+}
+?>
  <weather34bftspan>BFT<weather34bftspan></div>
-<div class="beaufort1"><?php 
-if($weather["wind_speed_bft"]==0){echo "Calm";}else if($weather["wind_speed_bft"]==1){echo "Light Air";}else if($weather["wind_speed_bft"]==2){echo "Light Breeze";}else if($weather["wind_speed_bft"]==3){echo "Gentle Breeze";}else if($weather["wind_speed_bft"]==4){echo "Moderate Breeze";}else if($weather["wind_speed_bft"]==5){echo "Fresh Breeze";}else if($weather["wind_speed_bft"]==6){echo "Strong Breeze";}else if($weather["wind_speed_bft"]==7){echo "Near Gale ".$alert."";}else if($weather["wind_speed_bft"]==8){echo "Gale Force ".$alert."";}else if($weather["wind_speed_bft"]==9){echo "Strong Gale ".$alert."";}else if($weather["wind_speed_bft"]==10){echo "Storm Force ".$alert."";}else if($weather["wind_speed_bft"]==11){echo "Violent Storm ".$alert."";}else if($weather["wind_speed_bft"]>=12){echo "Hurricane Force ".$alert."";}?>
+<div class="beaufort1"><?php
+if ($weather["wind_speed_bft"] == 0) {
+  echo "Calm";
+} else if ($weather["wind_speed_bft"] == 1) {
+  echo "Light Air";
+} else if ($weather["wind_speed_bft"] == 2) {
+  echo "Light Breeze";
+} else if ($weather["wind_speed_bft"] == 3) {
+  echo "Gentle Breeze";
+} else if ($weather["wind_speed_bft"] == 4) {
+  echo "Moderate Breeze";
+} else if ($weather["wind_speed_bft"] == 5) {
+  echo "Fresh Breeze";
+} else if ($weather["wind_speed_bft"] == 6) {
+  echo "Strong Breeze";
+} else if ($weather["wind_speed_bft"] == 7) {
+  echo "Near Gale " . $alert . "";
+} else if ($weather["wind_speed_bft"] == 8) {
+  echo "Gale Force " . $alert . "";
+} else if ($weather["wind_speed_bft"] == 9) {
+  echo "Strong Gale " . $alert . "";
+} else if ($weather["wind_speed_bft"] == 10) {
+  echo "Storm Force " . $alert . "";
+} else if ($weather["wind_speed_bft"] == 11) {
+  echo "Violent Storm " . $alert . "";
+} else if ($weather["wind_speed_bft"] >= 12) {
+  echo "Hurricane Force " . $alert . "";
+}
+?>
 </div>
