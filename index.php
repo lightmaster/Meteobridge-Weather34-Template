@@ -132,7 +132,7 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
 <span class="yearpopup">  <a alt="yearly windspeed" title="yearly windspeed" href="<?php echo $chartsource ;?>/yearlywindspeedgust.php" data-lity ><?php echo $menucharticonpage?> <?php echo date('Y');?></a></span>
 <span class="monthpopup"> <a alt="monthly windspeed" title="monthly windspeed"href="<?php echo $chartsource ;?>/monthlywindspeedgust.php" data-lity><?php echo $menucharticonpage?> <?php echo strftime(" %b") ;?> </a></span>
 <span class="todaypopup"> <a alt="today windspeed" title="today windspeed" href="<?php echo $chartsource ;?>/todaywindspeedgust.php" data-lity ><?php echo $menucharticonpage?> <?php echo $lang['Today']; ?> </a></span>
-<span class="todaypopup"> <a alt="today wind direction" title="today wind direction" href="<?php echo $chartsource ;?>/todaywinddirection.php" data-lity ><?php echo $menucharticonpage.$lang['Winddirection'] ?></a></span>
+<span class="todaypopup"> <a alt="today wind direction" title="today wind direction" href="<?php echo $chartsource ;?>/todaywinddirection.php" data-lity ><?php echo $menucharticonpage.' '.$lang['Winddirection'] ?></a></span>
       </div>
   <span class='moduletitle'><?php echo $lang['Direction'];?> | <?php echo $lang['Windspeed'] ," (<valuetitleunit>",$weather["wind_units"];?></valuetitleunit>)</span><br />
          <div id="windspeed"></div></div>
