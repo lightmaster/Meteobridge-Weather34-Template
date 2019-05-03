@@ -21,7 +21,7 @@ else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?><
 <p>
 <li class="header">UNITS</a></li>
 <?php 
-  if($units!=Null && $units!='default'){echo '<li> <a  href="./?units=default"> <weather34menumarkerred></weather34menumarkerred> Default Units '.(($tempunit=='F')?echo '<topbarimperialf>&deg;F</topbarimperialf>':echo '<topbarmetricc>&deg;C</topbarmetricc>').'</a><br />';}
+  if($units!=Null && $units!='default'){echo '<li> <a  href="./?units=default"> <weather34menumarkerred></weather34menumarkerred> Default Units '.(($tempunit=='F')?'<topbarimperialf>&deg;F</topbarimperialf>':'<topbarmetricc>&deg;C</topbarmetricc>').'</a><br />';}
   if($units!='us'){echo '<li> <a  href="./?units=us"> <weather34menumarkerorange></weather34menumarkerorange>  Imperial  <topbarimperialf>&deg;F</topbarimperialf> </a><br />  ';}
   if($units!='metric'){echo '<li> <a  href="./?units=metric"> <weather34menumarkerblue></weather34menumarkerblue> Metric <topbarmetricc>&deg;C</topbarmetricc></a><br />  ';}
   if($units!='uk'){echo '<li> <a  href="./?units=uk">  <weather34menumarkeryellow></weather34menumarkeryellow> UK ( MPH)  <topbarmetricc>&deg;C</topbarmetricc></a><br /> ';}
