@@ -44,7 +44,7 @@ $aqiweather["city"]      = $parsed_json->{'results'}[0]->{'ID'};
 $aqiweather["label"]     = $parsed_json->{'results'}[0]->{'Label'};
 $a="";if($aqiweather["aqi"]==$a){$aqiweather["aqi"] = "0" ;}
 ?>
-<div class="updatedtime"><span><?php if(file_exists('jsondata/purpleair.txt') && time() - filemtime('jsondata/purpleair.txt')<300) {
+<div class="updatedtime"><span><?php if(file_exists('jsondata/purpleair.txt') && time() - filemtime('jsondata/purpleair.txt')<1800) {
   echo $online." ".date($timeFormat, filemtime('jsondata/purpleair.txt'));
   } else {
   echo $offline. '<offline> Offline </offline>';
