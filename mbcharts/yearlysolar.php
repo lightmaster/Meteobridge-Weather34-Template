@@ -48,7 +48,7 @@
 		if(allLinesArray.length>0){
 			
 			for (var i = 0; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
 				if ( rowData.length >1)
 					dataPoints1.push({label:rowData[0],y:parseFloat(rowData[8])});	
 					
@@ -62,7 +62,7 @@
 		if(allLinesArray.length>1){
 			
 			for (var i = 0; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
 				if ( rowData.length >0)
 					dataPoints2.push({label: rowData[0],y:parseFloat(rowData[3]*1.60934)});
 					//parseFloat(rowData[13])});

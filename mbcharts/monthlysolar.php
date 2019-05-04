@@ -45,7 +45,7 @@
 		if(allLinesArray.length>0){
 			
 			for (var i = 1; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
 				if ( rowData.length >0)
 					dataPoints1.push({label:rowData[0],y:parseFloat(rowData[8])});	
 					
@@ -59,7 +59,7 @@
 		if(allLinesArray.length>1){
 			
 			for (var i = 100; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
 				if ( rowData.length >0)
 					dataPoints2.push({label: rowData[0],y:parseFloat(rowData[3]*1.60934)});
 					//parseFloat(rowData[13])});
@@ -103,10 +103,11 @@
 			gridThickness: 1,	
 			titleFontFamily: "arial",	
 			labelFontFamily: "arial",	
-			minimum:-0.2,
+			minimum: 0,
 			interval:1,	
 			gridDashType: "dot",	
-			 xValueType: "dateTime",	
+			xValueType: "dateTime",
+			includezero: false,
 			},
 			
 		axisY:{

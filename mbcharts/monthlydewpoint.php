@@ -54,7 +54,7 @@
 		if(allLinesArray.length>0){
 			//hi
 			for (var i = 0; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
 				if ( rowData.length >7)
 					dataPoints1.push({label: rowData[0],y:parseFloat(rowData[3]*<?php echo $conv ;?>)});
 			}
@@ -66,7 +66,7 @@
 		if(allLinesArray.length>0){
 			//lo
 			for (var i = 0; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
 				if ( rowData.length >7)
 					dataPoints2.push({label: rowData[0],y:parseFloat(rowData[4]*<?php echo $conv ;?>)});
 				
@@ -105,17 +105,25 @@
  },
 		axisX: {
 			gridColor: '<?php echo $gridcolor;?>',
-		    labelFontSize: 10,
+		  labelFontSize: 10,
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,	
 			titleFontFamily: "arial",	
 			labelFontFamily: "arial",	
-			minimum:-0.2,
+			minimum: 0,
 			gridDashType: "dot",
 			intervalType:"day",
-			xValueType: "dateTime",	
-			
+			xValueType: "dateTime",
+			includezero: false,
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: "#009bab",
+				labelFontColor: "#F8F8F8",
+				labelFontSize:10,
+				labelBackgroundColor: "#009bab",
+			}
 			},
 			
 		axisY:{
@@ -136,7 +144,16 @@
       labelFontFamily: "arial",
       labelFormatter: function ( e ) {
         return e.value .toFixed(0) + " °<?php echo $tempunit ;?> " ;  
-      },		 
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,	
+				color: "#009bab",		
+				labelFontColor: "#F8F8F8",
+				labelFontSize:10,
+				labelBackgroundColor: "#ff832f",
+				valueFormatString:"##0.## <?php echo $rainunit ;?>",
+			}
     },
 	  
 	  legend:{
