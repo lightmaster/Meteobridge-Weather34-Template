@@ -12,15 +12,15 @@
 html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;}
 .grid { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 2fr));
+  grid-gap: 2px;
   align-items: stretch;
-  color:#f5f7fc
+  color:#f5f7fc;  
   }
 .grid > article {
   border: 1px solid #212428;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  padding:10px;
+  padding:5px;
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;
@@ -32,32 +32,30 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
   
  .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}.weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:100%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}.weather34browser-footer{flex-basis:auto;height:35px;background:#ebebeb;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-20px;width:97.4%;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#aaa;text-decoration:none}
 .weather34darkbrowser{position:relative;background:0;width:100%;max-height:30px;margin:auto;margin-top:-15px;margin-left:0px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:10px;position:absolute;left:0;right:0;top:0;padding:4px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
- blue{color:#01a4b4}orange{color:#009bb4}orange1{position:relative;color:#009bb4;margin:0 auto;text-align:center;margin-left:5%;font-size:1.1rem}green{color:#aaa}red{color:#f37867}red6{color:#d65b4a}value{color:#fff}yellow{color:#CC0}purple{color:#916392}meteotextshowertext{font-size:1.2rem;color:#009bb4}meteorsvgicon{color:#f5f7fc}  
-.moonphasetext{font-size:1.1rem;color:#f5f7fc;position:absolute;display:inline;left:140px;top:80px}
-moonphaseriseset{font-size:.9rem;}credit{position:relative;font-size:.8em;top:10%}
+ blue{color:#01a4b4}orange{color:#009bb4}orange1{position:relative;color:#009bb4;margin:0 auto;text-align:center;margin-left:5%;font-size:1.1rem}green{color:#aaa}red{color:#f37867}red6{color:#d65b4a}value{color:#fff}yellow{color:#CC0}purple{color:#916392}
 .metar34compass1{position:relative}
-
 .metar34compass1>.metar34compass-line1,.metar34compass>.metar34compass-line{right:25px;-webkit-clip-path:polygon(100%0,100%100%,100%100%,0100%,00);-ms-clip-path:polygon(100%0,100%100%,100%100%,0100%,00);-webkit-border-radius:100%;-moz-border-radius:100%;-ms-border-radius:100%}
-.text1,.windvalue1{font-family:weathertext2,Arial;font-size:20px;margin-left:3px}
+.text1{font-family:weathertext2,Arial;font-size:20px;margin-left:3px;}
+.windvalue1{font-family:weathertext2,Arial;font-size:20px;margin-left:3px;}
 .windseparator{color:rgba(57,61,64,1)}
 .text1,.windvalue1{color:#aaa}
-.windirection1{width:100%;}
-.metar34compass1{width:150px;height:150px;text-align:center;top:0px;left:35px;z-index:1}
+.metar34compass1{width:165px;height:165px;margin-top:-20px;left:0;z-index:1}
 
-.text1{z-index:10;text-align:center;margin:5px 0 auto}
-.metar34compass1>.metar34compass-line1{position:absolute;z-index:10;left:25px;top:25px;bottom:25px;-o-border-radius:100%;border-radius:100%;border-left:8px solid rgba(95,96,97,.5);border-top:8px solid rgba(95,96,97,.8);border-right:8px solid rgba(95,96,97,.5);border-bottom:8px solid rgba(95,96,97,.8);}
-
+text1{z-index:10;text-align:center;margin:5px 0 auto}
+.metar34compass1>.metar34compass-line1{position:absolute;z-index:10;left:24px;top:25px;bottom:25px;-o-border-radius:100%;border-radius:100%;border-left:8px solid rgba(95,96,97,.5);border-top:8px solid rgba(95,96,97,.8);border-right:8px solid rgba(95,96,97,.5);border-bottom:8px solid rgba(95,96,97,.8);}
 .thearrow1:before{width:6px;height:6px;position:absolute;z-index:9;left:2px;top:-3px;border:2px solid #fff;-webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;-ms-border-radius:100%;border-radius:100%}
-.metar34compass1>.windirectiontext1{display:block;text-align:center;color:#aaa;font-family:Arial,sans-serif;font-weight:600;line-height:12px;font-size:11px;z-index:10;margin:0 0 auto}
-.windirectiontext1 span{color:#9aba2f}
+.windirectiontext1{flex-basis:auto;width:100px;position:absolute;text-align:center;color:#fff;font-family:'weathertext2',Arial,sans-serif;line-height:12px;font-size:.85rem;z-index:10;margin-top:30px;margin-left:20px;display:flex}
+
+
+
 .thearrow2{-webkit-transform:rotate(<?php echo $metar34windir;?>deg);-moz-transform:rotate(<?php echo $metar34windir;?>deg);-o-transform:rotate(<?php echo $metar34windir;?>deg);-ms-transform:rotate(<?php echo $metar34windir;?>deg);transform:rotate(<?php echo $metar34windir;?>deg);position:absolute;z-index:200;top:0;left:50%;margin-left:-5px;width:10px;height:50%;-webkit-transform-origin:50% 100%;-moz-transform-origin:50% 100%;-o-transform-origin:50% 100%;-ms-transform-origin:50% 100%;transform-origin:50% 100%;-webkit-transition-duration:3s;-moz-transition-duration:3s;-o-transition-duration:3s;-ms-transition-duration:3s;transition-duration:3s}.thearrow2:after{content:'';position:absolute;left:50%;top:0;height:10px;width:10px;background-color:NONE;width:0;height:0;border-style:solid;border-width:14px 9px 0 9px;border-color:RGBA(255,121,58,1.00) transparent transparent transparent;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transition-duration:3s;-moz-transition-duration:3s;-o-transition-duration:3s;-ms-transition-duration:3s;transition-duration:3s}.thearrow2:before{content:'';width:3px;height:3px;position:absolute;z-index:9;left:2px;top:-5px;border:1px solid RGBA(255,255,255,0.8);-webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;-ms-border-radius:100%;border-radius:100%}
-spancalm{postion:relative;font-family:weathertext2,Arial;font-size:26px;}
+spancalm{postion:relative;font-family:weathertext2,Arial;font-size:16px;}
 
 .metartempcontainer1{left:70px;top:0}
 .metartempcontainer2{left:10px;top:90px;position:absolute}
-.metartempcontainer3{left:105px;top:125px;position:absolute}
-.metartempcontainer4{left:105px;top:76px;position:absolute}
-.metartempcontainer5{left:105px;top:142px;position:absolute}
+.metartempcontainer3{left:85px;top:125px;position:absolute}
+.metartempcontainer4{left:85px;top:76px;position:absolute}
+.metartempcontainer5{left:85px;top:142px;position:absolute}
 
 
 
@@ -88,22 +86,26 @@ spancalm{postion:relative;font-family:weathertext2,Arial;font-size:26px;}
 .metardewtoday20{background:rgba(255, 124, 57, 1.000)}
 .metardewtoday25{background:rgba(255, 124, 57, 0.7)}
 .metardewtoday30{background:rgba(211, 93, 78, 1.000)}
-.metarhumcontainer1{left:200px;margin-top:10px}
-.metarhumcontainer2{left:200px;margin-top:10px}
+
+.metarhumcontainer1{position:absolute;top:71px;font-size:.7rem;z-index:1;color:#fff;margin-left:80px}
+.metarhumcontainer2{left:70px;margin-top:10px}
+.humword{position:absolute;top:106px;font-size:.65rem;z-index:1;color:#fff;margin-left:89px}
+
 
 .metarhumtoday0-35,.metarhumtoday35-70,.metarhumtoday70-85,.metarhumtoday85-100{font-family:weathertext2,Arial,Helvetica,system;width:4.5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.metarhumtoday0-35,.metarhumtoday35-70,.metarhumtoday70-85,.metarhumtoday85-100{font-size:1.1rem;padding-top:2px;color:#fff;border-bottom:12px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:21px;}
 .metarhumtoday0-35{background:rgba(211, 93, 78, 1.000)}.metarhumtoday35-70{background:rgba(230, 161, 65, 1.000)}.metarhumtoday70-85{background:rgba(230, 161, 65, 1.000)}.metarhumtoday85-100{background:rgba(68, 166, 181, 1.000)}
-.dewword,.tword{position:absolute;margin-top:-32px;font-size:.65rem;z-index:1;color:#fff}
-.dewword,.tword{position:absolute;margin-top:-32px;font-size:.65rem;z-index:1;color:#fff}
-.dewword{margin-left:6px}
-.tword{margin-left:2px}
+
+
+.dewword,.tword{position:absolute;margin-top:-33px;font-size:.8rem;z-index:1;color:#fff}
+.dewword{margin-left:20px}
+.tword{margin-left:20px}
 .tword2{position:absolute;margin-top:-32px;font-size:.65rem;z-index:1;color:#fff}
-.dewword2{position:absolute;margin-top:33px;font-size:.65rem;z-index:1;color:#fff;margin-left:95px}
-.tword2{margin-left:90px}
+.dewword2{position:absolute;margin-top:33px;font-size:.65rem;z-index:1;color:#fff;margin-left:75px}
+.tword2{margin-left:70px}
 .maxword{position:absolute;margin-top:-32px;font-size:.65rem;z-index:1;color:#fff}
 .maxword{margin-left:10px}
 .windword{position:absolute;margin-top:32px;font-size:.65rem;z-index:1;color:#fff;margin-left:7px}
-.humword{position:absolute;top:140px;font-size:.7rem;z-index:1;color:#fff;margin-left:170px}
+
 .metarwindtoday0,.metarwindtoday5,.metarwindtoday10,.metarwindtoday20,.metarwindtoday25,.metarwindtoday30{font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}
 .metarwindtoday0,.metarwindtoday5,.metarwindtoday10,.metarwindtoday15,.metarwindtoday20,.metarwindtoday25,.metarwindtoday30{font-size:1.1rem;padding-top:0;color:#fff;border-bottom:10px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;display:flex}
 .metarwindtodaykts0,.metarwindtodaykts5,.metarwindtodaykts10,.metarwindtodaykts20,.metarwindtodaykts25,.metarwindtodaykts30{font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}
@@ -128,14 +130,59 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .metarwindtoday20{background:rgba(255, 124, 57, 1.000)}
 .metarwindtoday25{background:rgba(255, 124, 57, 0.7)}
 .metarwindtoday30{background:rgba(211, 93, 78, 1.000)}
-smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
+smalluvunit{font-size:.8rem;font-family:Arial,Helvetica,system;}
 valuecalm{font-size:.8em;font-family:weathertext2;}
-.uppercase{font-size:1em;font-family:weathertext2;width:300px;margin-top:-70px;margin-left:100px;float:none;position:relative;}
-stationid{font-size:1.7em;font-family:weathertext2;color:#009bb4}
+stationid{font-size:1.4em;font-family:weathertext2;color:#009bb4}
+.hitemp,.lotemp{font-size:9px;}
 </style>
 <div class="weather34darkbrowser" url="Nearby Airport Conditions"></div>
   
 <main class="grid">
+
+ <article>
+  <div class=actualt>&nbsp;&nbsp Current Conditions </div>   
+ <?php 	echo "<img rel='prefetch' src='css/icons/".$sky_icon."' width='100px' height='70px'>";?>
+  
+  
+   <?php 
+ echo "<span style='float:left;margin-top:-20px;'>",$sky_desc.''; ?>
+<br>
+<blue>Pressure</blue> <br><green>
+<?php
+if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
+	echo $metar34pressuremb ," </green>(".$pressureunit.")";
+} else {
+	echo $metar34pressurehg ," </green>(inHG)";
+}
+?> - <green>
+<?php
+if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
+	echo $metar34pressurehg ," </green>(inHG)";
+} else {
+	echo $metar34pressuremb ," </green>(mb)";
+}
+?>
+<blue><br>Visibility</blue> <br><green>
+<?php
+if ($distanceunit == 'mi') {
+	echo $metar34vismiles  ," </green>(mimiles)";
+} else {
+	echo $metar34viskm ,"</green> (km)";
+}
+?> - <green>
+<?php
+if ($distanceunit =='mi') {
+	echo $metar34viskm  ," </green>(km)";
+} else {
+	echo $metar34vismiles ,"</green> (miles)";
+}
+?>
+  </article> 
+  
+  
+
+
+
   <article>       
 <div class=actualt>&nbsp;&nbsp Temperature </div>   
 
@@ -158,55 +205,14 @@ stationid{font-size:1.7em;font-family:weathertext2;color:#009bb4}
 	else if ($metar34temperaturef =='') {echo '<div class=metartemptoday0>'.$metar34temperaturef."<smalluvunit> N/A";}
  }
 ?></smalluvunit></div></div>
-<div class="tword">Temperature</div>
+<div class="tword"><?php if ($tempunit == 'F') {echo $metar34temperaturec."&deg;C";} else if ($tempunit == 'C'){echo $metar34temperaturef."&deg;F";}?></div>
 </div>
 
 
 
-<div class="metartempcontainer4"><?php 
-if ($tempunit == 'C') {
-	if ($metar34temperaturef >86) {echo '<div class=metartemptoday30>'.$metar34temperaturef."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34temperaturef >77) {echo '<div class=metartemptoday25>'.$metar34temperaturef."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34temperaturef >68) {echo '<div class=metartemptoday20>'.$metar34temperaturef."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34temperaturef >50) {echo '<div class=metartemptoday10>'.$metar34temperaturef."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34temperaturef >41) {echo '<div class=metartemptoday5>'.$metar34temperaturef."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34temperaturef >-50) {echo '<div class=metartemptoday0>'.$metar34temperaturef."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34temperaturef =='') {echo '<div class=metartemptoday0>'.$metar34temperaturef."<smalluvunit> N/A";}
-} else{
-	if ($metar34temperaturec >30) {echo '<div class=metartemptoday30>'.$metar34temperaturec."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34temperaturec >25) {echo '<div class=metartemptoday25>'.$metar34temperaturec."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34temperaturec >20) {echo '<div class=metartemptoday20>'.$metar34temperaturec."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34temperaturec >10) {echo '<div class=metartemptoday10>'.$metar34temperaturec."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34temperaturec >5) {echo '<div class=metartemptoday5>'.$metar34temperaturec."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34temperaturec >-50) {echo '<div class=metartemptoday0>'.$metar34temperaturec."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34temperaturec =='') {echo '<div class=metartemptoday0>'.$metar34temperaturec."<smalluvunit> N/A";}
-}
-?></smalluvunit></div></div>
-<div class="tword2">Temperature</div>
 
 
 
-<div class="metartempcontainer5"><?php 
-if ($tempunit == 'C') {
-	if ($metar34dewpointf>86) {echo '<div class=metartemptoday30>'.$metar34dewpointf."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34dewpointf>77) {echo '<div class=metartemptoday25>'.$metar34dewpointf."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34dewpointf>68) {echo '<div class=metartemptoday20>'.$metar34dewpointf."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34dewpointf>50) {echo '<div class=metartemptoday10>'.$metar34dewpointf."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34dewpointf>41) {echo '<div class=metartemptoday5>'.$metar34dewpointf."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34dewpointf>-50) {echo '<div class=metartemptoday0>'.$metar34dewpointf."<smalluvunit> &nbsp;&deg;F";}
-	else if ($metar34dewpointf=='') {echo '<div class=metartemptoday0>'.$metar34dewpointf."<smalluvunit> N/A";}
-	
-}else {
-	if ($metar34dewpointc >30) {echo '<div class=metardewtoday30>'.$metar34dewpointc."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34dewpointc >25) {echo '<div class=metardewtoday25>'.$metar34dewpointc."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34dewpointc >20) {echo '<div class=metardewtoday20>'.$metar34dewpointc."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34dewpointc >10) {echo '<div class=metardewtoday10>'.$metar34dewpointc."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34dewpointc >5) {echo '<div class=metardewtoday5>'.$metar34dewpointc."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34dewpointc >-50) {echo '<div class=metardewtoday0>'.$metar34dewpointc."<smalluvunit> &nbsp;&deg;C";}
-	else if ($metar34dewpointc=='') {echo '<div class=metartemptoday0>'.$metar34dewpointc."<smalluvunit> N/A";}
-}
-?></smalluvunit></div></div>
-<div class="dewword2">&nbsp;Dewpoint</div>
 	 
 <div class="lotemp">
 
@@ -229,11 +235,11 @@ if ($tempunit == 'C') {
 	else if ($metar34dewpointf=='') {echo '<div class=metartemptoday0>'.$metar34dewpointf."<smalluvunit> N/A";}
 }
 ?></smalluvunit></div></div> 
- <div class="dewword">&nbsp;&nbsp;Dewpoint</div>
+ <div class="dewword"><?php if ($tempunit == 'F') {echo $metar34dewpointc."&deg;C";} else if ($tempunit == 'C'){echo $metar34dewpointf."&deg;F";}?></div>
 
 <div class="lotemp">
 
- <div class="metarhumcontainer1" style="position:absolute;left:180px;top:95px"><?php 
+ <div class="metarhumcontainer1"><?php 
 if ($metar34humidity >85) {echo '<div class=metarhumtoday85-100>'.$metar34humidity ."<smalluvunit> &nbsp;%";}
 else if ($metar34humidity >70) {echo '<div class=metarhumtoday70-85>'.$metar34humidity ."<smalluvunit> &nbsp;%";}
 else if ($metar34humidity  >35) {echo '<div class=metarhumtoday35-70>'.$metar34humidity ."<smalluvunit> &nbsp;%";}
@@ -309,9 +315,6 @@ echo $$metarspot1;
 echo $$metarspot2;
 ?></smalluvunit></div>
 </div>
-
-
-
 <div class="metarwindcontainer3">
 <?php 
 //wind3 kts
@@ -325,97 +328,48 @@ echo $$metarspot4;
 ?></smalluvunit></div>
 </div>
 </div>
-
-
 </article>
 
 
 <article>
 <div class=actualw>&nbsp;&nbsp Wind Direction</div> 
+</div>
+</div> 
 <div class="metar34compass1">
 <div class="metar34compass-line1">
-<div class="thearrow2"></div></div>
-<div class="text1" ><div class="windvalue1" id="windvalue" ><?php 
-if( $metar34windir==0){echo "<span><valuecalm>Calm</valuecalm</span>";}else echo $metar34windir,"&deg;";?></div></div>
-<div class="windirectiontext1" style="margin-top:40px" >
+
+<div class="windirectiontext1" >
+
 <?php 
-if($metar34windir<=11.25){echo "Due <span>North<br></span>";}
-else if($metar34windir<=33.75){echo "North North <br><span>East</span>";}
-else if($metar34windir<=56.25){echo "North <span> East<br></span>";}
-else if($metar34windir<=78.75){echo "East North<br><span>East</span>";}
-else if($metar34windir<=101.25){echo "Due <span> East<br></span>";}
-else if($metar34windir<=123.75){echo "East South<br><span>East</span>";}
-else if($metar34windir<=146.25){echo "South <span> East</span>";}
-else if($metar34windir<=168.75){echo "South South<br><span>East</span>";}
-else if($metar34windir<=191.25){echo "Due <span> South</span>";}
-else if($metar34windir<=213.75){echo "South South<br><span>West</span>";}
-else if($metar34windir<=236.25){echo "South <span> West</span>";}
-else if($metar34windir<=258.75){echo "West South<br><span>West</span>";}
-else if($metar34windir<=281.25){echo "Due <span> West</span>";}
-else if($metar34windir<=303.75){echo "West North<br><span>West</span>";}
-else if($metar34windir<=326.25){echo "North <span> West</span>";}
-else if($metar34windir<=348.75){echo "North North<br><span>West</span>";}
-else{echo "Due <span> North</span>";}?>
-
-
+if( $metar34windir==0){echo "Calm";}else echo $metar34windir,"&deg;";?>
+<br>
+<?php 
+if($metar34windir<=11.25){echo "&nbsp;&nbsp;Due North";}
+else if($metar34windir<=33.75){echo "North North <br>East";}
+else if($metar34windir<=56.25){echo "&nbsp;&nbsp;North East";}
+else if($metar34windir<=78.75){echo "East North<br>East";}
+else if($metar34windir<=101.25){echo "&nbsp;&nbsp;Due East";}
+else if($metar34windir<=123.75){echo "East South<br>East";}
+else if($metar34windir<=146.25){echo "&nbsp;South East";}
+else if($metar34windir<=168.75){echo "South South<br>East";}
+else if($metar34windir<=191.25){echo "&nbsp;Due South";}
+else if($metar34windir<=213.75){echo "South South<br>West";}
+else if($metar34windir<=236.25){echo "&nbsp;South West";}
+else if($metar34windir<=258.75){echo "West South<br>West";}
+else if($metar34windir<=281.25){echo "&nbsp;&nbsp;Due West";}
+else if($metar34windir<=303.75){echo "West North<br>West";}
+else if($metar34windir<=326.25){echo "&nbsp;North West";}
+else if($metar34windir<=348.75){echo "North North<br>West";}
+else{echo "&nbsp;&nbsp;Due North";}?>
 
 </div>
-
-</div> 
-
+<div class="thearrow2"></div></div></div>
+  </article> 
  
-
-
-  </article> 
-  
-  
-  <article>
-  <div class=actualt>&nbsp;&nbsp Current Conditions </div>   
- <?php 	echo "<img rel='prefetch' src='css/icons/".$sky_icon."' width='100px' height='70px' style='margin-top:3px;' >";?>
-  
-  
-   <?php //min year 
- echo '<div class=uppercase>',$sky_desc.'</div> '; ?>
-<div class="lotemp" style="margin-top:30px;">
-<div class="hitemp">Pressure <green>
-<?php
-if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
-	echo $metar34pressuremb ," </green>(".$pressureunit.")";
-} else {
-	echo $metar34pressurehg ," </green>(inHG)";
-}
-?> - <green>
-<?php
-if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
-	echo $metar34pressurehg ," </green>(inHG)";
-} else {
-	echo $metar34pressuremb ," </green>(mb)";
-}
-?></span></div>
-<div class="hitemp">Visibility <yellow>
-<?php
-if ($distanceunit == 'mi') {
-	echo $metar34vismiles  ," </yellow>(mi)";
-} else {
-	echo $metar34viskm ,"</yellow> (km)";
-}
-?> - <yellow>
-<?php
-if ($distanceunit =='mi') {
-	echo $metar34viskm  ," </yellow>(km)";
-} else {
-	echo $metar34vismiles ,"</yellow> (mi)";
-}
-?>
-   
-   
-   
-  </article> 
-  
-  
   <article>
   <div class=actualt>&nbsp;&nbsp Airport Data </div>   
-  <stationid><?php echo $metar34stationid ; ?></stationid>
+  <stationid><?php echo $metar34stationid ; ?></stationid><br>
+  <div class="lotemp">
    <?php
 echo "Location <yellow>",$metar34stationname  ;
 echo '</yellow> <green>'.$airport1dist.'</green> '.$distanceunit.' (<green>';
@@ -427,23 +381,42 @@ if ($distanceunit == 'mi') {
 	echo '</green> mi)';
 }
 ?>
- <div class="lotempraw">
+ <div class="lotemp">
 <?php //metar raw
-echo "<sup>Metar :" .$metar34raw."</greyuv>";?>
+echo "Metar :" .$metar34raw."";?>
 </div>
 <div class="hitemp">
 <?php //update timestamp
 date_default_timezone_set($tz);$date = $metar34time;$date=str_replace('@', ' ', $date);
 $date=str_replace('Z', ' ', $date);$date1 = strtotime($date) + 60*60*$UTC;echo date('D jS F H:i a ',$date1);
 ?> </div></div>
-<span style="position:absolute;margin-top:10px;line-height:10px;font-size:10px;margin-left:80px;">Metar Data</span><a href="https://www.checkwx.com/weather/<?php echo $icao1;?>" title="https://www.checkwx.com/weather/<?php echo $icao1;?>" target="_blank"><img src=img/checkwx.svg width=80px alt="https://www.checkwx.com/weather/<?php echo $icao1;?>"></a></div>
-
-
-</div></div>
 
   </article> 
   
   <article>
-  <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?></span></article> 
+  <div class=actualt>&nbsp;&nbsp Raw Metar Info</div>  
+  <div class="lotemp">
+  <?php echo $info?> Raw METAR is the most common format in the world for the transmission of observational weather data. It is highly standardized through the International Civil Aviation Organization (ICAO), which allows it to be understood throughout most of the world.</span></div>
+  </article> 
+  
+  <article>
+  <div class=actualt>&nbsp;&nbsp API  Info</div>  
+  <div class="lotemp">
+  <?php echo $info?> Data Provided by </span><a href="https://www.checkwx.com/weather/<?php echo $icao1;?>" title="https://www.checkwx.com/weather/<?php echo $icao1;?>" target="_blank" ><br><img src=img/checkwx.svg width=130px alt="https://www.checkwx.com/weather/<?php echo $icao1;?>"></a></span></div>
+  </article> 
+  
+  
+  <article>
+  <div class=actualt>&nbsp;&nbsp &copy; Info</div>  
+  <div class="lotemp">
+  <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
+  <br><br>
+  <?php echo $info?> Guide Info provided  by <a href="https://en.wikipedia.org/wiki/METAR" title="https://en.wikipedia.org/wiki/METAR" target="_blank" style="font-size:9px;">Metar-Wikipedia </a>  
+  </div></article> 
+   
+   
+  
+  
+   
    
 </main>

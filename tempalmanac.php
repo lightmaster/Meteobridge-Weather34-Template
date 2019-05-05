@@ -1,52 +1,59 @@
 <?php 
 //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
-include('livedata.php');?>
+include('livedata.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Weather34 Almanac Temperature Data Popup </title>
+  <title>Weather34 Temperature Almanac Information</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(fonts/verbatim-regular.woff2) format("woff2"),url(fonts/verbatim-regular.ttf) format("truetype")}
+html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;}
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 2fr));
+  grid-gap: 5px;
+  align-items: stretch;
+  color:#f5f7fc;
+ 
+  }
+.grid > article {
+  border: 1px solid #212428;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  padding:20px;
+  font-size:0.8em;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+}
+
   
- <style>
-@font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff")}
-@font-face{font-family:weathertext;src:url(css/fonts/sanfranciscodisplay-regular-webfont.woff) format("woff")}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:"weathertext",Helvetica, Arial, sans-serif;background:0}
-body{color:#aaa;overflow-x:hidden;min-height:80vh;padding:10px}
-section{width:90vw;max-width:100rem;min-width:76rem;margin:0;padding:5px;margin-bottom:-5px;}
-.weather34title{font-size:14px;font-weight:normal;padding-top:3px;font-family:'Arial',sans-serif;width:400px}
-.weather34cards{padding-top:2rem;display:-webkit-box;display:-ms-flexbox;display:flex;justify-content:space-between;padding:5px;}
-.weather34card{width:500px;height:14.5rem;background-color:#none;border-radius:4px;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#aaa;font-size:11px;font-weight:normal;padding:15px;border:solid #444 1px;margin:2px}
-.weather34card__weather34-container{height:50%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;padding:15px;font-family:"weathertext",Helvetica, Arial, sans-serif;}
-.weather34card__weather34-wrapper{width:8rem;font-family:"weathertext",Helvetica, Arial, sans-serif;;font-weight:100}
-.weather34cardguide{width:27rem;height:210px;background:RGBA(37,41,45,0);border-radius:4px;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#aaa;font-size:12px;font-weight:normal;padding:5px;border:solid #444 1px;line-height:13px}
-.weather34card__weather34-guide{width:10rem;font-family:"weathertext",Helvetica, Arial, sans-serif;font-weight:100}.weather34card__count-container{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:30px;font-family:"weathertext",Helvetica, Arial, sans-serif;}
-.weather34card__count-text{font-family:"weathertext",Helvetica, Arial, sans-serif;;text-align:left;width:200px}
-.weather34card__count-textuv{font-family:"weathertext",Helvetica, Arial, sans-serif;;width:200px;float:left;font-size:13px;text-align:left;margin-left:-20px;line-height:12px}
-.weather34card__count-text--big{font-size:26px;font-weight:200;font-family:"weathertext2",Helvetica, Arial, sans-serif;paddin-top:10px}
-.weather34card__count-text--bigs{font-size:12px;font-family:"weathertext",Helvetica, Arial, sans-serif;font-weight:normal;color:#aaa;text-align:center;margin-top:5px;width:100px}weather34card__count-text--bigsa{font-size:12px;font-family:"weathertext",Helvetica, Arial, sans-serif;font-weight:normal;color:#aaa;text-align:center}
-.weather34card__stuff-container{margin:0 auto;width:99%;height:18%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:15px;color:#aaa;background:RGBA(37,41,45,0);border:solid RGBA(156,156,156,0.1) 0;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;font-family:"weathertext",Helvetica, Arial, sans-serif;text-align:center;font-size:12px}
-.weather34card:after{content:"";display:block;position:absolute;top:0;left:0;width:16rem;height:4.625rem;padding:10px}.weather34card--earthquake1:after{background-image:radial-gradient(to bottom,rgba(106,122,135,0.5),transparent 70%)}.weather34card--earthquake2:after{background-image:radial-gradient(to bottom,rgba(106,191,96,0.5),transparent 70%)}.weather34card--earthquake3:after{background-image:radial-gradient(to bottom,rgba(96,203,231,0.5),transparent 70%)}blue{color:#01a4b4}orange{color:#ff8841}green{color:#9aba2f}red{color:#f37867}red6{color:#d65b4a}darkred{color:#f47264}value{color:#fff}yellow{color:RGBA(163,133,58,1)}purple{color:#916392}time{color:#aaa;font-weight:normal;font-family:"weathertext",Helvetica, Arial, sans-serif;}time span{color:#ff8841;font-weight:normal;font-family:"weathertext",Helvetica, Arial, sans-serif;}a{color:#aaa;font-size:10px;top:25px;margin-top:10px;text-decoration:none}
-.provided{position:relative;color:#aaa;font-size:10px;bottom:-5px;text-decoration:none;margin-left:20%;}updated{position:absolute;bottom:5px;float:right}.weather34-solarrate-bar{background:0;position:absolute;height:100px;width:30px;margin-left:235px;margin-top:-6px}
-.uvsun{position:absolute;top:10px;margin-left:175px}.sunfade{opacity:.8}unit{font-size:13px;color:#aaa;}.uvmaxi2{position:absolute;left:-10px;color:rgba(0, 154, 171, 1.000);margin-top:-60px;font-size:16px;width:200px;}.uvmaxi2 span{color:#aaa}
-.hitempypos{position:absolute;margin-top:20px;margin-left:90px}
-.hitempypos1{position:absolute;margin-top:-105px;margin-left:90px}
-.hitempypos2{position:absolute;margin-top:60px;margin-left:90px}
-.hitempypos3{position:absolute;margin-top:-80px;margin-left:90px}
-.weather34card2{width:31.2rem;height:6.2rem;background-color:#none;border-radius:4px;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#aaa;font-size:11px;font-weight:normal;padding:10px;border:solid #444 1px}
-.hitempalltimepos{position:absolute;margin-top:10px;}.hitempalltimepos1{position:absolute;margin-top:30px;}
+ .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}
+ .weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:99%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}.weather34browser-footer{flex-basis:auto;height:35px;background:#ebebeb;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-20px;width:97.4%;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#aaa;text-decoration:none}
+.weather34darkbrowser{position:relative;background:0;width:100%;max-height:30px;margin:auto;margin-top:-15px;margin-left:0px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:10px;position:absolute;left:0;right:0;top:0;padding:4px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
+ blue{color:#01a4b4}orange{color:#009bb4}orange1{position:relative;color:#009bb4;margin:0 auto;text-align:center;margin-left:5%;font-size:1.1rem}green{color:#aaa}red{color:#f37867}red6{color:#d65b4a}value{color:#fff}yellow{color:#CC0}purple{color:#916392}
+.hitempyposx{position:relative;top:-90px;margin-left:40px;margin-bottom:-30px}
+.hitempypos{position:absolute;margin-top:-100px;margin-left:40px;margin-bottom:20px;display:block;}
+
+
+.hitempd{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:5px;}
+
+
+.hitempd1{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:40px;}
+
+
+
+
 .actual{font-size:2rem;float:right;position:absolute;left:120px;top:25px;background:0;padding:2px;font-weight:normal;color:rgba(74, 99, 111, 0.5);margin-bottom:5px;}
 .actual1{font-size:11px;float:none;position:absolute;left:10px;top:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(86, 95, 103, 0.2);padding:1px;font-weight:normal;
 margin-bottom:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}
+
+
 .hitemp{color:#aaa;font-size:0.7rem;display:inline;}
 .hitemp span{color:rgba(255, 124, 57, 1.000)}
-.hitempy{position:relative;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:180px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:flex;margin-top:5px;align-items:center;justify-content:center;}
-.hitempd{position:relative;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:180px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:1px;margin-left:0;padding-left:3px;display:flex;margin-top:5px;align-items:center;justify-content:center;}
 
-
-.hitempa{font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.95rem;width:200px;padding:0;-webkit-border-radius:3px;border-radius:3px;margin-top:3px;margin-left:0;padding-left:3px;display:block}
-.lotemp{font-size:26px;font-family:weathertext;}blue{color:rgba(0, 154, 171, 1.000)}.icon{position:absolute;right:0;bottom:10px;}
-.weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}.weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:100%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}.weather34browser-footer{flex-basis:auto;height:35px;background:#ebebeb;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-20px;width:97.4%;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#fff;text-decoration:none;font-size:10px;}
-.weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:12px;position:absolute;left:0;right:0;top:0;padding:5px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
+blue{color:rgba(0, 154, 171, 1.000)}
 
 
 .temperaturecontainer1{position:absolute;left:20px;margin-top:-5px;margin-bottom:20px;}
@@ -55,10 +62,9 @@ margin-bottom:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171,
 
 
 
-.temperaturecaution,.temperaturetrend{position:absolute;font-size:0.85rem}
+.temperaturetrend1,.temperaturecaution,.temperaturetrend{position:absolute;font-size:0.85rem}
 
-
-.temperaturetodayminus10,.temperaturetodayminus5,.temperaturetodayminus,.temperaturetoday0-5,.temperaturetoday6-10,.temperaturetoday11-15,.temperaturetoday16-20,.temperaturetoday21-25,.temperaturetoday26-30,.temperaturetoday31-35,.temperaturetoday36-40,.temperaturetoday41-45{font-family:weathertext2,Arial,Helvetica,system;width:7rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex;font-size:1.6rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
+.temperaturetodayminus10,.temperaturetodayminus5,.temperaturetodayminus,.temperaturetoday0-5,.temperaturetoday6-10,.temperaturetoday11-15,.temperaturetoday16-20,.temperaturetoday21-25,.temperaturetoday26-30,.temperaturetoday31-35,.temperaturetoday36-40,.temperaturetoday41-45{font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex;font-size:1.2rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
 
 .temperaturetodayminus10{background:background:#00a4b4;background:-webkit-linear-gradient(270deg,#00a4b4,rgba(80,69,188,1));background:linear-gradient(270deg,#00a4b4,rgba(80,69,188,1))}
 .temperaturetodayminus5{background:background:#00a4b4;background:-webkit-linear-gradient(270deg,#00a4b4,rgba(80,69,188,1));background:linear-gradient(270deg,#00a4b4,rgba(80,69,188,1))}
@@ -75,32 +81,30 @@ margin-bottom:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171,
 
 
 
-.temperaturetrend{margin-left:15px;margin-top:-23px;z-index:1;color:#fff}
+.temperaturetrend{margin-left:15px;margin-top:-23px;z-index:1;color:#fff;font-size:.6rem;}
+.temperaturetrend1{margin-left:7px;margin-top:-23px;z-index:1;color:#fff;font-size:.6rem;}
 smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
-.actualt{left:220px;top:5px;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;background:0;padding:2px 5px 5px;font-family:weathertext2,Arial,Helvetica,sans-serif;width:80px;height:1.8em;font-size:1rem;color:#c0c0c0;border:1px solid #38383c;align-items:center;justify-content:center;
-position:absolute;margin-bottom:20px}
-.actualtall{left:10px;top:3px;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;background:0;padding:1px 3px 3px;font-family:weathertext2,Arial,Helvetica,sans-serif;width:150px;height:1.7em;font-size:0.7em;color:#c0c0c0;border:1px solid #38383c;align-items:center;justify-content:center;
-position:absolute;margin-bottom:20px}
 
+
+.w34convertrain{position:relative;font-size:.5em;top:10px;color:#c0c0c0;margin-left:5px}
+.hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#aaa;width:90px;padding:1px;-webit-border-radius:2px;border-radius:2px;
+margin-top:-20px;margin-left:92px;padding-left:3px;line-height:11px;font-size:9px}
+.actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:170px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+align-items:center;justify-content:center;margin-bottom:10px;top:0}
+.actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 
 </style>
-</head>
-<body>
-<div class="weather34darkbrowser" url="Almanac Temperature | Dewpoint Data (&deg;<?php echo $weather["temp_units"]?>) | <?php echo $stationlocation;?> "></div> 
+<div class="weather34darkbrowser" url="Temperature Almanac"></div>
   
-<section class="weather34cards">
-   <div class="weather34card weather34card--earthquake1">
-               <div class="weather34card_weather34-container">
-               
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-              <div class="temperaturecontainer1">
-			  
-			  <?php		  
-			  
-			  
-
-			  
+<main class="grid">
+  <article>  
+   <div class=actualt>&nbsp;&nbsp Temperature Today </div>        
+   <div class="temperaturecontainer">
+	 <?php	
 	//temp max today
 	if ($tempunit=='C' && $weather["tempdmax"]>=41)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempdmax"] . "</value>";} 
@@ -154,15 +158,12 @@ position:absolute;margin-bottom:20px}
 	else if ($tempunit=='F' && $weather["tempdmax"]<-14)  {
 	echo "<div class='temperaturetodayminus10'>",$weather["tempdmax"] . "</value>";}		
 	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
-	?> </div>
-    
+	?>	</div>
     <div class="temperaturetrend">Max:<?php echo $weather["tempdmaxtime"];?></span></div>	
-			</div>  
-			  
-			  
-<div class="temperaturecontainer2">
- <?php
-	// temp min today
+    
+    <div class="temperaturecontainer">
+	 <?php	
+	//temp min today
 	if ($tempunit=='C' && $weather["tempdmin"]>=41)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempdmin"] . "</value>";} 
 	else if ($tempunit=='C' && $weather["tempdmin"]>=36)  {
@@ -186,10 +187,10 @@ position:absolute;margin-bottom:20px}
 	else if ($tempunit=='C' && $weather["tempdmin"]<-5)  {
 	echo "<div class='temperaturetodayminus5'>",$weather["tempdmin"] . "</value>";}
 	else if ($tempunit=='C' && $weather["tempdmin"]<-10)  {
-	echo "<div class='temperaturetodayminus10'>",$weather["tempdmin"] . "</value>";}			
-		
+	echo "<div class='temperaturetodayminus10'>",$weather["tempdmin"] . "</value>";}		
 	
-	//F
+	//f
+	//temp min today
 	if ($tempunit=='F' && $weather["tempdmin"]>=105.8)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempdmin"] . "</value>";} 
 	else if ($tempunit=='F' && $weather["tempdmin"]>=96.8)  {
@@ -214,53 +215,158 @@ position:absolute;margin-bottom:20px}
 	echo "<div class='temperaturetodayminus5'>",$weather["tempdmin"] . "</value>";}
 	else if ($tempunit=='F' && $weather["tempdmin"]<-14)  {
 	echo "<div class='temperaturetodayminus10'>",$weather["tempdmin"] . "</value>";}		
-	
 	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
-	?> </div>
-    
+	?>	</div></div>
     <div class="temperaturetrend">Min:<?php echo $weather["tempdmintime"];?></span></div>	
+     
+ <div class=hitempypos> 
+ <div class="hitempd">Dew Max<orange><?php echo "&nbsp;".$weather["dewmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmaxtime"];?></span><br></div><br>
+ 
+ <div class="hitempd">Dew Min<blue><?php echo "&nbsp;".$weather["dewmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmintime"];?></span><br></div><br>
 </div>
 
-</span> 
+ <div class=hitempypos> 
+<div class="hitempd1" >Hum Max<orange><?php echo "&nbsp;".$weather["humidity_max"],"</orange>% ",$weather["humidity_maxtime"];?></span><br></div><br>
+<div class="hitempd1" >Hum Min<blue><?php echo "&nbsp;".$weather["humidity_min"],"</blue>% ",$weather["humidity_mintime"];?></span><br></div>
+</div>    
+</article> 
 
- 
- 
-
-    <div class=hitempypos> 
- <div class="hitempy">Dewpoint Max <orange><?php echo "&nbsp; ".$weather["dewmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmaxtime"];?></span></div>
- <div class="hitempy">Dewpoint Min <blue><?php echo "&nbsp; ".$weather["dewmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmintime"];?></span></div>
-
-
-
-<div class="hitempd">Humidity Max<orange><?php echo "&nbsp; ".$weather["humidity_max"],"</orange>% ",$weather["humidity_maxtime"];?></span></div>
-<div class="hitempd">Humidity Min<blue><?php echo "&nbsp; ".$weather["humidity_min"],"</blue>% ",$weather["humidity_mintime"];?></span></div>
+<article>  
+   <div class=actualt>&nbsp;&nbsp Temperature Yesterday </div>        
+   <div class="temperaturecontainer">
+	 <?php	
+	//temp max yesterday
+	if ($tempunit=='C' && $weather["tempydmax"]>=41)  {
+	echo "<div class='temperaturetoday41-45'>",$weather["tempydmax"] . "</value>";} 
+	else if ($tempunit=='C' && $weather["tempydmax"]>=36)  {
+	echo "<div class='temperaturetoday36-40'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmax"]>=31)  {
+	echo "<div class='temperaturetoday31-35'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmax"]>=26)  {
+	echo "<div class='temperaturetoday26-30'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmax"]>=21)  {
+	echo "<div class='temperaturetoday21-25'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmax"]>=16)  {
+	echo "<div class='temperaturetoday16-20'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmax"]>=10)  {
+	echo "<div class='temperaturetoday11-15'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmax"]>=6)  {
+	echo "<div class='temperaturetoday6-10'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmax"]>=0)  {
+	echo "<div class='temperaturetoday0-5'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmax"]<0)  {
+	echo "<div class='temperaturetodayminus'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmax"]<-5)  {
+	echo "<div class='temperaturetodayminus5'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmax"]<-10)  {
+	echo "<div class='temperaturetodayminus10'>",$weather["tempydmax"] . "</value>";}		
+	
+	//f
+	//temp max yesterday
+	if ($tempunit=='F' && $weather["tempydmax"]>=105.8)  {
+	echo "<div class='temperaturetoday41-45'>",$weather["tempydmax"] . "</value>";} 
+	else if ($tempunit=='F' && $weather["tempydmax"]>=96.8)  {
+	echo "<div class='temperaturetoday36-40'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmax"]>=87.8)  {
+	echo "<div class='temperaturetoday31-35'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmax"]>=78.8)  {
+	echo "<div class='temperaturetoday26-30'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmax"]>=69.8)  {
+	echo "<div class='temperaturetoday21-25'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmax"]>=60.8)  {
+	echo "<div class='temperaturetoday16-20'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmax"]>=50)  {
+	echo "<div class='temperaturetoday11-15'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmax"]>=42.8)  {
+	echo "<div class='temperaturetoday6-10'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmax"]>=32)  {
+	echo "<div class='temperaturetoday0-5'>",$weather["tempydmax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmax"]<32)  {
+	echo "<div class='temperaturetodayminus'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmax"]<-23)  {
+	echo "<div class='temperaturetodayminus5'>",$weather["tempydmax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmax"]<-14)  {
+	echo "<div class='temperaturetodayminus10'>",$weather["tempydmax"] . "</value>";}		
+	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
+	?>	</div>
+    <div class="temperaturetrend">Max:<?php echo $weather["tempydmaxtime"];?></span></div>	
+    
+    <div class="temperaturecontainer">
+	 <?php	
+	//temp min yesterday
+	if ($tempunit=='C' && $weather["tempydmin"]>=41)  {
+	echo "<div class='temperaturetoday41-45'>",$weather["tempydmin"] . "</value>";} 
+	else if ($tempunit=='C' && $weather["tempydmin"]>=36)  {
+	echo "<div class='temperaturetoday36-40'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmin"]>=31)  {
+	echo "<div class='temperaturetoday31-35'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmin"]>=26)  {
+	echo "<div class='temperaturetoday26-30'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmin"]>=21)  {
+	echo "<div class='temperaturetoday21-25'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmin"]>=16)  {
+	echo "<div class='temperaturetoday16-20'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmin"]>=10)  {
+	echo "<div class='temperaturetoday11-15'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmin"]>=6)  {
+	echo "<div class='temperaturetoday6-10'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmin"]>=0)  {
+	echo "<div class='temperaturetoday0-5'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempydmin"]<0)  {
+	echo "<div class='temperaturetodayminus'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmin"]<-5)  {
+	echo "<div class='temperaturetodayminus5'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempydmin"]<-10)  {
+	echo "<div class='temperaturetodayminus10'>",$weather["tempydmin"] . "</value>";}		
+	
+	//f
+	//temp min yesterday
+	if ($tempunit=='F' && $weather["tempydmin"]>=105.8)  {
+	echo "<div class='temperaturetoday41-45'>",$weather["tempydmin"] . "</value>";} 
+	else if ($tempunit=='F' && $weather["tempydmin"]>=96.8)  {
+	echo "<div class='temperaturetoday36-40'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmin"]>=87.8)  {
+	echo "<div class='temperaturetoday31-35'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmin"]>=78.8)  {
+	echo "<div class='temperaturetoday26-30'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmin"]>=69.8)  {
+	echo "<div class='temperaturetoday21-25'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmin"]>=60.8)  {
+	echo "<div class='temperaturetoday16-20'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmin"]>=50)  {
+	echo "<div class='temperaturetoday11-15'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmin"]>=42.8)  {
+	echo "<div class='temperaturetoday6-10'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmin"]>=32)  {
+	echo "<div class='temperaturetoday0-5'>",$weather["tempydmin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempydmin"]<32)  {
+	echo "<div class='temperaturetodayminus'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmin"]<-23)  {
+	echo "<div class='temperaturetodayminus5'>",$weather["tempydmin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempydmin"]<-14)  {
+	echo "<div class='temperaturetodayminus10'>",$weather["tempydmin"] . "</value>";}		
+	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
+	?>	</div></div>
+    <div class="temperaturetrend">Min:<?php echo $weather["tempydmintime"];?></span></div>	
+     
+ <div class=hitempypos> 
+ <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewydmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewydmaxtime"];?></span><br></div><br>
+ <div class="hitempd" >Dew Min<blue><?php echo "&nbsp;".$weather["dewydmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewydmintime"];?></span><br></div><br>
 </div>
+
+ <div class=hitempypos> 
+<div class="hitempd1" >Hum Max<orange><?php echo "&nbsp;".$weather["humidity_ydmax"],"</orange>% ",$weather["humidity_ydmaxtime"];?></span><br></div><br>
+<div class="hitempd1" >Hum Min<blue><?php echo "&nbsp;".$weather["humidity_ydmin"],"</blue>% ",$weather["humidity_ydmintime"];?></span><br></div><br>
+</div>    
+</article>  
   
-              </div>          
-            
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-text">
-                
-            </div>
-        </div>
-     <div class="weather34card__stuff-container">
-            <div class="actualt">Today</div>
-<div class="weather34card__stuff-text"> 	
-</div> </div>
 
-
-</div></div></div>
-    </div>
-    
-    
-    <div class="weather34card weather34card--earthquake2">
-               <div class="weather34card_weather34-container">
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-            
-    <div class="temperaturecontainer1">
-			  
-			  <?php
+ 
+  
+  <article> 
+  <div class=actualt>&nbsp;&nbsp Temperature <?php echo date(' F Y')?> </div>        
+   <div class="temperaturecontainer">
+	 <?php	
 	//temp max month
 	if ($tempunit=='C' && $weather["tempmmax"]>=41)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempmmax"] . "</value>";} 
@@ -314,16 +420,12 @@ position:absolute;margin-bottom:20px}
 	else if ($tempunit=='F' && $weather["tempmmax"]<-14)  {
 	echo "<div class='temperaturetodayminus10'>",$weather["tempmmax"] . "</value>";}		
 	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
-	?> </div>
-    
-    <div class="temperaturetrend"><?php echo $weather["tempmmaxtime"];?></span></div>	
-			</div>  
-			  
-			  
-<div class="temperaturecontainer2">
- <?php
-	// temp min month
-	
+	?>	</div>
+    <div class="temperaturetrend1">Max:<?php echo $weather["tempmmaxtime"];?></span></div>	
+   
+    <div class="temperaturecontainer">
+	 <?php	
+	//temp min month
 	if ($tempunit=='C' && $weather["tempmmin"]>=41)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempmmin"] . "</value>";} 
 	else if ($tempunit=='C' && $weather["tempmmin"]>=36)  {
@@ -347,10 +449,10 @@ position:absolute;margin-bottom:20px}
 	else if ($tempunit=='C' && $weather["tempmmin"]<-5)  {
 	echo "<div class='temperaturetodayminus5'>",$weather["tempmmin"] . "</value>";}
 	else if ($tempunit=='C' && $weather["tempmmin"]<-10)  {
-	echo "<div class='temperaturetodayminus10'>",$weather["tempmmin"] . "</value>";}			
-		
+	echo "<div class='temperaturetodayminus10'>",$weather["tempmmin"] . "</value>";}		
 	
-	//F
+	//f
+	//temp min month
 	if ($tempunit=='F' && $weather["tempmmin"]>=105.8)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempmmin"] . "</value>";} 
 	else if ($tempunit=='F' && $weather["tempmmin"]>=96.8)  {
@@ -375,204 +477,27 @@ position:absolute;margin-bottom:20px}
 	echo "<div class='temperaturetodayminus5'>",$weather["tempmmin"] . "</value>";}
 	else if ($tempunit=='F' && $weather["tempmmin"]<-14)  {
 	echo "<div class='temperaturetodayminus10'>",$weather["tempmmin"] . "</value>";}		
-	
 	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
-	?> </div>
-    
-    <div class="temperaturetrend"><?php echo $weather["tempmmintime"];?></span></div>	         
-            
-            
-            
-            
-            
-           
-            
-            
-
-<div class=hitempypos1> 
- <div class="hitempy">Dewpoint Max <orange><?php echo "&nbsp; ".$weather["dewmmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmmaxtime"];?></span></div>
- <div class="hitempy">Dewpoint Min <blue><?php echo "&nbsp; ".$weather["dewmmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmmintime"];?></span></div>
-
-
-
-<div class="hitempd">Humidity Max<orange><?php echo "&nbsp; ".$weather["humidity_mmax"],"</orange>% ",$weather["humidity_mmaxtime"];?></span></div>
-<div class="hitempd">Humidity Min<blue><?php echo "&nbsp; ".$weather["humidity_mmin"],"</blue>% ",$weather["humidity_mmintime"];?></span></div>
-</div>
-            </div>
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-textuv">
-                <span class="weather34card__count-text--bigs">    
-               <div class="actualt"><?php echo date('F');?></div>
-
-            
-                
-
-            </div>
-        </div><br>
-        <div class="weather34card__stuff-container">
-           
-             
-</section>
-
-<section class="weather34cards">
-   <div class="weather34card weather34card--earthquake1">
-               <div class="weather34card_weather34-container">
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-          
-            
-            
-            
-            <div class="temperaturecontainer1">
-			  
-			  <?php
-	// temp max yesterday
-	if ($tempunit=='C' && $weather["tempydmax"]>=41)  {
-	echo "<div class='temperaturetoday41-45'>",$weather["tempydmax"] . "</value>";} 
-	else if ($tempunit=='C' && $weather["tempydmax"]>=36)  {
-	echo "<div class='temperaturetoday36-40'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmax"]>=31)  {
-	echo "<div class='temperaturetoday31-35'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmax"]>=26)  {
-	echo "<div class='temperaturetoday26-30'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmax"]>=21)  {
-	echo "<div class='temperaturetoday21-25'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmax"]>=16)  {
-	echo "<div class='temperaturetoday16-20'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmax"]>=10)  {
-	echo "<div class='temperaturetoday11-15'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmax"]>=6)  {
-	echo "<div class='temperaturetoday6-10'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmax"]>=0)  {
-	echo "<div class='temperaturetoday0-5'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmax"]<0)  {
-	echo "<div class='temperaturetodayminus'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmax"]<-5)  {
-	echo "<div class='temperaturetodayminus5'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmax"]<-10)  {
-	echo "<div class='temperaturetodayminus10'>",$weather["tempydmax"] . "</value>";}		
-	
-	//f
-	//temp max yesterday
-	if ($tempunit=='F' && $weather["tempydmax"]>=105.8)  {
-	echo "<div class='temperaturetoday41-45'>",$weather["tempydmax"] . "</value>";} 
-	else if ($tempunit=='F' && $weather["tempydmax"]>=96.8)  {
-	echo "<div class='temperaturetoday36-40'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmax"]>=87.8)  {
-	echo "<div class='temperaturetoday31-35'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmax"]>=78.8)  {
-	echo "<div class='temperaturetoday26-30'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmax"]>=69.8)  {
-	echo "<div class='temperaturetoday21-25'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmax"]>=60.8)  {
-	echo "<div class='temperaturetoday16-20'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmax"]>=50)  {
-	echo "<div class='temperaturetoday11-15'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmax"]>=42.8)  {
-	echo "<div class='temperaturetoday6-10'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmax"]>=32)  {
-	echo "<div class='temperaturetoday0-5'>",$weather["tempydmax"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmax"]<32)  {
-	echo "<div class='temperaturetodayminus'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmax"]<-23)  {
-	echo "<div class='temperaturetodayminus5'>",$weather["tempydmax"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmax"]<-14)  {
-	echo "<div class='temperaturetodayminus10'>",$weather["tempydmax"] . "</value>";}		
-	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
-	?> </div>
-    
-    <div class="temperaturetrend">Max: <?php echo $weather["tempydmaxtime"];?></span></div>	
-			</div>  
-			  
-			  
-<div class="temperaturecontainer2">
- <?php
-	// temp min yesterday
-	if ($tempunit=='C' && $weather["tempydmin"]>=41)  {
-	echo "<div class='temperaturetoday41-45'>",$weather["tempydmin"] . "</value>";} 
-	else if ($tempunit=='C' && $weather["tempydmin"]>=36)  {
-	echo "<div class='temperaturetoday36-40'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmin"]>=31)  {
-	echo "<div class='temperaturetoday31-35'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmin"]>=26)  {
-	echo "<div class='temperaturetoday26-30'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmin"]>=21)  {
-	echo "<div class='temperaturetoday21-25'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmin"]>=16)  {
-	echo "<div class='temperaturetoday16-20'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmin"]>=10)  {
-	echo "<div class='temperaturetoday11-15'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmin"]>=6)  {
-	echo "<div class='temperaturetoday6-10'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmin"]>=0)  {
-	echo "<div class='temperaturetoday0-5'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='C' && $weather["tempydmin"]<0)  {
-	echo "<div class='temperaturetodayminus'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmin"]<-5)  {
-	echo "<div class='temperaturetodayminus5'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='C' && $weather["tempydmin"]<-10)  {
-	echo "<div class='temperaturetodayminus10'>",$weather["tempydmin"] . "</value>";}			
-		
-	
-	//F
-	if ($tempunit=='F' && $weather["tempydmin"]>=105.8)  {
-	echo "<div class='temperaturetoday41-45'>",$weather["tempydmin"] . "</value>";} 
-	else if ($tempunit=='F' && $weather["tempydmin"]>=96.8)  {
-	echo "<div class='temperaturetoday36-40'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmin"]>=87.8)  {
-	echo "<div class='temperaturetoday31-35'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmin"]>=78.8)  {
-	echo "<div class='temperaturetoday26-30'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmin"]>=69.8)  {
-	echo "<div class='temperaturetoday21-25'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmin"]>=60.8)  {
-	echo "<div class='temperaturetoday16-20'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmin"]>=50)  {
-	echo "<div class='temperaturetoday11-15'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmin"]>=42.8)  {
-	echo "<div class='temperaturetoday6-10'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmin"]>=32)  {
-	echo "<div class='temperaturetoday0-5'>",$weather["tempydmin"] . "</value>";}	
-	else if ($tempunit=='F' && $weather["tempydmin"]<32)  {
-	echo "<div class='temperaturetodayminus'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmin"]<-23)  {
-	echo "<div class='temperaturetodayminus5'>",$weather["tempydmin"] . "</value>";}
-	else if ($tempunit=='F' && $weather["tempydmin"]<-14)  {
-	echo "<div class='temperaturetodayminus10'>",$weather["tempydmin"] . "</value>";}		
-	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
-	?> </div>
-    
-    <div class="temperaturetrend">Min: <?php echo $weather["tempydmintime"];?></span></div>	         
-            
-            
-  <div class=hitempypos1> 
- <div class="hitempy">Dewpoint Max <orange><?php echo "&nbsp; ".$weather["dewydmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewydmaxtime"];?></span></div>
- <div class="hitempy">Dewpoint Min <blue><?php echo "&nbsp; ".$weather["dewydmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewydmintime"];?></span></div>
-
-
-
-<div class="hitempd">Humidity Max<orange><?php echo "&nbsp; ".$weather["humidity_ydmax"],"</orange>% ",$weather["humidity_ydmaxtime"];?></span></div>
-<div class="hitempd">Humidity Min<blue><?php echo "&nbsp; ".$weather["humidity_ydmin"],"</blue>% ",$weather["humidity_ydmintime"];?></span></div>
+	?>	</div></div>
+    <div class="temperaturetrend1">Min:<?php echo $weather["tempmmintime"];?></span></div>	
+     
+ <div class=hitempypos> 
+ <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewmmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmmaxtime"];?></span><br></div><br>
+ <div class="hitempd" >Dew Min<blue><?php echo "&nbsp;".$weather["dewmmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmmintime"];?></span><br></div><br>
 </div>
 
-            </div> </div>
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-textuv">
-                <span class="weather34card__count-text--big">  </span></div>  
-          <div class="weather34card__stuff-container"><br>
-           
-            
-<div class="actualt">Yesterday</div></div></div></div></div>
-    <div class="weather34card weather34card--earthquake2">
-               <div class="weather34card_weather34-container">
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-         
-            
-             <div class="temperaturecontainer1">
-			  
-			  <?php
-	// temp max year
+ <div class=hitempypos> 
+<div class="hitempd1" >Hum Max<orange><?php echo "&nbsp;".$weather["humidity_mmax"],"</orange>% ",$weather["humidity_mmaxtime"];?></span><br></div><br>
+<div class="hitempd1" >Hum Min<blue><?php echo "&nbsp;".$weather["humidity_mmin"],"</blue>% ",$weather["humidity_mmintime"];?></span><br></div><br>
+</div>    
+</article>  
+  
+    
+   <article> 
+  <div class=actualt>&nbsp;&nbsp Temperature <?php echo date('Y')?> </div>        
+   <div class="temperaturecontainer">
+	 <?php	
+	//temp max year
 	if ($tempunit=='C' && $weather["tempymax"]>=41)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempymax"] . "</value>";} 
 	else if ($tempunit=='C' && $weather["tempymax"]>=36)  {
@@ -599,7 +524,7 @@ position:absolute;margin-bottom:20px}
 	echo "<div class='temperaturetodayminus10'>",$weather["tempymax"] . "</value>";}		
 	
 	//f
-	//temp max today
+	//temp max year
 	if ($tempunit=='F' && $weather["tempymax"]>=105.8)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempymax"] . "</value>";} 
 	else if ($tempunit=='F' && $weather["tempymax"]>=96.8)  {
@@ -625,15 +550,12 @@ position:absolute;margin-bottom:20px}
 	else if ($tempunit=='F' && $weather["tempymax"]<-14)  {
 	echo "<div class='temperaturetodayminus10'>",$weather["tempymax"] . "</value>";}		
 	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
-	?> </div>
+	?>	</div>
+    <div class="temperaturetrend1">Max:<?php echo $weather["tempymaxtime"];?></span></div>	
     
-    <div class="temperaturetrend"><?php echo $weather["tempymaxtime"];?></span></div>	
-			</div>  
-			  
-			  
-<div class="temperaturecontainer2">
- <?php
-	// temp min year
+    <div class="temperaturecontainer">
+	 <?php	
+	//temp min year
 	if ($tempunit=='C' && $weather["tempymin"]>=41)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempymin"] . "</value>";} 
 	else if ($tempunit=='C' && $weather["tempymin"]>=36)  {
@@ -657,10 +579,10 @@ position:absolute;margin-bottom:20px}
 	else if ($tempunit=='C' && $weather["tempymin"]<-5)  {
 	echo "<div class='temperaturetodayminus5'>",$weather["tempymin"] . "</value>";}
 	else if ($tempunit=='C' && $weather["tempymin"]<-10)  {
-	echo "<div class='temperaturetodayminus10'>",$weather["tempymin"] . "</value>";}			
-		
+	echo "<div class='temperaturetodayminus10'>",$weather["tempymin"] . "</value>";}		
 	
-	//F
+	//f
+	//temp min year
 	if ($tempunit=='F' && $weather["tempymin"]>=105.8)  {
 	echo "<div class='temperaturetoday41-45'>",$weather["tempymin"] . "</value>";} 
 	else if ($tempunit=='F' && $weather["tempymin"]>=96.8)  {
@@ -686,100 +608,150 @@ position:absolute;margin-bottom:20px}
 	else if ($tempunit=='F' && $weather["tempymin"]<-14)  {
 	echo "<div class='temperaturetodayminus10'>",$weather["tempymin"] . "</value>";}		
 	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
-	?> </div>
+	?>	</div></div>
+    <div class="temperaturetrend1">Min:<?php echo $weather["tempymintime"];?></span></div>	
+     
+ <div class=hitempypos> 
+ <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewymax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewymaxtime"];?></span><br></div><br>
+ <div class="hitempd" >Dew Min<blue><?php echo "&nbsp;".$weather["dewymin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewymintime"];?></span><br></div><br>
+</div>
+
+ <div class=hitempypos> 
+<div class="hitempd1" >Hum Max<orange><?php echo "&nbsp;".$weather["humidity_ymax"],"</orange>% ",$weather["humidity_ymaxtime"];?></span><br></div><br>
+<div class="hitempd1" >Hum Min<blue><?php echo "&nbsp;".$weather["humidity_ymin"],"</blue>% ",$weather["humidity_ymintime"];?></span><br></div><br>
+</div>    
+</article> 
+
+
+<article> 
+  <div class=actualt>&nbsp;&nbsp Temperature All-Time </div>        
+   <div class="temperaturecontainer">
+	 <?php	
+	//temp max year
+	if ($tempunit=='C' && $weather["tempamax"]>=41)  {
+	echo "<div class='temperaturetoday41-45'>",$weather["tempamax"] . "</value>";} 
+	else if ($tempunit=='C' && $weather["tempamax"]>=36)  {
+	echo "<div class='temperaturetoday36-40'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamax"]>=31)  {
+	echo "<div class='temperaturetoday31-35'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamax"]>=26)  {
+	echo "<div class='temperaturetoday26-30'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamax"]>=21)  {
+	echo "<div class='temperaturetoday21-25'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamax"]>=16)  {
+	echo "<div class='temperaturetoday16-20'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamax"]>=10)  {
+	echo "<div class='temperaturetoday11-15'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamax"]>=6)  {
+	echo "<div class='temperaturetoday6-10'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamax"]>=0)  {
+	echo "<div class='temperaturetoday0-5'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamax"]<0)  {
+	echo "<div class='temperaturetodayminus'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamax"]<-5)  {
+	echo "<div class='temperaturetodayminus5'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamax"]<-10)  {
+	echo "<div class='temperaturetodayminus10'>",$weather["tempamax"] . "</value>";}		
+	
+	//f
+	//temp max year
+	if ($tempunit=='F' && $weather["tempamax"]>=105.8)  {
+	echo "<div class='temperaturetoday41-45'>",$weather["tempamax"] . "</value>";} 
+	else if ($tempunit=='F' && $weather["tempamax"]>=96.8)  {
+	echo "<div class='temperaturetoday36-40'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamax"]>=87.8)  {
+	echo "<div class='temperaturetoday31-35'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamax"]>=78.8)  {
+	echo "<div class='temperaturetoday26-30'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamax"]>=69.8)  {
+	echo "<div class='temperaturetoday21-25'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamax"]>=60.8)  {
+	echo "<div class='temperaturetoday16-20'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamax"]>=50)  {
+	echo "<div class='temperaturetoday11-15'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamax"]>=42.8)  {
+	echo "<div class='temperaturetoday6-10'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamax"]>=32)  {
+	echo "<div class='temperaturetoday0-5'>",$weather["tempamax"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamax"]<32)  {
+	echo "<div class='temperaturetodayminus'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamax"]<-23)  {
+	echo "<div class='temperaturetodayminus5'>",$weather["tempamax"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamax"]<-14)  {
+	echo "<div class='temperaturetodayminus10'>",$weather["tempamax"] . "</value>";}		
+	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
+	?>	</div>
+    <div class="temperaturetrend1"><?php echo $weather["tempamaxtime"];?></span></div>	
     
-    <div class="temperaturetrend"><?php echo $weather["tempymintime"];?></span></div>	         
-            
-            
-<div class=hitempypos1> 
- <div class="hitempy">Dewpoint Max <orange><?php echo "&nbsp; ".$weather["dewymax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewymaxtime"];?></span></div>
- <div class="hitempy">Dewpoint Min <blue><?php echo "&nbsp; ".$weather["dewymin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewymintime"];?></span></div>
-
-
-
-<div class="hitempd">Humidity Max<orange><?php echo "&nbsp; ".$weather["humidity_ymax"],"</orange>% ",$weather["humidity_ymaxtime"];?></span></div>
-<div class="hitempd">Humidity Min<blue><?php echo "&nbsp; ".$weather["humidity_ymin"],"</blue>% ",$weather["humidity_ymintime"];?></span></div>
+    <div class="temperaturecontainer">
+	 <?php	
+	//temp min year
+	if ($tempunit=='C' && $weather["tempamin"]>=41)  {
+	echo "<div class='temperaturetoday41-45'>",$weather["tempamin"] . "</value>";} 
+	else if ($tempunit=='C' && $weather["tempamin"]>=36)  {
+	echo "<div class='temperaturetoday36-40'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamin"]>=31)  {
+	echo "<div class='temperaturetoday31-35'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamin"]>=26)  {
+	echo "<div class='temperaturetoday26-30'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamin"]>=21)  {
+	echo "<div class='temperaturetoday21-25'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamin"]>=16)  {
+	echo "<div class='temperaturetoday16-20'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamin"]>=10)  {
+	echo "<div class='temperaturetoday11-15'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamin"]>=6)  {
+	echo "<div class='temperaturetoday6-10'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamin"]>=0)  {
+	echo "<div class='temperaturetoday0-5'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='C' && $weather["tempamin"]<0)  {
+	echo "<div class='temperaturetodayminus'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamin"]<-5)  {
+	echo "<div class='temperaturetodayminus5'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='C' && $weather["tempamin"]<-10)  {
+	echo "<div class='temperaturetodayminus10'>",$weather["tempamin"] . "</value>";}		
+	
+	//f
+	//temp min year
+	if ($tempunit=='F' && $weather["tempamin"]>=105.8)  {
+	echo "<div class='temperaturetoday41-45'>",$weather["tempamin"] . "</value>";} 
+	else if ($tempunit=='F' && $weather["tempamin"]>=96.8)  {
+	echo "<div class='temperaturetoday36-40'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamin"]>=87.8)  {
+	echo "<div class='temperaturetoday31-35'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamin"]>=78.8)  {
+	echo "<div class='temperaturetoday26-30'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamin"]>=69.8)  {
+	echo "<div class='temperaturetoday21-25'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamin"]>=60.8)  {
+	echo "<div class='temperaturetoday16-20'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamin"]>=50)  {
+	echo "<div class='temperaturetoday11-15'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamin"]>=42.8)  {
+	echo "<div class='temperaturetoday6-10'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamin"]>=32)  {
+	echo "<div class='temperaturetoday0-5'>",$weather["tempamin"] . "</value>";}	
+	else if ($tempunit=='F' && $weather["tempamin"]<32)  {
+	echo "<div class='temperaturetodayminus'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamin"]<-23)  {
+	echo "<div class='temperaturetodayminus5'>",$weather["tempamin"] . "</value>";}
+	else if ($tempunit=='F' && $weather["tempamin"]<-14)  {
+	echo "<div class='temperaturetodayminus10'>",$weather["tempamin"] . "</value>";}		
+	echo "<smalluvunit>".$weather["temp_units"]."</smalluvunit>"
+	?>	</div></div>
+    <div class="temperaturetrend1"><?php echo $weather["tempamintime"];?></span></div>	
+     
+ <div class=hitempypos> 
+ <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewamax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewamaxtime"];?></span><br></div><br><br><br>
+ <div class="hitempd" >Dew Min<blue><?php echo "&nbsp;".$weather["dewamin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewamintime"];?></span><br></div><br>
 </div>
 
+ 
+</article> 
 
+ 
 
-
-
-</div>
-
-            </div>
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-textuv">
-                <span class="weather34card__count-text--big">  </span></div>  
-          <div class="weather34card__stuff-container"><br>
-           
-<div class="actualt"><?php echo date('Y');?></div>
-</section>
-
-
-
-
-<section class="weather34cards">
-   <div class="weather34card2 weather34card--earthquake1">
-               <div class="weather34card_weather34-container">
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-          
-            
-            
-            
-
-</span> <div class="hitemp">
-
-
-<div class=hitempalltimepos> 
-<div class="hitempa">Temperature <orange>Max</orange> <orange><?php echo $weather["tempamax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["tempamaxtime"];?></span></div>
-<div class="hitempa">Temperature <blue>Min</blue> <blue><?php echo $weather["tempamin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["tempamintime"];?></span></div>
-</div>
-
-            </div> </div>
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-textuv">
-                <span class="weather34card__count-text--big">  </span></div>  
-          <div class="weather34card__stuff-container"><br>
-           
-            
-<div class="actualtall">All Time <orange>Temperature</orange> 2018-<?php echo date('Y')?></div></div></div></div></div>
-   
-   
-    <div class="weather34card2 weather34card--earthquake2">
-               <div class="weather34card_weather34-container">
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-          
-            
-            
-
-</span> 
-<div class=hitempalltimepos> 
-<div class="hitempa">Dewpoint <orange>Max</orange> <orange><?php echo $weather["dewamax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewamaxtime"];?></span></div>
-<div class="hitempa">Dewpoint <blue>Min</blue> <blue><?php echo $weather["dewamin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewamintime"];?></span></div>
-
-
-</div>
-
-            </div>
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-textuv">
-                <span class="weather34card__count-text--big">  </span></div>  
-          <div class="weather34card__stuff-container"><br>
-     <div class="actualtall">All Time <blue>Dewpoint</blue> 2018-<?php echo date('Y')?></div></div></div></div></div>      
-
-</section>
-
-
-
-
-
-
-
-<div class="provided">   
-&nbsp;<?php echo $info?> 
-Temperature/Dewpoint Almanac Meteobridge CSS/SVG/PHP scripts by <a href="https://weather34.com" title="weather34.com" target="_blank">weather34.com  &copy; 2015-<?php echo date('Y');?></a></div>
-</body>
+ <article>
+   <div class=actualt>&nbsp;&nbsp &copy; Information</div>  
+  <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?></article> 
+</main>

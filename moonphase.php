@@ -131,7 +131,7 @@ foreach ($meteor_events as $meteor_check) {
         $meteor_default=$meteor_check["event_title"];
     }
 };?>
-<div class="updatedtime1"><?php echo $online," ",date($timeFormat);	?></div>
+
 <div class="moonphasemoduleposition">
 <div class="moonrise1">
 <svg id="weather34 moon rise" viewBox="0 0 32 32" width="6" height="6" fill="none" stroke="#ff9350" stroke-linecap="round" stroke-linejoin="round" stroke-width="10%">    <path d="M30 20 L16 8 2 20" /></svg> <?php echo $lang['Moon'];?> <br /><blueu><?php  echo $weather['moonrise'];?>
@@ -142,8 +142,8 @@ foreach ($meteor_events as $meteor_check) {
 <div class="weather34moonmodule">
 <svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, 1.000)"/><path id="weather34shape" fill="currentcolor"/></svg></div>
 <script> //simple moonphase for weather34
-weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 2, 17, 0, 0);
-var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) % 29.5;var s=String;
+weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon =  Date.UTC(2018, 0, 17, 20, 0, 0, 0);
+var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) %  29.530;var s=String;
 switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases");
 var val=15;	var weather34moonCurve;var lf=Math.min(3-4*(phase/30),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
 var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";weather34moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
