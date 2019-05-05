@@ -118,6 +118,14 @@ $(document).ready(function () {
 				gridDashType: "dot",
 				intervalType: "hour",
 				minimum:0,
+				crosshair: {
+					enabled: true,
+					snapToDataPoint: true,
+					color: '<?php echo $xcrosshaircolor;?>',
+					labelFontColor: "#F8F8F8",
+					labelFontSize:11,
+					labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+				}
 			},
 			axisY:{
 				title: "Rainfall Recorded (<?php echo $rainunit ;?>)",
@@ -142,11 +150,11 @@ $(document).ready(function () {
 				crosshair: {
 					enabled: true,
 					snapToDataPoint: true,
-					color: "#ff9350",
+					color: '<?php echo $xcrosshaircolor;?>',
 					labelFontColor: "#fff",
 					labelFontSize:12,
-					labelBackgroundColor: "#d05f2d",
-					valueFormatString: "##0.##<?php echo $rainunit ;?>",
+					labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+					valueFormatString: "##0.## <?php echo $rainunit ;?>",
 				}
 			},
 			axisY2:{
@@ -171,10 +179,10 @@ $(document).ready(function () {
 				crosshair: {
 					enabled: true,
 					snapToDataPoint: true,
-					color: "#3b9cac",
+					color: '<?php echo $ycrosshaircolor;?>',
 					labelFontColor: "#fff",
 					labelFontSize:12,
-					labelBackgroundColor: "#3b9cac",
+					labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
 					valueFormatString: "##0.## '<?php echo $rainunit ?>'",
 				}
 			},

@@ -117,6 +117,14 @@
 			gridDashType: "dot",
    			intervalType: "hour",
 			minimum:0,
+			crosshair: {
+					enabled: true,
+					snapToDataPoint: true,
+					color: '<?php echo $xcrosshaircolor;?>',
+					labelFontColor: "#F8F8F8",
+					labelFontSize:11,
+					labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+				}
 			},
 
 		axisY:{
@@ -137,8 +145,16 @@
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
         return e.value .toFixed(1) + " <?php echo $windunit ;?> " ;
-         },
-
+				 },
+				 crosshair: {
+					enabled: true,
+					snapToDataPoint: true,
+					color: '<?php echo $ycrosshaircolor;?>',
+					labelFontColor: "#F8F8F8",
+					labelFontSize:11,
+					labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
+					valueFormatString: "#0.# <?php echo $windunit ;?>",
+				}
 
       },
 

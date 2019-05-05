@@ -131,10 +131,10 @@
 					crosshair: {
 						enabled: true,
 						snapToDataPoint: true,
-						color: "#009bab",
+						color: '<?php echo $xcrosshaircolor;?>',
 						labelFontColor: "#F8F8F8",
 						labelFontSize:10,
-						labelBackgroundColor: "#009bab",
+						labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
 					}
 				},
 				axisY:{
@@ -161,10 +161,10 @@
 					crosshair: {
 						enabled: true,
 						snapToDataPoint: true,
-						color: "#009bab",
+						color: '<?php echo $ycrosshaircolor;?>',
 						labelFontColor: "#F8F8F8",
-						labelFontSize:10,
-						labelBackgroundColor: "#ff832f",
+						labelFontSize:11,
+						labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
 						valueFormatString:"##0.## <?php echo $pressureunit ;?>",
 					}
 				},

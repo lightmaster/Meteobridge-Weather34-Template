@@ -126,10 +126,10 @@ $(document).ready(function () {
 				crosshair: {
 					enabled: true,
 					snapToDataPoint: true,
-					color: "#009bab",
+					color: '<?php echo $xcrosshaircolor;?>',
 					labelFontColor: "#F8F8F8",
 					labelFontSize:10,
-					labelBackgroundColor: "#44a6b5",
+					labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
 				}
 			},
 			axisY:{
@@ -154,10 +154,10 @@ $(document).ready(function () {
 				crosshair: {
 					enabled: true,
 					snapToDataPoint: true,
-					color: "#009bab",
+					color: '<?php echo $xcrosshaircolor;?>',
 					labelFontColor: "#F8F8F8",
 					labelFontSize:12,
-					labelBackgroundColor: "#44a6b5",
+					labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
 					valueFormatString:"##0.## <?php echo $rainunit ;?>",
 				}
 			},

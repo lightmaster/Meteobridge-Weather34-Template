@@ -120,10 +120,10 @@
 			crosshair: {
         enabled: true,
         snapToDataPoint: true,
-        color: "#ff832f",
+        color: '<?php echo $xcrosshaircolor;?>',
         labelFontColor: "#F8F8F8",
-        labelFontSize:10,
-        labelBackgroundColor: "#ff832f",
+        labelFontSize:11,
+        labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
       }
 
 			},
@@ -150,10 +150,10 @@
       crosshair: {
        enabled: true,
        snapToDataPoint: true,
-       color: "#ff832f",
+       color: '<?php echo $ycrosshaircolor;?>',
        labelFontColor: "#F8F8F8",
-       labelFontSize:10,
-       labelBackgroundColor: "#ff832f",
+       labelFontSize:11,
+       labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
        valueFormatString: "#0.# °<?php echo $tempunit ;?>",
       }
 
