@@ -104,7 +104,7 @@ body {
 .weather34darkbrowser {
   position: relative;
   background: 0;
-  width: 103%;
+  width: 103.5%;
   max-width: 51rem;
   max-height: 30px;
   margin: auto;
@@ -123,7 +123,7 @@ body {
 .weather34darkbrowser[url]:after {
   content: attr(url);
   color: #aaa;
-  font-size: 0.8em;
+  font-size: 1.15em;
   position: absolute;
   left: 0;
   right: 0;
@@ -132,7 +132,7 @@ body {
   margin: 11px 50px 0 90px;
   border-radius: 3px;
   background: rgba(97, 106, 114, 0.3);
-  height: 15px;
+  height: 20px;
   box-sizing: border-box
 }
 

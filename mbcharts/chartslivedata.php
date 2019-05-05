@@ -48,6 +48,13 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
     $weather["humidity_ymin"]       = number_format($meteobridgeapi[165], 0);
     $weather["humidity_mmax"]       = number_format($meteobridgeapi[159], 0);
     $weather["humidity_mmin"]       = number_format($meteobridgeapi[161], 0);
+    $weather["solar_max"]           = number_format($meteobridgeapi[105],0, '.', '');
+    $weather["solar_mmax"]          = number_format($meteobridgeapi[109],0, '.', '');
+    $weather["solar_ymax"]          = number_format($meteobridgeapi[111],0, '.', '');
+    $weather["uv_max"]              = number_format($meteobridgeapi[58],1);
+    $weather["uv_mmax"]             = number_format($meteobridgeapi[116],1);
+    $weather["uv_ymax"]             = number_format($meteobridgeapi[118],1);
+
     //weather34 start meteobridge conversions
     if ($weather["barometer_units"] == "in") {
         $weather["barometer_units"] = "inHg";

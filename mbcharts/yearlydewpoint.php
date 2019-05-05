@@ -14,7 +14,7 @@
 	# 	                                                                                               #
 	#   https://www.weather34.com 	                                                                   #
 	####################################################################################################
-	include('../settings.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
+	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
 	
 	if ($tempunit == 'F') {
@@ -113,9 +113,9 @@
 			titleFontFamily: "arial",	
 			labelFontFamily: "arial",
 			minimum:0,	
-			interval:31,
-			intervalType:"month",
-			xValueType: "dateTime",
+			interval:'auto',
+			intervalType:"day",
+			//xValueType: "dateTime",
 			crosshair: {
         enabled: true,
         snapToDataPoint: true,
@@ -137,15 +137,14 @@
 		gridThickness: 1,
       gridDashType: "dot",
         includeZero: true,
-		interval:10,
-		//minimum:-5,
+		interval: 'auto',
 		gridColor: '<?php echo $gridcolor;?>',
 		labelFontSize: 11,
 		labelFontColor: '<?php echo $fontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
-        return e.value .toFixed(1) + " °<?php echo $tempunit ;?> " ;  
+        return e.value .toFixed(0) + " °<?php echo $tempunit ;?>" ;  
          },		 
 		crosshair: {
 			enabled: true,
@@ -154,7 +153,7 @@
 			labelFontColor: "#fff",
 			labelFontSize:12,
 			labelBackgroundColor: "#d05f2d",
-			valueFormatString: "##0.##<?php echo $rainunit ;?>",
+			valueFormatString: "##0.## °<?php echo $tempunit ;?>",
 		}	 
       },
 	  
@@ -207,21 +206,22 @@
     </script>
      <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
-<div class="weather34darkbrowser" url="<?php echo $stationlocation;?> Dewpoint Recorded (°<?php echo $tempunit ;?>) <?php echo date('Y') ;?>"></div>
+<div class="weather34darkbrowser" url="Dewpoint - <?php echo date('Y') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; High: <?php echo $weather['dewymax'].' °'.$tempunit;?>&nbsp;&nbsp; Low: <?php echo $weather['dewymin'].' °'.$tempunit;?>"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">
 <div id="chartContainer" class="chartContainer"></div></div>
 <div class="weather34browser-footer">
-<span style="position:absolute;color:#fff;font-size:10px;font-family:arial;padding-top:5px;margin-left:25px;border-radius:3px;">&nbsp;
+<span style="position:absolute;color:#fff;font-family:arial;padding-top:5px;margin-left:25px;border-radius:3px;">
+&nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
-<a href="https://weather34.com/homeweatherstation/" title="https://weather34.com" target="_blank"> 
+<a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"> 
 <span style="color:#00A4B4;"><?php echo $chartversionmysql  ;?> CSS & PHP scripts by weather34</span> </a></span>
-<span style="position:absolute;color:#aaa;font-size:10px;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
+<span style="position:absolute;color:#aaa;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank"><?php echo $creditschart ;?> </a></span>
-<div class="weather34browser-footerlogo"><a href="https://weather34.com/homeweatherstation/" title="https://weather34.com/homeweatherstation/" target="_blank"><img src="../img/weatherlogo34.svg" width="35px"</img></a></div></div>
+<div class="weather34browser-footerlogo"><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"><img src="../img/weatherlogo34.svg" width="35px"</img></a></div></div>
 </body>
 <script src='canvasJs.js'></script>
 </html>

@@ -18,24 +18,34 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('M');
 	
-  $conv = 1;
+	$conv = 1;
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
-    $conv = '1';
-  } else if ($pressureunit == 'inHg') {
-    $conv = '0.02953';
-  }
+		$conv = '1';
+	} else if ($pressureunit == 'inHg') {
+		$conv = '0.02953';
+	}
 
 	$int = 'auto';
-	/*$int = '1';
-	if ($pressureunit == 'mb') {$int= '5';}
-	else if ($pressureunit == 'hPa') {$int= '5';}
-	else if ($pressureunit == 'inHg') {$int= '0.25';}*/
+	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
+		$int= '20';
+	} else if ($pressureunit == 'inHg') {
+		$int= '0.5';
+	}
 	
-	$limit = '0';
-	if ($windunit == 'mph') {$limit= '20';}
-	else if ($windunit == 'm/s') {$limit= '930';}
-	else if ($windunit == 'km/h'){$limit= '930';}
-    echo '
+	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
+		$pressdecimal = 0;
+	} else {
+		$pressdecimal = 1;
+	}
+	
+	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
+		$maximum = '1060';
+		$minimum = '940';
+	} else if ($pressureunit == 'inHg') {
+		$maximum = '31';
+		$minimum = '28';
+	}
+		echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -45,7 +55,7 @@
 		
 	';	
 	?>
-    <br>
+		<br>
 <script type="text/javascript">
 	$(document).ready(function () {
 		var dataPoints1 = [];
@@ -90,7 +100,7 @@
 					fontSize: 12,
 					fontColor: '<?php echo $fontcolor;?>',
 					fontFamily: "arial",
-        },
+				},
 				toolTip:{
 					fontStyle: "normal",
 					cornerRadius: 4,
@@ -98,7 +108,7 @@
 					contentFormatter: function(e) {
 						var str = '<span style="color: <?php echo $fontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
 						for (var i = 0; i < e.entries.length; i++) {
-							var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' '.$pressureunit ;?>" + '</span> <br/>';
+							var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(<?php echo $pressdecimal?> + 1) + "<?php echo ' '.$pressureunit ;?>" + '</span> <br/>';
 							str = str.concat(temp);
 						}
 						return (str);
@@ -143,8 +153,10 @@
 					labelFontColor: '<?php echo $fontcolor;?>',
 					titleFontFamily: "arial",
 					labelFontFamily: "arial",
+					maximum: '<?php echo $maximum; ?>',
+					minimum: '<?php echo $minimum; ?>',
 					labelFormatter: function ( e ) {
-						return e.value .toFixed(0) + " <?php echo $pressureunit ;?> ";
+						return e.value .toFixed(<?php echo $pressdecimal;?>) + " <?php echo $pressureunit ;?> ";
 					},
 					crosshair: {
 						enabled: true,
@@ -155,11 +167,11 @@
 						labelBackgroundColor: "#ff832f",
 						valueFormatString:"##0.## <?php echo $pressureunit ;?>",
 					}
-      	},
+				},
 				legend:{
 					fontFamily: "arial",
 					fontColor: '<?php echo $fontcolor;?>',
- 				},
+				},
 				data: [{
 					// High Barometer
 					type: "spline",
@@ -196,7 +208,7 @@
 </script>
 <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
-<div class="weather34darkbrowser" url="Barometer <?php echo date('F Y') ;?> | Hi: <?php echo $weather["thb0seapressmmax"];?> <?php echo $pressureunit ;?> Lo: <?php echo $weather["thb0seapressmmin"];?> <?php echo $pressureunit ;?>"></div> 
+<div class="weather34darkbrowser" url="Barometer - <?php echo date('F Y') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; High: <?php echo $weather["thb0seapressmmax"];?> <?php echo $pressureunit ;?> &nbsp;&nbsp; Low: <?php echo $weather["thb0seapressmmin"];?> <?php echo $pressureunit ;?>"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">
 <div id="chartContainer" class="chartContainer"></div></div>
 <div class="weather34browser-footer">
@@ -204,14 +216,14 @@
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
-<a href="https://weather34.com/homeweatherstation/" title="https://weather34.com" target="_blank"> 
+<a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"> 
 <span style="color:#00A4B4;"><?php echo $chartversionmysql  ;?> CSS & PHP scripts by weather34</span> </a></span>
 <span style="position:absolute;color:#aaa;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank"><?php echo $creditschart ;?> </a></span>
-<div class="weather34browser-footerlogo"><a href="https://weather34.com/homeweatherstation/" title="https://weather34.com/homeweatherstation/" target="_blank"><img src="../img/weatherlogo34.svg" width="35px"</img></a></div></div>
+<div class="weather34browser-footerlogo"><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"><img src="../img/weatherlogo34.svg" width="35px"</img></a></div></div>
 </body>
 <script src='canvasJs.js'></script>
 </html>
