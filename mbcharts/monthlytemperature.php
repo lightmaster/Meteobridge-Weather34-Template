@@ -1,8 +1,8 @@
 <?php
-	
+
 	####################################################################################################
 	#	WUDATACHARTS by BRIAN UNDERDOWN 2016                                                           #
-	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  # 
+	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  #
 	# 	                                                                                               #
 	# 	built on CanvasJs  	                                                                           #
 	#   canvasJs.js is protected by CREATIVE COMMONS LICENCE BY-NC 3.0  	                           #
@@ -14,10 +14,10 @@
 	# 	                                                                                               #
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
-	
+
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('M');
-	
+
 	if ($tempunit == 'F') {
 		$conv = '(9 / 5) + 32';
 	} else {
@@ -29,7 +29,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>OUTDOOR TEMP MONTH CHART</title>	
+		<title>OUTDOOR TEMP MONTH CHART</title>
 		<script src=../js/jquery.js></script>
 		';
 	?>
@@ -190,7 +190,7 @@ $(document).ready(function () {
 </script>
 <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
-<div class="weather34darkbrowser" url="Temperature - <?php echo date('F Y') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; High: <?php echo $weather["tempmmax"]." °$tempunit" ;?> &nbsp;&nbsp; Low: <?php echo $weather["tempmmin"]." °$tempunit" ;?>"></div> 
+<div class="weather34darkbrowser" url="Temperature - <?php echo date('F Y') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; High: <?php echo $weather["tempmmax"]." °$tempunit" ;?> &nbsp;&nbsp; Low: <?php echo $weather["tempmmin"]." °$tempunit" ;?>"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">
 <div id="chartContainer" class="chartContainer"></div></div>
 <div class="weather34browser-footer">
@@ -198,12 +198,12 @@ $(document).ready(function () {
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
-<a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"> 
+<a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank">
 <span style="color:#00A4B4;"><?php echo $chartversionmysql  ;?> CSS & PHP scripts by weather34</span> </a></span>
 <span style="position:absolute;color:#aaa;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-<path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 
+<path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank"><?php echo $creditschart ;?> </a></span>
 <div class="weather34browser-footerlogo"><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"><img src="../img/weatherlogo34.svg" width="35px"</img></a></div></div>
 </body>

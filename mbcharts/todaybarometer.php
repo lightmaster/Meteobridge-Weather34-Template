@@ -1,8 +1,8 @@
 <?php
-	
+
 	####################################################################################################
 	#	WUDATACHARTS by BRIAN UNDERDOWN 2016                                                           #
-	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  # 
+	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  #
 	# 	                                                                                               #
 	# 	built on CanvasJs  	                                                                           #
 	#   canvasJs.js is protected by CREATIVE COMMONS LICENCE BY-NC 3.0  	                           #
@@ -14,9 +14,9 @@
 	# 	                                                                                               #
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
-	
+
 	include('chartslivedata.php');include('./chart_theme.php');include('conversion.php');header('Content-type: text/html; charset=utf-8');
-	
+
 	$conv = 1;
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
 		$conv = '1';
@@ -24,19 +24,19 @@
 		$conv = '0.02953';
 	}
 
-	$int = 'auto';
-	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
+	$int = '\'auto\'';
+	/*if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
 		$int= '20';
 	} else if ($pressureunit == 'inHg') {
 		$int= '0.5';
-	}
-	
+	}*/
+
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
-		$pressdecimal = 0;
+		$pressdecimal = '0';
 	} else {
-		$pressdecimal = 1;
+		$pressdecimal = '1';
 	}
-	
+
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
 		$maximum = '1060';
 		$minimum = '940';
@@ -44,22 +44,22 @@
 		$maximum = '31';
 		$minimum = '28';
 	}
-	
+
 	$limit = '0';
 	if ($windunit == 'mph') {$limit= '20';}
 	else if ($windunit == 'm/s') {$limit= '930';}
 	else if ($windunit == 'km/h'){$limit= '930';}
-	
+
 		echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>OUTDOOR Barometer CHART</title>	
+		<title>OUTDOOR Barometer CHART</title>
 		<script src=../js/jquery.js></script>
-		
+
 	';
-	
+
 	?>
 <br>
 <script type="text/javascript">
@@ -114,7 +114,7 @@ $(document).ready(function () {
 			toolTip:{
 				fontStyle: "normal",
 				cornerRadius: 4,
-				backgroundColor: '<?php echo $backgroundcolor;?>',			   
+				backgroundColor: '<?php echo $backgroundcolor;?>',
 				contentFormatter: function(e) {
 					var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
 					for (var i = 0; i < e.entries.length; i++) {
@@ -161,10 +161,10 @@ $(document).ready(function () {
 				labelFontColor: '<?php echo $fontcolor;?>',
 				titleFontFamily: "arial",
 				labelFontFamily: "arial",
-				maximum: <?php echo $maximum;?>,
-				minimum: <?php echo $minimum;?>,
+				//maximum: <?php echo $maximum;?>,
+				//minimum: <?php echo $minimum;?>,
 				labelFormatter: function ( e ) {
-					return e.value .toFixed(<?php echo $pressdecimal;?>) + " <?php echo $pressureunit ;?> " ;  
+					return e.value .toFixed(<?php echo $pressdecimal;?>) + " <?php echo $pressureunit ;?> " ;
 				},
 				crosshair: {
 					enabled: true,
@@ -210,12 +210,12 @@ $(document).ready(function () {
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
-<a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"> 
+<a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank">
 <span style="color:#00A4B4;"><?php echo $chartversionmysql  ;?> CSS & PHP scripts by weather34</span> </a></span>
 <span style="position:absolute;color:#aaa;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-<path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 
+<path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank"><?php echo $creditschart ;?> </a></span>
 <div class="weather34browser-footerlogo"><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"><img src="../img/weatherlogo34.svg" width="35px"</img></a></div></div>
 </body>
