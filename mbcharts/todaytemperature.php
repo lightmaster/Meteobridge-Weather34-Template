@@ -1,8 +1,8 @@
 <?php
-	
+
 	####################################################################################################
 	#	WUDATACHARTS by BRIAN UNDERDOWN 2016                                                           #
-	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  # 
+	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  #
 	# 	                                                                                               #
 	# 	built on CanvasJs  	                                                                           #
 	#   canvasJs.js is protected by CREATIVE COMMONS LICENCE BY-NC 3.0  	                           #
@@ -14,31 +14,27 @@
 	# 	                                                                                               #
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
-	
-	include('chartslivedata.php');header('Content-type: text/html; charset=utf-8');	
-	$conv = 1;
-	if ($uk == true) {$conv= '1';}
-	if ($units == 'uk' && $windunit == 'mph') {$conv= '1';}
-	else if ($windunit == 'mph') {$conv= '(1.8) +32';}
-	else if ($windunit == 'm/s') {$conv= '1';}
-	else if ($windunit == 'km/h'){$conv= '1';}
-	$interval = 1;
-	if ($uk == true && $windunit == 'mph') {$conv= '1';}
-	if ($windunit == 'mph') {$interval= '0.5';}
-	else if ($windunit == 'm/s') {$interval= '1';}
-	else if ($windunit == 'km/h'){$interval= '1';}
+
+	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
+
+	if ($tempunit == 'F') {
+	$conv = '(9 / 5) + 32';
+	} else {
+	$conv = '1';
+	}
+
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>OUTDOOR TEMPERATURE DATABASE CHART</title>	
+		<title>OUTDOOR TEMPERATURE DATABASE CHART</title>
 		<script src=../js/jquery.js></script>
-		
-		
+
+
 	';
-	
+
 	$date= date('D jS Y');$weatherfile = date('dmY');?>
     <br>
     	<script type="text/javascript">
@@ -53,11 +49,11 @@
 			cache:false,
 			success: function(data) {processData1(data),processData2(data);}
 		});
-	
+
 	function processData1(allText) {
 		var allLinesArray = allText.split('\n');
 		if(allLinesArray.length>0){
-			
+
 			for (var i = 2; i <= allLinesArray.length-1; i++) {
 				var rowData = allLinesArray[i].split(',');
 				if ( rowData[2] >-50)
@@ -69,12 +65,12 @@
 	function processData2(allText) {
 		var allLinesArray = allText.split('\n');
 		if(allLinesArray.length>0){
-			
+
 			for (var i = 2; i <= allLinesArray.length-1; i++) {
 				var rowData = allLinesArray[i].split(',');
 				if ( rowData[9] >-50)
 					dataPoints2.push({label: rowData[1],y:parseFloat(rowData[9]*<?php echo $conv ;?>)});
-				
+
 			}
 			drawChart(dataPoints1 , dataPoints2 );
 		}
@@ -82,89 +78,96 @@
 
 		function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer", {
-		 backgroundColor: "#fff",
-		 animationEnabled: false,
-		
+		 backgroundColor: '<?php echo $backgroundcolor;?>', //backgroundcolor
+		 animationEnabled: true,
+
 		title: {
             text: " ",
 			fontSize: 11,
-			fontColor:' #555',
+			fontColor: '<?php echo $fontcolor;?>', //font color
 			fontFamily: "arial",
         },
 		toolTip:{
-			   fontStyle: "normal",
-			   cornerRadius: 4,
-			   backgroundColor: "#fff",			   
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label} ",
-			   shared: true, 
-			   
-    
+      fontStyle: "normal",
+      cornerRadius: 4,
+      backgroundColor: '<?php echo $backgroundcolor;?>', //backgroundcolor
+      contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>'; //font colors
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' °'.$tempunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
+      shared: true,
+
+
  },
 		axisX: {
-			gridColor: "#555",
-		    labelFontSize: 10,
-			labelFontColor:' #555',
+			gridColor: '<?php echo $gridcolor;?>', //grid color
+			labelFontSize: 10,
+			labelFontColor: '<?php echo $fontcolor;?>', //font color
 			lineThickness: 1,
 			gridThickness: 1,
-			gridDashType: "dot",	
-			titleFontFamily: "arial",	
-			labelFontFamily: "arial",	
+			gridDashType: "dot",
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
 			interval: "auto",
    			intervalType: "hour",
 			minimum:0,
 			crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: "#009bab",
-			labelFontColor: "#F8F8F8",
-			labelFontSize:10,
-			labelBackgroundColor: "#009bab",
-		}
-			
+        enabled: true,
+        snapToDataPoint: true,
+        color: '<?php echo $xcrosshaircolor;?>',
+        labelFontColor: "#F8F8F8",
+        labelFontSize:11,
+        labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+      }
+
 			},
-			
+
 		axisY:{
 		title: "Temperature (°<?php echo $tempunit ;?>) Recorded",
-		titleFontColor: "#555",
+		titleFontColor: '<?php echo $fontcolor;?>', //font color
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 10,
-		interval:1,
-		//maximum: <?php echo $max ;?>,		
-		lineThickness: 1,		
-		gridThickness: 1,	
-		gridDashType: "dot",	
+		interval: 'auto',
+		//maximum: <?php echo $max ;?>,
+		lineThickness: 1,
+		gridThickness: 1,
+		gridDashType: "dot",
         includeZero: false,
-		gridColor: "#aaa",
+		gridColor: '<?php echo $gridcolor;?>', //grid color
 		labelFontSize: 11,
-		labelFontColor:' #555',
+		labelFontColor: '<?php echo $fontcolor;?>', //font color
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + " °<?php echo $tempunit ;?> " ;  
-         },		 
+        return e.value .toFixed(0) + " °<?php echo $tempunit ;?> " ;
+         },
 		crosshair: {
 			enabled: true,
 			snapToDataPoint: true,
-			color: "#ff832f",
+			color: '<?php echo $ycrosshaircolor;?>',
 			labelFontColor: "#fff",
 			labelFontSize:11,
-			labelBackgroundColor: "#ff832f",
+			labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
 			valueFormatString: "#0.# °<?php echo $tempunit ;?>",
-		}	 
+		}
       },
-	  
+
 	  legend:{
       fontFamily: "arial",
-      fontColor:"#555",
-  
+      fontColor: '<?php echo $fontcolor;?>', //font color
+
  },
-		
-		
+
+
 		data: [
 		{
 			type: "splineArea",
-			color:"rgba(255, 124, 57, 0.8)",
+			color: '<?php echo $line1color;?>', //line1color
 			markerSize:0,
 			showInLegend:true,
 			legendMarkerType: "circle",
@@ -173,20 +176,22 @@
 			name:" Temperature",
 			dataPoints: dataPoints1,
 			yValueFormatString: "#0.# °<?php echo $tempunit ;?>",
-			
+
 		},
 		{
 			type: "splineArea",
-			color:"#00A4B4",
+			color: '<?php echo $line2color;?>', //line2color
 			markerSize:0,
+			markerColor: '<?php echo $line2markercolor;?>', //line2markercolor
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 0,
+			lineColor: '<?php echo $line2markercolor;?>',
 			markerType: "circle",
 			name:" DewPoint",
 			dataPoints: dataPoints2,
 			yValueFormatString: "#0.# °<?php echo $tempunit ;?>",
-			
+
 		}
 
 		]
@@ -197,9 +202,9 @@
 });
 
     </script>
-    <link rel="stylesheet" href="weather34chartstyle.css?ver=<?php echo date('jSHi') ;?>">
+     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
-<div class="weather34darkbrowser" url="<?php echo date('l') ;?> Temp Hi:<?php echo $weather["temp_today_high"]. "$tempunit" ;?> Temp Lo:<?php echo $weather["temp_today_low"]. "$tempunit" ;?> | Dew Hi:<?php echo $weather["dewmax"]. "$tempunit" ;?> Dew Lo:<?php echo $weather["dewmin"]."$tempunit" ;?>"></div> 
+<div class="weather34darkbrowser" url="<?php echo date('l') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; Temp - High: <?php echo $weather["temp_today_high"].' °'.$tempunit ;?> &nbsp; Low: <?php echo $weather["temp_today_low"].' °'.$tempunit ;?> &nbsp;&nbsp;|&nbsp;&nbsp; Dew - High: <?php echo $weather["dewmax"].' °'.$tempunit ;?> &nbsp;Low: <?php echo $weather["dewmin"].' °'.$tempunit ;?>"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">
 <div id="chartContainer" class="chartContainer"></div></div>
 <div class="weather34browser-footer">
@@ -207,14 +212,14 @@
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
-<a href="https://weather34.com/homeweatherstation/" title="https://weather34.com" target="_blank"> 
+<a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank">
 <span style="color:#00A4B4;"><?php echo $chartversionmysql  ;?> CSS & PHP scripts by weather34</span> </a></span>
 <span style="position:absolute;color:#aaa;font-family:arial;padding-top:5px;margin-left:25px;display:block;margin-top:12px;">
 &nbsp;
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-<path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 
+<path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg>
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank"><?php echo $creditschart ;?> </a></span>
-<div class="weather34browser-footerlogo"><a href="https://weather34.com/homeweatherstation/" title="https://weather34.com/homeweatherstation/" target="_blank"><img src="../img/weatherlogo34.svg" width="35px"</img></a></div></div>
+<div class="weather34browser-footerlogo"><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="Weather34 GitHub" target="_blank"><img src="../img/weatherlogo34.svg" width="35px"</img></a></div></div>
 </body>
 <script src='canvasJs.js'></script>
 </html>

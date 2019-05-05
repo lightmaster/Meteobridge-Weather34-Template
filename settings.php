@@ -28,6 +28,7 @@ $timeFormatShort    = 'H:i'; // time format to use when showing times ('g:i a' f
 $showFeelsLike      = true; // whether to always show either the heat index (when temp > 80F/27C) or real feel (when temp between 50F/10C and 80F/27C) even when no concern
 $lightLeft          = true; // shows amount of light/darkness left rather than total amount per day in the moon display
 $theme              = $theme1;
+$charttheme         = $theme;
 ####################################################################################################
 // Refresh Data Main Page  //																	   #
 // Automatic refresh times (in seconds) of each panel on the main dashboard						   #
@@ -76,4 +77,61 @@ $credits            = "Data Supplied via Weather Underground"; // for chart page
 $templateinfo       = ''; // template information page
 $templateversion    = 'MB-UB<maxred>40</maxred>-RRW';
 $software    = 'Meteobridge <span>Hardware</span> Users';$designedfor='<br>For Meteobridge Users';$chartversion='(WUDATACHARTS)';$somethinggoeshere ='d4586dec-e7a2-47ae-99b6-25527b2563c9';$chartversionmysql  =  '(DATACHARTS version Final MYSQL-Meteobridge)';
-if (array_key_exists('theme', $_GET) && ($_GET['theme'] == 'dark' || $_GET['theme'] == 'light')) { SetCookie('theme', $_GET['theme'], time()+15552000); $theme = $_GET['theme']; } else if (array_key_exists('theme', $_COOKIE) && ($_COOKIE['theme'] == 'dark' || $_COOKIE['theme'] == 'light' )) { $theme = $_COOKIE['theme']; } $units = ""; if (array_key_exists('units', $_COOKIE)) { $units = $_COOKIE['units']; } ini_set('session.use_cookies', '0'); if (array_key_exists('units', $_GET) && ($_GET['units'] == 'us' || $_GET['units'] == 'uk' || $_GET['units'] == 'metric' || $_GET['units'] == 'scandinavia')) { SetCookie('units', $_GET['units'], time()+15552000); $units = $_GET['units']; } if ($units == 'uk') { $windunit = 'mph'; $tempunit = 'C'; $rainunit = 'mm'; $pressureunit = "mb"; $windconv = "0.621371"; $rainfallconv='10'; $pressureinterval= "0.5"; $rainfallconvmm='10'; } else if ($units == 'scandinavia') { $windunit = 'm/s'; $tempunit = 'C'; $rainunit = 'mm'; $pressureunit = "hPa"; $windconv = "0.277778"; $rainfallconv='10'; $pressureinterval= "0.5"; $rainfallconvmm='10'; } else if ($units == 'metric') { $windunit = 'km/h'; $tempunit = 'C'; $rainunit = 'mm'; $pressureunit = "hPa"; $windconv = "1"; $rainfallconv='10'; $pressureinterval= "0.5"; $rainfallconvmm='10'; } else if ($units == 'us') { $windunit = 'mph'; $tempunit = 'F'; $rainunit = 'in'; $pressureunit = "inHg"; $windconv = "1"; $rainfallconv='1'; $pressureinterval= "0.5"; $rainfallconvmm='1'; }; ?>
+if (array_key_exists('theme', $_GET) && ($_GET['theme'] == 'dark' || $_GET['theme'] == 'light')) {
+  SetCookie('theme', $_GET['theme'], time() + 15552000);
+  $theme = $_GET['theme'];
+  $charttheme = $theme;
+} else if (array_key_exists('theme', $_COOKIE) && ($_COOKIE['theme'] == 'dark' || $_COOKIE['theme'] == 'light')) {
+  $theme = $_COOKIE['theme'];
+  $charttheme = $theme;
+}
+$units = "";
+if (array_key_exists('units', $_COOKIE)) {
+  $units = $_COOKIE['units'];
+}
+ini_set('session.use_cookies', '0');
+if (array_key_exists('units', $_GET) && ($_GET['units'] == 'default' || $_GET['units'] == '')) {
+  SetCookie('units', $_GET['units'], time() - 86400); //86400 = 1 day, negative time erases cookie
+  $units = '';
+} else if (array_key_exists('units', $_GET) && ($_GET['units'] == 'us' || $_GET['units'] == 'uk' || $_GET['units'] == 'metric' || $_GET['units'] == 'scandinavia')) {
+  SetCookie('units', $_GET['units'], time() + 15552000);
+  $units = $_GET['units'];
+}
+if ($units == 'uk') {
+  $windunit         = 'mph';
+  $tempunit         = 'C';
+  $rainunit         = 'mm';
+  $pressureunit     = "mb";
+  $windconv         = "0.621371";
+  $rainfallconv     = '10';
+  $pressureinterval = "0.5";
+  $rainfallconvmm   = '10';
+} else if ($units == 'scandinavia') {
+  $windunit         = 'm/s';
+  $tempunit         = 'C';
+  $rainunit         = 'mm';
+  $pressureunit     = "hPa";
+  $windconv         = "0.277778";
+  $rainfallconv     = '10';
+  $pressureinterval = "0.5";
+  $rainfallconvmm   = '10';
+} else if ($units == 'metric') {
+  $windunit         = 'km/h';
+  $tempunit         = 'C';
+  $rainunit         = 'mm';
+  $pressureunit     = "hPa";
+  $windconv         = "1";
+  $rainfallconv     = '10';
+  $pressureinterval = "0.5";
+  $rainfallconvmm   = '10';
+} else if ($units == 'us') {
+  $windunit         = 'mph';
+  $tempunit         = 'F';
+  $rainunit         = 'in';
+  $pressureunit     = "inHg";
+  $windconv         = "1";
+  $rainfallconv     = '1';
+  $pressureinterval = "0.5";
+  $rainfallconvmm   = '1';
+}
+?>
