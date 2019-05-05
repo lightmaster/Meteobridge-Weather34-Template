@@ -30,7 +30,7 @@ $kp =  $json[1][1];
 html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;}
 .grid { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
   align-items: stretch;
   color:#f5f7fc
@@ -59,8 +59,12 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;font-weight:600}
 .kpcaution,.uvtrend{position:absolute;font-size:.8rem}
 .kptoday1{background:#9aba2f}.kptoday4{background:rgba(230,161,65,1)}.kptoday6{background:rgba(255,124,57,.8)}.kptoday7{background:rgba(211,93,78,.8)}.kptoday11{background:rgba(204,135,248,.7)}
 .kpcaution{margin-left:38px;margin-top:-14px;font-family:Arial,Helvetica,system}.kptrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}
-</style>
-
+.actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+align-items:center;justify-content:center;margin-bottom:10px;top:0}
+.actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+align-items:center;justify-content:center;margin-bottom:10px;top:0}
 </style>
 <div class="weather34darkbrowser" url="Radio Aurora | Northern Lights"></div> 
   
@@ -116,14 +120,16 @@ else if ($kp>=0) {echo 'Quiet';}
   </article>  
   
   <article>
-   <?php echo $info ;?> <orange>Radio Ham Guide</orange><br>Aurora communications can used by Ham Radio VHF enthusiasts. Using Aurora scatter propagation enables ham radio enthusiasts communications contacts .
-Aurora scatter communications using specialised operating techniques achieving communications distances up to around 2000 km or more at frequencies of 28MHz/50MHz/144MHz/433MHz .<br>
+   <?php echo $info ;?> <orange>Radio Ham Guide</orange><br>Aurora communications can be used by Ham Radio VHF enthusiasts. Using Aurora scatter propagation enables ham radio enthusiasts communications.
+Aurora scatter communications using specialised operating techniques allows communications distances up to 2000 km or more at frequencies of 28MHz/50MHz/144MHz/433MHz .<br>
  
  
               
   </article> 
   <article>
+  <div class=actualt>&nbsp;&nbsp &copy; Information</div>  
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?></span>
+  <br><br><?php echo $info ;?> Data Provided by <a href="https://www.swpc.noaa.gov/products/station-k-and-indices" title="https://www.swpc.noaa.gov/products/station-k-and-indices" target="_blank"><br>NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION</a> 
   
         <br>  <br> <br>     
  <?php echo '<svg viewBox="0 0 32 32" width=7 height=7 fill=#9aba2f stroke=#9aba2f stroke-linecap=round stroke-linejoin=round stroke-width=6.25%><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx=16 cy=16 r=14 /></svg>';

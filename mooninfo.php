@@ -14,15 +14,15 @@ class Moon{ public static function calculateMoonTimes($month,$day,$year,$lat,$lo
 html,body{font-size:13px;font-family: "weathertext", Helvetica, Arial, sans-serif;}
 .grid { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 10px;
   align-items: stretch;
   color:#f5f7fc
   }
 .grid > article {
-  border: 1px solid #212428;
+ border: 1px solid rgba(86, 95, 103,.1);
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  padding:20px;
+  padding:5px;
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;
@@ -38,9 +38,16 @@ html,body{font-size:13px;font-family: "weathertext", Helvetica, Arial, sans-seri
  meteotextshowertext{font-size:1.2rem;color:#009bb4}
  meteorsvgicon{color:#f5f7fc}  
 .moonphasesvg{left:40px;}
-.moonphasetext{font-size:.9rem;color:#f5f7fc;position:absolute;display:inline;left:140px;top:90px}
+.moonphasetext{font-size:.9rem;color:#f5f7fc;position:absolute;display:inline;left:100px;top:190px}
 moonphaseriseset{font-size:.75rem;}
 credit{position:relative;font-size:.7em;top:10%}
+.actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+align-items:center;justify-content:center;margin-bottom:10px;top:0}
+.actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+align-items:center;justify-content:center;margin-bottom:10px;top:0}
+
 </style>
 <div class="weather34darkbrowser" url="Moon Phase Information"></div>
   
@@ -52,10 +59,10 @@ credit{position:relative;font-size:.7em;top:10%}
 <div id="weather34moonphases"></div>
 <svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, 1.000)"/><path id="weather34shape" fill="rgba(230, 232, 239, 1)"/></svg>
 <script> //simple moonphase for weather34
-weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 2, 12, 0, 0);
-var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) % 29.47;var s=String;
+weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 20, 0, 0, 0);
+var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) %  29.530;var s=String;
 switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases");
-var val=15;	var weather34moonCurve;var lf=Math.min(3-4*(phase/30),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
+var weather34moonCurve;var lf=Math.min(3-4*(phase/30),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
 var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";weather34moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
 document.getElementById("weather34shape").setAttribute("d",weather34moonCurve);}</script>
        </div>
@@ -151,11 +158,12 @@ $moon = new MoonPhase();$moonage =round($moon->age(),2);echo "Current Moon cycle
   </article>  
   
   <article>
-   <?php echo $info ;?> <orange>Radio Ham Guide</orange>(EME)<<br>
+   <?php echo $info ;?> <orange>Radio Ham Guide</orange>(EME)<br>
    Earth–Moon–Earth communication (EME), also known as Moon bounce, is a radio communications technique that relies on the propagation of radio waves from an Earth-based transmitter directed via reflection from the surface of the Moon back to an Earth-based receiver using VHF and UHF amateur radio bands.
  
               
   </article> 
   <article>
+   <div class=actualt>&nbsp;&nbsp &copy; Information</div>  
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?></span></article> 
 </main>

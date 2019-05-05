@@ -8,113 +8,26 @@ $alert="<svg id='firealert' viewBox='0 0 32 32' width='18px' height='18px' fill=
 //weather AIR QUALITY / CLOUDBASE MODULE APRIL 2018
 ?>
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-  <title>Weather34 Purple Air Quality Data Popup </title>
+  <title>Weather34 Air Quality</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
- <style>
- @font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff")}
-*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}html,body{font-size:62.5%;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;background:rgba(30, 31, 35, 1.000);}body{color:#aaa;overflow-x:hidden;min-height:80vh;padding:10px}section{width:80vw;max-width:64rem;min-width:58.9rem;margin-left:75px;padding:10px}.weather34title{font-size:14px;font-weight:normal;padding-top:3px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;width:400px}.weather34cards{padding-top:2rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:5px}.weather34card{width:31rem;height:17.1rem;background-color:0;border-radius:4px;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#aaa;font-size:11px;font-weight:normal;padding:10px;border:solid #444 1px}.weather34card__weather34-container{height:50%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;padding:10px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;}.weather34card__weather34-wrapper{width:8rem;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;font-weight:300;}.weather34cardguide{width:27rem;height:200px;background:RGBA(37,41,45,0);border-radius:4px;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#aaa;font-size:12px;font-weight:normal;padding:5px;border:solid #444 1px;line-height:13px}.weather34card__weather34-guide{width:3rem;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;font-weight:300;}.weather34card__count-container{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:10px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;}.weather34card__count-text{font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;;text-align:left;width:200px}.weather34card__count-textuv{font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;;width:200px;float:left;font-size:13px;text-align:left;margin-left:-20px;line-height:12px}.weather34card__count-text--big{font-size:36px;font-weight:200;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;}.weather34card__count-text--bigs{font-size:12px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;;font-weight:normal;color:#aaa;text-align:center;margin-top:5px;width:100px}weather34card__count-text--bigsa{font-size:12px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;;font-weight:normal;color:#aaa;text-align:center}
-.weather34card__stuff-container{margin-top:35px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;;text-align:left;font-size:12px;width:800px;float:left;list-style:circle;margin-left:-45px;}
-.weather34card:after{content:"";display:block;position:absolute;top:0;left:0;width:16rem;height:4.625rem;padding:10px}.weather34card--earthquake1:after{background-image:radial-gradient(to bottom,rgba(106,122,135,0.5),transparent 70%)}.weather34card--earthquake2:after{background-image:radial-gradient(to bottom,rgba(106,191,96,0.5),transparent 70%)}.weather34card--earthquake3:after{background-image:radial-gradient(to bottom,rgba(96,203,231,0.5),transparent 70%)}blue{color:#01a4b4}orange{color:#ff8841}green{color:#9aba2f}red{color:#f37867}red6{color:#d65b4a}darkred{color:#f47264}value{color:#fff}yellow{color:RGBA(163,133,58,1)}purple{color:#916392}time{color:#aaa;font-weight:normal;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;}time span{color:#ff8841;font-weight:normal;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;}a{color:#aaa;font-size:11px;top:5px;margin-top:10px;text-decoration:none}.provided{color:#aaa;font-size:11px;top:5px;margin-top:10px;text-decoration:none;margin-left:90px}updated{position:absolute;bottom:5px;float:right}
-actual{font-size:13px;float:right;position:absolute;left:135px;top:20px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px;background:rgba(61, 64, 66, 1.000);padding:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}.hitemp{color:#aaa;font-size:12px;}.hitemp span{color:rgba(255, 124, 57, 1.000)}
-.hitempy{background:rgba(61, 64, 66, 0.8);color:#aaa;font-size:12px;width:240px;padding:1px;border-radius:4px;margin-top:2px;margin-left:0;padding-left:3px;}
-.lotemp{font-size:26px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;font-weight:300;}
-blue{color:rgba(0, 154, 171, 1.000)}.icon{position:absolute;right:10px;bottom:10px;}
-.weather34i-cloud-bar{background:0;position:absolute;height:100px;width:100px;margin-left:135px;margin-top:8px}
-.weather34i-cloud-bar .bar{shape-rendering:crispEdges;background:url(css/rain/cloudmarker.svg) no-repeat;width:100px;border:5px solid rgba(57, 61, 64, 1.00);border-bottom:3px solid rgba(57, 61, 64, 1.00);border-top:1px dotted rgba(57, 61, 64, 1.00);-webkit-border-radius:1px 1px 3px 3px;-moz-border-radius:1px 1px 3px 3px;-o-border-radius:1px 1px 3px 3px;-ms-border-radius:1px 1px 3px 3px;border-radius:1px 1px 3px 3px;position:absolute;bottom:0}
-.weather34i-cloud-bar .bar-1{height:100px;max-height:100px}
-.weather34i-cloud-bar .bar-inner{shape-rendering:crispEdges;background:rgba(159, 163, 166, 0.4);width:100%;-webkit-border-radius:1px 1px 3px 3px;-moz-border-radius:1px 1px 3px 3px;-o-border-radius:1px 1px 3px 3px;-ms-border-radius:1px 1px 3px 3px;border-radius:1px 1px 3px 3px;border:0;border-top:1px dotted rgba(255, 124, 57, 1.000)}
-.weather34icloudair{color:rgba(255, 124, 57, 1.000);position:absolute;margin-left:165px;margin-top:67px;font-family: "weathertext2",Helvetica, Arial, sans-serif;max-height:42px;font-weight:normal;background:#2a2e33;width:42px;height:42px;-webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;-ms-border-radius:100%;border-radius:100%;font-size:15px;line-height:10px;padding-top:13px;border:.12rem solid rgba(95,96,97,.9);}
-.weather34icloudair span{font-family: "weathertext2",Helvetica, Arial, sans-serif;font-size:0.8em;font-weight:normal;margin-left:-2px;}
-
-.weather34icloudair1{color:rgba(255, 124, 57, 1.000);position:absolute;margin-left:165px;margin-top:47px;font-family: "weathertext2",Helvetica, Arial, sans-serif;max-height:42px;font-weight:normal;background:#2a2e33;width:41px;height:42px;-webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;-ms-border-radius:100%;border-radius:100%;font-size:14px;line-height:10px;padding-top:13px;border:.12rem solid rgba(95,96,97,.9);padding-left:3px;}
-.weather34icloudair1 span{font-family: "weathertext2",Helvetica, Arial, sans-serif;font-size:0.7em;font-weight:normal;margin-left:5px;color:#aaa;}
-
-.weather34-aqi-bar{background:0;position:absolute;height:100px;width:100px;margin-left:135px;margin-top:48px}
-.weather34-aqi-bar .bar{shape-rendering:crispEdges;background:0;width:100px;border:0;position:absolute;bottom:0}
-.weather34-aqi-bar .bar-1{height:100px;max-height:100px}
-.weather34aqi{color:#ff8841;position:absolute;margin-left:36px;margin-top:17px;font-size:12px;width:20px;font-family: "weathertext2",Helvetica, Arial, sans-serif;max-height:100px;line-height:10px;font-weight:normal}
-.weather34aqi span{color:#777;font-family:weathertext2,arial,sans-serif;font-size:12px}
-.weather34-aqi-bar{background:0;position:absolute;height:100px;width:100px;margin-left:135px;margin-top:48px}
-.weather34-aqi-bar .bar{shape-rendering:crispEdges;background:0;width:100px;border:0;position:absolute;bottom:0}
-.weather34-aqi-bar .bar-1{height:100px;max-height:100px}
-.weather34aqi{color:#ff8841;position:absolute;margin-left:36px;margin-top:17px;font-size:12px;width:20px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;max-height:100px;line-height:10px;font-weight:normal}
-.weather34aqi span{color:#777;font-family:weathertext2,arial,sans-serif;font-size:12px}
-actual1{font-size:13px;float:left;position:absolute;left:11px;top:20px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px;background:rgba(61, 64, 66, 1.000);padding:5px;}
-actual2{font-size:12px;float:left;position:absolute;left:10px;top:70px;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px;background:rgba(61, 64, 66, 1.000);padding:5px;
-width:120px;}
-maroon{color:rgba(208, 80, 65, 0.7)};purple{color:rgba(154, 106, 196, 1)};red{color:rgba(208, 80, 65, 1)}orange{color:rgba(255, 124, 57, 1)}yellow{color:rgba(186, 146, 58, 1)}green{color:rgba(144, 177, 42, 1)}grey{color:#aaa}
-aqiimage1{position:absolute;left:-5px;top:-2px;}blue{color:rgba(144, 177, 42, 1.000)}
-
-
-.aqilocation{position:absolute;top:25px;left:20px;font-size:0.5em;font-family:Arial, Helvetica, sans-serif;}
-.aqilocation span{position:absolute;top:30px;left:10px;font-size:12px;font-family:Arial, Helvetica, sans-serif;display:block;width:70px;}
-.aqilocation span2{position:absolute;top:15px;left:-20px;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:130px;color:#aaa;}
-.aqilocation span3{position:absolute;top:5px;left:35px;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:100px;}
-.aqilocation mod{position:absolute;top:5px;}
-.aqitime{font-size:11px;color:#aaa;position:absolute;top:27px;left:140px;width:130px;}
-
-aqiimage1{position:absolute;left:-5px;top:-2px;}
-
-
-.aqigraphic{position:absolute;left:0;}
-
-
-.extraqiinfo{position:absolute;top:10px;font-size:12px;color:#aaa;left:175px;width:100px}
-.extraqiinfo2{position:absolute;top:20px;font-size:12px;color:#aaa;left:175px;width:100px}
-
-.airhouse{position:absolute;margin-top:0;margin-left:20px;z-index:99999}.airsvg{position:relative;margin-top:5px;left:27px;}airvalue{position:absolute;top:25px;left:135px;font-size:26px;}airvalue0{position:absolute;top:-10px;left:135px;font-size:26px;}
-span11{position:absolute;margin-top:60px;font-size:16px;line-height:14px;width:200px;left:135px;}airdescription{position:absolute;font-size:16px;left:48px;text-align:left;width:100px;margin-top:20px;border:0;padding:0;text-align:center;}indoorpurple{color:#a475cb;}indoorblue,indoorgreen,indoororange,indoorred,indooryellow{font-family:weathertext2,helvetica,arial}indoorred{color:rgba(211,93,78,1)}indoororange{color:#ff8841}indoorgreen{color:#9aba2f}indoorblue{color:#01a4b4}indooryellow{color:rgba(233, 171, 74, 1.000)}.lotemp1{font-size:22px;font-family:-apple-system, BlinkMacSystemFont, "weathertext2", Roboto, Helvetica, Arial, sans-serif;font-weight:300;}
-
-
-.indoorblue1,.indoorgreen1,.indoororange1,.indoorred1,.indooryellow1,.indoorpurple1{font-family:'weathertext2',Arial,Helvetica,system;width:4.9rem;height:4.4rem;font-size:1.4rem;padding-top:7px;color:#333;background:rgba(59, 156, 172, 1.000);border-bottom: 10px solid rgba(56, 56, 60, 1);display:flex;align-items:center;justify-content:center;-webkit-border-radius: 3px;-moz-border-radius: 3px;-o-border-radius: 3px;border-radius: 3px;position:absolute;margin-left:-10px;top:-5px}
-.indoorred1{background:rgba(211,93,78,1)}.indoororange1{background:#ff8841}.indoorgreen1{background:#9aba2f}.indoorblue1{background:#01a4b4}.indooryellow1{background:rgba(233,171,74,1)}.indoorpurple1{background:#a475cb}
-
-.circlegreen{padding-top:10px;padding-left:5px;background:#9aba2f; -webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;border-radius:100%;width:45px;height:45px;position:absolute;margin-top:0;color:#fff;line-height:28px;color:#fff;}
-.circleyellow{padding-top:10px;padding-left:5px;background:rgba(233, 171, 74, 1); -webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;border-radius:100%;width:45px;height:45px;position:absolute;margin-top:0;color:#fff;line-height:28px;}
-.circleorange{padding-top:10px;padding-left:5px;background: #ff8841; -webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;border-radius:100%;width:45px;height:45px;position:absolute;margin-top:0;color:#fff;line-height:28px;}
-.circlered{padding-top:10px;padding-left:5px;background:rgba(211,93,78,1); -webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;border-radius:100%;width:45px;height:45px;position:absolute;margin-top:0;color:#fff;line-height:28px;}
-.circlepurple{padding-top:10px;padding-left:5px;;background:#a475cb; -webkit-border-radius:100%;-moz-border-radius:100%;-o-border-radius:100%;border-radius:100%;width:45px;height:45px;position:absolute;margin-top:0;color:#fff;line-height:28px;}
-.airwarning{position:absolute;margin-left:160px;margin-top:70px;font-size:0.9rem;}.airwarning1{position:absolute;margin-left:225px;margin-top:75px;}
-.weather34darkbrowser{position:relative;background:0;width:104%;max-height:30px;margin:auto;margin-top:-15px;margin-left:-20px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:14px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}smalluvunit{position:absolute;display:inline;font-size:.85rem;font-family:Arial,Helvetica,system;vertical-align:top}
-.air0,.air50,.air100,.air150,.air200,.air300{font-family:'weathertext2',Arial,Helvetica,system;width:8rem;height:7.68rem;font-size:1.50rem;padding-top:0;color:#fff;border-bottom: 15px solid rgba(56, 56, 60, 1);display:flex;align-items:center;justify-content:center;-webkit-border-radius: 3px;-moz-border-radius: 3px;-o-border-radius: 3px;border-radius: 3px;margin-left:40px;margin-top:20px;}
-.air0{background:rgba(144, 177, 42, 1.000)}
-.air50{background:rgba(230, 161, 65, 1.000)}
-.air100{background:rgba(255, 124, 57, 0.8)}
-.air150{background:rgba(211, 93, 78, 0.8)}
-.air200{background:#a475cb}
-.air250{background:#a475cb}
-.air300{background:#a475cb}
-
-.cloudbase0,.cloudbase1500{font-family:'weathertext2',Arial,Helvetica,system;width:8rem;height:7.68rem;font-size:1.25rem;padding-top:0;color:#fff;border-bottom: 15px solid rgba(56, 56, 60, 1);display:flex;align-items:center;justify-content:center;-webkit-border-radius: 3px;-moz-border-radius: 3px;-o-border-radius: 3px;border-radius: 3px;margin-left:-40px;margin-top:15px;
-font-weight:500;}
-.cloudbase0{background:rgba(68, 166, 181, 1.000);display:block;text-align:center;font-weight:500;}
-.cloudbase1500{background:rgba(230, 161, 65, 1.000);display:block;text-align:center;font-weight:500;}
-.estimated{position:absolute;font-size:0.9rem;margin-top:80px;left:-20px;}
-
+<style>
+@font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(fonts/verbatim-regular.woff2) format("woff2"),url(fonts/verbatim-regular.ttf) format("truetype")}body,html{font-size:13px;font-family:weathertext2,Helvetica,Arial,sans-serif}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,2fr));grid-gap:10px;align-items:stretch;color:#f5f7fc}
+.grid>article{border:1px solid #212428;box-shadow:2px 2px 6px 0 rgba(0,0,0,.3);padding:10px;font-size:.8em;-webkit-border-radius:4px;border-radius:4px}
+.grid>article img{max-width:100%}
+.weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}.weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:100%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}.weather34browser-footer{flex-basis:auto;height:35px;background:#ebebeb;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-20px;width:97.4%;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color:rgba(255,124,57,1)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#aaa;text-decoration:none}.weather34darkbrowser{position:relative;background:0;width:100%;max-height:30px;margin:auto;margin-top:-15px;margin-left:0;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#eb7061 6px,transparent 8px),radial-gradient(circle,#f5d160 6px,transparent 8px),radial-gradient(circle,#81d982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:12px;position:absolute;left:0;right:0;top:0;padding:2px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97,106,114,.3);height:20px;box-sizing:border-box}blue{color:#01a4b4}orange{color:#009bb4}orange1{position:relative;color:#009bb4;margin:0 auto;text-align:center;margin-left:5%;font-size:1.1rem}green{color:#aaa}red{color:#f37867}red6{color:#d65b4a}value{color:#fff}yellow{color:#cc0}purple{color:#916392}meteotextshowertext{font-size:1.2rem;color:#009bb4}meteorsvgicon{color:#f5f7fc}.weather34aqi{color:#ff8841;position:absolute;margin-left:36px;margin-top:17px;font-size:12px;width:20px;font-family:-apple-system,BlinkMacSystemFont,weathertext2,Roboto,Helvetica,Arial,sans-serif;max-height:100px;line-height:10px;font-weight:400}.weather34aqi span{color:#777;font-family:weathertext2,arial,sans-serif;font-size:12px}maroon{color:rgba(208,80,65,.7)}orange{color:rgba(255,124,57,1)}yellow{color:rgba(186,146,58,1)}green{color:rgba(144,177,42,1)}grey{color:#aaa}aqiimage1{position:absolute;left:-5px;top:-2px}blue{color:rgba(144,177,42,1)}.aqilocation{position:absolute;top:25px;left:20px;font-size:.5em;font-family:Arial,Helvetica,sans-serif}.aqilocation span{position:absolute;top:30px;left:10px;font-size:12px;font-family:Arial,Helvetica,sans-serif;display:block;width:70px}.aqilocation span2{position:absolute;top:15px;left:-20px;font-size:12px;font-family:Arial,Helvetica,sans-serif;width:130px;color:#aaa}.aqilocation span3{position:absolute;top:5px;left:35px;font-size:12px;font-family:Arial,Helvetica,sans-serif;width:100px}.aqilocation mod{position:absolute;top:5px}.aqitime{font-size:11px;color:#aaa;position:absolute;top:27px;left:140px;width:130px}.aqigraphic{position:relative;left:20px}.extraqiinfo{position:relative;top:0;font-size:12px;color:#aaa;left:10px;width:100px}.extraqiinfo2{position:relative;top:0;font-size:12px;color:#aaa;left:0;width:100px}airvalue{position:relative;top:5px;left:-10px;font-size:24px}airvalue0{position:relative;top:5px;left:-10px;font-size:24px}span11{position:relative;top:50px;font-size:14px;line-height:14px;width:200px;margin-left:20px}.airwarning{position:relative;margin-left:70px;font-size:1.6rem}.airwarning1{position:relative;margin-left:100px;top:5px}.airwarning2{position:relative;margin-left:55px;top:0}smalluvunit{position:absolute;display:inline;font-size:.85rem;font-family:Arial,Helvetica,system;vertical-align:top}.air0,.air100,.air150,.air200,.air300,.air50{position:relative;font-family:weathertext2,Arial,Helvetica,system;width:8rem;height:5.68rem;font-size:1.5rem;padding-top:0;color:#fff;border-bottom:15px solid rgba(56,56,60,1);display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px}.air0{background:rgba(144,177,42,1)}.air50{background:rgba(230,161,65,1)}.air100{background:rgba(255,124,57,.8)}.air150{background:rgba(211,93,78,.8)}.air200{background:#a475cb}.air250{background:#a475cb}.air300{background:#a475cb}.airpm25{position:relative;font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:3rem;font-size:1rem;padding-top:0;color:#fff;border-bottom:15px solid rgba(56,56,60,1);display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:#565f67}.cloudbase0,.cloudbase1500{font-family:weathertext2,Arial,Helvetica,system;width:8rem;height:5.68rem;font-size:1.25rem;padding-top:0;color:#fff;border-bottom:15px solid rgba(56,56,60,1);display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;margin-left:40px;margin-top:15px;font-weight:500}.cloudbase0{background:rgba(68,166,181,1);display:block;text-align:center;font-weight:500}.cloudbase1500{background:rgba(230,161,65,1);display:block;text-align:center;font-weight:500}.estimated{position:absolute;font-size:.9rem;margin-top:80px;left:-20px}.actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74,99,111,.1);padding:5px;font-family:Arial,Helvetica,sans-serif;width:100px;height:.8em;font-size:.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);align-items:center;justify-content:center;margin-bottom:10px;top:0}.actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74,99,111,.1);padding:5px;font-family:Arial,Helvetica,sans-serif;width:100px;height:.8em;font-size:.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);align-items:center;justify-content:center;margin-bottom:10px;top:0}
+aqred{color:#d35d4e}aqpurple{color:rgba(151, 88, 190, 1.000)}aqorange{color:#d05f2d}aqyellow{color:#e6a141}aqgreen{color:#90b12a}
 </style>
-</head>
-<body>
-<div class="weather34darkbrowser" url="Purple Air Quality & Cloudbase Data"></div>     
-
-
-
-           
-<section class="weather34cards">
-   <div class="weather34card weather34card--earthquake1">
-               <div class="weather34card_weather34-container">
-               
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-            <div class="lotemp1">Cloudbase</div>
-              <div class="weather34i-cloud-bar">
- <div class="lotemp">
+<div class="weather34darkbrowser" url="Air Quality"></div>
+  
+<main class="grid">
+  <article>       
+<div class=actualt>&nbsp;&nbsp Cloudbase </div>   
 <div class="aqigraphic">
-<div class="airqualitymoduleposition">
-
+ 
 <?php //WEATHER34 AIR QAULITY SVG
 if ($weather["cloudbase3"]>1500){echo "<div class=cloudbase1500><br>".$weather["cloudbase3"]." <smalluvunit>ft</smalluvunit>
 <br>".round($weather["cloudbase3"]*0.3048,0)."<smalluvunit>mt</smalluvunit>
@@ -125,27 +38,15 @@ else if ($weather["cloudbase3"]>0){echo "<div class=cloudbase0><br>".$weather["c
 
 
 ?>
-</div></div></div>
-<div class="estimated">Estimated</div>
-  
-  
- 
-  </div>
-     
-     <div class="weather34card__count-container">
-     <div class="weather34card__count-text"></div></div>
-     <div class="weather34card__stuff-container">            
-<div class="weather34card__stuff-text"> 	
-</div></div>
+  </div></div></div>
+</article>  
 
-</div></div></div></div>
-       
-    <div class="weather34card weather34card--earthquake2">
-               <div class="weather34card_weather34-container">
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-         
+
   
-	<?php  // PURPLE AIR additional conversion script included by Andrew Billits 24 April 2018
+   
+  <article>
+  
+  <?php  // PURPLE AIR additional conversion script included by Andrew Billits 24 April 2018
 function pm25_to_aqi($pm25){
 	if ($pm25 > 500.5) {
 	  $aqi = 500;
@@ -183,18 +84,15 @@ $parsed_json             = json_decode($json_string);
 //$aqiweather["aqi"]       = $parsed_json->{'results'}[1]->{'PM2_5Value'};
 $aqiweather["aqi"]       = number_format(pm25_to_aqi(($parsed_json->{'results'}[0]->{'PM2_5Value'} + $parsed_json->{'results'}[1]->{'PM2_5Value'}) / 2),1);
 $aqiweather["aqiozone"]  = 'N/A';
-$aqiweather["time2"]     = $parsed_json->{'results'}[1]->{'LastSeen'};
+$aqiweather["time2"]     = $parsed_json->{'results'}[0]->{'LastSeen'};
 $aqiweather["time"]      = date("H:i",$aqiweather["time2"]);
 $aqiweather["city"]      = $parsed_json->{'results'}[0]->{'ID'};
 $aqiweather["label"]     = $parsed_json->{'results'}[0]->{'Label'};
 $a="";if($aqiweather["aqi"]==$a){$aqiweather["aqi"] = "0" ;}
 ?>
 
-<div class="lotemp1">Air Quality</div>
-</div>
-<div class="aqigraphic">
-<div class="airqualitymoduleposition">
-
+<div class=actualt>&nbsp;&nbsp Air Quality </div> 
+<div class="airwarning2" >
 <?php //WEATHER34 AIR QAULITY SVG
 if ($aqiweather["aqi"]>300){echo "<div class=air300><img src='css/aqi/hazair.svg?ver=1.4' width='110px' height='100px' alt='weather34 hazardous air quality' title='weather34 hazardous air quality' "; }
 else if ($aqiweather["aqi"]>200){echo "<div class=air200><img src='css/aqi/vhair.svg?ver=1.4' width='110px' height='100px' alt='weather34 very unhealthy air quality' title='weather34 very unhealthy air quality'" ; }
@@ -202,104 +100,49 @@ else if ($aqiweather["aqi"]>150){echo "<div class=air150><img src='css/aqi/uhair
 else if ($aqiweather["aqi"]>100){echo "<div class=air100><img src='css/aqi/uhfsair.svg?ver=1.4' width='110px' height='100px'  alt='weather34 unhealthy for some air quality' title='weather34 unhealthy for some air quality'" ; }
 else if ($aqiweather["aqi"]>50){echo "<div class=air50><img src='css/aqi/modair.svg?ver=1.4' width='110px' height='100px' alt='weather34 moderate air quality' title='weather34 moderate air quality'" ; }
 else if ($aqiweather["aqi"]>=0){echo "<div class=air0><img src='css/aqi/goodair.svg?ver=1.4' width='110px' height='100px' alt='weather34 good air quality' title='weather34 good air quality'" ; }
-
 ?>
 </div></div></div>
-  
 
+<div class="airwarning">
 <?php //WEATHER34 AIR QAULITY VALUE 
- if ($aqiweather["aqi"] >300){echo "<airvalue><indoorred>",$aqiweather["aqi"] ;echo " <br></div><span11>Hazardous" ; }
- else if ($aqiweather["aqi"] >200){echo "<airvalue><indoorpurple>",$aqiweather["aqi"] ;echo " <br></div><span11>Very <br>Unhealthy" ; }
- else if ($aqiweather["aqi"] >150){echo "<airvalue><indoorred>",$aqiweather["aqi"] ;echo " <br></div><span11>Unhealthy" ; }
- else if ($aqiweather["aqi"] >100){echo "<airvalue><indoororange>",$aqiweather["aqi"] ;echo " </indoororange><br></div><span11>Unhealthy <br>For Some" ; }
- else if ($aqiweather["aqi"] >50){echo "<airvalue0><indooryellow>&nbsp; &nbsp;",$aqiweather["aqi"] ;echo " <br></div><span11>Moderate" ; }
- else if ($aqiweather["aqi"] >=0){echo "<airvalue0><indoorgreen>&nbsp; &nbsp;",$aqiweather["aqi"] ;echo " <br></div><span11>Good" ; }
- //WEATHER34 air quality description
+ if ($aqiweather["aqi"] >300){echo "<airvalue><aqred>",$aqiweather["aqi"] ; }
+ else if ($aqiweather["aqi"] >200){echo "<airvalue><aqpurple>",$aqiweather["aqi"] ;}
+ else if ($aqiweather["aqi"] >150){echo "<airvalue><aqred>",$aqiweather["aqi"] ;}
+ else if ($aqiweather["aqi"] >100){echo "<airvalue><aqorange>",$aqiweather["aqi"] ;}
+ else if ($aqiweather["aqi"] >50){echo "<airvalue0><aqyellow>&nbsp; &nbsp;",$aqiweather["aqi"] ;}
+ else if ($aqiweather["aqi"] >=0){echo "<airvalue0><aqgreen>&nbsp; &nbsp;",$aqiweather["aqi"] ;}
  
- ?>
- 
- 
-            
- </div>
-            
-            <div class="extraqiinfo">
+ ?> </div> </div>  
+  </article> 
+  <article>
+  <div class=actualt>&nbsp;&nbsp Particle Info</div>
+  <div class="extraqiinfo">
 <?php echo "Station ID:" .$aqiweather["city"]. " ".$aqiweather["state"];?>
 <?php echo "Updated:<green> " .$aqiweather["time"] ?></green>
 </div>
-
-<div class="airwarning1"><?php 
-if ($aqiweather["aqi"]>300){echo "<div class=indoorred1>PM2.5" ; }
-else if ($aqiweather["aqi"]>200){echo "<div class=indoorpurple1>PM2.5" ; }
-else if ($aqiweather["aqi"]>150){echo "<div class=indoorred1>PM2.5" ; }
-else if ($aqiweather["aqi"]>100){echo "<div class=indoororange1>PM2.5" ; }
-else if ($aqiweather["aqi"]>50){echo "<div class=indooryellow1>PM2.5" ; }
-else if ($aqiweather["aqi"]>=0){echo "<div class=indoorgreen1>PM2.5" ; }
-?></div>
-
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-textuv">
-                <span class="weather34card__count-text--bigs">    
-                </div>
-        </div><br>
-        <div class="weather34card__stuff-container">           
-      
-</section>
-<section class="weather34cards">
-   <div class="weather34card weather34card--earthquake1">
-               <div class="weather34card_weather34-container">
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-          
-   
- 
-</span> 
-<div class="lotemp">
-
-
-
-
-<div class="icon"><img src=css/icons/temp34.svg width=25px></div>
-
-            </div> </div>
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-textuv">
-                <span class="weather34card__count-text--big">  </span></div>  
-          <div class="weather34card__stuff-container" ><br>
-           Based on the common formula temperature & dewpoint recorded realtime from this weather station to calculate an estimated height of the cloudbase.It is not a accurate tool it is a relative indicator.  
-           Measured in <orange>feet</orange> or <orange>meters</orange>.        
-            
-<actual1>Information on Cloudbase </actual1></div></div></div></div>
-
-
-
-    <div class="weather34card weather34card--earthquake2">
-               <div class="weather34card_weather34-container">
-            <div class="weather34card_weather34-wrapper"><span class="weather34card__count-text--big">
-          </div>
- 
-    
-</span> 
-        </div>
-        <div class="weather34card__count-container">
-            <div class="weather34card__count-textuv">
-                <span class="weather34card__count-text--big">  </span></div>  
-          
-          <div class="weather34card__stuff-container" >
-           <li><green>0-50 GOOD</green></li>
+<div class="airwarning1" ><div class='airpm25'>PM 2.5</div>
+</div></div>
+  </article>
+   <article>
+   <div class=actualt>&nbsp;&nbsp Guide</div>   
+   <li><green>0-50 GOOD</green></li>
            <li><yellow>50+ MODERATE</yellow></li>
            <li><orange>100+ Unhealthy for Sensitive Groups</orange></li>
            <li><red>150+ Unhealthy </red>(Precautions Required)</li>
            <li><purple>200+ Very Unhealthy</purple> (Critical Conditions)</purple></li>
            <li><maroon>300+ Hazardous</maroon> (Life Threatening)</maroon></li>
-           
-            
-<actual1>Information on Air Quality </actual1>     
-
-<div class="icon"><img src=img/purpleair.svg width=30px alt="https://purpleair.com/" title="https://purpleair.com/"></div></div></div></div></div>
-</section>
-<div class="provided">   
-&nbsp;
-Air Quality data provided by <a href="https://purpleair.com/" title="https://purpleair.com/" target="_blank">https://purpleair.com</a> <?php echo $info;?><a href="https://weather34.com" title="weather34.com" target="_blank"><?php echo $copyrightcredit;?></a></div>
-</body>
-</html>
+   
+  </article> 
+  <article>
+   <div class=actualt> &copy; Information</div> 
+   Air quality guideline is an annual mean concentration guideline for particulate matter from the World Health Organization. The guideline stipulates that PM2.5 not exceed 10 μg/m3 annual mean, or 25 μg/m3 24-hour mean; and that PM10 not exceed 20 μg/m3 annual mean, or 50 μg/m3 24-hour mean.
+   
+  </article>   
+  <article>
+  <div class=actualt> &copy; Information</div>  
+  <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?></span>
+ <br>
+ <?php echo $info?> Guide Info provided by <br><a href="https://en.wikipedia.org/wiki/Air_quality_guideline" title="https://en.wikipedia.org/wiki/Air_quality_guideline" target="_blank">Wiki-Air Quality..</a>
+  
+  </article> 
+</main>
