@@ -5,7 +5,13 @@ $weatherfilemonth = date('M');
 //MONTHLY & YEARLY csv file
 $conn1 = mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 $result1 = mysqli_query($conn1,"SELECT (date),MAX(outsideTemp),MIN(outsideTemp),MAX(dewpoint),MIN(dewpoint),MAX(raintoday),MAX(windgustmph),MAX(windSpeed),MAX(radiation),MAX(barometer),MIN(barometer),SUM(lightning),MAX(UV) FROM weatherstation");
-if (!$result1) die('Couldn\'t fetch records'); 
+if (!$result1) {
+    $result1 = mysqli_query($conn1,'SELECT DATE_FORMAT(timestamp, "%d %b"),MAX(outsideTemp),MIN(outsideTemp),MAX(dewpoint),MIN(dewpoint),MAX(raintoday),MAX(windgustmph),MAX(windSpeed),MAX(radiation),MAX(barometer),MIN(barometer),SUM(lightning),MAX(UV) FROM weatherstation GROUP BY DATE_FORMAT(timestamp, "%d %b")');
+    if (!$result1) {
+        die('Could\'t fetch records');
+    }
+}
+
 $num_fields = mysqli_num_fields($result1); 
 $headers2 = array(); 
 
