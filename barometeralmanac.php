@@ -28,6 +28,24 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
   border-radius:4px;
 }
 
+.grid1 { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-gap: 5px;
+    color:#f5f7fc;
+  
+  }
+
+.grid1 > articlegraph {
+  border: 1px solid #212428;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  padding:5px;
+  font-size:0.8em;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  
+}
+
   
  .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}
  .weather34browser-header{flex-basis:auto;height:35px;background:#ebebeb;background:0;border-bottom:0;display:flex;margin-top:-20px;width:99%;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;border-top-left-radius:5px;border-top-right-radius:5px}.weather34browser-footer{flex-basis:auto;height:35px;background:#ebebeb;background:rgba(56,56,60,1);border-bottom:0;display:flex;bottom:-20px;width:95%;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-moz-border-radius-bottomleft:5px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.weather34chart-btns{position:absolute;height:35px;display:inline-block;padding:0 10px;line-height:38px;width:55px;flex-basis:auto;top:5px}.weather34chart-btn{width:14px;height:14px;border:1px solid rgba(0,0,0,.15);border-radius:6px;display:inline-block;margin:1px}.weather34chart-btn.close{background-color: rgba(255, 124, 57, 1.000)}.weather34chart-btn.close:before{content:"x";margin-top:-14px;margin-left:2px}.weather34chart-btn.close:after{content:"close window";margin-top:-13px;margin-left:15px;width:300px}a{color:#aaa;text-decoration:none}
@@ -57,7 +75,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
   
 <main class="grid">
   <article>  
-   <div class=actualt>&nbsp;&nbsp Barometer Today </div>        
+   <div class=actualt>&nbsp;Barometer Today </div>        
    <div class="temperaturecontainer1">
 			  
 			  <?php
@@ -81,7 +99,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 </article>  
 
  <article>  
-   <div class=actualt>&nbsp;&nbsp Barometer Yesterday </div>        
+   <div class=actualt>&nbsp;Barometer Yesterday </div>        
    <div class="temperaturecontainer1">
 			  
 			  <?php
@@ -110,7 +128,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
   
   <article> 
-  <div class=actualt>&nbsp;&nbsp Barometer <?php echo date('F Y')?> </div>        
+  <div class=actualt>&nbsp;Barometer <?php echo date('F Y')?> </div>        
    <div class="temperaturecontainer1">			  
   <?php
 	////pressure max month
@@ -134,7 +152,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
   
    
    <article> 
-   <div class=actualt>&nbsp;&nbsp Barometric <?php echo date('Y')?> </div>        
+   <div class=actualt>&nbsp;Barometer <?php echo date('Y')?> </div>        
    <div class="temperaturecontainer1">
 			  
 			  <?php
@@ -158,10 +176,11 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 	?>  </div>
 <div class="temperaturetrend1">Min: <?php echo $weather["thb0seapressyearmintime"];?></span></div>	
 
-</article>  
+</article> 
 
-  <article>
-   <div class=actualt>&nbsp;&nbsp Barometric All Time </div>        
+
+<article> 
+   <div class=actualt>&nbsp;Barometer All-Time <?php echo date('Y')?> </div>        
    <div class="temperaturecontainer1">
 			  
 			  <?php
@@ -184,12 +203,25 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
 <div class="temperaturetrend1"><?php echo $weather["thb0seapressamintime"];?></span></div>	
-</div>
-                                        </article> 
-  
+
+</article> 
+
+
+
+
+
+
+
+    
   <article>
   <div class=actualt>&nbsp;&nbsp &copy; Info</div>  
   <div class="lotemp">
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
   </div></article> 
-  
+  <main class="grid1">
+  <articlegraph> 
+  <div class=actualt>&nbsp;&nbsp Today Barometer Chart</div>  
+  <iframe  src="mbcharts/todaybarometersmall.php" frameborder="0" scrolling="no"></iframe>
+   
+  </articlegraph> 
+   

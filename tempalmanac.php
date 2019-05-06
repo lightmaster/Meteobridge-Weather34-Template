@@ -13,20 +13,40 @@ include('livedata.php');
 html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;}
 .grid { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 2fr));
   grid-gap: 5px;
   align-items: stretch;
   color:#f5f7fc;
- 
+  
   }
 .grid > article {
   border: 1px solid #212428;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  padding:20px;
+  padding:5px;
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;
 }
+
+.grid1 { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-gap: 5px;
+    color:#f5f7fc;
+  
+  }
+
+.grid1 > articlegraph {
+  border: 1px solid #212428;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  padding:5px;
+  font-size:0.8em;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  
+}
+
+
 
   
  .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}
@@ -37,10 +57,10 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 .hitempypos{position:absolute;margin-top:-100px;margin-left:40px;margin-bottom:20px;display:block;}
 
 
-.hitempd{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:5px;}
+.hitempd{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:100px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:-20px;}
 
 
-.hitempd1{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:40px;}
+.hitempd1{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:100px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:10px;}
 
 
 
@@ -64,7 +84,7 @@ blue{color:rgba(0, 154, 171, 1.000)}
 
 .temperaturetrend1,.temperaturecaution,.temperaturetrend{position:absolute;font-size:0.85rem}
 
-.temperaturetodayminus10,.temperaturetodayminus5,.temperaturetodayminus,.temperaturetoday0-5,.temperaturetoday6-10,.temperaturetoday11-15,.temperaturetoday16-20,.temperaturetoday21-25,.temperaturetoday26-30,.temperaturetoday31-35,.temperaturetoday36-40,.temperaturetoday41-45{font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex;font-size:1.2rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
+.temperaturetodayminus10,.temperaturetodayminus5,.temperaturetodayminus,.temperaturetoday0-5,.temperaturetoday6-10,.temperaturetoday11-15,.temperaturetoday16-20,.temperaturetoday21-25,.temperaturetoday26-30,.temperaturetoday31-35,.temperaturetoday36-40,.temperaturetoday41-45{font-family:weathertext2,Arial,Helvetica,system;width:4.5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex;font-size:1rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
 
 .temperaturetodayminus10{background:background:#00a4b4;background:-webkit-linear-gradient(270deg,#00a4b4,rgba(80,69,188,1));background:linear-gradient(270deg,#00a4b4,rgba(80,69,188,1))}
 .temperaturetodayminus5{background:background:#00a4b4;background:-webkit-linear-gradient(270deg,#00a4b4,rgba(80,69,188,1));background:linear-gradient(270deg,#00a4b4,rgba(80,69,188,1))}
@@ -81,8 +101,8 @@ blue{color:rgba(0, 154, 171, 1.000)}
 
 
 
-.temperaturetrend{margin-left:15px;margin-top:-23px;z-index:1;color:#fff;font-size:.6rem;}
-.temperaturetrend1{margin-left:7px;margin-top:-23px;z-index:1;color:#fff;font-size:.6rem;}
+.temperaturetrend{margin-left:10px;margin-top:-23px;z-index:1;color:#fff;font-size:.6rem;}
+.temperaturetrend1{margin-left:3px;margin-top:-23px;z-index:1;color:#fff;font-size:.6rem;}
 smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 
 
@@ -90,7 +110,7 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 .hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#aaa;width:90px;padding:1px;-webit-border-radius:2px;border-radius:2px;
 margin-top:-20px;margin-left:92px;padding-left:3px;line-height:11px;font-size:9px}
 .actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:170px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:130px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
 padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
@@ -482,13 +502,13 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
     <div class="temperaturetrend1">Min:<?php echo $weather["tempmmintime"];?></span></div>	
      
  <div class=hitempypos> 
- <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewmmax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewmmaxtime"];?></span><br></div><br>
- <div class="hitempd" >Dew Min<blue><?php echo "&nbsp;".$weather["dewmmin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewmmintime"];?></span><br></div><br>
+ <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewmmax"],"</orange>&deg;",$weather["temp_units"],"<br> ",$weather["dewmmaxtime"];?></span><br></div><br>
+ <div class="hitempd" style="margin-top:2px;">Dew Min<blue><?php echo "&nbsp;".$weather["dewmmin"],"</blue>&deg;",$weather["temp_units"],"<br> ",$weather["dewmmintime"];?></span><br></div><br>
 </div>
 
  <div class=hitempypos> 
-<div class="hitempd1" >Hum Max<orange><?php echo "&nbsp;".$weather["humidity_mmax"],"</orange>% ",$weather["humidity_mmaxtime"];?></span><br></div><br>
-<div class="hitempd1" >Hum Min<blue><?php echo "&nbsp;".$weather["humidity_mmin"],"</blue>% ",$weather["humidity_mmintime"];?></span><br></div><br>
+<div class="hitempd1" style="margin-top:45px;">Hum Max<orange><?php echo "&nbsp;".$weather["humidity_mmax"],"</orange>% <br>",$weather["humidity_mmaxtime"];?></span><br></div><br>
+<div class="hitempd1" style="margin-top:60px;">Hum Min<blue><?php echo "&nbsp;".$weather["humidity_mmin"],"</blue>%<br> ",$weather["humidity_mmintime"];?></span><br></div><br>
 </div>    
 </article>  
   
@@ -612,13 +632,13 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
     <div class="temperaturetrend1">Min:<?php echo $weather["tempymintime"];?></span></div>	
      
  <div class=hitempypos> 
- <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewymax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewymaxtime"];?></span><br></div><br>
- <div class="hitempd" >Dew Min<blue><?php echo "&nbsp;".$weather["dewymin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewymintime"];?></span><br></div><br>
+ <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewymax"],"</orange>&deg;",$weather["temp_units"]," <br>",$weather["dewymaxtime"];?></span><br></div><br>
+ <div class="hitempd" style="margin-top:2px;">Dew Min<blue><?php echo "&nbsp;".$weather["dewymin"],"</blue>&deg;",$weather["temp_units"]," <br>",$weather["dewymintime"];?></span><br></div><br>
 </div>
 
  <div class=hitempypos> 
-<div class="hitempd1" >Hum Max<orange><?php echo "&nbsp;".$weather["humidity_ymax"],"</orange>% ",$weather["humidity_ymaxtime"];?></span><br></div><br>
-<div class="hitempd1" >Hum Min<blue><?php echo "&nbsp;".$weather["humidity_ymin"],"</blue>% ",$weather["humidity_ymintime"];?></span><br></div><br>
+<div class="hitempd1" style="margin-top:45px;">Hum Max<orange><?php echo "&nbsp;".$weather["humidity_ymax"],"</orange>% <br>",$weather["humidity_ymaxtime"];?></span><br></div><br>
+<div class="hitempd1" style="margin-top:60px;">Hum Min<blue><?php echo "&nbsp;".$weather["humidity_ymin"],"</blue>% <br>",$weather["humidity_ymintime"];?></span><br></div><br>
 </div>    
 </article> 
 
@@ -742,8 +762,8 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
     <div class="temperaturetrend1"><?php echo $weather["tempamintime"];?></span></div>	
      
  <div class=hitempypos> 
- <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewamax"],"</orange>&deg;",$weather["temp_units"]," ",$weather["dewamaxtime"];?></span><br></div><br><br><br>
- <div class="hitempd" >Dew Min<blue><?php echo "&nbsp;".$weather["dewamin"],"</blue>&deg;",$weather["temp_units"]," ",$weather["dewamintime"];?></span><br></div><br>
+ <div class="hitempd" >Dew Max<orange><?php echo "&nbsp;".$weather["dewamax"],"</orange>&deg;",$weather["temp_units"],"<br> ",$weather["dewamaxtime"];?></span><br></div><br><br><br>
+ <div class="hitempd" >Dew Min<blue><?php echo "&nbsp;".$weather["dewamin"],"</blue>&deg;",$weather["temp_units"],"<br> ",$weather["dewamintime"];?></span><br></div><br>
 </div>
 
  
@@ -754,4 +774,13 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
  <article>
    <div class=actualt>&nbsp;&nbsp &copy; Information</div>  
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?></article> 
+  
+  
+  <main class="grid1">
+  <articlegraph> 
+  <div class=actualt>&nbsp;&nbsp Today Temperature Chart</div>  
+  <iframe  src="mbcharts/todaytempsmall.php" frameborder="0" scrolling="no"></iframe>
+   
+  </articlegraph> 
+  
 </main>

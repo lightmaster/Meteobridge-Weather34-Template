@@ -13,21 +13,56 @@ include('livedata.php');
 html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;}
 .grid { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 2fr));
+  grid-gap: 5px;
   align-items: stretch;
   color:#f5f7fc
   }
 .grid > article {
   border: 1px solid #212428;
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  padding:20px;
+  padding:5px;
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;
 }
-.grid > article img {
-  max-width: 100%;
+
+.grid1 { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-gap: 5px;
+    color:#f5f7fc;
+  
+  }
+
+.grid1 > articlegraph {
+  border: 1px solid #212428;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  padding:5px;
+  font-size:0.8em;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  
+}
+
+
+.grid2 { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 3fr));
+  grid-gap: 5px;
+    color:#f5f7fc;
+  
+  }
+
+.grid2 > articlecredit {
+  border: 1px solid #212428;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  padding:5px;
+  font-size:0.8em;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  
+  
 }
 
   
@@ -36,16 +71,10 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
  blue{color:#01a4b4}orange{color:#009bb4}orange1{position:relative;color:#009bb4;margin:0 auto;text-align:center;margin-left:5%;font-size:1.1rem}green{color:#aaa}red{color:#f37867}red6{color:#d65b4a}value{color:#fff}yellow{color:#CC0}purple{color:#916392}
 
 
-.actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
-align-items:center;justify-content:center;margin-bottom:10px;top:0}
-.actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
-align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 
 .windcontainer1{left:5px;top:0}
-.windtoday,.windtoday10,.windtoday30,.windtoday40,.windtoday60{font-family:weathertext2,Arial,Helvetica,system;width:7rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;}.windtoday,.windtoday10,.windtoday30,.windtoday40,.windtoday60{font-size:1.25rem;padding-top:15px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;text-align:center;border-radius:3px;}
+.windtoday,.windtoday10,.windtoday30,.windtoday40,.windtoday60{font-family:weathertext2,Arial,Helvetica,system;width:6rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;}.windtoday,.windtoday10,.windtoday30,.windtoday40,.windtoday60{font-size:1.25rem;padding-top:15px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;text-align:center;border-radius:3px;}
 
 .windcaution,.windtrend{position:absolute;font-size:1rem}
 .windtoday{background:#9aba2f}
@@ -56,13 +85,15 @@ smalluvunit{font-size:.6rem;font-family:Arial,Helvetica,system;}
 .almanac{font-size:1.25em;margin-top:30px;color:rgba(56, 56, 60, 1.000);width:12em}
 metricsblue{color:#44a6b5;font-family:"weathertext2",Helvetica, Arial, sans-serif;background:rgba(86, 95, 103, 0.5);-webkit-border-radius:2px;border-radius:2px;align-items:center;justify-content:center;font-size:.9em;left:10px;padding:0 3px 0 3px;}
 .w34convertrain{position:relative;font-size:.7em;top:13px;color:#c0c0c0;margin-left:5px}
-.hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#aaa;font-size:12px;width:90px;padding:1px;-webit-border-radius:2px;border-radius:2px;
+
+.hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#aaa;font-size:11px;width:70px;padding:1px;-webit-border-radius:2px;border-radius:2px;
 margin-top:-24px;margin-left:92px;padding-left:3px;line-height:11px;font-size:10px}
+
 .actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:170px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:120px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:120px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .svgimage{background:rgba(0, 155, 171, 1.000);-webit-border-radius:2px;border-radius:2px;}
 
@@ -71,7 +102,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
   
 <main class="grid">
   <article>  
-   <div class=actualt>&nbsp;&nbsp Max Wind Speed Today </div>        
+   <div class=actualt>&nbsp;&nbsp Max Today </div>        
    <?php
 	// wind day km/h
 	if ($weather["wind_units"]=='km/h' && $weather["winddmax"]>=60)  {
@@ -123,12 +154,12 @@ if($weather["wind_units"] =='kts'){ echo number_format($weather["winddmax"]*1.85
 </div>
 
 <div class="hitempy">
-Max Wind Speed <br>Recorded <blue><?php echo $weather["winddmaxtime"];?></blue></div>
+Max Recorded <blue><?php echo $weather["winddmaxtime"];?></blue></div>
 </smalluvunit>
 </article>  
 
  <article>  
-   <div class=actualt>&nbsp;&nbsp Max Wind Speed Yesterday </div>        
+   <div class=actualt>&nbsp;&nbsp Max Yesterday </div>        
    <?php
 	// wind yesterday km/h
 	if ($weather["wind_units"]=='km/h' && $weather["windydmax"]>=60)  {
@@ -186,7 +217,7 @@ Max Recorded <br><blue><?php echo $weather["windydmaxtime"];?></blue></div>
 
   
   <article> 
-  <div class=actualt>&nbsp;&nbsp Max Wind Speed <?php echo date('F Y')?> </div>        
+  <div class=actualt>&nbsp;&nbsp Max <?php echo date('F Y')?> </div>        
     <?php
 	// wind month km/h
 	if ($weather["wind_units"]=='km/h' && $weather["windmmax"]>=60)  {
@@ -243,7 +274,7 @@ Max Recorded <br><blue><?php echo $weather["windmmaxtime"];?></blue></div>
   
      
    <article> 
-   <div class=actualt>&nbsp;&nbsp Max Wind Speed <?php echo date('Y')?> </div>        
+   <div class=actualt>&nbsp;&nbsp Max <?php echo date('Y')?> </div>        
    <?php
 	// wind year km/h
 	if ($weather["wind_units"]=='km/h' && $weather["windymax"]>=60)  {
@@ -298,8 +329,9 @@ Max Recorded <br><blue><?php echo $weather["windymaxtime"];?></blue></div>
 
 </article>  
 
-  <article>
-   <div class=actualt>&nbsp;&nbsp Wind Speed Max All-Time </div>      
+
+<article>
+   <div class=actualt>&nbsp;&nbsp Max All-Time </div>      
   <?php
 	// wind year km/h
 	if ($weather["wind_units"]=='km/h' && $weather["windamax"]>=60)  {
@@ -353,8 +385,16 @@ if($weather["wind_units"] =='kts'){ echo number_format($weather["windamax"]*1.85
 Max Recorded <br><blue><?php echo $weather["windamaxtime"];?></blue></div>
 
                                         </article> 
-  
   <article>
-   <div class=actualt>&nbsp;&nbsp &copy; Information</div>  
-  <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?></span></article> 
-</main>
+  <div class=actualt>&nbsp;&nbsp &copy; Info</div>  
+  <div class="lotemp">
+  <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
+  </div></article> 
+   
+ 
+  <main class="grid1">
+  <articlegraph> 
+  <div class=actualt>&nbsp;&nbsp Today Wind Speed Chart</div>  
+  <iframe  src="mbcharts/todaywindspeedsmall.php" frameborder="0" scrolling="no"></iframe>
+   
+  </articlegraph></div></body>
