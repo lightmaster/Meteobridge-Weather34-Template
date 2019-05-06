@@ -55,12 +55,12 @@ indoorblue1,indoorgreen1,indoororange1,indoorred1,indooryellow1{padding:5px}
 .weather34indoortrend{margin-left:64px;margin-top:1.75rem;color:#aaa;font-size:.85rem;font-family:arial,system;position:absolute}
 indoorblue1,indoorgreen1,indoororange1,indoorred1,indooryellow1{font-family:weathertext,Arial,Helvetica,system;width:3.4rem;height:1.7rem;font-size:1rem;padding-top:10px;color:#fff;background:rgba(59,156,172,1);border-bottom:12px solid rgba(56,56,60,1);display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:53px;top:-14px}
 
-indoorred1{background:rgba(211,93,78,1)}indoororange1{background:#ff8841}indoorgreen1{background:#9aba2f}indoorblue1{background:#01a4b4}indooryellow1{background:rgba(233,171,74,1)}smallrainunit{font-size:.7em}
+indoorred1{background:#e27667}indoororange1{background:#ff8841}indoorgreen1{background:#9aba2f}indoorblue1{background:#01a4b4}indooryellow1{background:rgba(233,171,74,1)}smallrainunit{font-size:.7em}
 
 
 .tempconvertercircleblue,.tempconvertercirclegreen.tempconvertercirclegreen,.tempconvertercircleorange,.tempconvertercirclered,.tempconvertercircleyellow{background:rgba(144,177,42,.8);display:flex;align-items:center;justify-content:center;height:1.8rem;width:5rem;border:2px solid rgba(56,56,60,1);overflow:hidden;border-radius:4px;color:#fff;line-height:16px;font-family:weathertext,Arial,Helvetica,system;font-size:1em}.tempconvertercircleyellow{background:rgba(230,161,65,.8)}.tempconvertercircleorange{background:rgba(255,124,57,.8)}.tempconvertercirclered{background:rgba(211,93,78,.8)}.tempconvertercircleblue{background:rgba(59,156,172,.6)}.tempconvertercirclegreen{background:rgba(144,177,42,1)}.tempindoorconverter{position:absolute;margin-left:230px;margin-top:20px;font-size:12px}smallsup{color:#aaa;font-size:.5rem;font-family:Arial,Helvetica,system}.tempconverter1{position:absolute;margin-left:55px;margin-top:0;font-size:12px}
 
-humgreen{color:rgba(132, 169, 39, 1.000)}humred{color:rgba(207, 81, 41, 1.000)}humyellow{color:rgba(231, 150, 59, 1.000)}humblue{color:rgba(0, 155, 180, 1.000)}humorange{color:#ff832f}
+humgreen{color:rgba(132, 169, 39, 1.000)}humred{color:#e27667}humyellow{color:rgba(231, 150, 59, 1.000)}humblue{color:rgba(0, 155, 180, 1.000)}humorange{color:#ff832f}
 
 
 .hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#aaa;font-size:12px;width:90px;padding:1px;-webit-border-radius:2px;border-radius:2px;
@@ -172,29 +172,35 @@ if (anyToC($weather["temp_indoor"]) >27){echo "<oorange>".$alert ;}?></oorange>
 
   <article>
    <div class=actualt>&nbsp;&nbsp Low Temperatures</div>        
-    <span style="font-size:1em;">     
-Long periods of Temperatures below <humyellow>15&deg;C/59&deg;F</humyellow> can cause <br>
+    <span style="font-size:.9em;">     
+Long periods below <humyellow>15&deg;C/59&deg;F</humyellow> can cause <br>
 <?php echo $info ;?>Dampness.<br>
 <?php echo $info ;?>Risk of colds and respiratory illness.<br>
     </span></article>     
  <article>   
       <div class=actualt>&nbsp;&nbsp High Temperatures</div>        
-    <span style="font-size:1em;">      
-Long periods of Temperatures above <humred>25&deg;C/77&deg;F</humred> can cause <br>
+    <span style="font-size:.9em;">      
+Long periods above <humred>25&deg;C/77&deg;F</humred> can cause <br>
 <?php echo $info ;?>Risk of electrical items overheating.<br>
-<?php echo $info ;?>Sleep deprevation.</span>      
+<?php echo $info ;?>Sleep deprevation.<br>
+<?php echo $info ;?>Feeling lethargic.<br>
+<?php echo $info ;?>A negative effect on productivity.
+</span>      
         
         </article>                                
                                         
   <article>
    <div class=actualt>&nbsp;&nbsp Humidity Guide</div>        
- <span style="font-size:1em;">    
-Long periods of Humidity below <humred>35%</humred> can cause<br>
+ <span style="font-size:.9em;">    
+Long periods below <humred>35%</humred> can cause<br>
 <?php echo $info ;?>Dry, itchy skin and hair.<br>
 <?php echo $info ;?>Risk of colds and respiratory illness.<br>
-Long periods of Humidity above <humblue>80%</humblue> can cause </strong><br>
+<?php echo $info ;?>Risk of allergies from dust.<br><br>
+Long periods above <humblue>80%</humblue> can cause <br>
 <?php echo $info ;?>Irritable feelings.<br>
-<?php echo $info ;?>Sleep deprevation.</span>
+<?php echo $info ;?>Sleep deprevation.
+
+</span>
         
         </article>       
   <article>
