@@ -156,7 +156,17 @@ if (anyToC($weather["temp_indoor"]) >27){echo "<oorange>".$alert ;}?></oorange>
    <?php if(anyToC($weather["temp_indoor_feel"])>25){echo "Hot<humorange>".$weather["temp_indoor_feel"]."</humorange>&deg;".$weather["temp_units"];}
 			  else if(anyToC($weather["temp_indoor_feel"])>18){echo "Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;".$weather["temp_units"];}
 			  else if(anyToC($weather["temp_indoor_feel"])>15){echo "Mild at <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;".$weather["temp_units"];}
-			  else if(anyToC($weather["temp_indoor_feel"])>0){echo "Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;".$weather["temp_units"];}?>
+			  else if(anyToC($weather["temp_indoor_feel"])>0){echo "Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;".$weather["temp_units"];}?></span>
+              <br>
+              
+         <span style="position:absolute;margin-top:-20px;">      
+      <?php if(anyToC($weather["temp_indoor_feel"])>25){echo "<img src='css/aqi/hot.svg?ver=1.4' width='140px' alt='weather34 indoor hot' title='weather34 indoor hot'";}
+			  else if(anyToC($weather["temp_indoor_feel"])>18){echo "<img src='css/aqi/warm.svg?ver=1.4' width='140px' alt='weather34 indoor warm' title='weather34 indoor warm'";}
+			  else if(anyToC($weather["temp_indoor_feel"])>15){echo "<img src='css/aqi/mild.svg?ver=1.4' width='140px' alt='weather34 indoormild' title='weather34 indoor mild'";}
+			  else if(anyToC($weather["temp_indoor_feel"])>0){echo "<img src='css/aqi/cold.svg?ver=1.4' width='140px'  alt='weather34 indoor cold' title='weather34 indoor cold'";}
+			  
+			  
+			  ?></span>
    
 </article>  
 
