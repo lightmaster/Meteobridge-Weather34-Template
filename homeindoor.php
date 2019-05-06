@@ -171,29 +171,30 @@ if (anyToC($weather["temp_indoor"]) >27){echo "<oorange>".$alert ;}?></oorange>
 </article>  
 
   <article>
-   <div class=actualt>&nbsp;&nbsp Temperature Guide </div>        
+   <div class=actualt>&nbsp;&nbsp Low Temperatures</div>        
     <span style="font-size:1em;">     
-Long term Temperatures below <humyellow>15&deg;C/59&deg;F</humyellow> can cause <br>
-<?php echo $info ;?>Dampness<br>
-<?php echo $info ;?>Risk of colds and respiratory illness<br>
-         
-        
-Long term Temperatures above <humred>25&deg;C/77&deg;F</humred> can cause <br>
-<?php echo $info ;?>Risk of electrical items overheating<br>
-<?php echo $info ;?>Sleep deprevation</span>
-        
+Long periods of Temperatures below <humyellow>15&deg;C/59&deg;F</humyellow> can cause <br>
+<?php echo $info ;?>Dampness.<br>
+<?php echo $info ;?>Risk of colds and respiratory illness.<br>
+    </span></article>     
+ <article>   
+      <div class=actualt>&nbsp;&nbsp High Temperatures</div>        
+    <span style="font-size:1em;">      
+Long periods of Temperatures above <humred>25&deg;C/77&deg;F</humred> can cause <br>
+<?php echo $info ;?>Risk of electrical items overheating.<br>
+<?php echo $info ;?>Sleep deprevation.</span>      
         
         </article>                                
                                         
   <article>
-   <div class=actualt>&nbsp;&nbsp Humidity Guide </div>        
+   <div class=actualt>&nbsp;&nbsp Humidity Guide</div>        
  <span style="font-size:1em;">    
-Humidity below <humred>35%</humred> can cause<br>
-<?php echo $info ;?>Dry, itchy skin and hair<br>
-<?php echo $info ;?>Risk of colds and respiratory illness<br>
-Humidity above <humblue>80%</humblue> can cause </strong><br>
-<?php echo $info ;?>Irritable feelings<br>
-<?php echo $info ;?>Sleep deprevation</span>
+Long periods of Humidity below <humred>35%</humred> can cause<br>
+<?php echo $info ;?>Dry, itchy skin and hair.<br>
+<?php echo $info ;?>Risk of colds and respiratory illness.<br>
+Long periods of Humidity above <humblue>80%</humblue> can cause </strong><br>
+<?php echo $info ;?>Irritable feelings.<br>
+<?php echo $info ;?>Sleep deprevation.</span>
         
         </article>       
   <article>
