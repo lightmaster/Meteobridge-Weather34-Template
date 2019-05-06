@@ -159,7 +159,7 @@ else if( $weather["temp_units"]=='C' &&  anyToC($weather["temp"])<100){echo "<di
 ?><smalltempunit2></div></div></div></div>
 
 <div class="tempindoorextra">
-<a href="homeindoor.php" data-featherlight="iframe" title="Home Indoor enviroment">
+<a href="homeindoor.php" data-lity title="Home Indoor enviroment">
 <?php  //indoor C
 if ($weather["temp_units"]=='C' && $weather["temp_indoor"]>=25){echo "<div class=intempmodulehome25-30c>&nbsp;".$hometemp."&nbsp;".$weather["temp_indoor"]. "&deg;</tsred><smalltempunit4>" .$weather["temp_units"];}
 else if ($weather["temp_units"]=='C' && $weather["temp_indoor"]>=20){echo "<div class=intempmodulehome20-25c>&nbsp;".$hometemp."&nbsp;".$weather["temp_indoor"]. "&deg;</tsorange><smalltempunit4>" .$weather["temp_units"];}
