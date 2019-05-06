@@ -23,6 +23,11 @@ https://weather34.com/homeweatherstation/weather34timeline/weather34timeline.htm
  
 </p>
 
+<p align="center">
+  <img src="https://res.cloudinary.com/brian-underdown/image/upload/v1557158225/almanacs_m5vmum.jpg" width="550" title="weather34 meteobridge alamanacs ">
+ 
+</p>
+
 # Thanks to the following sites which I have monitored for anomalies this helps due to different scenarios and hardware which is not always obvious when changes happen.ps my brain is stuck in metric :-)
 
 Singapore Weather
@@ -51,7 +56,7 @@ you can find a Weewx version maintained by Ian Millard is also avaialble via
 https://github.com/steepleian/WX-HWS
 
 # Weatherflow
-you can find a Weatherflow version not maintained fully tested as of April 13th 2019 
+you can find a Weatherflow version not maintained but fully tested as of May 5th 2019 
 https://github.com/weather34/Weather34-Weatherflow
 
 
