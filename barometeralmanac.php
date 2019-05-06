@@ -192,4 +192,4 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
   <div class="lotemp">
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
   </div></article> 
-   
+  

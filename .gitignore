@@ -1,6 +1,7 @@
 #timelapse files
 cam.jpg
 camplus.jpg
+cam
 timelapse/weather*
 timelapse/pics/*
 timelapse/
@@ -23,9 +24,13 @@ mbridge/MBrealtimeupload.txt
 
 #Ignore all backup files
 *.bak
+*.orig
 *.bak.*
+*.orig.*
 **/*.bak
+**/*.orig
 **/*.bak.*
+**/*.orig.*
 
 #Ignore Log files
 *.log
@@ -48,3 +53,4 @@ mbridge/MBrealtimeupload.txt
 Network Trash Folder
 Temporary Items
 .apdisk
+.vscode/
