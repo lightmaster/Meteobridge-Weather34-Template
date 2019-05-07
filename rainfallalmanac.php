@@ -82,11 +82,11 @@ margin-top:-34px;margin-left:92px;padding-left:3px;line-height:11px;font-size:10
   <article>  
    <div class=actualt>&nbsp;Rainfall Today </div>        
   <?php // rain today 
-echo "<div class='rainfalltoday1'>",$weather["rain_today"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
+echo "<div class='rainfalltoday1'>",$weather["rain_today"] . "</value>";echo "<smalluvunit> ".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_today"]*0.0393701,2)." inches";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rain_today"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_today"]*0.0393701,2)." in";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rain_today"]*25.400013716,2)." mm";}
 ?>
 <div></div>
 
@@ -96,11 +96,11 @@ if($weather["rain_units"] =='in'){ echo number_format($weather["rain_today"]*25.
  <article>  
     <div class=actualt>&nbsp;Rainfall Yesterday </div>      
   <?php // rain yesterday
-echo "<div class='rainfalltoday1'>",$weather["rainydmax"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
+echo "<div class='rainfalltoday1'>",$weather["rainydmax"] . "</value>";echo "<smalluvunit> ".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rainydmax"]*0.0393701,2)." inches";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rainydmax"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rainydmax"]*0.0393701,2)." in";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rainydmax"]*25.400013716,2)." mm";}
 ?>
 <div></div>
 
@@ -111,11 +111,11 @@ if($weather["rain_units"] =='in'){ echo number_format($weather["rainydmax"]*25.4
   <article> 
   <div class=actualt>&nbspRainfall <?php echo date('M Y')?> </div>          
   <?php // rain month
-echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
+echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";echo "<smalluvunit> ".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_month"]*0.0393701,2)." inches";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_month"]*0.0393701,2)." in";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]*25.400013716,2)." mm";}
 ?>
 <div></div>
 
@@ -127,11 +127,11 @@ if($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]*25.
    <article> 
    <div class=actualt>&nbsp;Rainfall <?php echo date("Y");?> </div>      
   <?php // rain year
-echo "<div class='rainfalltoday1'>",$weather["rain_year"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
+echo "<div class='rainfalltoday1'>",number_format($weather["rain_year"],1)."</value>";echo "<smalluvunit> ".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_year"]*0.0393701,2)." inches";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rain_year"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_year"]*0.0393701,1)." in";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rain_year"]*25.400013716,1)." mm";}
 ?>
 <div></div>
 
@@ -142,11 +142,11 @@ From January 2019</div>
   <article>
    <div class=actualt>&nbsp;Rainfall All-Time </div>      
   <?php // rain year
-echo "<div class='rainfalltoday1'>",$weather["rain_alltime"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
+echo "<div class='rainfalltoday1'>",number_format($weather["rain_alltime"],0)."</value>";echo "<smalluvunit> ".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_alltime"]*0.0393701,2)." inches";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rain_alltime"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_alltime"]*0.0393701,0)." in";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rain_alltime"]*25.400013716,0)." mm";}
 ?>
 <div></div>
 
