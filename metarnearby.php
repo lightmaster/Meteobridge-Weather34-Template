@@ -141,11 +141,11 @@ stationid{font-size:1.4em;font-family:weathertext2;color:#009bb4}
 
  <article>
   <div class=actualt>&nbsp;&nbsp Current Conditions </div>   
- <?php 	echo "<img rel='prefetch' src='css/icons/".$sky_icon."' width='100px' height='70px'>";?>
+ <?php 	echo "<img rel='prefetch' src='css/icons/".$sky_icon."' width='60px' height='60px'>";?>
   
   
    <?php 
- echo "<span style='float:left;margin-top:-20px;'>",$sky_desc.''; ?>
+ echo "<span style='float:left;margin-top:-15px;'>",$sky_desc.''; ?>
 <br>
 <blue>Pressure</blue> <br><green>
 <?php
