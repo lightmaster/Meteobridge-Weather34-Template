@@ -466,318 +466,378 @@ else {
 	 $wuskydaynight10 = $parsed_weather34wujson->{'daypart'}[0]->{'dayOrNight'}[10];
 	 $wuskydesc10 = $parsed_weather34wujson->{'daypart'}[0]->{'wxPhraseLong'}[10];
 	 $wuskythunder10 = $parsed_weather34wujson->{'daypart'}[0]->{'thunderCategory'}[10];}
-		 
-
-
-
-	//wu convert temps-rain
+	 //wu convert temps-rain
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh=($wuskydayTempHigh*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh=($wuskydayTempHigh-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh=($wuskydayTempHigh-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity=$wuskydayprecipIntensity*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity=$wuskydayprecipIntensity*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity=$wuskydayprecipIntensity*0.0393701;}
 	//wu convert temps-rain period1 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh1=($wuskydayTempHigh1*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh1=($wuskydayTempHigh1-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh1=($wuskydayTempHigh1-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity1=$wuskydayprecipIntensity1*0.0393701;}
 	//wu convert temps-rain period2 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh2=($wuskydayTempHigh2*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh2=($wuskydayTempHigh2-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh2=($wuskydayTempHigh2-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity2=$wuskydayprecipIntensity2*0.0393701;}
 	//wu convert temps-rain period3 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh3=($wuskydayTempHigh3*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh3=($wuskydayTempHigh3-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh3=($wuskydayTempHigh3-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity3=$wuskydayprecipIntensity3*0.0393701;}
 	//wu convert temps-rain period4 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh4=($wuskydayTempHigh4*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh4=($wuskydayTempHigh4-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh4=($wuskydayTempHigh4-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity4=$wuskydayprecipIntensity4*0.0393701;}
 	//wu convert temps-rain period5 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh5=($wuskydayTempHigh5*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh5=($wuskydayTempHigh5-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh5=($wuskydayTempHigh5-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity5=$wuskydayprecipIntensity5*0.0393701;}
 	//wu convert temps-rain period6 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh6=($wuskydayTempHigh6*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh6=($wuskydayTempHigh6-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh6=($wuskydayTempHigh6-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}
-	
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity6=$wuskydayprecipIntensity6*0.0393701;}	
 	//wu convert temps-rain period7 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh7=($wuskydayTempHigh7*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh7=($wuskydayTempHigh7-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh7=($wuskydayTempHigh7-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}
-	
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity7=$wuskydayprecipIntensity7*0.0393701;}	
 	//wu convert temps-rain period 8 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh8=($wuskydayTempHigh8*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh8=($wuskydayTempHigh8*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh8=($wuskydayTempHigh8*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh8=($wuskydayTempHigh8*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh8=($wuskydayTempHigh8*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh8=($wuskydayTempHigh8*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh8=($wuskydayTempHigh8-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh8=($wuskydayTempHigh8-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity8=$wuskydayprecipIntensity8*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity8=$wuskydayprecipIntensity8*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity8=$wuskydayprecipIntensity8*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity8=$wuskydayprecipIntensity8*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity8=$wuskydayprecipIntensity8*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity8=$wuskydayprecipIntensity8*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity8=$wuskydayprecipIntensity8*0.0393701;}
-	
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity8=$wuskydayprecipIntensity8*0.0393701;}	
 	//wu convert temps-rain period 9 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh9=($wuskydayTempHigh9*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh9=($wuskydayTempHigh9*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh9=($wuskydayTempHigh9*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh9=($wuskydayTempHigh9*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh9=($wuskydayTempHigh9*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh9=($wuskydayTempHigh9*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh9=($wuskydayTempHigh9-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh9=($wuskydayTempHigh9-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity9=$wuskydayprecipIntensity9*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity9=$wuskydayprecipIntensity9*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity9=$wuskydayprecipIntensity9*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity9=$wuskydayprecipIntensity9*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity9=$wuskydayprecipIntensity9*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity9=$wuskydayprecipIntensity9*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity9=$wuskydayprecipIntensity9*0.0393701;}
-	
-	
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity9=$wuskydayprecipIntensity9*0.0393701;}	
 	//wu convert temps-rain period 10 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh10=($wuskydayTempHigh10*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh10=($wuskydayTempHigh10*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh10=($wuskydayTempHigh10*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh10=($wuskydayTempHigh10*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh10=($wuskydayTempHigh10*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh10=($wuskydayTempHigh10*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh10=($wuskydayTempHigh10-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh10=($wuskydayTempHigh10-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity10=$wuskydayprecipIntensity10*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity10=$wuskydayprecipIntensity10*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity10=$wuskydayprecipIntensity10*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity10=$wuskydayprecipIntensity10*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity10=$wuskydayprecipIntensity10*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity10=$wuskydayprecipIntensity10*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity10=$wuskydayprecipIntensity10*0.0393701;}
-	
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity10=$wuskydayprecipIntensity10*0.0393701;}	
 	//wu convert temps-rain period 11 
 	//metric to F
-	if ($tempunit=='F' && $wuapiunit=='m' ){
-	$wuskydayTempHigh11=($wuskydayTempHigh11*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='m' ){$wuskydayTempHigh11=($wuskydayTempHigh11*9/5)+32;}	
 	// metric to F UK
-	if ($tempunit=='F' && $wuapiunit=='h' ){
-	$wuskydayTempHigh911=($wuskydayTempHigh11*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='h' ){$wuskydayTempHigh11=($wuskydayTempHigh11*9/5)+32;}	
 	// ms non metric Scandinavia 
-	if ($tempunit=='F' && $wuapiunit=='s'){
-	$wuskydayTempHigh11=($wuskydayTempHigh11*9/5)+32;}	
+	if ($tempunit=='F' && $wuapiunit=='s'){$wuskydayTempHigh11=($wuskydayTempHigh11*9/5)+32;}	
 	// non metric to c US
-	if ($tempunit=='C' && $wuapiunit=='e' ){
-	$wuskydayTempHigh11=($wuskydayTempHigh11-32)/1.8;}	
+	if ($tempunit=='C' && $wuapiunit=='e' ){$wuskydayTempHigh11=($wuskydayTempHigh11-32)/1.8;}	
 	//rain inches to mm
-	if ($rainunit=='mm' && $wuapiunit=='e' ){
-	$wuskydayprecipIntensity11=$wuskydayprecipIntensity11*25.4;}
+	if ($rainunit=='mm' && $wuapiunit=='e' ){$wuskydayprecipIntensity11=$wuskydayprecipIntensity11*25.4;}
 	//rain mm to inches scandinavia
-	if ($rainunit=='in' && $wuapiunit=='s' ){
-	$wuskydayprecipIntensity11=$wuskydayprecipIntensity11*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='s' ){$wuskydayprecipIntensity11=$wuskydayprecipIntensity11*0.0393701;}
 	//rain mm to inches uk
-	if ($rainunit=='in' && $wuapiunit=='h' ){
-	$wuskydayprecipIntensity11=$wuskydayprecipIntensity11*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='h' ){$wuskydayprecipIntensity11=$wuskydayprecipIntensity11*0.0393701;}
 	//rain mm to inches metric
-	if ($rainunit=='in' && $wuapiunit=='m' ){
-	$wuskydayprecipIntensity11=$wuskydayprecipIntensity11*0.0393701;}
+	if ($rainunit=='in' && $wuapiunit=='m' ){$wuskydayprecipIntensity11=$wuskydayprecipIntensity11*0.0393701;}
 	
 	
+	
+	
+	// mph to kmh US
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust=(number_format($wuskydayWindGust,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust=(number_format($wuskydayWindGust,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust=(number_format($wuskydayWindGust,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust=(number_format($wuskydayWindGust,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust=(number_format($wuskydayWindGust,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust=(number_format($wuskydayWindGust,1)*0.621371);}	
+
+// mph to kmh US 1
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust1=(number_format($wuskydayWindGust1,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust1=(number_format($wuskydayWindGust1,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust1=(number_format($wuskydayWindGust1,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust1=(number_format($wuskydayWindGust1,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust1=(number_format($wuskydayWindGust1,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust1=(number_format($wuskydayWindGust1,1)*0.621371);}	
+
+// mph to kmh US 2
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust2=(number_format($wuskydayWindGust2,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust2=(number_format($wuskydayWindGust2,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust2=(number_format($wuskydayWindGust2,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust2=(number_format($wuskydayWindGust2,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust2=(number_format($wuskydayWindGust2,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust2=(number_format($wuskydayWindGust2,1)*0.621371);}	
+
+// mph to kmh US 3
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust3=(number_format($wuskydayWindGust3,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust3=(number_format($wuskydayWindGust3,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust3=(number_format($wuskydayWindGust3,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust3=(number_format($wuskydayWindGust3,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust3=(number_format($wuskydayWindGust3,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust3=(number_format($wuskydayWindGust3,1)*0.621371);}	
+
+// mph to kmh US 4
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust4=(number_format($wuskydayWindGust4,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust4=(number_format($wuskydayWindGust4,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust4=(number_format($wuskydayWindGust4,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust4=(number_format($wuskydayWindGust4,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust4=(number_format($wuskydayWindGust4,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust4=(number_format($wuskydayWindGust4,1)*0.621371);}	
+
+// mph to kmh US 5
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust5=(number_format($wuskydayWindGust5,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust5=(number_format($wuskydayWindGust5,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust5=(number_format($wuskydayWindGust5,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust5=(number_format($wuskydayWindGust5,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust5=(number_format($wuskydayWindGust5,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust5=(number_format($wuskydayWindGust5,1)*0.621371);}	
+	
+
+// mph to kmh US 6
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust6=(number_format($wuskydayWindGust6,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust6=(number_format($wuskydayWindGust6,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust6=(number_format($wuskydayWindGust6,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust6=(number_format($wuskydayWindGust6,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust6=(number_format($wuskydayWindGust6,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust6=(number_format($wuskydayWindGust6,1)*0.621371);}	
+	
+
+// mph to kmh US 7
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust7=(number_format($wuskydayWindGust7,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust7=(number_format($wuskydayWindGust7,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust7=(number_format($wuskydayWindGust7,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust7=(number_format($wuskydayWindGust7,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust7=(number_format($wuskydayWindGust7,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust7=(number_format($wuskydayWindGust7,1)*0.621371);}	
+
+
+// mph to kmh US 8
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust8=(number_format($wuskydayWindGust8,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust8=(number_format($wuskydayWindGust8,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust8=(number_format($wuskydayWindGust8,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust8=(number_format($wuskydayWindGust8,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust8=(number_format($wuskydayWindGust8,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust8=(number_format($wuskydayWindGust8,1)*0.621371);}
+
+
+// mph to kmh US 9
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust9=(number_format($wuskydayWindGust9,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust9=(number_format($wuskydayWindGust9,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust9=(number_format($wuskydayWindGust9,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust9=(number_format($wuskydayWindGust9,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust9=(number_format($wuskydayWindGust9,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust9=(number_format($wuskydayWindGust9,1)*0.621371);}	
+
+
+// mph to kmh US 10
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust10=(number_format($wuskydayWindGust10,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust10=(number_format($wuskydayWindGust10,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust10=(number_format($wuskydayWindGust10,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust10=(number_format($wuskydayWindGust10,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust10=(number_format($wuskydayWindGust10,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust10=(number_format($wuskydayWindGust10,1)*0.621371);}	
+
+
+// mph to kmh US 11
+if ($windunit=='km/h' && $wuapiunit=='e' ){$wuskydayWindGust11=(number_format($wuskydayWindGust11,1)*1.60934);}
+// mph to kmh UK
+if ($windunit=='km/h' && $wuapiunit=='h' ){$wuskydayWindGust11=(number_format($wuskydayWindGust11,1)*1.60934);}
+//mph to ms US
+if ($windunit=='m/s' && $wuapiunit=='e' ){$wuskydayWindGust11=(number_format($wuskydayWindGust11,1)*0.44704);}
+//mph to ms uk
+if ($windunit=='m/s' && $wuapiunit=='h' ){$wuskydayWindGust11=(number_format($wuskydayWindGust11,1)*0.44704);}
+//kmh to ms
+if ($windunit=='m/s' && $wuapiunit=='m' ){$wuskydayWindGust11=(number_format($wuskydayWindGust11,1)*0.277778);}
+//kmh to mph
+if ($windunit=='mph' && $wuapiunit=='m' ){$wuskydayWindGust11=(number_format($wuskydayWindGust11,1)*0.621371);}	
+	
+	
+		
 	
 	
 ?>
@@ -1148,11 +1208,10 @@ if ($wuskydaynight6=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon6.'.svg"
 				  if ( $wuskydayacumm6>0){echo ''.$snowflakesvg.'<valuer>Snow <bluer>'.$wuskydayacumm6.'cm</bluer>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType6='rain' && $rainunit=='in'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity6,2).'&nbsp;'.$rainunit.'</bluer>';} 
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity6,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb6.'%</bluer>';} 	  				  
 				  //mm
 				  else if ($wuskydayPrecipType6='rain'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity6,2).'&nbsp;'.$rainunit.'</bluer>';}
-				  echo"</div>";	
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity6,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb6.'%</bluer>';}									  				  								 				  echo"</div>";	
 				  //wind			  
 				  echo "<wind>Winds <orangeu>"; echo " ".$wuskydayWinddircardinal6;echo " &nbsp;</orangeu> <blueu>".number_format($wuskydayWindGust6,0),"&nbsp;<wuunits>".$windunit;echo  '</wuunits></blueu></wind>';	
 				  //thunder				  
@@ -1193,11 +1252,10 @@ if ($wuskydaynight7=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon7.'.svg"
 				  if ( $wuskydayacumm7>0){echo ''.$snowflakesvg.'<valuer>Snow <bluer>'.$wuskydayacumm7.'cm</bluer>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType7='rain' && $rainunit=='in'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity7,2).'&nbsp;'.$rainunit.'</bluer>';} 	  				  
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity7,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb7.'%</bluer>';} 	  				  
 				  //mm
 				  else if ($wuskydayPrecipType7='rain'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity7,2).'&nbsp;'.$rainunit.'</bluer>';}
-				  echo"</div>";	
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity7,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb7.'%</bluer>';}									  				  								 				  echo"</div>";	
 				  //wind			  
 				  echo "<wind>Winds <orangeu>"; echo " ".$wuskydayWinddircardinal7;echo " &nbsp;</orangeu> <blueu>".number_format($wuskydayWindGust7,0),"&nbsp;<wuunits>".$windunit;echo  '</wuunits></blueu></wind>';	
 				  //thunder
@@ -1241,11 +1299,10 @@ if ($wuskydaynight8=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon8.'.svg"
 				  if ( $wuskydayacumm8>0){echo ''.$snowflakesvg.'<valuer>Snow <bluer>'.$wuskydayacumm8.'cm</bluer>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType8='rain' && $rainunit=='in'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity8,2).'&nbsp;'.$rainunit.'</bluer>';} 	  				  
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity8,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb8.'%</bluer>';} 	  				  
 				  //mm
 				  else if ($wuskydayPrecipType8='rain'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity8,2).'&nbsp;'.$rainunit.'</bluer>';}
-				  echo"</div>";	
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity8,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb8.'%</bluer>';}									  				  								 				  echo"</div>";	
 				  //wind			  
 				  echo "<wind>Winds <orangeu>"; echo " ".$wuskydayWinddircardinal8;echo " &nbsp;</orangeu> <blueu> ".number_format($wuskydayWindGust8,0),"&nbsp;<wuunits>".$windunit;echo  '</wuunits></blueu></wind>';	
 				  //thunder
@@ -1288,11 +1345,10 @@ if ($wuskydaynight9=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon9.'.svg"
 				  if ( $wuskydayacumm9>0){echo ''.$snowflakesvg.'<valuer>Snow <bluer>'.$wuskydayacumm9.'cm</bluer>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType9='rain' && $rainunit=='in'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity9,2).'&nbsp;'.$rainunit.'</bluer>';} 	  				  
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity9,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb9.'%</bluer>';} 	  				  
 				  //mm
 				  else if ($wuskydayPrecipType9='rain'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity9,2).'&nbsp;'.$rainunit.'</bluer>';}
-				  echo"</div>";	
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity9,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb9.'%</bluer>';}									  				  								 				  echo"</div>";	
 				  //wind			  
 				  echo "<wind>Winds <orangeu>"; echo " ".$wuskydayWinddircardinal9;echo " &nbsp;</orangeu> <blueu> ".number_format($wuskydayWindGust9,0),"&nbsp;<wuunits>".$windunit;echo  '</wuunits></blueu></wind>';	
 				  //thunder
@@ -1333,11 +1389,10 @@ if ($wuskydaynight10=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon10.'.sv
 				  if ( $wuskydayacumm10>0){echo ''.$snowflakesvg.'<valuer>Snow <bluer>'.$wuskydayacumm10.'cm</bluer>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType10='rain' && $rainunit=='in'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity10,2).'&nbsp;'.$rainunit.'</bluer>';} 	  				  
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity10,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb10.'%</bluer>';} 	  				  
 				  //mm
 				  else if ($wuskydayPrecipType10='rain'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity10,2).'&nbsp;'.$rainunit.'</bluer>';}				  
-				  echo"</div>";	
+				  echo '&nbsp;'.$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity10,2).'&nbsp;'.$rainunit.'&nbsp;'.$wuskydayPrecipProb10.'%</bluer>';}									  				  								 				  echo"</div>";	
 				  //wind			  
 				  echo "<wind>Winds <orangeu>"; echo " ".$wuskydayWinddircardinal10;echo " &nbsp;</orangeu> <blueu>".number_format($wuskydayWindGust10,0),"&nbsp;<wuunits>".$windunit;echo  '</wuunits></blueu></wind>';			  
 				  //thunder
