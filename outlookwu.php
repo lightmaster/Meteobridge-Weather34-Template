@@ -736,8 +736,7 @@ blueu,yellowu,orangeu,greenu,redu,purpleu{color:#fff;border-radius:2px;padding:0
  <actualt><?php echo $wuskydayTime3 ?></actualt>     
     
 
- <?php   //3  detailed forecast
- 
+ <?php   //3  detailed forecast 
  //temp				  
 	echo "<tempicon>"; 				  
 	if($tempunit=='F' && $wuskydayTempHigh3<44.6){echo "<bluet>".number_format($wuskydayTempHigh3,0);}
@@ -801,8 +800,8 @@ blueu,yellowu,orangeu,greenu,redu,purpleu{color:#fff;border-radius:2px;padding:0
 	echo "°<spantemp>" .$tempunit. "</spantemp></tempicon>";
 	//icon        
 	echo"<div class=iconpos> ";      		  			  
-	if ($wuskydaynight1=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon1.'.svg" width="40" class="iconpos"></img></div>';}
-	if ($wuskydaynight1=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon1.'.svg" width="40" class="iconpos"></img></div>';}
+	if ($wuskydaynight4=='D'){echo '<img src="css/wuicons/'.$wuskydayIcon4.'.svg" width="40" class="iconpos"></img></div>';}
+	if ($wuskydaynight4=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon4.'.svg" width="40" class="iconpos"></img></div>';}
 	 //summary of icon
 	 echo '<div class=greydesc>'. $wuskydesc4.'</div><br>';	
 				  //uvi			  
@@ -903,25 +902,23 @@ if ($wuskydaynight6=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon6.'.svg"
 				  else if ($wuskydayUV6>5){echo 	"<orangeu>".$wuskydayUV6. '</orangeu><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>2){echo 	"<yellowu>".$wuskydayUV6. '</yellowu><grey> '.$wuskydayUVdesc6;}
 				  else if ($wuskydayUV6>=0){echo 	"<greenu>".$wuskydayUV6. '</greenu><grey> '.$wuskydayUVdesc6;}	
-				   //snow-rain
-				  if($wuskydayprecipIntensity6>0){				     			  
+				   //snow-rain				  			     			  
 				  if ( $wuskydayacumm6>0){echo ''.$snowflakesvg.'<valuer>Snow <bluer>'.$wuskydayacumm6.'cm</bluer>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType6='rain' && $rainunit=='in'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity6,2).'&nbsp;'.$rainunit.'</bluer>';} 	  				  //mm
+				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity6,2).'&nbsp;'.$rainunit.'</bluer>';} 
+				  //mm
 				  else if ($wuskydayPrecipType6='rain'){
 				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity6,2).'&nbsp;'.$rainunit.'</bluer>';}
-				  
+				  //thunder				  
 				  echo'</grey><rainsnow>
 				   '.$lightningalert4;
 				   if ($wuskythunder6=="No thunder"){ echo ' <thunder>'.$wuskythunder6.'</thunder></grey>	 </value></div>';}
-				   else echo ' <thunder><orange1>'.$wuskythunder6.'</orange1></thunder></grey>	 </value></div>';}?>
-    
+				   else echo ' <thunder><orange1>'.$wuskythunder6.'</orange1></thunder></grey>	 </value></div>';?>    
   </article> 
   <article>
     <actualt><?php echo $wuskydayTime7 ?></actualt>         
-     <?php   //7  short forecast  
-	 
+     <?php   //7  short forecast  	 
 	  //temp				  
 	echo "<tempicon>"; 				  
 	if($tempunit=='F' && $wuskydayTempHigh7<44.6){echo "<bluet>".number_format($wuskydayTempHigh7,0);}
@@ -947,21 +944,21 @@ if ($wuskydaynight7=='N'){echo '<img src="css/wuicons/nt_'.$wuskydayIcon7.'.svg"
 				  else if ($wuskydayUV7>5){echo 	"<orangeu>".$wuskydayUV7. '</orangeu><grey> '.$wuskydayUVdesc7;}
 				  else if ($wuskydayUV7>2){echo 	"<yellowu>".$wuskydayUV7. '</yellowu><grey> '.$wuskydayUVdesc7;}
 				  else if ($wuskydayUV7>=0){echo 	"<greenu>".$wuskydayUV7. '</greenu><grey> '.$wuskydayUVdesc7;}	
-				   //snow-rain
-				  if($wuskydayprecipIntensity7>0){				     			  
+				   //snow-rain				  				     			  
 				  if ( $wuskydayacumm7>0){echo ''.$snowflakesvg.'<valuer>Snow <bluer>'.$wuskydayacumm7.'cm</bluer>';}  				  
 				  //rain
 				  else if ($wuskydayPrecipType7='rain' && $rainunit=='in'){
-				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity7,2).'&nbsp;'.$rainunit.'</bluer>';} 	  				  //mm
+				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity7,2).'&nbsp;'.$rainunit.'</bluer>';} 	  				  
+				  //mm
 				  else if ($wuskydayPrecipType7='rain'){
 				  echo "&nbsp;".$rainsvg.'<valuer>Rain <bluer>'. number_format($wuskydayprecipIntensity7,2).'&nbsp;'.$rainunit.'</bluer>';}
-				  
+				  //thunder
 				  echo'</grey><rainsnow>
 				   '.$lightningalert4;
 				   if ($wuskythunder7=="No thunder"){ echo ' <thunder>'.$wuskythunder7.'</thunder></grey>	 </value></div>';}
-				   else echo ' <thunder><orange1>'.$wuskythunder7.'</orange1></thunder></grey>	 </value></div>';}?>
-    
+				   else echo ' <thunder><orange1>'.$wuskythunder7.'</orange1></thunder></grey>	 </value></div>';?>    
   </article> 
+  <!-- copyright needs to be kept please be ethical--->
   <article>
     <span style="font-size:8px;">
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:8px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?></span> <br>
