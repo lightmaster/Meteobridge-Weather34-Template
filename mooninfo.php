@@ -11,21 +11,22 @@ class Moon{ public static function calculateMoonTimes($month,$day,$year,$lat,$lo
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 @font-face{font-family:weathertext;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(fonts/verbatim-regular.woff2) format("woff2"),url(fonts/verbatim-regular.ttf) format("truetype")}
-html,body{font-size:13px;font-family: "weathertext", Helvetica, Arial, sans-serif;}
+html,body{font-size:13px;font-family: "weathertext", Helvetica, Arial, sans-serif;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;}
 .grid { 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 5px;
   align-items: stretch;
-  color:#f5f7fc
+  color:#f5f7fc;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
   }
 .grid > article {
- border: 1px solid rgba(86, 95, 103,.1);
-  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  border: 1px solid rgba(245, 247, 252,.02);
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);
   padding:5px;
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;
+  background:0;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
 }
 .grid > article img {
   max-width: 100%;
@@ -37,12 +38,12 @@ html,body{font-size:13px;font-family: "weathertext", Helvetica, Arial, sans-seri
  blue{color:#01a4b4}orange{color:#009bb4}orange1{position:relative;color:#009bb4;margin:0 auto;text-align:center;margin-left:5%;font-size:1.1rem}green{color:#aaa}red{color:#f37867}red6{color:#d65b4a}value{color:#fff}yellow{color:#CC0}purple{color:#916392}
  meteotextshowertext{font-size:1.2rem;color:#009bb4}
  meteorsvgicon{color:#f5f7fc}  
-.moonphasesvg{left:40px;}
-.moonphasetext{font-size:.9rem;color:#f5f7fc;position:absolute;display:inline;left:100px;top:190px}
+.moonphasesvg{align-items:right;justify-content:center;display:flex;max-height:120px}
+.moonphasetext{font-size:.8rem;color:#f5f7fc;position:absolute;display:inline;left:125px;top:100px}
 moonphaseriseset{font-size:.75rem;}
 credit{position:relative;font-size:.7em;top:10%}
 .actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
 padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
@@ -54,10 +55,11 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 <main class="grid">
   <article>       
 
-<div class=moonphasesvg>
-<?php echo $info;?> Current Moon Phase<br><br>   
-<div id="weather34moonphases"></div>
-<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, 1.000)"/><path id="weather34shape" fill="rgba(230, 232, 239, 1)"/></svg>
+
+<?php echo $info;?> Current Moon Phase<br><br>  
+ 
+<div id="weather34moonphases" class="moonphasesvg"></div>
+<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, .4)"/><path id="weather34shape" fill="rgba(230, 232, 239, .5)"/></svg>
 <script> //simple moonphase for weather34
 weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 20, 0, 0, 0);
 var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) %  29.530;var s=String;
@@ -65,7 +67,7 @@ switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases"
 var weather34moonCurve;var lf=Math.min(3-4*(phase/30),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
 var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";weather34moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
 document.getElementById("weather34shape").setAttribute("d",weather34moonCurve);}</script>
-       </div>
+      
    <div class=moonphasetext>    
 <?php echo " ";{$day = date('l jS F Y');if($day===date("l jS F Y",strtotime('2019-7-2'))){echo 'Solar <orange>Eclipse</orange>';}else if($day===date("l jS F Y",strtotime('2019-7-16'))){echo 'Lunar <orange>Eclipse</orange>';}else if($day===date("l jS F Y",strtotime('2019-7-17'))){echo 'Lunar <orange>Eclipse</orange>';}else if($day===date("l jS F Y",strtotime('2019-12-26'))){echo 'Solar <orange>Eclipse</orange>';}		
 // weather34 moonphase no scraping its calculated from the livedata !
@@ -115,7 +117,7 @@ $moon = new MoonPhase();$moonage =round($moon->age(),2);echo "Current Moon cycle
    </article>  
   
   <article>
-   Moon Facts: Did you Know?<br>
+   <?php echo $info;?> Moon Facts: <orange>Did you Know?</orange><br><br>
             <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#3b9cac" stroke="#3b9cac" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg> The Moon was approximately formed 4.5 billion years ago  .<br>
   <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#3b9cac" stroke="#3b9cac" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -130,7 +132,7 @@ $moon = new MoonPhase();$moonage =round($moon->age(),2);echo "Current Moon cycle
   </article> 
   
 <article>
-   <?php echo $info ;?> <orange>Moon Photography Guide</orange><br> <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#3b9cac" stroke="#3b9cac" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+   <?php echo $info ;?> Moon Photography Guide<br><br> <svg id="i-ban" viewBox="0 0 32 32" width="8" height="8" fill="#3b9cac" stroke="#3b9cac" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg>
  Use a Tripod
  <br>
@@ -158,8 +160,8 @@ $moon = new MoonPhase();$moonage =round($moon->age(),2);echo "Current Moon cycle
   </article>  
   
   <article>
-   <?php echo $info ;?> <orange>Radio Ham Guide</orange>(EME)<br>
-   Earth–Moon–Earth communication (EME), also known as Moon bounce, is a radio communications technique that relies on the propagation of radio waves from an Earth-based transmitter directed via reflection from the surface of the Moon back to an Earth-based receiver using VHF and UHF amateur radio bands.
+   <?php echo $info ;?> Radio Ham Guide (<orange>EME</orange>)<br><br>
+   Earth–Moon–Earth communication (<orange>EME</orange>), also known as Moon bounce, is a radio communications technique that relies on the propagation of radio waves from an Earth-based transmitter directed via reflection from the surface of the Moon back to an Earth-based receiver using VHF and UHF amateur radio bands.
  
               
   </article> 

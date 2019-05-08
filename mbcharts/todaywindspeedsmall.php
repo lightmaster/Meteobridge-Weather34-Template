@@ -81,7 +81,7 @@
 	
 	function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer2", {
-		 backgroundColor: "rgba(30, 33, 36, .4)",
+		 backgroundColor: "rgba(40, 45, 52,.4)",
 		 animationEnabled: false,
 		 margin: 0,
 		 
@@ -118,8 +118,9 @@
         titleWrap: false,
 		margin: 3,
 		lineThickness: 1,		
-		gridThickness: 1,		
-        includeZero: false,
+		gridThickness: 1,	
+		interval:'auto',	
+        includeZero: true,
 		gridColor: "#333",
 		gridDashType: "dot",
 		labelFontSize: 6,
@@ -179,7 +180,8 @@
  </script>
 
 <body>
-<div id="chartContainer2" class="chartContainer2" style="width:100%;height:125px;padding:0;margin-top:-25px;border-radius:3px;border:1px solid #333;"></div></div>
+<div id="chartContainer2" class="chartContainer2" style="width:100%;height:125px;padding:0;margin-top:-25px;border-radius:3px;border: 1px solid rgba(245, 247, 252,.02);
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);"></div></div>
 
 </body>
 <script src='canvasJs.js'></script>

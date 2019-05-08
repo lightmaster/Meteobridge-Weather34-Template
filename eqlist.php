@@ -54,7 +54,7 @@ $eqalert6='<svg id="i-activity" viewBox="0 0 32 32" width="28" height="28" fill=
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 @font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(fonts/verbatim-regular.woff2) format("woff2"),url(fonts/verbatim-regular.ttf) format("truetype")}
-html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;}
+html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;}
 .grid { 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
@@ -63,12 +63,13 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
   color:#f5f7fc
   }
 .grid > article {
-  border: 1px solid #212428;
-  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+ border: 1px solid rgba(245, 247, 252,.02);
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);
   padding:20px;
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;
+  background:0;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
 }
 .grid > article img {
   max-width: 100%;
@@ -79,28 +80,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 .weather34darkbrowser{position:relative;background:0;width:100%;max-height:30px;margin:auto;margin-top:-15px;margin-left:0px;border-top-left-radius:5px;border-top-right-radius:5px;padding-top:45px;background-image:radial-gradient(circle,#EB7061 6px,transparent 8px),radial-gradient(circle,#F5D160 6px,transparent 8px),radial-gradient(circle,#81D982 6px,transparent 8px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),radial-gradient(circle,rgba(97,106,114,1) 2px,transparent 2px),linear-gradient(to bottom,rgba(59,60,63,0.4) 40px,transparent 0);background-position:left top,left top,left top,right top,right top,right top,0 0;background-size:50px 45px,90px 45px,130px 45px,50px 30px,50px 45px,50px 60px,100%;background-repeat:no-repeat,no-repeat}.weather34darkbrowser[url]:after{content:attr(url);color:#aaa;font-size:10px;position:absolute;left:0;right:0;top:0;padding:4px 15px;margin:11px 50px 0 90px;border-radius:3px;background:rgba(97, 106, 114, 0.3);height:20px;box-sizing:border-box}
  blue{color:#01a4b4}orange{color:#009bb4}green{color:#aaa}red{color:#f37867}red6{color:#d65b4a}value{color:#fff}yellow{color:#CC0}purple{color:#916392}
 
-
-.actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
-align-items:center;justify-content:center;margin-bottom:10px;top:0}
-.actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
-align-items:center;justify-content:center;margin-bottom:10px;top:0}
-
-
-.windcontainer1{left:5px;top:0}
-.windtoday,.windtoday10,.windtoday30,.windtoday40,.windtoday60{font-family:weathertext2,Arial,Helvetica,system;width:7rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;}.windtoday,.windtoday10,.windtoday30,.windtoday40,.windtoday60{font-size:1.6rem;padding-top:15px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;text-align:center;border-radius:3px;}
-
-.windcaution,.windtrend{position:absolute;font-size:1rem}
-.windtoday{background:#9aba2f}
-.windtoday10{background:rgba(230,161,65,1)}.windtoday30{background:rgba(255,124,57,.8)}.windtoday40{background:rgba(255, 124, 57, 0.8)}.windtoday60{background:rgba(211, 93, 78, 1.000)}
-.windcaution{margin-left:120px;margin-top:112px;font-family:Arial,Helvetica,system}
-.windtrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}
 smalluvunit{font-size:.6rem;font-family:Arial,Helvetica,system;}
-
-
-
-
 smallmagunit{font-size:.55rem;font-family:Arial,Helvetica,system;font-weight:500}
 .magcontainer1{left:70px;top:0}
 .mag1,.mag1-3,.mag11,.mag4-5,.mag6-8,.mag9-10{
@@ -123,11 +103,11 @@ align-items:center;justify-content:center;text-align:center;}
 metricsblue{color:#44a6b5;font-family:"weathertext2",Helvetica, Arial, sans-serif;background:rgba(86, 95, 103, 0.5);-webkit-border-radius:2px;border-radius:2px;align-items:center;justify-content:center;font-size:.9em;left:10px;padding:0 3px 0 3px;}
 .w34convertrain{position:relative;font-size:.5em;top:9px;color:#c0c0c0;margin-left:5px}
 .hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#fff;font-size:12px;width:110px;padding:1px;-webit-border-radius:2px;border-radius:2px;
-margin-top:-44px;margin-left:72px;padding:2px;line-height:10px;font-size:9px}
+margin-top:-48px;margin-left:72px;padding:5px;line-height:10px;font-size:9px}
 
 .actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:170px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
-align-items:center;justify-content:center;margin-bottom:10px;top:-10px}
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
+align-items:center;justify-content:center;margin-bottom:10px;top:-15px}
 .actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
 padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
@@ -200,17 +180,17 @@ for ($i = 0; $i < 1; $i++) {
 <?php
 			
 if ($windunit == 'mph' && $eqdist[0]<200) {
-		echo $locationinfo; echo round($eqdist[0]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[0]  * 0.621371) ." Miles from<br> $stationlocation";
 	}
 	
 else if ($windunit == 'km/h' && $eqdist[0]<700) {
-		echo $locationinfo; echo "<orange>",round($eqdist[0]) ." </orange>Km from<br> $stationlocation";
+		 echo "<orange>",round($eqdist[0]) ." </orange>Km from<br> $stationlocation";
 	}			
 
 else if ($windunit == 'mph') {
-		echo $locationinfo; echo round($eqdist[0]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[0]  * 0.621371) ." Miles from<br> $stationlocation";
 	} else {
-		echo $locationinfo; echo $eqdist[0] ." Km from<br> $stationlocation" ;
+		 echo $eqdist[0] ." Km from<br> $stationlocation" ;
 	}
 	echo "";
 	?>
@@ -282,17 +262,17 @@ for ($i = 0; $i < 1; $i++) {
 <?php
 			
 if ($windunit == 'mph' && $eqdist[1]<200) {
-		echo $locationinfo; echo round($eqdist[1]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[1]  * 0.621371) ." Miles from<br> $stationlocation";
 	}
 	
 else if ($windunit == 'km/h' && $eqdist[1]<700) {
-		echo $locationinfo; echo "<orange>",round($eqdist[1]) ." </orange>Km from<br> $stationlocation";
+		 echo "<orange>",round($eqdist[1]) ." </orange>Km from<br> $stationlocation";
 	}			
 
 else if ($windunit == 'mph') {
-		echo $locationinfo; echo round($eqdist[1]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[1]  * 0.621371) ." Miles from<br> $stationlocation";
 	} else {
-		echo $locationinfo; echo $eqdist[1] ." Km from<br> $stationlocation" ;
+		 echo $eqdist[1] ." Km from<br> $stationlocation" ;
 	}
 	echo "";
 	?>
@@ -364,17 +344,17 @@ for ($i = 0; $i < 1; $i++) {
 <?php
 			
 if ($windunit == 'mph' && $eqdist[2]<200) {
-		echo $locationinfo; echo round($eqdist[2]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[2]  * 0.621371) ." Miles from<br> $stationlocation";
 	}
 	
 else if ($windunit == 'km/h' && $eqdist[2]<700) {
-		echo $locationinfo; echo "<orange>",round($eqdist[2]) ." </orange>Km from<br> $stationlocation";
+		 echo "<orange>",round($eqdist[2]) ." </orange>Km from<br> $stationlocation";
 	}			
 
 else if ($windunit == 'mph') {
-		echo $locationinfo; echo round($eqdist[2]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[2]  * 0.621371) ." Miles from<br> $stationlocation";
 	} else {
-		echo $locationinfo; echo $eqdist[2] ." Km from<br> $stationlocation" ;
+		 echo $eqdist[2] ." Km from<br> $stationlocation" ;
 	}
 	echo "";
 	?>
@@ -446,17 +426,17 @@ for ($i = 0; $i < 1; $i++) {
 <?php
 			
 if ($windunit == 'mph' && $eqdist[0]<200) {
-		echo $locationinfo; echo round($eqdist[3]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[3]  * 0.621371) ." Miles from<br> $stationlocation";
 	}
 	
 else if ($windunit == 'km/h' && $eqdist[0]<700) {
-		echo $locationinfo; echo "<orange>",round($eqdist[3]) ." </orange>Km from<br> $stationlocation";
+		 echo "<orange>",round($eqdist[3]) ." </orange>Km from<br> $stationlocation";
 	}			
 
 else if ($windunit == 'mph') {
-		echo $locationinfo; echo round($eqdist[3]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[3]  * 0.621371) ." Miles from<br> $stationlocation";
 	} else {
-		echo $locationinfo; echo $eqdist[3] ." Km from<br> $stationlocation" ;
+		 echo $eqdist[3] ." Km from<br> $stationlocation" ;
 	}
 	echo "";
 	?>
@@ -528,17 +508,17 @@ for ($i = 0; $i < 1; $i++) {
 <?php
 			
 if ($windunit == 'mph' && $eqdist[4]<200) {
-		echo $locationinfo; echo round($eqdist[4]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[4]  * 0.621371) ." Miles from<br> $stationlocation";
 	}
 	
 else if ($windunit == 'km/h' && $eqdist[4]<700) {
-		echo $locationinfo; echo "<orange>",round($eqdist[4]) ." </orange>Km from<br> $stationlocation";
+		 echo "<orange>",round($eqdist[4]) ." </orange>Km from<br> $stationlocation";
 	}			
 
 else if ($windunit == 'mph') {
-		echo $locationinfo; echo round($eqdist[4]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[4]  * 0.621371) ." Miles from<br> $stationlocation";
 	} else {
-		echo $locationinfo; echo $eqdist[4] ." Km from<br> $stationlocation" ;
+		 echo $eqdist[4] ." Km from<br> $stationlocation" ;
 	}
 	echo "";
 	?>
@@ -610,17 +590,17 @@ for ($i = 0; $i < 1; $i++) {
 <?php
 			
 if ($windunit == 'mph' && $eqdist[5]<200) {
-		echo $locationinfo; echo round($eqdist[5]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[5]  * 0.621371) ." Miles from<br> $stationlocation";
 	}
 	
 else if ($windunit == 'km/h' && $eqdist[5]<700) {
-		echo $locationinfo; echo "<orange>",round($eqdist[5]) ." </orange>Km from<br> $stationlocation";
+		 echo "<orange>",round($eqdist[5]) ." </orange>Km from<br> $stationlocation";
 	}			
 
 else if ($windunit == 'mph') {
-		echo $locationinfo; echo round($eqdist[5]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[5]  * 0.621371) ." Miles from<br> $stationlocation";
 	} else {
-		echo $locationinfo; echo $eqdist[5] ." Km from<br> $stationlocation" ;
+		 echo $eqdist[5] ." Km from<br> $stationlocation" ;
 	}
 	echo "";
 	?>
@@ -693,17 +673,17 @@ for ($i = 0; $i < 1; $i++) {
 <?php
 			
 if ($windunit == 'mph' && $eqdist[6]<200) {
-		echo $locationinfo; echo round($eqdist[6]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[6]  * 0.621371) ." Miles from<br> $stationlocation";
 	}
 	
 else if ($windunit == 'km/h' && $eqdist[6]<700) {
-		echo $locationinfo; echo "<orange>",round($eqdist[6]) ." </orange>Km from<br> $stationlocation";
+		 echo "<orange>",round($eqdist[6]) ." </orange>Km from<br> $stationlocation";
 	}			
 
 else if ($windunit == 'mph') {
-		echo $locationinfo; echo round($eqdist[6]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[6]  * 0.621371) ." Miles from<br> $stationlocation";
 	} else {
-		echo $locationinfo; echo $eqdist[6] ." Km from<br> $stationlocation" ;
+		 echo $eqdist[6] ." Km from<br> $stationlocation" ;
 	}
 	echo "";
 	?>
@@ -775,17 +755,17 @@ for ($i = 0; $i < 1; $i++) {
 <?php
 			
 if ($windunit == 'mph' && $eqdist[7]<200) {
-		echo $locationinfo; echo round($eqdist[7]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[7]  * 0.621371) ." Miles from<br> $stationlocation";
 	}
 	
 else if ($windunit == 'km/h' && $eqdist[7]<700) {
-		echo $locationinfo; echo "<orange>",round($eqdist[7]) ." </orange>Km from<br> $stationlocation";
+		 echo "<orange>",round($eqdist[7]) ." </orange>Km from<br> $stationlocation";
 	}			
 
 else if ($windunit == 'mph') {
-		echo $locationinfo; echo round($eqdist[7]  * 0.621371) ." Miles from<br> $stationlocation";
+		 echo round($eqdist[7]  * 0.621371) ." Miles from<br> $stationlocation";
 	} else {
-		echo $locationinfo; echo $eqdist[7] ." Km from<br> $stationlocation" ;
+		 echo $eqdist[7] ." Km from<br> $stationlocation" ;
 	}
 	echo "";
 	?>
