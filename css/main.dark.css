@@ -3682,6 +3682,13 @@ rainu {
   padding-left: 0
 }
 
+.weather34sidebarMenuInner li.header {
+  font-size: 15px;
+  text-align: left;
+  color: #ff8841;
+  font-weight: bold
+}
+
 .weather34sidebarMenuInner li span {
   display: block;
   font-size: 12px;
@@ -5619,6 +5626,12 @@ img {
   shape-rendering: auto
 }
 
+img.menuimg {
+  max-width: 60px;
+  max-height: 30px;
+  height: auto;
+}
+
 .sundialcontainerdiv2,
 canvas {
   image-rendering: high-quality
@@ -6105,14 +6118,14 @@ weather34windrunspan {
 
 .beaufort1,
 .windrun1 {
-  margin-top: 100px;
+  margin-top: 102px;
   font-size: .65rem;
   width: 6.5rem;
   display: flex
 }
 
 .windrun1 {
-  margin-left: 222px;
+  margin-left: 240px;
   border: 0
 }
 

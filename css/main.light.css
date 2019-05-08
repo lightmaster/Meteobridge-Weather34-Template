@@ -6036,14 +6036,14 @@ indoorred1 {
 
 .beaufort1,
 .windrun1 {
-  margin-top: 105px;
+  margin-top: 106px;
   width: 6.5rem;
-  display: flex
+  display: flex;
+  font-size: .65rem;
 }
 
 .windrun1 {
-  margin-left: 222px;
-  font-size: .55rem;
+  margin-left: 240px;
   border: 0;
   -webkit-border-radius: 4px;
   border-radius: 4px;
