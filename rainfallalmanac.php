@@ -154,7 +154,7 @@ if($weather["rain_units"] =='in'){ echo number_format($weather["rain_alltime"]*2
 <div></div>
 
 <div class="hitempy"><blue>Rainfall</blue><br>
-Recorded <?php echo $since?> </div>
+Since <?php echo $since?> </div>
                                         </article> 
   
   <article>
