@@ -63,7 +63,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .rainfalltoday1{font-family:weathertext2,Arial,Helvetica,system;width:6rem;height:2.25rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;font-weight:normal;font-size:1.25rem;padding-top:15px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;text-align:center;border-radius:3px;}
 .rainfallcaution,.rainfalltrend{position:absolute;font-size:1rem}
 .rainfalltoday1{background:rgba(68, 166, 181, 1.000)}
-smalluvunit{font-size:.7rem;font-family:Arial,Helvetica,system;}
+smalluvunit{font-size:.65rem;font-family:Arial,Helvetica,system;}
 
 .almanac{font-size:1.25em;margin-top:30px;color:rgba(56, 56, 60, 1.000);width:12em}
 metricsblue{color:#44a6b5;font-family:"weathertext2",Helvetica, Arial, sans-serif;background:rgba(86, 95, 103, 0.5);-webkit-border-radius:2px;border-radius:2px;align-items:center;justify-content:center;font-size:.9em;left:10px;padding:0 3px 0 3px;}
@@ -82,8 +82,8 @@ margin-top:-40px;margin-left:92px;padding-left:3px;line-height:11px;font-size:10
 echo "<div class='rainfalltoday1'>",$weather["rain_today"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_today"]*0.0393701,2)." in";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rain_today"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_today"]*0.0393701,2)." <smalluvunit>in</smalluvunit>";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rain_today"]*25.400013716,2)."<smalluvunit>mm</smalluvunit>";}
 ?>
 <div></div>
 
@@ -96,8 +96,8 @@ if($weather["rain_units"] =='in'){ echo number_format($weather["rain_today"]*25.
 echo "<div class='rainfalltoday1'>",$weather["rainydmax"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rainydmax"]*0.0393701,2)." in";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rainydmax"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rainydmax"]*0.0393701,2)." <smalluvunit>in</smalluvunit>";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rainydmax"]*25.400013716,2)."<smalluvunit>mm</smalluvunit>";}
 ?>
 <div></div>
 
@@ -111,8 +111,8 @@ if($weather["rain_units"] =='in'){ echo number_format($weather["rainydmax"]*25.4
 echo "<div class='rainfalltoday1'>",$weather["rain_month"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_month"]*0.0393701,2)." in";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_month"]*0.0393701,2)." <smalluvunit>in</smalluvunit>";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]*25.400013716,2)."<smalluvunit>mm</smalluvunit>";}
 ?>
 <div></div>
 
@@ -127,8 +127,8 @@ if($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]*25.
 echo "<div class='rainfalltoday1'>",$weather["rain_year"] . "</value>";echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>"?>
 <div class='w34convertrain'>
 <?php //convert rain
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_year"]*0.0393701,2)." in";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rain_year"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_year"]*0.0393701,2)." <smalluvunit>in</smalluvunit>";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rain_year"]*25.400013716,2,'.','')."<smalluvunit>mm</smalluvunit>";}
 ?>
 <div></div>
 
@@ -147,14 +147,14 @@ echo "<smalluvunit>".$weather["rain_units"]."</smalluvunit>";}?>
 <?php //convert rain
 if ($weather["rain_alltime"]==''){echo '';}
 else{
-if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_alltime"]*0.0393701,2)." in";}
-if($weather["rain_units"] =='in'){ echo number_format($weather["rain_alltime"]*25.400013716,2)."mm";}
+if($weather["rain_units"] =='mm'){ echo number_format($weather["rain_alltime"]*0.0393701,2)." <smalluvunit>in</smalluvunit>";}
+if($weather["rain_units"] =='in'){ echo number_format($weather["rain_alltime"]*25.400013716,2,'.','')."<smalluvunit>mm</smalluvunit>";}
 }
 ?>
 <div></div>
 
 <div class="hitempy"><blue>Rainfall</blue><br>
-From January 2018</div>
+Recorded <?php echo $since?> </div>
                                         </article> 
   
   <article>
