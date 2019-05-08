@@ -10,13 +10,13 @@ include('livedata.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 @font-face{font-family:weathertext2;src:url(css/fonts/verbatim-regular.woff) format("woff"),url(fonts/verbatim-regular.woff2) format("woff2"),url(fonts/verbatim-regular.ttf) format("truetype")}
-html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;}
+html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;}
 .grid { 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 2fr));
   grid-gap: 5px;
   align-items: stretch;
-  color:#f5f7fc;
+  color:#f5f7fc;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
   
   }
 .grid > article {
@@ -26,7 +26,25 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;
-  height:150px
+  height:160px;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
+}
+
+.grid1 { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-gap: 5px;
+    color:#f5f7fc;
+  
+  }
+
+.grid1 > articlegraph {
+  border: 1px solid #212428;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  padding:5px;
+  font-size:0.8em;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  height:160px
 }
 
   
@@ -142,9 +160,9 @@ if (anyToC($weather["temp_indoor"]) >27){echo "<oorange>".$alert ;}?></oorange>
   
   <article> 
   <div class=actualt>&nbsp;&nbsp Humidity Awareness</div> 
-  <span style="font-size:2em;">       
-   <?php if($weather["humidity_indoor"]<35){echo "Humidity Air is <br><humred>Dry</humred>";}
-			  else if($weather["humidity_indoor"]<70){echo "Humidity comfort is <br><humgreen>Good</greenhum>";}			 
+  <span style="font-size:1.75em;">       
+   <?php if($weather["humidity_indoor"]<35){echo "Humidity Air <br>is <humred>Dry</humred>";}
+			  else if($weather["humidity_indoor"]<70){echo "Humidity comfort <br>is <humgreen>Good</greenhum>";}			 
 			  else if($weather["humidity_indoor"]<=100){echo "Humidity is High <br><humblue>uncomfortable conditions</humblue>";}?></span>
 </article>  
   
@@ -152,11 +170,11 @@ if (anyToC($weather["temp_indoor"]) >27){echo "<oorange>".$alert ;}?></oorange>
    <article> 
    <div class=actualt>&nbsp;&nbsp Feels Like </div>        
    
-   <span style="font-size:2em;"> 
-   <?php if(anyToC($weather["temp_indoor_feel"])>25){echo "Hot<humorange>".$weather["temp_indoor_feel"]."</humorange>&deg;".$weather["temp_units"];}
-			  else if(anyToC($weather["temp_indoor_feel"])>18){echo "Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;".$weather["temp_units"];}
-			  else if(anyToC($weather["temp_indoor_feel"])>15){echo "Mild at <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;".$weather["temp_units"];}
-			  else if(anyToC($weather["temp_indoor_feel"])>0){echo "Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;".$weather["temp_units"];}?></span>
+   <span style="font-size:1.75em;"> 
+   <?php if(anyToC($weather["temp_indoor_feel"])>25){echo " Hot <humorange>".$weather["temp_indoor_feel"]."</humorange>&deg;".$weather["temp_units"];}
+			  else if(anyToC($weather["temp_indoor_feel"])>18){echo " Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;".$weather["temp_units"];}
+			  else if(anyToC($weather["temp_indoor_feel"])>15){echo " Mild <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;".$weather["temp_units"];}
+			  else if(anyToC($weather["temp_indoor_feel"])>0){echo " Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;".$weather["temp_units"];}?></span>
               <br>
               
          <span style="position:absolute;margin-top:-20px;">      
@@ -170,26 +188,11 @@ if (anyToC($weather["temp_indoor"]) >27){echo "<oorange>".$alert ;}?></oorange>
    
 </article>  
 
-  <article>
-   <div class=actualt>&nbsp;&nbsp Low Temperatures</div>        
-    <span style="font-size:.9em;">     
-Long periods below <humyellow>15&deg;C/59&deg;F</humyellow> can cause <br>
-<?php echo $info ;?>Dampness.<br>
-<?php echo $info ;?>Risk of colds and respiratory illness.<br>
-    </span></article>     
- <article>   
-      <div class=actualt>&nbsp;&nbsp High Temperatures</div>        
-    <span style="font-size:.9em;">      
-Long periods above <humred>25&deg;C/77&deg;F</humred> can cause <br>
-<?php echo $info ;?>Risk of electrical items overheating.<br>
-<?php echo $info ;?>Sleep deprevation.<br>
-<?php echo $info ;?>Feeling lethargic.<br>
-<?php echo $info ;?>A negative effect on productivity.
-</span>      
-        
-        </article>                                
-                                        
-  <article>
+                             
+     
+  
+   
+   <article>
    <div class=actualt>&nbsp;&nbsp Humidity Guide</div>        
  <span style="font-size:.9em;">    
 Long periods below <humred>35%</humred> can cause<br>
@@ -200,12 +203,12 @@ Long periods above <humblue>80%</humblue> can cause <br>
 <?php echo $info ;?>Irritable feelings.<br>
 <?php echo $info ;?>Sleep deprevation.
 
-</span>
-        
-        </article>       
-  <article>
+</span></div>
+      </article>   
+   
+    <article>
   <div class=actualt>&nbsp;&nbsp &copy; Info</div>  
   <div class="lotemp">
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
   </div></article> 
-   
+  
