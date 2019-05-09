@@ -29,20 +29,21 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 
 .grid1 { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(382px, 1fr));
   grid-gap: 5px;
-    color:#f5f7fc;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
+    color:#f5f7fc;
   
   }
 
 .grid1 > articlegraph {
-  border: 1px solid #212428;
-  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  padding:5px;
+   border: 1px solid rgba(245, 247, 252,.02);
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);
+  padding:0px;
   font-size:0.8em;
   -webkit-border-radius:4px;
-  border-radius:4px;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
-  
+  border-radius:4px;
+  background:0;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
+  height:160px  
 }
 
 
@@ -395,6 +396,6 @@ Max Recorded <br><blue><?php echo $weather["windamaxtime"];?></blue></div>
   <main class="grid1">
   <articlegraph> 
   <div class=actualt>&nbsp;&nbsp Today Wind Speed Chart</div>  
-  <iframe  src="mbcharts/todaywindspeedsmall.php" frameborder="0" scrolling="no"></iframe>
+  <iframe  src="mbcharts/todaywindspeedsmall.php" frameborder="0" scrolling="no" width="375px"></iframe>
    
   </articlegraph></div></body>
