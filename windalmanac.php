@@ -38,7 +38,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 .grid1 > articlegraph {
    border: 1px solid rgba(245, 247, 252,.02);
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);
-  padding:0px;
+  padding:5px;
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;

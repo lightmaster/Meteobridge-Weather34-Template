@@ -39,7 +39,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 .grid1 > articlegraph {
    border: 1px solid rgba(245, 247, 252,.02);
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);
-  padding:0px;
+  padding:5px;
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;
@@ -66,7 +66,7 @@ smalluvunit{font-size:.7rem;font-family:Arial,Helvetica,system;}
 .hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#aaa;font-size:12px;width:90px;padding:1px;-webit-border-radius:2px;border-radius:2px;
 margin-top:-20px;margin-left:92px;padding-left:3px;line-height:11px;font-size:10px}
 .actualt{position:relative;left:0px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:120px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;border-bottom:2px solid rgba(56,56,60,1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:120px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 
