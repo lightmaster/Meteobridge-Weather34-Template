@@ -140,15 +140,14 @@ foreach ($meteor_events as $meteor_check) {
 <div class="weather34moonmodulepos">
 <div id="weather34moonphases"></div>
 <div class="weather34moonmodule">
-<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, 1.000)"/><path id="weather34shape" fill="currentcolor"/></svg></div>
+<svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, 0.8)"/><path id="weather34shape" fill="currentcolor"/></svg></div>
 <script> //simple moonphase for weather34
-weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon =  Date.UTC(2018, 0, 17, 20, 0, 0, 0);
+weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 40, 59, 59, 59);
 var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) %  29.530;var s=String;
 switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases");
-var val=15;	var weather34moonCurve;var lf=Math.min(3-4*(phase/30),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
-var rf=Math.min(3+4*((phase-30)/30),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";weather34moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
-document.getElementById("weather34shape").setAttribute("d",weather34moonCurve);}</script>
-</div></div>
+var weather34moonCurve;var lf=Math.min(3-4*(phase/29.530588853),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
+var rf=Math.min(3+4*((phase-30)/29.530588853),1);	var rc=Math.abs(rf*50);	var rb=(rf<0) ? "0" : "1";weather34moonCurve="M 50,0 "+ "a "+s(lc)+",50 0 0 "+lb+" 0,100 "+ "a "+s(rc)+",50 0 0 "+rb+" 0,-100";
+document.getElementById("weather34shape").setAttribute("d",weather34moonCurve);}</script>      </div></div>
 
 <div class="fullmoon1">
 <svg id="weather34 full moon" viewBox="0 0 32 32" width="6" height="6" fill="#aaa" stroke="#aaa" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%"><circle cx="16" cy="16" r="14" /><path d="M6 6 L26 26" /></svg>
