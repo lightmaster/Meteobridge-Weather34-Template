@@ -40,14 +40,9 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 .hitempd{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:5px;}
 
 
-.hitempd1{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:40px;}
-
-
-
-
-.actual{font-size:2rem;float:right;position:absolute;left:120px;top:25px;background:0;padding:2px;font-weight:normal;color:rgba(74, 99, 111, 0.5);margin-bottom:5px;}
-.actual1{font-size:11px;float:none;position:absolute;left:10px;top:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(86, 95, 103, 0.2);padding:1px;font-weight:normal;
-margin-bottom:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}
+.hitempd1{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:40px;
+margin-bottom:5px;}
+.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}
 
 
 .hitemp{color:#aaa;font-size:0.7rem;display:inline;}
@@ -57,7 +52,6 @@ blue{color:rgba(0, 154, 171, 1.000)}
 
 
 .temperaturecontainer1{position:absolute;left:20px;margin-top:-5px;margin-bottom:20px;}
-
 .temperaturecontainer2{position:absolute;left:20px;margin-top:60px}
 smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 .uvcontainer1{left:70px;top:0}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-family:weathertext2,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-size:1.5rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
@@ -66,8 +60,8 @@ smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 .uvtoday1,.uvtoday1-3{background:#9aba2f}
 .uvtoday4-5{background:#ff7c39;background:-webkit-linear-gradient(90deg,#90b12a,#ff7c39);background:linear-gradient(90deg,#90b12a,#ff7c39)}
 .uvtoday6-8{background:#efa80f;background:-webkit-linear-gradient(90deg,#efa80f,#d86858);background:linear-gradient(90deg,#efa80f,#d86858)}
-.uvtoday9-10{background:#d05f2d;background:-webkit-linear-gradient(90deg,#d05f2d,rgba(236,102,21,1));background:linear-gradient(90deg,#d05f2d,rgba(236,102,21,1))}
-.uvtoday11{background:#d05f2d;background:-webkit-linear-gradient(90deg,#d05f2d,rgba(236,102,21,1));background:linear-gradient(90deg,#d05f2d,rgba(236,102,21,1))}
+.uvtoday9-10{background:#d05f2d;background:-webkit-linear-gradient(90deg,#d65b4a,#ac2816);background:linear-gradient(90deg,#d65b4a,#ac2816)}
+.uvtoday11{background:#95439f;background:-webkit-linear-gradient(90deg,#95439f,#a475cb);background:linear-gradient(90deg,#95439f,#a475cb)}
 
 
 
@@ -84,13 +78,12 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
-
 </style>
 <div class="weather34darkbrowser" url="UV-INDEX Almanac"></div>
   
 <main class="grid">
   <article>  
-   <div class=actualt>&nbsp;&nbsp Max UV-INDEX Today </div>        
+   <div class=actualt>Max UV-INDEX Today </div>        
    <div class="temperaturecontainer">
 	
              <?php
@@ -110,14 +103,14 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Max UV-INDEX Measured <span><?php echo $weather["uvdmaxtime"];?></span></div>
+<div class="higust">Max UV-INDEX Measured <br><span><?php echo $weather["uvdmaxtime"];?></span></div>
 
 
 
 </article> 
 
  <article> 
-  <div class=actualt>&nbsp;&nbsp Max UV-INDEX Yesterday </div>        
+  <div class=actualt>Max UV-INDEX Yesterday </div>        
    <div class="temperaturecontainer">
 	
             <?php
@@ -137,7 +130,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Max UV-INDEX Measured <span><?php echo $weather["uvydmaxtime"];?></span></div>
+<div class="higust">Max UV-INDEX Measured <br><span><?php echo $weather["uvydmaxtime"];?></span></div>
 
 
 
@@ -146,7 +139,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
  
   
   <article> 
-  <div class=actualt>&nbsp;&nbsp Max UV-INDEX <?php echo date('F Y')?> </div>        
+  <div class=actualt>Max UV-INDEX <?php echo date('F Y')?> </div>        
    <div class="temperaturecontainer">
 	
             <?php
@@ -166,7 +159,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Max UV-INDEX Measured <span><?php echo $weather["uvmmaxtime"];?></span></div>
+<div class="higust">Max UV-INDEX Measured <br><span><?php echo $weather["uvmmaxtime"];?></span></div>
 
 
 
@@ -174,7 +167,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
   
   
     <article> 
-  <div class=actualt>&nbsp;&nbsp Max UV-INDEX <?php echo date('Y')?> </div>        
+  <div class=actualt>Max UV-INDEX <?php echo date('Y')?> </div>        
    <div class="temperaturecontainer">
 	
             <?php
@@ -194,14 +187,14 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Max UV-INDEX Measured <span><?php echo $weather["uvymaxtime"];?></span></div>
+<div class="higust">Max UV-INDEX Measured <br><span><?php echo $weather["uvymaxtime"];?></span></div>
 
 
 </article>  
 
 
 <article> 
-  <div class=actualt>&nbsp;&nbsp Guide</div>        
+  <div class=actualt><?php echo $info?> Guide</div>        
   <?php
    echo '<purple>10+</purple> Avoid being outside seek a cool shaded area!<br>'; 	
 echo '<red>8-10</red> Avoid being outside during midday hours use <orange1>Sunscreen</orange1><br>'; 
@@ -216,7 +209,7 @@ echo '<green>0</green> UVI No cautions required<br>';
  
 
  <article>
-   <div class=actualt>&nbsp;&nbsp &copy; Information</div>  
+   <div class=actualt>&copy; Information</div>  
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
   <br>
   

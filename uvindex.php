@@ -46,30 +46,14 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 blue{color:rgba(0, 154, 171, 1.000)}
 .temperaturecontainer1{position:absolute;left:20px;margin-top:-5px;margin-bottom:20px;}
 .temperaturecontainer2{position:absolute;left:20px;margin-top:60px}
-.temperaturetrend1,.temperaturecaution,.temperaturetrend{position:absolute;font-size:0.85rem}
-.temperaturetodayminus10,.temperaturetodayminus5,.temperaturetodayminus,.temperaturetoday0-5,.temperaturetoday6-10,.temperaturetoday11-15,.temperaturetoday16-20,.temperaturetoday21-25,.temperaturetoday26-30,.temperaturetoday31-35,.temperaturetoday36-40,.temperaturetoday41-45{font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex;font-size:1.2rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
-.temperaturetodayminus10{background:background:#00a4b4;background:-webkit-linear-gradient(270deg,#00a4b4,rgba(80,69,188,1));background:linear-gradient(270deg,#00a4b4,rgba(80,69,188,1))}
-.temperaturetodayminus5{background:background:#00a4b4;background:-webkit-linear-gradient(270deg,#00a4b4,rgba(80,69,188,1));background:linear-gradient(270deg,#00a4b4,rgba(80,69,188,1))}
-.temperaturetodayminus{background:background:#00a4b4;background:-webkit-linear-gradient(270deg,#00a4b4,rgba(80,69,188,1));background:linear-gradient(270deg,#00a4b4,rgba(80,69,188,1))}
-.temperaturetoday0-5{background:#00a4b4;background:-webkit-linear-gradient(270deg,#00a4b4,#087883);background:linear-gradient(270deg,#00a4b4,#087883)}
-.temperaturetoday6-10{background:#88b04b;background:-webkit-linear-gradient(90deg,#00a4b4,#88b04b);background:linear-gradient(90deg,#00a4b4,#88b04b)}
-.temperaturetoday11-15{background:#e6a141;background:-webkit-linear-gradient(90deg,#90b12a,#e6a141);background:linear-gradient(90deg,#90b12a,#e6a141)}
-.temperaturetoday16-20{background:#ff7c39;background:-webkit-linear-gradient(90deg,#90b12a,#ff7c39);background:linear-gradient(90deg,#90b12a,#ff7c39)}
-.temperaturetoday21-25{background:#ff7c39;background:-webkit-linear-gradient(90deg,#e6a141,#ff7c39);background:linear-gradient(90deg,#e6a141,#ff7c39)}
-.temperaturetoday26-30{background:#d05f2d;background:-webkit-linear-gradient(90deg,#d05f2d,rgba(236,102,21,1));background:linear-gradient(90deg,#d05f2d,rgba(236,102,21,1))}
-.temperaturetoday31-35{background:#d86858;background:-webkit-linear-gradient(90deg,#d86858,rgba(211,93,78,.7));background:linear-gradient(90deg,#d86858,rgba(211,93,78,.7))}
-.temperaturetoday36-40{background:#fd7641;background:-webkit-linear-gradient(90deg,#fd7641,#637ff6);background:linear-gradient(90deg,#fd7641,#637ff6)}
-.temperaturetoday41-45{background:#de2c52;background:-webkit-linear-gradient(90deg,#de2c52,#637ff6);background:linear-gradient(90deg,#de2c52,#637ff6)}
-.temperaturetrend{margin-left:15px;margin-top:-23px;z-index:1;color:#fff;font-size:.6rem;}
-.temperaturetrend1{margin-left:7px;margin-top:-23px;z-index:1;color:#fff;font-size:.6rem;}
 smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
 .uvcontainer1{left:70px;top:0}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-family:weathertext2,Arial,Helvetica,system;width:7rem;height:5.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-size:1.7rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
 .uvtrend{position:absolute;font-size:1rem}
 .uvtoday1,.uvtoday1-3{background:#9aba2f}
 .uvtoday4-5{background:#ff7c39;background:-webkit-linear-gradient(90deg,#90b12a,#ff7c39);background:linear-gradient(90deg,#90b12a,#ff7c39)}
 .uvtoday6-8{background:#efa80f;background:-webkit-linear-gradient(90deg,#efa80f,#d86858);background:linear-gradient(90deg,#efa80f,#d86858)}
-.uvtoday9-10{background:#d05f2d;background:-webkit-linear-gradient(90deg,#d05f2d,rgba(236,102,21,1));background:linear-gradient(90deg,#d05f2d,rgba(236,102,21,1))}
-.uvtoday11{background:#d05f2d;background:-webkit-linear-gradient(90deg,#d05f2d,rgba(236,102,21,1));background:linear-gradient(90deg,#d05f2d,rgba(236,102,21,1))}
+.uvtoday9-10{background:#d05f2d;background:-webkit-linear-gradient(90deg,#d65b4a,#ac2816);background:linear-gradient(90deg,#d65b4a,#ac2816)}
+.uvtoday11{background:#95439f;background:-webkit-linear-gradient(90deg,#95439f,#a475cb);background:linear-gradient(90deg,#95439f,#a475cb)}
 .uvtrend{margin-left:135px;margin-top:48px;z-index:1;color:#fff}
 .simsekcontainer{float:left;font-family:weathertext,system;-o-font-smoothing:antialiasedleft:0;bottom:0;right:0;position:relative;margin:40px 10px 10px 40px;left:-10px;top:13px}.simsek{font-size:1.55rem;padding-top:12px;color:#f8f8f8;background:rgba(230,161,65,1);border-bottom:18px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px}
 smalluvunit{font-size:.65rem;font-family:Arial,Helvetica,system;}
@@ -94,15 +78,12 @@ padding:5px;font-family:Arial, Helvetica, sans-serif;width:170px;height:0.8em;fo
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
 padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#fff;
-align-items:center;justify-content:center;margin-bottom:10px;top:0}
-
-
-</style>
+align-items:center;justify-content:center;margin-bottom:10px;top:0}</style>
 <div class="weather34darkbrowser" url="UV-INDEX | Solar | Lux Info"></div>
   
 <main class="grid">
   <article>  
-   <div class=actualt>&nbsp;&nbsp Current UV-INDEX</div>        
+   <div class=actualt>Current UV-INDEX</div>        
    <div class="uvcontainer1"><?php 
 if ($weather["uv"]>=10) {echo '<div class=uvtoday11>'.number_format($weather["uv"],1)."<smalluvunit> &nbsp;UVI";}
 else if ($weather["uv"]>=8) {echo '<div class=uvtoday9-10>'.number_format($weather["uv"],1)."<smalluvunit> &nbsp;UVI";}
@@ -124,7 +105,7 @@ else if ($weather["uv"]>=0) {echo 'Low UVI<br>No cautions required<br>Safe for a
 </article>  
   
   <article> 
-  <div class=actualt>&nbsp;&nbsp Current Solar Radiation <?php echo date('F Y')?> </div>        
+  <div class=actualt>Current Solar Radiation <?php echo date('F Y')?> </div>        
     <div class="solarcontainer1"><?php 
 if ($weather["solar"]>=1000) {echo '<div class=solartoday1000>'.number_format($weather["solar"],0)."<smalluvunit> &nbsp;W/m<sup>2</sup>";}
 else if ($weather["solar"]>=500) {echo '<div class=solartoday500>'.number_format($weather["solar"],0)."<smalluvunit> &nbsp;W/m<sup>2</sup>";}
@@ -177,7 +158,7 @@ else if ($weather["solar"]>=0) {echo '<div class=solartoday1>'.number_format($we
 </article>  
   
    <article> 
-  <div class=actualt>&nbsp;&nbsp Current Lux </div>        
+  <div class=actualt>Current Lux </div>        
    <div class="temperaturecontainer">
 	
             <?php //34 luxscript
@@ -210,7 +191,7 @@ else if ($weather["lux"]>=0) {echo '<div class=luxtoday1>'.number_format($weathe
 </article>  
   
    <article> 
-  <div class=actualt>&nbsp;&nbsp Guide</div>        
+  <div class=actualt><?php echo $info?> Guide</div>        
   <?php
    echo '<purple>10+</purple> Avoid being outside seek a cool shaded area!<br>'; 	
 echo '<red>8-10</red> Avoid being outside during midday hours use <orange1>Sunscreen</orange1><br>'; 
@@ -226,7 +207,7 @@ echo '<green>0</green> UVI No cautions required<br>';
 
  <article>
   
- <div class=actualt>&nbsp;&nbsp World Health Organization</div>    
+ <div class=actualt><?php echo $info?> World Health Organization</div>    
   <?php echo $info?> Guide information provided by <a href="https://www.who.int/uv/intersunprogramme/activities/uv_index/en/" title="WHO UV Index" target="_blank">
   <span style="position:relative;margin-top:5px;display:flex;align-items:center;justify-content:center;">  
   <svg width="140pt" viewBox="0 0 400 222" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -286,7 +267,7 @@ echo '<green>0</green> UVI No cautions required<br>';
   </article> 
   
   <article>
-   <div class=actualt>&nbsp;&nbsp &copy; Information</div>  
+   <div class=actualt>&copy; Information</div>  
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
   
   </article> 
