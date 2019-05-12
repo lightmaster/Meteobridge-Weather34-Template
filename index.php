@@ -6,7 +6,7 @@ function downloadfromgit($filename) {
         $options  = array(
             CURLOPT_FILE => $fileopen,
             CURLOPT_TIMEOUT => 10,
-            CURLOPT_URL => 'https://raw.githubusercontent.com/lightmaster/Meteobridge-Weather34-Template/master/settings1.default.php'
+            CURLOPT_URL => 'https://raw.githubusercontent.com/weather34/Meteobridge-Weather34-Template/master/settings1.default.php'
         );
         $ch       = curl_init();
         curl_setopt_array($ch, $options);
