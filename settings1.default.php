@@ -34,18 +34,14 @@ $rainrate = "/h";
 $pressureunit  = "hPa";
 $livedataFormat = "meteobridge-api";
 $livedata   = "mbridge/MBrealtimeupload.txt";
-
 $currentconditions   = "currentconditionsmetar34davis.php";
-
 $chartsource   = "mbcharts";
 $extralinks   = "no";
 $languages   = "yes";
-
 $dateFormat   = "d-m-Y";
 $timeFormat    = "g:i:s a";
 $timeFormatShort    = "H:i";
 $clockformat    = "24";
-
 $showDate = false;
 $temperaturemodule   = "temperature.php";
 $position1   = "weather34clock.php";
@@ -63,23 +59,17 @@ $position12   = "weather34uvsolar.php";
 $positionlastmoduletitle   = "Purple Air";
 $positionlastmodule   = "airqualitymodule.php";
 $webcamurl   = "http://content.meteobridge.com/cam/629744cf35597bcada7fbe995aff6ec6/camplus.jpg";
-
 $email    = "something@gmail.com";
 $twitter   = "weather34";
-
-
 $theme1   = "dark";
 $since    = "May 2014";
-
 $weatherhardware   = "Davis Vantage Pro2 Plus";
 $mbplatform   = "Meteobridge Pro";
 $davis   = "Yes";
-
 $db_host   = "localhost";
 $db_user    = "weather34";
 $db_pass  = "weather34";
 $db_name   = "weather34";
-
 $notifications = "yes";
 $sunoption = "sun3.php";
 $hemisphere   = "0";
@@ -87,8 +77,9 @@ $metar   = "yes";
 $icao1   = "MROC";
 $airport1   = "San Jose, Costa Rica";
 $airport1dist   = "20";
-
 $defaultlanguage   = "en";
 $language    = "en";
 $password    = "";
 $flag   = "ch-switzerland";
+$dshourly  = "yes";
+?>

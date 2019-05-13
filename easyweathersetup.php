@@ -45,18 +45,14 @@ $rainrate = "'. $_POST["rainrate"]. '";
 $pressureunit  = "'. $_POST["pressureunit"]. '";
 $livedataFormat = "'. $_POST["livedataFormat"]. '";
 $livedata   = "'. $_POST["livedata"]. '";
-
 $currentconditions   = "'. $_POST["currentconditions"]. '";
-
 $chartsource   = "'. $_POST["chartsource"]. '";
 $extralinks   = "'. $_POST["extralinks"]. '";
 $languages   = "'. $_POST["languages"]. '";
-
 $dateFormat   = "'. $_POST["dateFormat"]. '";
 $timeFormat    = "'. $_POST["timeFormat"]. '";
 $timeFormatShort    = "'. $_POST["timeFormatShort"]. '";
 $clockformat    = "'. $_POST["clockformat"]. '";
-
 $showDate = '. $_POST["showDate"]. ';
 $temperaturemodule   = "'. $_POST["temperaturemodule"]. '";
 $position1   = "'. $_POST["position1"]. '";
@@ -74,23 +70,17 @@ $position12   = "'. $_POST["position12"]. '";
 $positionlastmoduletitle   = "'. $_POST["positionlastmoduletitle"]. '";
 $positionlastmodule   = "'. $_POST["positionlastmodule"]. '";
 $webcamurl   = "'. $_POST["webcamurl"]. '";
-
 $email    = "'. $_POST["email"]. '";
 $twitter   = "'. $_POST["twitter"]. '";
-
-
 $theme1   = "'. $_POST["theme1"]. '";
 $since    = "'. $_POST["since"]. '";
-
 $weatherhardware   = "'.$_POST["weatherhardware"]. '";
 $mbplatform   = "'.$_POST["mbplatform"]. '";
 $davis   = "'.$_POST["davis"]. '";
-
 $db_host   = "'. $_POST["db_host"]. '";
 $db_user    = "'. $_POST["db_user"]. '";
 $db_pass  = "'. $_POST["db_pass"]. '";
 $db_name   = "'. $_POST["db_name"]. '";
-
 $notifications = "'. $_POST["notifications"]. '";
 $sunoption = "'. $_POST["sunoption"]. '";
 $hemisphere   = "'. $_POST["hemisphere"]. '";
@@ -98,11 +88,11 @@ $metar   = "'. $_POST["metar"]. '";
 $icao1   = "'. $_POST["icao1"]. '";
 $airport1   = "'. $_POST["airport1"]. '";
 $airport1dist   = "'. $_POST["airport1dist"]. '";
-
 $defaultlanguage   = "'.$_POST["defaultlanguage"]. '";
 $language    = "'.$_POST['language']. '";
 $password    = "'.$_POST['password']. '";
 $flag   = "'.$_POST["flag"]. '";
+$dshourly   = "'.$_POST["dshourly"].'";
 ';
  
 $fp = FOPEN("settings1.php", "w") or die("Unable to open settings1.php file check file permissions !");
@@ -1824,6 +1814,23 @@ your nearly there :-) keep going<br><br>
  <center> <span style="color:rgba(86, 95, 103, 1.000);">*IMPORTANT</span> NEW DARKSKY API (uses old script originally used in  2016) requires personal API KEY(MAY 30TH 2018) available via 
      <a href="https://darksky.net/dev/docs" title="https://darksky.net/dev/docs" target="_blank"> https://darksky.net/dev/docs</a></center>  
 <P>
+
+<div class= "stationvalue">
+<img src="img/darksky.svg" width="100" /> DarkSky Hourly Forecast (If using WU Weekly)</div>
+ <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg>
+    <label name="dshourly"></label>
+        <select id="dshourly" name="dshourly" value="<?php echo $dshourly ;?>" class="choose1" >
+          <option><?php echo $dshourly ;?></option>
+            <option>yes</option> 
+            <option>no</option>
+            </select>
+
+<br/>
+ Whether or not to show the DarkSky Hourly Forecast when using WeatherUnderground's Weekly Forecast
+<P>
+
 
        
           <div class="seperator"></div>
