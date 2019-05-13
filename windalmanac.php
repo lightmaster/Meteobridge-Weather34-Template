@@ -387,15 +387,20 @@ Max Recorded <br><blue><?php echo $weather["windamaxtime"];?></blue></div>
 
                                         </article> 
   <article>
-  <div class=actualt>&nbsp;&nbsp &copy; Info</div>  
-  <div class="lotemp">
+   <div class=actualt>&nbsp;&nbsp &copy; Information</div>  
   <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
-  </div></article> 
+  <br><br>
+  <div class="lotemp">
+  <?php echo $info?> 
+<a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank" style="font-size:9px;"> Charts rendered and compiled using <?php echo $creditschart ;?> </a></span>
+  </div>
+  
+  </article> 
    
  
   <main class="grid1">
   <articlegraph> 
   <div class=actualt>&nbsp;&nbsp Today Wind Speed Chart</div>  
-  <iframe  src="mbcharts/todaywindspeedsmall.php" frameborder="0" scrolling="no" width="375px"></iframe>
+  <iframe  src="mbcharts/todaywindspeedsmall.php" frameborder="0" scrolling="no" width="100%"></iframe>
    
   </articlegraph></div></body>
