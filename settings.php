@@ -51,6 +51,7 @@ $forecastRefresh    = 900; // 15 minutes
 $notificationcenterRefresh    = 300; // 5 minutes set refresh time for notification of earthquakes default 5 minutes
 $wuupdate           = 1800; // 30 minutes 
 $wfupdate           = 60; // weatherflow api 60 seconds
+$camRefresh		 = 60; // 1 minute refresh on camera popup
 
 // Thresholds for warnings or notifications
 $notifyDistEQ       = 300; // miles if $windunit is mph otherwise km
