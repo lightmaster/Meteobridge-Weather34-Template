@@ -140,7 +140,6 @@ $(document).ready(function () {
 				includeZero: false,
 				gridColor: '<?php echo $gridcolor;?>',
 				labelFontSize: 11,
-				maximum: <?php echo $weather['rain_today']?> * 1.1,
 				labelFontColor: '<?php echo $fontcolor;?>',
 				titleFontFamily: "arial",
 				labelFontFamily: "arial",
