@@ -61,7 +61,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 <div id="weather34moonphases" class="moonphasesvg"></div>
 <svg id="weather34 simple moonphase"><circle cx="50" cy="50" r="49.5" fill="rgba(86, 95, 103, .4)"/><path id="weather34shape" fill="rgba(230, 232, 239, .5)"/></svg>
 <script> //simple moonphase for weather34
-weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 40, 59, 59, 59);
+weather34Moon();function weather34Moon() {var day = Date.now() / 86400000;var referenceweather34Moon = Date.UTC(2018, 0, 17, 49, 59, 59, 59);
 var refweather34Day = referenceweather34Moon / 86400000;var phase = (day - refweather34Day) %  29.530*1.32;var s=String;
 switch (Math.round(phase / 3.75)){}document.getElementById("weather34moonphases");
 var weather34moonCurve;var lf=Math.min(3-4*(phase/29.530588853),1);var lc=Math.abs(lf*50);	var lb=(lf<0) ? "0" : "1";
