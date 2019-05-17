@@ -13,20 +13,39 @@ include('livedata.php');
 html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;}
 .grid { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 2fr));
+  grid-gap: 5px;
   align-items: stretch;
   color:#f5f7fc;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
- 
+  
   }
 .grid > article {
-  border: 1px solid #212428;
-  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  padding:20px;
+   border: 1px solid rgba(245, 247, 252,.02);
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);
+  padding:10px;
   font-size:0.8em;
   -webkit-border-radius:4px;
-  border-radius:4px;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
+  border-radius:4px;
+  background:0;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
 }
+.grid1 { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(770px, 1fr));
+  grid-gap: 5px;
+    color:#f5f7fc;
+  
+  }
+
+.grid1 > articlegraph {
+   border: 1px solid rgba(245, 247, 252,.02);
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);
+  padding:5px;
+  font-size:0.8em;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  background:0;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
+  height:160px  
+}  
 
   
  .weather34chart-btn.close:after,.weather34chart-btn.close:before{color:#ccc;position:absolute;font-size:14px;font-family:Arial,Helvetica,sans-serif;font-weight:600}
@@ -54,7 +73,7 @@ blue{color:rgba(0, 154, 171, 1.000)}
 .temperaturecontainer1{position:absolute;left:20px;margin-top:-5px;margin-bottom:20px;}
 .temperaturecontainer2{position:absolute;left:20px;margin-top:60px}
 smalluvunit{font-size:.9rem;font-family:Arial,Helvetica,system;}
-.uvcontainer1{left:70px;top:0}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-family:weathertext2,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-size:1.5rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
+.uvcontainer1{left:70px;top:0}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-size:1.5rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
 .uvcaution,.uvtrend{position:absolute;font-size:1rem}
 
 .uvtoday1,.uvtoday1-3{background:#9aba2f}
@@ -72,7 +91,7 @@ sup{font-size:1em}supwm2{font-size:0.7em;vertical-align:super}
 .hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#aaa;width:90px;padding:1px;-webit-border-radius:2px;border-radius:2px;
 margin-top:-20px;margin-left:92px;padding-left:3px;line-height:11px;font-size:9px}
 .actualt{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:170px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:130px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
 padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
@@ -103,7 +122,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Max UV-INDEX Measured <br><span><?php echo $weather["uvdmaxtime"];?></span></div>
+<div class="higust">Max UV-INDEX <br><span><?php echo $weather["uvdmaxtime"];?></span></div>
 
 
 
@@ -130,7 +149,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Max UV-INDEX Measured <br><span><?php echo $weather["uvydmaxtime"];?></span></div>
+<div class="higust">Max UV-INDEX <br><span><?php echo $weather["uvydmaxtime"];?></span></div>
 
 
 
@@ -159,7 +178,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Max UV-INDEX Measured <br><span><?php echo $weather["uvmmaxtime"];?></span></div>
+<div class="higust">Max UV-INDEX <br><span><?php echo $weather["uvmmaxtime"];?></span></div>
 
 
 
@@ -187,32 +206,27 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Max UV-INDEX Measured <br><span><?php echo $weather["uvymaxtime"];?></span></div>
+<div class="higust">Max UV-INDEX <br><span><?php echo $weather["uvymaxtime"];?></span></div>
 
 
 </article>  
 
-
-<article> 
-  <div class=actualt><?php echo $info?> Guide</div>        
-  <?php
-   echo '<purple>10+</purple> Avoid being outside seek a cool shaded area!<br>'; 	
-echo '<red>8-10</red> Avoid being outside during midday hours use <orange1>Sunscreen</orange1><br>'; 
-echo '<orange1>6-8</orange1> Seek shadea area during midday hours!<br>'; 	
-echo '<yellow>3-5</yellow> Midday hours! caution use some form of  protection<br>'; 	
-echo '<green>1-3</green> UVI No advisory required <br>';	 	
-echo '<green>0</green> UVI No cautions required<br>'; 
-?>
- 
-</article> 
-
- 
-
- <article>
-   <div class=actualt>&copy; Information</div>  
-  <?php echo $info?> CSS/SVG/PHP scripts were developed by <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:9px;">weather34.com</a>  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
-  <br>
+ <main class="grid1">
+  <articlegraph> 
+  <div class=actualt>Today <span style="color:#ff9350">UV-INDEX</div>  
+  <iframe  src="mbcharts/todayuvsmall.php" frameborder="0" scrolling="no" width="100%"></iframe>
+   
+  </articlegraph> 
   
+  <articlegraph style="height:30px">  
+  <div class="lotemp">
+  <?php echo $info?> 
+<a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank" style="font-size:8px;"> Charts rendered and compiled using <?php echo $creditschart ;?> </a></span>
+  </div>
+  <div class="lotemp">
+  <?php echo $info?> <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:8px;">CSS/SVG/PHP scripts were developed by weather34.com  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
+  </a></div>
+   
+  </articlegraph> 
   
-  </article> 
 </main>
