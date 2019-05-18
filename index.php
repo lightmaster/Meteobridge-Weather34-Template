@@ -74,13 +74,26 @@ include_once('livedata.php');include_once('common.php');include_once('settings1.
     <meta name=apple-mobile-web-app-title content="HOME WEATHER STATION">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover">
 <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<link rel="manifest" href="img/manifest.json">
+<link rel="manifest" href="manifest.php">
 <meta name="theme-color" content="#ffffff">
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="favicon.ico" rel="icon" type="image/x-icon">
 <link rel="preload" href="css/fonts/clock3-webfont.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="css/fonts/verbatim-regular.woff" as="font" type="font/woff" crossorigin>
 <link href="css/main.<?php echo $theme;?>.css?version=<?php echo filemtime('css/main.'.$theme.'.css');?>" rel="stylesheet prefetch">
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+    .then(registration => {
+      console.log('SW registered with scope:', registration.scope);
+    })
+    .catch(err => {
+      console.error('Registration failed:', err);
+    });
+  });
+}
+</script>
 </head>
 <body>
 <!-- begin top layout for homeweatherstation template-->

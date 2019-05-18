@@ -93,6 +93,8 @@ $language    = "'.$_POST['language']. '";
 $password    = "'.$_POST['password']. '";
 $flag   = "'.$_POST["flag"]. '";
 $dshourly   = "'.$_POST["dshourly"].'";
+$nanourl    = "'.$_POST["nanourl"].'";
+$manifestShortName = "'.$_POST["manifestShortName"].'";
 ';
  
 $fp = FOPEN("settings1.php", "w") or die("Unable to open settings1.php file check file permissions !");
@@ -700,7 +702,13 @@ Which Meteobridge Platform</div><p>
   
 <p>
   </div>
-  
+  <div class="weatheroptionssidebar"> try and keep these short dont include full country try a short code
+  <br/><br/>
+  <svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" /> </svg>
+    Web App Name should be less than 10 characters long. If you exceed 10 characters, the excess will be replaced with ... on Android or iPhone.
+  </div>
+  <div class="weatherbottominfo"></div>
  <div class="weatheroptions">
 <div class= "weathersectiontitle">
 <svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -708,14 +716,14 @@ Which Meteobridge Platform</div><p>
     <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
 </svg>
 
-Location Details <strong>try and keep these short dont include full country try a short code</strong></div><p>
+Location Details and Station Name</div><p>
 <div class= "stationvalue">  Station Location</div>
 <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg>
 
   <input name="stationlocation" type="text" id="stationlocation" value="<?php echo $stationlocation ;?>" class="choose">
-  
+  <br/>
   
 <div class= "stationvalue">  Station Name</div>
 <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -723,8 +731,16 @@ Location Details <strong>try and keep these short dont include full country try 
 </svg>
 
   <input name="stationName" type="text" id="stationName" value="<?php echo $stationName ;?>" class="choose">
+   <br/>
+
+   <div class= "stationvalue">Web App Name</div>
+<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg>
+
+  <input name="manifestShortName" type="text" id="manifestShortName" value="<?php echo $manifestShortName ;?>" class="choose">
+
    </div>
-   
  <br>
    <div class="weatheroptionssidebar">Here is the area where you set your Lat/Lon with timezone + UTC offset , for timezone you can check
    <a href="http://php.net/manual/en/timezones.php" title="http://php.net/manual/en/timezones.php" target="_blank"> the official php timezone documented page</a>

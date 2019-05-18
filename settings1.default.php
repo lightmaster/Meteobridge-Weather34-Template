@@ -82,4 +82,6 @@ $language    = "en";
 $password    = "";
 $flag   = "ch-switzerland";
 $dshourly  = "yes";
+$nanourl = "https://admin.meteobridge.com/";
+$manifestShortName = 'MB-HWS';
 ?>
