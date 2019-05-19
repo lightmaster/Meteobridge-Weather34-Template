@@ -8,6 +8,8 @@ support is available via the Github issues function or via email support@lightma
 Github repository for the Meteobridge version of the original weather34 template 
 Weather Template for Meteobridge users only 
 
+# important  for those not using mysql and using weather underground for chart data unfortunately this is no longer supported and only mysql is supported .this has been onnthe cards for sometime and crosschecking some sites i have to hand using the wucharts option i see no chart data any longer.sorry for any inconvience but it is not a template issue. the issue lies with weather underground and it looks like they may have discontinued this facility .If it returns in some form it may be possible to use again but it will have to be a tried and tested feature of weather underground .brian
+
 # Basic Setup guide 
 https://weather34.com/homeweatherstation/guides/setup.html
 
