@@ -201,7 +201,7 @@
     </script>
 
 <body>
-<div id="chartContainer2" style="width:auto;height:180px;padding:0;margin-top:-25px;border-radius:3px;border: 1px solid rgba(245, 247, 252,.02);
+<div id="chartContainer2" style="width:100%;height:105px;padding:0;margin-top:-25px;border-radius:3px;border: 1px solid rgba(245, 247, 252,.02);
   box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.6);-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;"></div></div>
 
 
