@@ -93,7 +93,6 @@ $language    = "'.$_POST['language']. '";
 $password    = "'.$_POST['password']. '";
 $flag   = "'.$_POST["flag"]. '";
 $dshourly   = "'.$_POST["dshourly"].'";
-$nanourl    = "'.$_POST["nanourl"].'";
 $manifestShortName = "'.$_POST["manifestShortName"].'";
 ';
  
@@ -722,7 +721,7 @@ Location Details and Station Name</div><p>
     <path d="M12 30 L24 16 12 2" />
 </svg>
 
-  <input name="stationlocation" type="text" id="stationlocation" value="<?php echo $stationlocation ;?>" class="choose">
+  <input name="stationlocation" type="text" id="stationlocation" value="<?php echo $stationlocation ;?>" class="chooseapi">
   <br/>
   
 <div class= "stationvalue">  Station Name</div>
@@ -730,7 +729,7 @@ Location Details and Station Name</div><p>
     <path d="M12 30 L24 16 12 2" />
 </svg>
 
-  <input name="stationName" type="text" id="stationName" value="<?php echo $stationName ;?>" class="choose">
+  <input name="stationName" type="text" id="stationName" value="<?php echo $stationName ;?>" class="chooseapi">
    <br/>
 
    <div class= "stationvalue">Web App Name</div>
@@ -738,7 +737,7 @@ Location Details and Station Name</div><p>
     <path d="M12 30 L24 16 12 2" />
 </svg>
 
-  <input name="manifestShortName" type="text" id="manifestShortName" value="<?php echo $manifestShortName ;?>" class="choose">
+  <input name="manifestShortName" type="text" id="manifestShortName" value="<?php echo $manifestShortName ;?>" class="chooseapi">
 
    </div>
  <br>
