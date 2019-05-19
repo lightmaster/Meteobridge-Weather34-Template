@@ -13,7 +13,7 @@ include('livedata.php');
 html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-serif;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;}
 .grid { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(185px, 2fr));
   grid-gap: 5px;
   align-items: stretch;
   color:#f5f7fc;
@@ -27,6 +27,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
   -webkit-border-radius:4px;
   border-radius:4px;
   background:0;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
+  height:105px ;
 }
 
 .grid1 { 
@@ -629,7 +630,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 
   
- <article  style="height:100px;">  
+ <article  style="height:105px;">  
   <div class=actualt>Temperature All-Time </div>        
    <div class="temperaturecontainer">
 	 <?php	
@@ -754,7 +755,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </article> 
 
-<article  style="height:100px;">  
+<article  style="height:105px;">  
   <div class=actualt>Dewpoint All-Time </div>        
    <div class="temperaturecontainer">
 	 <?php	
