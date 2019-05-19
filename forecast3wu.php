@@ -16,7 +16,7 @@ header('Content-type: text/html; charset=UTF-8');
 
 $jsonfile="jsondata/wuforecast.txt";if(!file_exists($jsonfile)) {return;}
 ?>
-<div class="updatedtime1"><?php $forecastime=filemtime('jsondata/wuforecast.txt');$weather34wuurl = file_get_contents("jsondata/wuforecast.txt");if(filesize('jsondata/wuforecast.txt')<1){echo "".$offline. " Offline";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
+<div class="updatedtime1"><?php $forecastime=filemtime('jsondata/wuforecast.txt');$weather34wuurl = file_get_contents("jsondata/wuforecast.txt");if(filesize('jsondata/wuforecast.txt')<1){echo "".$offline. "";}else echo $online,"";echo " ",	date($timeFormat,$forecastime);	?></div>
 <div class="darkskyforecasthome" ><div class="darkskydiv">
 <?php //begin wu stuff 
 $weather34wuurl=file_get_contents($jsonfile);$parsed_weather34wujson = json_decode($weather34wuurl,false);$wucount = 0;
