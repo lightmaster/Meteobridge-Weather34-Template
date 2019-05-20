@@ -155,15 +155,17 @@ else if($weather["temp_indoor_trend"] ==0)echo "<div class='weather34indoortrend
   <div class=actualt>Humidity Awareness</div> 
   <span style="font-size:1.65em;">       
    <?php if($weather["humidity_indoor"]<35){echo "Humidity Air <br>is <humred>Dry</humred>";}
-			  else if($weather["humidity_indoor"]<70){echo "Humidity comfort <br>is <humgreen>Good</greenhum>";}			 
+    		  else if($weather["humidity_indoor"]<60){echo "Humidity comfort <br>is <humyellow>Relatively Good</humyellow>";}	
+			  else if($weather["humidity_indoor"]<80){echo "Humidity comfort <br>is <humgreen>Good</greenhum>";}			 
 			  else if($weather["humidity_indoor"]<=100){echo "Humidity is High <br><humblue>uncomfortable conditions</humblue>";}?></span>
               
          <span style="position:relative;margin-top:-33px;display:flex;align-items:center;justify-content:center;">      
-      <?php if(anyToC($weather["humidity_indoor"])<35){echo "<img src='css/aqi/hot.svg?ver=1.5' width='130px'";}
-			  else if(anyToC($weather["humidity_indoor"])<70){echo "<img src='css/aqi/mild.svg?ver=1.5' width='130px' ";}
-			  else if(anyToC($weather["humidity_indoor"])<=100){echo "<img src='css/aqi/hot.svg?ver=1.5' width='130px'";}
-			  
-			  
+      <?php 
+	  
+	  if($weather["humidity_indoor"]<35){echo "<img src='css/aqi/hot.svg?ver=1.5' width='130px'";}
+	         else if($weather["humidity_indoor"]<60){echo "<img src='css/aqi/relativelymild.svg?ver=1.5' width='130px' ";}
+			  else if($weather["humidity_indoor"]<80){echo "<img src='css/aqi/mild.svg?ver=1.5' width='130px' ";}
+			  else if($weather["humidity_indoor"]<=100){echo "<img src='css/aqi/hot.svg?ver=1.5' width='130px'";}		  
 			  
 			  ?></span>     
               
@@ -175,19 +177,33 @@ else if($weather["temp_indoor_trend"] ==0)echo "<div class='weather34indoortrend
    <div class=actualt>Feels Like </div>        
    
    <span style="font-size:1.75em;text-align:center;"> 
-   <?php if(anyToC($weather["temp_indoor_feel"])>26){echo " Hot <humred>".$weather["temp_indoor_feel"]."</humred>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if(anyToC($weather["temp_indoor_feel"])>18){echo " Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if(anyToC($weather["temp_indoor_feel"])>15){echo " Mild <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if(anyToC($weather["temp_indoor_feel"])>0){echo " Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;<smalltempunit>".$weather["temp_units"];}?></span></smalltempunit>
+   <?php 
+   
+   if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>78.8){echo " Hot <humred>".$weather["temp_indoor_feel"]."</humred>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>64.4){echo " Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>59){echo " Mild <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>0){echo " Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;<smalltempunit>".$weather["temp_units"];}
+   
+   else if($weather["temp_indoor_feel"]>26){echo " Hot <humred>".$weather["temp_indoor_feel"]."</humred>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_indoor_feel"]>18){echo " Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_indoor_feel"]>15){echo " Mild <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_indoor_feel"]>0){echo " Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;<smalltempunit>".$weather["temp_units"];}?></span></smalltempunit>
               <br>
               
-    <span style="position:relative;margin-top:-20px;display:flex;align-items:center;justify-content:center;">      
-      <?php if(anyToC($weather["temp_indoor_feel"])>26){echo "<img src='css/aqi/hot.svg?ver=1.4' width='140px' alt='weather34 indoor hot' title='weather34 indoor hot'";}
-			  else if(anyToC($weather["temp_indoor_feel"])>18){echo "<img src='css/aqi/warm.svg?ver=1.4' width='130px' alt='weather34 indoor warm' title='weather34 indoor warm'";}
-			  else if(anyToC($weather["temp_indoor_feel"])>15){echo "<img src='css/aqi/mild.svg?ver=1.4' width='130px' alt='weather34 indoormild' title='weather34 indoor mild'";}
-			  else if(anyToC($weather["temp_indoor_feel"])>0){echo "<img src='css/aqi/cold.svg?ver=1.4' width='130px'  alt='weather34 indoor cold' title='weather34 indoor cold'";}
-			  
-			  
+    <span style="position:relative;margin-top:-20px;display:flex;align-items:center;justify-content:center;">   
+         
+      <?php   
+	  
+	  if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>78.8){echo "<img src='css/aqi/hot.svg?ver=1.4' width='140px' alt='weather34 indoor hot' title='weather34 indoor hot'";}
+			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>64.4){echo "<img src='css/aqi/warm.svg?ver=1.4' width='130px' alt='weather34 indoor warm' title='weather34 indoor warm'";}
+			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>59){echo "<img src='css/aqi/mild.svg?ver=1.4' width='130px' alt='weather34 indoormild' title='weather34 indoor mild'";}
+			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>0){echo "<img src='css/aqi/cold.svg?ver=1.4' width='130px'  alt='weather34 indoor cold' title='weather34 indoor cold'";}
+	  
+	  else if($weather["temp_indoor_feel"]>26){echo "<img src='css/aqi/hot.svg?ver=1.4' width='140px' alt='weather34 indoor hot' title='weather34 indoor hot'";}
+			  else if($weather["temp_indoor_feel"]>18){echo "<img src='css/aqi/warm.svg?ver=1.4' width='130px' alt='weather34 indoor warm' title='weather34 indoor warm'";}
+			  else if($weather["temp_indoor_feel"]>15){echo "<img src='css/aqi/mild.svg?ver=1.4' width='130px' alt='weather34 indoormild' title='weather34 indoor mild'";}
+			  else if($weather["temp_indoor_feel"]>0){echo "<img src='css/aqi/cold.svg?ver=1.4' width='130px'  alt='weather34 indoor cold' title='weather34 indoor cold'";}
+			 		  
 			  ?></span>
    
 </article>  
@@ -206,7 +222,6 @@ Long periods below <humred>35%</humred> can cause<br>
 Long periods above <humblue>80%</humblue> can cause <br>
 <?php echo $info ;?>Irritable feelings.<br>
 <?php echo $info ;?>Sleep deprevation.
-
 </span></div>
       </article>   
    
@@ -221,7 +236,7 @@ Long periods above <humblue>80%</humblue> can cause <br>
   </div>
   </div></article> 
   </div>
-  </main>
+  
   
   <script>
 var svgns="http://www.w3.org/2000/svg";var thermostatDial=(function(){function createSVGElement(tag,attributes,appendTo){var element=document.createElementNS('http://www.w3.org/2000/svg',tag);attr(element,attributes);if(appendTo){appendTo.appendChild(element);}
@@ -253,10 +268,4 @@ var startDelay;function dragStart(ev){startDelay=setTimeout(function(){setClass(
 svg.addEventListener('mousedown',dragStart);svg.addEventListener('touchstart',dragStart);svg.addEventListener('mouseup',dragEnd);svg.addEventListener('mouseleave',dragEnd);svg.addEventListener('touchend',dragEnd);svg.addEventListener('mousemove',dragMove);svg.addEventListener('touchmove',dragMove);function restrictTargetTemperature(t){return restrictToRange(roundHalf(t),options.minValue,options.maxValue);}
 function angle(point){var dx=point[0]-properties.radius;var dy=point[1]-properties.radius;var theta=Math.atan(dx/dy)/(Math.PI/180);if(point[0]>=properties.radius&&point[1]<properties.radius){theta=90-theta-90;}else if(point[0]>=properties.radius&&point[1]>=properties.radius){theta=90-theta+90;}else if(point[0]<properties.radius&&point[1]>=properties.radius){theta=90-theta+90;}else if(point[0]<properties.radius&&point[1]<properties.radius){theta=90-theta+270;}
 return theta;};function getSizeRatio(){return options.diameter/targetElement.clientWidth;}};})();var nest=new thermostatDial(document.getElementById('thermostat'),{onSetTargetTemperature:function(v){document.getElementById('input_target_temperature').value=+v;}});document.getElementById('input_target_temperature').addEventListener('input',function(){nest.target_temperature=this.value;});document.getElementById('input_ambient_temperature').addEventListener('input',function(){nest.ambient_temperature=this.value;});
-
 </script>
-  
-   
-          
-                         
-   
