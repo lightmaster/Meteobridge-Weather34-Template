@@ -176,33 +176,33 @@ else if($weather["temp_indoor_trend"] ==0)echo "<div class='weather34indoortrend
    <article> 
    <div class=actualt>Feels Like </div>        
    
-   <span style="font-size:1.75em;text-align:center;"> 
+   <span style="font-size:1.65em;text-align:center;"> 
    <?php 
    
-   if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>78.8){echo " Hot <humred>".$weather["temp_indoor_feel"]."</humred>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>64.4){echo " Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>59){echo " Mild <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>0){echo " Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;<smalltempunit>".$weather["temp_units"];}
+   if($weather["temp_units"]=='F' && $weather["temp_indoor_feel"]>78.8){echo " Hot <humred>".$weather["temp_indoor_feel"]."</humred>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>64.4){echo " Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>59){echo " Mild <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>0){echo " Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;<smalltempunit>".$weather["temp_units"];}
    
-   else if($weather["temp_indoor_feel"]>26){echo " Hot <humred>".$weather["temp_indoor_feel"]."</humred>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if($weather["temp_indoor_feel"]>18){echo " Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if($weather["temp_indoor_feel"]>15){echo " Mild <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;<smalltempunit>".$weather["temp_units"];}
-			  else if($weather["temp_indoor_feel"]>0){echo " Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;<smalltempunit>".$weather["temp_units"];}?></span></smalltempunit>
+   			  else if($weather["temp_units"]=='C' &&  $weather["temp_indoor"]>26){echo " Hot <humred>".$weather["temp_indoor_feel"]."</humred>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_units"]=='C' &&  $weather["temp_indoor_feel"]>18){echo " Warm <humyellow>".$weather["temp_indoor_feel"]."</humyellow>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_units"]=='C' &&  $weather["temp_indoor_feel"]>15){echo " Mild <humgreen>".$weather["temp_indoor_feel"]."</humgreen>&deg;<smalltempunit>".$weather["temp_units"];}
+			  else if($weather["temp_units"]=='C' &&  $weather["temp_indoor_feel"]>0){echo " Cold <humblue>".$weather["temp_indoor_feel"]."</humblue>&deg;<smalltempunit>".$weather["temp_units"];}?></span></smalltempunit>
               <br>
               
     <span style="position:relative;margin-top:-20px;display:flex;align-items:center;justify-content:center;">   
          
       <?php   
 	  
-	  if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>78.8){echo "<img src='css/aqi/hot.svg?ver=1.4' width='140px' alt='weather34 indoor hot' title='weather34 indoor hot'";}
-			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>64.4){echo "<img src='css/aqi/warm.svg?ver=1.4' width='130px' alt='weather34 indoor warm' title='weather34 indoor warm'";}
-			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>59){echo "<img src='css/aqi/mild.svg?ver=1.4' width='130px' alt='weather34 indoormild' title='weather34 indoor mild'";}
-			  else if($weather["temp_indoor_feel"] && $weather["temp_units"]=='F'>0){echo "<img src='css/aqi/cold.svg?ver=1.4' width='130px'  alt='weather34 indoor cold' title='weather34 indoor cold'";}
+	  if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>78.8){echo "<img src='css/aqi/hot.svg?ver=1.4' width='130px' alt='weather34 indoor hot' title='weather34 indoor hot'";}
+			  else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>64.4){echo "<img src='css/aqi/warm.svg?ver=1.4' width='130px' alt='weather34 indoor warm' title='weather34 indoor warm'";}
+			  else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>>59){echo "<img src='css/aqi/mild.svg?ver=1.4' width='130px' alt='weather34 indoormild' title='weather34 indoor mild'";}
+			  else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>0){echo "<img src='css/aqi/cold.svg?ver=1.4' width='130px'  alt='weather34 indoor cold' title='weather34 indoor cold'";}
 	  
-	  else if($weather["temp_indoor_feel"]>26){echo "<img src='css/aqi/hot.svg?ver=1.4' width='140px' alt='weather34 indoor hot' title='weather34 indoor hot'";}
-			  else if($weather["temp_indoor_feel"]>18){echo "<img src='css/aqi/warm.svg?ver=1.4' width='130px' alt='weather34 indoor warm' title='weather34 indoor warm'";}
-			  else if($weather["temp_indoor_feel"]>15){echo "<img src='css/aqi/mild.svg?ver=1.4' width='130px' alt='weather34 indoormild' title='weather34 indoor mild'";}
-			  else if($weather["temp_indoor_feel"]>0){echo "<img src='css/aqi/cold.svg?ver=1.4' width='130px'  alt='weather34 indoor cold' title='weather34 indoor cold'";}
+	 else if($weather["temp_units"]=='C' &&  $weather["temp_indoor"]>26){echo "<img src='css/aqi/hot.svg?ver=1.4' width='130px' alt='weather34 indoor hot' title='weather34 indoor hot'";}
+			 else if($weather["temp_units"]=='C' &&  $weather["temp_indoor"]>18){echo "<img src='css/aqi/warm.svg?ver=1.4' width='130px' alt='weather34 indoor warm' title='weather34 indoor warm'";}
+			  else if($weather["temp_units"]=='C' &&  $weather["temp_indoor"]>15){echo "<img src='css/aqi/mild.svg?ver=1.4' width='130px' alt='weather34 indoormild' title='weather34 indoor mild'";}
+			  else if($weather["temp_units"]=='C' &&  $weather["temp_indoor"]>0){echo "<img src='css/aqi/cold.svg?ver=1.4' width='130px'  alt='weather34 indoor cold' title='weather34 indoor cold'";}
 			 		  
 			  ?></span>
    
@@ -222,6 +222,7 @@ Long periods below <humred>35%</humred> can cause<br>
 Long periods above <humblue>80%</humblue> can cause <br>
 <?php echo $info ;?>Irritable feelings.<br>
 <?php echo $info ;?>Sleep deprevation.
+
 </span></div>
       </article>   
    
@@ -237,8 +238,7 @@ Long periods above <humblue>80%</humblue> can cause <br>
   </div></article> 
   </div>
   
-  
- <script>
+  <script>
 var svgns="http://www.w3.org/2000/svg";var thermostatDial=(function(){function createSVGElement(tag,attributes,appendTo){var element=document.createElementNS('http://www.w3.org/2000/svg',tag);attr(element,attributes);if(appendTo){appendTo.appendChild(element);}
 return element;}
 function attr(element,attrs){for(var i in attrs){element.setAttribute(i,attrs[i]);}}
