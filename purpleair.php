@@ -91,7 +91,7 @@ $windchillwu='<svg "weather34 windchill wu icon" width="10px" height="10px" view
 .extraqiinfo{position:relative;top:0px;font-size:.9em;color:#aaa;left:120px;width:100px}
 .extraqiinfo2{position:relative;top:0;font-size:12px;color:#aaa;left:0;width:100px}airvalue{position:relative;top:5px;left:-10px;font-size:24px}airvalue0{position:relative;top:5px;left:-10px;font-size:24px}span11{position:relative;top:50px;font-size:14px;line-height:14px;width:200px;margin-left:20px}.airwarning{position:relative;margin-left:70px;font-size:1.6rem}
 .airwarning1{position:relative;margin-left:100px;top:5px}
-.airwarning2{position:relative;margin-left:55px;top:0}smalluvunit{position:absolute;display:inline;font-size:.85rem;font-family:Arial,Helvetica,system;vertical-align:top}
+.airwarning2{position:relative;margin-left:55px;top:0}smalluvunit{position:absolute;display:inline;font-size:.8rem;font-family:Arial,Helvetica,system;vertical-align:top}
 .air0,.air100,.air150,.air200,.air300,.air50{position:relative;font-family:weathertext2,Arial,Helvetica,system;width:8rem;height:5.68rem;font-size:1.5rem;padding-top:0;color:#fff;border-bottom:15px solid rgba(56,56,60,1);display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px}.air0{background:rgba(144,177,42,1)}.air50{background:rgba(230,161,65,1)}.air100{background:rgba(255,124,57,.8)}.air150{background:rgba(211,93,78,.8)}.air200{background:#a475cb}.air250{background:#a475cb}.air300{background:#a475cb}
 
 .airpm25{position:relative;font-family:weathertext2,Arial,Helvetica,system;width:6.5rem;height:6.5rem;font-size:1.35rem;padding-top:0;color:#fff;border:10px solid rgba(56,56,60,1);display:flex;align-items:center;justify-content:center;-webkit-border-radius:50%;border-radius:50%;background:#00a4b4;left:49px}
@@ -118,7 +118,7 @@ aqred{color:#d35d4e}aqpurple{color:rgba(151, 88, 190, 1.000)}aqorange{color:#d05
            
 .indoorsvgnest{position:relative;margin:0 auto;display:flex;align-items:center;justify-content:center;margin-top:-10px}
 .indoorsvgnestvalue{margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:1.85em;font-family:weathertext2;position:absolute;}
-.indoorsvgnestvalue1{margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:1.3em;font-family:weathertext2;position:absolute;}
+.indoorsvgnestvalue1{margin:0 auto;align-items:left;justify-content:left;font-size:1.2em;font-family:weathertext2;position:absolute;}
 
 .weather34indoortrendup{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#d35d4e;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
 .weather34indoortrenddown{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#00a4b4;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
@@ -323,8 +323,9 @@ else if ($weather["cloudbase3"]>=1500){echo "#e6a141";}
 
 " opacity="1.00" d=" M 286.41 150.46 C 329.44 146.38 373.92 161.88 404.75 192.24 C 416.41 203.29 425.90 216.47 433.33 230.67 C 438.74 240.45 442.59 251.03 445.26 261.87 C 456.72 303.60 448.45 350.20 423.60 385.58 C 405.62 411.69 379.21 431.96 349.12 442.07 C 303.35 458.22 249.80 450.25 210.97 421.04 C 191.81 407.16 176.33 388.48 165.68 367.40 C 152.07 340.35 147.21 309.14 151.24 279.17 C 154.66 256.34 162.81 234.07 176.17 215.17 C 200.72 178.50 242.51 154.25 286.41 150.46 Z" />
 </svg>    
-<div class=indoorsvgnestvalue1> <?php if ($weather["cloudbase3"]>0){echo "".$weather["cloudbase3"]."<smalluvunit>ft</smalluvunit>
-<br>".round($weather["cloudbase3"]*0.3048,0)."<smalluvunit>mt</smalluvunit>";}?></div>
+<div class="indoorsvgnestvalue1"> 
+<?php if ($weather["cloudbase3"]>0){echo $weather["cloudbase3"]."<smalluvunit>ft</smalluvunit><br>".round($weather["cloudbase3"]*0.3048,0)."<smalluvunit>mt</smalluvunit>";}?>
+</div>
 <div class="trendicon"><?php echo $humiditybreeze;?></div></div>
 </div>
 
