@@ -261,7 +261,7 @@ else if($weather["temp_indoor_trend"] ==0)echo "<div class='weather34indoortrend
         </div>
 
 <div class=indoorsvgnestvalue>  
-<?php echo number_format($weather["humidity_indoor"],1);?><?php echo "<smallhumunit>%</smallhumunit>"?></div>
+<?php echo number_format($weather["humidity_indoor"],0);?><?php echo "<smallhumunit>%</smallhumunit>"?></div>
 <div class="trendicon"><?php 
 if($weather["humidity_indoor"]>80)echo $windchillwu;
 else if($weather["humidity_indoor"]>50)echo $airqualitybreeze;
@@ -269,12 +269,14 @@ else if($weather["humidity_indoor"]>35)echo $humiditybreeze;
 else if($weather["humidity_indoor"]<35)echo $heatindexwu;
 ?></div>
 <?php 
-if($weather["humidity_indoor"]<35)echo "<div class='weather34indoordry'>Caution";
-else if($weather["humidity_indoor"]<80)echo "<div class='weather34indoormild'>Stable";
-else if($weather["humidity_indoor"]>=80)echo "<div class='weather34indoorhumid'>Humid"; 
+if($weather["humidity_indoortrend"] >0)echo "<div class='weather34indoortrendup'>",number_format($weather["humidity_indoortrend"],0)."% &nbsp;".$risingsymbol;
+else if($weather["humidity_indoortrend"]<0)echo "<div class='weather34indoortrenddown'>", number_format($weather["humidity_indoortrend"],0)."% &nbsp;".$fallingsymbol;
+else if($weather["humidity_indoortrend"]==0)echo "<div class='weather34indoortrendsteady'>Steady"; 
 ?></div></div>
+</div></div></div>
 
 </div></div>
+</article>     
 </article>     
   <article>  
    <div class=actualt>Feels</div>        

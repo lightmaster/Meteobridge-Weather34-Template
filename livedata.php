@@ -45,6 +45,8 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["temp_indoormax"]     = $meteobridgeapi[120];
 	$weather["temp_indoormin"]     = $meteobridgeapi[121];
 	$weather["humidity_indoor"]    = $meteobridgeapi[23];
+	$weather["humidity_indoor15"]=$meteobridgeapi[71];
+	$weather["humidity_indoortrend"]=$meteobridgeapi[23]-$meteobridgeapi[71];
 	$weather["rain_rate"]          = $meteobridgeapi[8];
 	$weather["dewpoint"]           = number_format($meteobridgeapi[4],1);
 	$weather["rain_today"]         = $meteobridgeapi[9];
