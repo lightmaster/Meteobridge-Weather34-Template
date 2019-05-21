@@ -1,7 +1,67 @@
 <?php 
 //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
 include('livedata.php');
- ?>
+
+$heatindexwu='<svg "weather34 heatindex icon" width="10px" height="10px" viewBox="0 0 250 250" version="3.4.2019" >
+<path fill="#ff832f" stroke="#ff832f" stroke-width="0.09375" opacity="1.00" d=" M 94.24 33.23 C 106.10 23.71 121.88 18.18 137.10 20.91 C 150.77 23.09 162.89 30.83 172.86 40.14 C 185.30 51.88 198.09 63.70 213.46 71.52 C 222.73 76.23 233.65 79.13 243.92 76.10 C 245.97 75.67 248.52 74.29 250.00 76.59 L 250.00 77.41 C 243.65 83.99 235.05 88.09 226.37 90.62 C 211.92 94.57 196.20 91.32 183.71 83.32 C 173.86 77.45 166.16 68.84 157.60 61.36 C 148.96 53.84 139.88 46.65 129.66 41.38 C 120.64 36.87 110.14 33.45 100.05 36.12 C 97.82 36.48 95.53 37.70 93.28 36.81 C 92.94 35.46 92.75 33.94 94.24 33.23 Z" /><path fill="#ff832f" stroke="#ff832f" stroke-width="0.09375" opacity="1.00" d=" M 40.96 70.24 C 55.35 59.16 73.48 51.97 91.86 53.82 C 112.91 55.25 131.31 67.49 146.46 81.37 C 160.43 94.60 174.85 107.67 191.64 117.27 C 205.48 125.28 221.84 130.62 237.92 127.34 C 240.94 127.12 244.23 125.18 247.05 127.08 C 247.03 127.74 246.99 129.04 246.97 129.70 C 232.18 142.37 212.89 151.02 193.10 149.31 C 176.62 148.37 161.34 140.68 148.46 130.76 C 141.24 125.29 134.74 118.98 128.15 112.80 C 113.51 99.62 97.87 86.88 79.42 79.47 C 68.23 74.90 55.71 73.38 43.88 76.15 C 41.67 76.37 38.79 77.88 37.14 75.68 C 36.36 73.01 39.31 71.67 40.96 70.24 Z" /><path fill="#ff832f" stroke="#ff832f" stroke-width="0.09375" opacity="1.00" d=" M 3.50 118.53 C 15.56 108.44 30.33 100.94 46.17 99.59 C 64.81 97.72 83.26 104.85 98.11 115.75 C 106.84 121.93 114.50 129.44 122.30 136.71 C 134.76 147.91 147.93 158.61 162.99 166.12 C 173.19 171.17 184.49 174.68 195.98 174.06 C 201.25 173.92 206.34 172.21 211.61 171.97 C 212.00 172.54 212.79 173.68 213.18 174.25 C 211.39 177.16 208.29 178.78 205.59 180.71 C 195.79 187.36 184.84 192.67 173.06 194.55 C 161.43 196.13 149.37 194.93 138.42 190.57 C 122.59 184.47 109.28 173.47 97.23 161.77 C 84.46 149.94 71.03 138.53 55.65 130.21 C 44.46 124.18 31.89 119.80 19.01 120.66 C 14.33 120.76 9.80 122.01 5.19 122.66 C 3.05 123.04 1.43 119.77 3.50 118.53 Z" /><path fill="#ff832f" stroke="#ff832f" stroke-width="0.09375" opacity="1.00" d=" M 26.44 157.60 C 40.14 154.39 54.65 158.24 66.35 165.64 C 77.14 172.14 85.34 181.89 94.99 189.83 C 106.04 199.15 118.02 208.17 132.13 212.13 C 139.32 214.27 147.04 213.87 154.14 211.59 C 156.28 210.49 158.15 213.79 156.18 215.09 C 147.11 222.60 135.83 227.63 124.02 228.51 C 106.54 229.76 90.07 220.91 77.61 209.29 C 63.90 196.42 49.84 183.15 32.41 175.48 C 23.21 171.33 12.55 170.13 2.91 173.51 C 1.29 174.56 -1.18 171.20 0.84 170.21 C 8.51 164.54 17.09 159.79 26.44 157.60 Z" /></svg>';
+
+$airqualitybreeze='<svg "weather34 aq icon" width="10px" height="10px" viewBox="0 0 250 250" version="3.4.2019" >
+<path fill="#90b12a" stroke="#90b12a" stroke-width="0.09375" opacity="1.00" d=" M 94.24 33.23 C 106.10 23.71 121.88 18.18 137.10 20.91 C 150.77 23.09 162.89 30.83 172.86 40.14 C 185.30 51.88 198.09 63.70 213.46 71.52 C 222.73 76.23 233.65 79.13 243.92 76.10 C 245.97 75.67 248.52 74.29 250.00 76.59 L 250.00 77.41 C 243.65 83.99 235.05 88.09 226.37 90.62 C 211.92 94.57 196.20 91.32 183.71 83.32 C 173.86 77.45 166.16 68.84 157.60 61.36 C 148.96 53.84 139.88 46.65 129.66 41.38 C 120.64 36.87 110.14 33.45 100.05 36.12 C 97.82 36.48 95.53 37.70 93.28 36.81 C 92.94 35.46 92.75 33.94 94.24 33.23 Z" /><path fill="#90b12a" stroke="#90b12a" stroke-width="0.09375" opacity="1.00" d=" M 40.96 70.24 C 55.35 59.16 73.48 51.97 91.86 53.82 C 112.91 55.25 131.31 67.49 146.46 81.37 C 160.43 94.60 174.85 107.67 191.64 117.27 C 205.48 125.28 221.84 130.62 237.92 127.34 C 240.94 127.12 244.23 125.18 247.05 127.08 C 247.03 127.74 246.99 129.04 246.97 129.70 C 232.18 142.37 212.89 151.02 193.10 149.31 C 176.62 148.37 161.34 140.68 148.46 130.76 C 141.24 125.29 134.74 118.98 128.15 112.80 C 113.51 99.62 97.87 86.88 79.42 79.47 C 68.23 74.90 55.71 73.38 43.88 76.15 C 41.67 76.37 38.79 77.88 37.14 75.68 C 36.36 73.01 39.31 71.67 40.96 70.24 Z" /><path fill="#90b12a" stroke="#90b12a" stroke-width="0.09375" opacity="1.00" d=" M 3.50 118.53 C 15.56 108.44 30.33 100.94 46.17 99.59 C 64.81 97.72 83.26 104.85 98.11 115.75 C 106.84 121.93 114.50 129.44 122.30 136.71 C 134.76 147.91 147.93 158.61 162.99 166.12 C 173.19 171.17 184.49 174.68 195.98 174.06 C 201.25 173.92 206.34 172.21 211.61 171.97 C 212.00 172.54 212.79 173.68 213.18 174.25 C 211.39 177.16 208.29 178.78 205.59 180.71 C 195.79 187.36 184.84 192.67 173.06 194.55 C 161.43 196.13 149.37 194.93 138.42 190.57 C 122.59 184.47 109.28 173.47 97.23 161.77 C 84.46 149.94 71.03 138.53 55.65 130.21 C 44.46 124.18 31.89 119.80 19.01 120.66 C 14.33 120.76 9.80 122.01 5.19 122.66 C 3.05 123.04 1.43 119.77 3.50 118.53 Z" /><path fill="#90b12a" stroke="#90b12a" stroke-width="0.09375" opacity="1.00" d=" M 26.44 157.60 C 40.14 154.39 54.65 158.24 66.35 165.64 C 77.14 172.14 85.34 181.89 94.99 189.83 C 106.04 199.15 118.02 208.17 132.13 212.13 C 139.32 214.27 147.04 213.87 154.14 211.59 C 156.28 210.49 158.15 213.79 156.18 215.09 C 147.11 222.60 135.83 227.63 124.02 228.51 C 106.54 229.76 90.07 220.91 77.61 209.29 C 63.90 196.42 49.84 183.15 32.41 175.48 C 23.21 171.33 12.55 170.13 2.91 173.51 C 1.29 174.56 -1.18 171.20 0.84 170.21 C 8.51 164.54 17.09 159.79 26.44 157.60 Z" /></svg>';
+
+
+$humiditybreeze='<svg "weather34 aq icon" width="10px" height="10px" viewBox="0 0 250 250" version="3.4.2019" >
+<path fill="#e6a141" stroke="#e6a141" stroke-width="0.09375" opacity="1.00" d=" M 94.24 33.23 C 106.10 23.71 121.88 18.18 137.10 20.91 C 150.77 23.09 162.89 30.83 172.86 40.14 C 185.30 51.88 198.09 63.70 213.46 71.52 C 222.73 76.23 233.65 79.13 243.92 76.10 C 245.97 75.67 248.52 74.29 250.00 76.59 L 250.00 77.41 C 243.65 83.99 235.05 88.09 226.37 90.62 C 211.92 94.57 196.20 91.32 183.71 83.32 C 173.86 77.45 166.16 68.84 157.60 61.36 C 148.96 53.84 139.88 46.65 129.66 41.38 C 120.64 36.87 110.14 33.45 100.05 36.12 C 97.82 36.48 95.53 37.70 93.28 36.81 C 92.94 35.46 92.75 33.94 94.24 33.23 Z" /><path fill="#e6a141" stroke="#e6a141" stroke-width="0.09375" opacity="1.00" d=" M 40.96 70.24 C 55.35 59.16 73.48 51.97 91.86 53.82 C 112.91 55.25 131.31 67.49 146.46 81.37 C 160.43 94.60 174.85 107.67 191.64 117.27 C 205.48 125.28 221.84 130.62 237.92 127.34 C 240.94 127.12 244.23 125.18 247.05 127.08 C 247.03 127.74 246.99 129.04 246.97 129.70 C 232.18 142.37 212.89 151.02 193.10 149.31 C 176.62 148.37 161.34 140.68 148.46 130.76 C 141.24 125.29 134.74 118.98 128.15 112.80 C 113.51 99.62 97.87 86.88 79.42 79.47 C 68.23 74.90 55.71 73.38 43.88 76.15 C 41.67 76.37 38.79 77.88 37.14 75.68 C 36.36 73.01 39.31 71.67 40.96 70.24 Z" /><path fill="#e6a141" stroke="#e6a141" stroke-width="0.09375" opacity="1.00" d=" M 3.50 118.53 C 15.56 108.44 30.33 100.94 46.17 99.59 C 64.81 97.72 83.26 104.85 98.11 115.75 C 106.84 121.93 114.50 129.44 122.30 136.71 C 134.76 147.91 147.93 158.61 162.99 166.12 C 173.19 171.17 184.49 174.68 195.98 174.06 C 201.25 173.92 206.34 172.21 211.61 171.97 C 212.00 172.54 212.79 173.68 213.18 174.25 C 211.39 177.16 208.29 178.78 205.59 180.71 C 195.79 187.36 184.84 192.67 173.06 194.55 C 161.43 196.13 149.37 194.93 138.42 190.57 C 122.59 184.47 109.28 173.47 97.23 161.77 C 84.46 149.94 71.03 138.53 55.65 130.21 C 44.46 124.18 31.89 119.80 19.01 120.66 C 14.33 120.76 9.80 122.01 5.19 122.66 C 3.05 123.04 1.43 119.77 3.50 118.53 Z" /><path fill="#e6a141" stroke="#e6a141" stroke-width="0.09375" opacity="1.00" d=" M 26.44 157.60 C 40.14 154.39 54.65 158.24 66.35 165.64 C 77.14 172.14 85.34 181.89 94.99 189.83 C 106.04 199.15 118.02 208.17 132.13 212.13 C 139.32 214.27 147.04 213.87 154.14 211.59 C 156.28 210.49 158.15 213.79 156.18 215.09 C 147.11 222.60 135.83 227.63 124.02 228.51 C 106.54 229.76 90.07 220.91 77.61 209.29 C 63.90 196.42 49.84 183.15 32.41 175.48 C 23.21 171.33 12.55 170.13 2.91 173.51 C 1.29 174.56 -1.18 171.20 0.84 170.21 C 8.51 164.54 17.09 159.79 26.44 157.60 Z" /></svg>';
+
+$feelslikewu='<svg "weather34feels wu icon" width="10px" height="10px" viewBox="0 0 250 250" version="3.4.2019" >
+<path fill="#d05f2d" stroke="#d05f2d" stroke-width="0.09375" opacity="1.00" d=" M 94.24 33.23 C 106.10 23.71 121.88 18.18 137.10 20.91 C 150.77 23.09 162.89 30.83 172.86 40.14 C 185.30 51.88 198.09 63.70 213.46 71.52 C 222.73 76.23 233.65 79.13 243.92 76.10 C 245.97 75.67 248.52 74.29 250.00 76.59 L 250.00 77.41 C 243.65 83.99 235.05 88.09 226.37 90.62 C 211.92 94.57 196.20 91.32 183.71 83.32 C 173.86 77.45 166.16 68.84 157.60 61.36 C 148.96 53.84 139.88 46.65 129.66 41.38 C 120.64 36.87 110.14 33.45 100.05 36.12 C 97.82 36.48 95.53 37.70 93.28 36.81 C 92.94 35.46 92.75 33.94 94.24 33.23 Z" /><path fill="#ff832f" stroke="#ff832f" stroke-width="0.09375" opacity="1.00" d=" M 40.96 70.24 C 55.35 59.16 73.48 51.97 91.86 53.82 C 112.91 55.25 131.31 67.49 146.46 81.37 C 160.43 94.60 174.85 107.67 191.64 117.27 C 205.48 125.28 221.84 130.62 237.92 127.34 C 240.94 127.12 244.23 125.18 247.05 127.08 C 247.03 127.74 246.99 129.04 246.97 129.70 C 232.18 142.37 212.89 151.02 193.10 149.31 C 176.62 148.37 161.34 140.68 148.46 130.76 C 141.24 125.29 134.74 118.98 128.15 112.80 C 113.51 99.62 97.87 86.88 79.42 79.47 C 68.23 74.90 55.71 73.38 43.88 76.15 C 41.67 76.37 38.79 77.88 37.14 75.68 C 36.36 73.01 39.31 71.67 40.96 70.24 Z" /><path fill="#e6a141" stroke="#e6a141" stroke-width="0.09375" opacity="1.00" d=" M 3.50 118.53 C 15.56 108.44 30.33 100.94 46.17 99.59 C 64.81 97.72 83.26 104.85 98.11 115.75 C 106.84 121.93 114.50 129.44 122.30 136.71 C 134.76 147.91 147.93 158.61 162.99 166.12 C 173.19 171.17 184.49 174.68 195.98 174.06 C 201.25 173.92 206.34 172.21 211.61 171.97 C 212.00 172.54 212.79 173.68 213.18 174.25 C 211.39 177.16 208.29 178.78 205.59 180.71 C 195.79 187.36 184.84 192.67 173.06 194.55 C 161.43 196.13 149.37 194.93 138.42 190.57 C 122.59 184.47 109.28 173.47 97.23 161.77 C 84.46 149.94 71.03 138.53 55.65 130.21 C 44.46 124.18 31.89 119.80 19.01 120.66 C 14.33 120.76 9.80 122.01 5.19 122.66 C 3.05 123.04 1.43 119.77 3.50 118.53 Z" /><path fill="#90b12a" stroke="#90b12a" stroke-width="0.09375" opacity="1.00" d=" M 26.44 157.60 C 40.14 154.39 54.65 158.24 66.35 165.64 C 77.14 172.14 85.34 181.89 94.99 189.83 C 106.04 199.15 118.02 208.17 132.13 212.13 C 139.32 214.27 147.04 213.87 154.14 211.59 C 156.28 210.49 158.15 213.79 156.18 215.09 C 147.11 222.60 135.83 227.63 124.02 228.51 C 106.54 229.76 90.07 220.91 77.61 209.29 C 63.90 196.42 49.84 183.15 32.41 175.48 C 23.21 171.33 12.55 170.13 2.91 173.51 C 1.29 174.56 -1.18 171.20 0.84 170.21 C 8.51 164.54 17.09 159.79 26.44 157.60 Z" /></svg>';
+$windchillwu='<svg "weather34 windchill wu icon" width="10px" height="10px" viewBox="0 0 250 250" version="3.4.2019" >
+<path fill="#009bab" stroke="#009bab" stroke-width="0.09375" opacity="1.00" d=" M 94.24 33.23 C 106.10 23.71 121.88 18.18 137.10 20.91 C 150.77 23.09 162.89 30.83 172.86 40.14 C 185.30 51.88 198.09 63.70 213.46 71.52 C 222.73 76.23 233.65 79.13 243.92 76.10 C 245.97 75.67 248.52 74.29 250.00 76.59 L 250.00 77.41 C 243.65 83.99 235.05 88.09 226.37 90.62 C 211.92 94.57 196.20 91.32 183.71 83.32 C 173.86 77.45 166.16 68.84 157.60 61.36 C 148.96 53.84 139.88 46.65 129.66 41.38 C 120.64 36.87 110.14 33.45 100.05 36.12 C 97.82 36.48 95.53 37.70 93.28 36.81 C 92.94 35.46 92.75 33.94 94.24 33.23 Z" /><path fill="#009bab" stroke="#009bab" stroke-width="0.09375" opacity="1.00" d=" M 40.96 70.24 C 55.35 59.16 73.48 51.97 91.86 53.82 C 112.91 55.25 131.31 67.49 146.46 81.37 C 160.43 94.60 174.85 107.67 191.64 117.27 C 205.48 125.28 221.84 130.62 237.92 127.34 C 240.94 127.12 244.23 125.18 247.05 127.08 C 247.03 127.74 246.99 129.04 246.97 129.70 C 232.18 142.37 212.89 151.02 193.10 149.31 C 176.62 148.37 161.34 140.68 148.46 130.76 C 141.24 125.29 134.74 118.98 128.15 112.80 C 113.51 99.62 97.87 86.88 79.42 79.47 C 68.23 74.90 55.71 73.38 43.88 76.15 C 41.67 76.37 38.79 77.88 37.14 75.68 C 36.36 73.01 39.31 71.67 40.96 70.24 Z" /><path fill="#009bab" stroke="#009bab" stroke-width="0.09375" opacity="1.00" d=" M 3.50 118.53 C 15.56 108.44 30.33 100.94 46.17 99.59 C 64.81 97.72 83.26 104.85 98.11 115.75 C 106.84 121.93 114.50 129.44 122.30 136.71 C 134.76 147.91 147.93 158.61 162.99 166.12 C 173.19 171.17 184.49 174.68 195.98 174.06 C 201.25 173.92 206.34 172.21 211.61 171.97 C 212.00 172.54 212.79 173.68 213.18 174.25 C 211.39 177.16 208.29 178.78 205.59 180.71 C 195.79 187.36 184.84 192.67 173.06 194.55 C 161.43 196.13 149.37 194.93 138.42 190.57 C 122.59 184.47 109.28 173.47 97.23 161.77 C 84.46 149.94 71.03 138.53 55.65 130.21 C 44.46 124.18 31.89 119.80 19.01 120.66 C 14.33 120.76 9.80 122.01 5.19 122.66 C 3.05 123.04 1.43 119.77 3.50 118.53 Z" /><path fill="#009bab" stroke="#009bab" stroke-width="0.09375" opacity="1.00" d=" M 26.44 157.60 C 40.14 154.39 54.65 158.24 66.35 165.64 C 77.14 172.14 85.34 181.89 94.99 189.83 C 106.04 199.15 118.02 208.17 132.13 212.13 C 139.32 214.27 147.04 213.87 154.14 211.59 C 156.28 210.49 158.15 213.79 156.18 215.09 C 147.11 222.60 135.83 227.63 124.02 228.51 C 106.54 229.76 90.07 220.91 77.61 209.29 C 63.90 196.42 49.84 183.15 32.41 175.48 C 23.21 171.33 12.55 170.13 2.91 173.51 C 1.29 174.56 -1.18 171.20 0.84 170.21 C 8.51 164.54 17.09 159.79 26.44 157.60 Z" /></svg>';
+
+   // PURPLE AIR additional conversion script included by Andrew Billits 24 April 2018
+function pm25_to_aqi($pm25){
+	if ($pm25 > 500.5) {
+	  $aqi = 500;
+	} else if ($pm25 > 350.5 && $pm25 <= 500.5 ) {
+	  $aqi = map($pm25, 350.5, 500.5, 400, 500);
+	} else if ($pm25 > 250.5 && $pm25 <= 350.5 ) {
+	  $aqi = map($pm25, 250.5, 350.5, 300, 400);
+	} else if ($pm25 > 150.5 && $pm25 <= 250.5 ) {
+	  $aqi = map($pm25, 150.5, 250.5, 200, 300);
+	} else if ($pm25 > 55.5 && $pm25 <= 150.5 ) {
+	  $aqi = map($pm25, 55.5, 150.5, 150, 200);
+	} else if ($pm25 > 35.5 && $pm25 <= 55.5 ) {
+	  $aqi = map($pm25, 35.5, 55.5, 100, 150);
+	} else if ($pm25 > 12 && $pm25 <= 35.5 ) {
+	  $aqi = map($pm25, 12, 35.5, 50, 100);
+	} else if ($pm25 > 0 && $pm25 <= 12 ) {
+	  $aqi = map($pm25, 0, 12, 0, 50);
+	}
+	return $aqi;
+}
+function map($value, $fromLow, $fromHigh, $toLow, $toHigh){
+    $fromRange = $fromHigh - $fromLow;
+    $toRange = $toHigh - $toLow;
+    $scaleFactor = $toRange / $fromRange;
+
+    // Re-zero the value within the from range
+    $tmpValue = $value - $fromLow;
+    // Rescale the value to the to range
+    $tmpValue *= $scaleFactor;
+    // Re-zero back to the to range
+    return $tmpValue + $toLow;
+}
+$json_string             = file_get_contents("jsondata/purpleair.txt");
+$parsed_json             = json_decode($json_string);
+//$aqiweather["aqi"]       = $parsed_json->{'results'}[1]->{'PM2_5Value'};
+$aqiweather["aqi"]       = number_format(pm25_to_aqi(($parsed_json->{'results'}[0]->{'PM2_5Value'} + $parsed_json->{'results'}[1]->{'PM2_5Value'}) / 2),1);
+$aqiweather["aqiozone"]  = 'N/A';
+$aqiweather["time2"]     = $parsed_json->{'results'}[0]->{'LastSeen'};
+$aqiweather["time"]      = date("H:i",$aqiweather["time2"]);
+$aqiweather["city"]      = $parsed_json->{'results'}[0]->{'ID'};
+$aqiweather["label"]     = $parsed_json->{'results'}[0]->{'Label'};
+$a="";if($aqiweather["aqi"]==$a){$aqiweather["aqi"] = "0" ;}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,15 +129,6 @@ indoorblue1,indoorgreen1,indoororange1,indoorred1,indooryellow1{padding:5px}
 .indoorhomevalue1,.indoorhomevalue2{font-size:23px;padding-right:4px;padding-left:0}.indoorhomevalue1{position:relative;margin-top:-89px;left:0}
 .indoorhomesvg2{margin-top:-22px;left:53px;color:rgba(53,56,58,1);margin-left:-40px}.indoortrendhouse2{position:absolute;margin-left:195px;margin-top:25px}
 .indoorhomevalue2{position:relative;margin-top:-79px;left:0}
-.weather34indoortrendup{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#d35d4e;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:108px}
-.weather34indoortrenddown{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#00a4b4;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:108px}
-.weather34indoortrendsteady{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#90b12a;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;position:absolute;margin-left:65px;top:108px}
-
-
-
-.weather34indoorcomfort{font-family:weathertext2,Arial,Helvetica,system;width:4rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#90b12a;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:108px}
-.weather34indoorhumid{font-family:weathertext2,Arial,Helvetica,system;width:4rem;height:1rem;font-size:.89rem;padding-top:0;color:#fff;background:#00a4b4;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:108px}
-.weather34indoordry{font-family:weathertext2,Arial,Helvetica,system;width:4rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#d35d4e;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;position:absolute;margin-left:65px;top:108px}
 
 
 
@@ -93,131 +144,52 @@ smalluvunit{font-size:.5rem;font-family:weathertext2,Arial,Helvetica,system;vert
 smalltempunit{font-size:.85rem;font-family:weathertext2,Arial,Helvetica,system;vertical-align:super;color:#aaa}
 smallhumunit{font-size:.85rem;font-family:weathertext2,Arial,Helvetica,system;vertical-align:super;}
 
-.indoorsvgnest{position:relative;margin-top:0px;margin-left:19px;display:flex;align-items:center;justify-content:center;border:7px solid rgba(97, 106, 114, 0.3);border-radius:50%;width:90px;}
-.indoorsvgnestvalue{margin:0 auto;margin-left:0px;margin-top:0px;font-size:2.25em;font-family:weathertext2;position:absolute;}
+.indoorsvgnest{position:relative;margin:0 auto;display:flex;align-items:center;justify-content:center;margin-top:-15px}
+.indoorsvgnestvalue{margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:1.55em;font-family:weathertext2;position:absolute;}
 
-.weather34indoorwarm{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#ff832f;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:108px}
-.weather34indoorcold{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#00a4b4;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:108px}
-.weather34indoormild{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:rgba(230, 161, 65, 1.000);border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;position:absolute;margin-left:65px;top:108px}
-.weather34indoorhot{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:rgba(211, 93, 78, 1.000);border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;position:absolute;margin-left:65px;top:108px}
-
-            div#ring{
-                width: 90px;
-                height: 90px;
-                margin: auto;
-                position: relative;
-            }
-
-            div.ring-background{
-                width: 90px;
-                height: 90px;
-                border-radius: 50%;
-                position: absolute;
-                left:0;
-                top:0;
-                background:<?php 
-if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>78.8)echo "#d35d4e";
-else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>64.4)echo "#ff832f";
-else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>59)echo "#e6a141";
-else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>0)echo "#44a6b5";
-else if ($weather["temp_indoor_feel"]>=26) echo "#d35d4e";
-else if ($weather["temp_indoor_feel"]>18) echo "#ff832f";
-elseif ($weather["temp_indoor_feel"]>15) echo "#e6a141";
-else if ($weather["temp_indoor_feel"]>=0) echo "#44a6b5";
-?>;
-            }
-			
-			div.ring-backgroundhumid{
-                width: 90px;
-                height: 90px;
-                border-radius: 50%;
-                position: absolute;
-                left:0;
-                top:0;
-                background:<?php if($weather["humidity_indoor"]<35)echo "#d35d4e";
-			  else if($weather["humidity_indoor"]<60)echo "#e6a141";
-			  else if($weather["humidity_indoor"]<80)echo "#ec5519";
-			  else if($weather["humidity_indoor"]<=100)echo "#44a6b5";?>
-            }
-			
+.weather34indoortrendup{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#d35d4e;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
+.weather34indoortrenddown{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#00a4b4;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
+.weather34indoortrendsteady{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#90b12a;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;position:absolute;margin-left:65px;top:128px}
 
 
-            svg#ring-lines, svg#marker{
-                width: 90px;
-                height: 90px;
-                position: absolute;
-                left:0;
-                top:0;
-            }
 
-            svg#marker{ fill:#ffffff;
-                stroke-width:5px;
-                stroke:rgba(255,255,255,0);
-                cursor: pointer;
-            }
-
-            svg#marker polygon{
-                fill:#ffffff;
-                stroke-width:5px;
-                stroke:rgba(255,255,255,0);
-                cursor: pointer;
-            }
+.weather34indoorcomfort{font-family:weathertext2,Arial,Helvetica,system;width:4rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#90b12a;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
+.weather34indoorhumid{font-family:weathertext2,Arial,Helvetica,system;width:4rem;height:1rem;font-size:.89rem;padding-top:0;color:#fff;background:#00a4b4;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
+.weather34indoordry{font-family:weathertext2,Arial,Helvetica,system;width:4rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#d35d4e;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;position:absolute;margin-left:65px;top:128px}
 
 
-            svg#ring-lines line{
-                fill:#fff;
-                stroke-width:10px;
-                stroke:rgba(75, 84, 92, 1);
-            }
 
+
+.weather34indoorwarm{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#ff832f;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
+.weather34indoorcold{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:#00a4b4;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
+.weather34indoormild{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:rgba(230, 161, 65, 1.000);border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;position:absolute;margin-left:65px;top:128px}
+.weather34indoorhot{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.8rem;padding-top:0;color:#fff;background:rgba(211, 93, 78, 1.000);border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;position:absolute;margin-left:65px;top:128px}
+.weather34indoorpm{font-family:weathertext2,Arial,Helvetica,system;width:3.2rem;height:1rem;font-size:.65rem;padding-top:0;color:#fff;background:#00a4b4;border:0;display:flex;align-items:center;justify-content:center;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;position:absolute;margin-left:65px;top:128px}
+
+           
             div.output{
                 width:90px;
                 height:90px;
                 position: absolute;
-                left:0;
-                top:0;
+                left:45px;
+                top:86px;
                 color:#fff;
                 text-transform: uppercase;
-                text-align: center;
-                padding-top: 100px;
+                text-align: center;                
+				margin:0 auto;
+				display:flex;align-items:center;justify-content:center;
             }
 
             div.output small{
                 display: block;
                 margin:0;
                 padding: 0;
-                font-size: 14px;
+                font-size: 12px;
                 color:rgba(255,255,255,.8);
                 font-weight: 400;
             }
 
-            div.output strong{
-                display: block;
-                font-size: 80px;
-                line-height: 80px;
-                font-style: normal;
-                font-weight: 500;
-                margin:0;
-                padding: 0;
-            }
-
-
-            div.temperature{
-                width: 90px;
-                margin: auto;
-                margin-top: 50px;
-                text-align: center;
-                color:rgba(255,255,255,.8);
-                text-transform: uppercase;
-                font-size: 18px;
-
-            }
-           
-
-
-
-
-
+        .trendicon{margin:0 auto;display:flex;margin-top:37px;align-items:center;justify-content:center;font-size:1.85em;font-family:weathertext2;position:absolute;}
 
 
 </style>
@@ -229,49 +201,56 @@ else if ($weather["temp_indoor_feel"]>=0) echo "#44a6b5";
    <div class=actualt>Indoor Temperature</div>        
    
  <div class=indoorsvgnest> 
- 
- <div id="ring">
- <div class="ring-background"></div>
  <div class="output">
- <small>
- <?php 
+           <small><?php 
 if($weather["temp_indoor_trend"] >0)echo "Warming";
 else if($weather["temp_indoor_trend"]<0)echo "Cooling";
 else if($weather["temp_indoor_trend"] ==0)echo "Stable"; 
-?> 
- </small> 
- 
- 
- 
-      
+?> </small>           
         </div>
-<svg version="1.1" id="ring-lines" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve"><line x1="150" y1="3.8" x2="150" y2="33.8"/><line x1="144.9" y1="3.9" x2="145.9" y2="33.9"/><line x1="139.8" y1="4.2" x2="141.9" y2="34.1"/><line x1="134.7" y1="4.6" x2="137.9" y2="34.5"/><line x1="129.7" y1="5.3" x2="133.8" y2="35"/><line x1="124.6" y1="6.1" x2="129.8" y2="35.6"/><line x1="119.6" y1="7" x2="125.8" y2="36.4"/><line x1="114.6" y1="8.2" x2="121.9" y2="37.3"/><line x1="109.7" y1="9.5" x2="118" y2="38.3"/><line x1="104.8" y1="11" x2="114.1" y2="39.5"/><line x1="100" y1="12.6" x2="110.3" y2="40.8"/><line x1="95.2" y1="14.5" x2="106.5" y2="42.3"/><line x1="90.5" y1="16.5" x2="102.8" y2="43.9"/><line x1="85.9" y1="18.6" x2="99.1" y2="45.6"/><line x1="81.4" y1="20.9" x2="95.5" y2="47.4"/><line x1="76.9" y1="23.4" x2="91.9" y2="49.4"/><line x1="72.5" y1="26" x2="88.4" y2="51.5"/><line x1="68.3" y1="28.8" x2="85" y2="53.7"/><line x1="64.1" y1="31.7" x2="81.7" y2="56"/><line x1="60" y1="34.8" x2="78.5" y2="58.5"/><line x1="56" y1="38" x2="75.3" y2="61"/><line x1="52.2" y1="41.4" x2="72.3" y2="63.7"/><line x1="48.5" y1="44.9" x2="69.3" y2="66.4"/><line x1="44.9" y1="48.5" x2="66.4" y2="69.3"/><line x1="41.4" y1="52.2" x2="63.7" y2="72.3"/><line x1="38" y1="56" x2="61" y2="75.3"/><line x1="34.8" y1="60" x2="58.5" y2="78.5"/><line x1="31.7" y1="64.1" x2="56" y2="81.7"/><line x1="28.8" y1="68.3" x2="53.7" y2="85"/><line x1="26" y1="72.5" x2="51.5" y2="88.4"/><line x1="23.4" y1="76.9" x2="49.4" y2="91.9"/><line x1="20.9" y1="81.4" x2="47.4" y2="95.5"/><line x1="18.6" y1="85.9" x2="45.6" y2="99.1"/><line x1="16.5" y1="90.5" x2="43.9" y2="102.8"/><line x1="14.5" y1="95.2" x2="42.3" y2="106.5"/><line x1="12.6" y1="100" x2="40.8" y2="110.3"/><line x1="11" y1="104.8" x2="39.5" y2="114.1"/><line x1="9.5" y1="109.7" x2="38.3" y2="118"/><line x1="8.2" y1="114.6" x2="37.3" y2="121.9"/><line x1="7" y1="119.6" x2="36.4" y2="125.8"/><line x1="6.1" y1="124.6" x2="35.6" y2="129.8"/><line x1="5.3" y1="129.7" x2="35" y2="133.8"/><line x1="4.6" y1="134.7" x2="34.5" y2="137.9"/><line x1="4.2" y1="139.8" x2="34.1" y2="141.9"/><line x1="3.9" y1="144.9" x2="33.9" y2="145.9"/><line x1="3.8" y1="150" x2="33.8" y2="150"/><line x1="3.9" y1="155.1" x2="33.9" y2="154.1"/><line x1="4.2" y1="160.2" x2="34.1" y2="158.1"/><line x1="4.6" y1="165.3" x2="34.5" y2="162.1"/><line x1="5.3" y1="170.3" x2="35" y2="166.2"/><line x1="6.1" y1="175.4" x2="35.6" y2="170.2"/><line x1="7" y1="180.4" x2="36.4" y2="174.2"/><line x1="8.2" y1="185.4" x2="37.3" y2="178.1"/><line x1="9.5" y1="190.3" x2="38.3" y2="182"/><line x1="11" y1="195.2" x2="39.5" y2="185.9"/><line x1="12.6" y1="200" x2="40.8" y2="189.7"/><line x1="14.5" y1="204.8" x2="42.3" y2="193.5"/><line x1="16.5" y1="209.5" x2="43.9" y2="197.2"/><line x1="18.6" y1="214.1" x2="45.6" y2="200.9"/><line x1="20.9" y1="218.6" x2="47.4" y2="204.5"/><line x1="23.4" y1="223.1" x2="49.4" y2="208.1"/><line x1="26" y1="227.5" x2="51.5" y2="211.6"/><line x1="28.8" y1="231.7" x2="53.7" y2="215"/><line x1="31.7" y1="235.9" x2="56" y2="218.3"/><line x1="34.8" y1="240" x2="58.5" y2="221.5"/><line x1="38" y1="244" x2="61" y2="224.7"/><line x1="41.4" y1="247.8" x2="63.7" y2="227.7"/><line x1="44.9" y1="251.5" x2="66.4" y2="230.7"/><line x1="48.5" y1="255.1" x2="69.3" y2="233.6"/><line x1="52.2" y1="258.6" x2="72.3" y2="236.3"/><line x1="56" y1="262" x2="75.3" y2="239"/><line x1="60" y1="265.2" x2="78.5" y2="241.5"/><line x1="64.1" y1="268.3" x2="81.7" y2="244"/><line x1="68.3" y1="271.2" x2="85" y2="246.3"/><line x1="72.5" y1="274" x2="88.4" y2="248.5"/><line x1="76.9" y1="276.6" x2="91.9" y2="250.6"/><line x1="81.4" y1="279.1" x2="95.5" y2="252.6"/><line x1="85.9" y1="281.4" x2="99.1" y2="254.4"/><line x1="90.5" y1="283.5" x2="102.8" y2="256.1"/><line x1="95.2" y1="285.5" x2="106.5" y2="257.7"/><line x1="100" y1="287.4" x2="110.3" y2="259.2"/><line x1="104.8" y1="289" x2="114.1" y2="260.5"/><line x1="109.7" y1="290.5" x2="118" y2="261.7"/><line x1="114.6" y1="291.8" x2="121.9" y2="262.7"/><line x1="119.6" y1="293" x2="125.8" y2="263.6"/><line x1="124.6" y1="293.9" x2="129.8" y2="264.4"/><line x1="129.7" y1="294.7" x2="133.8" y2="265"/><line x1="134.7" y1="295.4" x2="137.9" y2="265.5"/><line x1="139.8" y1="295.8" x2="141.9" y2="265.9"/><line x1="144.9" y1="296.1" x2="145.9" y2="266.1"/><line x1="150" y1="296.2" x2="150" y2="266.2"/><line x1="155.1" y1="296.1" x2="154.1" y2="266.1"/><line x1="160.2" y1="295.8" x2="158.1" y2="265.9"/><line x1="165.3" y1="295.4" x2="162.1" y2="265.5"/><line x1="170.3" y1="294.7" x2="166.2" y2="265"/><line x1="175.4" y1="293.9" x2="170.2" y2="264.4"/><line x1="180.4" y1="293" x2="174.2" y2="263.6"/><line x1="185.4" y1="291.8" x2="178.1" y2="262.7"/><line x1="190.3" y1="290.5" x2="182" y2="261.7"/><line x1="195.2" y1="289" x2="185.9" y2="260.5"/><line x1="200" y1="287.4" x2="189.7" y2="259.2"/><line x1="204.8" y1="285.5" x2="193.5" y2="257.7"/><line x1="209.5" y1="283.5" x2="197.2" y2="256.1"/><line x1="214.1" y1="281.4" x2="200.9" y2="254.4"/><line x1="218.6" y1="279.1" x2="204.5" y2="252.6"/><line x1="223.1" y1="276.6" x2="208.1" y2="250.6"/><line x1="227.5" y1="274" x2="211.6" y2="248.5"/><line x1="231.7" y1="271.2" x2="215" y2="246.3"/><line x1="235.9" y1="268.3" x2="218.3" y2="244"/><line x1="240" y1="265.2" x2="221.5" y2="241.5"/><line x1="244" y1="262" x2="224.7" y2="239"/><line x1="247.8" y1="258.6" x2="227.7" y2="236.3"/><line x1="251.5" y1="255.1" x2="230.7" y2="233.6"/><line x1="255.1" y1="251.5" x2="233.6" y2="230.7"/><line x1="258.6" y1="247.8" x2="236.3" y2="227.7"/><line x1="262" y1="244" x2="239" y2="224.7"/><line x1="265.2" y1="240" x2="241.5" y2="221.5"/><line x1="268.3" y1="235.9" x2="244" y2="218.3"/><line x1="271.2" y1="231.7" x2="246.3" y2="215"/><line x1="274" y1="227.5" x2="248.5" y2="211.6"/><line x1="276.6" y1="223.1" x2="250.6" y2="208.1"/><line x1="279.1" y1="218.6" x2="252.6" y2="204.5"/><line x1="281.4" y1="214.1" x2="254.4" y2="200.9"/><line x1="283.5" y1="209.5" x2="256.1" y2="197.2"/><line x1="285.5" y1="204.8" x2="257.7" y2="193.5"/><line x1="287.4" y1="200" x2="259.2" y2="189.7"/><line x1="289" y1="195.2" x2="260.5" y2="185.9"/><line x1="290.5" y1="190.3" x2="261.7" y2="182"/><line x1="291.8" y1="185.4" x2="262.7" y2="178.1"/><line x1="293" y1="180.4" x2="263.6" y2="174.2"/><line x1="293.9" y1="175.4" x2="264.4" y2="170.2"/><line x1="294.7" y1="170.3" x2="265" y2="166.2"/><line x1="295.4" y1="165.3" x2="265.5" y2="162.1"/><line x1="295.8" y1="160.2" x2="265.9" y2="158.1"/><line x1="296.1" y1="155.1" x2="266.1" y2="154.1"/><line x1="296.2" y1="150" x2="266.2" y2="150"/><line x1="296.1" y1="144.9" x2="266.1" y2="145.9"/><line x1="295.8" y1="139.8" x2="265.9" y2="141.9"/><line x1="295.4" y1="134.7" x2="265.5" y2="137.9"/><line x1="294.7" y1="129.7" x2="265" y2="133.8"/><line x1="293.9" y1="124.6" x2="264.4" y2="129.8"/><line x1="293" y1="119.6" x2="263.6" y2="125.8"/><line x1="291.8" y1="114.6" x2="262.7" y2="121.9"/><line x1="290.5" y1="109.7" x2="261.7" y2="118"/><line x1="289" y1="104.8" x2="260.5" y2="114.1"/><line x1="287.4" y1="100" x2="259.2" y2="110.3"/><line x1="285.5" y1="95.2" x2="257.7" y2="106.5"/><line x1="283.5" y1="90.5" x2="256.1" y2="102.8"/><line x1="281.4" y1="85.9" x2="254.4" y2="99.1"/><line x1="279.1" y1="81.4" x2="252.6" y2="95.5"/><line x1="276.6" y1="76.9" x2="250.6" y2="91.9"/><line x1="274" y1="72.5" x2="248.5" y2="88.4"/><line x1="271.2" y1="68.3" x2="246.3" y2="85"/><line x1="268.3" y1="64.1" x2="244" y2="81.7"/><line x1="265.2" y1="60" x2="241.5" y2="78.5"/><line x1="262" y1="56" x2="239" y2="75.3"/><line x1="258.6" y1="52.2" x2="236.3" y2="72.3"/><line x1="255.1" y1="48.5" x2="233.6" y2="69.3"/><line x1="251.5" y1="44.9" x2="230.7" y2="66.4"/><line x1="247.8" y1="41.4" x2="227.7" y2="63.7"/><line x1="244" y1="38" x2="224.7" y2="61"/><line x1="240" y1="34.8" x2="221.5" y2="58.5"/><line x1="235.9" y1="31.7" x2="218.3" y2="56"/><line x1="231.7" y1="28.8" x2="215" y2="53.7"/><line x1="227.5" y1="26" x2="211.6" y2="51.5"/><line x1="223.1" y1="23.4" x2="208.1" y2="49.4"/><line x1="218.6" y1="20.9" x2="204.5" y2="47.4"/><line x1="214.1" y1="18.6" x2="200.9" y2="45.6"/><line x1="209.5" y1="16.5" x2="197.2" y2="43.9"/><line x1="204.8" y1="14.5" x2="193.5" y2="42.3"/><line x1="200" y1="12.6" x2="189.7" y2="40.8"/><line x1="195.2" y1="11" x2="185.9" y2="39.5"/><line x1="190.3" y1="9.5" x2="182" y2="38.3"/><line x1="185.4" y1="8.2" x2="178.1" y2="37.3"/><line x1="180.4" y1="7" x2="174.2" y2="36.4"/><line x1="175.4" y1="6.1" x2="170.2" y2="35.6"/><line x1="170.3" y1="5.3" x2="166.2" y2="35"/><line x1="165.3" y1="4.6" x2="162.1" y2="34.5"/><line x1="160.2" y1="4.2" x2="158.1" y2="34.1"/><line x1="155.1" y1="3.9" x2="154.1" y2="33.9"/></svg>
-
-
-
-       
-    </div>
+<svg id="indoor temperature weather34" width="120px" height="120px" viewBox="0 0 600 600" version="1.1">
+<path fill="#4b545c" opacity="1.00" d=" M 277.33 44.31 C 278.81 43.77 280.41 44.04 281.96 43.97 C 292.95 44.05 303.94 43.96 314.93 44.00 C 316.43 43.98 317.71 44.94 319.14 45.28 C 370.84 48.81 421.06 69.16 461.23 101.80 C 484.64 121.11 504.91 144.32 520.29 170.51 C 529.82 187.64 538.71 205.33 544.10 224.25 C 549.63 241.34 553.03 259.10 554.58 276.97 C 554.34 279.46 556.30 281.50 556.02 284.00 C 555.96 294.97 556.03 305.95 556.00 316.92 C 556.01 318.75 554.62 320.26 554.65 322.09 C 553.77 334.85 551.54 347.48 548.62 359.93 C 544.55 375.59 539.76 391.16 532.66 405.74 C 529.53 413.86 524.89 421.23 520.80 428.87 C 497.75 467.88 464.45 500.92 424.85 523.03 C 393.09 540.82 357.49 551.88 321.18 554.73 C 319.46 555.22 317.85 556.22 316.00 556.02 C 305.03 555.96 294.05 556.03 283.08 556.00 C 281.24 556.01 279.73 554.61 277.90 554.63 C 220.65 549.93 165.37 524.80 123.95 485.05 C 99.37 461.65 79.41 433.39 65.94 402.23 C 56.79 382.45 51.18 361.22 47.48 339.80 C 46.82 333.22 45.44 326.71 45.37 320.08 C 45.43 318.24 43.96 316.76 44.00 314.93 C 43.99 302.98 44.00 291.03 44.00 279.08 C 46.47 268.72 46.73 257.91 49.38 247.55 C 61.60 188.21 95.92 133.80 144.07 97.05 C 178.88 70.12 220.79 52.43 264.41 46.46 C 268.71 45.70 273.16 45.68 277.33 44.31 M 276.43 80.50 C 242.35 84.05 209.20 95.83 180.44 114.44 C 132.01 145.51 96.52 196.15 84.41 252.45 C 78.65 278.28 77.90 305.16 81.43 331.36 C 86.10 364.11 98.21 395.82 116.76 423.22 C 129.29 441.93 144.79 458.60 162.32 472.70 C 198.21 501.45 243.29 518.62 289.27 520.58 C 332.32 522.81 375.94 512.08 412.93 489.90 C 444.45 471.19 471.17 444.45 489.90 412.94 C 510.51 378.44 521.45 338.21 520.78 298.01 C 520.70 252.89 505.95 207.98 479.55 171.43 C 448.08 127.28 399.81 95.37 346.72 84.21 C 323.71 79.09 299.85 78.21 276.43 80.50 Z" />
+<path fill="#1f1f1f" opacity="1.00" d=" M 276.43 80.50 C 299.85 78.21 323.71 79.09 346.72 84.21 C 399.81 95.37 448.08 127.28 479.55 171.43 C 505.95 207.98 520.70 252.89 520.78 298.01 C 521.45 338.21 510.51 378.44 489.90 412.94 C 471.17 444.45 444.45 471.19 412.93 489.90 C 375.94 512.08 332.32 522.81 289.27 520.58 C 243.29 518.62 198.21 501.45 162.32 472.70 C 144.79 458.60 129.29 441.93 116.76 423.22 C 98.21 395.82 86.10 364.11 81.43 331.36 C 77.90 305.16 78.65 278.28 84.41 252.45 C 96.52 196.15 132.01 145.51 180.44 114.44 C 209.20 95.83 242.35 84.05 276.43 80.50 M 286.41 150.46 C 242.51 154.25 200.72 178.50 176.17 215.17 C 162.81 234.07 154.66 256.34 151.24 279.17 C 147.21 309.14 152.07 340.35 165.68 367.40 C 176.33 388.48 191.81 407.16 210.97 421.04 C 249.80 450.25 303.35 458.22 349.12 442.07 C 379.21 431.96 405.62 411.69 423.60 385.58 C 448.45 350.20 456.72 303.60 445.26 261.87 C 442.59 251.03 438.74 240.45 433.33 230.67 C 425.90 216.47 416.41 203.29 404.75 192.24 C 373.92 161.88 329.44 146.38 286.41 150.46 Z" />
+<path fill="<?php 
+if($weather["temp_units"]=='F' &&  $weather["temp_indoor"]>78.8)echo "#d35d4e";
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor"]>64.4)echo "#ff832f";
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor"]>59)echo "#e6a141";
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor"]>0)echo "#44a6b5";
+else if ($weather["temp_indoor"]>=26) echo "#d35d4e";
+else if ($weather["temp_indoor"]>18) echo "#ff832f";
+elseif ($weather["temp_indoor"]>15) echo "#e6a141";
+else if ($weather["temp_indoor"]>=0) echo "#44a6b5";
+?>" opacity="1.00" d=" M 286.41 150.46 C 329.44 146.38 373.92 161.88 404.75 192.24 C 416.41 203.29 425.90 216.47 433.33 230.67 C 438.74 240.45 442.59 251.03 445.26 261.87 C 456.72 303.60 448.45 350.20 423.60 385.58 C 405.62 411.69 379.21 431.96 349.12 442.07 C 303.35 458.22 249.80 450.25 210.97 421.04 C 191.81 407.16 176.33 388.48 165.68 367.40 C 152.07 340.35 147.21 309.14 151.24 279.17 C 154.66 256.34 162.81 234.07 176.17 215.17 C 200.72 178.50 242.51 154.25 286.41 150.46 Z" />
+</svg>
 <div class=indoorsvgnestvalue>  
 <?php echo number_format($weather["temp_indoor"],1);?><?php echo "<smalluvunit>&deg;",$weather["temp_units"]?></div>
-
+<div class="trendicon"><?php 
+if($weather["temp_indoor_trend"] >0)echo $heatindexwu;
+else if($weather["temp_indoor_trend"]<0)echo $windchillwu;
+else if($weather["temp_indoor_trend"] ==0)echo $airqualitybreeze; 
+?> </div>
 <?php 
 if($weather["temp_indoor_trend"] >0)echo "<div class='weather34indoortrendup'>",number_format($weather["temp_indoor_trend"],1).'&deg; '.$risingsymbol;
 else if($weather["temp_indoor_trend"]<0)echo "<div class='weather34indoortrenddown'>", number_format($weather["temp_indoor_trend"],1).'&deg;'.$fallingsymbol;
 else if($weather["temp_indoor_trend"] ==0)echo "<div class='weather34indoortrendsteady'>Steady"; 
 ?></div></div>
-</div></div>
+</div>
    
    
 </article>  
 
  <article>  
-      <div class=actualt>Indoor Humidity </div>          
+      <div class=actualt>Indoor Humidity </div>        
            
    <div class=indoorsvgnest> 
- 
- <div id="ring">
-         <div class="ring-backgroundhumid"></div>
-
+ <svg id="indoor humidity weather34" width="120px" height="120px" viewBox="0 0 600 600" version="1.1" >
+<path fill="#4b545c" opacity="1.00" d=" M 277.33 44.31 C 278.81 43.77 280.41 44.04 281.96 43.97 C 292.95 44.05 303.94 43.96 314.93 44.00 C 316.43 43.98 317.71 44.94 319.14 45.28 C 370.84 48.81 421.06 69.16 461.23 101.80 C 484.64 121.11 504.91 144.32 520.29 170.51 C 529.82 187.64 538.71 205.33 544.10 224.25 C 549.63 241.34 553.03 259.10 554.58 276.97 C 554.34 279.46 556.30 281.50 556.02 284.00 C 555.96 294.97 556.03 305.95 556.00 316.92 C 556.01 318.75 554.62 320.26 554.65 322.09 C 553.77 334.85 551.54 347.48 548.62 359.93 C 544.55 375.59 539.76 391.16 532.66 405.74 C 529.53 413.86 524.89 421.23 520.80 428.87 C 497.75 467.88 464.45 500.92 424.85 523.03 C 393.09 540.82 357.49 551.88 321.18 554.73 C 319.46 555.22 317.85 556.22 316.00 556.02 C 305.03 555.96 294.05 556.03 283.08 556.00 C 281.24 556.01 279.73 554.61 277.90 554.63 C 220.65 549.93 165.37 524.80 123.95 485.05 C 99.37 461.65 79.41 433.39 65.94 402.23 C 56.79 382.45 51.18 361.22 47.48 339.80 C 46.82 333.22 45.44 326.71 45.37 320.08 C 45.43 318.24 43.96 316.76 44.00 314.93 C 43.99 302.98 44.00 291.03 44.00 279.08 C 46.47 268.72 46.73 257.91 49.38 247.55 C 61.60 188.21 95.92 133.80 144.07 97.05 C 178.88 70.12 220.79 52.43 264.41 46.46 C 268.71 45.70 273.16 45.68 277.33 44.31 M 276.43 80.50 C 242.35 84.05 209.20 95.83 180.44 114.44 C 132.01 145.51 96.52 196.15 84.41 252.45 C 78.65 278.28 77.90 305.16 81.43 331.36 C 86.10 364.11 98.21 395.82 116.76 423.22 C 129.29 441.93 144.79 458.60 162.32 472.70 C 198.21 501.45 243.29 518.62 289.27 520.58 C 332.32 522.81 375.94 512.08 412.93 489.90 C 444.45 471.19 471.17 444.45 489.90 412.94 C 510.51 378.44 521.45 338.21 520.78 298.01 C 520.70 252.89 505.95 207.98 479.55 171.43 C 448.08 127.28 399.81 95.37 346.72 84.21 C 323.71 79.09 299.85 78.21 276.43 80.50 Z" />
+<path fill="#1f1f1f" opacity="1.00" d=" M 276.43 80.50 C 299.85 78.21 323.71 79.09 346.72 84.21 C 399.81 95.37 448.08 127.28 479.55 171.43 C 505.95 207.98 520.70 252.89 520.78 298.01 C 521.45 338.21 510.51 378.44 489.90 412.94 C 471.17 444.45 444.45 471.19 412.93 489.90 C 375.94 512.08 332.32 522.81 289.27 520.58 C 243.29 518.62 198.21 501.45 162.32 472.70 C 144.79 458.60 129.29 441.93 116.76 423.22 C 98.21 395.82 86.10 364.11 81.43 331.36 C 77.90 305.16 78.65 278.28 84.41 252.45 C 96.52 196.15 132.01 145.51 180.44 114.44 C 209.20 95.83 242.35 84.05 276.43 80.50 M 286.41 150.46 C 242.51 154.25 200.72 178.50 176.17 215.17 C 162.81 234.07 154.66 256.34 151.24 279.17 C 147.21 309.14 152.07 340.35 165.68 367.40 C 176.33 388.48 191.81 407.16 210.97 421.04 C 249.80 450.25 303.35 458.22 349.12 442.07 C 379.21 431.96 405.62 411.69 423.60 385.58 C 448.45 350.20 456.72 303.60 445.26 261.87 C 442.59 251.03 438.74 240.45 433.33 230.67 C 425.90 216.47 416.41 203.29 404.75 192.24 C 373.92 161.88 329.44 146.38 286.41 150.46 Z" />
+<path fill="<?php if($weather["humidity_indoor"]<35)echo "#d35d4e";
+			  else if($weather["humidity_indoor"]<60)echo "#e6a141";
+			  else if($weather["humidity_indoor"]<80)echo "#ec5519";
+			  else if($weather["humidity_indoor"]<=100)echo "#44a6b5";?>" opacity="1.00" d=" M 286.41 150.46 C 329.44 146.38 373.92 161.88 404.75 192.24 C 416.41 203.29 425.90 216.47 433.33 230.67 C 438.74 240.45 442.59 251.03 445.26 261.87 C 456.72 303.60 448.45 350.20 423.60 385.58 C 405.62 411.69 379.21 431.96 349.12 442.07 C 303.35 458.22 249.80 450.25 210.97 421.04 C 191.81 407.16 176.33 388.48 165.68 367.40 C 152.07 340.35 147.21 309.14 151.24 279.17 C 154.66 256.34 162.81 234.07 176.17 215.17 C 200.72 178.50 242.51 154.25 286.41 150.46 Z" />
+</svg>
 
         <div class="output">
            <small><?php 
@@ -280,63 +259,56 @@ else if($weather["temp_indoor_trend"] ==0)echo "<div class='weather34indoortrend
 			  else if($weather["humidity_indoor"]<=100)echo "Damp";		  
 			  ?></small>           
         </div>
-<svg version="1.1" id="ring-lines" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve"><line x1="150" y1="3.8" x2="150" y2="33.8"/><line x1="144.9" y1="3.9" x2="145.9" y2="33.9"/><line x1="139.8" y1="4.2" x2="141.9" y2="34.1"/><line x1="134.7" y1="4.6" x2="137.9" y2="34.5"/><line x1="129.7" y1="5.3" x2="133.8" y2="35"/><line x1="124.6" y1="6.1" x2="129.8" y2="35.6"/><line x1="119.6" y1="7" x2="125.8" y2="36.4"/><line x1="114.6" y1="8.2" x2="121.9" y2="37.3"/><line x1="109.7" y1="9.5" x2="118" y2="38.3"/><line x1="104.8" y1="11" x2="114.1" y2="39.5"/><line x1="100" y1="12.6" x2="110.3" y2="40.8"/><line x1="95.2" y1="14.5" x2="106.5" y2="42.3"/><line x1="90.5" y1="16.5" x2="102.8" y2="43.9"/><line x1="85.9" y1="18.6" x2="99.1" y2="45.6"/><line x1="81.4" y1="20.9" x2="95.5" y2="47.4"/><line x1="76.9" y1="23.4" x2="91.9" y2="49.4"/><line x1="72.5" y1="26" x2="88.4" y2="51.5"/><line x1="68.3" y1="28.8" x2="85" y2="53.7"/><line x1="64.1" y1="31.7" x2="81.7" y2="56"/><line x1="60" y1="34.8" x2="78.5" y2="58.5"/><line x1="56" y1="38" x2="75.3" y2="61"/><line x1="52.2" y1="41.4" x2="72.3" y2="63.7"/><line x1="48.5" y1="44.9" x2="69.3" y2="66.4"/><line x1="44.9" y1="48.5" x2="66.4" y2="69.3"/><line x1="41.4" y1="52.2" x2="63.7" y2="72.3"/><line x1="38" y1="56" x2="61" y2="75.3"/><line x1="34.8" y1="60" x2="58.5" y2="78.5"/><line x1="31.7" y1="64.1" x2="56" y2="81.7"/><line x1="28.8" y1="68.3" x2="53.7" y2="85"/><line x1="26" y1="72.5" x2="51.5" y2="88.4"/><line x1="23.4" y1="76.9" x2="49.4" y2="91.9"/><line x1="20.9" y1="81.4" x2="47.4" y2="95.5"/><line x1="18.6" y1="85.9" x2="45.6" y2="99.1"/><line x1="16.5" y1="90.5" x2="43.9" y2="102.8"/><line x1="14.5" y1="95.2" x2="42.3" y2="106.5"/><line x1="12.6" y1="100" x2="40.8" y2="110.3"/><line x1="11" y1="104.8" x2="39.5" y2="114.1"/><line x1="9.5" y1="109.7" x2="38.3" y2="118"/><line x1="8.2" y1="114.6" x2="37.3" y2="121.9"/><line x1="7" y1="119.6" x2="36.4" y2="125.8"/><line x1="6.1" y1="124.6" x2="35.6" y2="129.8"/><line x1="5.3" y1="129.7" x2="35" y2="133.8"/><line x1="4.6" y1="134.7" x2="34.5" y2="137.9"/><line x1="4.2" y1="139.8" x2="34.1" y2="141.9"/><line x1="3.9" y1="144.9" x2="33.9" y2="145.9"/><line x1="3.8" y1="150" x2="33.8" y2="150"/><line x1="3.9" y1="155.1" x2="33.9" y2="154.1"/><line x1="4.2" y1="160.2" x2="34.1" y2="158.1"/><line x1="4.6" y1="165.3" x2="34.5" y2="162.1"/><line x1="5.3" y1="170.3" x2="35" y2="166.2"/><line x1="6.1" y1="175.4" x2="35.6" y2="170.2"/><line x1="7" y1="180.4" x2="36.4" y2="174.2"/><line x1="8.2" y1="185.4" x2="37.3" y2="178.1"/><line x1="9.5" y1="190.3" x2="38.3" y2="182"/><line x1="11" y1="195.2" x2="39.5" y2="185.9"/><line x1="12.6" y1="200" x2="40.8" y2="189.7"/><line x1="14.5" y1="204.8" x2="42.3" y2="193.5"/><line x1="16.5" y1="209.5" x2="43.9" y2="197.2"/><line x1="18.6" y1="214.1" x2="45.6" y2="200.9"/><line x1="20.9" y1="218.6" x2="47.4" y2="204.5"/><line x1="23.4" y1="223.1" x2="49.4" y2="208.1"/><line x1="26" y1="227.5" x2="51.5" y2="211.6"/><line x1="28.8" y1="231.7" x2="53.7" y2="215"/><line x1="31.7" y1="235.9" x2="56" y2="218.3"/><line x1="34.8" y1="240" x2="58.5" y2="221.5"/><line x1="38" y1="244" x2="61" y2="224.7"/><line x1="41.4" y1="247.8" x2="63.7" y2="227.7"/><line x1="44.9" y1="251.5" x2="66.4" y2="230.7"/><line x1="48.5" y1="255.1" x2="69.3" y2="233.6"/><line x1="52.2" y1="258.6" x2="72.3" y2="236.3"/><line x1="56" y1="262" x2="75.3" y2="239"/><line x1="60" y1="265.2" x2="78.5" y2="241.5"/><line x1="64.1" y1="268.3" x2="81.7" y2="244"/><line x1="68.3" y1="271.2" x2="85" y2="246.3"/><line x1="72.5" y1="274" x2="88.4" y2="248.5"/><line x1="76.9" y1="276.6" x2="91.9" y2="250.6"/><line x1="81.4" y1="279.1" x2="95.5" y2="252.6"/><line x1="85.9" y1="281.4" x2="99.1" y2="254.4"/><line x1="90.5" y1="283.5" x2="102.8" y2="256.1"/><line x1="95.2" y1="285.5" x2="106.5" y2="257.7"/><line x1="100" y1="287.4" x2="110.3" y2="259.2"/><line x1="104.8" y1="289" x2="114.1" y2="260.5"/><line x1="109.7" y1="290.5" x2="118" y2="261.7"/><line x1="114.6" y1="291.8" x2="121.9" y2="262.7"/><line x1="119.6" y1="293" x2="125.8" y2="263.6"/><line x1="124.6" y1="293.9" x2="129.8" y2="264.4"/><line x1="129.7" y1="294.7" x2="133.8" y2="265"/><line x1="134.7" y1="295.4" x2="137.9" y2="265.5"/><line x1="139.8" y1="295.8" x2="141.9" y2="265.9"/><line x1="144.9" y1="296.1" x2="145.9" y2="266.1"/><line x1="150" y1="296.2" x2="150" y2="266.2"/><line x1="155.1" y1="296.1" x2="154.1" y2="266.1"/><line x1="160.2" y1="295.8" x2="158.1" y2="265.9"/><line x1="165.3" y1="295.4" x2="162.1" y2="265.5"/><line x1="170.3" y1="294.7" x2="166.2" y2="265"/><line x1="175.4" y1="293.9" x2="170.2" y2="264.4"/><line x1="180.4" y1="293" x2="174.2" y2="263.6"/><line x1="185.4" y1="291.8" x2="178.1" y2="262.7"/><line x1="190.3" y1="290.5" x2="182" y2="261.7"/><line x1="195.2" y1="289" x2="185.9" y2="260.5"/><line x1="200" y1="287.4" x2="189.7" y2="259.2"/><line x1="204.8" y1="285.5" x2="193.5" y2="257.7"/><line x1="209.5" y1="283.5" x2="197.2" y2="256.1"/><line x1="214.1" y1="281.4" x2="200.9" y2="254.4"/><line x1="218.6" y1="279.1" x2="204.5" y2="252.6"/><line x1="223.1" y1="276.6" x2="208.1" y2="250.6"/><line x1="227.5" y1="274" x2="211.6" y2="248.5"/><line x1="231.7" y1="271.2" x2="215" y2="246.3"/><line x1="235.9" y1="268.3" x2="218.3" y2="244"/><line x1="240" y1="265.2" x2="221.5" y2="241.5"/><line x1="244" y1="262" x2="224.7" y2="239"/><line x1="247.8" y1="258.6" x2="227.7" y2="236.3"/><line x1="251.5" y1="255.1" x2="230.7" y2="233.6"/><line x1="255.1" y1="251.5" x2="233.6" y2="230.7"/><line x1="258.6" y1="247.8" x2="236.3" y2="227.7"/><line x1="262" y1="244" x2="239" y2="224.7"/><line x1="265.2" y1="240" x2="241.5" y2="221.5"/><line x1="268.3" y1="235.9" x2="244" y2="218.3"/><line x1="271.2" y1="231.7" x2="246.3" y2="215"/><line x1="274" y1="227.5" x2="248.5" y2="211.6"/><line x1="276.6" y1="223.1" x2="250.6" y2="208.1"/><line x1="279.1" y1="218.6" x2="252.6" y2="204.5"/><line x1="281.4" y1="214.1" x2="254.4" y2="200.9"/><line x1="283.5" y1="209.5" x2="256.1" y2="197.2"/><line x1="285.5" y1="204.8" x2="257.7" y2="193.5"/><line x1="287.4" y1="200" x2="259.2" y2="189.7"/><line x1="289" y1="195.2" x2="260.5" y2="185.9"/><line x1="290.5" y1="190.3" x2="261.7" y2="182"/><line x1="291.8" y1="185.4" x2="262.7" y2="178.1"/><line x1="293" y1="180.4" x2="263.6" y2="174.2"/><line x1="293.9" y1="175.4" x2="264.4" y2="170.2"/><line x1="294.7" y1="170.3" x2="265" y2="166.2"/><line x1="295.4" y1="165.3" x2="265.5" y2="162.1"/><line x1="295.8" y1="160.2" x2="265.9" y2="158.1"/><line x1="296.1" y1="155.1" x2="266.1" y2="154.1"/><line x1="296.2" y1="150" x2="266.2" y2="150"/><line x1="296.1" y1="144.9" x2="266.1" y2="145.9"/><line x1="295.8" y1="139.8" x2="265.9" y2="141.9"/><line x1="295.4" y1="134.7" x2="265.5" y2="137.9"/><line x1="294.7" y1="129.7" x2="265" y2="133.8"/><line x1="293.9" y1="124.6" x2="264.4" y2="129.8"/><line x1="293" y1="119.6" x2="263.6" y2="125.8"/><line x1="291.8" y1="114.6" x2="262.7" y2="121.9"/><line x1="290.5" y1="109.7" x2="261.7" y2="118"/><line x1="289" y1="104.8" x2="260.5" y2="114.1"/><line x1="287.4" y1="100" x2="259.2" y2="110.3"/><line x1="285.5" y1="95.2" x2="257.7" y2="106.5"/><line x1="283.5" y1="90.5" x2="256.1" y2="102.8"/><line x1="281.4" y1="85.9" x2="254.4" y2="99.1"/><line x1="279.1" y1="81.4" x2="252.6" y2="95.5"/><line x1="276.6" y1="76.9" x2="250.6" y2="91.9"/><line x1="274" y1="72.5" x2="248.5" y2="88.4"/><line x1="271.2" y1="68.3" x2="246.3" y2="85"/><line x1="268.3" y1="64.1" x2="244" y2="81.7"/><line x1="265.2" y1="60" x2="241.5" y2="78.5"/><line x1="262" y1="56" x2="239" y2="75.3"/><line x1="258.6" y1="52.2" x2="236.3" y2="72.3"/><line x1="255.1" y1="48.5" x2="233.6" y2="69.3"/><line x1="251.5" y1="44.9" x2="230.7" y2="66.4"/><line x1="247.8" y1="41.4" x2="227.7" y2="63.7"/><line x1="244" y1="38" x2="224.7" y2="61"/><line x1="240" y1="34.8" x2="221.5" y2="58.5"/><line x1="235.9" y1="31.7" x2="218.3" y2="56"/><line x1="231.7" y1="28.8" x2="215" y2="53.7"/><line x1="227.5" y1="26" x2="211.6" y2="51.5"/><line x1="223.1" y1="23.4" x2="208.1" y2="49.4"/><line x1="218.6" y1="20.9" x2="204.5" y2="47.4"/><line x1="214.1" y1="18.6" x2="200.9" y2="45.6"/><line x1="209.5" y1="16.5" x2="197.2" y2="43.9"/><line x1="204.8" y1="14.5" x2="193.5" y2="42.3"/><line x1="200" y1="12.6" x2="189.7" y2="40.8"/><line x1="195.2" y1="11" x2="185.9" y2="39.5"/><line x1="190.3" y1="9.5" x2="182" y2="38.3"/><line x1="185.4" y1="8.2" x2="178.1" y2="37.3"/><line x1="180.4" y1="7" x2="174.2" y2="36.4"/><line x1="175.4" y1="6.1" x2="170.2" y2="35.6"/><line x1="170.3" y1="5.3" x2="166.2" y2="35"/><line x1="165.3" y1="4.6" x2="162.1" y2="34.5"/><line x1="160.2" y1="4.2" x2="158.1" y2="34.1"/><line x1="155.1" y1="3.9" x2="154.1" y2="33.9"/></svg>
-</div>
+
 <div class=indoorsvgnestvalue>  
 <?php echo number_format($weather["humidity_indoor"],1);?><?php echo "<smallhumunit>%</smallhumunit>"?></div>
+<div class="trendicon"><?php 
+if($weather["humidity_indoor"]>80)echo $windchillwu;
+else if($weather["humidity_indoor"]>50)echo $airqualitybreeze;
+else if($weather["humidity_indoor"]>35)echo $humiditybreeze;
+else if($weather["humidity_indoor"]<35)echo $heatindexwu;
+?></div>
 <?php 
-
 if($weather["humidity_indoor"]<35)echo "<div class='weather34indoordry'>Caution";
 else if($weather["humidity_indoor"]<80)echo "<div class='weather34indoormild'>Stable";
-else if($weather["humidity_indoor"]>=80)echo "<div class='weather34indoortrendhumid'>Humid"; 
+else if($weather["humidity_indoor"]>=80)echo "<div class='weather34indoorhumid'>Humid"; 
 ?></div></div>
 
 </div></div>
-</article>  
-  
-
-  
-  <article> 
-  <div class=actualt>Humidity Awareness</div> 
-  <span style="font-size:1.65em;">       
-   <?php if($weather["humidity_indoor"]<35){echo "Humidity Air <br>is <humred>Dry</humred>";}
-    		  else if($weather["humidity_indoor"]<60){echo "Humidity comfort <br>is <humyellow>Relatively Good</humyellow>";}	
-			  else if($weather["humidity_indoor"]<80){echo "Humidity comfort <br>is <humgreen>Good</greenhum>";}			 
-			  else if($weather["humidity_indoor"]<=100){echo "Humidity is High <br><humblue>uncomfortable conditions</humblue>";}?></span>
-              
-         <span style="position:relative;margin-top:-33px;display:flex;align-items:center;justify-content:center;">      
-      <?php 
-	  
-	  if($weather["humidity_indoor"]<35){echo "<img src='css/aqi/hot.svg?ver=1.5' width='130px'";}
-	         else if($weather["humidity_indoor"]<60){echo "<img src='css/aqi/relativelymild.svg?ver=1.5' width='130px' ";}
-			  else if($weather["humidity_indoor"]<80){echo "<img src='css/aqi/mild.svg?ver=1.5' width='130px' ";}
-			  else if($weather["humidity_indoor"]<=100){echo "<img src='css/aqi/hot.svg?ver=1.5' width='130px'";}		  
-			  
-			  ?></span>     
-              
-              
-</article>  
-  
-   
-   <article> 
+</article>     
+  <article>  
    <div class=actualt>Feels</div>        
    
-  
- 
-<div class=indoorsvgnest> 
- 
- <div id="ring">
-         <div class="ring-background"></div>
-
-
-        <div class="output">
+ <div class=indoorsvgnest> 
+ <div class="output">
            <small>Real Feel</small>           
-        </div>
-<svg version="1.1" id="ring-lines" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve"><line x1="150" y1="3.8" x2="150" y2="33.8"/><line x1="144.9" y1="3.9" x2="145.9" y2="33.9"/><line x1="139.8" y1="4.2" x2="141.9" y2="34.1"/><line x1="134.7" y1="4.6" x2="137.9" y2="34.5"/><line x1="129.7" y1="5.3" x2="133.8" y2="35"/><line x1="124.6" y1="6.1" x2="129.8" y2="35.6"/><line x1="119.6" y1="7" x2="125.8" y2="36.4"/><line x1="114.6" y1="8.2" x2="121.9" y2="37.3"/><line x1="109.7" y1="9.5" x2="118" y2="38.3"/><line x1="104.8" y1="11" x2="114.1" y2="39.5"/><line x1="100" y1="12.6" x2="110.3" y2="40.8"/><line x1="95.2" y1="14.5" x2="106.5" y2="42.3"/><line x1="90.5" y1="16.5" x2="102.8" y2="43.9"/><line x1="85.9" y1="18.6" x2="99.1" y2="45.6"/><line x1="81.4" y1="20.9" x2="95.5" y2="47.4"/><line x1="76.9" y1="23.4" x2="91.9" y2="49.4"/><line x1="72.5" y1="26" x2="88.4" y2="51.5"/><line x1="68.3" y1="28.8" x2="85" y2="53.7"/><line x1="64.1" y1="31.7" x2="81.7" y2="56"/><line x1="60" y1="34.8" x2="78.5" y2="58.5"/><line x1="56" y1="38" x2="75.3" y2="61"/><line x1="52.2" y1="41.4" x2="72.3" y2="63.7"/><line x1="48.5" y1="44.9" x2="69.3" y2="66.4"/><line x1="44.9" y1="48.5" x2="66.4" y2="69.3"/><line x1="41.4" y1="52.2" x2="63.7" y2="72.3"/><line x1="38" y1="56" x2="61" y2="75.3"/><line x1="34.8" y1="60" x2="58.5" y2="78.5"/><line x1="31.7" y1="64.1" x2="56" y2="81.7"/><line x1="28.8" y1="68.3" x2="53.7" y2="85"/><line x1="26" y1="72.5" x2="51.5" y2="88.4"/><line x1="23.4" y1="76.9" x2="49.4" y2="91.9"/><line x1="20.9" y1="81.4" x2="47.4" y2="95.5"/><line x1="18.6" y1="85.9" x2="45.6" y2="99.1"/><line x1="16.5" y1="90.5" x2="43.9" y2="102.8"/><line x1="14.5" y1="95.2" x2="42.3" y2="106.5"/><line x1="12.6" y1="100" x2="40.8" y2="110.3"/><line x1="11" y1="104.8" x2="39.5" y2="114.1"/><line x1="9.5" y1="109.7" x2="38.3" y2="118"/><line x1="8.2" y1="114.6" x2="37.3" y2="121.9"/><line x1="7" y1="119.6" x2="36.4" y2="125.8"/><line x1="6.1" y1="124.6" x2="35.6" y2="129.8"/><line x1="5.3" y1="129.7" x2="35" y2="133.8"/><line x1="4.6" y1="134.7" x2="34.5" y2="137.9"/><line x1="4.2" y1="139.8" x2="34.1" y2="141.9"/><line x1="3.9" y1="144.9" x2="33.9" y2="145.9"/><line x1="3.8" y1="150" x2="33.8" y2="150"/><line x1="3.9" y1="155.1" x2="33.9" y2="154.1"/><line x1="4.2" y1="160.2" x2="34.1" y2="158.1"/><line x1="4.6" y1="165.3" x2="34.5" y2="162.1"/><line x1="5.3" y1="170.3" x2="35" y2="166.2"/><line x1="6.1" y1="175.4" x2="35.6" y2="170.2"/><line x1="7" y1="180.4" x2="36.4" y2="174.2"/><line x1="8.2" y1="185.4" x2="37.3" y2="178.1"/><line x1="9.5" y1="190.3" x2="38.3" y2="182"/><line x1="11" y1="195.2" x2="39.5" y2="185.9"/><line x1="12.6" y1="200" x2="40.8" y2="189.7"/><line x1="14.5" y1="204.8" x2="42.3" y2="193.5"/><line x1="16.5" y1="209.5" x2="43.9" y2="197.2"/><line x1="18.6" y1="214.1" x2="45.6" y2="200.9"/><line x1="20.9" y1="218.6" x2="47.4" y2="204.5"/><line x1="23.4" y1="223.1" x2="49.4" y2="208.1"/><line x1="26" y1="227.5" x2="51.5" y2="211.6"/><line x1="28.8" y1="231.7" x2="53.7" y2="215"/><line x1="31.7" y1="235.9" x2="56" y2="218.3"/><line x1="34.8" y1="240" x2="58.5" y2="221.5"/><line x1="38" y1="244" x2="61" y2="224.7"/><line x1="41.4" y1="247.8" x2="63.7" y2="227.7"/><line x1="44.9" y1="251.5" x2="66.4" y2="230.7"/><line x1="48.5" y1="255.1" x2="69.3" y2="233.6"/><line x1="52.2" y1="258.6" x2="72.3" y2="236.3"/><line x1="56" y1="262" x2="75.3" y2="239"/><line x1="60" y1="265.2" x2="78.5" y2="241.5"/><line x1="64.1" y1="268.3" x2="81.7" y2="244"/><line x1="68.3" y1="271.2" x2="85" y2="246.3"/><line x1="72.5" y1="274" x2="88.4" y2="248.5"/><line x1="76.9" y1="276.6" x2="91.9" y2="250.6"/><line x1="81.4" y1="279.1" x2="95.5" y2="252.6"/><line x1="85.9" y1="281.4" x2="99.1" y2="254.4"/><line x1="90.5" y1="283.5" x2="102.8" y2="256.1"/><line x1="95.2" y1="285.5" x2="106.5" y2="257.7"/><line x1="100" y1="287.4" x2="110.3" y2="259.2"/><line x1="104.8" y1="289" x2="114.1" y2="260.5"/><line x1="109.7" y1="290.5" x2="118" y2="261.7"/><line x1="114.6" y1="291.8" x2="121.9" y2="262.7"/><line x1="119.6" y1="293" x2="125.8" y2="263.6"/><line x1="124.6" y1="293.9" x2="129.8" y2="264.4"/><line x1="129.7" y1="294.7" x2="133.8" y2="265"/><line x1="134.7" y1="295.4" x2="137.9" y2="265.5"/><line x1="139.8" y1="295.8" x2="141.9" y2="265.9"/><line x1="144.9" y1="296.1" x2="145.9" y2="266.1"/><line x1="150" y1="296.2" x2="150" y2="266.2"/><line x1="155.1" y1="296.1" x2="154.1" y2="266.1"/><line x1="160.2" y1="295.8" x2="158.1" y2="265.9"/><line x1="165.3" y1="295.4" x2="162.1" y2="265.5"/><line x1="170.3" y1="294.7" x2="166.2" y2="265"/><line x1="175.4" y1="293.9" x2="170.2" y2="264.4"/><line x1="180.4" y1="293" x2="174.2" y2="263.6"/><line x1="185.4" y1="291.8" x2="178.1" y2="262.7"/><line x1="190.3" y1="290.5" x2="182" y2="261.7"/><line x1="195.2" y1="289" x2="185.9" y2="260.5"/><line x1="200" y1="287.4" x2="189.7" y2="259.2"/><line x1="204.8" y1="285.5" x2="193.5" y2="257.7"/><line x1="209.5" y1="283.5" x2="197.2" y2="256.1"/><line x1="214.1" y1="281.4" x2="200.9" y2="254.4"/><line x1="218.6" y1="279.1" x2="204.5" y2="252.6"/><line x1="223.1" y1="276.6" x2="208.1" y2="250.6"/><line x1="227.5" y1="274" x2="211.6" y2="248.5"/><line x1="231.7" y1="271.2" x2="215" y2="246.3"/><line x1="235.9" y1="268.3" x2="218.3" y2="244"/><line x1="240" y1="265.2" x2="221.5" y2="241.5"/><line x1="244" y1="262" x2="224.7" y2="239"/><line x1="247.8" y1="258.6" x2="227.7" y2="236.3"/><line x1="251.5" y1="255.1" x2="230.7" y2="233.6"/><line x1="255.1" y1="251.5" x2="233.6" y2="230.7"/><line x1="258.6" y1="247.8" x2="236.3" y2="227.7"/><line x1="262" y1="244" x2="239" y2="224.7"/><line x1="265.2" y1="240" x2="241.5" y2="221.5"/><line x1="268.3" y1="235.9" x2="244" y2="218.3"/><line x1="271.2" y1="231.7" x2="246.3" y2="215"/><line x1="274" y1="227.5" x2="248.5" y2="211.6"/><line x1="276.6" y1="223.1" x2="250.6" y2="208.1"/><line x1="279.1" y1="218.6" x2="252.6" y2="204.5"/><line x1="281.4" y1="214.1" x2="254.4" y2="200.9"/><line x1="283.5" y1="209.5" x2="256.1" y2="197.2"/><line x1="285.5" y1="204.8" x2="257.7" y2="193.5"/><line x1="287.4" y1="200" x2="259.2" y2="189.7"/><line x1="289" y1="195.2" x2="260.5" y2="185.9"/><line x1="290.5" y1="190.3" x2="261.7" y2="182"/><line x1="291.8" y1="185.4" x2="262.7" y2="178.1"/><line x1="293" y1="180.4" x2="263.6" y2="174.2"/><line x1="293.9" y1="175.4" x2="264.4" y2="170.2"/><line x1="294.7" y1="170.3" x2="265" y2="166.2"/><line x1="295.4" y1="165.3" x2="265.5" y2="162.1"/><line x1="295.8" y1="160.2" x2="265.9" y2="158.1"/><line x1="296.1" y1="155.1" x2="266.1" y2="154.1"/><line x1="296.2" y1="150" x2="266.2" y2="150"/><line x1="296.1" y1="144.9" x2="266.1" y2="145.9"/><line x1="295.8" y1="139.8" x2="265.9" y2="141.9"/><line x1="295.4" y1="134.7" x2="265.5" y2="137.9"/><line x1="294.7" y1="129.7" x2="265" y2="133.8"/><line x1="293.9" y1="124.6" x2="264.4" y2="129.8"/><line x1="293" y1="119.6" x2="263.6" y2="125.8"/><line x1="291.8" y1="114.6" x2="262.7" y2="121.9"/><line x1="290.5" y1="109.7" x2="261.7" y2="118"/><line x1="289" y1="104.8" x2="260.5" y2="114.1"/><line x1="287.4" y1="100" x2="259.2" y2="110.3"/><line x1="285.5" y1="95.2" x2="257.7" y2="106.5"/><line x1="283.5" y1="90.5" x2="256.1" y2="102.8"/><line x1="281.4" y1="85.9" x2="254.4" y2="99.1"/><line x1="279.1" y1="81.4" x2="252.6" y2="95.5"/><line x1="276.6" y1="76.9" x2="250.6" y2="91.9"/><line x1="274" y1="72.5" x2="248.5" y2="88.4"/><line x1="271.2" y1="68.3" x2="246.3" y2="85"/><line x1="268.3" y1="64.1" x2="244" y2="81.7"/><line x1="265.2" y1="60" x2="241.5" y2="78.5"/><line x1="262" y1="56" x2="239" y2="75.3"/><line x1="258.6" y1="52.2" x2="236.3" y2="72.3"/><line x1="255.1" y1="48.5" x2="233.6" y2="69.3"/><line x1="251.5" y1="44.9" x2="230.7" y2="66.4"/><line x1="247.8" y1="41.4" x2="227.7" y2="63.7"/><line x1="244" y1="38" x2="224.7" y2="61"/><line x1="240" y1="34.8" x2="221.5" y2="58.5"/><line x1="235.9" y1="31.7" x2="218.3" y2="56"/><line x1="231.7" y1="28.8" x2="215" y2="53.7"/><line x1="227.5" y1="26" x2="211.6" y2="51.5"/><line x1="223.1" y1="23.4" x2="208.1" y2="49.4"/><line x1="218.6" y1="20.9" x2="204.5" y2="47.4"/><line x1="214.1" y1="18.6" x2="200.9" y2="45.6"/><line x1="209.5" y1="16.5" x2="197.2" y2="43.9"/><line x1="204.8" y1="14.5" x2="193.5" y2="42.3"/><line x1="200" y1="12.6" x2="189.7" y2="40.8"/><line x1="195.2" y1="11" x2="185.9" y2="39.5"/><line x1="190.3" y1="9.5" x2="182" y2="38.3"/><line x1="185.4" y1="8.2" x2="178.1" y2="37.3"/><line x1="180.4" y1="7" x2="174.2" y2="36.4"/><line x1="175.4" y1="6.1" x2="170.2" y2="35.6"/><line x1="170.3" y1="5.3" x2="166.2" y2="35"/><line x1="165.3" y1="4.6" x2="162.1" y2="34.5"/><line x1="160.2" y1="4.2" x2="158.1" y2="34.1"/><line x1="155.1" y1="3.9" x2="154.1" y2="33.9"/></svg>
-</div>
+        </div>      
+<svg id="indoor feels weather34" width="120px" height="120px" viewBox="0 0 600 600" version="1.1" >
+<path fill="#4b545c" opacity="1.00" d=" M 277.33 44.31 C 278.81 43.77 280.41 44.04 281.96 43.97 C 292.95 44.05 303.94 43.96 314.93 44.00 C 316.43 43.98 317.71 44.94 319.14 45.28 C 370.84 48.81 421.06 69.16 461.23 101.80 C 484.64 121.11 504.91 144.32 520.29 170.51 C 529.82 187.64 538.71 205.33 544.10 224.25 C 549.63 241.34 553.03 259.10 554.58 276.97 C 554.34 279.46 556.30 281.50 556.02 284.00 C 555.96 294.97 556.03 305.95 556.00 316.92 C 556.01 318.75 554.62 320.26 554.65 322.09 C 553.77 334.85 551.54 347.48 548.62 359.93 C 544.55 375.59 539.76 391.16 532.66 405.74 C 529.53 413.86 524.89 421.23 520.80 428.87 C 497.75 467.88 464.45 500.92 424.85 523.03 C 393.09 540.82 357.49 551.88 321.18 554.73 C 319.46 555.22 317.85 556.22 316.00 556.02 C 305.03 555.96 294.05 556.03 283.08 556.00 C 281.24 556.01 279.73 554.61 277.90 554.63 C 220.65 549.93 165.37 524.80 123.95 485.05 C 99.37 461.65 79.41 433.39 65.94 402.23 C 56.79 382.45 51.18 361.22 47.48 339.80 C 46.82 333.22 45.44 326.71 45.37 320.08 C 45.43 318.24 43.96 316.76 44.00 314.93 C 43.99 302.98 44.00 291.03 44.00 279.08 C 46.47 268.72 46.73 257.91 49.38 247.55 C 61.60 188.21 95.92 133.80 144.07 97.05 C 178.88 70.12 220.79 52.43 264.41 46.46 C 268.71 45.70 273.16 45.68 277.33 44.31 M 276.43 80.50 C 242.35 84.05 209.20 95.83 180.44 114.44 C 132.01 145.51 96.52 196.15 84.41 252.45 C 78.65 278.28 77.90 305.16 81.43 331.36 C 86.10 364.11 98.21 395.82 116.76 423.22 C 129.29 441.93 144.79 458.60 162.32 472.70 C 198.21 501.45 243.29 518.62 289.27 520.58 C 332.32 522.81 375.94 512.08 412.93 489.90 C 444.45 471.19 471.17 444.45 489.90 412.94 C 510.51 378.44 521.45 338.21 520.78 298.01 C 520.70 252.89 505.95 207.98 479.55 171.43 C 448.08 127.28 399.81 95.37 346.72 84.21 C 323.71 79.09 299.85 78.21 276.43 80.50 Z" />
+<path fill="#1f1f1f" opacity="1.00" d=" M 276.43 80.50 C 299.85 78.21 323.71 79.09 346.72 84.21 C 399.81 95.37 448.08 127.28 479.55 171.43 C 505.95 207.98 520.70 252.89 520.78 298.01 C 521.45 338.21 510.51 378.44 489.90 412.94 C 471.17 444.45 444.45 471.19 412.93 489.90 C 375.94 512.08 332.32 522.81 289.27 520.58 C 243.29 518.62 198.21 501.45 162.32 472.70 C 144.79 458.60 129.29 441.93 116.76 423.22 C 98.21 395.82 86.10 364.11 81.43 331.36 C 77.90 305.16 78.65 278.28 84.41 252.45 C 96.52 196.15 132.01 145.51 180.44 114.44 C 209.20 95.83 242.35 84.05 276.43 80.50 M 286.41 150.46 C 242.51 154.25 200.72 178.50 176.17 215.17 C 162.81 234.07 154.66 256.34 151.24 279.17 C 147.21 309.14 152.07 340.35 165.68 367.40 C 176.33 388.48 191.81 407.16 210.97 421.04 C 249.80 450.25 303.35 458.22 349.12 442.07 C 379.21 431.96 405.62 411.69 423.60 385.58 C 448.45 350.20 456.72 303.60 445.26 261.87 C 442.59 251.03 438.74 240.45 433.33 230.67 C 425.90 216.47 416.41 203.29 404.75 192.24 C 373.92 161.88 329.44 146.38 286.41 150.46 Z" />
+<path fill="<?php 
+if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>78.8)echo "#d35d4e";
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>64.4)echo "#ff832f";
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>59)echo "#e6a141";
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>0)echo "#44a6b5";
+else if ($weather["temp_indoor_feel"]>=26) echo "#d35d4e";
+else if ($weather["temp_indoor_feel"]>18) echo "#ff832f";
+elseif ($weather["temp_indoor_feel"]>15) echo "#e6a141";
+else if ($weather["temp_indoor_feel"]>=0) echo "#44a6b5";
+?>" opacity="1.00" d=" M 286.41 150.46 C 329.44 146.38 373.92 161.88 404.75 192.24 C 416.41 203.29 425.90 216.47 433.33 230.67 C 438.74 240.45 442.59 251.03 445.26 261.87 C 456.72 303.60 448.45 350.20 423.60 385.58 C 405.62 411.69 379.21 431.96 349.12 442.07 C 303.35 458.22 249.80 450.25 210.97 421.04 C 191.81 407.16 176.33 388.48 165.68 367.40 C 152.07 340.35 147.21 309.14 151.24 279.17 C 154.66 256.34 162.81 234.07 176.17 215.17 C 200.72 178.50 242.51 154.25 286.41 150.46 Z" />
+</svg>
 <div class=indoorsvgnestvalue>  
 <?php echo number_format($weather["temp_indoor_feel"],1);?><?php echo "<smalluvunit>&deg;",$weather["temp_units"]?></div>
-
+<div class="trendicon"><?php 
+if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>78.8)echo $heatindexwu;
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>64.4)echo $heatindexwu;
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>59)echo $airqualitybreeze;
+else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"]>0)echo $windchillwu;
+else if ($weather["temp_indoor_feel"]>=26) echo $heatindexwu;
+else if ($weather["temp_indoor_feel"]>18) echo $heatindexwu;
+elseif ($weather["temp_indoor_feel"]>15) echo $airqualitybreeze;
+else if ($weather["temp_indoor_feel"]>=0) echo $windchillwu;
+?></div>
 <?php
 if($weather["temp_units"]=='F' && $weather["temp_indoor_feel"] >78.8)echo "<div class='weather34indoorhot'>Hot";   
 else if($weather["temp_units"]=='F' &&  $weather["temp_indoor_feel"] >64.4)echo "<div class='weather34indoorwarm'>Warm";
@@ -346,9 +318,44 @@ else if($weather["temp_indoor_feel"] >26)echo "<div class='weather34indoorhot'>H
 else if($weather["temp_indoor_feel"] >18)echo "<div class='weather34indoorwarm'>Warm";
 else if($weather["temp_indoor_feel"]<12)echo "<div class='weather34indoorcold'>Cold";
 else if($weather["temp_indoor_feel"]<=18)echo "<div class='weather34indoormild'>Mild";
-?></div>
+?></div></div>
+</div></div>
+</article>  
+
+<?php if($purpleairhardware=='yes'){?>
+<article> 
+   <div class=actualt>Air Quality</div>        
    
+ <div class=indoorsvgnest> 
+ <div class="output">
+           <small><?php 
+if($aqiweather["aqi"] >300)echo "Hazardous";
+else if($aqiweather["aqi"] >200)echo "Very Unhealthy";
+else if($aqiweather["aqi"] >150)echo "Unhealthy";
+else if($aqiweather["aqi"] >100)echo "Sensitive";
+else if($aqiweather["aqi"] >50)echo "Moderate ";
+else if($aqiweather["aqi"] >=0)echo "Good ";
+?> </small>           
+        </div>      
+<svg id="indoor air quality weather34" width="120px" height="120px" viewBox="0 0 600 600" version="1.1" >
+<path fill="#4b545c" opacity="1.00" d=" M 277.33 44.31 C 278.81 43.77 280.41 44.04 281.96 43.97 C 292.95 44.05 303.94 43.96 314.93 44.00 C 316.43 43.98 317.71 44.94 319.14 45.28 C 370.84 48.81 421.06 69.16 461.23 101.80 C 484.64 121.11 504.91 144.32 520.29 170.51 C 529.82 187.64 538.71 205.33 544.10 224.25 C 549.63 241.34 553.03 259.10 554.58 276.97 C 554.34 279.46 556.30 281.50 556.02 284.00 C 555.96 294.97 556.03 305.95 556.00 316.92 C 556.01 318.75 554.62 320.26 554.65 322.09 C 553.77 334.85 551.54 347.48 548.62 359.93 C 544.55 375.59 539.76 391.16 532.66 405.74 C 529.53 413.86 524.89 421.23 520.80 428.87 C 497.75 467.88 464.45 500.92 424.85 523.03 C 393.09 540.82 357.49 551.88 321.18 554.73 C 319.46 555.22 317.85 556.22 316.00 556.02 C 305.03 555.96 294.05 556.03 283.08 556.00 C 281.24 556.01 279.73 554.61 277.90 554.63 C 220.65 549.93 165.37 524.80 123.95 485.05 C 99.37 461.65 79.41 433.39 65.94 402.23 C 56.79 382.45 51.18 361.22 47.48 339.80 C 46.82 333.22 45.44 326.71 45.37 320.08 C 45.43 318.24 43.96 316.76 44.00 314.93 C 43.99 302.98 44.00 291.03 44.00 279.08 C 46.47 268.72 46.73 257.91 49.38 247.55 C 61.60 188.21 95.92 133.80 144.07 97.05 C 178.88 70.12 220.79 52.43 264.41 46.46 C 268.71 45.70 273.16 45.68 277.33 44.31 M 276.43 80.50 C 242.35 84.05 209.20 95.83 180.44 114.44 C 132.01 145.51 96.52 196.15 84.41 252.45 C 78.65 278.28 77.90 305.16 81.43 331.36 C 86.10 364.11 98.21 395.82 116.76 423.22 C 129.29 441.93 144.79 458.60 162.32 472.70 C 198.21 501.45 243.29 518.62 289.27 520.58 C 332.32 522.81 375.94 512.08 412.93 489.90 C 444.45 471.19 471.17 444.45 489.90 412.94 C 510.51 378.44 521.45 338.21 520.78 298.01 C 520.70 252.89 505.95 207.98 479.55 171.43 C 448.08 127.28 399.81 95.37 346.72 84.21 C 323.71 79.09 299.85 78.21 276.43 80.50 Z" />
+<path fill="#1f1f1f" opacity="1.00" d=" M 276.43 80.50 C 299.85 78.21 323.71 79.09 346.72 84.21 C 399.81 95.37 448.08 127.28 479.55 171.43 C 505.95 207.98 520.70 252.89 520.78 298.01 C 521.45 338.21 510.51 378.44 489.90 412.94 C 471.17 444.45 444.45 471.19 412.93 489.90 C 375.94 512.08 332.32 522.81 289.27 520.58 C 243.29 518.62 198.21 501.45 162.32 472.70 C 144.79 458.60 129.29 441.93 116.76 423.22 C 98.21 395.82 86.10 364.11 81.43 331.36 C 77.90 305.16 78.65 278.28 84.41 252.45 C 96.52 196.15 132.01 145.51 180.44 114.44 C 209.20 95.83 242.35 84.05 276.43 80.50 M 286.41 150.46 C 242.51 154.25 200.72 178.50 176.17 215.17 C 162.81 234.07 154.66 256.34 151.24 279.17 C 147.21 309.14 152.07 340.35 165.68 367.40 C 176.33 388.48 191.81 407.16 210.97 421.04 C 249.80 450.25 303.35 458.22 349.12 442.07 C 379.21 431.96 405.62 411.69 423.60 385.58 C 448.45 350.20 456.72 303.60 445.26 261.87 C 442.59 251.03 438.74 240.45 433.33 230.67 C 425.90 216.47 416.41 203.29 404.75 192.24 C 373.92 161.88 329.44 146.38 286.41 150.46 Z" />
+<path fill="<?php 
+if($aqiweather["aqi"]>300)echo "#99020d";
+else if($aqiweather["aqi"]>200)echo "#a968b3";
+else if($aqiweather["aqi"]>150)echo "#d35d4e";
+else if($aqiweather["aqi"]>100)echo "#d05f2d";
+else if ($aqiweather["aqi"]>=50) echo "#e6a141";
+else if ($aqiweather["aqi"]>=0) echo "#90b12a";
+?>" opacity="1.00" d=" M 286.41 150.46 C 329.44 146.38 373.92 161.88 404.75 192.24 C 416.41 203.29 425.90 216.47 433.33 230.67 C 438.74 240.45 442.59 251.03 445.26 261.87 C 456.72 303.60 448.45 350.20 423.60 385.58 C 405.62 411.69 379.21 431.96 349.12 442.07 C 303.35 458.22 249.80 450.25 210.97 421.04 C 191.81 407.16 176.33 388.48 165.68 367.40 C 152.07 340.35 147.21 309.14 151.24 279.17 C 154.66 256.34 162.81 234.07 176.17 215.17 C 200.72 178.50 242.51 154.25 286.41 150.46 Z" />
+</svg>    
+<div class=indoorsvgnestvalue> <?php echo $aqiweather["aqi"];?></div>
+<div class="trendicon"><?php echo $airqualitybreeze;?></div>
+<div class="weather34indoorpm">PM 2.5</div></div>
+</div></div>
 </article> 
+<?php ;}?>
+
 <article>
    <div class=actualt>Temperature Guide</div>        
  <span style="font-size:.9em;">    
