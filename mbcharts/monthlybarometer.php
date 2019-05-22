@@ -95,6 +95,7 @@
 			var chart = new CanvasJS.Chart("chartContainer", {
 				backgroundColor: '<?php echo $backgroundcolor;?>',
 				animationEnabled: true,
+				animationDuration: <?php echo $animationduration;?>,
 				title: {
 					text: "",
 					fontSize: 12,
@@ -104,7 +105,7 @@
 				toolTip:{
 					fontStyle: "normal",
 					cornerRadius: 4,
-					backgroundColor: '<?php echo $backgroundcolor;?>',
+					backgroundColor: '<?php echo $tooltipbackgroundcolor;?>',
 					contentFormatter: function(e) {
 						var str = '<span style="color: <?php echo $fontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
 						for (var i = 0; i < e.entries.length; i++) {
@@ -176,6 +177,7 @@
 					// High Barometer
 					type: "spline",
 					color: '<?php echo $line1color;?>',
+					lineColor: '<?php echo $line1linecolor;?>',
 					markerSize:0,
 					showInLegend:true,
 					legendMarkerType: "circle",

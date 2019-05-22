@@ -46,8 +46,6 @@
 		$minimum = '28';
 	}
 
-  $animationduration = '500';
-
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -103,30 +101,37 @@
 
 	function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer2", {
-		backgroundColor: "rgba(40, 45, 52,.4)",
-		 animationEnabled: false,
+		backgroundColor: '<?php echo $darkbackgroundcolor;?>',
+		 animationEnabled: true,
+		 animationDuration: <?php echo $animationduration;?>,
 		 margin: 0,
 
 
 		title: {
             text: " ",
 			fontSize: 11,
-			fontColor: '#aaa',
+			fontColor: '<?php echo $darkfontcolor;?>',
 			fontFamily: "arial",
         },
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
-			   backgroundColor: "rgba(40, 45, 52,1)",	
-			   fontColor: '#aaa',	
+			   backgroundColor: '<?php echo $darktooltipbackgroundcolor;?>',
 			   fontSize: 11,	   
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label} ",
+			   contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $darkfontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(<?php echo $pressdecimal;?> + 1) + "<?php echo ' '.$pressureunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
 			   shared: true, 
  },
 		axisX: {
-			gridColor: '#333',
+			gridColor: '<?php echo $darkgridcolor;?>',
 		    labelFontSize: 10,
-			labelFontColor: '#aaa',
+			labelFontColor: '<?php echo $darkfontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
 			titleFontFamily: "arial",
@@ -139,17 +144,17 @@
 			crosshair: {
 				enabled: true,
 				snapToDataPoint: true,
-				color: '<?php echo $xcrosshaircolor;?>',
+				color: '<?php echo $darkxcrosshaircolor;?>',
 				labelFontColor: "#F8F8F8",
 				labelFontSize:11,
-				labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+				labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
 			}
 
 			},
 
 		axisY:{
 		title: "",
-		titleFontColor: '#aaa',
+		titleFontColor: '<?php echo $darkfontcolor;?>',
 		titleFontSize: 0,
         titleWrap: false,
 		margin: 0,
@@ -157,10 +162,10 @@
 		gridThickness: 1,
 		interval: <?php echo $int;?>,
         includeZero: false,
-		gridColor: '#333',
+		gridColor: '<?php echo $darkgridcolor;?>',
 		labelFontSize: 8,
 		gridDashType: "dot",
-		labelFontColor: '#aaa',
+		labelFontColor: '<?php echo $darkfontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		maximum: <?php echo $maximum;?>,
@@ -174,7 +179,6 @@
 			color: '<?php echo $ycrosshaircolor;?>',
 			labelFontColor: "#F8F8F8",
 			labelFontSize:8,
-			labelBackgroundColor: "#ff832f",
 			labelMaxWidth: 60,
 			labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
 			valueFormatString:"##0.# <?php echo $pressureunit ;?>",
@@ -184,7 +188,7 @@
 
 	  legend:{
       fontFamily: "arial",
-      fontColor: '#aaa',
+      fontColor: '<?php echo $darkfontcolor;?>',
 
  },
 
@@ -193,7 +197,8 @@
 		{
 			// High Barometer
 			type: "spline",
-			color: 'rgba(255, 131, 47, 1.000)',
+			color: '<?php echo $darkline1color;?>',
+			lineColor: '<?php echo $line1linecolor;?>',
 			markerSize:0,
 			showInLegend:false,
 			legendMarkerType: "circle",
@@ -206,13 +211,13 @@
 		{
 			// Low Barometer
 			type: "spline",
-			color: 'rgba(0, 164, 180, 1.000)',
+			color: '<?php echo $darkline2color;?>',
 			markerSize:0,
-      markerColor: 'rgba(0, 164, 180, 1.000)',
+      		markerColor: '<?php echo $darkline2markercolor;?>',
 			showInLegend:false,
 			legendMarkerType: "circle",
 			lineThickness: 2,
-      lineColor: 'rgba(0, 164, 180, 1.000)',
+      		lineColor: '<?php echo $darkline2color;?>',
 			markerType: "circle",
 			name:"Lo Barometer",
 			dataPoints: dataPoints2,

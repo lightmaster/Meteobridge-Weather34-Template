@@ -44,7 +44,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
   -webkit-border-radius:4px;
   border-radius:4px;
   background:0;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
-  height:160px  
+  height:200px  
 }  
 
   
@@ -210,7 +210,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 
 </article>  
-
+</main>
  <main class="grid1">
   <articlegraph> 
   <div class=actualt>Today <span style="color:#ff9350">UV-INDEX</div>  

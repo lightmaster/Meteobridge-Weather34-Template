@@ -23,7 +23,6 @@
 	$conv = '1';
 	}
 
-	$animationduration = '500';
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -90,7 +89,7 @@
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
-			   backgroundColor: '<?php echo $backgroundcolor;?>',
+			   backgroundColor: '<?php echo $tooltipbackgroundcolor;?>',
 			   contentFormatter: function(e) {
       var str = '<span style="color: <?php echo $fontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
       for (var i = 0; i < e.entries.length; i++) {
@@ -169,6 +168,7 @@
 			//type: "spline",
 			type: "splineArea",
 			color: '<?php echo $line1color;?>',
+			lineColor: '<?php echo $line1linecolor;?>',
 			markerSize:0,
 			showInLegend:true,
 			legendMarkerType: "circle",

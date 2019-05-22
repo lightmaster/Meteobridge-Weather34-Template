@@ -18,8 +18,6 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
 
-	$animationduration = '500';
-
   $conv = 1;
 	if ($rainunit == 'in') {
     $conv = '0.0393701';
@@ -92,30 +90,37 @@
 	
 	function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer2", {
-		backgroundColor: "rgba(40, 45, 52,.4)",
-		 animationEnabled: false,
+		backgroundColor: '<?php echo $darkbackgroundcolor;?>',
+		animationEnabled: true,
+		animationDuration: <?php echo $animationduration;?>,
 		 margin: 0,
 
 
 		title: {
             text: " ",
 			fontSize: 11,
-			fontColor: '#aaa',
+			fontColor: '<?php echo $darkfontcolor;?>',
 			fontFamily: "arial",
         },
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
-			   backgroundColor: "rgba(40, 45, 52,1)",	
-			   fontColor: '#aaa',	
+			   backgroundColor: '<?php echo $darktooltipbackgroundcolor;?>',
 			   fontSize: 11,	   
-			   toolTipContent: " x: {x} y: {y} <br/> name: {name}, label:{label} ",
+			   contentFormatter: function(e) {
+      var str = '<span style="color: <?php echo $darkfontcolor;?>;">' + CanvasJS.formatDate(e.entries[0].dataPoint.label, "DD MMM") + '</span><br/>';
+      for (var i = 0; i < e.entries.length; i++) {
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(2) + "<?php echo ' '.$rainunit ;?>" + '</span> <br/>';
+        str = str.concat(temp);
+      }
+      return (str);
+    },
 			   shared: true, 
  },
 		axisX: {
-			gridColor: '#333',
+			gridColor: '<?php echo $darkgridcolor;?>',
 		    labelFontSize: 10,
-			labelFontColor: '#aaa',
+			labelFontColor: '<?php echo $darkfontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
 			gridDashType: "dot",
@@ -128,16 +133,16 @@
 			crosshair: {
         enabled: true,
         snapToDataPoint: true,
-        color: '<?php echo $xcrosshaircolor;?>',
+        color: '<?php echo $darkxcrosshaircolor;?>',
         labelFontColor: "#F8F8F8",
         labelFontSize:11,
-        labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+        labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
       }
     },
 
 		axisY:{
 		title: "",
-		titleFontColor: '#aaa',
+		titleFontColor: '<?php echo $darkfontcolor;?>',
 		titleFontSize: 10,
         titleWrap: false,
 		margin: 0,
@@ -146,9 +151,9 @@
 		gridDashType: "dot",
 		interval: 'auto',
         includeZero: false,
-		gridColor: '#333',
+		gridColor: '<?php echo $darkgridcolor;?>',
 		labelFontSize: 10,
-		labelFontColor: '#aaa',
+		labelFontColor: '<?php echo $darkfontcolor;?>',
 		titleFontFamily: "arial",
 		labelFontFamily: "arial",
 		labelFormatter: function ( e ) {
@@ -157,18 +162,20 @@
 		crosshair: {
 			enabled: true,
 			snapToDataPoint: true,
-			color: 'rgba(0, 164, 180, 1.000)>',
+			color: '<?php echo $darkxcrosshaircolor;?>',
 			labelFontColor: "#fff",
-			labelFontSize:9,
+			labelFontSize:10,
 			labelMaxWidth: 60,
-			labelBackgroundColor: "#44a6b5",
-			valueFormatString: "#0.##'<?php echo $rainunit ?>'",
+			labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
+			labelFormatter: function ( e ) {
+        return e.value .toFixed(<?php echo $raindecimal;?>) + " <?php echo $rainunit ;?> " ;
+         },
 		}
       },
 
 	  legend:{
       fontFamily: "arial",
-      fontColor: '#aaa',
+      fontColor: '<?php echo $darkfontcolor;?>',
 
  },
 
@@ -177,13 +184,13 @@
 		{
 			//rainfall
 			type: "column",
-			color: 'rgba(0, 164, 180, 1.000)',
+			color: '<?php echo $darkline2color;?>',
 			markerSize:0,
-      markerColor: 'rgba(0, 164, 180, 1.000)',
+      markerColor: '<?php echo $darkline2color;?>',
 			showInLegend:false,
 			legendMarkerType: "circle",
 			lineThickness: 0,
-     		//lineColor: 'rgba(0, 164, 180, 1.000)',
+     		//lineColor: '<?php echo $darkline2color;?>',
 			markerType: "none",
 			name:"Total Rainfall",
 			dataPoints: dataPoints1,
