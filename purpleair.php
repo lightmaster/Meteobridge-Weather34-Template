@@ -157,7 +157,7 @@ aqred{color:#d35d4e}aqpurple{color:rgba(151, 88, 190, 1.000)}aqorange{color:#d05
                 display: block;
                 margin:0;
                 padding: 0;
-                font-size: 12px;
+                font-size: 1em;
                 color:rgba(255,255,255,1);
 				margin-left:10px;
 				margin-top:-5px;
@@ -180,7 +180,7 @@ aqred{color:#d35d4e}aqpurple{color:rgba(151, 88, 190, 1.000)}aqorange{color:#d05
 if($aqiweather["aqi"] >300)echo "Hazardous";
 else if($aqiweather["aqi"] >200)echo "Very Unhealthy";
 else if($aqiweather["aqi"] >150)echo "Unhealthy";
-else if($aqiweather["aqi"] >100)echo "Sensitive";
+else if($aqiweather["aqi"] >100)echo "Unhealthy<br>For Some";
 else if($aqiweather["aqi"] >50)echo "Moderate ";
 else if($aqiweather["aqi"] >=0)echo "Good ";
 ?> </small>           
