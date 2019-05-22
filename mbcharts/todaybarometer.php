@@ -188,7 +188,7 @@ $(document).ready(function () {
 				markerSize:0,
 				showInLegend:true,
 				legendMarkerType: "circle",
-				lineThickness: 2,
+				lineThickness: 0,
 				markerType: "circle",
 				name:"Barometer",
 				dataPoints: dataPoints1,
