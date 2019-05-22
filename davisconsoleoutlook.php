@@ -2,8 +2,8 @@
 <div class="vp2container"><div class="consoleoutlook">
 <?php  //weather34 script Davis forecast outlook
 $weather["vpforecasttext"]	=str_replace('with little', '<ogreen>No Significant </ogreen>', $weather["vpforecasttext"]);
-$weather["vpforecasttext"]	=str_replace('and warmer.', 'turning <oorange>Warmer </oorange>.', $weather["vpforecasttext"]);
-$weather["vpforecasttext"]	=str_replace('and cooler.', 'turning <oblue>Cooler </oblue>.', $weather["vpforecasttext"]);
+$weather["vpforecasttext"]	=str_replace('and warmer.', 'turning <oorange>Warmer</oorange>.', $weather["vpforecasttext"]);
+$weather["vpforecasttext"]	=str_replace('and cooler.', 'turning <oblue>Cooler</oblue>.', $weather["vpforecasttext"]);
 $weather["vpforecasttext"]	=str_replace('and ending', 'for', $weather["vpforecasttext"]);
 $weather["vpforecasttext"]	=str_replace('to the', '', $weather["vpforecasttext"]);
 $weather["vpforecasttext"]	=str_replace('shift', 'shifting', $weather["vpforecasttext"]);
