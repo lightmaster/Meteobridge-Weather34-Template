@@ -26,6 +26,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
   font-size:0.8em;
   -webkit-border-radius:4px;
   border-radius:4px;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
+  height:90px
 }
 .grid1 { 
   display: grid;
@@ -57,17 +58,16 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 .hitempyposx{position:relative;top:-90px;margin-left:40px;margin-bottom:-30px}
 .hitempypos{position:absolute;margin-top:-100px;margin-left:40px;margin-bottom:20px;display:block;}
 .hitempd{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:5px;}
-.hitempd1{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:40px;}
-.actual{font-size:2rem;float:right;position:absolute;left:120px;top:25px;background:0;padding:2px;font-weight:normal;color:rgba(74, 99, 111, 0.5);margin-bottom:5px;}
-.actual1{font-size:11px;float:none;position:absolute;left:10px;top:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(86, 95, 103, 0.2);padding:1px;font-weight:normal;
-margin-bottom:5px;}.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}
-.hitemp{color:#aaa;font-size:0.7rem;display:inline;}
-.hitemp span{color:rgba(255, 124, 57, 1.000)}
+.hitempd1{position:absolute;font-family:weathertext2,Arial, Helvetica, sans-serif;background:rgba(86, 95, 103, 0.3);color:#aaa;font-size:0.7rem;width:140px;padding:0;margin-left:30px;padding-left:3px;align-items:center;justify-content:center;display:block;margin-top:40px;margin-bottom:5px;}
+.uvmaxi3{position:absolute;left:-30px;color:rgba(0, 154, 171, 1.000);margin-top:-40px;font-size:16px;width:240px;}.uvmaxi3 span{color:#aaa}
+
+.higust{position:relative;left:0;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:2em;font-size:0.8rem;padding-top:2px;color:#aaa;align-items:center;justify-content:center;margin-bottom:10px;top:0}
 blue{color:rgba(0, 154, 171, 1.000)}
 .temperaturecontainer1{position:absolute;left:20px;margin-top:-5px;margin-bottom:20px;}
 .temperaturecontainer2{position:absolute;left:20px;margin-top:60px}
 smalluvunit{font-size:.85rem;font-family:Arial,Helvetica,system;}
-.uvcontainer1{left:70px;top:0}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-family:weathertext2,Arial,Helvetica,system;width:6rem;height:3.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-size:1.5rem;padding-top:2px;color:#fff;border-bottom:15px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
+.uvcontainer1{left:70px;top:0}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:2.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex}.uvtoday1,.uvtoday1-3,.uvtoday11,.uvtoday4-5,.uvtoday6-8,.uvtoday9-10{font-size:1.25rem;padding-top:2px;color:#fff;border-bottom:5px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
 .uvcaution,.uvtrend{position:absolute;font-size:1rem}
 .uvtoday1,.uvtoday1-3{background:#9aba2f}
 .uvtoday4-5{background:#ff7c39;background:-webkit-linear-gradient(90deg,#90b12a,#ff7c39);background:linear-gradient(90deg,#90b12a,#ff7c39)}
@@ -81,7 +81,7 @@ sup{font-size:1em}supwm2{font-size:0.7em;vertical-align:super}
 .hitempy{position:relative;background:rgba(61, 64, 66, 0.5);color:#aaa;width:90px;padding:1px;-webit-border-radius:2px;border-radius:2px;
 margin-top:-20px;margin-left:92px;padding-left:3px;line-height:11px;font-size:9px}
 .actualt{position:relative;left:0;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
-padding:5px;font-family:Arial, Helvetica, sans-serif;width:140px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
+padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
 align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .actualw{position:relative;left:5px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
 padding:5px;font-family:Arial, Helvetica, sans-serif;width:100px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
@@ -91,7 +91,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
   
 <main class="grid">
   <article>  
-   <div class=actualt>Max Solar  Today </div>        
+   <div class=actualt>Today </div>        
    <div class="temperaturecontainer">
 	
              <?php
@@ -109,14 +109,14 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Highest Solar W/m<supwm2>2</supwm2> <br><span><?php echo $weather["solardmaxtime"];?></span></div>
+<div class="higust">Maximum Recorded <br><blue><?php echo $weather["solardmaxtime"];?></blue></div>
 
 
 
 </article>  
 
  <article> 
-  <div class=actualt>Max Solar Yesterday </div>        
+  <div class=actualt>Yesterday </div>        
    <div class="temperaturecontainer">
 	
              <?php
@@ -134,14 +134,14 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Highest Solar W/m<supwm2>2</supwm2> <br><span><?php echo $weather["solarydmaxtime"];?></span></div>
+<div class="higust">Maximum Recorded <br><blue><?php echo $weather["solarydmaxtime"];?></blue></div>
 
 
 
 </article>  
   
   <article> 
-  <div class=actualt>Max Solar <?php echo date('F Y')?> </div>        
+  <div class=actualt><?php echo date('F Y')?> </div>        
    <div class="temperaturecontainer">
 	
              <?php
@@ -159,7 +159,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Highest Solar W/m<supwm2>2</supwm2> <br><span><?php echo $weather["solarmmaxtime"];?></span></div>
+<div class="higust">Maximum Recorded <br><blue><?php echo $weather["solarmmaxtime"];?></blue></div>
 
 
 
@@ -168,7 +168,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
   
   
     <article> 
-  <div class=actualt>Max Solar <?php echo date('Y')?> </div>        
+  <div class=actualt>Current Year <?php echo date('Y')?> </div>        
    <div class="temperaturecontainer">
 	
              <?php
@@ -186,7 +186,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 </div>
 
-<div class="higust">Highest Solar W/m<supwm2>2</supwm2> <br><span><?php echo $weather["solarymaxtime"];?></span></div>
+<div class="higust">Maximum Recorded <br><blue><?php echo $weather["solarymaxtime"];?></blue></div>
 
 
 
