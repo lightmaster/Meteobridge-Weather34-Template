@@ -14,7 +14,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 .grid { 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 2fr));
-  grid-gap: 5px;
+  grid-gap: 10px;
   align-items: stretch;
   color:#f5f7fc;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
   
@@ -30,7 +30,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 }
 .grid1 { 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(770px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
   grid-gap: 5px;
     color:#f5f7fc;
   
@@ -44,7 +44,7 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
   -webkit-border-radius:4px;
   border-radius:4px;
   background:0;-webkit-font-smoothing: antialiased;	-moz-osx-font-smoothing: grayscale;
-  height:170px  
+  height:210px  
 }  
 
   
@@ -212,11 +212,11 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 
 </article>  
-
+</main>
  <main class="grid1">
   <articlegraph> 
   <div class=actualt>Today <span style="color:#ff9350">UV-INDEX</div>  
-  <iframe  src="mbcharts/todayuvsmall.php" frameborder="0" scrolling="no" width="100%"></iframe>
+  <iframe  src="mbcharts/todayuvsmall.php" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
    
   </articlegraph> 
   
