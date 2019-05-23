@@ -8,6 +8,12 @@ support is available via the Github issues function or via email support@baxleyw
 Github repository for the Meteobridge version of the original weather34 template 
 Weather Template for Meteobridge users only 
 
+# This work is not permitted to be used in any other versions without prior permission unless listed below 
+# Permission is granted for use in Cumulus version maintained by Ken True 
+# Permission is granted for use in Weewx version maintained by Ian Millard
+
+*This work means CSS/SVG/PHP .
+
 # important  for those not using mysql and using weather underground for chart data unfortunately this is no longer supported and only mysql is supported .this has been on the cards for sometime and crosschecking some sites i have to hand using the wucharts option i see no chart data any longer.sorry for any inconvience but it is not a template issue. the issue lies with weather underground and it looks like they may have discontinued this facility .If it returns in some form it may be possible to use again but it will have to be a tried and tested feature of weather underground .as of today 19th May 2019 the option and related files were removed ..brian
 
 # Basic Setup guide 
@@ -87,7 +93,7 @@ http://creativecommons.org/licenses/by-nc-nd/4.0/
  
  Boris at smartbedded (meteobridge) for ongoing support and upkeep of meteobridge 
  
- Wim van der Kuil for the original meteobridge script (now offers Weather Display and other versions of template)
+ Wim van der Kuil for the original meteobridge script
  
  David St John at weatherflow for providing hardware for testing and his non bias logical views 
  
