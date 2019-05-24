@@ -11,6 +11,7 @@ Weather Template for Meteobridge users only
 
 # This work is not permitted to be used in any other versions without prior permission unless listed below 
 Permission is granted for use in Cumulus version maintained by Ken True 
+
 Permission is granted for use in Weewx version maintained by Ian Millard
 
 *This work means CSS/SVG/PHP .
