@@ -1,7 +1,7 @@
 # This repository is maintained William (aka lightmaster)
 
 William will be maintaining on behalf of Brian Underdown .Brian no longer wishes to contribute
-and does want to stifle progress .
+and does not want to stifle progress .
 Please use the support available via the Github issues function or via email support@baxleyweather.com
 
 
