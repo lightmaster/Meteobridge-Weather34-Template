@@ -93,7 +93,7 @@
 			   contentFormatter: function(e) {
       var str = '<span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
       for (var i = 0; i < e.entries.length; i++) {
-        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(0) + ' UVi</span> <br/>';
+        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + ' UVi</span> <br/>';
         str = str.concat(temp);
       }
       return (str);
@@ -149,7 +149,7 @@
 			labelMaxWidth: 60,
 			labelBackgroundColor: '<?php echo $darkycrosshaircolor;?>',
 			labelFormatter: function ( e ) {
-        return e.value .toFixed(0);
+        return e.value .toFixed(1);
          },
 		}
       },
@@ -173,7 +173,7 @@
 			markerType: "circle",
 			name:"UV-INDEX",
 			dataPoints: dataPoints1,
-			yValueFormatString:"#0 UVI",
+			yValueFormatString:"#0.0 UVI",
 		}
 
 		]

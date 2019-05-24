@@ -45,7 +45,7 @@ $(document).ready(function () {
 		var allLinesArray = allText.split('\n');
 		if(allLinesArray.length>0){
 			for (var i = 1; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/\�|\"|\u0000/g,'').split(',');
 				if ( rowData.length >0){
 					dataPoints1.push({label:rowData[0],y:parseFloat(rowData[8])});
 				}
@@ -60,7 +60,7 @@ $(document).ready(function () {
 		var allLinesArray = allText.split('\n');
 		if(allLinesArray.length>0){
 			for (var i = 100; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/\�|\"|\u0000/g,'').split(',');
 				if ( rowData.length >0) {
 					dataPoints2.push({label: rowData[0],y:parseFloat(rowData[3]*1.60934)});
 				}

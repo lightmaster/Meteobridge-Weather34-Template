@@ -53,7 +53,7 @@
 		if(allLinesArray.length>1){
 			//hi
 			for (var i = 0; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/\�|\"|\u0000/g,'').split(',');
 				if ( rowData.length >7)
 					dataPoints1.push({label: rowData[0],y:parseFloat(rowData[1]*<?php echo $conv ;?>)});
 			}
@@ -65,7 +65,7 @@
 		if(allLinesArray.length>1){
 			//lo
 			for (var i = 0; i <= allLinesArray.length-1; i++) {
-				var rowData = allLinesArray[i].replace(/�|\"/g,'').split(',');
+				var rowData = allLinesArray[i].replace(/\�|\"|\u0000/g,'').split(',');
 				if ( rowData.length >7)
 					dataPoints2.push({label: rowData[0],y:parseFloat(rowData[2]*<?php echo $conv ;?>)});
 
