@@ -29,12 +29,16 @@ mbridge/lastupdated.php
 #Ignore all backup files
 *.bak
 *.orig
+*.old
 *.bak.*
 *.orig.*
+*.old.*
 **/*.bak
 **/*.orig
+**/*.old
 **/*.bak.*
 **/*.orig.*
+**/*.old.*
 
 #Ignore Log files
 *.log

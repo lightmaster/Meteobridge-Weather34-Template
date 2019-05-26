@@ -8,7 +8,7 @@
 8 [rain0rate-act:--] 
 9 [rain0total-daysum:--] 
 10 [thb0seapress-act:--] 
-11 [wind0dir-act:--] 
+11 [wind0dir-avg5:--] 
 12 [wind0wind-act=bft.0:--] 
 13 m/s 
 14 C 
@@ -181,11 +181,6 @@
 181 [th0dew-avg5:--] 
 182 [rain0rate-avg5:--] 
 183 [th0hum-avg5:--] 
-
-split
-
-1_[forecast-text:] *this string must always be last due to it outputs text with spaces betwen each word 
+184 _[forecast-text:] *this string must always be last due to it outputs text with spaces betwen each word 
 
 [DD]/[MM]/[YYYY] [hh]:[mm]:[ss] [th0temp-act:--] [th0hum-act:--] [th0dew-act:--] [wind0avgwind-act:--] [wind0wind-act:--] [wind0dir-act:--] [rain0rate-act:--] [rain0total-daysum:--] [thb0seapress-act:--] [wind0dir-avg5:--] [wind0wind-act=bft.0:--] m/s C hPa mm [wind0wind-avg5:--] [thb0seapress-val60:--] [rain0total-monthsum:--] [rain0total-yearsum:--] [rain0total-ydaysum:--] [thb0temp-act:--] [thb0hum-act:--] [wind0chill-act:--] [th0temp-val60:--] [th0temp-dmax:--] [th0temp-dmaxtime:--] [th0temp-dmin:--] [th0temp-dmintime:--] [wind0avgwind-dmax:--] [wind0avgwind-dmaxtime:--] [wind0wind-dmax:--] [wind0wind-dmaxtime:--] [thb0seapress-dmax:--] [thb0seapress-dmaxtime:--] [thb0seapress-dmin:--] [thb0seapress-dmintime:--] [mbsystem-swversion:--] [mbsystem-buildnum:--] [wind0wind-max10:--] [mbsystem-platform:--] -- [uv0index-act:--] [rain0total-sum24h:--] [sol0rad-act:--] [wind0dir-avg10:--] [rain0total-sum60:--] [th0dew-mmax:--] [th0dew-mmaxtime:--] [th0dew-mmin:--] [th0dew-mmintime:--] [th0dew-ydmax:--] [th0dew-ydmaxtime:--] [th0dew-ymax:--] [th0dew-ymaxtime:--] [th0dew-ymin:--] [th0dew-ymintime:--] [uv0index-dmax:--] [th0hum-dmax:--] [th0hum-dmaxtime:--] [th0hum-dmin:--] [th0hum-dmintime:--] [th0dew-dmax:--] [th0dew-dmaxtime:--] [th0dew-dmin:--] [th0dew-dmintime:--] [th0temp-val15:—] [th0hum-val15:—] [th0dew-val15:—] [thb0temp-val15:—] [thb0hum-val15.0:--] [wind0wind-avg15:—] [wind0wind-avg30:—] [lgt0energy-act:--] [lgt0dist-act:--] [lgt0dist-age:--] [lgt0total-daysum.0:--] [lgt0total-monthsum.0:--] [lgt0total-yearsum.0:--] [sol0rad-dmax:--] [mbsystem-uptime:—-] [th0temp-ydmax:--] [th0temp-ydmaxtime:--] [th0temp-ydmin:--] [th0temp-ydmintime:--] [th0temp-mmax:--] [th0temp-mmaxtime:--] [th0temp-mmin:--] [th0temp-mmintime:--] [th0temp-ymax:--] [th0temp-ymaxtime:--] [th0temp-ymin:--] [th0temp-ymintime:--] [wind0wind-ydmax:--] [wind0wind-ydmaxtime:--] [wind0wind-mmax:--] [wind0wind-mmaxtime:--] [wind0wind-ymax:--] [wind0wind-ymaxtime:--] [rain0total-ydmax:--] [rain0total-mmax:--] [rain0total-mmintime:--] [rain0total-ymax:--] [rain0total-ymaxtime:--] [sol0rad-dmax:--] [sol0rad-dmaxtime:--] [sol0rad-ydmax:--] [sol0rad-ydmaxtime:--] [sol0rad-mmax:--] [sol0rad-mmaxtime:--] [sol0rad-ymax:--] [sol0rad-ymaxtime:—] [uv0index-dmaxtime:--] [uv0index-ydmax:--] [uv0index-ydmaxtime:--] [uv0index-mmax:--] [uv0index-mmaxtime:--] [uv0index-ymax:--] [uv0index-ymaxtime:--] [th0dew-ydmin:--] [th0dew-ydmintime:--] [mbsystem-lastgooddata:--] [th0temp-avg60:--] [rain0total-nonzerotime:--] [th0temp-amax:--] [th0temp-amaxtime:--] [th0temp-amin:--] [th0temp-amintime:--] [th0dew-amax:--] [th0dew-amaxtime:--] [th0dew-amin:--] [th0dew-amintime:--] [wind0wind-amax:--] [wind0wind-amaxtime:--] [thb0seapress-ydmax:--] [thb0seapress-ydmaxtime:--] [thb0seapress-ydmin:--] [thb0seapress-ydmintime:--] [thb0seapress-mmax:--] [thb0seapress-mmaxtime:--] [thb0seapress-mmin:--] [thb0seapress-mmintime:--] [thb0seapress-ymax:--] [thb0seapress-ymaxtime:--] [thb0seapress-ymin:--] [thb0seapress-ymintime:--] [thb0seapress-amax:--] [thb0seapress-amaxtime:--] [thb0seapress-amin:--] [thb0seapress-amintime:--] [rain0total-allsum:--] [th0temp-davg:--] [mbsystem-lunarsegment:--] [mbsystem-lunarpercent:--] [mbsystem-daylength:--] [mbsystem-moonrise:--] [mbsystem-moonset:--] [wind0wind-davg:--] [th0hum-mmax:--] [th0hum-mmaxtime:--] [th0hum-mmin:--] [th0hum-mmintime:--] [th0hum-ymax:--] [th0hum-ymaxtime:--] [th0hum-ymin:--] [th0hum-ymintime:--] [th0hum-ydmax:--] [th0hum-ydmaxtime:--] [th0hum-ydmin:--] [th0hum-ydmintime:--] [thb0lowbat-act:--] [th0lowbat-act:--] [rain0total-max@M1:--] [rain0total-max@Y1:--] [air0pm-act:--] [th0temp-avg5:--] [thb0seapress-avg5:--] [uv0index-avg5:--] [wind0avgwind-avg5:--] [sol0rad-avg5:--] [th0dew-avg5:--] [rain0rate-avg5:--] [th0hum-avg5:--] _[forecast-text:]
-
-
