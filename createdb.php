@@ -46,7 +46,7 @@ $sql = "CREATE TABLE `weatherstation` (
   `outsideTemp` decimal(10,1) NOT NULL,
   `barometer` decimal(10,2) NOT NULL,
   `raintoday` decimal(10,2) NOT NULL,
-  `UV` decimal(10,0) NOT NULL,
+  `UV` decimal(10,1) NOT NULL,
   `windgustmph` decimal(10,1) NOT NULL,
   `windSpeed` decimal(10,1) NOT NULL,
   `radiation` decimal(10,2) NOT NULL,
