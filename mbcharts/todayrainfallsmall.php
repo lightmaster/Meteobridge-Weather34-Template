@@ -17,19 +17,23 @@
 	
 	include('chartslivedata.php');header('Content-type: text/html; charset=utf-8');
 	$conv = 1;
-	if ($uk == true && $windunit == 'mph') {$conv= '1';}	
-	else if ($windunit == 'mph'){$conv= '0.0393701';}
-	else if ($usa == true) {$conv= '0.0393701';}
-	else if ($usa == true && $windunit == 'mph') {$conv= '0.0393701';}
-	else if ($restoftheworld == true && $metric == 'true') {$conv= '1';}
-	else if ($restoftheworld == true && $metric == 'false') {$conv= '0.0393701';}
-	else if ($restoftheworld == true && $windunit == 'mph') {$conv= '0.0393701';}
-	else $conv;
-	$interval = 1;
+	if ($rainunit == 'in') {
+		$conv = '0.0393701';
+	} else if ($rainunit == 'mm') {
+		$conv = '1';
+	}
+
+	if ($rainunit == 'mm'){
+		$raindecimal = '0';
+	} else {
+		$raindecimal = '2';
+	}
+
+	/*$interval = 1;
 	if ($uk == true && $windunit == 'mph') {$interval= '1';}
 	else if ($windunit == 'mph') {$interval= '0.5';}
 	else if ($windunit == 'm/s') {$interval= '1';}
-	else if ($windunit == 'km/h'){$interval= '1';}
+	else if ($windunit == 'km/h'){$interval= '1';}*/
     echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -124,7 +128,7 @@
 		titleFontSize: 6,
         titleWrap: false,
 		margin: 3,
-		interval:0.5,
+		interval:'auto',
 		lineThickness: 1,		
 		gridThickness: 0,	
 		gridDashType: "dot",	
