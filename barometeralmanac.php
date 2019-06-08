@@ -58,8 +58,8 @@ html,body{font-size:13px;font-family: "weathertext2", Helvetica, Arial, sans-ser
 .temperaturetoday0,.temperaturetoday10,.temperaturetoday18,.temperaturetoday24,.temperaturetoday30{font-family:weathertext2,Arial,Helvetica,system;width:5rem;height:1.5rem;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;display:flex;font-size:.9rem;padding-top:2px;color:#fff;border-bottom:5px solid rgba(56,56,60,1);align-items:center;justify-content:center;border-radius:3px;margin-bottom:10px;}
 .temperaturecaution,.temperaturetrend,.temperaturetrend1{position:absolute;font-size:1rem}
 .temperaturetoday0{background:rgba(68, 166, 181, 1.000)} .temperaturetoday10{background:rgba(144, 177, 42, 1.000)}.temperaturetoday18{background:rgba(230, 161, 65, 1.000)}.temperaturetoday24{background:rgba(255, 124, 57, 1.000)}.temperaturetoday30{background:rgba(211, 93, 78, 1.000)}
-.temperaturetrend{margin-left:70px;margin-top:-38px;z-index:1;color:#fff;font-size:.65rem;width:60px;text-align:center;}
-.temperaturetrend1{margin-left:70px;margin-top:-38px;z-index:1;color:#fff;font-size:.65rem;width:60px;text-align:center;}
+.temperaturetrend{margin-left:67px;margin-top:-38px;z-index:1;color:#fff;font-size:.65rem;width:70px;text-align:center;}
+.temperaturetrend1{margin-left:67px;margin-top:-38px;z-index:1;color:#fff;font-size:.65rem;width:70px;text-align:center;}
 smalluvunit{font-size:.65rem;font-family:Arial,Helvetica,system;}
 .w34convertrain{position:relative;font-size:.5em;top:10px;color:#c0c0c0;margin-left:5px}
 
@@ -67,7 +67,7 @@ smalluvunit{font-size:.65rem;font-family:Arial,Helvetica,system;}
 margin-top:-40px;margin-left:130px;padding-left:3px;line-height:11px;font-size:8px}
 .actualt{position:relative;left:0px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;background:rgba(74, 99, 111, 0.1);
 padding:5px;font-family:Arial, Helvetica, sans-serif;width:120px;height:0.8em;font-size:0.8rem;padding-top:2px;color:#aaa;
-align-items:center;justify-content:center;margin-bottom:10px;top:0}
+align-items:center;justify-content:center;margin-bottom:10px;top:0;text-align:center;}
 
 
 
@@ -86,7 +86,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
 
-    <div class="temperaturetrend">Max<br><?php echo $weather["thb0seapressmaxtime"];?></span></div>
+    <div class="temperaturetrend"><span style='color:rgba(255, 124, 57, 1.000)'><b>Max</b></span><br><?php echo $weather["thb0seapressmaxtime"];?></span></div>
 	</div>
 <div class="temperaturecontainer2">
  <?php
@@ -96,7 +96,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
-<div class="temperaturetrend">Min<br><?php echo $weather["thb0seapressmintime"];?></span></div>
+<div class="temperaturetrend"><span style='color:rgba(68, 166, 181, 1.000)'><b>Min</b></span><br><?php echo $weather["thb0seapressmintime"];?></span></div>
 </article>
 
  <article>
@@ -110,7 +110,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
 
-    <div class="temperaturetrend">Max<br> <?php echo $weather["thb0seapressydmaxtime"];?></span></div>
+    <div class="temperaturetrend"><span style='color:rgba(255, 124, 57, 1.000)'><b>Max</b></span><br> <?php echo $weather["thb0seapressydmaxtime"];?></span></div>
 			</div>
 
 
@@ -122,7 +122,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
-<div class="temperaturetrend">Min<br> <?php echo $weather["thb0seapressydmintime"];?></span></div>
+<div class="temperaturetrend"><span style='color:rgba(68, 166, 181, 1.000)'><b>Min</b></span><br> <?php echo $weather["thb0seapressydmintime"];?></span></div>
 
 </article>
 
@@ -137,7 +137,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 	echo "<div class='temperaturetoday24'>",$weather["thb0seapressmmax"] . "</value>";}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
-    <div class="temperaturetrend">Max<br> <?php echo $weather["thb0seapressmonthmaxtime"];?></span>
+    <div class="temperaturetrend"><span style='color:rgba(255, 124, 57, 1.000)'><b>Max</b></span><br> <?php echo $weather["thb0seapressmonthmaxtime"];?></span>
     </div>
 	</div>
 <div class="temperaturecontainer2">
@@ -147,7 +147,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 	echo "<div class='temperaturetoday0'>",$weather["thb0seapressmmin"] . "</value>";}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
-<div class="temperaturetrend">Min<br> <?php echo $weather["thb0seapressmonthmintime"];?></span>
+<div class="temperaturetrend"><span style='color:rgba(68, 166, 181, 1.000)'><b>Min</b></span><br> <?php echo $weather["thb0seapressmonthmintime"];?></span>
 </div>	</div>
 </article>
 
@@ -163,7 +163,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
 
-    <div class="temperaturetrend1">Max<br> <?php echo $weather["thb0seapressyearmaxtime"];?></span></div>
+    <div class="temperaturetrend1"><span style='color:rgba(255, 124, 57, 1.000)'><b>Max</b></span><br> <?php echo $weather["thb0seapressyearmaxtime"];?></span></div>
 			</div>
 
 
@@ -175,7 +175,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
-<div class="temperaturetrend1">Min<br> <?php echo $weather["thb0seapressyearmintime"];?></span></div>
+<div class="temperaturetrend1"><span style='color:rgba(68, 166, 181, 1.000)'><b>Min</b></span><br> <?php echo $weather["thb0seapressyearmintime"];?></span></div>
 
 </article>
 
@@ -191,7 +191,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?> </div>
 
-    <div class="temperaturetrend1">Max<br><?php echo $weather["thb0seapressamaxtime"];?></span></div>
+    <div class="temperaturetrend1"><span style='color:rgba(255, 124, 57, 1.000)'><b>Max</b></span><br><?php echo $weather["thb0seapressamaxtime"];?></span></div>
 			</div>
 
 
@@ -203,7 +203,7 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 
 	echo "<smalluvunit>".$weather["barometer_units"]."</smalluvunit>"
 	?>  </div>
-<div class="temperaturetrend1">Min<br><?php echo $weather["thb0seapressamintime"];?></span></div>
+<div class="temperaturetrend1"><span style='color:rgba(68, 166, 181, 1.000)'><b>Min</b></span><br><?php echo $weather["thb0seapressamintime"];?></span></div>
 
 </article>
   </main>

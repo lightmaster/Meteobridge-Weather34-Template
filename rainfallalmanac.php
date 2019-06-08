@@ -242,7 +242,8 @@ purple {
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
-    top: 0
+    top: 0;
+    text-align: center;
 }
 
 .actual {
@@ -341,7 +342,7 @@ metricsblue {
     position: relative;
     background: rgba(61, 64, 66, 0.5);
     color: #aaa;
-    width: 70px;
+    width: 75px;
     padding: 1px;
     -webit-border-radius: 2px;
     border-radius: 2px;
@@ -381,7 +382,7 @@ elseif($weather["rain_units"] =='in'){ echo number_format($weather["rainydmax"]*
 ?>
 <div></div>
 
-<div class="hitempy"><?php echo $raininfo . "Last 24 Hours<blue> ", $weather["rain_24hrs"]."</blue> " .$weather["rain_units"] ?></div>
+<div class="hitempy"><?php echo $raininfo;?>Last 24 Hours<br/><blue><?php echo $weather["rain_24hrs"];?></blue> <?php echo $weather["rain_units"] ?></div>
 </article>
 
 
@@ -396,8 +397,10 @@ elseif($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]
 ?>
 <div></div>
 
-<div class="hitempy"><?php if ($meteobridgeapi[124]=='--'){echo "";}else echo $raininfo." Last <blue>Rainfall </blue>";?>
-<?php if ($meteobridgeapi[124]=='--'){echo $raininfo,"<blue>Rainfall</blue> N/A";}else echo " ".$rainlasttime?></div>
+<div class="hitempy">
+    <?php echo $raininfo;?>Last Rainfall<br/>
+    <blue><?php if ($meteobridgeapi[124]=='--'){ echo "Unknown"; } else { echo $rainlasttime;}?></blue>
+</div>
 </article>
 
 
@@ -412,8 +415,9 @@ elseif($weather["rain_units"] =='in'){ echo number_format($weather["rain_year"]*
 ?>
 <div></div>
 
-<div class="hitempy"><?php echo $raininfo;?><blue>Rainfall</blue><br>
-Since Jan <?php echo date('Y');?></div>
+<div class="hitempy"><?php echo $raininfo;?><!--<blue>Rainfall</blue>-->Since<br/>
+    <blue>Jan <?php echo date('Y');?></blue>
+</div>
 </article>
 
 <article>
@@ -433,8 +437,9 @@ elseif($weather["rain_units"] =='in'){ echo number_format($weather["rain_alltime
 ?>
 <div></div>
 
-<div class="hitempy"><?php echo $raininfo;?><blue>Rainfall</blue><br>
-Since Jan 2018 </div>
+<div class="hitempy"><?php echo $raininfo;?><!--<blue>Rainfall</blue>-->Since<br/>
+    <blue><?php echo $weather['rainStartTime'];?></blue>
+</div>
 </article> </main>
 
 

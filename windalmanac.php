@@ -360,7 +360,8 @@ metricsblue {
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 10px;
-	top: 0
+	top: 0;
+	text-align: center;
 }
 
 .actualw {

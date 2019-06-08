@@ -316,13 +316,13 @@ $weather["humidity_ydmintime"]=$humydmintime;
 	
 	//rain
 	$originalDate12 = $meteobridgeapi[102];
-    $rainmmaxtime = date("jS F", strtotime($originalDate12));	
+    $rainmmaxtime = date("jS M", strtotime($originalDate12));	
 	$originalDate13 = $meteobridgeapi[104];
-    $rainymaxtime = date("jS F Y", strtotime($originalDate13));	
+    $rainymaxtime = date("jS M Y", strtotime($originalDate13));	
 	$originalDate124 = $meteobridgeapi[124];
-    $rainlasttime = date("jS F Y ", strtotime($originalDate124));		
+    $rainlasttime = date("jS M Y ", strtotime($originalDate124));		
 	$originalDate25 = $meteobridgeapi[124];
-    $rainlastmonth = date("F", strtotime($originalDate25));		
+    $rainlastmonth = date("M", strtotime($originalDate25));		
 	$originalDate26 = $meteobridgeapi[124];
     $rainlasttoday = date("H:i", strtotime($originalDate26));
 	$originalDate27 = $meteobridgeapi[124];
@@ -349,9 +349,9 @@ $weather["humidity_ydmintime"]=$humydmintime;
 	
 	//month
 	$baromaxoriginalDateb2 = $meteobridgeapi[140];
-    $baromaxtimemonth = date("jS F", strtotime($baromaxoriginalDateb2));	
+    $baromaxtimemonth = date("jS M", strtotime($baromaxoriginalDateb2));
 	$barominoriginalDateb3 = $meteobridgeapi[142];
-    $baromintimemonth = date("jS F", strtotime($barominoriginalDateb3));		
+    $baromintimemonth = date("jS M", strtotime($barominoriginalDateb3));		
 	$weather["thb0seapressmonthmaxtime"]	= $baromaxtimemonth; //seconds	
 	$weather["thb0seapressmonthmintime"]	= $baromintimemonth; //seconds
 	$weather["thb0seapressmmax"]	= $meteobridgeapi[139]; //max month
@@ -359,9 +359,9 @@ $weather["humidity_ydmintime"]=$humydmintime;
 	
 	//year
 	$baromaxoriginalDateb4 = $meteobridgeapi[144];
-    $baromaxtimeyear = date("jS F", strtotime($baromaxoriginalDateb4));	
+    $baromaxtimeyear = date("jS M", strtotime($baromaxoriginalDateb4));
 	$barominoriginalDateb5 = $meteobridgeapi[146];
-    $baromintimeyear = date("jS F", strtotime($barominoriginalDateb5));		
+    $baromintimeyear = date("jS M", strtotime($barominoriginalDateb5));		
 	$weather["thb0seapressyearmaxtime"]	= $baromaxtimeyear; //seconds	
 	$weather["thb0seapressyearmintime"]	= $baromintimeyear; //seconds
 	$weather["thb0seapressymax"]	= $meteobridgeapi[143]; //max year
@@ -369,9 +369,9 @@ $weather["humidity_ydmintime"]=$humydmintime;
 	
 	//all time
 	$baromaxoriginalDateb6 = $meteobridgeapi[148];
-    $baromaxtimeall = date("jS F Y", strtotime($baromaxoriginalDateb6));	
+    $baromaxtimeall = date("jS M Y", strtotime($baromaxoriginalDateb6));	
 	$barominoriginalDateb7 = $meteobridgeapi[150];
-    $baromintimeall = date("jS F Y", strtotime($barominoriginalDateb7));		
+    $baromintimeall = date("jS M Y", strtotime($barominoriginalDateb7));		
 	$weather["thb0seapressamaxtime"]	= $baromaxtimeall; //seconds	
 	$weather["thb0seapressamintime"]	= $baromintimeall; //seconds
 	$weather["thb0seapressamax"]	= $meteobridgeapi[147]; //max all time
@@ -689,8 +689,7 @@ if ($response != null) {
 
 
 $o='Designed by weather34.com';
-?>
-<?php 
+ 
 date_default_timezone_set($TZ);
 // meteor shower alternative by betejuice cumulus forum
 $meteor_default="No Meteor";
@@ -753,15 +752,30 @@ $eclipse_events[]=array("event_start"=>mktime(0, 0, 0, 1, 3 , 2020),"event_title
 //output eclipse events
 $eclipseNow=time();$eclipseOP=false;foreach ($eclipse_events as $eclipse_check) {if ($eclipse_check["event_start"]<=$eclipseNow&&$eclipseNow<=$eclipse_check["event_end"]) {$eclipseOP=true;$eclipse_default=$eclipse_check["event_title"];}};	
 //end lunar and solar eclipse /meteor shpwers advisory 2018-2019-2020
-?>
-<?php // firerisk based on cumulus forum thread http://sandaysoft.com/forum/viewtopic.php?f=14&t=2789&sid=77ffab8f6f2359e09e6c58d8b13a0c3c&start=30
-$firerisk = number_format((((110 - 1.373 * $weather["humidity"] ) - 0.54 * (10.20 - $weather["temp"] )) * (124 * pow(10,(-0.0142 * $weather["humidity"] ))))/60,0);?>
-<?php //wetbulb
+
+// firerisk based on cumulus forum thread http://sandaysoft.com/forum/viewtopic.php?f=14&t=2789&sid=77ffab8f6f2359e09e6c58d8b13a0c3c&start=30
+$firerisk = number_format((((110 - 1.373 * $weather["humidity"] ) - 0.54 * (10.20 - $weather["temp"] )) * (124 * pow(10,(-0.0142 * $weather["humidity"] ))))/60,0);
+
+//wetbulb
 $Tc =($weather['temp']);$P = $weather['barometer'];$RH = $weather['humidity'];
 $Tdc = (($Tc - (14.55 + 0.114 * $Tc) * (1 - (0.01 * $RH)) - pow((2.5 + 0.007 * $Tc) * (1 - (0.01 * $RH)) , 3) - (15.9 + 0.117 * $Tc) * pow(1 - (0.01 * $RH),  14)));
 $E = (6.11 * pow(10 , (7.5 * $Tdc / (237.7 + $Tdc))));
 $wetbulbcalc = (((0.00066 * $P) * $Tc) + ((4098 * $E) / pow(($Tdc + 237.7) , 2) * $Tdc)) / ((0.00066 * $P) + (4098 * $E) / pow(($Tdc + 237.7) , 2));
 $wetbulbx =number_format($wetbulbcalc,1);
 // K-INDEX & SOLAR DATA FOR WEATHER34 HOMEWEATHERSTATION TEMPLATE RADIO HAMS REJOICE :-) //
-$str = file_get_contents('jsondata/kindex.txt');$json = array_reverse(json_decode($str,false));$kp =  $json[1][1];?>
-<?php $file = $_SERVER["SCRIPT_NAME"];$break = Explode('/', $file);$mod34file = $break[count($break) - 1];?>
+$str = file_get_contents('jsondata/kindex.txt');$json = array_reverse(json_decode($str,false));$kp =  $json[1][1];
+$file = $_SERVER["SCRIPT_NAME"];$break = Explode('/', $file);$mod34file = $break[count($break) - 1];
+
+# Convert Start times for Pro and Nano SD, Other MBs unforunately don't provide this data
+if (is_numeric($meteobridgeapi[186]) && $meteobridgeapi[186] != '--') {
+	$weather['tempStartTime']	= date('M jS Y', strtotime($meteobridgeapi[186]));
+	$weather['windStartTime']	= date('M jS Y', strtotime($meteobridgeapi[187]));
+	$weather['pressStartTime']	= date('M jS Y', strtotime($meteobridgeapi[188]));
+	$weather['rainStartTime']	= date('M jS Y', strtotime($meteobridgeapi[189]));
+} else {
+	$weather['tempStartTime']	= 'All Time';
+	$weather['windStartTime']	= 'All Time';
+	$weather['pressStartTime']	= 'All Time';
+	$weather['rainStartTime']	= 'All Time';
+}
+?>
