@@ -71,9 +71,9 @@ if ($livedataFormat == 'meteobridge-api' && $livedata) {
 	$weather["wind_speed_avg"]     = $meteobridgeapi[5]; //Console's Average Wind Speed
 	$weather["wind_direction"]     = number_format($meteobridgeapi[7],0);
 	$weather["wind_direction_avg"] = number_format($meteobridgeapi[46],0);
-	$weather["wind_speed"]         = number_format($meteobridgeapi[5]); // Also the Console's Average Wind Speed
-  $weather["wind_gust_10min"]    = $meteobridgeapi[40]; // Wind Speed Gust - Max speed of last 10 minutes
-	$weather["wind_gust_speed"]    = $meteobridgeapi[6]; // Instanteous Speed
+	$weather["wind_speed"]         = number_format($meteobridgeapi[6]); // Instant Wind Speed
+	$weather["wind_gust_10min"]    = $meteobridgeapi[40]; // Wind Speed Gust - Max speed of last 10 minutes
+	$weather["wind_gust_speed"]    = $meteobridgeapi[40]; // 
 	$weather["wind_speed_bft"]     = $meteobridgeapi[12];
 	$weather["wind_speed_max"]     = $meteobridgeapi[30];	
 	$weather["wind_gust_speed_max"]= $meteobridgeapi[32];	

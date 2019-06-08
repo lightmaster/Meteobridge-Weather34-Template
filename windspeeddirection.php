@@ -11,15 +11,15 @@ require_once('livedata.php');require_once('common.php');?>
 <div class="updatedtime"><span><?php if(file_exists($livedata)&&time()- filemtime($livedata)>300)echo $offline. '<offline> Offline </offline>';else echo $online." ".$weather["time"];?></div> <br />
 <div class="windspeedvalues"><div class="windspeedvalue">
 <?php  
-//weather34-windspeed avg
+//weather34-windspeed instantaneous
 if ($weather["wind_speed"]<10){echo "&nbsp;".number_format($weather["wind_speed"],1);}else echo number_format($weather["wind_speed"],1);?>
-<div class="windunitidspeed"><?php echo $lang['Average'];?></div><div class="windunitspeed"><?php echo $weather["wind_units"]?></div></div>
+<div class="windunitidspeed"><?php echo $lang['Currently'];?></div><div class="windunitspeed"><?php echo $weather["wind_units"]?></div></div>
 <div class="windgustvalue">
 <?php 
 //weather34-windgust
 if ($weather["wind_gust_speed"]*$toKnots>=26.9978){echo "<windred>",number_format($weather["wind_gust_speed"],1),"</span>";}else if ($weather["wind_gust_speed"]*$toKnots>=21.5983){echo "<windorange>",number_format($weather["wind_gust_speed"],1),"</span>";}else if ($weather["wind_gust_speed"]*$toKnots>=16.1987){echo "<windgreen>",number_format($weather["wind_gust_speed"],1),"</span>";}else if ($weather["wind_gust_speed"]<10){echo "&nbsp;",number_format($weather["wind_gust_speed"],1);}else echo number_format($weather["wind_gust_speed"],1);?>
 <div class="windunitgust"><?php echo  $weather["wind_units"]?></div>
-<div class="windunitidgust"><?php echo $lang['Currently']; ?></div></span></div></div>
+<div class="windunitidgust"><?php echo $lang['Gust']; ?></div></span></div></div>
 <div class="windspeedtrend1">
 <?php echo "<valuetext>Max "."<max><value><maxred>".number_format($weather["wind_gust_speed_max"],1)."</maxred></max></span>"."<supmb> ".$weather["wind_units"]."</supmb><br> ".$lang['Gust']." (".$weather["winddmaxtime"].")</valuetext>";?></div>
 <div class="windconverter"><?php 
