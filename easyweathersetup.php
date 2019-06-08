@@ -70,6 +70,7 @@ $position12   = "'. $_POST["position12"]. '";
 $positionlastmoduletitle   = "'. $_POST["positionlastmoduletitle"]. '";
 $positionlastmodule   = "'. $_POST["positionlastmodule"]. '";
 $webcamurl   = "'. $_POST["webcamurl"]. '";
+$videoWeatherCamURL         = "'.$_POST["videoWeatherCamURL"].'";
 $email    = "'. $_POST["email"]. '";
 $twitter   = "'. $_POST["twitter"]. '";
 $theme1   = "'. $_POST["theme1"]. '";
@@ -94,7 +95,7 @@ $password    = "'.$_POST['password']. '";
 $flag   = "'.$_POST["flag"]. '";
 $dshourly   = "'.$_POST["dshourly"].'";
 $manifestShortName = "'.$_POST["manifestShortName"].'";
-';
+?>';
  
 $fp = FOPEN("settings1.php", "w") or die("Unable to open settings1.php file check file permissions !");
 FWRITE($fp, $string);
@@ -122,15 +123,15 @@ body{font-size:12px;font-family:Arial,Helvetica,sans-serif;color:#777;background
 function showForm($error="LOGIN"){ 
 ?> <?php echo $error; ?> 
   
-  <div class= "login_screen" style="width:60%;max-width:600px;margin:0 auto;color:rgba(24, 25, 27, 1.000);border:solid 1px grey;padding:10px;border-radius:4px;">  <?php echo 'Your Current PHP version is :<orange> ' . phpversion(), '</orange> <br>(PHP 5.6 or higher PHP 7+ is  advised if you are not already using these versions)'; ?>
+  <div class= "login_screen" style="width:60%;max-width:600px;margin:0 auto;color:rgba(24, 25, 27, 1.000);border:solid 1px grey;padding:10px;border-radius:4px;">  <?php echo 'Your Current PHP version is :<span style="color:rgba(236, 87, 27, 1.000);"> ' . phpversion(), '</span> <br/>(PHP 5.6 or higher PHP 7+ is  advised if you are not already using these versions)'; ?>
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="pwd" > 
    Enter Your Password For Meteobridge Setup Screen Below
 <center> <div class="modal-buttons">
      <input name="passwd" type="password" class="input-button"/>  <input type="submit" name="submit_pwd" value="Login " class="modal-button" /> 
          </form> 
      </center>
-      <?php echo "2015-" ;?><?php echo date('Y');?> &copy;</a> WEATHER34 MB-UB<orange>40</orange>-RRW</span></span></span>
-      <br><br>
+      <?php echo "2015-" ;?><?php echo date('Y');?> &copy;</a> WEATHER34 MB-UB<span style="color:rgba(236, 87, 27, 1.000);">40</span>-RRW</span></span></span>
+      <br/><br/>
         
 
   
@@ -161,7 +162,7 @@ if (isset($_POST['submit_pwd'])){    $pass = isset($_POST['passwd']) ? $_POST['p
 <div span style="width:390px;margin:0 auto;margin-top:10px;text-align:center;color:#4a636f;background:0;font-family:arial;padding:20px;border-radius:4px;border:1px solid rgba(74, 99, 111, 0.4);"> 
 <img src='img/easyweathersetupweather34.svg' width='120px'>
 <img src='img/nano.svg' width='40px' style="float:none;transform: rotate(100grad)"><img src='img/MeteobridgePRO.svg' width='60px' style="float:none;"><img src='img/TP-LINK.svg' width='60px' style="float:none;">
-<br>
+<br/>
 
 Welcome you have logged into the WEATHER34 Meteobridge setup screen <?php echo date("M jS Y H:i"); ?>
 </span>
@@ -171,55 +172,21 @@ Welcome you have logged into the WEATHER34 Meteobridge setup screen <?php echo d
 <div class="theframe1">
 <div class="theframe">
  
-<p>
+
 <form action="" method="post" name="install" id="install">
+
+<!--##########################################################################################
+    #########                        Start of Easy Password Sidebar                  #########
+    ##########################################################################################-->
+
 <div class="weatheroptionssidebar">
 <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> Please setup and password protect this page for later use it is for your privacy and protection.
-<br>
-
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-
-<br><br><br><br>
-
-
-
-
-
-<svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> Database uses the standard PHP connection strings for mySqli,you need to have database setup on server prior to using this feature.This feature currently only supports <strong>Meteobridge-API</strong> with direct server upload.
-
-
-
-<div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-check username password 
-
-<br><br><br><br>
-<div class="weatherbottominfo"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>  Setup the default language 
-
-<div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-check languages 
 </div>
 
-
-</div></div>
-
-
-</div>
-
-<p>
+<!--##########################################################################################
+    #########                        Start of Easy Password Section                  #########
+    ##########################################################################################-->
 
 <div class="weatheroptions">
   <div class= "weathersectiontitle"> 
@@ -227,7 +194,7 @@ check languages
     <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
     <circle cx="16" cy="16" r="4" />
 </svg>
-  Setup Unique Easysetup Password</div><p>
+  Setup Unique Easysetup Password</div><br/>
 
   
   <div class= "stationvalue">  Set Easysetup Password it is for your privacy & protection</div>
@@ -238,10 +205,28 @@ check languages
 
    
    </div>
-   
+   <br/>
+
+<!--##########################################################################################
+    #########                        Start of Database Sidebar                       #########
+    ##########################################################################################-->
+
+<div class="weatheroptionssidebar">
+<svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> Database uses the standard PHP connection strings for mySqli,you need to have database setup on server prior to using this feature.This feature currently only supports <strong>Meteobridge-API</strong> with direct server upload.
 
 
+<div class="weatherbottominfo">
+<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M2 20 L12 28 30 4" />
+</svg>
 
+check username password</div>
+</div>
+
+<!--##########################################################################################
+    #########                        Start of Database Section                       #########
+    ##########################################################################################-->
 
 <div class="weatheroptions">
   <div class= "weathersectiontitle"> 
@@ -249,7 +234,7 @@ check languages
     <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
     <circle cx="16" cy="16" r="4" />
 </svg>
-  Database Credentials</div><p>
+  Database Credentials</div><br/>
 
 <div class= "stationvalue">  Database Host</div>
 <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -263,7 +248,7 @@ check languages
     <path d="M12 30 L24 16 12 2" />
 </svg>
   <input name="db_user" type="text" id="db_user" value="<?php echo $db_user ;?>" class="choose">
-  <p>
+  <br/>
   
   <div class= "stationvalue">  Database Password</div>
 <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -276,23 +261,35 @@ check languages
     <path d="M12 30 L24 16 12 2" />
 </svg>
   <input name="db_name" type="text" id="db_name" value="<?php echo $db_name ;?>" class="choose">
-  
-  
-  
-  
-  
-   </div>
-    
-   
-   
-   <p>
-   
+</div>
+<br/><br/>
+
+<!--##########################################################################################
+    #########                        Start of Language Sidebar                       #########
+    ##########################################################################################-->
+
+<div class="weatheroptionssidebar">
+<svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>  Setup the default language 
+
+<div class="weatherbottominfo">
+<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M2 20 L12 28 30 4" />
+</svg>
+
+check languages</div>
+</div>
+
+<!--##########################################################################################
+    #########                        Start of Language Section                       #########
+    ##########################################################################################-->
+
    <div class="weatheroptions">
 <div class= "weathersectiontitle">
-Choose the default Language to display and use..</div>
+Choose the default Language to display and use</div>
 
 
-<p>
+<br/>
       <div class= "stationvalue"> 
       Template Language (lowercase)</div>
       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -322,10 +319,7 @@ Choose the default Language to display and use..</div>
            <option>tr</option> 
            <option>us</option>   
         </select>
-        <br><br>
-    
-
-<br>
+        <br/><br/>
 
  <div class= "stationvalue"> 
       Your Country Flag</div>
@@ -368,7 +362,7 @@ Choose the default Language to display and use..</div>
            <option>us</option>
            <option>wal</option>     
         </select>
-        <br><br>
+        <br/><br/>
   <div class= "stationvalue">DARK SKY Forecast Language  full list here <a href="https://darksky.net/dev/docs" title="https://darksky.net/dev/docs" target="_blank"><white>https://darksky.net/dev/docs</white></a></div> 
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -402,30 +396,33 @@ Choose the default Language to display and use..</div>
             
         </select> 
   </div>
-   
+  <br/>
+
+<!--##########################################################################################
+    #########                        Start of MB Sidebar                             #########
+    ##########################################################################################-->
       
-   <p>
    <div class="weatheroptionssidebar">
    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>  Meteobridge Hardware 
 
-     <br />
+     <br/><br/>
      
-    
-
-<div class="weatherbottominfo">
 <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M2 20 L12 28 30 4" />
 </svg>
 
 check path to data file 
+<br/><br/>
+<span style="color:rgba(86, 95, 103, 1.000)">
+     <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> getting the path correct is essential for live realtime data display <span style="color:#FF793A">(mbridge/MBrealtimeupload.txt)</span></span>
+<div class="weatherbottominfo"></div>
 </div>
 
-
-</div>
-
-   <p>
-
+<!--##########################################################################################
+    #########                        Start of MB Section                             #########
+    ##########################################################################################-->
 
    <div class="weatheroptions">
 <div class= "weathersectiontitle">
@@ -433,7 +430,7 @@ check path to data file
     <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
 </svg>
 
-METEOBRIDGE Software Path to Data file</div><p>
+METEOBRIDGE Software Path to Data file</div><br/>
       <div class= "stationvalue">Data Type</div>
       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -442,47 +439,24 @@ METEOBRIDGE Software Path to Data file</div><p>
 </svg>
  <label name="livedataFormat"></label>
         <select id="livedataFormat" name="livedataFormat" class="choose1">
-           <option ><?php echo $livedataFormat ;?></option>  
             <option>meteobridge-api</option>
-           
-          
-           
         </select>
-            
+        <br/>
         
-        </p>
-        
-    <div class= "stationvalue">Add Your Path to data file (mbridge/MBrealtimeupload.txt)</div> 
+    <div class= "stationvalue">Add Your Path to data file</div> 
+    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M12 30 L24 16 12 2" />
+    </svg>
     <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" /></svg><br>
+    <path d="M30 12 L16 24 2 12" /></svg>
 
   <input name="livedata" type="text" id="livedata" value="<?php echo $livedata ;?>" class="chooseapi">
-  
-  <br><br>
-       
-	<strong><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg></strong><span style="color:#777;"> METEOBRIDGE-API path example: http://yourdomain/mbridge/MBrealtimeupload.txt</span><br>
-	
-    <br>
-    
-    <strong><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg></strong><span style="color:#777;"> METEOBRIDGE path example: http://yourdomain/mbridge/MBrealtime.txt</span><br>
-	
-    <br>
-    <span style="color:rgba(86, 95, 103, 1.000)">
-    <strong> <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> getting the path correct is essential for live realtime data display (mbridge/MBrealtimeupload.txt)</strong></span>
-<p>
+  <br/>
+  <span style='color:red'>Do not change unless you know what you're doing</span>
+  <br/>
 
-
-
-<div class= "weathersectiontitle">
-<svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
-</svg>
-
-Meteobridge Chart Data (Fixed Option WU history charts no longer supported)</div><p>
-      <div class= "stationvalue">Fixed</div>
+<br/>
+      <div class= "stationvalue">Meteobridge Chart Data</div>
       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -490,25 +464,27 @@ Meteobridge Chart Data (Fixed Option WU history charts no longer supported)</div
 </svg>
  <label name="chartsource"></label>
         <select id="chartsource" name="chartsource" class="choose1">
-           <option ><?php echo $chartsource;?></option>  
             <option>mbcharts</option>         
            
         </select>
-           
-        
-        </p>
-        
-         <p>
-         
-         
-         <div class= "weathersectiontitle">
+    <br/>
+    <span style="color:red">(Fixed Option WU history charts no longer supported)</span>
+</div>
+<br/>
+
+<!--##########################################################################################
+    #########                        Start of Hardware Section                       #########
+    ##########################################################################################-->
+
+<div class="weatheroptions">
+<div class= "weathersectiontitle">
 <svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
 </svg>
 
-Davis Hardware (more future options currently just displays logo)</div><p>
+Hardware Options</div><br/><br/>
       <div class= "stationvalue"> 
-     If Davis Hardware Select Yes</div>
+     Using Davis Hardware?</div>
       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -521,23 +497,10 @@ Davis Hardware (more future options currently just displays logo)</div><p>
            <option>Yes</option>
            <option>No</option>
           </select>
-        <br><br>
-    
+        <br/><br/>
+         
 
-<br>
-         
-         
-         
-         
-         
-  <div class= "weathersectiontitle">
-<svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
-</svg>
-
-Your Weather Station Hardware</div><p>
-      <div class= "stationvalue"> 
-     Which Hardware Do You Own</div>
+      <div class= "stationvalue"> Your Weather Station Hardware</div>
       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -607,20 +570,10 @@ Your Weather Station Hardware</div><p>
            <option>Lufft WS3100 UMB</option>           
            <option>None of above</option>
         </select>
-        <br><br>
+        <br/><br/>
     
 
-<br>
-  
-  
-  <div class= "weathersectiontitle">
-<svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
-</svg>
-
-Which Meteobridge Platform</div><p>
-      <div class= "stationvalue"> 
-     Which Meteobridge Platform Do Yo Use</div>
+      <div class= "stationvalue">Which Meteobridge Platform Do You Use</div>
       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -638,26 +591,23 @@ Which Meteobridge Platform</div><p>
            <option>MB Asus</option>
            <option>Meteobridge</option>
         </select>
-        <br><br>
-    
-
-<br> 
+        <br/>
         
         
 
   </div>
-  
-  
-  
+  <br/>
+
+<!--##########################################################################################
+    #########                        Start of Current Weather Section                #########
+    ##########################################################################################-->
+
   <div class="weatheroptions">
-  
- <br><br>
   <div class= "weathersectiontitle">
 <svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
 </svg>
-*New Davis Forecast Console text English Only,Metar option for current ICON weather conditions, or use Darksky Option</strong><br>
-</div><p>
+Current Weather Conditions Text</strong></div><br/><br/>
     
        <div class= "stationvalue"><strong>Options</strong></div> 
     <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -672,25 +622,29 @@ Which Meteobridge Platform</div><p>
                      <option>currentconditionsds.php</option>    
              
         </select>
-      <br>          
-      <br>     
+      <br/>          
+      <br/>     
     
      <span style="color:#777">
      
      <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#01a4b4" stroke="#01a4b4" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> *New for Davis owners English Only <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsmetar34davis.php</span> Outputs Davis forecast console text also  uses Nearby Metar Aviation Weather Options must get API key and insert into option near bottom of this setup screen.*requires meteobridge reboot <BR>
-     <br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsmetar34davis.php</span> <strong>*New*</strong> for Davis owners. <strong>English Only.</strong> Outputs Davis forecast console text. Also uses Nearby Metar Aviation Weather Options must get API key and insert into option near bottom of this setup screen.*requires meteobridge reboot <br/>
+     <br/>
     
      <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#01a4b4" stroke="#01a4b4" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsmetar34.php</span> uses Nearby Metar Aviation Weather Options must get API key and insert into option near bottom of this setup screen<BR>
-     <br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsmetar34.php</span> uses Nearby Metar Aviation Weather Options must get API key and insert into option near bottom of this setup screen.<br/>
+     <br/>
      <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#01a4b4" stroke="#01a4b4" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsds.php</span> uses DarkSky must get API key and insert into option near bottom of this setup screen<BR></strong></span></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsds.php</span> uses DarkSky must get API key and insert into option near bottom of this setup screen.</strong></span></span>
      
-<p>
-  
-<p>
   </div>
+  
+  <br/>
+
+<!--##########################################################################################
+    #########                        Start of Station Name Sidebar                   #########
+    ##########################################################################################-->
+
   <div class="weatheroptionssidebar"> try and keep these short dont include full country try a short code
   <br/><br/>
   <svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -698,6 +652,11 @@ Which Meteobridge Platform</div><p>
     Web App Name should be less than 10 characters long. If you exceed 10 characters, the excess will be replaced with ... on Android or iPhone.
   </div>
   <div class="weatherbottominfo"></div>
+
+<!--##########################################################################################
+    #########                        Start of Station Name Section                   #########
+    ##########################################################################################-->
+
  <div class="weatheroptions">
 <div class= "weathersectiontitle">
 <svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -705,7 +664,7 @@ Which Meteobridge Platform</div><p>
     <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
 </svg>
 
-Location Details and Station Name</div><p>
+Station Names</div><br/>
 <div class= "stationvalue">  Station Location</div>
 <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -730,31 +689,36 @@ Location Details and Station Name</div><p>
   <input name="manifestShortName" type="text" id="manifestShortName" value="<?php echo $manifestShortName ;?>" class="chooseapi">
 
    </div>
- <br>
+ <br/>
+ 
+<!--##########################################################################################
+    #########                        Start of Location Info Section                  #########
+    ##########################################################################################-->
+
    <div class="weatheroptionssidebar">Here is the area where you set your Lat/Lon with timezone + UTC offset , for timezone you can check
    <a href="http://php.net/manual/en/timezones.php" title="http://php.net/manual/en/timezones.php" target="_blank"> the official php timezone documented page</a>
-   <div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
+   <br/><br/>
 
-<strong>Lat/Lon Example</strong><br>
-<strong>Lat</strong> 54.00000  <strong>Lon</strong> -22.00000<br><br>
+<strong>Lat</strong> 54.00000  <strong>Lon</strong> -22.00000<br/><br/>
 
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg><strong>UTC</strong> <br>
-<strong>utc</strong> offset use single number  like -2,-4,1,2,3,4 etc <br>do not use -01,0-04,01 ,02,03, 04 etc <br>
-
-
-</div>
-   
+<strong>UTC</strong> offset use single number  like -2,-4,1,2,3,4 etc <br/>do not use -01,0-04,01 ,02,03, 04 etc <br/>
    
    </div>
-   <p>  
-   
+
+<!--##########################################################################################
+    #########                        Start of Location Info Section                  #########
+    ##########################################################################################-->
+
 <div class="weatheroptions">
-<div class= "stationvalue">TIMEZONE</div>
+<div class= "weathersectiontitle">
+<svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <circle cx="16" cy="11" r="4" />
+    <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
+</svg>
+Location Information
+</div><br/>
+
+<div class= "stationvalue">Timezone</div>
  <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg>
@@ -773,7 +737,7 @@ Location Details and Station Name</div><p>
  
  
     
-<p>
+<br/>
 	<div class= "stationvalue">Latitude</div>
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -787,7 +751,7 @@ Location Details and Station Name</div><p>
 </svg>
 
     <input name="lon" type="lon" id="TZ" value="<?php echo $lon ;?>" class="choose"> 
-     <br>  
+     <br/>  
    <div class= "stationvalue">Elevation</div>
 <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -799,9 +763,13 @@ Location Details and Station Name</div><p>
     
 </div>
 
-  <p>
-  
-   <p><br>
+  <br/>
+  <br/><br/><br/>
+
+<!--##########################################################################################
+    #########                        Start of Theming Sidebar                        #########
+    ##########################################################################################-->
+
    <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg> Here you can set (2 choices)the default theme dark or light option<br />
@@ -816,8 +784,11 @@ check unit(s)
 </div>
    
    </div>
-   <p>       
- 
+
+<!--##########################################################################################
+    #########                        Start of Theming Section                        #########
+    ##########################################################################################-->
+
 <div class="weatheroptions">
   
   <div class= "weathersectiontitle">
@@ -825,7 +796,7 @@ check unit(s)
     <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
     <circle cx="16" cy="16" r="4" />
 </svg>
-  Set the Units you wish to display controls unit switching & set color theme also set notifications display</div><p>
+  Units, Themes, and Notifications</div><br/>
   
   <label name="unit"></label>
   <div class= "stationvalue">Units</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -853,7 +824,7 @@ check unit(s)
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> true=metric , <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> false=non metric</span>
   
-   <p>
+   <br/><br/>
     
      <div class= "stationvalue"> Default Theme Colour</div>
         <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -872,7 +843,7 @@ check unit(s)
         <span style="color:#777;"> set: <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#25292D" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> dark, <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(144, 177, 42, 1.000)" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> light</span>
-     <p>
+     <br/><br/>
      
      <div class= "stationvalue">   
    Notifications</div> 
@@ -888,30 +859,16 @@ check unit(s)
         </select>
         <span style="color:rgba(86, 95, 103, 1.000);">
         <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(102, 188, 199, 1.000)" stroke="rgba(102, 188, 199, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%"><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <strong> yes to show notifications 
-	 <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%"><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> no to disable</strong><br>
-<br><br> 
-     
-  
+     <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%"><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> no to disable</strong>
      </div>
     
     
-    <p>
-   <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg> In this area only select one as true , it converts the charts to display units same as main page
+    <br/>      
 
-<div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
+<!--##########################################################################################
+    #########                        Ignore this old section                         #########
+    ##########################################################################################-->
 
-only set one as true
-</div>
-
-</div>
-   <p>       
- 
-    
 <div class="weatheroptions">
        <div class= "weathersectiontitle">
        
@@ -919,8 +876,8 @@ only set one as true
     <circle cx="16" cy="11" r="4" />
     <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
 </svg>
-       Tell us where your are so we can convert the charts. very important  set only one box to true set all others false (important to set each option do not leave blank !!)
-    </div>     <p>
+       This section is deprecated, you can ignore it
+    </div><br/><br/>
         <label name="uk"></label>
         <div class= "stationvalue">Are you in the UK</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -942,7 +899,7 @@ only set one as true
             <option <?php if($usa=="false") echo "selected"; ?> >false</option>
             <option <?php if($usa=="true") echo "selected"; ?> >true</option>
         </select>
-        <P>
+        <br/><br/>
         <label name="scandinavia"></label>
         <div class= "stationvalue">Are you in Scandinavia</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -966,9 +923,12 @@ only set one as true
         </select>
     
    </div>
-   
-   
-   <p>
+
+<!--##########################################################################################
+    #########                        Start of Units Sidebar                          #########
+    ##########################################################################################-->
+
+   <br/>
    <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg> Set the units for the main page display and modules it is connected to the 
@@ -983,9 +943,11 @@ double check again
 </div>
    
    </div>
-   <p>  
-   
-   
+
+<!--##########################################################################################
+    #########                        Start of Units Section                          #########
+    ##########################################################################################-->
+
 <div class="weatheroptions">
     <div class= "weathersectiontitle">
     <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -993,7 +955,7 @@ double check again
     <circle cx="16" cy="16" r="4" />
 </svg>
     Set the Units to display in the main template</div> 
-    <p>
+    <br/><br/>
     <label name="windunit"></label>
     <div class= "stationvalue">Wind Unit</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1021,7 +983,7 @@ double check again
             <option>F</option>
             
         </select>
-        <br><br>
+        <br/><br/>
         <label name="rainunit"></label>
         <div class= "stationvalue">Rain Unit</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1049,7 +1011,7 @@ double check again
             <option>/m</option>
             
         </select>
-        <br><br>
+        <br/><br/>
         <label name="pressureunit"></label>
         <div class= "stationvalue">Barometer Unit</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1064,7 +1026,7 @@ double check again
            
         </select>
         
-        <br><br>
+        <br/><br/>
         
         <label name="distanceunit"></label>
         <div class= "stationvalue">Distance unit measured miles or kilometres</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1082,49 +1044,40 @@ double check again
         
         
     </div>
-    
-    
-   <p>
+   <br/>
+
+<!--##########################################################################################
+    #########                        Start of Email and Twitter Sidebar              #########
+    ##########################################################################################-->
+
    <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg>
-General template settings with options to choose which type of module to display ,basic station information 
+Email and Twitter options for links in your about page
 
 <div class="weatherbottominfo">
 <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M2 20 L12 28 30 4" />
 </svg>
 
-your nearly there :-) keep going<br><br>
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg> Make sure you have a <strong><span style="color:#F8712E;"><a href="https://www.wunderground.com/weather/api" title="https://www.wunderground.com/weather/api" target="_blank">Weather Underground Developer API KEY</a></span></strong> ..
-
-<br><br>
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg> Options to use UVINDEX forecast data if you <strong>DO NOT</strong> have UVINDEX hardware ..
-<br><br>
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg> Moonset offset times can be adjusted here to align with your location it is measured in hours ,please adjust by hours to correct the output you may have to adjust when clocks move with annually daylight saving times ..
-</div>
+your nearly there :-) keep going</div>
 
 </div>
-   
-   
-   <p>      
-       
+
+<!--##########################################################################################
+    #########                        Start of Email and Twitter Section              #########
+    ##########################################################################################-->
+
 <div class="weatheroptions">
    <div class= "weathersectiontitle"> 
    <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
     <circle cx="16" cy="16" r="4" />
 </svg>
-   Other Template Settings also allows you to fine tune some data display outputs
+   Email and Twitter
     </div>
     
-    <p>
+    <br/>
      
     
    
@@ -1141,7 +1094,7 @@ your nearly there :-) keep going<br><br>
     <path d="M12 30 L24 16 12 2" />
 </svg>
 <input name="twitter" type="text" id="twitter" value="<?php echo $twitter ;?>" class="choose">
-    <p>
+    <br/>
     <div class= "stationvalue">Year your weather station was installed</div> 
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1149,17 +1102,47 @@ your nearly there :-) keep going<br><br>
 <input name="since" type="text" id="since" value="<?php echo $since ;?>" class="choose">
    
     
-        
-    
-<div class="seperator"></div>
+</div>
+  <br/>
+
+<!--##########################################################################################
+    #########                        Start of Module Sidebar                         #########
+    ##########################################################################################-->
+
+<div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg>
+General template settings with options to choose which type of module to display ,basic station information 
+
+<br/><br/>
+<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M2 20 L12 28 30 4" />
+</svg> Make sure you have a <strong><span style="color:#F8712E;"><a href="https://www.wunderground.com/member/api-keys" title="https://www.wunderground.com/member/api-keys" target="_blank"><strong>*NEW*</strong> Weather Underground Developer API KEY</a></span></strong> ..
+
+<br/><br/>
+<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M2 20 L12 28 30 4" />
+</svg> Options to use UVINDEX forecast data if you <strong>DO NOT</strong> have UVINDEX hardware ..
+<br/><br/>
+<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M2 20 L12 28 30 4" />
+</svg> Moonset offset times can be adjusted here to align with your location it is measured in hours ,please adjust by hours to correct the output you may have to adjust when clocks move with annually daylight saving times ..
+
+
+</div>
+
+<!--##########################################################################################
+    #########                        Start of Module Section                         #########
+    ##########################################################################################-->
+
+  <div class="weatheroptions">
+    <div class="weathersectiontitle">Template Modules</div><br/>
   
-  
-  
-  <span style="color:#F75C46;"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+  <span style="color:rgba(236, 87, 27, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />
     <circle cx="16" cy="16" r="14" />
 </svg>
-</svg> Options for Top Row 4 Modules + *new Position 6 and 12 module &amp; + Last module<span style="color:#777;"></span> <br>   
+</svg> Options for Top Row 4 Modules + *new Position 6 and 12 module &amp; + Last module<span style="color:#777;"></span> <br/>   
        <div class= "stationvalue"> Position 1 </div>
        <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1186,7 +1169,7 @@ your nearly there :-) keep going<br><br>
         
         
         
-        <br>
+        <br/>
         
         <div class= "stationvalue"> Position 2 </div>
        <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1213,7 +1196,7 @@ your nearly there :-) keep going<br><br>
         <label name="position2title"></label>
        <input name="position2title" type="text" id="position2title" value="<?php echo $position2title ;?>" class="choose"> 
               
-        <br>
+        <br/>
         
         <div class= "stationvalue"> Position 3 </div>
        <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1239,7 +1222,7 @@ your nearly there :-) keep going<br><br>
         <label name="position3title"></label>
         <input name="position3title" type="text" id="position3title" value="<?php echo $position3title ;?>" class="choose"> 
         
-        <br>
+        <br/>
         
         
         <div class= "stationvalue"> Position 4 </div>
@@ -1269,7 +1252,7 @@ your nearly there :-) keep going<br><br>
            
             
         </select>
-        <br>
+        <br/>
         
          <div class= "stationvalue"> *Position 6 </div>
        <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1298,7 +1281,7 @@ your nearly there :-) keep going<br><br>
            
             
         </select>
-        <br>
+        <br/>
         
         
         
@@ -1342,7 +1325,7 @@ your nearly there :-) keep going<br><br>
            
             
         </select>
-        <br>
+        <br/>
         
         
         
@@ -1379,7 +1362,7 @@ your nearly there :-) keep going<br><br>
            
             
         </select>
-        <br>
+        <br/>
         
         
         
@@ -1387,98 +1370,126 @@ your nearly there :-) keep going<br><br>
             
      
      
-      <strong> <span style="color:rgba(86, 95, 103, 1.000);">options Top 4 positions</span></strong><br>
+      <strong> <span style="color:rgba(86, 95, 103, 1.000);">options Top 4 positions</span></strong><br/>
        
        <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> rainfallf-year-month.php</span> Totals <span style="color:rgba(24, 25, 27, 0.8)">YEARLY-MONTHLY</span> Rainfall<br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> rainfallf-year-month.php</span> Totals <span style="color:rgba(24, 25, 27, 0.8)">YEARLY-MONTHLY</span> Rainfall<br/></span>
      
         
         <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> weather34clock.php</span> Station  <span style="color:rgba(24, 25, 27, 0.8)">Time</span><br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> weather34clock.php</span> Station  <span style="color:rgba(24, 25, 27, 0.8)">Time</span><br/>
      
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> windgustyear.php</span> *English only<span style="color:rgba(24, 25, 27, 0.8)"> Current Monthly / Yearly max Gust </span> <br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> windgustyear.php</span> *English only<span style="color:rgba(24, 25, 27, 0.8)"> Current Monthly / Yearly max Gust </span> <br/>
               
            
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> temperatureyear.php</span> *English only<span style="color:rgba(24, 25, 27, 0.8)"> Current Monthly / Yearly Temperature </span>  <br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> temperatureyear.php</span> *English only<span style="color:rgba(24, 25, 27, 0.8)"> Current Monthly / Yearly Temperature </span>  <br/>
          
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> davisconsoleoutlook.php <span style="color:rgba(24, 25, 27, 0.8)">Davis Hardware Console users only</span> <br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> davisconsoleoutlook.php <span style="color:rgba(24, 25, 27, 0.8)">Davis Hardware Console users only</span> <br/></span>
      
          
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> wflightning.php <span style="color:rgba(24, 25, 27, 0.8)">Weatherflow users only uses direct weatherflow API not meteobridge data must add station ID below in the weatherflow section </span> <br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> wflightning.php <span style="color:rgba(24, 25, 27, 0.8)">Weatherflow users only uses direct weatherflow API not meteobridge data must add station ID below in the weatherflow section </span> <br/></span>
                  
                  
        
-      <br></span></span>
-         <strong> <span style="color:rgba(86, 95, 103, 1.000);">options Positions 6 and 12 + last module</span></strong><br>
+      <br/></span></span>
+         <strong> <span style="color:rgba(86, 95, 103, 1.000);">options Positions 6 and 12 + last module</span></strong><br/>
         <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> indoortemperature.php <orange>display indoor temperature</orange><br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> indoortemperature.php <span style="color:rgba(236, 87, 27, 1.000);">display indoor temperature</span><br/></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> airqualitymodule.php <orange>display airquality</orange><br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> airqualitymodule.php <span style="color:rgba(236, 87, 27, 1.000);">display airquality</span><br/></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> webcamsmall.php</span> <orange>display webcam</orange>.*
-     add your url/path to wecam image using option below <br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> webcamsmall.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display webcam</span>.*
+     add your url/path to wecam image using option below <br/></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> mooonphase.php</span> <orange>display moonphase</orange><br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> mooonphase.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display moonphase</span><br/></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> weather34uvsolar.php</span> <orange>display uv and solar radiation if you have hardware</orange> <br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> weather34uvsolar.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display uv and solar radiation if you have hardware</span> <br/></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> solaruvds.php</span> <orange>display Darksky UV forecast and if you have only solar radiation </orange> <br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> solaruvds.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display Darksky UV forecast and if you have only solar radiation </span> <br/></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> solaruvwu.php</span> <orange>display Weather Underground Day UV forecast and if you have only solar radiation </orange> <br></span>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> solaruvwu.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display Weather Underground Day UV forecast and if you have only solar radiation </span> <br/></span>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> eq.php</span> <orange>display last earthquake from earthquakereport.com</orange>   <br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> eq.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display last earthquake from earthquakereport.com</span>   <br/>
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> forecas3ds.php</span> <orange>display 3 day forecast from DARK SKY</orange>   <br>    
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> forecas3ds.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display 3 day forecast from DARK SKY</span>   <br/>    
      </span>
    
    <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> forecas3wu.php</span> <orange>display 3 period day/night forecast from Weather Underground</orange>   <br>    
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> forecas3wu.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display 3 period day/night forecast from Weather Underground</span>   <br/>    
      </span>
      
      
      <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> forecas3wularge.php</span> <orange>large display of current period day/night forecast from Weather Underground</orange>   <br>    
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> forecas3wularge.php</span> <span style="color:rgba(236, 87, 27, 1.000);">large display of current period day/night forecast from Weather Underground</span>   <br/>    
      </span>
      
      
         <span style="color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> lightning34.php</span> <orange>Lightning for those using weatherflow direct with meteobridge</orange>   <br>    
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg><span style="color:#777;"> lightning34.php</span> <span style="color:rgba(236, 87, 27, 1.000);">Lightning for those using weatherflow direct with meteobridge</span>   <br/>    
      </span>
-        
-        <br>
-        <div class= "stationvalue">Webcam Add Your Path/Url to your webcam (i.e https://something.com/webcam.jpg)</div> 
-    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" /></svg><br>
+    </div>
+    <br/>
 
-  <input name="webcamurl" type="text" id="webcamurl" value="<?php echo $webcamurl ;?>" class="chooseapi">
-  
-  <br><br>
+<!--##########################################################################################
+    #########                        Start of Webcam Section                         #########
+    ##########################################################################################-->
+
+    <div class="weatheroptions">
+   <div class= "weathersectiontitle">Webcam</div>
+   <br/>
+   <div class= "stationvalue">Path/Url to your webcam <b>image</b></div>
+   <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg>
         
-        <br>
-     
-     <div class="seperator"></div>
-     
+  <input name="webcamurl" type="text" id="webcamurl" value="<?php echo $webcamurl ;?>" class="chooseapi"><br/>
+    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+    <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>
+    <b><span style="color:rgba(236, 87, 27, 1.000);">Leave blank to hide link within menu</span></b><br/>
+
+    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+    <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>
+    <span style="color:rgba(86, 95, 103, 1.000);">Should be an image url, possibly ending in <b>jpg</b>/<b>jpeg</b>/<b>png</b></span><br/>
+
+    <div class= "stationvalue">Path/Url to your webcam <b>video</b></div>
+    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg>
+        
+  <input name="videoWeatherCamURL" type="text" id="videoWeatherCamURL" value="<?php echo $videoWeatherCamURL ;?>" class="chooseapi"><br/>
+    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+    <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>
+    <b><span style="color:rgba(236, 87, 27, 1.000);">Leave blank to use the Static Weather Camera image instead</span></b><br/>
+    
+    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+    <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>
+    <span style="color:rgba(86, 95, 103, 1.000);">Add the url to your Weather Camera's live video feed to include it in the Weather Camera popup</span><br/>
+    
+    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+    <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>
+    <span style="color:rgba(86, 95, 103, 1.000);">If your video doesn't work here, but you can view it by putting it in the URL bar, <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template/issues/new?assignees=lightmaster&labels=enhancement&template=feature_request.md&title=" title="Add a Feature | HWS GitHub" target="_blank"><span style="color:rgba(236, 87, 27, 1.000);">start a new issue on the GitHub page</span></a> and I'll try to add support for your video.</span><br/>
+</div>
+<br/>
+
+<!--##########################################################################################
+    #########                        Start of Moon Section                           #########
+    ##########################################################################################-->
+     <div class="weatheroptions">
+   <div class= "weathersectiontitle">Moonrise/set option</div> <br/>
       
      
-     <span style="color:#F75C46;"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg>
-</svg> Moonrise/set  option</span> <br>   
-    
-   
    <div class= "stationvalue">   
    Fine Tune the Moonrise/Set *if needed or leave as default if unsure</div> 
    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg>
 <input name="moonadj" type="text" id="moonadj" value="<?php echo $moonadj ;?>" class="choose"> 
-<br>
-        <strong> <span style="color:rgba(86, 95, 103, 1.000);">adjust the moonrise/set to your location in hours </span></strong><br><br>
+<br/>
+        <strong> <span style="color:rgba(86, 95, 103, 1.000);">adjust the moonrise/set to your location in hours </span></strong><br/><br/>
         
    <div class= "stationvalue">   
    Reverse the moonphase for southern hemisphere (i.e. Australia etc..)</div> 
@@ -1492,11 +1503,11 @@ your nearly there :-) keep going<br><br>
                  
             
         </select>
-<br><br>
+<br/><br/>
         <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <strong> <span style="color:#F75C46;">set to 0 for Northern hemisphere</span></strong><br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <strong> <span style="color:rgba(236, 87, 27, 1.000);">set to 0 for Northern hemisphere</span></strong><br/>
          <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <strong> <span style="color:rgba(86, 95, 103, 1.000);">set to 180 for Southern hemisphere (180 degrees reversed)</span></strong><br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <strong> <span style="color:rgba(86, 95, 103, 1.000);">set to 180 for Southern hemisphere (180 degrees reversed)</span></strong><br/>
     
      
      <div class= "stationvalue">   
@@ -1508,26 +1519,22 @@ your nearly there :-) keep going<br><br>
          <option><?php echo $sunoption ;?></option>
             <option>sun3.php</option>
             <option>sun4.php</option> 
-            
-                 
-            
         </select>
-        <br>
+        <br/>
         <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <strong>two options sun3.php works northern latitudes, sun4.php is for southern hemisphere only ..</strong><br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <span style="color:rgba(86, 95, 103, 1.000);"><strong>two options sun3.php works northern latitudes, sun4.php is for southern hemisphere only ..</strong></span><br/>
 
-<br> 
-    
-<p>
-      
-           
-     <div class="seperator"></div>
-     
-     
-     
-     <span style="color:#F75C46;"><svg id="i-activity" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+     </div>
+    <br/>
+
+<!--##########################################################################################
+    #########                        Start of Earthquake Section                     #########
+    ##########################################################################################-->
+
+     <div class="weatheroptions">
+   <svg id="i-activity" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M4 16 L11 16 14 29 18 3 21 16 28 16" />
-</svg> Earthquake options</span><br>
+</svg> <div class= "weathersectiontitle">Earthquake options</div><br/>
  
   <div class= "stationvalue"> Earthquake Minimum Magnitude</div> 
   <label name="minmag" ></label>
@@ -1543,21 +1550,19 @@ your nearly there :-) keep going<br><br>
              <option>5</option>
               <option>6</option>
                <option>7</option>            
-            
         </select>
-     <br><br>
-  
-     
-    
-       <div class="seperator"></div>
-    
-    
-    
-    
-     <span style="color:#F75C46;"><svg id="i-clock" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    </div>
+    <br/>
+
+<!--##########################################################################################
+    #########                        Start of Time Format Section                    #########
+    ##########################################################################################-->
+
+    <div class="weatheroptions">
+   <svg id="i-clock" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <circle cx="16" cy="16" r="14" />
     <path d="M16 8 L16 16 20 20" />
-</svg> Time format options</span><br>
+</svg> <div class= "weathersectiontitle">Time format options</div><br/>
      <div class= "stationvalue">Set the Date Format</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1589,7 +1594,7 @@ your nearly there :-) keep going<br><br>
        
         
         
-        <br><br>
+        <br/><br/>
       
      <div class= "stationvalue">Set the Time Format</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1622,46 +1627,45 @@ your nearly there :-) keep going<br><br>
            
         </select>
         
-         &nbsp;<br><br>
+         &nbsp;<br/><br/>
         
         
         
-        <span style="color:#777;font-weight:600;">Date format<br></span>
+        <span style="color:#777;font-weight:600;">Date format<br/></span>
         <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> d-m-Y <span style="color:#777;">for DAY MONTH YEAR format (12-03-2017)</span></span><br> 
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> d-m-Y <span style="color:#777;">for DAY MONTH YEAR format (12-03-2017)</span></span><br/> 
         <span style="color:rgba(86, 95, 103, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> m-d-Y <span style="color:#777;">for MONTH DAY YEAR format (03-12-2017)</span></span><br> 
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> m-d-Y <span style="color:#777;">for MONTH DAY YEAR format (03-12-2017)</span></span><br/> 
      <span style="color:rgba(86, 95, 103, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> m-d-Y <span style="color:#777;">for YEAR MONTH DAY format (2017-12-03)</span></span><br> 
-     <br>
+      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> m-d-Y <span style="color:#777;">for YEAR MONTH DAY format (2017-12-03)</span></span><br/> 
+     <br/>
          
      
-     <span style="color:#777;font-weight:600;">Main Clock format<br></span>
+     <span style="color:#777;font-weight:600;">Main Clock format<br/></span>
         <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> 24 <span style="color:#777;">Main Clock output example 17:32:12 </span></span><br> 
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> 24 <span style="color:#777;">Main Clock output example 17:32:12 </span></span><br/> 
         <span style="color:rgba(86, 95, 103, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> 12 <span style="color:#777;">Main Clock output example 5:32:12 pm</span></span><br> <br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> 12 <span style="color:#777;">Main Clock output example 5:32:12 pm</span></span><br/> <br/>
      
-      <span style="color:#777;font-weight:600;">Time format<br></span>
-       <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%"><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> H:i:s <span style="color:#777;"> 17:34:22 format</span> </span><br> 
+      <span style="color:#777;font-weight:600;">Time format<br/></span>
+       <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%"><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> H:i:s <span style="color:#777;"> 17:34:22 format</span> </span><br/> 
        
      <span style="color:rgba(86, 95, 103, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> g:i:s a <span style="color:#777;"> 05:34:22 am format</span></span><br> 
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> g:i:s a <span style="color:#777;"> 05:34:22 am format</span></span><br/> 
      
      <span style="color:rgba(86, 95, 103, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> g:i:s  <span style="color:#777;"> 05:34:22 format</span></span><br> <br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> g:i:s  <span style="color:#777;"> 05:34:22 format</span></span><br/> <br/>
      
      
-      <span style="color:#777;font-weight:600;">Short Time format used for Sunrise/Set & Moonrise/Set areas<br></span>      
-      <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> H:i <span style="color:#777;">17:34 format</span></span><br> 
+      <span style="color:#777;font-weight:600;">Short Time format used for Sunrise/Set & Moonrise/Set areas<br/></span>      
+      <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> H:i <span style="color:#777;">17:34 format</span></span><br/> 
       
      <span style="color:rgba(86, 95, 103, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> g:i a  <span style="color:#777;">05:34 am format</span></span><br> 
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> g:i a  <span style="color:#777;">05:34 am format</span></span><br/> 
      
      <span style="color:rgba(86, 95, 103, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> g:i   <span style="color:#777;">05:34 format</span></span><br> 
-     
-     <br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> g:i   <span style="color:#777;">05:34 format</span></span><br/> 
+     <br/>
         
         <div class= "stationvalue">show updated date & time </div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1672,19 +1676,23 @@ your nearly there :-) keep going<br><br>
    <label name="showDate"></label>
         <select id="showDate" name="showDate" class="choose1">
             <option>false</option>              
-        </select><br>
-     <span style="color:#777;font-weight:600;">options<br></span>
+        </select><br/>
+     <span style="color:#777;font-weight:600;">options<br/></span>
     
      <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> false = </span> <span style="color:#777;font-weight:normal;">not used as of 27th April 2017 always false</span>
      
-     <div class="seperator"></div>
-     
-     
-       
-     <span style="color:#F75C46;"><svg id="i-menu" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+     </div>
+    <br/>
+
+<!--##########################################################################################
+    #########                        Start of Menu Options Section                   #########
+    ##########################################################################################-->
+
+     <div class="weatheroptions">
+   <svg id="i-menu" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
-</svg> Menu options</span><br>
+</svg> <div class= "weathersectiontitle">Menu options</div><br/>
      <div class= "stationvalue">Display Extra links in Menu</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1698,14 +1706,14 @@ your nearly there :-) keep going<br><br>
             <option>yes</option>
             <option>no</option>
             </select>
-            <br>
-         <strong> <span style="color:rgba(86, 95, 103, 1.000);">options</span></strong><br>
+            <br/>
+         <strong> <span style="color:rgba(86, 95, 103, 1.000);">options</span></strong><br/>
         <span style="color:#777;"><strong><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> No</strong> use if do <span style="color:rgba(86, 95, 103, 1.000)">NOT HAVE</span> external links to use<br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> No</strong> use if do <span style="color:rgba(86, 95, 103, 1.000)">NOT HAVE</span> external links to use<br/>
         <strong><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> Yes</strong> use if you do <span style="color:rgba(24, 25, 27, 0.8)"> HAVE</span> <span style="color:#777;">  external links to use<br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> Yes</strong> use if you do <span style="color:rgba(24, 25, 27, 0.8)"> HAVE</span> <span style="color:#777;">  external links to use<br/>
         </span></span>
-        <br>
+        <br/>
         
         <div class= "stationvalue">Display Languages in Menu</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1721,23 +1729,22 @@ your nearly there :-) keep going<br><br>
             <option>yes</option>
             <option>no</option>
             </select>
-            <br>
-         <strong> <span style="color:rgba(86, 95, 103, 1.000);">options</span></strong><br>
+            <br/>
+         <strong> <span style="color:rgba(86, 95, 103, 1.000);">options</span></strong><br/>
         <span style="color:#777;"><strong><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> No</strong> use if you do <span style="color:rgba(86, 95, 103, 1.000)">NOT WANT</span> languages selection<br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> No</strong> use if you do <span style="color:rgba(86, 95, 103, 1.000)">NOT WANT</span> languages selection<br/>
         <strong><svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> Yes</strong> use if you do <span style="color:rgba(24, 25, 27, 0.8)"> WANT</span> <span style="color:#777;"> languages selection<br>
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> Yes</strong> use if you do <span style="color:rgba(24, 25, 27, 0.8)"> WANT</span> <span style="color:#777;"> languages selection<br/>
         </span></span>
-     
-     
-   
-    
-     <div class="seperator"></div>
-    
-    <span style="color:#F75C46;"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg> WU/Darksky Options</span><br><br>
+     </div>
+    <br/>
+
+<!--##########################################################################################
+    #########                        Start of WU/DarkSky Section                     #########
+    ##########################################################################################-->
+
+     <div class="weatheroptions">
+   <div class= "weathersectiontitle">WU/Darksky Options</div><br/><br/>
  
     
 
@@ -1749,20 +1756,21 @@ your nearly there :-) keep going<br><br>
 </svg>
 
     <input name="WUID" type="text" id="WUID" value="<?php echo $id ;?>" class="choose"> 
-    <br> <span style="color:#777;">enter your <strong>weather underground</strong> station id example in capitals <strong>ISTANBUL161</strong></span>
-    <p>
+    <br/> <span style="color:#777;">enter your <strong>weather underground</strong> station id example in capitals <strong>ISTANBUL161</strong></span>
+    <br/><br/>
     
     
     
-    <div class= "stationvalue"> Weather Underground API KEY (New API Version Key Required)</div> 
+    <div class= "stationvalue"> Weather Underground API KEY</div> 
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg>
 
     <input name="wuapikey" type="text" id="wuapikey" value="<?php echo $wuapikey ;?>" class="chooseapi"> 
-    <br> <span style="color:#777;">enter your Weather Underground API KEY <strong>8BXWEATHER34KEY123456789</strong></span>
-    <br><span style="color:#777;"><a href="https://www.wunderground.com/member/api-keys" title="https://www.wunderground.com/member/api-keys" target="_blank">login into https://www.wunderground.com/member/api-keys</a> to generate your new personal key.. </span>
-    <p>
+    <br/><span style="color:rgba(236, 87, 27, 1.000);">**New API Version Key Required</span>
+    <br/> <span style="color:#777;">enter your Weather Underground API KEY <strong>8BXWEATHER34KEY123456789</strong></span>
+    <br/><span style="color:#777;"><a href="https://www.wunderground.com/member/api-keys" title="https://www.wunderground.com/member/api-keys" target="_blank">login into https://www.wunderground.com/member/api-keys</a> to generate your new personal key.. </span>
+    <br/><br/>
     
      <div class= "stationvalue"> *important set units for Weather Underground API </div> 
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1778,12 +1786,12 @@ your nearly there :-) keep going<br><br>
              <option>h</option>
             </select>
             
-             <br><span style="color:#777;"> e = <span style="color:#cd5245;">Imperial(Non Metric) </span>
-             <br><span style="color:#777;"> m = <span style="color:#cd5245;">Metric </span>
-             <br><span style="color:#777;"> s = <span style="color:#cd5245;">m/s wind speed + metric(Scandinavia) </span>
-             <br><span style="color:#777;"> h = <span style="color:#cd5245;">mph wind speed + metric(UK) </span>
+             <br/><span style="color:#777;"> e = <span style="color:rgba(236, 87, 27, 1.000);">Imperial(Non Metric) </span>
+             <br/><span style="color:#777;"> m = <span style="color:rgba(236, 87, 27, 1.000);">Metric </span>
+             <br/><span style="color:#777;"> s = <span style="color:rgba(236, 87, 27, 1.000);">m/s wind speed + metric(Scandinavia) </span>
+             <br/><span style="color:#777;"> h = <span style="color:rgba(236, 87, 27, 1.000);">mph wind speed + metric(UK) </span>
             
-    <p>
+    <br/><br/>
     
         <div class= "stationvalue">
 <img src="img/darksky.svg" width="100" /> DarkSky API Key  for forecast Data </div>
@@ -1791,8 +1799,8 @@ your nearly there :-) keep going<br><br>
     <path d="M12 30 L24 16 12 2" />
 </svg>
     <input name="wuapi" type="text" id="wuapi" value="<?php echo $apikey ;?>" class="chooseapi">
-<br> <span style="color:#777;">enter your <strong>DarkSky</strong> <strong>API key</strong> this is the most common mistake made be careful when cut and paste often an hidden space is either inserted before or after causing the <strong>API key</strong> to fail. </span>
-<P>
+<br/> <span style="color:#777;">enter your <strong>DarkSky</strong> <strong>API key</strong> this is the most common mistake made be careful when cut and paste often an hidden space is either inserted before or after causing the <strong>API key</strong> to fail. </span>
+<br/><br/>
 
     <div class= "stationvalue">
 <img src="img/darksky.svg" width="100" /> DarkSky API UNITS *important</div>
@@ -1808,17 +1816,16 @@ your nearly there :-) keep going<br><br>
              <option>si</option>
             </select>
 
-<br> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> <span style="color:#777;"><green>CA</green> same as si, windSpeed km/h</span>
-<br> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> <span style="color:#777;"><green>UK2</green>  same as si,windSpeed mph</span>
-<br> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> <span style="color:#777;"><green>US</green> Imperial units (NON METRIC)</span>
-<br> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> <span style="color:#777;"><green>SI</green> units</span>
- <center> <span style="color:rgba(86, 95, 103, 1.000);">*IMPORTANT</span> NEW DARKSKY API (uses old script originally used in  2016) requires personal API KEY(MAY 30TH 2018) available via 
-     <a href="https://darksky.net/dev/docs" title="https://darksky.net/dev/docs" target="_blank"> https://darksky.net/dev/docs</a></center>  
-<P>
+<br/><span style="color:rgba(86, 95, 103, 1.000);">*IMPORTANT</span> NEW DARKSKY API (uses old script originally used in  2016) requires personal API KEY (MAY 30TH 2018) available via <a href="https://darksky.net/dev/docs" title="https://darksky.net/dev/docs" target="_blank">https://darksky.net/dev/docs</a>
+<br/><br/>
 
 <div class= "stationvalue">
 <img src="img/darksky.svg" width="100" /> DarkSky Hourly Forecast (If using WU Weekly)</div>
@@ -1834,19 +1841,23 @@ your nearly there :-) keep going<br><br>
 
 <br/>
  Whether or not to show the DarkSky Hourly Forecast when using WeatherUnderground's Weekly Forecast
-<P>
+    </div>
+    <br/>
 
+<!--##########################################################################################
+    #########                        Start of WeatherFlow Sidebar                    #########
+    ##########################################################################################-->
 
-       
-          <div class="seperator"></div>
-    
-    
-    
-     <span style="color:#F75C46;"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg>
-</svg> <img src="img/wflogo.svg" width="200px"/></span> <br> 
+    <div class="weatheroptionssidebar">
+        <span style="color:rgba(236, 87, 27, 1);"><strong>Only</strong> select yes if your <strong>WeatherFlow Station</strong> is not directly connected to your <strong>MB</strong>.</span>
+    </div>
+
+<!--##########################################################################################
+    #########                        Start of WeatherFlow Section                    #########
+    ##########################################################################################-->
+
+    <div class="weatheroptions">
+   <div class= "weathersectiontitle"><img src="img/wflogo.svg" width="200px"/></div> <br/>
 
 
 <div class= "stationvalue">Do you have Weatherflow Station</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1861,11 +1872,11 @@ your nearly there :-) keep going<br><br>
             <option>yes</option>
             <option>no</option>
             </select>
-            <br>
-        <strong> Select <span style="color:rgba(24, 25, 27, 0.8);">Yes</span> or <span style="color:rgba(86, 95, 103, 1.000);">No</span></strong><br>
+            <br/>
+            <span style="color:#777;"><strong> Select <span style="color:rgba(24, 25, 27, 0.8);">Yes</span> or <span style="color:rgba(86, 95, 103, 1.000);">No</span></strong><br/>
         
-  <br>
-        <strong> <span style="color:rgba(236, 87, 27, 1.000)">*important</span> only select yes if your weatherflow hardware is not connected directly to meteobridge and want to use weatherflow hardware alongside existing hardware connected to meteobridge..this option uses weatherflow API data for UV,SOLAR and lightning only </span></strong><br>
+  <br/>
+        <strong> <span style="color:rgba(236, 87, 27, 1.000);">*important</span> only select yes if your weatherflow hardware is not connected directly to meteobridge and want to use weatherflow hardware alongside existing hardware connected to meteobridge..this option uses weatherflow API data for UV,SOLAR and lightning only </strong></span><br/>
 
 
 
@@ -1880,12 +1891,12 @@ your nearly there :-) keep going<br><br>
     
     
     
-    <br> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />
     <circle cx="16" cy="16" r="14" />
 </svg> <span style="color:#777;">enter your <strong>WeatherFlow </strong> station id example <strong><span style="color:rgba(86, 95, 103, 1.000);"> 1200</strong></span></span>
     
-    <br>
+    <br/>
         <div class= "stationvalue"> Weather-Flow Lightning module </div> 
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1897,12 +1908,12 @@ your nearly there :-) keep going<br><br>
     
     
     
-    <br> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />
     <circle cx="16" cy="16" r="14" />
 </svg> <span style="color:#777;">(option works when available weatherflow is connected to meteobridge) select yes if you wish to display lightning module </span></span>
 
-<br><br>
+<br/><br/>
 
 <div class= "stationvalue">
 Weatherflow Map Zoom</div>
@@ -1921,18 +1932,18 @@ Weatherflow Map Zoom</div>
              <option>11</option>
             </select>
 
-<br> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> <span style="color:#777;"><green>Select Map Zoom level</green> 5-11</span>
 
-    
-<P>
+</div>
+    <br/>
 
-<div class="seperator"></div>
-<span style="color:#F75C46;"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg>
-</svg> Option for Temperature Module 11th July 2018  <span style="color:#777;"> <br>   
+<!--##########################################################################################
+    #########                        Start of Temp Module Sidebar                    #########
+    ##########################################################################################-->
+
+     <div class="weatheroptions">
+   <div class= "weathersectiontitle">Temperature Module</div><span style="color:#777;"> <br/>
        <div class= "stationvalue"> Options </div>
        <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
@@ -1945,18 +1956,22 @@ Weatherflow Map Zoom</div>
             <option>temperature.php</option>        
             <option>temperaturein.php</option>
            </select>
-           <br></span>
+           <br/></span>
            <span style="color:#777;">
             <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> *option temperature.php default without indoor temperature displayed <br>
+    <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> *option temperature.php default without indoor temperature displayed <br/>
     <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> *temperaturein.php shows indoor temp icon<br><br></span>
-  
-   <p>      
-    <div class="seperator"></div> 
-    
-       <span style="color:#F75C46;"> <img src=img/purpleair.svg width=25px > PURPLE AIR QUALITY INDEX option <BR>
-     * <span style="color:#777;">IMPORTANT TO NOTE <span style="color:#F75C46;">FOR PURPLE AIR OWNERS ONLY </span> </span></span> <br> 
+    <path d="M16 14 L16 23 M16 8 L16 10" />    <circle cx="16" cy="16" r="14" /></svg> *temperaturein.php shows indoor temp icon<br/></span>
+    </div>
+    <br/>
+
+<!--##########################################################################################
+    #########                        Start of Purple Air Section                     #########
+    ##########################################################################################-->
+
+     <div class="weatheroptions">
+   <div class= "weathersectiontitle"> <img src=img/purpleair.svg width=25px > Purple Air</div><br/>
+    <span style="color:rgba(236, 87, 27, 1.000);"> * <span style="color:#777;">Important<span style="color:rgba(236, 87, 27, 1.000);"> for Purple Air owners only</span></span></span> <br/>
     
     
     
@@ -1967,8 +1982,8 @@ Weatherflow Map Zoom</div>
 </svg>
 
     <input name="purpleairhardware" type="text" id="purpleairhardware" value="<?php echo $purpleairhardware ;?>" class="choose"> 
-    <br> <span style="color:#777;">enter yes or no(lowercase)</span>
-    <P>
+    <br/> <span style="color:#777;">enter yes or no(lowercase)</span>
+    <br/><br/>
     
     
     <div class= "stationvalue"> Purple Air ID</div> 
@@ -1982,38 +1997,28 @@ Weatherflow Map Zoom</div>
     
     
     
-    <br> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />
     <circle cx="16" cy="16" r="14" />
 </svg> <span style="color:#777;">enter your <strong>PurpleAir </strong> station id example <strong><span style="color:rgba(86, 95, 103, 1.000);"> 1200</strong></span></span>
     
-    
-        
-    
-    
-    
-    
-    
-    
-    
-    
-     
-    <p><br>
-    <div class="seperator"></div>
-      
-    <span style="color:#F75C46;"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg> Nearby Metar Aviation Weather Options 
-    
-    <div class= "stationvalue">
-Check<b>WX</b> Metar API KEY you need to sign up here for free API key <a href="https://www.checkwx.com/signup" title="https://www.checkwx.com/signup" target="_blank"><span style="color:#fff;">https://www.checkwx.com/signup</a> </div>
+    </div>
+    <br/>
+
+<!--##########################################################################################
+    #########                        Start of METAR Section                          #########
+    ##########################################################################################-->
+
+     <div class="weatheroptions">
+   <div class= "weathersectiontitle">Nearby Metar Aviation Weather Options</div><br/>
+<span style="color:rgba(236, 87, 27, 1.000);">
+    <div class= "stationvalue">CheckWX API Key</div>
  <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg>
     <input name="metarapikey" type="text" id="" value="<?php echo $metarapikey ;?>" class="chooseapi">
-<br> <span style="color:#777;">enter your <strong>CheckWx</strong> <strong>API key</strong> this is the most common mistake made be careful when cut and paste often an hidden space is either inserted before or after causing the <strong>API key</strong> to fail. This key is important for displaying nearby metar data.</span>
-<P>
+<br/> <span style="color:#777;">enter your <strong>CheckWx</strong> <strong>API key</strong> this is the most common mistake made be careful when cut and paste often an hidden space is either inserted before or after causing the <strong>API key</strong> to fail. This key is important for displaying nearby metar data. <a href="https://www.checkwx.com/signup" title="https://www.checkwx.com/signup" target="_blank">You need to sign up here for free API key https://www.checkwx.com/signup.</a></span>
+<br/><br/>
 
   
 <div class= "stationvalue"> Display Nearby Metar (yes or no) *English Only </div> 
@@ -2022,17 +2027,17 @@ Check<b>WX</b> Metar API KEY you need to sign up here for free API key <a href="
 </svg>
 
     <input name="metar" type="text" id="metar" value="<?php echo $metar ;?>" class="choose"> 
-    <br> <span style="color:#777;">enter yes or no(lowercase) *note it only supports english language</span>
+    <br/> <span style="color:#777;">enter yes or no(lowercase) *note it only supports english language</span>
     
-    <br> <br> 
+    <br/> <br/> 
     <div class= "stationvalue"> ICAO Code for  Metar Station 1  </div> 
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg>
 
     <input name="icao1" type="text" id="icao1" value="<?php echo $icao1 ;?>" class="choose"> 
-    <br> <span style="color:#777;">enter your nearby METAR stations  For example station 1 <span style="color:#F75C46;">LTBA</span> in capitals
-    <br> <br> 
+    <br/> <span style="color:#777;">enter your nearby METAR stations  For example station 1 <span style="color:rgba(236, 87, 27, 1.000);">LTBA</span> in capitals
+    <br/> <br/> 
     
     <div class= "stationvalue"> ICAO Location  for  Metar Station 1  </div> 
     <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -2040,8 +2045,8 @@ Check<b>WX</b> Metar API KEY you need to sign up here for free API key <a href="
 </svg>
 
     <input name="airport1" type="text" id="airport1" value="<?php echo $airport1 ;?>" class="choose"> 
-     <br> <span style="color:#777;">enter your nearby METAR station 1 location for example <span style="color:#F75C46;">Istanbul,Turkey</span>
-        <br> <br> 
+     <br/> <span style="color:#777;">enter your nearby METAR station 1 location for example <span style="color:rgba(236, 87, 27, 1.000);">Istanbul,Turkey</span>
+        <br/> <br/> 
     
     
     <div class= "stationvalue"> ICAO Aprox Distance  for  Metar Station 1 from your location  </div> 
@@ -2050,29 +2055,15 @@ Check<b>WX</b> Metar API KEY you need to sign up here for free API key <a href="
 </svg>
 
     <input name="airport1dist" type="text" id="airport1dist" value="<?php echo $airport1dist ;?>" class="choose"> 
-    <br> <span style="color:#777;">enter your nearby METAR stations distance for example <span style="color:#F75C46;">26</span> or <span style="color:#F75C46;">5</span> do not enter any letters km or m 
-        
-    
-    <p> 
-       </div>
-   
-<div class="weatheroptions">
+    <br/> <span style="color:#777;">enter your nearby METAR stations distance for example <span style="color:rgba(236, 87, 27, 1.000);">26</span> or <span style="color:rgba(236, 87, 27, 1.000);">5</span> do not enter any letters km or m 
+</div>
+<br/>
 
-    <input type="submit" name="Submit" value="Save Configuration" class="button"><p><span style="color:#777;font-size:12px;padding:5px;line-height:16px;">
-  <svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" /> </svg> Click "save configuration" if everything looks ok and dont forget to set the password.</span>
-  
+<!--##########################################################################################
+    #########                        Start of Submit Button Sidebar                  #########
+    ##########################################################################################-->
 
-
-
-
-
-  </div>
-  
-  
- 
-   <p>
-   <div class="weatheroptionssidebarbottom"><svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+   <div class="weatheroptionssidebar"><svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" />
 </svg>
 click save if everything looks ok above and dont forget to set the password.
@@ -2091,12 +2082,25 @@ now check the weather
 </div>
 </div>
 
+<!--##########################################################################################
+    #########                        Start of Submit Button Section                  #########
+    ##########################################################################################-->
+
+<div class="weatheroptions">
+
+    <input type="submit" name="Submit" value="Save Configuration" class="button"><br/><br/><span style="color:#777;font-size:12px;padding:5px;line-height:16px;">
+  <svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" /> </svg> Click "save configuration" if everything looks ok and dont forget to set the password.</span>
+  
+  </div>
+  <br/>
+
    
     <span style="font-size:12px;color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M16 14 L16 23 M16 8 L16 10" />
     <circle cx="16" cy="16" r="14" />
-</svg> Meteobridge DASHBOARD EASY SETUP &copy; 2015-<?php echo date('Y');?> Dashboard MB-UB40-SE</span><br>
-<center><a href="http://www.meteobridge.com/wiki/index.php/Home" title="http://www.meteobridge.com/wiki/index.php/Home" target="_blank"><img src="img/meteobridge.svg" width="120" /></a></center><br>
+</svg> Meteobridge DASHBOARD EASY SETUP &copy; 2015-<?php echo date('Y');?> Dashboard MB-UB40-SE</span><br/>
+<center><a href="http://www.meteobridge.com/wiki/index.php/Home" title="http://www.meteobridge.com/wiki/index.php/Home" target="_blank"><img src="img/meteobridge.svg" width="120" /></a></center><br/>
  
 </form></div> 
 </div>
