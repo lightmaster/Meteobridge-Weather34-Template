@@ -771,11 +771,19 @@ if (is_numeric($meteobridgeapi[186]) && $meteobridgeapi[186] != '--') {
 	$weather['tempStartTime']	= date('M jS Y', strtotime($meteobridgeapi[186]));
 	$weather['windStartTime']	= date('M jS Y', strtotime($meteobridgeapi[187]));
 	$weather['pressStartTime']	= date('M jS Y', strtotime($meteobridgeapi[188]));
-	$weather['rainStartTime']	= date('M jS Y', strtotime($meteobridgeapi[189]));
+	$weather['rainStartSec']	= strtotime($meteobridgeapi[189]);
+	$weather['rainStartTime']	= date('M jS Y', $weather['rainStartSec']);
 } else {
 	$weather['tempStartTime']	= 'All Time';
 	$weather['windStartTime']	= 'All Time';
 	$weather['pressStartTime']	= 'All Time';
 	$weather['rainStartTime']	= 'All Time';
 }
+
+#if (is_numeric($meteobridgeapi[190]){
+#	$weather['rainStartYearSec']	= $meteobridge[190];
+#	if (is_numberic($weather['rainStartSec']) && ($weather['rainStartSec'] > $weather['rainStartYearSec'])) {
+#		$weather['yearStart']	= date('M Y', $weather['rainStartYearSec']);
+#	}
+#}
 ?>

@@ -399,7 +399,13 @@ elseif($weather["rain_units"] =='in'){ echo number_format($weather["rain_month"]
 
 <div class="hitempy">
     <?php echo $raininfo;?>Last Rainfall<br/>
-    <blue><?php if ($meteobridgeapi[124]=='--'){ echo "Unknown"; } else { echo $rainlasttime;}?></blue>
+    <blue><?php if ($meteobridgeapi[124]=='--'){
+        echo "Unknown";
+    } else if ($rainlasttime == date("jS M Y ")) {
+        echo 'Today';
+    } else {
+        echo $rainlasttime;
+    }?></blue>
 </div>
 </article>
 
