@@ -20,5 +20,5 @@ echo "</span>";
 <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
 <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 
 Radar/Map provided by Windy.com</span>
-<div class="weather34browser-footerlogo" style="padding-top:7px;"><a href="https://github.com/weather34/Meteobridge-Weather34-Template" title="MB-HWS" target="_blank"><img src="img/weatherlogo34.svg" width="35"</img></a></div>
+<div class="weather34browser-footerlogo" style="padding-top:7px;"><a href="https://github.com/lightmaster/Meteobridge-Weather34-Template" title="MB-HWS" target="_blank"><img src="img/weatherlogo34.svg" width="35"</img></a></div>
 </div>

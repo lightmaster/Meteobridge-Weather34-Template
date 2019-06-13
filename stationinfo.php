@@ -87,7 +87,7 @@
                                     </div>
                                     <div class="collection:data">
                                         <h3>Template Download <blue>Meteobridge</blue> </h3>
-                                        <a href="https://github.com/weather34/Meteobridge-Weather34-Template" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank">https://github.com/weather34/Meteobridge-Weather34-Template</a>
+                                        <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank">https://github.com/lightmaster/Meteobridge-Weather34-Template</a>
                                     </div>
                                 </div>
                             </a>
