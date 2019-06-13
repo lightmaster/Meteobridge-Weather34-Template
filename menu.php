@@ -39,9 +39,9 @@ else echo "";?>
 <li><!--hardware info---> <a href="stationinfo.php" data-lity title="Hardware Weather Station Hardware Info"> <weather34menumarkerred></weather34menumarkerred> Hardware Info</a></li>  
 
 <!---languages---> 
-  <br>   <?php if($languages=="yes") echo '<li><a href="">
+  <br>   <?php if($languages=="yes") {?><li><a href="">
    
-   <weather34menumarkerbluegrey></weather34menumarkerbluegrey> '.$lang["language"], '</a></li>','
+   <weather34menumarkerbluegrey></weather34menumarkerbluegrey> <?php echo $lang["language"];?></a></li>
      <br>
   <div class="languages34">
   <a href="index.php?lang=en"><img src="img/flags/en.svg"  title="English" width="25px" height="25px"></a>&nbsp;
@@ -57,14 +57,17 @@ else echo "";?>
   <a href="index.php?lang=cat"><img src="img/flags/cat.svg" title="Catalan" width="25px" height="25px"></a>&nbsp;
   <a href="index.php?lang=sp"><img src="img/flags/sp.svg"  title="Spanish" width="25px" height="25px"></a>&nbsp;
   <a href="index.php?lang=tr"><img src="img/flags/tr.svg"  title="Turkish" width="25px" height="25px"></a>&nbsp;
-  <br>
+  </div>
+  
    <div class="languages34">    
   <a href="index.php?lang=hu"><img src="img/flags/hu.svg"  title="Hungary" width="25px" height="25px"></a>&nbsp; 
   <a href="index.php?lang=pl"><img src="img/flags/pl.svg"  title="Polish" width="25px" height="25px"></a>&nbsp;
   <a href="index.php?lang=sp"><img src="img/flags/ar.svg"  title="Argentina" width="25px" height="25px"></a>&nbsp;
   <a href="index.php?lang=dl"><img src="img/flags/ch-switzerland.svg"  title="Switzerland" width="25px" height="25px"></a>&nbsp;
-  <br>
-     '?>
+  <a href="index.php?lang=no"><img src="img/flags/no.svg"  title="Norwegian" width="25px" height="25px"></a>&nbsp;
+  </div>
+  
+  <?php }?>
      <!---credits | download info---> 
 <?php // please do not remove this and if so no support is given and your domain will be blacklisted from support it is not much to ask //?>
 <li><a href="https://github.com/weather34/Meteobridge-Weather34-Template/" title="Weather34 Meteobridge version via Github " target="_blank">

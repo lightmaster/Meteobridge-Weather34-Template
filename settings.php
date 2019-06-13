@@ -33,25 +33,27 @@ $charttheme         = $theme;
 // Refresh Data Main Page  //																	   #
 // Automatic refresh times (in seconds) of each panel on the main dashboard						   #
 ####################################################################################################
-$copyYear = 2015;$curYear = date('Y');$copyrightcredit='&copy; weather34.com original CSS/SVG/PHP '.$copyYear . (($copyYear != $curYear) ? '-' . $curYear : 'Copyright');
+$copyYear = 2015;
+$curYear = date('Y');
+$copyrightcredit='&copy; weather34.com original CSS/SVG/PHP '.$copyYear . (($copyYear != $curYear) ? '-' . $curYear : 'Copyright');
 $indoorRefresh      = 120; // 2 minutes
-$notifyRefresh      = 17; // 17 seconds
-$tempRefresh        = 60; // 60 secondss
+$advisoryRefresh    = 17; // 17 seconds
+$tempRefresh        = 10; // 60 secondss
 $skyRefresh         = 300; // 5 minutes 
 $windSpeedRefresh   = 10; // 10 seconds
-$baroRefresh        = 300; // 15 minutes
+$baroRefresh        = 10; // 15 minutes
 $windDirRefresh     = 10; // 10 seconds
-$moonRefresh    	= 1800; // 30 minutes 
-$rainRefresh        = 50; // 50 seconds 
-$solarRefresh       = 120; // 1 minutes 
-$daylightRefresh    = 120; // 2 minutes
+$moonRefresh    	  = 1800; // 30 minutes 
+$rainRefresh        = 10; // 50 seconds 
+$p12Refresh         = 10; // 1 minutes        Position 12 refresh (if not webcam)
+$p13Refresh         = 10; // 2 minutes        Last Postion refresh (if not webcam)
 $moonphaseRefresh   = 120; // 2 minutes
 $eqRefresh          = 600; // 10 minutes 
 $forecastRefresh    = 900; // 15 minutes 
 $notificationcenterRefresh    = 300; // 5 minutes set refresh time for notification of earthquakes default 5 minutes
 $wuupdate           = 1800; // 30 minutes 
 $wfupdate           = 60; // weatherflow api 60 seconds
-$camRefresh		 = 60; // 1 minute refresh on camera popup
+$camRefresh		      = 60; // 1 minute refresh on camera popup
 
 // Thresholds for warnings or notifications
 $notifyDistEQ       = 300; // miles if $windunit is mph otherwise km

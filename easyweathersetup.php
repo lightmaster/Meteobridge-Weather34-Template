@@ -29,7 +29,6 @@ $wuapiunit   = "'. $_POST["wuapiunit"]. '";
 $stationlocation = "'. $_POST["stationlocation"]. '";
 $stationName = "'. $_POST["stationName"]. '";
 $moonadj = "'. $_POST["moonadj"]. '";
-$minmag = "'. $_POST["minmag"]. '";
 $unit = "'. $_POST["unit"]. '";
 $metric = '. $_POST["metric"]. ';
 $elevation = "'. $_POST["elevation"]. '";
@@ -70,7 +69,7 @@ $position12   = "'. $_POST["position12"]. '";
 $positionlastmoduletitle   = "'. $_POST["positionlastmoduletitle"]. '";
 $positionlastmodule   = "'. $_POST["positionlastmodule"]. '";
 $webcamurl   = "'. $_POST["webcamurl"]. '";
-$videoWeatherCamURL         = "'.$_POST["videoWeatherCamURL"].'";
+$videoWeatherCamURL  = "'.$_POST["videoWeatherCamURL"].'";
 $email    = "'. $_POST["email"]. '";
 $twitter   = "'. $_POST["twitter"]. '";
 $theme1   = "'. $_POST["theme1"]. '";
@@ -82,7 +81,6 @@ $db_host   = "'. $_POST["db_host"]. '";
 $db_user    = "'. $_POST["db_user"]. '";
 $db_pass  = "'. $_POST["db_pass"]. '";
 $db_name   = "'. $_POST["db_name"]. '";
-$notifications = "'. $_POST["notifications"]. '";
 $sunoption = "'. $_POST["sunoption"]. '";
 $hemisphere   = "'. $_POST["hemisphere"]. '";
 $metar   = "'. $_POST["metar"]. '";
@@ -95,6 +93,10 @@ $password    = "'.$_POST['password']. '";
 $flag   = "'.$_POST["flag"]. '";
 $dshourly   = "'.$_POST["dshourly"].'";
 $manifestShortName = "'.$_POST["manifestShortName"].'";
+$notifications = "'. $_POST["notifications"]. '";
+$notifyWind = "'. $_POST["notifyWind"]. '";
+$notifyEarthquake = "'. $_POST["notifyEarthquake"]. '";
+$notifyMagnitude = '. $_POST["notifyMagnitude"]. ';
 ?>';
  
 $fp = FOPEN("settings1.php", "w") or die("Unable to open settings1.php file check file permissions !");
@@ -767,26 +769,26 @@ Location Information
   <br/><br/><br/>
 
 <!--##########################################################################################
-    #########                        Start of Theming Sidebar                        #########
+    #########                        Start of Units Sidebar                          #########
     ##########################################################################################-->
 
    <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
-</svg> Here you can set (2 choices)the default theme dark or light option<br />
-   and set the default display unit
+</svg> Set the units for the main page display and modules it is connected to the 
+   unit selector in the menu
    
    <div class="weatherbottominfo">
 <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M2 20 L12 28 30 4" />
 </svg>
 
-check unit(s)
+double check again
 </div>
    
    </div>
 
 <!--##########################################################################################
-    #########                        Start of Theming Section                        #########
+    #########                        Start of Units Section                          #########
     ##########################################################################################-->
 
 <div class="weatheroptions">
@@ -796,7 +798,7 @@ check unit(s)
     <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
     <circle cx="16" cy="16" r="4" />
 </svg>
-  Units, Themes, and Notifications</div><br/>
+  Units Selection</div><br/><br/>
   
   <label name="unit"></label>
   <div class= "stationvalue">Units</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -823,140 +825,9 @@ check unit(s)
        <span style="color:#777;"> set: <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> true=metric , <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
      <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> false=non metric</span>
-  
-   <br/><br/>
-    
-     <div class= "stationvalue"> Default Theme Colour</div>
-        <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        
-        <label name="theme1"></label>
-        <select id="theme1" name="theme1" class="choose1">
-            <option><?php echo $theme1 ;?></option>
-            <option>dark</option>
-            <option>light</option>
-          
-        </select>
-        <span style="color:#777;"> set: <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#25292D" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> dark, <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(144, 177, 42, 1.000)" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> light</span>
-     <br/><br/>
-     
-     <div class= "stationvalue">   
-   Notifications</div> 
-   <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-<select id="notifications" name="notifications" class="choose1">
-         <option><?php echo $notifications ;?></option>
-            <option>yes</option>
-            <option>no</option>
-                 
-            
-        </select>
-        <span style="color:rgba(86, 95, 103, 1.000);">
-        <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(102, 188, 199, 1.000)" stroke="rgba(102, 188, 199, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%"><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> <strong> yes to show notifications 
-     <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%"><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> no to disable</strong>
-     </div>
-    
-    
-    <br/>      
-
-<!--##########################################################################################
-    #########                        Ignore this old section                         #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-       <div class= "weathersectiontitle">
-       
-       <svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <circle cx="16" cy="11" r="4" />
-    <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
-</svg>
-       This section is deprecated, you can ignore it
-    </div><br/><br/>
-        <label name="uk"></label>
-        <div class= "stationvalue">Are you in the UK</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="uk" name="uk" class="choose1">
-            <option <?php if($uk=="false") echo "selected"; ?> >false</option>
-            <option <?php if($uk=="true") echo "selected"; ?> >true</option>           
-        </select>
-        
-        <label name="usa"></label>
-        <div class= "stationvalue">Are you in the USA</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="usa" name="usa" class="choose1">
-            <option <?php if($usa=="false") echo "selected"; ?> >false</option>
-            <option <?php if($usa=="true") echo "selected"; ?> >true</option>
-        </select>
-        <br/><br/>
-        <label name="scandinavia"></label>
-        <div class= "stationvalue">Are you in Scandinavia</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="scandinavia" name="scandinavia" class="choose1">
-            <option <?php if($scandinavia=="false") echo "selected"; ?> >false</option>
-            <option <?php if($scandinavia=="true") echo "selected"; ?> >true</option>            
-        </select>
-       
-         <label name="restoftheworld"></label>
-        <div class= "stationvalue">Are you not in any of others</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="restoftheworld" name="restoftheworld" class="choose1">
-            <option <?php if($restoftheworld=="false") echo "selected"; ?> >false</option>
-            <option <?php if($restoftheworld=="true") echo "selected"; ?> >true</option>
-        </select>
-    
-   </div>
-
-<!--##########################################################################################
-    #########                        Start of Units Sidebar                          #########
-    ##########################################################################################-->
-
-   <br/>
-   <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg> Set the units for the main page display and modules it is connected to the 
-   unit selector in the menu
-   
-   <div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-double check again
-</div>
-   
-   </div>
-
-<!--##########################################################################################
-    #########                        Start of Units Section                          #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-    <div class= "weathersectiontitle">
-    <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
-    <circle cx="16" cy="16" r="4" />
-</svg>
-    Set the Units to display in the main template</div> 
     <br/><br/>
-    <label name="windunit"></label>
+
+     <label name="windunit"></label>
     <div class= "stationvalue">Wind Unit</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1040,11 +911,216 @@ double check again
             <option>km</option>
             
         </select>
+     </div>
+    
+    <br/>      
+
+<!--##########################################################################################
+    #########                        Start of Theming Sidebar                        #########
+    ##########################################################################################-->
+
+   <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg> Here you can set (2 choices)the default theme dark or light option<br />
+   and set the default display unit
+   
+   <div class="weatherbottominfo">
+<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M2 20 L12 28 30 4" />
+</svg>
+
+check unit(s)
+</div>
+   
+   </div>
+
+<!--##########################################################################################
+    #########                        Start of Theming Section                        #########
+    ##########################################################################################-->
+
+<div class="weatheroptions">
+    <div class= "weathersectiontitle">
+    <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
+        <circle cx="16" cy="16" r="4" />
+    </svg>
+    Theme Selection</div><br/><br/>
+     <div class= "stationvalue"> Default Theme Colour</div>
+        <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M30 12 L16 24 2 12" />
+</svg>
         
-        
-        
+        <label name="theme1"></label>
+        <select id="theme1" name="theme1" class="choose1">
+            <option><?php echo $theme1 ;?></option>
+            <option>dark</option>
+            <option>light</option>
+          
+        </select>
+        <span style="color:#777;"> set: <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#25292D" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> dark, <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(144, 177, 42, 1.000)" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> light</span>
+     </div>
+    
+    <br/>      
+
+<!--##########################################################################################
+    #########                        Start of Theming Sidebar                        #########
+    ##########################################################################################-->
+
+<div class="weatheroptionssidebar">
+    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M12 30 L24 16 12 2" />
+    </svg>
+    Selection which notifications to show
+    <br/><br/>
+    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(102, 188, 199, 1.000)" stroke="rgba(102, 188, 199, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+        <path d="M16 14 L16 23 M16 8 L16 10" />
+        <circle cx="16" cy="16" r="14" />
+    </svg>
+    yes to show a notification
+    <br/>
+    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+        <path d="M16 14 L16 23 M16 8 L16 10" />
+        <circle cx="16" cy="16" r="14" />
+    </svg>
+    no to disable a notification
+    <div class="weatherbottominfo"></div>
+</div>
+
+<!--##########################################################################################
+    #########                        Start of Notification Section                   #########
+    ##########################################################################################-->
+
+<div class="weatheroptions">
+    <div class= "weathersectiontitle">
+        <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+            <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
+            <circle cx="16" cy="16" r="4" />
+        </svg>
+        Notification Settings
     </div>
-   <br/>
+    <br/><br/>
+    <div class= "stationvalue">Notifications&nbsp;</div> 
+    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 12 L16 24 2 12" />
+    </svg>
+    <select id="notifications" name="notifications" class="choose1">
+        <option><?php echo $notifications;?></option>
+        <?php if ($notifications == 'yes'){?>
+            <option>no</option>
+        <?php } else {?>
+            <option>yes</option>
+        <?php }?>
+    </select>
+    <br/><br/>
+    <div class= "stationvalue">Earthquakes</div> 
+    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 12 L16 24 2 12" />
+    </svg>
+    <select id="notifyEarthquake" name="notifyEarthquake" class="choose1">
+        <option><?php echo $notifyEarthquake;?></option>
+        <?php if ($notifyEarthquake == 'yes'){?>
+            <option>no</option>
+        <?php } else {?>
+            <option>yes</option>
+        <?php }?>
+    </select>&nbsp;&nbsp;&nbsp;
+    <div class= "stationvalue">Minimum Magnitude</div> 
+    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 12 L16 24 2 12" />
+    </svg>
+    <select id="notifyMagnitude" name="notifyMagnitude" class="choose1">
+        <option><?php echo $notifyMagnitude;?></option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+    </select>
+    <br/><br/>
+    <div class= "stationvalue">Wind Alerts&nbsp;&nbsp;</div> 
+    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 12 L16 24 2 12" />
+    </svg>
+    <select id="notifyWind" name="notifyWind" class="choose1">
+        <option><?php echo $notifyWind;?></option>
+        <?php if ($notifyWind == 'yes'){?>
+            <option>no</option>
+        <?php } else {?>
+            <option>yes</option>
+        <?php }?>
+    </select>
+</div>
+    
+    
+    <br/>      
+
+<!--##########################################################################################
+    #########                        Ignore this old section                         #########
+    ##########################################################################################-->
+
+<div class="weatheroptions">
+       <div class= "weathersectiontitle">
+       
+       <svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <circle cx="16" cy="11" r="4" />
+    <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
+</svg>
+       This section is deprecated, you can ignore it
+    </div><br/><br/>
+        <label name="uk"></label>
+        <div class= "stationvalue">Are you in the UK</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M30 12 L16 24 2 12" />
+</svg>
+        <select id="uk" name="uk" class="choose1">
+            <option <?php if($uk=="false") echo "selected"; ?> >false</option>
+            <option <?php if($uk=="true") echo "selected"; ?> >true</option>           
+        </select>
+        
+        <label name="usa"></label>
+        <div class= "stationvalue">Are you in the USA</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M30 12 L16 24 2 12" />
+</svg>
+        <select id="usa" name="usa" class="choose1">
+            <option <?php if($usa=="false") echo "selected"; ?> >false</option>
+            <option <?php if($usa=="true") echo "selected"; ?> >true</option>
+        </select>
+        <br/><br/>
+        <label name="scandinavia"></label>
+        <div class= "stationvalue">Are you in Scandinavia</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M30 12 L16 24 2 12" />
+</svg>
+        <select id="scandinavia" name="scandinavia" class="choose1">
+            <option <?php if($scandinavia=="false") echo "selected"; ?> >false</option>
+            <option <?php if($scandinavia=="true") echo "selected"; ?> >true</option>            
+        </select>
+       
+         <label name="restoftheworld"></label>
+        <div class= "stationvalue">Are you not in any of others</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M30 12 L16 24 2 12" />
+</svg>
+        <select id="restoftheworld" name="restoftheworld" class="choose1">
+            <option <?php if($restoftheworld=="false") echo "selected"; ?> >false</option>
+            <option <?php if($restoftheworld=="true") echo "selected"; ?> >true</option>
+        </select>
+    
+   </div>
+<br/>
 
 <!--##########################################################################################
     #########                        Start of Email and Twitter Sidebar              #########
@@ -1537,14 +1613,14 @@ General template settings with options to choose which type of module to display
 </svg> <div class= "weathersectiontitle">Earthquake options</div><br/>
  
   <div class= "stationvalue"> Earthquake Minimum Magnitude</div> 
-  <label name="minmag" ></label>
+  <label name="notifyMagnitude" ></label>
    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M12 30 L24 16 12 2" />
 </svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M30 12 L16 24 2 12" />
 </svg>
-        <select id="minmag" name="minmag" class="choose1">
-         <option><?php echo $minmag ;?></option>
+        <select id="notifyMagnitude" name="notifyMagnitude" class="choose1">
+         <option><?php echo $notifyMagnitude ;?></option>
             <option>3</option>
             <option>4</option>
              <option>5</option>

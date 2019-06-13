@@ -4068,6 +4068,7 @@ indooryellow {
 .weather34lightningmain-content,
 notifyblue,
 notifyorange,
+notifyred,
 spanewind,
 spanewind2 {
   font-family: Arial, Helvetica, system
@@ -4805,7 +4806,8 @@ chartinfocolor {
 }
 
 notifyblue,
-notifyorange {
+notifyorange,
+notifyred {
   color: #fff;
   padding: 0 2px;
   font-weight: 600
@@ -4824,6 +4826,12 @@ notifyblue {
 
 notifyorange {
   background: #ff7c39;
+  -webkit-border-radius: 2px;
+  border-radius: 2px
+}
+
+notifyred {
+  background: #d35d4e;
   -webkit-border-radius: 2px;
   border-radius: 2px
 }

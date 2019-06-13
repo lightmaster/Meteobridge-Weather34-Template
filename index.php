@@ -240,4 +240,10 @@ else echo '<a href="https://weather34.com/homeweatherstation/" title="https://we
 <?php echo $info."&nbsp;".$weatherhardware;?></div> 
 <div class=footertext><?php echo $info;?>&nbsp;<?php echo $stationlocation ;?> Weather Station &nbsp; <img src="img/flags/<?php echo $flag ;?>.svg" width="20px" ></div>
 </div></div>
-<div id=lightningalert></div></body><?php include_once('updater.php');include_once('menu.php')?></html>
+<div id=lightningalert></div></body>
+<?php include_once('updater.php');
+include_once('menu.php');
+
+# call notification
+include_once('notify.php');
+?></html>
