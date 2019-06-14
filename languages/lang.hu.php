@@ -276,24 +276,29 @@ $lang['uvalert']                = 'Extrém magas UV';
 $lang['Max']                    = 'Max';
 $lang['Min']                    = 'Min';
 //earthquake TOP MODULE 10 July 2017
-$lang['ModerateE']              = 'Mérsékelt földrengés';
-$lang['MinorE']                 = 'Kis földrengés';
-$lang['StrongE']                = 'Erős földrengés';
-$lang['RegionalE']              = 'Regionális';
-$lang['Conditions']             = 'Körülmények';
-$lang['Cloudbase Height']       = 'Felhőalap magasság';
-$lang['Station']                = 'Állomás';
-$lang['Detailed Forecast']      = 'Részletes előrejelzés';
-$lang['Summary Outlook']        = 'Összefoglalás';
+
+$lang['MicroE']                  = 'Micro Earthquake';
+$lang['MinorE']                  = 'Kis földrengés';
+$lang['LightE']                  = 'Light Earthquake';
+$lang['ModerateE']               = 'Mérsékelt földrengés';
+$lang['StrongE']                 = 'Erős földrengés';
+$lang['MajorE']                  = 'Major Earthquake';
+$lang['GreatE']                  = 'Great Earthquake';
+$lang['RegionalE']               = 'Regionális';
+$lang['Conditions']              = 'Körülmények';
+$lang['Cloudbase Height']        = 'Felhőalap magasság';
+$lang['Station']                 = 'Állomás';
+$lang['Detailed Forecast']       = 'Részletes előrejelzés';
+$lang['Summary Outlook']         = 'Összefoglalás';
 //Air Quality
-$lang['Hazordous']              = 'Veszélyes körülmények';
-$lang['VeryUnhealthy']          = 'Nagyon egészségtelen';
-$lang['Unhealthy']              = 'Egészségtelen levegőminőség';
-$lang['UnhealthyFS']            = 'Néhány helyen egészségtelen';
-$lang['Moderate']               = 'Mérsékelt levegőminőség';
-$lang['Good']                   = 'Egészséges levegőminőség ';
+$lang['Hazordous']               = 'Veszélyes körülmények';
+$lang['VeryUnhealthy']           = 'Nagyon egészségtelen';
+$lang['Unhealthy']               = 'Egészségtelen levegőminőség';
+$lang['UnhealthyFS']             = 'Néhány helyen egészségtelen';
+$lang['Moderate']                = 'Mérsékelt levegőminőség';
+$lang['Good']                    = 'Egészséges levegőminőség ';
 #notification additions
-$lang['notifyTitle']            = 'Értesítések';
+$lang['notifyTitle']             = 'Értesítések';
 $lang['notifyAlert']             = "Alert";
 $lang['notifyLowBatteryAlert']   = "Low Battery Alert";
 $lang['notifyConsoleLowBattery'] = "Console's battery is low";

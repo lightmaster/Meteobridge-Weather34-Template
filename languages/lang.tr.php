@@ -276,9 +276,13 @@ $lang['uvalert']                = 'Dikkat UVINDEX';
 $lang['Max']                    = 'Max';
 $lang['Min']                    = 'Min';
 //earthquake TOP MODULE 10 July 2017
-$lang['ModerateE']              = 'Orta  Depremler';
-$lang['MinorE']                 = 'Az  Depremler';
-$lang['StrongE']                = 'Önemli  Depremler';
+$lang['MicroE']                  = 'Micro Earthquake';
+$lang['MinorE']                  = 'Az  Depremler';
+$lang['LightE']                  = 'Light Earthquake';
+$lang['ModerateE']               = 'Orta  Depremler';
+$lang['StrongE']                 = 'Önemli  Depremler';
+$lang['MajorE']                  = 'Major Earthquake';
+$lang['GreatE']                  = 'Great Earthquake';
 $lang['RegionalE']              = 'Bölgesel';
 $lang['Conditions']             = 'Kosullari';
 $lang['Cloudbase Height']       = 'Bulutu';

@@ -276,9 +276,13 @@ $lang['uvalert']                 = 'Advarsel, høy UVINDEX';
 $lang['Max']                     = 'Max';           #Translate
 $lang['Min']                     = 'Min';           #Translate
 //earthquake TOP MODULE 10 July 2017
-$lang['ModerateE']               = 'Moderat Jordskjelv';
+$lang['MicroE']                  = 'Micro Earthquake';
 $lang['MinorE']                  = 'Lite Jordskjelv';
+$lang['LightE']                  = 'Light Earthquake';
+$lang['ModerateE']               = 'Moderat Jordskjelv';
 $lang['StrongE']                 = 'Sterkt Jordskjelv';
+$lang['MajorE']                  = 'Major Earthquake';
+$lang['GreatE']                  = 'Great Earthquake';
 $lang['RegionalE']               = 'Regional';           #Translate
 $lang['Conditions']              = 'Forhold';
 $lang['Cloudbase Height']        = 'Skybase Høyde';

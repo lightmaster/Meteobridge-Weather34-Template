@@ -276,9 +276,13 @@ $lang['uvalert']                = 'Precaucion UVINDEX';
 $lang['Max']                    = 'Max';
 $lang['Min']                    = 'Min';
 //earthquake TOP MODULE 10 July 2017
-$lang['ModerateE']              = 'Terratrèmol moderat';
+$lang['MicroE']                  = 'Micro Earthquake';
 $lang['MinorE']                 = 'petit Terratrèmol';
+$lang['LightE']                  = 'Light Earthquake';
+$lang['ModerateE']              = 'Terratrèmol moderat';
 $lang['StrongE']                = 'Terratrèmol fort';
+$lang['MajorE']                  = 'Major Earthquake';
+$lang['GreatE']                  = 'Great Earthquake';
 $lang['RegionalE']              = 'Regional';
 $lang['Conditions']             = 'Conditions';
 $lang['Cloudbase Height']       = 'Base de núvols ';

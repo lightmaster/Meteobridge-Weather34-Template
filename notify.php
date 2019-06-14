@@ -182,8 +182,26 @@ if ($notifications == 'yes') {
                             </div>
                         </div>
                         <div class="weather34lightningcontents weather34lightningmain-content">
-                        <?php echo $lang['Earthquake']?> <br/>
-                        Strong <notifyorange><?php echo $magnitude[$i];?></notifyorange><?php echo $eqtitle[$i]." ".$eventime[$i];?>
+                        <?php if ($magnitude[$i] >= 8) {
+                            echo $lang['GreatE'];
+                        } elseif ($magnitude[$i] >= 7) {
+                            echo $lang['MajorE'];
+                        } elseif ($magnitude[$i] >= 6) {
+                            echo $lang['StrongE'];
+                        } elseif ($magnitude[$i] >= 5) {
+                            echo $lang['ModerateE'];
+                        } elseif ($magnitude[$i] >= 4) {
+                            echo $lang['LightE'];
+                        } elseif ($magnitude[$i] >= 3) {
+                            echo $lang['MinorE'];
+                        } elseif ($magnitude[$i] >= 1) {
+                            echo $lang['MicroE'];
+                        } else {
+                            echo $lang['Earthquake'];
+                        }?>
+                        <notifyorange><?php echo $magnitude[$i];?></notifyorange>
+                        <br/>
+                        <?php echo $eqtitle[$i]." ".$eventime[$i];?>
                         </div>
                     </div>
                 </div>
