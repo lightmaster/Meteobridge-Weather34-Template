@@ -78,7 +78,7 @@ $creditschart 		= "CanvasJs.com v2.3.1 GA (CC BY-NC 3.0) Non-Commercial-Version"
 $creditsURL         = ""; // for chart pages only
 $credits            = "Data Supplied via Weather Underground"; // for chart pages only
 $templateinfo       = ''; // template information page
-$templateversion    = 'MB-UB<maxred>40</maxred>-RRW';
+$templateversion    = 'MB-UB<maxred>40.1</maxred>-IHVN';
 $software    = 'Meteobridge <span>Hardware</span> Users';$designedfor='<br>For Meteobridge Users';$chartversion='(WUDATACHARTS)';$somethinggoeshere ='d4586dec-e7a2-47ae-99b6-25527b2563c9';$chartversionmysql  =  '(DATACHARTS version Final MYSQL-Meteobridge)';
 if (array_key_exists('theme', $_GET) && ($_GET['theme'] == 'dark' || $_GET['theme'] == 'light')) {
   SetCookie('theme', $_GET['theme'], time() + 15552000);

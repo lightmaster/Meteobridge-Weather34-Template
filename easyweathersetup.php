@@ -132,7 +132,7 @@ function showForm($error="LOGIN"){
      <input name="passwd" type="password" class="input-button"/>  <input type="submit" name="submit_pwd" value="Login " class="modal-button" /> 
          </form> 
      </center>
-      <?php echo "2015-" ;?><?php echo date('Y');?> &copy;</a> WEATHER34 MB-UB<span style="color:rgba(236, 87, 27, 1.000);">40</span>-RRW</span></span></span>
+      <?php echo "2015-" ;?><?php echo date('Y');?> &copy;</a> WEATHER34 MB-UB<span style="color:rgba(236, 87, 27, 1.000);">40.1</span>-IHVN</span></span></span>
       <br/><br/>
         
 
