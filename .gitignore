@@ -62,3 +62,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .vscode/
+
+#Extras
+highcharts
+*test.php
+**/*test.php
+**/test-data*
+alerts.json
+checkalert.*
+settings-pb.php

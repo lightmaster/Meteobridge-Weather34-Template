@@ -6,10 +6,12 @@
 
 <?php $file_headers = @get_headers($webcamurl); ?>
 <div class="updatedtime1"><span>
-<?php if(!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found') {
-  echo $offline. '<offline> Offline </offline>';
-} else {
+<?php if($file_headers && $file_headers[0] != 'HTTP/1.1 404 Not Found') {
   echo $online.' '.date($timeFormat);
+} else if (file_exists($webcamurl)&&time()- filemtime($webcamurl)<300) {
+  echo $online. ' <online>'.date($timeFormat,filemtime($webcamurl)).'</online>';
+} else {
+  echo $offline. '<offline> Offline </offline>';
 }
 ?>
 </span></div>

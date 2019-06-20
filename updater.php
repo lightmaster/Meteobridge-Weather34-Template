@@ -3,7 +3,7 @@
 <script Defer>
 //update the modules
 //update the modules position 1
-var refreshId;$(document).ready(function(){position1()});function position1(){$.ajax({cache:false,success:function(a){$("#position1").html(a);<?php if ($notifyRefresh > 0) {
+var refreshId;$(document).ready(function(){position1()});function position1(){$.ajax({cache:false,success:function(a){$("#position1").html(a);<?php if ($indoorRefresh > 0) {
 	echo 'setTimeout(position1,' . 160000*$indoorRefresh.')';
 } ?>},
   contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
@@ -23,8 +23,8 @@ var refreshId;$(document).ready(function(){earthquake()});function earthquake(){
   
   
 // position 4
-var refreshId;$(document).ready(function(){notification()});function notification(){$.ajax({cache:false,success:function(a){$("#position4").html(a);<?php if ($notifyRefresh > 0) {
-    echo 'setTimeout(notification,' . 1000*$notifyRefresh.')';
+var refreshId;$(document).ready(function(){notification()});function notification(){$.ajax({cache:false,success:function(a){$("#position4").html(a);<?php if ($advisoryRefresh > 0) {
+    echo 'setTimeout(notification,' . 1000*$advisoryRefresh.')';
 } ?>},type:"GET",url:"<?php echo $position4 ;?>"})};
 
 // outdoor temp
@@ -52,12 +52,21 @@ var refreshId;$(document).ready(function(){rainfall()});function rainfall(){$.aj
     echo 'setTimeout(rainfall,' . 1000*$rainRefresh.')';
 } ?>},type:"GET",url:"rainfall.php"})};
 // position12
-var refreshId;$(document).ready(function(){solar()});function solar(){$.ajax({cache:false,success:function(a){$("#solar").html(a);<?php if ($solarRefresh > 0) {
-    echo 'setTimeout(solar,' . 1000*$solarRefresh.')';
+var refreshId;$(document).ready(function(){solar()});function solar(){$.ajax({cache:false,success:function(a){$("#solar").html(a);<?php 
+if ($position12 == 'webcamsmall.php') {
+    echo 'setTimeout(solar,'. 1000*$camRefresh.')';
+}else if ($position12 != 'webcamsmall.php' && $p12Refresh > 0) {
+    echo 'setTimeout(solar,'. 1000*$p12Refresh.')';
 } ?>},type:"GET",url:'<?php echo $position12?>'})};
 
 //last module
-var refreshId;$(document).ready(function(){dldata()});function dldata(){$.ajax({cache:false,success:function(a){$("#dldata").html(a);<?php if ($daylightRefresh > 0) { echo 'setTimeout(dldata,' . 1000*$daylightRefresh.')';  } ?>}, type:"GET",url:"<?php echo $positionlastmodule?>"})}; 
+var refreshId;$(document).ready(function(){dldata()});function dldata(){$.ajax({cache:false,success:function(a){$("#dldata").html(a);<?php
+if ($positionlastmodule == 'webcamsmall.php') {
+    echo 'setTimeout(dldata,'. 1000*$camRefresh.')';
+} else if ($positionlastmodule != 'webcamsmall.php' && $p13Refresh > 0) {
+    echo 'setTimeout(dldata,' . 1000*$p13Refresh.')';
+} ?>}, type:"GET",url:"<?php echo $positionlastmodule?>"})};
+
 //current 3dy forecast
 var refreshId;$(document).ready(function(){currentfore()});function currentfore(){$.ajax({cache:false,success:function(a){$("#currentfore").html(a);setTimeout(currentfore,360000)},type:"GET",url:"<?php echo $position6?>"})};</script>
 <?php if ($position1=="weather34clock.php"){?>

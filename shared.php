@@ -354,6 +354,7 @@ $online='<svg id=i-info viewBox="0 0 32 32" width=6 height=6 fill=#9aba2f stroke
 </svg>';
 $notification='<svg id=i-info viewBox="0 0 32 32" width=10 height=10 fill=#ff8841 stroke=#ff8841 stroke-linecap=round stroke-linejoin=round stroke-width=6.25%><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx=16 cy=16 r=14 />
 </svg>';
+$notifyAlert='<svg id=i-info viewBox="0 0 32 32" width=10 height=10 fill=#d35d4e stroke=#d35d4e stroke-linecap=round stroke-linejoin=round stroke-width=6.25%><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx=16 cy=16 r=14 /></svg>';
 $aqiok ='<svg id="aqi-checkmark" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
 <path d="M2 20 L12 28 30 4" /></svg>';
 $aqiexclamationmark='<svg id="aqi-info" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>';

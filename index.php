@@ -53,7 +53,7 @@ if (!empty($check)) {
 #   https://weather34.com/homeweatherstation/index.html                                            #
 #  WEATHER STATION TEMPLATE 2017-2018-2019 Meteobridge.     									   #
 #  Weatherflow Meteobridge Version  April 2019  									               #
-#   https://github.com/weather34/Weather34-Weatherflow                                             #
+#   https://github.com/lightmaster/Weather34-Weatherflow                                             #
 ####################################################################################################
 //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
 include_once('livedata.php');include_once('common.php');include_once('settings1.php'); date_default_timezone_set($TZ);?>
@@ -240,4 +240,10 @@ else echo '<a href="https://weather34.com/homeweatherstation/" title="https://we
 <?php echo $info."&nbsp;".$weatherhardware;?></div> 
 <div class=footertext><?php echo $info;?>&nbsp;<?php echo $stationlocation ;?> Weather Station &nbsp; <img src="img/flags/<?php echo $flag ;?>.svg" width="20px" ></div>
 </div></div>
-<div id=lightningalert></div></body><?php include_once('updater.php');include_once('menu.php')?></html>
+<div id=lightningalert></div></body>
+<?php include_once('updater.php');
+include_once('menu.php');
+
+# call notification
+include_once('notify.php');
+?></html>

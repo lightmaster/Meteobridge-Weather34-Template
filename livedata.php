@@ -644,14 +644,16 @@ else if($windunit=='kts'&&$weather["wind_units"]=='m/s'){msTokts($weather,"wind_
 else if($windunit=='kts'&&$weather["wind_units"]=='mph'){mphTokts($weather,"wind_speed");mphTokts($weather,"wind_speed2");mphTokts($weather,"wind_speed_trend");mphTokts($weather,"wind_gust_speed");mphTokts($weather,"wind_gust_speed2");mphTokts($weather,"wind_gust_speed_trend");mphTokts($weather,"wind_speed_max");mphTokts($weather,"wind_gust_speed_max");mphTokts($weather,"wind_run");mphTokts($weather,"wind_speed_avg");mphTokts($weather,"wind_speed_avg15");mphTokts($weather,"wind_speed_avg30");mphTokts($weather,"wind_speed_avgday");mphTokts($weather,"winddmax");mphTokts($weather,"windamax");mphTokts($weather,"windydmax");mphTokts($weather,"windmmax");mphTokts($weather,"windymax");mphTokts($weather,"windrun34");$weather["wind_units"]=$windunit;}
 
 else if($windunit=='kts'&&$weather["wind_units"]=='km/h'){kmhTokts($weather,"wind_speed");kmhTokts($weather,"wind_speed2");kmhTokts($weather,"wind_speed_trend");kmhTokts($weather,"wind_gust_speed");kmhTokts($weather,"wind_gust_speed2");kmhTokts($weather,"wind_gust_speed_trend");kmhTokts($weather,"wind_speed_max");kmhTokts($weather,"wind_gust_speed_max");kmhTokts($weather,"wind_run");kmhTokts($weather,"wind_speed_avg");kmhTokts($weather,"wind_speed_avg15");kmhTokts($weather,"wind_speed_avg30");kmhTokts($weather,"wind_speed_avgday");kmhTokts($weather,"winddmax");kmhTokts($weather,"windamax");kmhTokts($weather,"windydmax");kmhTokts($weather,"windmmax");kmhTokts($weather,"windymax");kmhTokts($weather,"windrun34");$weather["wind_units"]=$windunit;}}
+
 // Keep track of the conversion factor for windspeed to knots because it is useful in multiple places
-$toKnots = 1;
 if ($weather["wind_units"] == 'mph') {
 	$toKnots = 0.868976;
 } else if ($weather["wind_units"] == 'km/h') {
 	$toKnots = 0.5399568;
 } else if ($weather["wind_units"] == 'm/s') {
 	$toKnots = 1.943844;
+} else {
+	$toKnots = 1;
 }
 
 
@@ -780,8 +782,11 @@ if (is_numeric($meteobridgeapi[186]) && $meteobridgeapi[186] != '--') {
 	$weather['rainStartTime']	= 'All Time';
 }
 
+$weather['consoleLowBattery']	= intval($meteobridgeapi[171]); # Console battery, 0 when battery is good, 1 when battery is low
+$weather['stationLowBattery']	= intval($meteobridgeapi[172]); # Station battery, 0 when battery is good, 1 when battery is low
+
 #if (is_numeric($meteobridgeapi[190]){
-#	$weather['rainStartYearSec']	= $meteobridge[190];
+#	$weather['rainStartYearSec']	= $meteobridgeapi[190];
 #	if (is_numberic($weather['rainStartSec']) && ($weather['rainStartSec'] > $weather['rainStartYearSec'])) {
 #		$weather['yearStart']	= date('M Y', $weather['rainStartYearSec']);
 #	}

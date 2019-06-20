@@ -36,22 +36,22 @@ switch ($lang) {
   case 'en':
   $lang_file = 'lang.en.php';
   $lang_flag = 'en';
-  $lang_option = 'us';
+  $lang_option = 'en';
   setlocale(LC_TIME, "en_EN");
   break;
   
   
-  //canada english uk	
+  //english	 canada
   case 'can':
-  $lang_file = 'lang.can.php';
+  $lang_file = 'lang.en.php';
   $lang_flag = 'can';
-  $lang_option = 'can';
+  $lang_option = 'en';
   setlocale(LC_TIME, "en_EN");
   break;
   
   //english	us
   case 'us':
-  $lang_file = 'lang.us.php';
+  $lang_file = 'lang.en.php';
   $lang_flag = 'us';
   $lang_option = 'en';
   setlocale(LC_TIME, "en_US");
@@ -165,6 +165,14 @@ switch ($lang) {
   $lang_flag = 'hu';
   $lang_option = 'en';
   setlocale(LC_TIME, "tr_HU.UTF-8");
+  break;
+
+  //Norwegian
+  case 'no':
+  $lang_file = 'lang.no.php';
+  $lang_flag = 'no';
+  $lang_option = 'en';
+  setlocale(LC_TIME, "no_NO.UTF-8");
   break;
   
 //default

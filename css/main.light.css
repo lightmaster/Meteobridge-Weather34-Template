@@ -4286,7 +4286,8 @@ agolightning {
 .bottomfooter a,
 .weather34lightningmain-content,
 notifyblue,
-notifyorange {
+notifyorange,
+notifyred {
   font-family: Arial, Helvetica, system
 }
 
@@ -4711,7 +4712,8 @@ chartinfocolor {
 }
 
 notifyblue,
-notifyorange {
+notifyorange,
+notifyred {
   color: #fff;
   padding: 0 2px;
   font-weight: 600
@@ -4724,6 +4726,12 @@ notifyblue {
 
 notifyorange {
   background: #d05f2d;
+  -webkit-border-radius: 3px;
+  border-radius: 3px
+}
+
+notifyred {
+  background: #d35d4e;
   -webkit-border-radius: 3px;
   border-radius: 3px
 }

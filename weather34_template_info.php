@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="collection:data">
                                         <h3>Weather34 Original Design</h3>
-                                      <a href="https://github.com/weather34/Meteobridge-Weather34-Template" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank"> This is the original <orange>Meteobridge</orange> version design by weather34 you can find variants of this template supporting 
+                                      <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank"> This is the original <orange>Meteobridge</orange> version design by weather34 you can find variants of this template supporting 
                                         software like <blue>Cumulus,Weewx</blue> maintained by enthusiasts and experienced template designers/coders.
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="collection:data">
                                         <h3>Template Download</h3>
-                                        <a href="https://github.com/weather34/Meteobridge-Weather34-Template" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank">https://github.com/weather34/Meteobridge-Weather34-Template</a>
+                                        <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template" alt="weather34 Meteobridge Template Download" title="weather34 Meteobridge Template Download" target="_blank">https://github.com/lightmaster/Meteobridge-Weather34-Template</a>
                                     </div>
                                 </div>
                             </a>
