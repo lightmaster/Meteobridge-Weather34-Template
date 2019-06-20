@@ -10,6 +10,9 @@ Github repository for the Meteobridge version of the original weather34 template
 Weather Template for Meteobridge users only 
 
 # This work is not permitted to be used in any other versions without prior permission unless listed below 
+This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+http://creativecommons.org/licenses/by-nc-nd/4.0/
+
 Permission is granted for use in Cumulus version maintained by Ken True 
 
 Permission is granted for use in Weewx version maintained by Ian Millard
