@@ -25,13 +25,13 @@ if ($chartsource =="mbcharts"){
                 // fputs($fp, implode($row, ',')."\n");
             }
             unset($result);
-            echo "<pre>MySQL/mbcharts updated</pre>";
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'<br>MySQL/mbcharts updated<br>':"<pre>MySQL/mbcharts updated</pre>");
         }
     } else {
-        echo "<span style='color:red;font-weight:bold'><pre>Problem getting your data from MySQL</pre></span>";
+        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'<br>Problem getting your data from MySQL<br>':"<span style='color:red;font-weight:bold'><pre>Problem getting your data from MySQL</pre></span>");
     }
 } else {
-    echo "<span style='color:red;font-weight:bold'><pre>Your settings are misconfigured, you MUST use mbcharts</pre></span>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'<br>Your settings are misconfigured, you MUST use mbcharts<br>':"<span style='color:red;font-weight:bold'><pre>Your settings are misconfigured, you MUST use mbcharts</pre></span>");
 }
 
 #Update Metar
@@ -47,14 +47,14 @@ if ($metarapikey != "11111111111111"){
     curl_setopt($ch, CURLOPT_FILE, $fp2);
     $result = curl_exec ($ch);
     if ($result) {
-        echo "<pre>Metar updated</pre>";
+        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Metar updated<br>':"<pre>Metar updated</pre>");
     } else {
-        echo "<span style='color:red;font-weight:bold'><pre>Problem updating Metar</pre></span>";
+        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating Metar<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating Metar</pre></span>");
     }
     curl_close ($ch);
     unset($result);
 } else {
-    echo "<span style='color:red;font-weight:bold'><pre>Please set your Metar API Key in EasyWeatherSetup.php</pre></span>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Please set your Metar API Key in EasyWeatherSetup.php<br>':"<span style='color:red;font-weight:bold'><pre>Please set your Metar API Key in EasyWeatherSetup.php</pre></span>");
 }
 
 #Update DarkSky
@@ -70,18 +70,18 @@ if ($position6=="forecast3ds.php" || $position6=='forecast3wu.php' || $position6
         curl_setopt($ch4a, CURLOPT_HEADER, 0);
         $result = curl_exec($ch4a);
         if ($result) {
-            echo "<pre>DarkSky updated</pre>";
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'DarkSky updated<br>':"<pre>DarkSky updated</pre>");
         } else {
-            echo "<span style='color:red;font-weight:bold'><pre>Problem updating DarkSky</pre></span>";
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating DarkSky<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating DarkSky</pre></span>");
         }
         curl_close($ch4a);
         fclose($fp4a);
         unset($result);
     } else {
-        echo "<span style='color:red;font-weight:bold'><pre>Please set your DarkSky API Key in EasyWeatherSetup.php</pre></span>";
+        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Please set your DarkSky API Key in EasyWeatherSetup.php<br>':"<span style='color:red;font-weight:bold'><pre>Please set your DarkSky API Key in EasyWeatherSetup.php</pre></span>");
     }
 } else {
-    echo "<pre>Not set to use DarkSky</pre>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Not set to use DarkSky<br>':"<pre>Not set to use DarkSky</pre>");
 }
 
 #Update WU
@@ -97,18 +97,18 @@ if ($position6=="forecast3wu.php" || $position6=="forecast3wularge.php"){
         curl_setopt($ch4c, CURLOPT_HEADER, 0);
         $result = curl_exec($ch4c);
         if ($result) {
-            echo "<pre>WU updated</pre>";
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'WU updated<br>':"<pre>WU updated</pre>");
         } else {
-            echo "<span style='color:red;font-weight:bold'><pre>Problem updating WU</pre></span>";
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating WU<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating WU</pre></span>");
         }
         curl_close($ch4c);
         fclose($fp4c);
         unset($result);
     } else {
-        echo "<span style='color:red;font-weight:bold'><pre>Please set your WU API Key in EasyWeatherSetup.php</pre></span>";
+        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Please set your WU API Key in EasyWeatherSetup.php<br>':"<span style='color:red;font-weight:bold'><pre>Please set your WU API Key in EasyWeatherSetup.php</pre></span>");
     }
 } else {
-    echo "<pre>Not set to use WU</pre>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Not set to use WU<br>':"<pre>Not set to use WU</pre>");
 }
 
 // weather34 earthquakes curl based
@@ -121,9 +121,9 @@ curl_setopt($ch1, CURLOPT_FILE, $fp1);
 curl_setopt($ch1, CURLOPT_HEADER, 0);
 $result = curl_exec($ch1);
 if ($result) {
-    echo "<pre>Earthquake data updated</pre>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Earthquake data updated<br>':"<pre>Earthquake data updated</pre>");
 } else {
-    echo "<span style='color:red;font-weight:bold'><pre>Problem updating earthquake data</pre></span>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating earthquake data<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating earthquake data</pre></span>");
 }
 curl_close($ch1);
 fclose($fp1);
@@ -139,9 +139,9 @@ curl_setopt($ch2a, CURLOPT_FILE, $fp2a);
 curl_setopt($ch2a, CURLOPT_HEADER, 0);
 $result = curl_exec($ch2a);
 if ($result) {
-    echo "<pre>K-Index updated</pre>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'K-Index updated<br>':"<pre>K-Index updated</pre>");
 } else {
-    echo "<span style='color:red;font-weight:bold'><pre>Problem updating K-Index</pre></span>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating K-Index<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating K-Index</pre></span>");
 }
 curl_close($ch2a);
 fclose($fp2a);
@@ -150,7 +150,7 @@ unset($result);
 // weather34 purple air quality  curl based
 if($purpleairhardware=='yes'){
     if ($purpleairID != "11111") {
-        $url4 = 'https://www.purpleair.com/json?show='.$purpleairID.'';
+        $url4 = 'https://www.purpleair.com/json?show='.$purpleairID;
         $ch4 = curl_init($url4);
         $filename4 = '../jsondata/purpleair.txt';
         $complete_save_loc4 = $filename4;
@@ -159,16 +159,16 @@ if($purpleairhardware=='yes'){
         curl_setopt($ch4, CURLOPT_HEADER, 0);
         $result = curl_exec($ch4);
         if ($result) {
-            echo "<pre>PurpleAir updated</pre>";
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'PurpleAir updated<br>':"<pre>PurpleAir updated</pre>");
         } else {
-            echo "<span style='color:red;font-weight:bold'><pre>Problem updating PurpleAir</pre></span>";
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating PurpleAir<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating PurpleAir</pre></span>");
         }
         curl_close($ch4);
         fclose($fp4);
     } else {
-        echo "<span style='color:red;font-weight:bold'><pre>Please set your PurpleAir ID in EasyWeatherSetup.php</pre></span>";
+        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Please set your PurpleAir ID in EasyWeatherSetup.php<br>':"<span style='color:red;font-weight:bold'><pre>Please set your PurpleAir ID in EasyWeatherSetup.php</pre></span>");
     }
 } else {
-    echo "<pre>Not set to use PurpleAir</pre>";
+    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Not set to use PurpleAir<br>':"<pre>Not set to use PurpleAir</pre>");
 }
 ?>
