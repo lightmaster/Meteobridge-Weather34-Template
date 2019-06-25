@@ -80,7 +80,7 @@ function saveupdatedtime($timefile, $currenttime) {
 	file_put_contents($timefile, $code);
 }
 
-if (is_numeric($meteobridgeapi[176])) {
+if (is_numeric($meteobridgeapi[176]) && $meteobridgeapi[177] >= 100) {
 	// If using the new API, Save every $interval seconds
 	$timefile		= './lastupdated.php';
 	$currenttime	= time();
@@ -102,9 +102,11 @@ if (is_numeric($meteobridgeapi[176])) {
 		//echo '<br/>lastupdated: '.$lastupdated;
 		//echo '<br/>currenttime: '.$currenttime;
 	}
+} else if ($meteobridgeapi[10] >= 100) {
+		// If using old API, save every time file is called from API
+		savemysqli();
 } else {
-	// If using old API, save every time file is called from API
-	savemysqli();
+	echo "<br/>Barometer value is too low, check if your station is working right.";
 }
 if ($weatherflowoption=='yes'){
 	$section1 = file_get_contents('https://swd.weatherflow.com/swd/rest/observations/station/'.$weatherflowID.'?api_key='.$somethinggoeshere.'');
