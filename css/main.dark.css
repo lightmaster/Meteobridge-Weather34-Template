@@ -3332,7 +3332,7 @@ convtext {
 }
 
 .daylightvalue1 minutes {
-  left: 40px
+  left: 37px
 }
 
 .daylightvalue1 period,
@@ -3344,7 +3344,7 @@ convtext {
   position: absolute;
   content: "Estimated";
   display: block;
-  top: -30px;
+  top: -33px;
   left: 47px;
   letter-spacing: normal;
   border: 0
@@ -3371,11 +3371,11 @@ convtext {
 }
 
 .daylightvalue1 min {
-  left: 83px
+  left: 79px
 }
 
 .daylightvalue1 hrs {
-  left: 43px
+  left: 46px
 }
 
 .sunlightday {
@@ -4779,15 +4779,15 @@ chartinfocolor {
 
 .daylightvalue1 hours {
   position: relative;
-  left: -5px
+  left: 0px
 }
 
 .daylightvalue1 period {
   position: absolute;
   font-size: 11px;
-  line-height: 20px;
-  top: 18px;
-  left: 42px;
+  line-height: 12px;
+  top: 24px;
+  left: 40px;
   letter-spacing: normal;
   color: silver
 }
@@ -5647,12 +5647,12 @@ canvas {
 
 .daylightword {
   left: 137px;
-  top: 8px
+  top: 5px
 }
 
 .elevationword {
   left: 105px;
-  top: 130px
+  top: 134px
 }
 
 .elevationword span {

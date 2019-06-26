@@ -3629,7 +3629,7 @@ tsteady {
 }
 
 .daylightvalue1 minutes {
-  left: 40px;
+  left: 37px;
   z-index: auto
 }
 
@@ -3663,11 +3663,11 @@ tsteady {
 }
 
 .daylightvalue1 min {
-  left: 83px
+  left: 79px
 }
 
 .daylightvalue1 hrs {
-  left: 41px
+  left: 44px
 }
 
 .daylightvalue1 hours,
@@ -4705,8 +4705,8 @@ chartinfocolor {
   content: "Estimated";
   display: block;
   line-height: 20px;
-  top: -30px;
-  left: 47px;
+  top: -33px;
+  left: 46px;
   letter-spacing: normal;
   border: 0
 }
@@ -4749,13 +4749,14 @@ grey {
 
 .daylightvalue1 hours {
   position: relative;
-  left: -5px
+  left: 0px
 }
 
 .daylightvalue1 period {
   font-family: weathertext, Arial, system;
   position: absolute;
-  top: 18px;
+  line-height: 12px;
+  top: 24px;
   left: 42px;
   color: #2d3a4b;
   font-size: .65rem
@@ -5559,12 +5560,12 @@ img.menuimg {
 
 .daylightword {
   left: 137px;
-  top: 8px
+  top: 5px
 }
 
 .elevationword {
   left: 105px;
-  top: 130px
+  top: 134px
 }
 
 .elevationword span {
