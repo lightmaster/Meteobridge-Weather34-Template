@@ -79,7 +79,11 @@ $creditsURL         = ""; // for chart pages only
 $credits            = "Data Supplied via Weather Underground"; // for chart pages only
 $templateinfo       = ''; // template information page
 $templateversion    = 'MB-UB<maxred>40.1</maxred>-IHVN';
-$software    = 'Meteobridge <span>Hardware</span> Users';$designedfor='<br>For Meteobridge Users';$chartversion='(WUDATACHARTS)';$somethinggoeshere ='d4586dec-e7a2-47ae-99b6-25527b2563c9';$chartversionmysql  =  '(DATACHARTS version Final MYSQL-Meteobridge)';
+$software    = 'Meteobridge <span>Hardware</span> Users';
+$designedfor='<br>For Meteobridge Users';
+$chartversion='(WUDATACHARTS)';
+$somethinggoeshere ='5675886d-24b0-2a37-107e-b5076d5e1d9f';
+$chartversionmysql  =  '(DATACHARTS version Final MYSQL-Meteobridge)';
 if (array_key_exists('theme', $_GET) && ($_GET['theme'] == 'dark' || $_GET['theme'] == 'light')) {
   SetCookie('theme', $_GET['theme'], time() + 15552000);
   $theme = $_GET['theme'];
