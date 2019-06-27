@@ -1,7 +1,7 @@
 <?php include('settings.php');include('shared.php');date_default_timezone_set($TZ);header('Content-type: text/html; charset=utf-8');error_reporting(0);?>
 <body>
 <?php 
-$url2 = 'https://swd.weatherflow.com/swd/rest/observations/station/'.$weatherflowID.'?api_key=5675886d24b02a37107eb5076d5e1d9f'; 
+$url2 = 'https://swd.weatherflow.com/swd/rest/observations/station/'.$weatherflowID.'?api_key=5675886d-24b0-2a37-107e-b5076d5e1d9f'; 
 $ch2 = curl_init($url2);
 $filename2 = 'jsondata/weatherflow.txt';
 $complete_save_loc2 = $filename2; 
