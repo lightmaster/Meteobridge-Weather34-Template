@@ -2445,9 +2445,22 @@ svgrain {
   list-style: none
 }
 
+red,
+ored,
+ored1,
+blue,
+oblue,
+orange,
+oorange,
+green,
+ogreen,
+maxred {
+  font-weight: bold;
+}
+
 ored,
 ored1 {
-  color: #d65b4a
+  color: #d65b4a;
 }
 
 svgearthquake {
@@ -2464,7 +2477,7 @@ oblue {
 oorange,
 orange,
 rise {
-  color: #d86858
+  color: #ff7c39
 }
 
 green,
@@ -6497,7 +6510,7 @@ valuetextheading {
 value {
   font-family: weathertext2;
   font-size: .95em;
-  font-weight: 400
+  font-weight: bold
 }
 
 valuetext,

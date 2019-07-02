@@ -2177,14 +2177,29 @@ spanm5 {
   list-style: none
 }
 
+red,
+ored,
+ored1,
+blue,
+oblue,
+orange,
+oorange,
+green,
+ogreen {
+  font-weight: bold;
+}
+
 .windgrey1,
 oorange,
 orange,
+rise {
+  color: #ff7c39;
+}
+
 ored,
 ored1,
-red,
-rise {
-  color: #ff7c39
+red {
+  color:#d35d4e;
 }
 
 .active a.area,
