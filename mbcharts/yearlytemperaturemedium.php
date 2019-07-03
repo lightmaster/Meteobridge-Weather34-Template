@@ -19,12 +19,12 @@
 	$weatherfile = date('Y');
 
 	if ($tempunit == 'F') {
-	$conv = '(9 / 5) + 32';
+		$conv = '(9 / 5) + 32';
 	} else {
-	$conv = '1';
+		$conv = '1';
 	}
+?>
 
-    echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -32,8 +32,6 @@
 		<title>OUTDOOR TEMP YEAR CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-	?>
     <br>
     <script type="text/javascript">
 		// today temperature
@@ -79,7 +77,7 @@
 		backgroundColor: '<?php echo $darkbackgroundcolor;?>',
 		animationEnabled: true,
 		animationDuration: <?php echo $animationduration;?>,
-		 margin: 0,
+		margin: 0,
 
 
 		title: {
@@ -108,62 +106,55 @@
 		    labelFontSize: 10,
 			labelFontColor: '<?php echo $darkfontcolor;?>',
 			lineThickness: 1,
-			gridDashType: "dot",
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:-0.5,
-			interval:'auto',
-			intervalType:"month",
-			xValueType: "dateTime",
 			crosshair: {
-        enabled: true,
-        snapToDataPoint: true,
-        color: '<?php echo $darkxcrosshaircolor;?>',
-        labelFontColor: "#F8F8F8",
-        labelFontSize:11,
-        labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
-      }
-
-			},
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $darkxcrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
+			}
+		},
 
 		axisY:{
-		title: "",
-		titleFontColor: '<?php echo $darkfontcolor;?>',
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 0,
-		interval: 'auto',
-		lineThickness: 1,
-		gridThickness: 1,
-        includeZero: false,
-		gridColor: '<?php echo $darkgridcolor;?>',
-		gridDashType: "dot",
-		labelFontSize: 10,
-		labelFontColor: '<?php echo $darkfontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + "°<?php echo $tempunit ;?>" ;
-         },
-      crosshair: {
-       enabled: true,
-       snapToDataPoint: true,
-       color: '<?php echo $darkycrosshaircolor;?>',
-       labelFontColor: "#F8F8F8",
-       labelFontSize:10,
-	   labelMaxWidth: 70,
-	   labelBackgroundColor: '<?php echo $darkycrosshaircolor;?>',
-       valueFormatString: "#0.0°<?php echo $tempunit ;?>",
-      }
+			title: "",
+			titleFontColor: '<?php echo $darkfontcolor;?>',
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 0,
+			interval: 'auto',
+			lineThickness: 1,
+			gridThickness: 1,
+			includeZero: false,
+			gridColor: '<?php echo $darkgridcolor;?>',
+			gridDashType: "dot",
+			labelFontSize: 10,
+			labelFontColor: '<?php echo $darkfontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(0) + "°<?php echo $tempunit ;?>" ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $darkycrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:10,
+				labelMaxWidth: 70,
+				labelBackgroundColor: '<?php echo $darkycrosshaircolor;?>',
+				valueFormatString: "#0.0°<?php echo $tempunit ;?>",
+			}
+      	},
 
-      },
-
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $darkfontcolor;?>',
-
- },
+	  	legend:{
+      		fontFamily: "arial",
+      		fontColor: '<?php echo $darkfontcolor;?>',
+		},
 
 
 		data: [
@@ -171,7 +162,7 @@
 			type: "splineArea",
 			color: '<?php echo $darkline1color;?>',
 			lineColor: '<?php echo $darkline1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:false,
 			legendMarkerType: "circle",
 			lineThickness: 2,
@@ -185,7 +176,7 @@
 
 			type: "splineArea",
 			color: '<?php echo $darkline2color;?>',
-			markerSize:0,
+			markerSize: (dataPoints2.length == 1 ? 8 : 0),
       		markerColor: '<?php echo $darkline2markercolor;?>',
 			showInLegend:false,
 			legendMarkerType: "circle",

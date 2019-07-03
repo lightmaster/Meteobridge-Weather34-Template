@@ -18,7 +18,10 @@
 	####################################################################################################
 
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
-    echo '
+	$date= date('D jS Y');
+	$weatherfile = date('dmY');
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -26,9 +29,6 @@
 		<title>OUTDOOR WIND day CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-
-	$date= date('D jS Y');$weatherfile = date('dmY');?>
     <br>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -104,11 +104,9 @@
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			gridDashType: "dot",
-   			intervalType: "hour",
-			minimum:0,
 			crosshair: {
         enabled: true,
         snapToDataPoint: true,
@@ -120,42 +118,42 @@
 			},
 
 		axisY:{
-		title: "Wind - Direction° Recorded",
-		titleFontColor: '<?php echo $fontcolor;?>',
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 10,
-		lineThickness: 1,
-		gridThickness: 1,
-        includeZero: false,
-		gridColor: '<?php echo $gridcolor;?>',
-		labelFontSize: 11,
-		labelFontColor: '<?php echo $fontcolor;?>',
-		gridDashType: "dot",
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		maximum:360,
-      minimum:0,
-		interval: 40,
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + '°' ;
-				 },
-				 crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $ycrosshaircolor;?>',
-			labelFontColor: "#fff",
-			labelFontSize:12,
-			labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
-			valueFormatString: "#0.# °",
-		}
-      },
+			title: "Wind - Direction° Recorded",
+			titleFontColor: '<?php echo $fontcolor;?>',
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 10,
+			lineThickness: 1,
+			gridThickness: 1,
+			includeZero: false,
+			gridColor: '<?php echo $gridcolor;?>',
+			labelFontSize: 11,
+			labelFontColor: '<?php echo $fontcolor;?>',
+			gridDashType: "dot",
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			maximum:360,
+			minimum:0,
+			interval: 40,
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(0) + '°' ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $ycrosshaircolor;?>',
+				labelFontColor: "#fff",
+				labelFontSize:12,
+				labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
+				valueFormatString: "#0.# °",
+			}
+      	},
 
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $fontcolor;?>',
+	  	legend:{
+			fontFamily: "arial",
+			fontColor: '<?php echo $fontcolor;?>',
 
- },
+ 		},
 
 
 		data: [
@@ -163,7 +161,7 @@
 			//wind direction
 			type: "scatter",
 			color: '<?php echo $line2color;?>',
-			markerSize:2,
+			markerSize: (dataPoints1.length == 1 ? 8 : 5),
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 1,

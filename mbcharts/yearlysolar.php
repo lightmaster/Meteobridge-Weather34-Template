@@ -17,19 +17,18 @@
 
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
+?>
 
-    echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title>OUTDOOR Solar Radiation YEAR CHART</title>
 		<script src=../js/jquery.js></script>
-		';
-	?>
-    <br>
-    <script type="text/javascript">
-        $(document).ready(function () {
+
+	<br>
+	<script type="text/javascript">
+		$(document).ready(function () {
 		var dataPoints1 = [];
 		var dataPoints2 = [];
 		$.ajax({
@@ -77,68 +76,60 @@
 		  animationDuration: <?php echo $animationduration;?>,
 
 		title: {
-            text: "",
+			text: "",
 			fontSize: 12,
 			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
-        },
+		},
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
 			   backgroundColor: '<?php echo $tooltipbackgroundcolor;?>',
 			   contentFormatter: function(e) {
-      var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
-      for (var i = 0; i < e.entries.length; i++) {
-        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + ' Wm/2</span> <br/>';
-        str = str.concat(temp);
-      }
-      return (str);
-    },
+	  var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
+	  for (var i = 0; i < e.entries.length; i++) {
+		var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + ' Wm/2</span> <br/>';
+		str = str.concat(temp);
+	  }
+	  return (str);
+	},
 			   shared: true,
  },
 		axisX: {
 			gridColor: '<?php echo $gridcolor;?>',
-		    labelFontSize: 10,
+			labelFontSize: 10,
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
 			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:0,
-			interval:31,
-			intervalType:"month",
-			xValueType: "dateTime",
-
-			},
+		},
 
 		axisY:{
-		title: "Solar Radiation (<?php echo 'Wm/2' ;?>) Recorded",
-		titleFontColor: '<?php echo $fontcolor;?>',
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 10,
-		lineThickness: 1,
-		gridThickness: 1,
-		gridDashType: "dot",
-        includeZero: false,
-		gridColor: '<?php echo $gridcolor;?>',
-		labelFontSize: 11,
-		labelFontColor: '<?php echo $fontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + " <?php echo 'Wm/2' ;?> " ;
-         },
+			title: "Solar Radiation (<?php echo 'Wm/2' ;?>) Recorded",
+			titleFontColor: '<?php echo $fontcolor;?>',
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 10,
+			lineThickness: 1,
+			gridThickness: 1,
+			gridDashType: "dot",
+			includeZero: false,
+			gridColor: '<?php echo $gridcolor;?>',
+			labelFontSize: 11,
+			labelFontColor: '<?php echo $fontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(0) + " <?php echo 'Wm/2' ;?> " ;
+			},
+		},
 
-
-      },
-
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $fontcolor;?>',
-
- },
+	  	legend:{
+	  		fontFamily: "arial",
+	  		fontColor: '<?php echo $fontcolor;?>',
+ 		},
 
 
 		data: [
@@ -147,7 +138,7 @@
 			type: "splineArea",
 			color: '<?php echo $line1color;?>',
 			lineColor: '<?php echo $line1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,
@@ -167,8 +158,8 @@
 	}
 });
 
-    </script>
-     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
+	</script>
+	 <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="Solar Radiation - <?php echo date('Y') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; High: <?php echo $weather['solar_ymax'];?> Wm/2"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

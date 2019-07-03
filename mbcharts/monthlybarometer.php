@@ -18,18 +18,20 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('M');
 
-	$conv = '1';
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
 		$conv = '1';
 	} else if ($pressureunit == 'inHg') {
 		$conv = '0.02953';
+	} else {
+		$conv = '1';
 	}
 
-	$int = '\'auto\'';
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
 		$int= '10';
 	} else if ($pressureunit == 'inHg') {
 		$int= '0.5';
+	} else {
+		$int = '\'auto\'';
 	}
 
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
@@ -45,7 +47,8 @@
 		$maximum = '31';
 		$minimum = '28';
 	}
-		echo '
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -53,8 +56,6 @@
 		<title>OUTDOOR Barometer CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-	?>
 		<br>
 <script type="text/javascript">
 	$(document).ready(function () {
@@ -125,10 +126,6 @@
 					gridDashType: "dot",
 					titleFontFamily: "arial",
 					labelFontFamily: "arial",
-					minimum:0,
-					intervalType:"day",
-					xValueType: "dateTime",
-					includezero: false,
 					crosshair: {
 						enabled: true,
 						snapToDataPoint: true,
@@ -178,7 +175,7 @@
 					type: "spline",
 					color: '<?php echo $line1color;?>',
 					lineColor: '<?php echo $line1linecolor;?>',
-					markerSize:0,
+					markerSize: (dataPoints1.length == 1 ? 8 : 0),
 					showInLegend:true,
 					legendMarkerType: "circle",
 					lineThickness: 2,
@@ -191,7 +188,7 @@
 					// Low Barometer
 					type: "spline",
 					color: '<?php echo $line2color;?>',
-					markerSize:0,
+					markerSize: (dataPoints2.length == 1 ? 8 : 0),
 					markerColor: '<?php echo $line2markercolor;?>',
 					showInLegend:true,
 					legendMarkerType: "circle",

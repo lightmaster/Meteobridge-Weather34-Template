@@ -19,12 +19,12 @@
 	$weatherfile = date('Y');
 
 	if ($tempunit == 'F') {
-	$conv = '(9 / 5) + 32';
+		$conv = '(9 / 5) + 32';
 	} else {
-	$conv = '1';
+		$conv = '1';
 	}
+?>
 
-    echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -32,8 +32,6 @@
 		<title>OUTDOOR TEMP YEAR CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-	?>
     <br>
     <script type="text/javascript">
 		// today temperature
@@ -108,61 +106,54 @@
 		    labelFontSize: 10,
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
-			gridDashType: "dot",
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:-0.5,
-			interval:'auto',
-			intervalType:"month",
-			xValueType: "dateTime",
 			crosshair: {
-        enabled: true,
-        snapToDataPoint: true,
-        color: '<?php echo $xcrosshaircolor;?>',
-        labelFontColor: "#F8F8F8",
-        labelFontSize:11,
-        labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
-      }
-
-			},
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $xcrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+			}
+		},
 
 		axisY:{
-		title: "Temperature (°<?php echo $tempunit ;?>) Recorded",
-		titleFontColor: '<?php echo $fontcolor;?>',
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 10,
-		interval: 'auto',
-		lineThickness: 1,
-		gridThickness: 1,
-        includeZero: false,
-		gridColor: '<?php echo $gridcolor;?>',
-		gridDashType: "dot",
-		labelFontSize: 11,
-		labelFontColor: '<?php echo $fontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + " °<?php echo $tempunit ;?> " ;
-         },
-      crosshair: {
-       enabled: true,
-       snapToDataPoint: true,
-       color: '<?php echo $ycrosshaircolor;?>',
-       labelFontColor: "#F8F8F8",
-       labelFontSize:11,
-       labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
-       valueFormatString: "#0.# °<?php echo $tempunit ;?>",
-      }
+			title: "Temperature (°<?php echo $tempunit ;?>) Recorded",
+			titleFontColor: '<?php echo $fontcolor;?>',
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 10,
+			interval: 'auto',
+			lineThickness: 1,
+			gridThickness: 1,
+			includeZero: false,
+			gridColor: '<?php echo $gridcolor;?>',
+			gridDashType: "dot",
+			labelFontSize: 11,
+			labelFontColor: '<?php echo $fontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(0) + " °<?php echo $tempunit ;?> " ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $ycrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
+				valueFormatString: "#0.# °<?php echo $tempunit ;?>",
+			}
+      	},
 
-      },
-
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $fontcolor;?>',
-
- },
+	  	legend:{
+      		fontFamily: "arial",
+      		fontColor: '<?php echo $fontcolor;?>',
+ 		},
 
 
 		data: [
@@ -170,7 +161,7 @@
 			type: "splineArea",
 			color: '<?php echo $line1color;?>',
 			lineColor: '<?php echo $line1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,
@@ -184,7 +175,7 @@
 
 			type: "splineArea",
 			color: '<?php echo $line2color;?>',
-			markerSize:0,
+			markerSize: (dataPoints2.length == 1 ? 8 : 0),
       		markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",

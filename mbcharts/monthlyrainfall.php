@@ -18,11 +18,12 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('M');
 
-	$conv = 1;
 	if ($rainunit == 'in') {
 		$conv = '0.0393701';
 	} else if ($rainunit == 'mm') {
 		$conv = '1';
+	} else {
+		$conv = 1;
 	}
 
 	if ($rainunit == 'mm'){
@@ -35,7 +36,8 @@
 	/*if ($windunit == 'mph') {$interval= '0.5';}
 	else if ($windunit == 'm/s') {$interval= '1';}
 	else if ($windunit == 'km/h'){$interval= '1';}*/
-		echo '
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -43,8 +45,6 @@
 		<title>OUTDOOR Rainfall CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-	?>
 		<br>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -119,11 +119,6 @@ $(document).ready(function () {
 				gridDashType: "dot",
 				titleFontFamily: "arial",
 				labelFontFamily: "arial",
-				minimum: 0,
-				//interval:'auto',
-				intervalType:"month",
-				xValueType: "dateTime",
-				includezero: false,
 				crosshair: {
 					enabled: true,
 					snapToDataPoint: true,
@@ -170,7 +165,7 @@ $(document).ready(function () {
 				// Rainfall
 				type: "column",
 				color: '<?php echo $line2color;?>',
-				markerSize:0,
+				markerSize: (dataPoints1.length == 1 ? 8 : 0),
 				markerColor: '<?php echo $line2markercolor;?>',
 				showInLegend:true,
 				legendMarkerType: "circle",

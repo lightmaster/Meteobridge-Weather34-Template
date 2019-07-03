@@ -18,11 +18,15 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
 
-  $conv = 1;
-	if ($windunit == 'mph') {$conv= '2.23694';}
-	else if ($windunit == 'm/s') {$conv= '1';}
-	else if ($windunit == 'km/h'){$conv= '3.6';}
-
+	if ($windunit == 'mph') {
+		$conv= '2.23694';
+	} else if ($windunit == 'm/s') {
+		$conv= '1';
+	} else if ($windunit == 'km/h'){
+		$conv= '3.6';
+	} else {
+		$conv = 1;
+	}
 ?>
 
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -34,9 +38,9 @@
 
 
 
-    <br>
-    <script type="text/javascript">
-        $(document).ready(function () {
+	<br>
+	<script type="text/javascript">
+		$(document).ready(function () {
 		var dataPoints1 = [];
 		var dataPoints2 = [];
 		$.ajax({
@@ -84,83 +88,77 @@
 		  animationDuration: <?php echo $animationduration;?>,
 
 		title: {
-            text: "",
+			text: "",
 			fontSize: 12,
 			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
-        },
+		},
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
 			   backgroundColor: '<?php echo $tooltipbackgroundcolor;?>',
 			   contentFormatter: function(e) {
-      var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
-      for (var i = 0; i < e.entries.length; i++) {
-        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' '.$windunit ;?>" + '</span> <br/>';
-        str = str.concat(temp);
-      }
-      return (str);
-    },
+	  var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
+	  for (var i = 0; i < e.entries.length; i++) {
+		var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' '.$windunit ;?>" + '</span> <br/>';
+		str = str.concat(temp);
+	  }
+	  return (str);
+	},
 			   shared: true,
  },
 		axisX: {
 			gridColor: '<?php echo $gridcolor;?>',
-		    labelFontSize: 10,
+			labelFontSize: 10,
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:0,
-			gridDashType: "dot",
-			intervalType:"month",
-			xValueType: "dateTime",
 			crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $xcrosshaircolor;?>',
-			labelFontColor: "#F8F8F8",
-			labelFontSize:11,
-			labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
-		}
-
-			},
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $xcrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+			}
+		},
 
 		axisY:{
-		title: "Wind - Gusts (<?php echo $windunit ;?>) Recorded",
-		titleFontColor: "#555",
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 10,
-		lineThickness: 1,
-		gridThickness: 1,
-        includeZero: false,
-		gridColor: '<?php echo $gridcolor;?>',
-		labelFontSize: 11,
-		labelFontColor: '<?php echo $fontcolor;?>',
-		gridDashType: "dot",
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + " <?php echo $windunit ;?> " ;
-         },
-		 crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $ycrosshaircolor;?>',
-			labelFontColor: "#F8F8F8",
-			labelFontSize:11,
-			labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
-			valueFormatString: "#0.0 <?php echo $windunit ;?>",
-		}
+			title: "Wind - Gusts (<?php echo $windunit ;?>) Recorded",
+			titleFontColor: "#555",
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 10,
+			lineThickness: 1,
+			gridThickness: 1,
+			includeZero: false,
+			gridColor: '<?php echo $gridcolor;?>',
+			labelFontSize: 11,
+			labelFontColor: '<?php echo $fontcolor;?>',
+			gridDashType: "dot",
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(0) + " <?php echo $windunit ;?> " ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $ycrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
+				valueFormatString: "#0.0 <?php echo $windunit ;?>",
+			}
+	  	},
 
-      },
-
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $fontcolor;?>',
-
- },
+	  	legend:{
+	  		fontFamily: "arial",
+	  		fontColor: '<?php echo $fontcolor;?>',
+		},
 
 		data: [
 		{
@@ -168,7 +166,7 @@
 			type: "splineArea",
 			color: '<?php echo $line1color;?>',
 			lineColor: '<?php echo $line1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,
@@ -181,12 +179,12 @@
 			// Average Wind Speed
 			type: "splineArea",
 			color: '<?php echo $line2color;?>',
-			markerSize:0,
-      		markerColor: '<?php echo $line2markercolor;?>',
+			markerSize: (dataPoints2.length == 1 ? 8 : 0),
+	  		markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,
-      		lineColor: '<?php echo $line2markercolor;?>',
+	  		lineColor: '<?php echo $line2markercolor;?>',
 			markerType: "circle",
 			name:"Avg Wind Speed",
 			dataPoints: dataPoints2,
@@ -200,8 +198,8 @@
 	}
 });
 
-    </script>
-     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
+	</script>
+	 <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="Wind Speed - <?php echo date('Y') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; Max Gust: <?php echo $weather["windymax"].' '.$windunit ;?>"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

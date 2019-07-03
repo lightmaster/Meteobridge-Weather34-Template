@@ -18,15 +18,17 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('M');
 
-	$conv = 1;
 	if ($windunit == 'mph') {
 		$conv= '2.23694';
 	} else if ($windunit == 'm/s') {
 		$conv= '1';
 	} else if ($windunit == 'km/h'){
 		$conv= '3.6';
+	} else {
+		$conv = 1;
 	}
-		echo '
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -34,8 +36,6 @@
 		<title>OUTDOOR WIND Month CHART</title>
 	<script src=../js/jquery.js></script>
 
-	';
-	?>
 <br>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -107,13 +107,9 @@ $(document).ready(function () {
 				labelFontColor: '<?php echo $fontcolor;?>',
 				lineThickness: 1,
 				gridThickness: 1,
+				gridDashType: "dot",
 				titleFontFamily: "arial",
 				labelFontFamily: "arial",
-				minimum: 0,
-				gridDashType: "dot",
-				intervalType:"day",
-				xValueType: "dateTime",
-				includezero: false,
 				crosshair: {
 					enabled: true,
 					snapToDataPoint: true,
@@ -161,7 +157,7 @@ $(document).ready(function () {
 				type: "splineArea",
 				color: '<?php echo $line1color;?>',
 				lineColor: '<?php echo $line1linecolor;?>',
-				markerSize:0,
+				markerSize: (dataPoints1.length == 1 ? 8 : 0),
 				showInLegend:true,
 				legendMarkerType: "circle",
 				lineThickness: 2,
@@ -174,7 +170,7 @@ $(document).ready(function () {
 				// Average Wind Speed
 				type: "splineArea",
 				color: '<?php echo $line2color;?>',
-				markerSize:0,
+				markerSize: (dataPoints2.length == 1 ? 8 : 0),
 				markerColor: '<?php echo $line2markercolor;?>',
 				showInLegend:true,
 				legendMarkerType: "circle",

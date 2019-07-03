@@ -16,7 +16,10 @@
 	####################################################################################################
 
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
-    echo '
+	$date= date('D jS Y');
+	$weatherfile = date('dmY');
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -24,9 +27,7 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title>Day Solar Radiation DATABASE CHART</title>
 		<script src=../js/jquery.js></script>
-	';
 
-	$date= date('D jS Y');$weatherfile = date('dmY');?>
     <br>
     	<script type="text/javascript">
 		// today temperature
@@ -100,40 +101,36 @@
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 0.5,
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			gridDashType: "dot",
-   			intervalType: "hour",
-			minimum:0,
-
 			},
 
 		axisY:{
-		title: "Solar Radiation (Wm/2) Recorded",
-		titleFontColor: '<?php echo $fontcolor;?>',
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 10,
-		lineThickness: 1,
-		gridThickness: 1,
-        includeZero: false,
-		gridColor: '<?php echo $gridcolor;?>',
-		gridDashType: "dot",
-		labelFontSize: 11,
-		labelFontColor: '<?php echo $fontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + " Wm/2 " ;
-         },
+			title: "Solar Radiation (Wm/2) Recorded",
+			titleFontColor: '<?php echo $fontcolor;?>',
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 10,
+			lineThickness: 1,
+			gridThickness: 1,
+			includeZero: false,
+			gridColor: '<?php echo $gridcolor;?>',
+			gridDashType: "dot",
+			labelFontSize: 11,
+			labelFontColor: '<?php echo $fontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			labelFormatter: function ( e ) {
+			return e.value .toFixed(0) + " Wm/2 " ;
+			},
 
-      },
+		},
 
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $fontcolor;?>',
-
- },
+	  	legend:{
+			fontFamily: "arial",
+			fontColor: '<?php echo $fontcolor;?>',
+ 		},
 
 
 		data: [
@@ -141,7 +138,7 @@
 			type: "splineArea",
 			color: '<?php echo $line1color;?>',
 			lineColor: '<?php echo $line1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,

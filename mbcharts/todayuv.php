@@ -16,7 +16,10 @@
 	####################################################################################################
 
 	include('chartslivedata.php');include('./chart_theme.php');include('conversion.php');header('Content-type: text/html; charset=utf-8');
-echo '
+	$date= date('D jS Y');
+	$weatherfile = date('dmY');
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -24,11 +27,8 @@ echo '
 		<title>OUTDOOR UVINDEX Weather Underground CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-
-	$date= date('D jS Y');
-	$weatherfile = date('dmY');
-	?><br>	<script type="text/javascript">
+<br>	
+<script type="text/javascript">
         $(document).ready(function () {
 	var dataPoints1 = [];
 	var dataPoints2 = [];
@@ -97,11 +97,9 @@ echo '
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			gridDashType: "dot",
-			intervalType : "hour",
-			minimum:0,
 			},
 
 		axisY:{
@@ -137,7 +135,7 @@ echo '
 			type: "splineArea",
 			color: '<?php echo $line1color;?>',
 			lineColor: '<?php echo $line1linecolor;?>',
-			markerSize:2,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,

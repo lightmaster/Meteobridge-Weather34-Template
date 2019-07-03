@@ -18,11 +18,15 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
 
-  $conv = 1;
-	if ($windunit == 'mph') {$conv= '2.23694';}
-	else if ($windunit == 'm/s') {$conv= '1';}
-	else if ($windunit == 'km/h'){$conv= '3.6';}
-
+	if ($windunit == 'mph') {
+		$conv= '2.23694';
+	} else if ($windunit == 'm/s') {
+		$conv= '1';
+	} else if ($windunit == 'km/h'){
+		$conv= '3.6';
+	} else {
+		$conv = 1;
+	}
 ?>
 
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -82,7 +86,7 @@
 		backgroundColor: '<?php echo $darkbackgroundcolor;?>',
 		animationEnabled: true,
 		animationDuration: <?php echo $animationduration;?>,
-		 margin: 0,
+		margin: 0,
 
 
 		title: {
@@ -112,60 +116,54 @@
 			labelFontColor: '<?php echo $darkfontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:-0.5,
-			gridDashType: "dot",
-			intervalType:"month",
-			xValueType: "dateTime",
 			crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $darkxcrosshaircolor;?>',
-			labelFontColor: "#F8F8F8",		
-			labelFontSize:8,
-			labelMaxWidth: 60,
-			labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
-		}
-
-			},
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $darkxcrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",		
+				labelFontSize:8,
+				labelMaxWidth: 60,
+				labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
+			}
+		},
 
 		axisY:{
-		title: "",
-		titleFontColor: "#555",
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 0,
-		lineThickness: 1,
-		gridThickness: 1,
-        includeZero: false,
-		gridColor: '<?php echo $darkgridcolor;?>',
-		labelFontSize: 11,
-		labelFontColor: '<?php echo $darkfontcolor;?>',
-		gridDashType: "dot",
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + " <?php echo $windunit ;?> " ;
-         },
-		 crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $darkycrosshaircolor;?>',
-			labelFontColor: "#F8F8F8",
-			labelFontSize:11,
-			labelMaxWidth: 60,
-			labelBackgroundColor: '<?php echo $darkycrosshaircolor;?>',
-			valueFormatString: "#0.0<?php echo $windunit ;?>",
-		}
+			title: "",
+			titleFontColor: "#555",
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 0,
+			lineThickness: 1,
+			gridThickness: 1,
+			includeZero: false,
+			gridColor: '<?php echo $darkgridcolor;?>',
+			labelFontSize: 11,
+			labelFontColor: '<?php echo $darkfontcolor;?>',
+			gridDashType: "dot",
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(0) + " <?php echo $windunit ;?> " ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $darkycrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelMaxWidth: 60,
+				labelBackgroundColor: '<?php echo $darkycrosshaircolor;?>',
+				valueFormatString: "#0.0<?php echo $windunit ;?>",
+			}
+		},
 
-      },
-
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $darkfontcolor;?>',
-
- },
+	  	legend:{
+      		fontFamily: "arial",
+      		fontColor: '<?php echo $darkfontcolor;?>',
+		},
 
 		data: [
 		{
@@ -173,7 +171,7 @@
 			type: "splineArea",
 			color: '<?php echo $darkline1color;?>',
 			lineColor: '<?php echo $darkline1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:false,
 			legendMarkerType: "circle",
 			lineThickness: 2,
@@ -186,7 +184,7 @@
 			// Average Wind Speed
 			type: "splineArea",
 			color: '<?php echo $darkline2color;?>',
-			markerSize:0,
+			markerSize: (dataPoints2.length == 1 ? 8 : 0),
       		markerColor: '<?php echo $darkline2markercolor;?>',
 			showInLegend:false,
 			legendMarkerType: "circle",

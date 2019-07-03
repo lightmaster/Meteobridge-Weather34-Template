@@ -18,12 +18,12 @@
 	$weatherfile = date('Y');
 
 	if ($tempunit == 'F') {
-	$conv = '(9 / 5) + 32';
+		$conv = '(9 / 5) + 32';
 	} else {
-	$conv = '1';
+		$conv = '1';
 	}
+?>
 
-    echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -31,12 +31,10 @@
 		<title>DEWPOINT TEMP YEAR CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-	?>
-    <br>
-    <script type="text/javascript">
+	<br>
+	<script type="text/javascript">
 		// today temperature
-        $(document).ready(function () {
+		$(document).ready(function () {
 		var dataPoints1 = [];
 		var dataPoints2 = [];
 		$.ajax({
@@ -81,86 +79,81 @@
 
 
 		title: {
-            text: " ",
+			text: " ",
 			fontSize: 11,
 			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
-        },
+		},
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
 			   backgroundColor: '<?php echo $tooltipbackgroundcolor;?>',
 			   contentFormatter: function(e) {
-      var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
-      for (var i = 0; i < e.entries.length; i++) {
-        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' °'.$tempunit ;?>" + '</span> <br/>';
-        str = str.concat(temp);
-      }
-      return (str);
-    },
+	  var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
+	  for (var i = 0; i < e.entries.length; i++) {
+		var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(1) + "<?php echo ' °'.$tempunit ;?>" + '</span> <br/>';
+		str = str.concat(temp);
+	  }
+	  return (str);
+	},
 			   shared: true,
 
 
  },
 		axisX: {
 			gridColor: '<?php echo $gridcolor;?>',
-		    labelFontSize: 10,
+			labelFontSize: 10,
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 0.5,
 			gridThickness: 1,
-      gridDashType: "dot",
+	  		gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:0,
-			interval:'auto',
-			intervalType:"day",
-			//xValueType: "dateTime",
 			crosshair: {
-        enabled: true,
-        snapToDataPoint: true,
-        color: '<?php echo $xcrosshaircolor;?>',
-        labelFontColor: "#F8F8F8",
-        labelFontSize:11,
-        labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
-      }
-
-			},
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $xcrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+			}
+		},
 
 		axisY:{
-		title: "Dewpoint (°<?php echo $tempunit ;?>) Recorded",
-		titleFontColor: '<?php echo $fontcolor;?>',
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 10,
-		lineThickness: 0.5,
-		gridThickness: 1,
-      gridDashType: "dot",
-        includeZero: true,
-		interval: 'auto',
-		gridColor: '<?php echo $gridcolor;?>',
-		labelFontSize: 11,
-		labelFontColor: '<?php echo $fontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0) + " °<?php echo $tempunit ;?>" ;
-         },
-		crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $ycrosshaircolor;?>',
-			labelFontColor: "#fff",
-			labelFontSize:11,
-			labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
-			valueFormatString: "##0.# °<?php echo $tempunit ;?>",
-		}
-      },
+			title: "Dewpoint (°<?php echo $tempunit ;?>) Recorded",
+			titleFontColor: '<?php echo $fontcolor;?>',
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 10,
+			lineThickness: 0.5,
+			gridThickness: 1,
+			gridDashType: "dot",
+			includeZero: true,
+			interval: 'auto',
+			gridColor: '<?php echo $gridcolor;?>',
+			labelFontSize: 11,
+			labelFontColor: '<?php echo $fontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(0) + " °<?php echo $tempunit ;?>" ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $ycrosshaircolor;?>',
+				labelFontColor: "#fff",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
+				valueFormatString: "##0.# °<?php echo $tempunit ;?>",
+			}
+	  	},
 
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $fontcolor;?>',
+	  	legend:{
+			fontFamily: "arial",
+			fontColor: '<?php echo $fontcolor;?>',
 
- },
+ 		},
 
 
 		data: [
@@ -169,7 +162,7 @@
 			type: "splineArea",
 			color: '<?php echo $line1color;?>',
 			lineColor: '<?php echo $line1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,
@@ -183,12 +176,12 @@
 
 			type: "splineArea",
 			color: '<?php echo $line2color;?>',
-			markerSize:0,
-      markerColor: '<?php echo $line2markercolor;?>',
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
+	  		markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,
-      lineColor: '<?php echo $line2markercolor;?>',
+	  		lineColor: '<?php echo $line2markercolor;?>',
 			markerType: "circle",
 			name:" Lo Dewpoint",
 			dataPoints: dataPoints2,
@@ -203,8 +196,8 @@
 	}
 });
 
-    </script>
-     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
+	</script>
+	 <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="Dewpoint - <?php echo date('Y') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; High: <?php echo $weather['dewymax'].' °'.$tempunit;?>&nbsp;&nbsp; Low: <?php echo $weather['dewymin'].' °'.$tempunit;?>"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

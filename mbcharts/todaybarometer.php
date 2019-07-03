@@ -17,11 +17,12 @@
 
 	include('chartslivedata.php');include('./chart_theme.php');include('conversion.php');header('Content-type: text/html; charset=utf-8');
 
-	$conv = 1;
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
 		$conv = '1';
 	} else if ($pressureunit == 'inHg') {
 		$conv = '0.02953';
+	} else {
+		$conv = 1;
 	}
 
 	$int = '\'auto\'';
@@ -132,11 +133,9 @@ $(document).ready(function () {
 				labelFontColor: '<?php echo $fontcolor;?>',
 				lineThickness: 1,
 				gridThickness: 1,
+				gridDashType: "dot",
 				titleFontFamily: "arial",
 				labelFontFamily: "arial",
-				gridDashType: "dot",
-				intervalType: "hour",
-				minimum:0,
 				crosshair: {
 					enabled: true,
 					snapToDataPoint: true,

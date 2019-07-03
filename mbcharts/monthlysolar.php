@@ -17,7 +17,8 @@
 
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('M');
-		echo '
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -25,8 +26,6 @@
 		<title>OUTDOOR Solar Radiation Monthly CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-	?>
 		<br>
 <script type="text/javascript">
 $(document).ready(function () {
@@ -100,13 +99,9 @@ $(document).ready(function () {
 				labelFontColor: '<?php echo $fontcolor;?>',
 				lineThickness: 1,
 				gridThickness: 1,
+				gridDashType: "dot",
 				titleFontFamily: "arial",
 				labelFontFamily: "arial",
-				minimum: 0,
-				interval:1,
-				gridDashType: "dot",
-				xValueType: "dateTime",
-				includezero: false,
 			},
 			axisY:{
 				title: "Solar Radiation (<?php echo 'Wm/2' ;?>) Recorded",
@@ -137,7 +132,7 @@ $(document).ready(function () {
 				type: "splineArea",
 				color: '<?php echo $line1color;?>',
 				lineColor: '<?php echo $line1linecolor;?>',
-				markerSize:0,
+				markerSize: (dataPoints1.length == 1 ? 8 : 0),
 				showInLegend:true,
 				legendMarkerType: "circle",
 				lineThickness: 2,

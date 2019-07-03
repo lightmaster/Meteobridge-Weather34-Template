@@ -18,12 +18,13 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
 
-  $conv = 1;
 	if ($rainunit == 'in') {
-    $conv = '0.0393701';
-  } else if ($rainunit == 'mm') {
-    $conv = '1';
-  }
+		$conv = '0.0393701';
+	} else if ($rainunit == 'mm') {
+		$conv = '1';
+	} else {
+		$conv = 1;
+	}
 
 	if ($rainunit == 'mm'){
 		$raindecimal = '0';
@@ -35,18 +36,18 @@
 	if ($windunit == 'mph') {$interval= '0.5';}
 	else if ($windunit == 'm/s') {$interval= '1';}
 	else if ($windunit == 'km/h'){$interval= '1';}*/
-    echo '
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title>OUTDOOR Rainfall YEAR CHART</title>
 		<script src=../js/jquery.js></script>
-			';
-	?>
-    <br>
-    <script type="text/javascript">
-        $(document).ready(function () {
+
+	<br>
+	<script type="text/javascript">
+		$(document).ready(function () {
 		var dataPoints1 = [];
 		var dataPoints2 = [];
 		$.ajax({
@@ -94,85 +95,80 @@
 		  animationDuration: <?php echo $animationduration;?>,
 
 		title: {
-            text: "",
+			text: "",
 			fontSize: 12,
 			fontColor: '<?php echo $fontcolor;?>',
 			fontFamily: "arial",
-        },
+		},
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
 			   backgroundColor: '<?php echo $tooltipbackgroundcolor;?>',
 			   contentFormatter: function(e) {
-      var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
-      for (var i = 0; i < e.entries.length; i++) {
-        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(2) + "<?php echo ' '.$rainunit ;?>" + '</span> <br/>';
-        str = str.concat(temp);
-      }
-      return (str);
-    },
+	  var str = '<span style="color: <?php echo $fontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
+	  for (var i = 0; i < e.entries.length; i++) {
+		var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $fontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(2) + "<?php echo ' '.$rainunit ;?>" + '</span> <br/>';
+		str = str.concat(temp);
+	  }
+	  return (str);
+	},
 			   shared: true,
  },
 		axisX: {
 			gridColor: '<?php echo $gridcolor;?>',
-		    labelFontSize: 10,
+			labelFontSize: 10,
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
 			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:0,
-			interval: 'auto',
-			intervalType:"day",
-			xValueType: "dateTime",
 			crosshair: {
-        enabled: true,
-        snapToDataPoint: true,
-        color: '<?php echo $xcrosshaircolor;?>',
-        labelFontColor: "#F8F8F8",
-        labelFontSize:11,
-        labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
-      }
-    },
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $xcrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+			}
+		},
 
 		axisY:{
-		title: "Rainfall (<?php echo $rainunit ;?>) Recorded",
-		titleFontColor: '<?php echo $fontcolor;?>',
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 10,
-		lineThickness: 1,
-		gridThickness: 1,
-		gridDashType: "dot",
-		interval: 'auto',
-        includeZero: false,
-		gridColor: '<?php echo $gridcolor;?>',
-		labelFontSize: 11,
-		labelFontColor: '<?php echo $fontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(<?php echo $raindecimal;?>) + " <?php echo $rainunit ;?> " ;
-         },
-		crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $xcrosshaircolor;?>',
-			labelFontColor: "#fff",
-			labelFontSize:12,
-			labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+			title: "Rainfall (<?php echo $rainunit ;?>) Recorded",
+			titleFontColor: '<?php echo $fontcolor;?>',
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 10,
+			lineThickness: 1,
+			gridThickness: 1,
+			gridDashType: "dot",
+			interval: 'auto',
+			includeZero: false,
+			gridColor: '<?php echo $gridcolor;?>',
+			labelFontSize: 11,
+			labelFontColor: '<?php echo $fontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
 			labelFormatter: function ( e ) {
-        return e.value .toFixed(<?php echo $raindecimal;?>) + " <?php echo $rainunit ;?> " ;
-         },
-		}
-      },
+				return e.value .toFixed(<?php echo $raindecimal;?>) + " <?php echo $rainunit ;?> " ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $xcrosshaircolor;?>',
+				labelFontColor: "#fff",
+				labelFontSize:12,
+				labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
+				labelFormatter: function ( e ) {
+					return e.value .toFixed(<?php echo $raindecimal;?>) + " <?php echo $rainunit ;?> " ;
+				},
+			}
+		},
 
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $fontcolor;?>',
-
- },
+	  	legend:{
+	  		fontFamily: "arial",
+	  		fontColor: '<?php echo $fontcolor;?>',
+		},
 
 
 		data: [
@@ -180,21 +176,17 @@
 			//rainfall
 			type: "column",
 			color: '<?php echo $line2color;?>',
-			markerSize:0,
-      markerColor: '<?php echo $line2color;?>',
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
+	  		markerColor: '<?php echo $line2color;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 0,
-      //lineColor: '<?php echo $line2color;?>',
+	  		//lineColor: '<?php echo $line2color;?>',
 			markerType: "none",
 			name:"Total Rainfall",
 			dataPoints: dataPoints1,
 			yValueFormatString:"#0.# <?php echo $rainunit ;?>",
-		},
-		{
-
 		}
-
 		]
 		});
 
@@ -202,8 +194,8 @@
 	}
 });
 
-    </script>
-     <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
+	</script>
+	 <link rel="stylesheet" href="weather34chartstyle-<?php echo $charttheme;?>.css">
 <body>
 <div class="weather34darkbrowser" url="Rainfall Recorded - <?php echo date('Y') ;?> &nbsp;&nbsp;|&nbsp;&nbsp; Total: <?php echo $weather["rain_year"].' '.$rainunit ;?>"></div>
 <div style="width:auto;background:0;padding:0px;margin-left:5px;font-size: 12px;border-radius:3px;">

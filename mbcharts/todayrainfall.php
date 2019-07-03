@@ -16,11 +16,15 @@
 	####################################################################################################
 
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
-	$conv = 1;
+	$date= date('D jS Y');
+	$weatherfile = date('dmY');
+
 	if ($rainunit == 'in') {
 		$conv = '0.0393701';
 	} else if ($rainunit == 'mm') {
 		$conv = '1';
+	} else {
+		$conv = 1;
 	}
 
 	if ($rainunit == 'mm'){
@@ -34,7 +38,8 @@
 	else if ($windunit == 'mph') {$interval= '0.5';}
 	else if ($windunit == 'm/s') {$interval= '1';}
 	else if ($windunit == 'km/h'){$interval= '1';}*/
-		echo '
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -43,10 +48,6 @@
 		<title>Rainfall Today DATABASE CHART</title>
 		<script src=../js/jquery.js></script>
 
-
-	';
-$date= date('D jS Y');
-$weatherfile = date('dmY');?>
 <br>
 <script type="text/javascript">
 // today temperature
@@ -114,11 +115,9 @@ $(document).ready(function () {
 				labelFontColor: '<?php echo $fontcolor;?>',
 				lineThickness: 0.5,
 				gridThickness: 1,
+				gridDashType: "dot",
 				titleFontFamily: "arial",
 				labelFontFamily: "arial",
-				gridDashType: "dot",
-				intervalType: "hour",
-				minimum:0,
 				crosshair: {
 					enabled: true,
 					snapToDataPoint: true,
@@ -193,7 +192,7 @@ $(document).ready(function () {
 			data: [{
 				type: "splineArea",
 				color: '<?php echo $line2color;?>',
-				markerSize:2,
+				markerSize: (dataPoints1.length == 1 ? 8 : 0),
 				markerColor: '<?php echo $line2markercolor;?>',
 				showInLegend:true,
 				lineThickness: 2,
@@ -207,7 +206,7 @@ $(document).ready(function () {
 				type: "line",
 				color: '<?php echo $line1color;?>',
 				lineColor: '<?php echo $line1linecolor;?>',
-				markerSize:2,
+				markerSize: (dataPoints1.length == 1 ? 8 : 0),
 				showInLegend:true,
 				axisYType: "secondary",
 				axisYIndex: 2,

@@ -18,18 +18,21 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
 
-  $conv = 1;
+  
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
-    $conv = '1';
-  } else if ($pressureunit == 'inHg') {
-    $conv = '0.02953';
-  }
+    	$conv = '1';
+  	} else if ($pressureunit == 'inHg') {
+    	$conv = '0.02953';
+  	} else {
+		$conv = 1;
+	  }
 
-	$int = '\'auto\'';
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
 		$int= '10';
 	} else if ($pressureunit == 'inHg') {
 		$int= '0.5';
+	} else {
+		$int = '\'auto\'';
 	}
 
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
@@ -45,9 +48,8 @@
 		$maximum = '31';
 		$minimum = '28';
 	}
+?>
 
-
-    echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -55,8 +57,6 @@
 		<title>OUTDOOR Barometer YEAR CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-	?>
     <br>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -132,13 +132,9 @@
 			labelFontColor: '<?php echo $fontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:0,
-			gridDashType: "dot",
-			interval: 'auto',
-			intervalType:"day",
-			xValueType: "dateTime",
 			crosshair: {
 				enabled: true,
 				snapToDataPoint: true,
@@ -148,46 +144,44 @@
 				labelBackgroundColor: '<?php echo $xcrosshaircolor;?>',
 			}
 
-			},
+		},
 
 		axisY:{
-		title: "Barometer (<?php echo $pressureunit ;?>) Recorded",
-		titleFontColor: '<?php echo $fontcolor;?>',
-		titleFontSize: 10,
-        titleWrap: false,
-		margin: 10,
-		lineThickness: 1,
-		gridThickness: 1,
-		interval: <?php echo $int;?>,
-        includeZero: false,
-		gridColor: '<?php echo $gridcolor;?>',
-		labelFontSize: 11,
-		gridDashType: "dot",
-		labelFontColor: '<?php echo $fontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		maximum: <?php echo $maximum;?>,
-		minimum: <?php echo $minimum;?>,
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(<?php echo $pressdecimal;?>) + " <?php echo $pressureunit ;?> " ;
-       },
-		crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $ycrosshaircolor;?>',
-			labelFontColor: "#F8F8F8",
-			labelFontSize:11,
-			labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
-			valueFormatString:"##0.# <?php echo $pressureunit ;?>",
-		}
+			title: "Barometer (<?php echo $pressureunit ;?>) Recorded",
+			titleFontColor: '<?php echo $fontcolor;?>',
+			titleFontSize: 10,
+			titleWrap: false,
+			margin: 10,
+			lineThickness: 1,
+			gridThickness: 1,
+			interval: <?php echo $int;?>,
+			includeZero: false,
+			gridColor: '<?php echo $gridcolor;?>',
+			labelFontSize: 11,
+			gridDashType: "dot",
+			labelFontColor: '<?php echo $fontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			maximum: <?php echo $maximum;?>,
+			minimum: <?php echo $minimum;?>,
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(<?php echo $pressdecimal;?>) + " <?php echo $pressureunit ;?> " ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $ycrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:11,
+				labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
+				valueFormatString:"##0.# <?php echo $pressureunit ;?>",
+			}
+      	},
 
-      },
-
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $fontcolor;?>',
-
- },
+	  	legend:{
+      		ontFamily: "arial",
+      		fontColor: '<?php echo $fontcolor;?>',
+ 		},
 
 
 		data: [
@@ -196,7 +190,7 @@
 			type: "spline",
 			color: '<?php echo $line1color;?>',
 			lineColor: '<?php echo $line1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:true,
 			legendMarkerType: "circle",
 			lineThickness: 2,
@@ -209,7 +203,7 @@
 			// Low Barometer
 			type: "spline",
 			color: '<?php echo $line2color;?>',
-			markerSize:0,
+			markerSize: (dataPoints2.length == 1 ? 8 : 0),
       		markerColor: '<?php echo $line2markercolor;?>',
 			showInLegend:true,
 			legendMarkerType: "circle",

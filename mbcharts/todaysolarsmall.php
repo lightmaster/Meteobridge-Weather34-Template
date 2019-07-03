@@ -2,7 +2,7 @@
 
 	####################################################################################################
 	#	DATACHARTS by BRIAN UNDERDOWN 2016                                                           #
-	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  # 
+	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at http://weather34.com/homeweatherstation/index.html  #
 	# 	                                                                                               #
 	# 	built on CanvasJs  	                                                                           #
 	#   canvasJs.js is protected by CREATIVE COMMONS LICENCE BY-NC 3.0  	                           #
@@ -14,19 +14,19 @@
 	# 	                                                                                               #
 	#   http://www.weather34.com 	                                                                   #
 	####################################################################################################
-	
+
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
-    echo '
+	$date= date('D jS Y');
+	$weatherfile = date('dmY');
+?>
+
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>OUTDOOR WIND day CHART</title>	
+		<title>OUTDOOR WIND day CHART</title>
 		<script src=../js/jquery.js></script>
-		
-	';
-	
-	$date= date('D jS Y');$weatherfile = date('dmY');?>
+
     <br>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -39,17 +39,17 @@
 			cache:false,
 			success: function(data) {processData1(data),processData2(data);}
 		});
-	
+
 	function processData1(allText) {
 		var allLinesArray = allText.split('\n');
 		if(allLinesArray.length>=0){
-			
+
 			for (var i = 1; i <= allLinesArray.length-1; i++) {
 				var rowData = allLinesArray[i].split(',');
 				if ( rowData.length >=0)
 					dataPoints1.push({label: rowData[1],y:parseFloat(rowData[8])});
-					
-					
+
+
 			}
 		}
 		requestTempCsv();}function requestTempCsv(){}
@@ -57,26 +57,26 @@
 	function processData2(allText) {
 		var allLinesArray = allText.split('\n');
 		if(allLinesArray.length>=0){
-			
+
 			for (var i = 1; i <= allLinesArray.length-1; i++) {
 				var rowData = allLinesArray[i].split(',');
 				if ( rowData.length >=0)
 					dataPoints2.push({label: rowData[1],y:parseFloat(rowData[8])});
 					//parseFloat(rowData[13])});
-				
+
 			}
 			drawChart(dataPoints1 , dataPoints2 );
 		}
 	}
 
-	
+
 	function drawChart( dataPoints1 , dataPoints2 ) {
 		var chart = new CanvasJS.Chart("chartContainer2", {
 		 backgroundColor: '<?php echo $darkbackgroundcolor;?>',
 		 animationEnabled: true,
 		 animationDuration: <?php echo $animationduration;?>,
 		 margin: 0,
-		 
+
 		title: {
             text: "",
 			fontSize: 0,
@@ -88,7 +88,7 @@
 			   fontStyle: "normal",
 			   cornerRadius: 4,
 			   backgroundColor: '<?php echo $tooltipbackgroundcolor;?>',
-			   fontSize: 11,	   
+			   fontSize: 11,
 			   contentFormatter: function(e) {
       var str = '<span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
       for (var i = 0; i < e.entries.length; i++) {
@@ -97,19 +97,17 @@
       }
       return (str);
     },
-			   shared: true, 
+			   shared: true,
  },
 		axisX: {
 			gridColor: '<?php echo $darkgridcolor;?>',
 		    labelFontSize: 10,
 			labelFontColor: '<?php echo $darkfontcolor;?>',
 			lineThickness: 1,
-			gridThickness: 1,	
-			titleFontFamily: "arial",	
-			labelFontFamily: "arial",	
+			gridThickness: 1,
 			gridDashType: "dot",
-   			intervalType: "hour",
-			minimum:0,
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
 			crosshair: {
         		enabled: true,
         		snapToDataPoint: true,
@@ -119,52 +117,51 @@
 				labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
       		}
 		},
-			
+
 		axisY:{
-		title: "",
-		titleFontColor: '<?php echo $darkfontcolor;?>',
-		titleFontSize: 0,
-        titleWrap: false,
-		margin: 0,
-		lineThickness: 1,		
-		gridThickness: 1,	
-		interval: 'auto',	
-        includeZero: false,
-		gridColor: '<?php echo $darkgridcolor;?>',
-		gridDashType: "dot",
-		labelFontSize: 9,
-		labelFontColor: '<?php echo $darkfontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(0);
-         },
-		crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $darkycrosshaircolor;?>',
-			labelFontColor: "#fff",
-			labelFontSize:10,
-			labelMaxWidth: 60,
-			labelBackgroundColor: '<?php echo $darkycrosshaircolor;?>',
+			title: "",
+			titleFontColor: '<?php echo $darkfontcolor;?>',
+			titleFontSize: 0,
+			titleWrap: false,
+			margin: 0,
+			lineThickness: 1,
+			gridThickness: 1,
+			interval: 'auto',
+			includeZero: false,
+			gridColor: '<?php echo $darkgridcolor;?>',
+			gridDashType: "dot",
+			labelFontSize: 9,
+			labelFontColor: '<?php echo $darkfontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
 			labelFormatter: function ( e ) {
-        return e.value .toFixed(0);
-         },
-		}
-      },
-	  
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $darkfontcolor;?>',
-  
- },
-		
-		
+				return e.value .toFixed(0);
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $darkycrosshaircolor;?>',
+				labelFontColor: "#fff",
+				labelFontSize:10,
+				labelMaxWidth: 60,
+				labelBackgroundColor: '<?php echo $darkycrosshaircolor;?>',
+				labelFormatter: function ( e ) {
+					return e.value .toFixed(0);
+				},
+			}
+		},
+
+	  	legend:{
+			fontFamily: "arial",
+			fontColor: '<?php echo $darkfontcolor;?>',
+		},
+
+
 		data: [{
 			type: "splineArea",
 			color: '<?php echo $darkline1color;?>',
 			lineColor: '<?php echo $darkline1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:false,
 			legendMarkerType: "circle",
 			lineThickness: 1,
@@ -175,7 +172,7 @@
 
 		}]
 		});
-		
+
 
 		chart.render();
 	}

@@ -18,18 +18,20 @@
 	include('chartslivedata.php');include('./chart_theme.php');header('Content-type: text/html; charset=utf-8');
 	$weatherfile = date('Y');
 
-  $conv = 1;
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
-    $conv = '1';
-  } else if ($pressureunit == 'inHg') {
-    $conv = '0.02953';
-  }
+		$conv = '1';
+  	} else if ($pressureunit == 'inHg') {
+		$conv = '0.02953';
+  	} else {
+		$conv = 1;
+	  }
 
-	$int = '\'auto\'';
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
 		$int= '10';
 	} else if ($pressureunit == 'inHg') {
 		$int= '0.5';
+	} else {
+		$int = '\'auto\'';
 	}
 
 	if ($pressureunit == 'mb' || $pressureunit == 'hPa') {
@@ -45,8 +47,8 @@
 		$maximum = '31';
 		$minimum = '28';
 	}
+?>
 
-    echo '
 <!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -54,11 +56,9 @@
 		<title>OUTDOOR Barometer YEAR CHART</title>
 		<script src=../js/jquery.js></script>
 
-	';
-	?>
-    <br>
-    <script type="text/javascript">
-        $(document).ready(function () {
+	<br>
+	<script type="text/javascript">
+		$(document).ready(function () {
 		var dataPoints1 = [];
 		var dataPoints2 = [];
 		$.ajax({
@@ -108,39 +108,35 @@
 
 
 		title: {
-            text: " ",
+			text: " ",
 			fontSize: 11,
 			fontColor: '<?php echo $darkfontcolor;?>',
 			fontFamily: "arial",
-        },
+		},
 		toolTip:{
 			   fontStyle: "normal",
 			   cornerRadius: 4,
 			   backgroundColor: '<?php echo $darktooltipbackgroundcolor;?>',
 			   fontSize: 11,	   
 			   contentFormatter: function(e) {
-      var str = '<span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
-      for (var i = 0; i < e.entries.length; i++) {
-        var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(<?php echo $pressdecimal;?> + 1) + "<?php echo ' '.$pressureunit ;?>" + '</span> <br/>';
-        str = str.concat(temp);
-      }
-      return (str);
-    },
+	  var str = '<span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[0].dataPoint.label + '</span><br/>';
+	  for (var i = 0; i < e.entries.length; i++) {
+		var temp = '<span style="color: ' + e.entries[i].dataSeries.color + ';">' + e.entries[i].dataSeries.name + '</span> <span style="color: <?php echo $darkfontcolor;?>;">' + e.entries[i].dataPoint.y.toFixed(<?php echo $pressdecimal;?> + 1) + "<?php echo ' '.$pressureunit ;?>" + '</span> <br/>';
+		str = str.concat(temp);
+	  }
+	  return (str);
+	},
 			   shared: true, 
  },
 		axisX: {
 			gridColor: '<?php echo $darkgridcolor;?>',
-		    labelFontSize: 10,
+			labelFontSize: 10,
 			labelFontColor: '<?php echo $darkfontcolor;?>',
 			lineThickness: 1,
 			gridThickness: 1,
+			gridDashType: "dot",
 			titleFontFamily: "arial",
 			labelFontFamily: "arial",
-			minimum:0,
-			gridDashType: "dot",
-			interval: 'auto',
-			intervalType:"day",
-			xValueType: "dateTime",
 			crosshair: {
 				enabled: true,
 				snapToDataPoint: true,
@@ -150,47 +146,45 @@
 				labelBackgroundColor: '<?php echo $darkxcrosshaircolor;?>',
 			}
 
-			},
+		},
 
 		axisY:{
-		title: "",
-		titleFontColor: '<?php echo $darkfontcolor;?>',
-		titleFontSize: 0,
-        titleWrap: false,
-		margin: 0,
-		lineThickness: 1,
-		gridThickness: 1,
-		interval: <?php echo $int;?>,
-        includeZero: false,
-		gridColor: '<?php echo $darkgridcolor;?>',
-		labelFontSize: 8,
-		gridDashType: "dot",
-		labelFontColor: '<?php echo $darkfontcolor;?>',
-		titleFontFamily: "arial",
-		labelFontFamily: "arial",
-		maximum: <?php echo $maximum;?>,
-		minimum: <?php echo $minimum;?>,
-		labelFormatter: function ( e ) {
-        return e.value .toFixed(<?php echo $pressdecimal;?>) + " <?php echo $pressureunit ;?> " ;
-       },
-		crosshair: {
-			enabled: true,
-			snapToDataPoint: true,
-			color: '<?php echo $ycrosshaircolor;?>',
-			labelFontColor: "#F8F8F8",
-			labelFontSize:8,
-			labelMaxWidth: 60,
-			labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
-			valueFormatString:"##0.# <?php echo $pressureunit ;?>",
-		}
+			title: "",
+			titleFontColor: '<?php echo $darkfontcolor;?>',
+			titleFontSize: 0,
+			titleWrap: false,
+			margin: 0,
+			lineThickness: 1,
+			gridThickness: 1,
+			interval: <?php echo $int;?>,
+			includeZero: false,
+			gridColor: '<?php echo $darkgridcolor;?>',
+			labelFontSize: 8,
+			gridDashType: "dot",
+			labelFontColor: '<?php echo $darkfontcolor;?>',
+			titleFontFamily: "arial",
+			labelFontFamily: "arial",
+			maximum: <?php echo $maximum;?>,
+			minimum: <?php echo $minimum;?>,
+			labelFormatter: function ( e ) {
+				return e.value .toFixed(<?php echo $pressdecimal;?>) + " <?php echo $pressureunit ;?> " ;
+			},
+			crosshair: {
+				enabled: true,
+				snapToDataPoint: true,
+				color: '<?php echo $ycrosshaircolor;?>',
+				labelFontColor: "#F8F8F8",
+				labelFontSize:8,
+				labelMaxWidth: 60,
+				labelBackgroundColor: '<?php echo $ycrosshaircolor;?>',
+				valueFormatString:"##0.# <?php echo $pressureunit ;?>",
+			}
+		},
 
-      },
-
-	  legend:{
-      fontFamily: "arial",
-      fontColor: '<?php echo $darkfontcolor;?>',
-
- },
+	  	legend:{
+	  		fontFamily: "arial",
+	  		fontColor: '<?php echo $darkfontcolor;?>',
+ 		},
 
 
 		data: [
@@ -199,7 +193,7 @@
 			type: "spline",
 			color: '<?php echo $darkline1color;?>',
 			lineColor: '<?php echo $line1linecolor;?>',
-			markerSize:0,
+			markerSize: (dataPoints1.length == 1 ? 8 : 0),
 			showInLegend:false,
 			legendMarkerType: "circle",
 			lineThickness: 2,
@@ -212,12 +206,12 @@
 			// Low Barometer
 			type: "spline",
 			color: '<?php echo $darkline2color;?>',
-			markerSize:0,
-      		markerColor: '<?php echo $darkline2markercolor;?>',
+			markerSize: (dataPoints2.length == 1 ? 8 : 0),
+	  		markerColor: '<?php echo $darkline2markercolor;?>',
 			showInLegend:false,
 			legendMarkerType: "circle",
 			lineThickness: 2,
-      		lineColor: '<?php echo $darkline2color;?>',
+	  		lineColor: '<?php echo $darkline2color;?>',
 			markerType: "circle",
 			name:"Lo Barometer",
 			dataPoints: dataPoints2,
