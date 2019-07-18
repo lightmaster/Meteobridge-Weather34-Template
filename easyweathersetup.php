@@ -545,6 +545,7 @@ Hardware Options</div><br/><br/>
            <option>Fine Offset WH-2080</option>
            <option>Fine Offset WH-3080</option>
            <option>Fine Offset WH-1080</option>
+           <option>Ecowitt GW-1000</option>
            <option>Accurite</option>
            <option>La Crosse</option>
            <option>Weatherflow Air-Sky</option>
