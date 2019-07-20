@@ -53,7 +53,7 @@ transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barome
                 <?php echo $steadysymbol;?>
             </ogreen>
             <steady>
-                <ogreen><value>Steady</ogreen> <?php echo number_format($weather["barometer_trend"],2);?>
+                <ogreen><value>Steady</ogreen>
             </steady>
         <?php };?>
     </valuetext>
