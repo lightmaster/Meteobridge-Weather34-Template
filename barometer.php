@@ -23,7 +23,7 @@ transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barome
 
 <div class="barometertrend2">
     <valuetext>&nbsp;&nbsp;Trend
-        <?php $weather['barometer_trend'] = -2;
+        <?php
         if ((($pressureunit=='mb' || $pressureunit=='hPa') && $weather["barometer_trend"] > 1) || ($pressureunit == "inHg" && $weather["barometer_trend"] > 0.02953))  {?>
             <rising>
                 <rise>
