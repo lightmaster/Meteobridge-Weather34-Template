@@ -1,5 +1,8 @@
 <?php 
 include('settings1.php');error_reporting(0); 
+if( isset($_GET['debug']) ) {
+	$debug=$_GET['debug'];
+}
 	####################################################################################################
 	#	HOME WEATHER STATION TEMPLATE SETUP please set up and check thoroughly                         #
 	#	CREATED FOR HOMEWEATHERSTATION TEMPLATE at https://weather34.com/homeweatherstation/index.html # 
@@ -36,24 +39,45 @@ $charttheme         = $theme;
 $copyYear = 2015;
 $curYear = date('Y');
 $copyrightcredit='&copy; weather34.com original CSS/SVG/PHP '.$copyYear . (($copyYear != $curYear) ? '-' . $curYear : 'Copyright');
-$indoorRefresh      = 120; // 2 minutes
-$advisoryRefresh    = 17; // 17 seconds
-$tempRefresh        = 10; // 60 secondss
-$skyRefresh         = 300; // 5 minutes 
-$windSpeedRefresh   = 10; // 10 seconds
-$baroRefresh        = 10; // 15 minutes
-$windDirRefresh     = 10; // 10 seconds
-$moonRefresh    	  = 1800; // 30 minutes 
-$rainRefresh        = 10; // 50 seconds 
-$p12Refresh         = 10; // 1 minutes        Position 12 refresh (if not webcam)
-$p13Refresh         = 10; // 2 minutes        Last Postion refresh (if not webcam)
-$moonphaseRefresh   = 120; // 2 minutes
-$eqRefresh          = 600; // 10 minutes 
-$forecastRefresh    = 900; // 15 minutes 
-$notificationcenterRefresh    = 300; // 5 minutes set refresh time for notification of earthquakes default 5 minutes
-$wuupdate           = 1800; // 30 minutes 
-$wfupdate           = 60; // weatherflow api 60 seconds
-$camRefresh		      = 60; // 1 minute refresh on camera popup
+if ($debug == 1) {
+  $indoorRefresh              = 10000;
+  $advisoryRefresh            = 10000;
+  $tempRefresh                = 10000;
+  $skyRefresh                 = 10000;
+  $windSpeedRefresh           = 10000;
+  $baroRefresh                = 10000;
+  $windDirRefresh             = 10000;
+  $moonRefresh    	          = 10000;
+  $rainRefresh                = 10000;
+  $p12Refresh                 = 10000;
+  $p13Refresh                 = 10000;
+  $moonphaseRefresh           = 10000;
+  $eqRefresh                  = 10000;
+  $forecastRefresh            = 10000;
+  $notificationcenterRefresh  = 10000;
+  $wuupdate                   = 10000;
+  $wfupdate                   = 10000;
+  $camRefresh		              = 10000;
+} else {
+  $indoorRefresh              = 120;
+  $advisoryRefresh            = 17;
+  $tempRefresh                = 10;
+  $skyRefresh                 = 300;
+  $windSpeedRefresh           = 10;
+  $baroRefresh                = 10;
+  $windDirRefresh             = 10;
+  $moonRefresh    	          = 1800;
+  $rainRefresh                = 10;
+  $p12Refresh                 = 10;       # Position 12 refresh (if not webcam)
+  $p13Refresh                 = 10;       #Last positon refresh (if not webcam)
+  $moonphaseRefresh           = 120;
+  $eqRefresh                  = 600;
+  $forecastRefresh            = 900;
+  $notificationcenterRefresh  = 300;
+  $wuupdate                   = 1800;
+  $wfupdate                   = 60;
+  $camRefresh		              = 60;       #Camera refresh rate
+}
 
 // Thresholds for warnings or notifications
 $notifyDistEQ       = 300; // miles if $windunit is mph otherwise km
