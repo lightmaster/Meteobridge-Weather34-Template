@@ -22,13 +22,41 @@ transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barome
 <?php echo '<div class=barometerblue><valuetext>Min ('.$weather["thb0seapressmintime"].')<br><minblue><value>',$weather["barometer_min"],'</minblue>&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
 
 <div class="barometertrend2">
-<?php  echo "<valuetext>&nbsp;&nbsp;Trend";
-if ($weather["barometer_trend"] > 20  && $weather["barometer_trend"] < 100)  {echo '<rising><rise> '.$risingsymbol.' </rise><span><value>';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}
-else if ($weather["barometer_trend"] < 0) {
-echo '<falling><fall> '.$fallingsymbol.'</fall><value> '; echo number_format($weather["barometer_trend"],2), '</falling><units> ';echo $weather["barometer_units"], '</units>';}
-else if ($weather["barometer_trend"] > 0 && $weather["barometer_trend"] < 100) {
-echo '<rising><rise>'.$risingsymbol.' </rise><value>&nbsp;';echo number_format($weather["barometer_trend"],2), '</rising><units> ';echo $weather["barometer_units"], '</units>';}	  
-else echo '<ogreen> '.$steadysymbol.'</ogreen><steady><ogreen><value>Steady</ogreen></steady>';?></valuetext>
+    <valuetext>&nbsp;&nbsp;Trend
+        <?php $weather['barometer_trend'] = -2;
+        if ((($pressureunit=='mb' || $pressureunit=='hPa') && $weather["barometer_trend"] > 1) || ($pressureunit == "inHg" && $weather["barometer_trend"] > 0.02953))  {?>
+            <rising>
+                <rise>
+                    <?php echo $risingsymbol;?>
+                    <value>
+                        <?php echo number_format($weather["barometer_trend"],2);?>
+                    </value>
+                </rise>
+            </rising>
+            <units>
+                <?php echo $weather["barometer_units"];?>
+            </units>
+        <?php } else if ((($pressureunit=='mb' || $pressureunit=='hPa') && $weather["barometer_trend"] < -1) || ($pressureunit == "inHg" && $weather["barometer_trend"] < -0.02953)) {?>
+            <falling>
+                <fall>
+                    <?php echo $fallingsymbol;?>
+                    <value>
+                        <?php echo number_format($weather["barometer_trend"],2);?>
+                    </value>
+                </fall>
+            </falling>
+            <units>
+                <?php echo $weather["barometer_units"];?>
+            </units>
+        <?php } else {?>
+            <ogreen>
+                <?php echo $steadysymbol;?>
+            </ogreen>
+            <steady>
+                <ogreen><value>Steady</ogreen> <?php echo number_format($weather["barometer_trend"],2);?>
+            </steady>
+        <?php };?>
+    </valuetext>
 </div>
 
 <div class="homeweathercompass2" >
