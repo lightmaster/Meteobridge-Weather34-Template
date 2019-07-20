@@ -21,6 +21,8 @@ settings1.php
 mbcharts/*.csv
 mbcharts/*/*.csv
 jsondata/*.txt
+jsondata/*.json
+jsondata/*.html
 chartswudata/*
 #demodata/*
 mbridge/MBrealtimeupload.txt
@@ -71,3 +73,4 @@ highcharts
 alerts.json
 checkalert.*
 settings-pb.php
+lightningdownload.php

@@ -3887,17 +3887,39 @@ input[type=checkbox] {
 .weather34sidebarMenuInner li {
   background: rgba(18, 18, 18, .7);
   list-style: none;
-  padding: 5px 5px 5px 10px;
+  padding: 0px 5px 3px 14px;
   cursor: pointer;
   border-bottom: 0;
   width: 240px
 }
 
-.weather34sidebarMenuInner li.header {
+.weather34sidebarMenuInner li.header,
+.weather34sidebarMenuInner li.header.sub {
   font-size: 15px;
   text-align: left;
   color: #ff8841;
-  font-weight: 700
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  padding-left: 8px
+}
+
+.weather34sidebarMenuInner li.flagstop{
+  margin-bottom: -4px;
+  padding-top: 0;
+  padding-bottom: 0
+}
+
+.weather34sidebarMenuInner li.flagsmiddle {
+  margin-top: -4px;
+  margin-bottom: -4px;
+  padding-top: 0;
+  padding-bottom:0
+}
+.weather34sidebarMenuInner li.flagsbottom {
+  margin-top: -4px;
+  padding-top: 0;
+  padding-bottom: 5px
 }
 
 .weather34sidebarMenuInner li span {
@@ -3917,6 +3939,84 @@ input[type=checkbox] {
   float: left;
   font-size: 12px
 }
+
+/* CSS for the flyout menu */
+.weather34sidebarMenuInner li.sub {
+  background-image: url(sub2.svg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+}
+
+.weather34sidebarMenuInner li ul {
+  visibility: hidden;
+  position: absolute;
+  top: -30px;
+  /* set up the overlap (minus the overrun) */
+  left: 100px;
+  /* set up the overrun area */
+  padding: 30px;
+  /* this is for IE to make it interpret the overrrun padding */
+  background: transparent url(transparent.gif);
+}
+
+.weather34sidebarMenuInner li.sub ul li {
+  padding-top: 6px;
+  background-color: rgba(33, 34, 39, .95);
+}
+
+.weather34sidebarMenuInner li:hover {
+  position: relative;
+}
+
+/* For accessibility of the top level menu when tabbing */
+/* .weather34sidebarMenuInner a:active,
+.weather34sidebarMenuInner a:focus {
+  color: #000;
+} */
+
+/* for browsers that understand this is all you need for the flyouts */
+.weather34sidebarMenuInner li:hover>ul {
+  visibility: visible;
+}
+
+/* for IE5.5 and IE6 you need to style each level hover */
+
+/* keep the third level+ hidden when you hover on first level link */
+.weather34sidebarMenuInner ul a:hover ul ul {
+  visibility: hidden;
+}
+
+/* keep the fourth level+ hidden when you hover on second level link */
+.weather34sidebarMenuInner ul a:hover ul a:hover ul ul {
+  visibility: hidden;
+}
+
+/* keep the fifth level hidden when you hover on third level link */
+.menweather34sidebarMenuInneru ul a:hover ul a:hover ul a:hover ul ul {
+  visibility: hidden;
+}
+
+/* make the second level visible when hover on first level link */
+.weather34sidebarMenuInner ul a:hover ul {
+  visibility: visible;
+}
+
+/* make the third level visible when you hover over second level link */
+.meweather34sidebarMenuInnernu ul a:hover ul a:hover ul {
+  visibility: visible;
+}
+
+/* make the fourth level visible when you hover over third level link */
+.weather34sidebarMenuInner ul a:hover ul a:hover ul a:hover ul {
+  visibility: visible;
+}
+
+/* make the fifth level visible when you hover over fourth level link */
+.weather34sidebarMenuInner ul a:hover ul a:hover ul a:hover ul a:hover ul {
+  visibility: visible;
+}
+/* End flyout menu */
 
 input[type=checkbox]:checked~#weather34sidebarMenu {
   transform: translateX(0)
@@ -5569,6 +5669,12 @@ img.menuimg {
   max-width: 60px;
   max-height: 30px;
   height: auto
+}
+
+img.flags{
+  width: 25px;
+  height: 25px;
+  margin-right: 3px
 }
 
 .daylightword {

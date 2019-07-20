@@ -1,78 +1,305 @@
-<div class="weather34admin"><header class="weather34admin__header"><div class="weather34toolbar">
-<div class="weather34toolbar__left"><button class="weather34btn weather34btn--primary"></button></div><div class="weather34toolbar__center"><button class="weather34btn weather34btn--primary"><weather34toptitle><?php echo $stationName;?>&nbsp; Home Weather Station</weather34toptitle> 
-</button></div><div class="weather34toolbar__right"><weather34mbuptime><?php echo $info."Uptime:"?><?php if ($uptimedays <1 ){echo "$uptimehours Hours";} else echo $uptimedays," Days";?></weather34mbuptime><a href="#"><?php if($units!='us'){echo' <a href="./?units=us" alt="select fahrenhiet" title="select fahrenhiet"><topbarimperial>&deg;F</topbarimperial></a></div>';}else if($units!='metric'){echo' <a  alt="select metric" title="select metric" href="./?units=metric"><topbarmetric>&deg;C</topbarmetric></a></div>';}
-else echo' <div class="menucolor"><a href="./?units=metric">Units</a></div>';?></a></div></div></header>
- <input type="checkbox" class="openweather34sidebarMenu" id="openweather34sidebarMenu">
-  <label for="openweather34sidebarMenu" class="weather34sidebarIconToggle">
-    <div class="weather34spinner weather34cross part-1"></div>
-    <div class="weather34spinner weather34horizontal"></div>
-    <div class="weather34spinner weather34cross part-2"></div>    
-  </label>
- <div id="weather34sidebarMenu">
-<ul class="weather34sidebarMenuInner">
-<br /><br /><br />
-<li class="header">ADMIN</li>
-<li><a href="easyweathersetup.php" target="_blank" title="WEATHERSTATION SETTINGS PAGE"><?php echo " <weather34menumarkeryellow></weather34menumarkeryellow> ",$lang['Settings']; ?> </a></li> 
-<p>
-<li><a href="index.php" title="WEATHERSTATION HOME PAGE"> <weather34menumarkergreen></weather34menumarkergreen> Home </a></li>  
-<li class="header">UI THEME</li>
-<li><a href=<?php if($theme=='dark'){echo'?theme=light';}else{echo'?theme=dark';}?>>
-<?php if($theme=='dark'){echo' <weather34menumarkerlight></weather34menumarkerlight> Light Mode';}else{echo'<weather34menumarkerbluegrey></weather34menumarkerbluegrey> Dark Mode';}?></a></li>
-<p>
-<li class="header">UNITS</a></li>
-<?php 
-  if($units!=Null && $units!='default'){echo '<li> <a  href="./?units=default"> <weather34menumarkerred></weather34menumarkerred> Default Units '.(($tempunit=='F')?'<topbarimperialf>&deg;F</topbarimperialf>':'<topbarmetricc>&deg;C</topbarmetricc>').'</a><br />';}
-  if($units!='us'){echo '<li> <a  href="./?units=us"> <weather34menumarkerorange></weather34menumarkerorange>  Imperial  <topbarimperialf>&deg;F</topbarimperialf> </a><br />  ';}
-  if($units!='metric'){echo '<li> <a  href="./?units=metric"> <weather34menumarkerblue></weather34menumarkerblue> Metric <topbarmetricc>&deg;C</topbarmetricc></a><br />  ';}
-  if($units!='uk'){echo '<li> <a  href="./?units=uk">  <weather34menumarkeryellow></weather34menumarkeryellow> UK ( MPH)  <topbarmetricc>&deg;C</topbarmetricc></a><br /> ';}
-  if($units!='scandinavia'){echo '<li> <a  href="./?units=scandinavia"> <weather34menumarkerred></weather34menumarkerred> M/S  <topbarmetricc>&deg;C</topbarmetricc></a>';}
-?>
-
-<li class="header">EXTRAS</a></li>
-<li>
-<?php if($weatherflowoption=="yes"){ echo "<a href=https://staging.smartweather.weatherflow.com/map/".$lat."/".$lon."/".$weatherflowmapzoom." data-lity title='see your weather station on official weatherflow map'><weather34menumarkerblue></weather34menumarkerblue> Weatherflow Map </a></li>" ;}
-else echo "";?>
-<?php if(!empty($webcamurl) && $webcamurl != ' ' && $webcamurl != 'Null' && $webcamurl != 'null'){?>
-<li><!---webcam---> <a href="cam.php" data-lity title="WEATHERSTATION WEBCAM"> <weather34menumarkeryellow></weather34menumarkeryellow> Web Cam </a></li>  
-<?php };?>
-<li><!--contact info---> <a href="bio.php" data-lity title="Weather Station Owner Contact Card Info"> <weather34menumarkerorange></weather34menumarkerorange> Contact Card</a></li> 
-<li><!--hardware info---> <a href="stationinfo.php" data-lity title="Hardware Weather Station Hardware Info"> <weather34menumarkerred></weather34menumarkerred> Hardware Info</a></li>  
-
-<!---languages---> 
-  <br>   <?php if($languages=="yes") {?><li><a href="">
-   
-   <weather34menumarkerbluegrey></weather34menumarkerbluegrey> <?php echo $lang["language"];?></a></li>
-     <br>
-  <div class="languages34">
-  <a href="index.php?lang=en"><img src="img/flags/en.svg"  title="English" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=dk"><img src="img/flags/dk.svg"  title="Danish" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=gr"><img src="img/flags/gr.svg"  title="Greek" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=it"><img src="img/flags/it.svg"  title="Italian" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=fr"><img src="img/flags/fr.svg"  title="French" width="25px" height="25px"></a>&nbsp;
-  </div>
-
-  <div class="languages34">    
-  <a href="index.php?lang=dl"><img src="img/flags/dl.svg"  title="German" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=nl"><img src="img/flags/nl.svg"  title="Dutch" width="25px" height="25px"></a>&nbsp; 
-  <a href="index.php?lang=cat"><img src="img/flags/cat.svg" title="Catalan" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=sp"><img src="img/flags/sp.svg"  title="Spanish" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=tr"><img src="img/flags/tr.svg"  title="Turkish" width="25px" height="25px"></a>&nbsp;
-  </div>
+<div class="weather34admin">
   
-   <div class="languages34">    
-  <a href="index.php?lang=hu"><img src="img/flags/hu.svg"  title="Hungary" width="25px" height="25px"></a>&nbsp; 
-  <a href="index.php?lang=pl"><img src="img/flags/pl.svg"  title="Polish" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=sp"><img src="img/flags/ar.svg"  title="Argentina" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=dl"><img src="img/flags/ch-switzerland.svg"  title="Switzerland" width="25px" height="25px"></a>&nbsp;
-  <a href="index.php?lang=no"><img src="img/flags/no.svg"  title="Norwegian" width="25px" height="25px"></a>&nbsp;
-  </div>
-  
-  <?php }?>
-     <!---credits | download info---> 
-<?php // please do not remove this and if so no support is given and your domain will be blacklisted from support it is not much to ask //?>
-<li><a href="https://github.com/lightmaster/Meteobridge-Weather34-Template/" title="Weather34 Meteobridge version via Github " target="_blank">
-<weather34menumarkerbluegrey></weather34menumarkerbluegrey> Download Meteobridge Template</a></li>
-<li><a href="https://github.com/lightmaster/Meteobridge-Weather34-Template/" title="Weather34 Meteobridge version via Github " target="_blank">
-<weather34menumarkerbluegrey></weather34menumarkerbluegrey> Maintained by William(lightmaster)</a></li>
-<li><a href="https://github.com/lightmaster/Meteobridge-Weather34-Template" title="https://github.com/lightmaster/Meteobridge-Weather34-Template/" target="_blank"><weather34menumarkerbluegrey></weather34menumarkerbluegrey> Designed by weather34.com</a></li>
-</div></div></header>  
+  <!-- Top Bar -->
+  <header class="weather34admin__header">
+    <div class="weather34toolbar">
+      <div class="weather34toolbar__left">
+        <button class="weather34btn weather34btn--primary"></button>
+      </div>
+      <div class="weather34toolbar__center">
+        <button class="weather34btn weather34btn--primary">
+          <weather34toptitle><?php echo $stationName;?>&nbsp; Home Weather Station</weather34toptitle>
+        </button>
+      </div>
+      <div class="weather34toolbar__right">
+        <weather34mbuptime>
+          <?php echo $info." Uptime: ".($uptimedays<1?$uptimehours." Hours":$uptimedays." Days");?>
+        </weather34mbuptime>
+          <?php if ($units!='us') {?>
+            <a href="./?units=us" title="select Imperial"><topbarimperial>&deg;F</topbarimperial></a>
+          <?php } else {?>
+            <a href="./?units=metric" title="select Metric"><topbarmetric>&deg;C</topbarmetric></a>
+          <?php }?>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Side Menu -->
+  <input type="checkbox" class="openweather34sidebarMenu" id="openweather34sidebarMenu">
+    <label for="openweather34sidebarMenu" class="weather34sidebarIconToggle">
+      <div class="weather34spinner weather34cross part-1"></div>
+      <div class="weather34spinner weather34horizontal"></div>
+      <div class="weather34spinner weather34cross part-2"></div>
+    </label>
+    <div id="weather34sidebarMenu">
+      <ul class="weather34sidebarMenuInner">
+        <br/>
+        <br/>
+        <br/>
+        
+        
+        <li class="header">ADMIN</li>
+        <li>
+          <a href="easyweathersetup.php" target="_blank" title="WEATHERSTATION SETTINGS PAGE">
+            <weather34menumarkeryellow></weather34menumarkeryellow> <?php echo $lang['Settings'];?>
+          </a>
+        </li>
+        <li>
+          <a href="index.php" title="WEATHERSTATION HOME PAGE">
+            <weather34menumarkergreen></weather34menumarkergreen> Home
+          </a>
+        </li>
+        
+        
+        <li class="header">UI THEME</li>
+        <li>
+          <a href=<?php echo ($theme == 'dark')?'?theme=light':'?theme=dark';?>>
+            <?php if ($theme == 'dark') {?>
+              <weather34menumarkerlight></weather34menumarkerlight> Light Theme
+            <?php } else {?>
+              <weather34menumarkerbluegrey></weather34menumarkerbluegrey> Dark Theme
+            <?php }?>
+          </a>
+        </li>
+        
+        
+        <li class="header">UNITS</li>
+        <?php if($units!=Null && $units!='default') {?>
+          <li>
+            <a href="./?units=default"><weather34menumarkerred></weather34menumarkerred> Default Units
+              <?php if ($tempunit=='F') {?>
+                <topbarimperialf>&deg;F</topbarimperialf>
+              <?php } else {?>
+                <topbarmetricc>&deg;C</topbarmetricc>
+              <?php }?>
+            </a>
+        <?php }
+        if($units!='us') {?>
+          <li>
+            <a href="./?units=us"><weather34menumarkerorange></weather34menumarkerorange> Imperial <topbarimperialf>&deg;F</topbarimperialf></a>
+        <?php }
+        if($units!='metric') {?>
+          <li>
+            <a href="./?units=metric"><weather34menumarkerblue></weather34menumarkerblue> Metric <topbarmetricc>&deg;C</topbarmetricc></a>
+        <?php }
+        if($units!='uk') {?>
+          <li>
+            <a href="./?units=uk"><weather34menumarkeryellow></weather34menumarkeryellow> UK (MPH) <topbarmetricc>&deg;C</topbarmetricc></a>
+        <?php }
+        if($units!='scandinavia') {?>
+          <li>
+            <a href="./?units=scandinavia"><weather34menumarkerred></weather34menumarkerred> M/S <topbarmetricc>&deg;C</topbarmetricc></a>
+        <?php }
+        
+        if ($extralinks == 'yes') {?>
+        <li class="header sub">LINKS <?php echo $arrow34iconlink2;?>
+          <ul>
+            <?php if ($linkWU == 'yes') {?>
+              <li>
+                <?php # if its linkWUNew is either yes or missing, use the new WU Site, else use the old site ?>
+                <a href="<?php echo ($linkWUNew=='yes'||empty($linkWUNew)?'https://www.wunderground.com/dashboard/pws/':'https://www.wunderground.com/personal-weather-station/dashboard?id=').$id;?>" title="<?php echo $id;?> on Weather Underground" target="_blank">
+                  <img class="menuimg" src="img/wulogo.svg" width="30px"/>
+                  <?php echo $id;?> on WU
+                </a>
+              </li>
+            <?php }?>
+            <?php if (!empty($linkCWOPID)) {?>
+              <li>
+                <a href="https://weather.gladstonefamily.net/site/<?php echo $linkCWOPID;?>" title="<?php echo $linkCWOPID;?> on CWOP" target="_blank">
+                  <?php echo $arrow34iconlink.' '.$linkCWOPID;?> on CWOP
+                </a>
+              </li>
+            <?php }?>
+            <?php if (!empty($linkFindUID)) {?>
+              <li>
+                <a href="http://www.findu.com/cgi-bin/wxpage.cgi?call=<?php echo $linkFindUID;?>&last=48" title="<?php echo $linkFindUID;?> on Findu.com" target="_blank">
+                  <?php echo $arrow34iconlink.' '.$linkFindUID;?> on FindU.com
+                </a>
+              </li>
+            <?php }?>
+            <?php if($linkNOAA=='yes' && !empty($linkCWOPID)) {?>
+              <li>
+                <a href="https://www.wrh.noaa.gov/mesowest/getobext.php?wfo=lox&sid=<?php echo $linkCWOPID;?>" title="<?php echo $linkCWOPID;?> on NOAA Meso West" target="_blank">
+                  <img class="menuimg" src="img/noaa.svg" style="max-width:30px" />
+                  <?php echo $linkCWOPID;?> on NOAA
+                </a>
+              </li>
+            <?php }?>
+            <?php if($linkMADIS=='yes' && !empty($linkCWOPID)) {?>
+              <li>
+                <a href="https://madis-data.ncep.noaa.gov/MadisSurface/?CenterLAT=<?php echo $lat;?>&CenterLON=<?php echo $lon;?>&Zoom=11.00&StationID=<?php echo $linkCWOPID;?>" title="<?php echo $linkCWOPID;?> on MADIS Map" target="_blank">
+                  <img class="menuimg" src="img/noaa.svg" style="max-width:30px" />
+                  <?php echo $linkCWOPID;?> on NOAA MADIS Map
+                </a>
+              </li>
+            <?php }?>
+            <?php if($linkMesoWest=='yes' && !empty($linkCWOPID)) {?>
+              <li>
+                <a href="https://mesowest.utah.edu/cgi-bin/droman/meso_base.cgi?stn=<?php echo $linkCWOPID;?>" title="<?php echo $linkCWOPID;?> on Meso West" target="_blank">
+                  <img class="menuimg" src="img/mesowest.svg" />
+                  <?php echo $linkCWOPID;?> on Meso West
+                </a>
+              </li>
+            <?php }?>
+            <?php if(!empty($linkWeatherCloudID)) {?>
+              <li>
+                <a href="https://app.weathercloud.net/<?php echo $linkWeatherCloudID;?>" title="View on WeatherCloud" target="_blank">
+                  <img class="menuimg" src="img/weathercloud.svg" width="21px"/> 
+                  View on WeatherCloud
+                </a>
+              </li>
+            <?php }?>
+            <?php if(!empty($linkWindyID)) {?>
+              <li>
+                <a href="https://www.windy.com/station/pws-<?php echo $linkWindyID."?".$lat.",".$lon;?>,8" title="View on Windy.com" target="_blank">
+                  <img class="menuimg" src="img/windy.svg" width="21px"/>
+                  View on Windy.com
+                </a>
+              </li>
+            <?php }?>
+            <?php if(!empty($linkAWEKASID)) {?>
+              <li>
+                <a href="https://www.awekas.at/en/instrument.php?id=<?php echo $linkAWEKASID;?>" title="View on AWEKAS" target="_blank">
+                  <img class="menuimg" src="img/awekas.svg" />
+                  View on AWEKAS
+                </a>
+              </li>
+            <?php }?>
+            <?php if(!empty($linkAmbientWeatherID)) {?>
+              <li>
+                <a href="https://dashboard.ambientweather.net/devices/public/<?php echo $linkAmbientWeatherID;?>" title="Ambient Weather" target= "_blank">
+                  <img class="menuimg" src="img/ambientweather.svg"/>
+                  View on Ambient Weather
+                </a>
+              </li>
+            <?php }?>
+            <?php if(!empty($linkPWSWeatherID)) {?>
+              <li>
+                <a href="https://www.pwsweather.com/obs/<?php echo $linkPWSWeatherID;?>.html" title="PWS Weather" target="_blank">
+                  <img style="background-color:white" class="menuimg" src="img/pwslogo.svg"/>
+                  View on PWS Weather
+                </a>
+              </li>
+            <?php }?>
+            <?php if(!empty($linkMetOfficeID)) {?>
+              <li>
+                <a href="http://wow.metoffice.gov.uk/observations/details?site_id=<?php echo $linkMetOfficeID;?>" title="MetOffice/WoW" target="_blank">
+                  <img class="menuimg" src="img/metoffice.svg"/>
+                  View on MetOffice/WoW
+                </a>
+              </li>
+            <?php }?>
+            <?php if(!empty($linkCustom1Title)) {?>
+              <li>
+                <a href="<?php echo $linkCustom1URL;?>" title="<?php echo $linkCustom1Title;?>" target="_blank">
+                  <?php echo $arrow34iconlink.' '.$linkCustom1Title;?>
+                </a>
+              </li>
+            <?php }?>
+            <?php if(!empty($linkCustom2Title) && !empty($linkCustom2URL)) {?>
+              <li>
+                <a href="<?php echo $linkCustom2URL;?>" title="<?php echo $linkCustom2Title;?>" target="_blank">
+                  <?php echo $arrow34iconlink.' '.$linkCustom2Title;?>
+                </a>
+              </li>
+            <?php }?>
+          </ul>
+        </li>
+        <?php }?>
+        <li class="header">EXTRAS</li>
+        <?php if($weatherflowoption=="yes"){?>
+          <li>
+            <a href="https://staging.smartweather.weatherflow.com/map/<?php echo $lat.'/'.$lon.'/'.$weatherflowmapzoom;?>" data-lity title='see your weather station on official weatherflow map'>
+              <weather34menumarkerblue></weather34menumarkerblue> Weatherflow Map
+            </a>
+          </li>
+        <?php }
+        if(!empty($webcamurl) && $webcamurl != ' ' && $webcamurl != 'Null' && $webcamurl != 'null'){?>
+          <li><!---webcam-->
+            <a href="cam.php" data-lity title="WEATHERSTATION WEBCAM"><weather34menumarkeryellow></weather34menumarkeryellow> Web Cam</a>
+          </li>
+        <?php }?>
+        <li><!--contact info-->
+          <a href="bio.php" data-lity title="Weather Station Owner Contact Card Info"><weather34menumarkerorange></weather34menumarkerorange> Contact Card</a>
+        </li>
+        <li><!--hardware info-->
+          <a href="stationinfo.php" data-lity title="Hardware Weather Station Hardware Info"><weather34menumarkerred></weather34menumarkerred> Hardware Info</a>
+        </li>
+        <?php if(!empty($extraLinkTitle) && !empty($extraLinkURL) && !empty($extraLinkColor)) {?>
+          <li>
+            <a href="<?php echo $extraLinkURL;?>" title="<?php echo $extraLinkTitle;?>" target="_blank">
+              <?php if($extraLinkColor == 'white') {?>
+                <weather34menumarkerlight></weather34menumarkerlight>
+              <?php } else if($extraLinkColor == 'red') {?>
+                <weather34menumarkerred></weather34menumarkerred>
+              <?php } else if($extraLinkColor == 'grey') {?>
+                <weather34menumarkerbluegrey></weather34menumarkerbluegrey>
+              <?php } else if($extraLinkColor == 'green') {?>
+                <weather34menumarkergreen></weather34menumarkergreen>
+              <?php } else if($extraLinkColor == 'yellow') {?>
+                <weather34menumarkeryellow></weather34menumarkeryellow>
+              <?php } else if($extraLinkColor == 'blue') {?>
+                <weather34menumarkerblue></weather34menumarkerblue>
+              <?php } else {?>
+                <weather34menumarkerorange></weather34menumarkerorange>
+              <?php }
+              echo $extraLinkTitle;?>
+            </a>
+          </li>
+        <?php }?>
+        <!---languages--->
+        <?php if($languages=="yes") {?>
+          <li class="header"><?php echo $lang["language"];?></li>
+          <li class="flagstop">
+            <a href="index.php?lang=en"><img src="img/flags/en.svg" title="English" class="flags"></a>&nbsp;
+            <a href="index.php?lang=dk"><img src="img/flags/dk.svg" title="Danish" class="flags"></a>&nbsp;
+            <a href="index.php?lang=gr"><img src="img/flags/gr.svg" title="Greek" class="flags"></a>&nbsp;
+            <a href="index.php?lang=it"><img src="img/flags/it.svg" title="Italian" class="flags"></a>&nbsp;
+            <a href="index.php?lang=fr"><img src="img/flags/fr.svg" title="French" class="flags"></a>&nbsp;
+          </li>
+
+          <li class="flagsmiddle">
+            <a href="index.php?lang=dl"><img src="img/flags/dl.svg" title="German" class="flags"></a>&nbsp;
+            <a href="index.php?lang=nl"><img src="img/flags/nl.svg" title="Dutch" class="flags"></a>&nbsp;
+            <a href="index.php?lang=cat"><img src="img/flags/cat.svg"title="Catalan" class="flags"></a>&nbsp;
+            <a href="index.php?lang=sp"><img src="img/flags/sp.svg" title="Spanish" class="flags"></a>&nbsp;
+            <a href="index.php?lang=tr"><img src="img/flags/tr.svg" title="Turkish" class="flags"></a>&nbsp;
+          </li>
+
+          <li class="flagsbottom">
+            <a href="index.php?lang=hu"><img src="img/flags/hu.svg" title="Hungary" class="flags"></a>&nbsp;
+            <a href="index.php?lang=pl"><img src="img/flags/pl.svg" title="Polish" class="flags"></a>&nbsp;
+            <a href="index.php?lang=sp"><img src="img/flags/ar.svg" title="Argentina" class="flags"></a>&nbsp;
+            <a href="index.php?lang=dl"><img src="img/flags/ch.svg" title="Switzerland" class="flags"></a>&nbsp;
+            <a href="index.php?lang=no"><img src="img/flags/no.svg" title="Norwegian" class="flags"></a>&nbsp;
+          </li>
+        <?php }?>
+        <!---credits | download info--->
+        <?php // please do not remove this and if so no support is given and your domain will be blacklisted from support it is not much to ask //?>
+        <li>
+          <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template/" title="Weather34's MB-HWS on Github" target="_blank">
+            <weather34menumarkerbluegrey></weather34menumarkerbluegrey> Download Meteobridge HWS
+          </a>
+        </li>
+        <li>
+          <a href="mailto://support@baxleyweather.com" title="Email Lightmaster for Support" target="_blank">
+            <weather34menumarkerbluegrey></weather34menumarkerbluegrey> Maintained by William(lightmaster)
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template" title="Weather34" target="_blank">
+            <weather34menumarkerbluegrey></weather34menumarkerbluegrey> Designed by weather34.com
+          </a>
+        </li>
+        <!-- USA WeatherFinder -->
+        <?php if(!empty($USAWeatherFinder)) {?>
+          <li>
+            <a href="https://usaweatherfinder.com/index.php?a=stats&u=<?php echo $USAWeatherFinder;?>" title="<?php echo $USAWeatherFinder;?>'s Weather Finder" target="_blank">
+              <img src="https://usaweatherfinder.com/button.php?u=<?php echo $USAWeatherFinder;?>" alt="USA Weather Finder" border="0" />
+            </a>
+          </li>
+        <?php }?>
+      </div>
+    </div>
+  </header>
