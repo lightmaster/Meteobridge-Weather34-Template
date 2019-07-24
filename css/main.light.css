@@ -5667,8 +5667,10 @@ img {
 
 img.menuimg {
   max-width: 60px;
-  max-height: 30px;
-  height: auto
+  max-height: 20px;
+  height: auto;
+  vertical-align: middle;
+  margin-top: -4px
 }
 
 img.flags{

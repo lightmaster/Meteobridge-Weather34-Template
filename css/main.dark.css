@@ -5753,6 +5753,8 @@ img.menuimg {
   max-width: 60px;
   max-height: 20px;
   height: auto;
+  vertical-align: middle;
+  margin-top: -4px
 }
 
 img.flags{
