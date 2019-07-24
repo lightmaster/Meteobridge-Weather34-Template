@@ -634,7 +634,7 @@ Hardware Options</div><br/>
 <svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
     <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
 </svg>
-Current Weather Conditions Text</strong></div><br/><br/>
+Current Weather Conditions Text</strong></div><br/>
 
        <div class="stationvalue"><strong>Options</strong></div>
     <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -1728,10 +1728,7 @@ General template settings with options to choose which type of module to display
 
 <div class="weatheroptionssidebar">
     <span style="color:#777;">
-        <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-            <path d="M16 14 L16 23 M16 8 L16 10" />
-            <circle cx="16" cy="16" r="14" />
-        </svg>
+        <?php echo $iicon;?>
         Select <span style="font-weight:bold;color:rgba(236, 87, 27, 1.000);">no</span> or leave the IDs blank to hide any link.
         <br/>
         <br/>
@@ -1849,7 +1846,7 @@ General template settings with options to choose which type of module to display
     </select>
     <br/>
     <!-- MADIS Link -->
-    <div class="stationvalue">Dispaly MADIS Link</div>
+    <div class="stationvalue">Display MADIS Link</div>
     <?php echo $rightchevron.$downchevron;?>
     <label name="linkMADIS"></label>
     <select id="linkMADIS" name="linkMADIS" class="choose1">
@@ -1858,7 +1855,7 @@ General template settings with options to choose which type of module to display
     </select>
     <br/>
     <!-- MesoWest Link -->
-    <div class="stationvalue">Dispaly MesoWest Link</div>
+    <div class="stationvalue">Display MesoWest Link</div>
     <?php echo $rightchevron.$downchevron;?>
     <label name="linkMesoWest"></label>
     <select id="linkMesoWest" name="linkMesoWest" class="choose1">
