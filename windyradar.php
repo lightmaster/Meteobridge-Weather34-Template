@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="weather34darkbrowser" url="Radar for <?php echo $stationlocation;?>"></div>
-  <iframe style="width:98vw; height:81vh;" scrolling="no" src="https://embed.windy.com/embed2.html?lat=<?php echo $lat;?>&lon=<?php echo $lon;?>&zoom=8&level=surface&overlay=radar&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=<?pho echo $lat;?>&detailLon=<?php echo $lon;?>&metricWind=<?php echo $weather['wind_units'];?>&metricTemp=%C2%B0<?php echo $weather['temp_units'];?>&metricRain=<?php echo $weather['rain_units'];?>&radarRange=-1&autoPlay=1" frameborder="0"></iframe>
+  <iframe style="width:98vw; height:81vh;" scrolling="no" src="https://embed.windy.com/embed2.html?lat=<?php echo $lat;?>&lon=<?php echo $lon;?>&zoom=8&level=surface&overlay=radar&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=<?php echo $lat;?>&detailLon=<?php echo $lon;?>&metricWind=<?php echo $weather['wind_units'];?>&metricTemp=%C2%B0<?php echo $weather['temp_units'];?>&metricRain=<?php echo $weather['rain_units'];?>&radarRange=-1&autoPlay=1" frameborder="0"></iframe>
 
   <div class="weather34browser-footer">
     <span style="position:absolute;color:#aaa;font-size:10px;font-family:arial;padding-top:13px;margin-left:40px;display:block;">
