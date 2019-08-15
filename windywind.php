@@ -7,18 +7,20 @@
 <link rel="stylesheet" href="weather34chartstyle.css">
 </head>
 <body>
-<?php
-  echo '<div class="weather34darkbrowser" url="Wind Map for '.$stationlocation.'"></div>';
-
-  echo '<iframe width="100%" height="82%" scrolling="no" src="https://embed.windy.com/embed2.html?lat='.$lat.'&lon='.$lon.'&zoom=8&level=surface&overlay=wind&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat='.$lat.'&detailLon='.$lon.'&metricWind='.$weather['wind_units'].'&metricTemp=%C2%B0'.$weather['temp_units'].'&metricRain='.$weather['rain_units'].'&radarRange=-1" frameborder="0"></iframe>';
-  
-echo "</span>";
-  ?>
-<div class="weather34browser-footer">
-<span style="position:absolute;color:#aaa;font-size:10px;font-family:arial;padding-top:13px;margin-left:40px;display:block;">
-&nbsp;
-<svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-<path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" /></svg> 
-Radar/Map provided by Windy.com</span>
-<div class="weather34browser-footerlogo" style="padding-top:7px;"><a href="https://github.com/lightmaster/Meteobridge-Weather34-Template" title="MB-HWS" target="_blank"><img src="img/weatherlogo34.svg" width="35"</img></a></div>
-</div>
+  <div class="weather34darkbrowser" url="Wind Map for <?php echo $stationlocation;?>"></div>
+  <iframe style="width:98vw; height:81vh;" scrolling="no" src="https://embed.windy.com/embed2.html?lat=<?php echo $lat;?>&lon=<?php echo $lon;?>&zoom=8&level=surface&overlay=wind&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=<?php echo $lat;?>&detailLon=<?php echo $lon;?>&metricWind=<?php echo $weather['wind_units'];?>&metricTemp=%C2%B0<?php echo $weather['temp_units'];?>&metricRain=<?php echo $weather['rain_units'];?>&radarRange=-1" frameborder="0"></iframe>
+  <div class="weather34browser-footer">
+    <span style="position:absolute;color:#aaa;font-size:10px;font-family:arial;padding-top:13px;margin-left:40px;display:block;">
+      &nbsp;
+      <svg id="i-external" viewBox="0 0 32 32" width="10" height="10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18" />
+      </svg>
+      Radar/Map provided by Windy.com
+    </span>
+    <div class="weather34browser-footerlogo" style="padding-top:7px;">
+      <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template" title="MB-HWS" target="_blank">
+        <img src="img/weatherlogo34.svg" width="35"/>
+      </a>
+    </div>
+  </div>
+</body>
