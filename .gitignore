@@ -74,3 +74,4 @@ alerts.json
 checkalert.*
 settings-pb.php
 lightningdownload.php
+.DS_Store
