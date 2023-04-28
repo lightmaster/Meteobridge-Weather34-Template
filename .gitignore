@@ -10,7 +10,6 @@ timelapse
 #Scripts
 scripts/
 scripts
-nanocharts/
 pbnotify.php
 pbnotify_test.php
 
@@ -27,6 +26,8 @@ chartswudata/*
 #demodata/*
 mbridge/MBrealtimeupload.txt
 mbridge/lastupdated.php
+**/yearlydata.js
+**/72hrdata.js
 
 #Ignore all backup files
 *.bak
@@ -77,6 +78,8 @@ alerts.json
 checkalert.*
 settings-pb.php
 lightningdownload.php
-css/easyweathersetup.css
 img/lightmaster_pic.png
 img/lightmaster_80.png
+
+nanocharts/amcharts4
+nanocharts/nanocharts4.php

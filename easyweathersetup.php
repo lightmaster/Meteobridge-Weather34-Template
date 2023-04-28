@@ -136,6 +136,7 @@ $extraLinkTitle = "'. $_POST["extraLinkTitle"]. '";
 $extraLinkColor = "'. $_POST["extraLinkColor"]. '";
 $extraLinkURL = "'. $_POST["extraLinkURL"]. '";
 $goesLink = "'. $_POST["goesLink"]. '";
+$mbRemoteUrl = "'. $_POST["mbRemoteUrl"]. '";
 ?>';
 
 $fp = FOPEN("settings1.php", "w") or die("Unable to open settings1.php file check file permissions !");
@@ -280,6 +281,11 @@ FCLOSE($fp);
             <span class='red'>(WU history charts no longer supported)</span>
             <br/>
             <span class='red'>NanoCharts are only available for the MB Pro and MB NanoSD.</span>
+            <br/>
+            <br/>
+            <div class="stationvalue">Meteobridge Remote URL</div>
+            <?php echo $rightchevron;?>
+            <input name="mbRemoteUrl" type="text" id="mbRemoteUrl" value="<?php echo $mbRemoteUrl ;?>" class="chooseapi">
             <br/>
             <br/>
 

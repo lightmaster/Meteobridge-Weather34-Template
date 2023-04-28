@@ -109,4 +109,5 @@ $extraLinkTitle = "";
 $extraLinkColor = "";
 $extraLinkURL = "";
 $goesLink = "";
+$mbRemoteUrl = "";
 ?>
