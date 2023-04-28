@@ -704,16 +704,16 @@ Max Recorded <br><blue><?php echo $weather["windamaxtime"];?></blue></div>
 </main>
 
  <main class="grid1">
-
+<?php if ($chartsource == 'mbcharts') {?>
   <articlegraph>
   <div class=actualt><?php echo date('Y');?> Wind (<?php echo $weather["wind_units"]?>)</div>
   <iframe  src="mbcharts/yearlywindspeedgustmedium.php" frameborder="0" scrolling="no" width="100%" height="210px"></iframe>
 
   </articlegraph>
+<?php }?>
 
 
-
-   <articlegraph style="height:30px">
+   <articlegraph style="height:8vh">
   <div class="lotemp">
   <?php echo $info?>
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank" style="font-size:9px;"> Charts rendered and compiled using <?php echo $creditschart ;?> </a></span>

@@ -6173,7 +6173,7 @@ indoorred1 {
 }
 
 .windrun1 {
-  margin-left: 240px;
+  margin-left: 227.5px;
   border: 0;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -7090,7 +7090,7 @@ rainratetextheading {
 }
 
 .eqcontainer1,
-wfstriketoday {
+lightningstriketoday {
   font-family: weathertext2, system
 }
 
@@ -7109,7 +7109,7 @@ wfstriketoday {
   left: -100px
 }
 
-wfstriketoday {
+lightningstriketoday {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -o-border-radius: 3px;

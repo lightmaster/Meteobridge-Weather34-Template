@@ -216,11 +216,11 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
  <main class="grid1">
   <articlegraph> 
   <div class=actualt>Today <span style="color:#ff9350">UV-INDEX</div>  
-  <iframe  src="mbcharts/todayuvsmall.php" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+  <iframe  src="<?php echo $chartsource.'/'.($chartsource == 'nanocharts'?'nanochartsalmanac.php?t=yearly&c=solar':'todayuvsmall.php');?>" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
    
   </articlegraph> 
   
-  <articlegraph style="height:30px">  
+  <!-- <articlegraph style="height:8vh">  
   <div class="lotemp">
   <?php echo $info?> 
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank" style="font-size:8px;"> Charts rendered and compiled using <?php echo $creditschart ;?> </a></span>
@@ -229,6 +229,6 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
   <?php echo $info?> <a href="https://weather34.com" title="weather34.com" target="_blank" style="font-size:8px;">CSS/SVG/PHP scripts were developed by weather34.com  for use in the weather34 template &copy; 2015-<?php echo date('Y');?>
   </a></div>
    
-  </articlegraph> 
+  </articlegraph>  -->
   
 </main>

@@ -3675,7 +3675,7 @@ civil {
   top: 0;
   transform: translateX(-250px);
   transition: transform 250ms ease-in-out;
-  height: 900px;
+  /*height: 900px;*/
   z-index: 30
 }
 
@@ -5544,7 +5544,7 @@ topyellow1 {
 }
 
 toporange1,
-wfstriketoday {
+lightningstriketoday {
   background: #d05f2d
 }
 
@@ -5603,9 +5603,16 @@ wfstriketoday {
   left: 28.1%
 }
 
+.leftlightning,
 .topmin,
 .wfstrike {
   left: -100px
+}
+
+.rightlightning {
+  position: absolute;
+  padding-right: 4px;
+  padding-left: 0
 }
 
 topblue1,
@@ -5616,11 +5623,11 @@ topyellow1,
 topyellow2 {
   font-family: weathertext2;
   width: 3.3rem;
-  height: 2.4rem;
+  height: 2.45rem;
   font-size: .9em;
   padding-top: 7px;
   color: #fff;
-  border-bottom: 11px solid #38383c;
+  border-bottom: 12px solid #38383c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5636,7 +5643,7 @@ topyellow2 {
 .topmax,
 .topmin {
   position: absolute;
-  margin-top: 39px;
+  margin-top: 41px;
   font-size: 12px;
   padding-right: 4px;
   padding-left: 0
@@ -5644,7 +5651,8 @@ topyellow2 {
 
 .maxword,
 .minword,
-.minwordl {
+.minwordl,
+.maxwordl {
   margin-top: 35px;
   font-size: .55rem;
   color: #fff;
@@ -5664,6 +5672,7 @@ topyellow2 {
   background: rgba(233, 171, 74, .8)
 }
 
+.rightlightning,
 .topmax {
   left: 10px
 }
@@ -5677,25 +5686,40 @@ topyellow2 {
 }
 
 .minwordl {
-  margin-left: 43px
+  margin-left: 17px
+}
+
+.maxwordl {
+  margin-left: 128px
 }
 
 .maxtimedate,
-.mintimedate {
+.mintimedate,
+.lightningSubtextLeft,
+.lightningSubtextRight {
   position: absolute;
-  margin-top: 61px;
+  margin-top: 63px;
   font-size: .54rem;
   z-index: 1;
   color: silver;
-  width: 50px
 }
 
 .maxtimedate {
-  margin-left: 140px
+  margin-left: 140px;
+  width: 50px
+}
+
+.lightningSubtextRight {
+  margin-left: 127px
 }
 
 .mintimedate {
-  margin-left: 30px
+  margin-left: 30px;
+  width: 50px
+}
+
+.lightningSubtextLeft {
+  margin-left: 17px
 }
 
 smallwindunit {
@@ -6256,7 +6280,7 @@ weather34windrunspan {
 }
 
 .windrun1 {
-  margin-left: 240px;
+  margin-left: 228.5px;
   border: 0
 }
 
@@ -6331,6 +6355,7 @@ topblue1 {
   padding-right: 3px
 }
 
+.leftlightning,
 .indoorhomevalue1,
 .wfstrike {
   padding-right: 4px;
@@ -6475,8 +6500,10 @@ rainu {
 .sundown34,
 .sunup34,
 .wflaststrike,
+.leftlightning,
+.rightlightning,
 .wfstrike,
-wfstriketoday {
+lightningstriketoday {
   position: absolute
 }
 
@@ -7059,7 +7086,7 @@ raiblue {
 }
 
 .eqcontainer1,
-wfstriketoday {
+lightningstriketoday {
   font-family: weathertext2, system
 }
 
@@ -7070,26 +7097,35 @@ wfstriketoday {
   width: 200px
 }
 
+.rightlightning,
+.leftlightning,
 .wfstrike {
-  margin-top: 39px;
+  margin-top: 35px;
   font-size: 0
 }
 
-wfstriketoday {
+lightningstriketoday {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -o-border-radius: 3px;
-  width: 3.3rem;
-  height: 2.45rem;
-  font-size: .8rem;
+  height: 2.53rem;
+  font-size: .75rem;
   padding-top: 9px;
   color: #fff;
-  border-bottom: 11px solid #393d40;
+  border-bottom: 12px solid #393d40;
   align-items: center;
   justify-content: center;
   border-radius: 3px;
-  margin-left: 133px;
-  top: -5px
+  margin-left: 120px;
+  top: 0
+}
+
+lightningstriketoday,
+.minwordl,
+.maxwordl,
+.lightningSubtextLeft,
+.lightningSubtextRight {
+  width: 4.7rem;
 }
 
 .eqcontainer1 {
@@ -8972,105 +9008,6 @@ weather34menumarkerlight {
   background: #b5b9c1
 }
 
-@media screen and (max-width:820px) {
-  .weather34admin {
-    --spacing: 1.3rem;
-    display: inline;
-    background: 0
-  }
-
-  .weather34btn {
-    background-color: 0;
-  }
-
-  .weather34toolbar {
-    display: flex;
-    flex: 1;
-    font-size: 1em;
-    background: #212428;
-    padding: 0 var(--spacing);
-    height: 30px;
-  }
-
-  .weather34btn--primary {
-    color: silver;
-    background-color: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9em;
-    padding: 0;
-    color: silver;
-  }
-
-  .weather34admin__header {
-    display: flex;
-    flex-basis: 100%;
-    grid-area: header;
-    height: 30px;
-    background-color: transparent;
-    position: absolute;
-    font-size: 12px;
-  }
-
-  .weather34btn--primary a {
-    color: silver;
-    font-size: 0.85em;
-    font-weight: 500;
-    color: silver;
-  }
-
-  weather34toptitle {
-    display: none
-  }
-
-  weather34mbuptime {
-    top: 10px
-  }
-
-  .weather-item {
-    margin-top: 32px;
-    margin-bottom: -28px
-  }
-
-  .weather34themeicon {
-    position: absolute;
-    margin: 0;
-    left: 10px;
-    top: 10px;
-    max-height: 12px
-  }
-
-  .weather34thememonitor {
-    width: 15px;
-    height: 11px;
-    background: #ff832f;
-    border-radius: 2px
-  }
-
-  .weather34thememonitor li {
-    position: absolute;
-    list-style: none
-  }
-
-  .weather34thememonitor .weather34themefirst {
-    width: 13px;
-    height: 8px;
-    background: #4b545c;
-    top: 1px;
-    left: 1px;
-    z-index: 3
-  }
-
-  .weather34sidebarIconToggle {
-    cursor: pointer;
-    position: absolute;
-    z-index: 99;
-    top: 8px;
-    left: 15px;
-    height: 22px;
-    width: 22px
-  }
-}
-
 .lity {
   z-index: 9990;
   position: fixed;
@@ -9287,4 +9224,112 @@ weather34menumarkerlight {
 
 .lity-hide {
   display: none
+}
+
+@media screen and (max-width:820px) {
+  .weather34admin {
+    --spacing: 1.3rem;
+    display: inline;
+    background: 0
+  }
+
+  .weather34btn {
+    background-color: 0;
+  }
+
+  .weather34toolbar {
+    display: flex;
+    flex: 1;
+    font-size: 1em;
+    background: #212428;
+    padding: 0 var(--spacing);
+    height: 30px;
+  }
+
+  .weather34btn--primary {
+    color: silver;
+    background-color: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    padding: 0;
+    color: silver;
+  }
+
+  .weather34admin__header {
+    display: flex;
+    flex-basis: 100%;
+    grid-area: header;
+    height: 30px;
+    background-color: transparent;
+    position: absolute;
+    font-size: 12px;
+  }
+
+  .weather34btn--primary a {
+    color: silver;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: silver;
+  }
+
+  weather34toptitle {
+    display: none
+  }
+
+  weather34mbuptime {
+    top: 10px
+  }
+
+  .weather-item {
+    margin-top: 32px;
+    margin-bottom: -28px
+  }
+
+  .weather34themeicon {
+    position: absolute;
+    margin: 0;
+    left: 10px;
+    top: 10px;
+    max-height: 12px
+  }
+
+  .weather34thememonitor {
+    width: 15px;
+    height: 11px;
+    background: #ff832f;
+    border-radius: 2px
+  }
+
+  .weather34thememonitor li {
+    position: absolute;
+    list-style: none
+  }
+
+  .weather34thememonitor .weather34themefirst {
+    width: 13px;
+    height: 8px;
+    background: #4b545c;
+    top: 1px;
+    left: 1px;
+    z-index: 3
+  }
+
+  .weather34sidebarIconToggle {
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    top: 8px;
+    left: 15px;
+    height: 22px;
+    width: 22px
+  }
+
+  .lity-container {
+    height: 75%
+  }
+
+  .lity-content,
+  .lity-iframe-container {
+    height: 100%
+  }
 }

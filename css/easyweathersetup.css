@@ -1,7 +1,7 @@
 body {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #777;
+    color: rgba(86,95,103,1);
     background: white
 }
 
@@ -48,7 +48,6 @@ h3 {
 .theframe1 {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
     border: 0px solid #777;
     margin: 0 auto;
     margin-top: 10px;
@@ -62,7 +61,6 @@ h3 {
 .theframe {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
     border: 5px solid rgba(24, 25, 27, 0.2);
     margin: 0 auto;
     margin-top: 10px;
@@ -95,7 +93,6 @@ h3 {
     position: relative;
     float: right;
     margin: 5px;
-    color: #777
 }
 
 .weatheroptionssidebarbottom {
@@ -109,7 +106,6 @@ h3 {
     width: 200px;
     position: relative;
     float: right;
-    color: #777
 }
 
 .weatherbottominfo {
@@ -256,22 +252,28 @@ h3 {
 
 .weatheroptions a {
     font-size: 14px;
-    color: rgba(86, 95, 103, 1.000);
+    color: #2095a7;
     font-family: Arial, Helvetica, sans-serif;
     border: 0;
     text-transform: none;
     outline: 0;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    text-decoration: underline;
 }
 
 a {
-    font-size: 14px;
-    color: rgba(86, 95, 103, 1.000);
+    font-size: 12px;
+    color: #2095a7;
     font-family: Arial, Helvetica, sans-serif;
     border: 0;
     text-transform: none;
     outline: 0;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #7bbb28
 }
 
 #weatherpopupcontainer {
@@ -362,17 +364,6 @@ body {
     background-color: none
 }
 
-a {
-    font-size: 12px;
-    text-transform: none;
-    text-decoration: none;
-    color: #2095a7
-}
-
-a:hover {
-    color: #7bbb28
-}
-
 .login-screen {
     background-color: none;
     padding: 20px;
@@ -411,6 +402,7 @@ input {
     margin: 0 auto;
     margin-top: 10px
 }
+
 
 input:focus {
     border: 2px solid rgba(86, 95, 103, 1.000);
@@ -585,4 +577,16 @@ white {
     height: 32px;
     background: 0;
     padding: 0
+}
+
+span.orange {
+    color: rgba(236, 87, 27, 1.000);
+}
+
+span.red {
+    color: red;
+}
+
+span.important {
+    font-weight: bold;
 }

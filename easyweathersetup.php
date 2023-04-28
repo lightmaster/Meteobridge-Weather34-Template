@@ -1,16 +1,20 @@
 <?php
 include('settings1.php');
+$fontOrange = 'rgba(236, 87, 27, 1.000)';
+$fontGray = 'rgba(86, 95, 103, 1.000)';
 $iicon = '<svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-<path d="M16 14 L16 23 M16 8 L16 10" />
-<circle cx="16" cy="16" r="14" />
+  <path d="M16 14 L16 23 M16 8 L16 10" />
+  <circle cx="16" cy="16" r="14" />
 </svg>';
 $oiicon = '<svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-<path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg>';
-$rightchevron = '<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-<path d="M12 30 L24 16 12 2" />
+  <path d="M16 14 L16 23 M16 8 L16 10" />
+  <circle cx="16" cy="16" r="14" />
 </svg>';
-$downchevron = '<svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-<path d="M30 12 L16 24 2 12" />
+$rightchevron = '<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="'.$fontGray.'" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+  <path d="M12 30 L24 16 12 2" />
+</svg>';
+$downchevron = '<svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="'.$fontGray.'" stroke="'.$fontGray.'" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+  <path d="M30 12 L16 24 2 12" />
 </svg>';
  // HOMEWEATHERSTATION EASY SETUP AUGUST 2016 //
  // SIMPLE EASY PHP BASED AND CSS //
@@ -26,7 +30,7 @@ $apikey = "'. $_POST["wuapi"]. '";
 $wuapikey = "'. $_POST["wuapikey"]. '";
 $weatherflowID = "'. $_POST["wfid"]. '";
 $weatherflowoption   = "'. $_POST["weatherflowoption"]. '";
-$weatherflowlightning = "'. $_POST["wfli"]. '";
+$weatherflowlightning = "'. $_POST["weatherflowlightning"]. '";
 $weatherflowmapzoom   = "'. $_POST["weatherflowmapzoom"]. '";
 $id = "'. $_POST["WUID"]. '";
 $purpleairID = "'. $_POST["purpleair"]. '";
@@ -58,6 +62,7 @@ $livedataFormat = "'. $_POST["livedataFormat"]. '";
 $livedata   = "'. $_POST["livedata"]. '";
 $currentconditions   = "'. $_POST["currentconditions"]. '";
 $chartsource   = "'. $_POST["chartsource"]. '";
+$stationCron   = "'. $_POST["stationCron"]. '";
 $extralinks   = "'. $_POST["extralinks"]. '";
 $languages   = "'. $_POST["languages"]. '";
 $dateFormat   = "'. $_POST["dateFormat"]. '";
@@ -130,2195 +135,1880 @@ $USAWeatherFinder = "'. $_POST["USAWeatherFinder"]. '";
 $extraLinkTitle = "'. $_POST["extraLinkTitle"]. '";
 $extraLinkColor = "'. $_POST["extraLinkColor"]. '";
 $extraLinkURL = "'. $_POST["extraLinkURL"]. '";
+$goesLink = "'. $_POST["goesLink"]. '";
 ?>';
 
 $fp = FOPEN("settings1.php", "w") or die("Unable to open settings1.php file check file permissions !");
 FWRITE($fp, $string);
 FCLOSE($fp);
-
 }
 ?>
+
 <html>
-<head>
-<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-<link href="favicon.ico" rel="icon" type="image/x-icon">
-<script src="js/jquery.js"></script>
-<link href="css/easyweathersetup.css" rel="stylesheet prefetch">
- </head>
+  <head>
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <script src="js/jquery.js"></script>
+    <link href="css/easyweathersetup.css" rel="stylesheet prefetch">
+  </head>
 
-    <body>
-
-
-
-<div class="loginformarea">
-<?php
-	//lets secure the homeweatherstation easy setup ///
-function showForm($error="LOGIN"){
-?> <?php echo $error; ?>
-
-  <div class="login_screen" style="width:60%;max-width:600px;margin:0 auto;color:rgba(24, 25, 27, 1.000);border:solid 1px grey;padding:10px;border-radius:4px;">  <?php echo 'Your Current PHP version is :<span style="color:rgba(236, 87, 27, 1.000);"> ' . phpversion(), '</span> <br/>(PHP 5.6 or higher PHP 7+ is  advised if you are not already using these versions)'; ?>
-  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="pwd" >
-   Enter Your Password For Meteobridge Setup Screen Below
-<center> <div class="modal-buttons">
-     <input name="passwd" type="password" class="input-button"/>  <input type="submit" name="submit_pwd" value="Login " class="modal-button" />
-         </form>
-     </center>
-      <?php echo "2015-" ;?><?php echo date('Y');?> &copy;</a> WEATHER34 MB-UB<span style="color:rgba(236, 87, 27, 1.000);">40.1</span>-IHVN</span></span></span>
-      <br/><br/>
-
-
-
-
-
-<?php
-}
-?>
-</div>
-
-
-  <div span style="width:auto;margin:0 auto;text-align:center;color:#fff;background:0;font-family:arial;padding:20px;border-radius:4px;">
-<?php
-$Password = $password;
-if (isset($_POST['submit_pwd'])){    $pass = isset($_POST['passwd']) ? $_POST['passwd'] : '';
-   if ($pass != $Password) {
-      showForm("Dashboard Meteobridge EASY SETUP");
-      exit();
-   }
-} else {
-   showForm("Dashboard Meteobridge EASY SETUP");
-   exit();
-}
-?>
-
-
-</div>
-<div span style="width:390px;margin:0 auto;margin-top:10px;text-align:center;color:#4a636f;background:0;font-family:arial;padding:20px;border-radius:4px;border:1px solid rgba(74, 99, 111, 0.4);">
-<img src='img/easyweathersetupweather34.svg' width='120px'>
-<img src='img/nano.svg' width='40px' style="float:none;transform: rotate(100grad)"><img src='img/MeteobridgePRO.svg' width='60px' style="float:none;"><img src='img/TP-LINK.svg' width='60px' style="float:none;">
-<br/>
-
-Welcome you have logged into the WEATHER34 Meteobridge setup screen <?php echo date("M jS Y H:i"); ?>
-</span>
-</div>
-</div></div>
-</div></div>
-<div class="theframe1">
-<div class="theframe">
-
-
-<form action="" method="post" name="install" id="install">
-
-<!--##########################################################################################
-    #########                        Start of Easy Password Sidebar                  #########
-    ##########################################################################################-->
-
-<div class="weatheroptionssidebar">
-<?php echo $iicon;?> Please setup and password protect this page for later use it is for your privacy and protection.
-</div>
-
-<!--##########################################################################################
-    #########                        Start of Easy Password Section                  #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-  <div class="weathersectiontitle">
-   <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
-    <circle cx="16" cy="16" r="4" />
-</svg>
-  Setup Unique Easysetup Password</div><br/>
-
-
-  <div class="stationvalue">  Set Easysetup Password it is for your privacy & protection</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-  <input name="password" type="password" id="password" value="<?php echo $password ;?>" class="choose">
-
-
-   </div>
-   <br/>
-
-<!--##########################################################################################
-    #########                        Start of Database Sidebar                       #########
-    ##########################################################################################-->
-
-<div class="weatheroptionssidebar">
-<?php echo $iicon;?> Database uses the standard PHP connection strings for mySqli,you need to have database setup on server prior to using this feature.This feature currently only supports <strong>Meteobridge-API</strong> with direct server upload.
-
-
-<div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-check username password</div>
-</div>
-
-<!--##########################################################################################
-    #########                        Start of Database Section                       #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-  <div class="weathersectiontitle">
-   <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
-    <circle cx="16" cy="16" r="4" />
-</svg>
-  Database Credentials</div><br/>
-
-<div class="stationvalue">  Database Host</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-  <input name="db_host" type="text" id="db_host" value="<?php echo $db_host ;?>" class="choose">
-
-  <div class="stationvalue">  Database Username</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-  <input name="db_user" type="text" id="db_user" value="<?php echo $db_user ;?>" class="choose">
-  <br/>
-
-  <div class="stationvalue">  Database Password</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-  <input name="db_pass" type="password" id="db_pass" value="<?php echo $db_pass ;?>" class="choose">
-
-  <div class="stationvalue">  Database Name</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-  <input name="db_name" type="text" id="db_name" value="<?php echo $db_name ;?>" class="choose">
-</div>
-<br/><br/>
-
-<!--##########################################################################################
-    #########                        Start of Language Sidebar                       #########
-    ##########################################################################################-->
-
-<div class="weatheroptionssidebar">
-<?php echo $iicon;?>  Setup the default language
-
-<div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-check languages</div>
-</div>
-
-<!--##########################################################################################
-    #########                        Start of Language Section                       #########
-    ##########################################################################################-->
-
-   <div class="weatheroptions">
-<div class="weathersectiontitle">
-Choose the default Language to display and use</div>
-
-
-<br/>
-      <div class="stationvalue">
-      Template Language (lowercase)</div>
-      <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-       <label name="defaultlanguage"></label>
-        <select id="defaultlanguage" name="defaultlanguage" class="choose1">
-           <option><?php echo $defaultlanguage ;?></option>
-            <option>en</option>
-           <option>can</option>
-           <option>cat</option>
-           <option>dk</option>
-           <option>dl</option>
-           <option>fi</option>
-           <option>fr</option>
-           <option>gr</option>
-           <option>hu</option>
-           <option>it</option>
-           <option>nl</option>
-           <option>pl</option>
-           <option>sk</option>
-           <option>sp</option>
-           <option>sw</option>
-           <option>tr</option>
-           <option>us</option>
-        </select>
+  <body>
+    <div class="loginformarea">
+      <?php
+      //lets secure the homeweatherstation easy setup ///
+      function showForm($error="LOGIN"){
+        echo $error;?>
+      <div class="login_screen" style="width:60%;max-width:600px;margin:0 auto;color:rgba(24, 25, 27, 1.000);border:solid 1px grey;padding:10px;border-radius:4px;">
+        Your Current PHP version is: <span class='orange'><?php echo phpversion();?></span>
         <br/>
-
- <div class="stationvalue">
-      Your Country Flag</div>
-      <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-       <label name="flag"></label>
-        <select id="flag" name="flag" class="choose1">
-           <option><?php echo $flag ;?></option>
-           <option>ar</option>
-           <option>aus</option>
-           <option>en</option>
-           <option>can</option>
-           <option>cat</option>
-           <option>ch</option>
-           <option>dk</option>
-           <option>dl</option>
-           <option>fi</option>
-           <option>fr</option>
-           <option>gr</option>
-           <option>hu</option>
-           <option>iom</option>
-           <option>ire</option>
-           <option>it</option>
-           <option>mi</option>
-           <option>nl</option>
-           <option>no</option>
-           <option>nz</option>
-           <option>pl</option>
-           <option>sa</option>
-           <option>scot</option>
-           <option>singapore</option>
-           <option>sk</option>
-           <option>sp</option>
-           <option>sw</option>
-           <option>tr</option>
-           <option>us</option>
-           <option>wal</option>
-        </select>
+        (PHP 7+ is  advised if you are not already using these versions)
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="pwd">
+          Enter Your Password For Meteobridge Setup Screen Below
+          <center>
+            <div class="modal-buttons">
+              <input name="passwd" type="password" class="input-button"/>
+              <input type="submit" name="submit_pwd" value="Login " class="modal-button" />
+            </div>
+          </center>
+        </form>
+        &copy;2015-<?php echo date('Y');?> WEATHER34 MB-UB<span class='orange'>40.1</span>-IHVN
         <br/>
-  <div class="stationvalue">DARK SKY Forecast Language  full list here <a href="https://darksky.net/dev/docs" title="https://darksky.net/dev/docs" target="_blank"><white>https://darksky.net/dev/docs</white></a></div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
- <label name="language"></label>
-      <select id="language" name="language" class="choose1">
-           <option><?php echo $language ;?></option>
-           <option>en</option>
-           <option>bg</option>
-           <option>bs</option>
-           <option>ca</option>
-           <option>da</option>
-           <option>de</option>
-           <option>el</option>
-           <option>es</option>
-           <option>fi</option>
-           <option>fr</option>
-           <option>hu</option>
-           <option>it</option>
-           <option>nl</option>
-           <option>pl</option>
-           <option>sv</option>
-           <option>tr</option>
-
-
-
-
-
-        </select>
-  </div>
-  <br/>
-
-<!--##########################################################################################
-    #########                        Start of MB Sidebar                             #########
-    ##########################################################################################-->
-
-   <div class="weatheroptionssidebar">
-   <?php echo $iicon;?>  Meteobridge Hardware
-
-     <br/><br/>
-
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-check path to data file
-<br/><br/>
-<span style="color:rgba(86, 95, 103, 1.000)">
-     <?php echo $iicon;?> getting the path correct is essential for live realtime data display <span style="color:#FF793A">(mbridge/MBrealtimeupload.txt)</span></span>
-<div class="weatherbottominfo"></div>
-</div>
-
-<!--##########################################################################################
-    #########                        Start of MB Section                             #########
-    ##########################################################################################-->
-
-   <div class="weatheroptions">
-<div class="weathersectiontitle">
-<svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
-</svg>
-
-METEOBRIDGE Software Path to Data file</div><br/>
-      <div class="stationvalue">Data Type</div>
-      <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
- <label name="livedataFormat"></label>
-        <select id="livedataFormat" name="livedataFormat" class="choose1">
-            <option>meteobridge-api</option>
-        </select>
         <br/>
+      </div>
+      <?php }?>
+    </div>
 
-    <div class="stationvalue">Add Your Path to data file</div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M12 30 L24 16 12 2" />
-    </svg>
-    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" /></svg>
-
-  <input name="livedata" type="text" id="livedata" value="<?php echo $livedata ;?>" class="chooseapi">
-  <br/>
-  <span style='color:red'>Do not change unless you know what you're doing</span>
-  <br/>
-
-      <div class="stationvalue">Meteobridge Chart Data</div>
-      <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
- <label name="chartsource"></label>
-        <select id="chartsource" name="chartsource" class="choose1">
-            <option>mbcharts</option>
-
-        </select>
-    <br/>
-    <span style="color:red">(Fixed Option WU history charts no longer supported)</span>
-</div>
-<br/>
-
-<!--##########################################################################################
-    #########                        Start of Hardware Section                       #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-<div class="weathersectiontitle">
-<svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
-</svg>
-
-Hardware Options</div><br/>
-      <div class="stationvalue">
-     Using Davis Hardware?</div>
-      <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-       <label name="davis"></label>
-        <select id="davis" name="davis" class="choose1">
-           <option><?php echo $davis ;?></option>
-           <option>Yes</option>
-           <option>No</option>
-          </select>
-        <br/>
-
-
-      <div class="stationvalue"> Your Weather Station Hardware</div>
-      <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-       <label name="weatherhardware"></label>
-        <select id="weatherhardware" name="weatherhardware" class="chooseapi">
-           <option><?php echo $weatherhardware ;?></option>
-           <option>Davis Vantage Pro2</option>
-           <option>Davis Vantage Pro2 Plus</option>
-           <option>Davis Vantage Pro2 Plus+FARS</option>
-           <option>Davis Vantage Pro2 FARS</option>
-           <option>Davis Vantage Pro2 Solar</option>
-           <option>Davis Vantage Pro2 UV</option>
-           <option>Davis Vantage Vue</option>
-           <option>Davis Envoy8x</option>
-           <option>Davis Cabled Vantage Pro2</option>
-           <option>Davis Cabled Vantage Pro2 Plus</option>
-           <option>Davis Vantage Pro1</option>
-           <option>Davis Vantage Pro1+Solar/UV</option>
-           <option>Davis Vantage Pro1+Solar/UV/FARS</option>
-           <option>Davis Vantage Pro1+FARS</option>
-           <option>Davis Cabled Vantage Pro1</option>
-           <option>Davis Cabled Vantage Pro1+Solar/UV</option>
-           <option>Davis Cabled Vantage Pro1+Solar/UV/FARS</option>
-           <option>Davis Cabled Vantage Pro1+FARS</option>
-           <option>Oregon Scientific WMR-100</option>
-           <option>Oregon Scientific WMR-200</option>
-           <option>Oregon Scientific WMR-300</option>
-           <option>Oregon Scientific WMR-100</option>
-           <option>Oregon Scientific WMR-88</option>
-           <option>Oregon Scientific WMR-968</option>
-           <option>Oregon Scientific WMR-969</option>
-           <option>Oregon Scientific WMR-100</option>
-           <option>Ambient Weather Observer-IP</option>
-           <option>Ambient Weather WS-12-IP</option>
-           <option>Ambient Weather WS-1000</option>
-           <option>Fine Offset WH-1080</option>
-           <option>Fine Offset WH-2080</option>
-           <option>Fine Offset WH-3080</option>
-           <option>Fine Offset WH-1080</option>
-           <option>Ecowitt GW-1000</option>
-           <option>Accurite</option>
-           <option>La Crosse</option>
-           <option>Weatherflow Air-Sky</option>
-           <option>Lufft WS10</option>
-           <option>Lufft WS100</option>
-           <option>Lufft WS200 UMB</option>
-           <option>Lufft WS300 UMB</option>
-           <option>Lufft WS301 UMB</option>
-           <option>Lufft WS302 UMB</option>
-           <option>Lufft WS303 UMB</option>
-           <option>Lufft WS304 UMB</option>
-           <option>Lufft WS310 UMB</option>
-           <option>Lufft WS400 UMB</option>
-           <option>Lufft WS401 UMB</option>
-           <option>Lufft WS500 UMB</option>
-           <option>Lufft WS501 UMB</option>
-           <option>Lufft WS502 UMB</option>
-           <option>Lufft WS503 UMB</option>
-           <option>Lufft WS504 UMB</option>
-           <option>Lufft WS510 UMB</option>
-           <option>Lufft WS600 UMB</option>
-           <option>Lufft WS601 UMB</option>
-           <option>Lufft WS700 UMB</option>
-           <option>Lufft WS800 UMB</option>
-           <option>Lufft WS3100 UMB</option>
-           <option>None of above</option>
-        </select>
-        <br/>
-
-
-      <div class="stationvalue">Which Meteobridge Platform Do You Use</div>
-      <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-       <label name="mbplatform"></label>
-        <select id="mbplatform" name="mbplatform" class="chooseapi">
-           <option><?php echo $mbplatform ;?></option>
-           <option>Meteobridge Nano</option>
-           <option>Meteobridge NanoSD</option>
-           <option>Meteobridge Pro</option>
-           <option>MB TP-Link</option>
-           <option>MB D-Link</option>
-           <option>MB Asus</option>
-           <option>Meteobridge</option>
-        </select>
-
-
-
-  </div>
-  <br/>
-
-<!--##########################################################################################
-    #########                        Start of Current Weather Section                #########
-    ##########################################################################################-->
-
-  <div class="weatheroptions">
-  <div class="weathersectiontitle">
-<svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
-</svg>
-Current Weather Conditions Text</strong></div><br/>
-
-       <div class="stationvalue"><strong>Options</strong></div>
-    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" /></svg>
-
-      <label name="currentconditions"></label>
-        <select id="currentconditions" name="currentconditions" class="chooseapi">
-           <option ><?php echo $currentconditions ;?></option>
-
-                     <option>currentconditionsmetar34davis.php</option>
-                     <option>currentconditionsmetar34.php</option>
-                     <option>currentconditionsds.php</option>
-
-        </select>
+    <div span style="width:auto;margin:0 auto;text-align:center;color:#fff;background:0;font-family:arial;padding:20px;border-radius:4px;">
+      <?php
+      $Password = $password;
+      if (isset($_POST['submit_pwd'])) {
+        $pass = isset($_POST['passwd']) ? $_POST['passwd'] : '';
+        if ($pass != $Password) {
+          showForm("Dashboard Meteobridge EASY SETUP");
+          exit();
+        }
+      } else {
+        showForm("Dashboard Meteobridge EASY SETUP");
+        exit();
+      }
+      ?>
+    </div>
+    <div span style="width:390px;margin:0 auto;margin-top:10px;text-align:center;color:#4a636f;background:0;font-family:arial;padding:20px;border-radius:4px;border:1px solid rgba(74, 99, 111, 0.4);">
+      <img src='img/easyweathersetupweather34.svg' width='120px'/>
+      <img src='img/nano.svg' width='40px' style="float:none;transform: rotate(100grad)"/>
+      <img src='img/MeteobridgePRO.svg' width='60px' style="float:none;"/>
+      <img src='img/TP-LINK.svg' width='60px' style="float:none;"/>
       <br/>
+      Welcome you have logged into the WEATHER34 Meteobridge setup screen <?php echo date("M jS Y H:i");?>
 
-     <span style="color:#777">
-
-     <?php echo $iicon;?> <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsmetar34davis.php</span> <strong>*New*</strong> for Davis owners. <strong>English Only.</strong> Outputs Davis forecast console text. Also uses Nearby Metar Aviation Weather Options must get API key and insert into option near bottom of this setup screen.*requires meteobridge reboot <br/>
-     <br/>
-
-     <?php echo $iicon;?> <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsmetar34.php</span> uses Nearby Metar Aviation Weather Options must get API key and insert into option near bottom of this setup screen.<br/>
-     <br/>
-     <?php echo $iicon;?> <span style="color:rgba(86, 95, 103, 1.000);">currentconditionsds.php</span> uses DarkSky must get API key and insert into option near bottom of this setup screen.</strong></span></span>
-
-  </div>
-
-  <br/>
-
-<!--##########################################################################################
-    #########                        Start of Station Name Sidebar                   #########
-    ##########################################################################################-->
-
-  <div class="weatheroptionssidebar"> try and keep these short dont include full country try a short code
-  <br/><br/>
-  <svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" /> </svg>
-    Web App Name should be less than 10 characters long. If you exceed 10 characters, the excess will be replaced with ... on Android or iPhone.
-  </div>
-  <div class="weatherbottominfo"></div>
-
-<!--##########################################################################################
-    #########                        Start of Station Name Section                   #########
-    ##########################################################################################-->
-
- <div class="weatheroptions">
-<div class="weathersectiontitle">
-<svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <circle cx="16" cy="11" r="4" />
-    <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
-</svg>
-
-Station Names</div><br/>
-<div class="stationvalue">  Station Location</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-  <input name="stationlocation" type="text" id="stationlocation" value="<?php echo $stationlocation ;?>" class="chooseapi">
-  <br/>
-
-<div class="stationvalue">  Station Name</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-  <input name="stationName" type="text" id="stationName" value="<?php echo $stationName ;?>" class="chooseapi">
-   <br/>
-
-   <div class="stationvalue">Web App Name</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-  <input name="manifestShortName" type="text" id="manifestShortName" value="<?php echo $manifestShortName ;?>" class="chooseapi">
-
-   </div>
- <br/>
-
-<!--##########################################################################################
-    #########                        Start of Location Info Section                  #########
-    ##########################################################################################-->
-
-   <div class="weatheroptionssidebar">Here is the area where you set your Lat/Lon with timezone + UTC offset , for timezone you can check
-   <a href="http://php.net/manual/en/timezones.php" title="http://php.net/manual/en/timezones.php" target="_blank"> the official php timezone documented page</a>
-   <br/><br/>
-
-<strong>Lat</strong> 54.00000  <strong>Lon</strong> -22.00000<br/><br/>
-
-<strong>UTC</strong> offset use single number  like -2,-4,1,2,3,4 etc <br/>do not use -01,0-04,01 ,02,03, 04 etc <br/>
-
-   </div>
-
-<!--##########################################################################################
-    #########                        Start of Location Info Section                  #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-<div class="weathersectiontitle">
-<svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <circle cx="16" cy="11" r="4" />
-    <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
-</svg>
-Location Information
-</div><br/>
-
-<div class="stationvalue">Timezone</div>
- <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-
- <input name="TZ" type="text" id="TZ" value="<?php echo $TZ ;?>" class="choose">
-
-
- <div class="stationvalue">UTC Offset</div>
-   <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-<input name="UTC" type="text" id="UTC" value="<?php echo $UTC ;?>" class="choose">
-
-
-
-
-<br/>
-	<div class="stationvalue">Latitude</div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="lat" type="text" id="lat" value="<?php echo $lat ;?>" class="choose">
-
-   <div class="stationvalue">Longitude</div>
-   <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="lon" type="lon" id="lon" value="<?php echo $lon ;?>" class="choose">
-     <br/>
-   <div class="stationvalue">Elevation</div>
-<svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-    <input name="elevation" type="text" id="elevation" value="<?php echo $elevation ;?>" class="choose">
-
-
-
-
-</div>
-
-  <br/>
-  <br/><br/><br/>
-
-<!--##########################################################################################
-    #########                        Start of Units Sidebar                          #########
-    ##########################################################################################-->
-
-   <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg> Set the units for the main page display and modules it is connected to the
-   unit selector in the menu
-
-   <div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-double check again
-</div>
-
-   </div>
-
-<!--##########################################################################################
-    #########                        Start of Units Section                          #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-
-  <div class="weathersectiontitle">
-  <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
-    <circle cx="16" cy="16" r="4" />
-</svg>
-  Units Selection</div><br/>
-
-  <label name="unit"></label>
-  <div class="stationvalue">Units</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="unit" name="unit" class="choose1">
-        	<option><?php echo $unit ;?></option>
-            <option>metric</option>
-            <option>english</option>
-        </select>
-
-        <label name="metric"></label>
-        <div class="stationvalue">Metric</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="metric" name="metric" class="choose1">
-            <option <?php if($metric=="false") echo "selected"; ?> >false</option>
-            <option <?php if($metric=="true") echo "selected"; ?> >true</option>
-            </select>
-       <span style="color:#777;"> set: <?php echo $iicon;?> true=metric , <?php echo $iicon;?> false=non metric</span>
-    <br/>
-
-     <label name="windunit"></label>
-    <div class="stationvalue">Wind Unit</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="windunit" name="windunit" class="choose1">
-       <option><?php echo $windunit ;?></option>
-           <option>km/h</option>
-            <option>mph</option>
-            <option>m/s</option>
-            <option>kts</option>
-
-        </select>
-
-        <label name="tempunit"></label>
-        <div class="stationvalue">Temperature Unit</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="tempunit" name="tempunit" class="choose1">
-        <option><?php echo $tempunit ;?></option>
-            <option>C</option>
-            <option>F</option>
-
-        </select>
-        <br/>
-        <label name="rainunit"></label>
-        <div class="stationvalue">Rain Unit&nbsp;</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="rainunit" name="rainunit" class="choose1">
-         <option><?php echo $rainunit ;?></option>
-            <option>mm</option>
-            <option>in</option>
-
-
-        </select>
-
-
-        <label name="rainrate"></label>
-        <div class="stationvalue">Rain Rate (per Hr/Min)</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="rainrate" name="rainrate" class="choose1">
-        <option><?php echo $rainrate ;?></option>
-            <option>/h</option>
-            <option>/m</option>
-
-        </select>
-        <br/>
-        <label name="pressureunit"></label>
-        <div class="stationvalue">Barometer Unit</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="pressureunit" name="pressureunit" class="choose1">
-         <option><?php echo $pressureunit ;?></option>
-            <option>mb</option>
-            <option>hPa</option>
-            <option>inHg</option>
-
-        </select>
-
-        <br/>
-
-        <label name="distanceunit"></label>
-        <div class="stationvalue">Distance unit measured miles or kilometres</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="distanceunit" name="distanceunit" class="choose1">
-        <option><?php echo $distanceunit ;?></option>
-            <option>mi</option>
-            <option>km</option>
-
-        </select>
-     </div>
-
-    <br/>
-
-<!--##########################################################################################
-    #########                        Start of Theming Sidebar                        #########
-    ##########################################################################################-->
-
-   <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg> Here you can set (2 choices)the default theme dark or light option<br />
-   and set the default display unit
-
-   <div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-check unit(s)
-</div>
-
-   </div>
-
-<!--##########################################################################################
-    #########                        Start of Theming Section                        #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-    <div class="weathersectiontitle">
-    <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
-        <circle cx="16" cy="16" r="4" />
-    </svg>
-    Theme Selection</div><br/>
-     <div class="stationvalue"> Default Theme Colour</div>
-        <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-        <label name="theme1"></label>
-        <select id="theme1" name="theme1" class="choose1">
-            <option><?php echo $theme1 ;?></option>
-            <option>dark</option>
-            <option>light</option>
-
-        </select>
-        <span style="color:#777;"> set: <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#25292D" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> dark, <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(144, 177, 42, 1.000)" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-     <path d="M16 14 L16 23 M16 8 L16 10" /><circle cx="16" cy="16" r="14" /></svg> light</span>
-     </div>
-
-    <br/>
-
-<!--##########################################################################################
-    #########                        Start of Notify Sidebar                         #########
-    ##########################################################################################-->
-
-<div class="weatheroptionssidebar">
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M12 30 L24 16 12 2" />
-    </svg>
-    Selection which notifications to show
-    <br/><br/>
-    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(102, 188, 199, 1.000)" stroke="rgba(102, 188, 199, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-        <path d="M16 14 L16 23 M16 8 L16 10" />
-        <circle cx="16" cy="16" r="14" />
-    </svg>
-    yes to show a notification
-    <br/>
-    <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#FF793A" stroke="#FF793A" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-        <path d="M16 14 L16 23 M16 8 L16 10" />
-        <circle cx="16" cy="16" r="14" />
-    </svg>
-    no to disable a notification
-    <div class="weatherbottominfo"></div>
-</div>
-
-<!--##########################################################################################
-    #########                        Start of Notify Section                         #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-    <div class="weathersectiontitle">
-        <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-            <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
-            <circle cx="16" cy="16" r="4" />
-        </svg>
-        Notification Settings
     </div>
-    <br/>
-    <div class="stationvalue">Notifications&nbsp;</div>
-    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M30 12 L16 24 2 12" />
-    </svg>
-    <select id="notifications" name="notifications" class="choose1">
-        <option><?php echo $notifications;?></option>
-        <?php if ($notifications == 'yes'){?>
-            <option>no</option>
-        <?php } else {?>
-            <option>yes</option>
-        <?php }?>
-    </select>
-    <br/>
-    <div class="stationvalue">Earthquakes</div>
-    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M30 12 L16 24 2 12" />
-    </svg>
-    <select id="notifyEarthquake" name="notifyEarthquake" class="choose1">
-        <option><?php echo $notifyEarthquake;?></option>
-        <?php if ($notifyEarthquake == 'yes'){?>
-            <option>no</option>
-        <?php } else {?>
-            <option>yes</option>
-        <?php }?>
-    </select>&nbsp;&nbsp;&nbsp;
-    <div class="stationvalue">Minimum Magnitude</div>
-    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M30 12 L16 24 2 12" />
-    </svg>
-    <select id="notifyMagnitude" name="notifyMagnitude" class="choose1">
-        <option><?php echo $notifyMagnitude;?></option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-    </select>
-    <br/>
-    <div class="stationvalue">Wind Alerts&nbsp;&nbsp;</div>
-    <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M30 12 L16 24 2 12" />
-    </svg>
-    <select id="notifyWind" name="notifyWind" class="choose1">
-        <option><?php echo $notifyWind;?></option>
-        <?php if ($notifyWind == 'yes'){?>
-            <option>no</option>
-        <?php } else {?>
-            <option>yes</option>
-        <?php }?>
-    </select>
-</div>
-
-
-    <br/>
-
-<!--##########################################################################################
-    #########                        Ignore this old section                         #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-       <div class="weathersectiontitle">
-
-       <svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <circle cx="16" cy="11" r="4" />
-    <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
-</svg>
-       This section is deprecated, you can ignore it
-    </div><br/>
-        <label name="uk"></label>
-        <div class="stationvalue">Are you in the UK</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="uk" name="uk" class="choose1">
-            <option <?php if($uk=="false") echo "selected"; ?> >false</option>
-            <option <?php if($uk=="true") echo "selected"; ?> >true</option>
-        </select>
-
-        <label name="usa"></label>
-        <div class="stationvalue">Are you in the USA</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="usa" name="usa" class="choose1">
-            <option <?php if($usa=="false") echo "selected"; ?> >false</option>
-            <option <?php if($usa=="true") echo "selected"; ?> >true</option>
-        </select>
-        <br/>
-        <label name="scandinavia"></label>
-        <div class="stationvalue">Are you in Scandinavia</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="scandinavia" name="scandinavia" class="choose1">
-            <option <?php if($scandinavia=="false") echo "selected"; ?> >false</option>
-            <option <?php if($scandinavia=="true") echo "selected"; ?> >true</option>
-        </select>
-
-         <label name="restoftheworld"></label>
-        <div class="stationvalue">Are you not in any of others</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <select id="restoftheworld" name="restoftheworld" class="choose1">
-            <option <?php if($restoftheworld=="false") echo "selected"; ?> >false</option>
-            <option <?php if($restoftheworld=="true") echo "selected"; ?> >true</option>
-        </select>
-
-   </div>
-<br/>
-
-<!--##########################################################################################
-    #########                        Start of Email and Twitter Sidebar              #########
-    ##########################################################################################-->
-
-   <div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-Email and Twitter options for links in your about page
-
-<div class="weatherbottominfo">
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-
-your nearly there :-) keep going</div>
-
-</div>
-
-<!--##########################################################################################
-    #########                        Start of Email and Twitter Section              #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-   <div class="weathersectiontitle">
-   <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
-    <circle cx="16" cy="16" r="4" />
-</svg>
-   Email and Twitter
-    </div>
-
-    <br/>
-
-
-
-
-
-    <div class="stationvalue">Email</div>
-
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-<input name="email" type="text" id="email" value="<?php echo $email ;?>" class="choose">
-    <div class="stationvalue">Twitter Name</div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-<input name="twitter" type="text" id="twitter" value="<?php echo $twitter ;?>" class="choose">
-    <br/>
-    <div class="stationvalue">Year your weather station was installed</div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-<input name="since" type="text" id="since" value="<?php echo $since ;?>" class="choose">
-
-
-</div>
-  <br/>
-
-<!--##########################################################################################
-    #########                        Start of Module Sidebar                         #########
-    ##########################################################################################-->
-
-<div class="weatheroptionssidebar"><svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-General template settings with options to choose which type of module to display ,basic station information
-
-<br/><br/>
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg> Make sure you have a <strong><span style="color:#F8712E;"><a href="https://www.wunderground.com/member/api-keys" title="https://www.wunderground.com/member/api-keys" target="_blank"><strong>*NEW*</strong> Weather Underground Developer API KEY</a></span></strong> ..
-
-<br/><br/>
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg> Options to use UVINDEX forecast data if you <strong>DO NOT</strong> have UVINDEX hardware ..
-<br/><br/>
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg> Moonset offset times can be adjusted here to align with your location it is measured in hours ,please adjust by hours to correct the output you may have to adjust when clocks move with annually daylight saving times ..
-
-
-</div>
-
-<!--##########################################################################################
-    #########                        Start of Module Section                         #########
-    ##########################################################################################-->
-
-  <div class="weatheroptions">
-    <div class="weathersectiontitle">Template Modules</div><br/>
-
-  <span style="color:rgba(236, 87, 27, 1.000);"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg>
-</svg> Options for Top Row 4 Modules + *new Position 6 and 12 module &amp; + Last module<span style="color:#777;"></span> <br/>
-       <div class="stationvalue"> Position 1 </div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-       <label name="position1"></label>
-        <select id="position1" name="position1" class="choose">
-          <option><?php echo $position1 ;?></option>
-
-            <option>temperatureyear.php</option>
-            <option>weather34clock.php</option>
-            <option>windgustyear.php</option>
-            </select>
-
-        <div class="stationvalue"> Position 1 Title</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position1title"></label>
-        <input name="position1title" type="text" id="position1title" value="<?php echo $position1title ;?>" class="choose">
-
-
-
-        <br/>
-
-        <div class="stationvalue"> Position 2 </div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position2"></label>
-        <select id="position2" name="position2" class="choose">
-            <option><?php echo $position2 ;?></option>
-            <option>rainfallf-year-month.php</option>
-            <option>windgustyear.php</option>
-            <option>temperatureyear.php</option>
-            <option>wflightning.php</option>
-           </select>
-
-
-        <div class="stationvalue"> Position 2 Title</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position2title"></label>
-       <input name="position2title" type="text" id="position2title" value="<?php echo $position2title ;?>" class="choose">
-
-        <br/>
-
-        <div class="stationvalue"> Position 3 </div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-        <label name="position3"></label>
-        <select id="position3" name="position3" class="choose">
-            <option><?php echo $position3 ;?></option>
-            <option>rainfallf-year-month.php</option>
-            <option>windgustyear.php</option>
-            <option>temperatureyear.php</option>
-            <option>wflightning.php</option>
-            </select>
-     <div class="stationvalue"> Position 3 Title</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position3title"></label>
-        <input name="position3title" type="text" id="position3title" value="<?php echo $position3title ;?>" class="choose">
-
-        <br/>
-
-
-        <div class="stationvalue"> Position 4 </div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position4"></label>
-        <select id="position4" name="position4" class="choose">
-            <option><?php echo $position4 ;?></option>
-            <option>temperatureyear.php</option>
-            <option>davisconsoleoutlook.php</option>
-           <option>advisory.php</option>
-                     </select>
-
-
-
-        <div class="stationvalue"> Position 4 Title</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position4title"></label>
-       <input name="position4title" type="text" id="position4title" value="<?php echo $position4title ;?>" class="choose">
-
-
-        </select>
-        <br/>
-
-         <div class="stationvalue"> *Position 6 </div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position6"></label>
-        <select id="position6" name="position6" class="choose">
-            <option><?php echo $position6 ;?></option>
-            <option>forecast3ds.php</option>
-            <option>forecast3wu.php</option>
-            <option>forecast3wularge.php</option>
-                     </select>
-
-
-
-        <div class="stationvalue"> Position 6 Title</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position6title"></label>
-       <input name="position6title" type="text" id="position6title" value="<?php echo $position6title;?>" class="choose">
-
-
-        </select>
-        <br/>
-
-
-
-
-
-
-
-
-
-
-         <div class="stationvalue"> *Position 12</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position12"></label>
-        <select id="position12" name="position12" class="choose">
-            <option><?php echo $position12 ;?></option>
-            <option>indoortemperature.php</option>
-            <option>airqualitymodule.php</option>
-            <option>webcamsmall.php</option>
-            <option>moonphase.php</option>
-            <option>weather34uvsolar.php</option>
-            <option>solaruvds.php</option>
-            <option>solaruvwu.php</option>
-            <option>eq.php</option>
-            <option>lightning34.php</option>
-                     </select>
-
-
-
-        <div class="stationvalue"> Position 12 Title</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="position12title"></label>
-       <input name="position12title" type="text" id="position12title" value="<?php echo $position12title ;?>" class="choose">
-
-
-        </select>
-        <br/>
-
-
-
-         <div class="stationvalue"> *Last Module</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="positionlastmodule"></label>
-        <select id="positionlastmodule" name="positionlastmodule" class="choose">
-            <option><?php echo $positionlastmodule ;?></option>
-            <option>indoortemperature.php</option>
-            <option>airqualitymodule.php</option>
-            <option>webcamsmall.php</option>
-            <option>moonphase.php</option>
-            <option>weather34uvsolar.php</option>
-            <option>solaruvds.php</option>
-             <option>solaruvwu.php</option>
-            <option>eq.php</option>
-            <option>lightning34.php</option>
-                     </select>
-
-
-
-        <div class="stationvalue">Last Title</div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-        <label name="positionlastmoduletitle"></label>
-       <input name="positionlastmoduletitle" type="text" id="positionlastmoduletitle" value="<?php echo $positionlastmoduletitle ;?>" class="choose">
-
-
-        </select>
-        <br/>
-
-
-
-
-
-
-
-      <strong> <span style="color:rgba(86, 95, 103, 1.000);">options Top 4 positions</span></strong><br/>
-
-       <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> rainfallf-year-month.php</span> Totals <span style="color:rgba(24, 25, 27, 0.8)">YEARLY-MONTHLY</span> Rainfall<br/></span>
-
-
-        <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> weather34clock.php</span> Station  <span style="color:rgba(24, 25, 27, 0.8)">Time</span><br/>
-
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> windgustyear.php</span> *English only<span style="color:rgba(24, 25, 27, 0.8)"> Current Monthly / Yearly max Gust </span> <br/>
-
-
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> temperatureyear.php</span> *English only<span style="color:rgba(24, 25, 27, 0.8)"> Current Monthly / Yearly Temperature </span>  <br/>
-
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> davisconsoleoutlook.php <span style="color:rgba(24, 25, 27, 0.8)">Davis Hardware Console users only</span> <br/></span>
-
-
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> wflightning.php <span style="color:rgba(24, 25, 27, 0.8)">Weatherflow users only uses direct weatherflow API not meteobridge data must add station ID below in the weatherflow section </span> <br/></span>
-
-
-
-      <br/></span></span>
-         <strong> <span style="color:rgba(86, 95, 103, 1.000);">options Positions 6 and 12 + last module</span></strong><br/>
-        <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> indoortemperature.php <span style="color:rgba(236, 87, 27, 1.000);">display indoor temperature</span><br/></span>
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> airqualitymodule.php <span style="color:rgba(236, 87, 27, 1.000);">display airquality</span><br/></span>
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> webcamsmall.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display webcam</span>.*
-     add your url/path to wecam image using option below <br/></span>
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> mooonphase.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display moonphase</span><br/></span>
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> weather34uvsolar.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display uv and solar radiation if you have hardware</span> <br/></span>
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> solaruvds.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display Darksky UV forecast and if you have only solar radiation </span> <br/></span>
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> solaruvwu.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display Weather Underground Day UV forecast and if you have only solar radiation </span> <br/></span>
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> eq.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display last earthquake from earthquakereport.com</span>   <br/>
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> forecas3ds.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display 3 day forecast from DARK SKY</span>   <br/>
-     </span>
-
-   <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> forecas3wu.php</span> <span style="color:rgba(236, 87, 27, 1.000);">display 3 period day/night forecast from Weather Underground</span>   <br/>
-     </span>
-
-
-     <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> forecas3wularge.php</span> <span style="color:rgba(236, 87, 27, 1.000);">large display of current period day/night forecast from Weather Underground</span>   <br/>
-     </span>
-
-
-        <span style="color:#777;"><?php echo $iicon;?><span style="color:#777;"> lightning34.php</span> <span style="color:rgba(236, 87, 27, 1.000);">Lightning for those using weatherflow direct with meteobridge</span>   <br/>
-     </span>
-    </div>
-    <br/>
-
-<!--##########################################################################################
-    #########                        Start of Webcam Section                         #########
-    ##########################################################################################-->
-
-    <div class="weatheroptions">
-   <div class="weathersectiontitle">Webcam</div>
-   <br/>
-   <div class="stationvalue">Path/Url to your webcam <b>image</b></div>
-   <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-  <input name="webcamurl" type="text" id="webcamurl" value="<?php echo $webcamurl ;?>" class="chooseapi"><br/>
-    <?php echo $iicon;?>
-    <b><span style="color:rgba(236, 87, 27, 1.000);">Leave blank to hide link within menu</span></b><br/>
-
-    <?php echo $iicon;?>
-    <span style="color:rgba(86, 95, 103, 1.000);">Should be an image url, possibly ending in <b>jpg</b>/<b>jpeg</b>/<b>png</b></span><br/>
-
-    <div class="stationvalue">Path/Url to your webcam <b>video</b></div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-  <input name="videoWeatherCamURL" type="text" id="videoWeatherCamURL" value="<?php echo $videoWeatherCamURL ;?>" class="chooseapi"><br/>
-    <?php echo $iicon;?>
-    <b><span style="color:rgba(236, 87, 27, 1.000);">Leave blank to use the Static Weather Camera image instead</span></b><br/>
-
-    <?php echo $iicon;?>
-    <span style="color:rgba(86, 95, 103, 1.000);">Add the url to your Weather Camera's live video feed to include it in the Weather Camera popup</span><br/>
-
-    <?php echo $iicon;?>
-    <span style="color:rgba(86, 95, 103, 1.000);">If your video doesn't work here, but you can view it by putting it in the URL bar, <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template/issues/new?assignees=lightmaster&labels=enhancement&template=feature_request.md&title=" title="Add a Feature | HWS GitHub" target="_blank"><span style="color:rgba(236, 87, 27, 1.000);">start a new issue on the GitHub page</span></a> and I'll try to add support for your video.</span><br/>
-</div>
-<br/>
-
-<!--##########################################################################################
-    #########                        Start of Moon Section                           #########
-    ##########################################################################################-->
-     <div class="weatheroptions">
-   <div class="weathersectiontitle">Moonrise/set option</div> <br/>
-
-
-   <div class="stationvalue">
-   Fine Tune the Moonrise/Set *if needed or leave as default if unsure</div>
-   <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-<input name="moonadj" type="text" id="moonadj" value="<?php echo $moonadj ;?>" class="choose">
-<br/>
-<svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(24, 25, 27, 0.8)" stroke="rgba(24, 25, 27, 0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg>
-        <strong> <span style="color:rgba(86, 95, 103, 1.000);">adjust the moonrise/set to your location in hours </span></strong>
-<br/>
-
-   <div class="stationvalue">
-   Reverse the moonphase for southern hemisphere (i.e. Australia etc..)</div>
-   <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-<select id="hemisphere" name="hemisphere" class="choose1">
-         <option><?php echo $hemisphere ;?></option>
-            <option>0</option>
-            <option>180</option>
-
-
-        </select>
-<br/>
-        <?php echo $iicon;?> <strong> <span style="color:rgba(236, 87, 27, 1.000);">set to 0 for Northern hemisphere</span></strong><br/>
-         <?php echo $iicon;?> <strong> <span style="color:rgba(86, 95, 103, 1.000);">set to 180 for Southern hemisphere (180 degrees reversed)</span></strong><br/>
-
-
-     <div class="stationvalue">
-   Sun Position Module</div>
-   <svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="rgba(86, 95, 103, 1.000)" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-<select id="sunoption" name="sunoption" class="choose1">
-         <option><?php echo $sunoption ;?></option>
-            <option>sun3.php</option>
-            <option>sun4.php</option>
-        </select>
-        <br/>
-        <?php echo $iicon;?> <span style="color:rgba(86, 95, 103, 1.000);"><strong>two options sun3.php works northern latitudes, sun4.php is for southern hemisphere only ..</strong></span><br/>
-
-     </div>
-    <br/>
-
-<!--##########################################################################################
-    #########                        Start of Time Format Section                    #########
-    ##########################################################################################-->
-
-    <div class="weatheroptions">
-   <svg id="i-clock" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <circle cx="16" cy="16" r="14" />
-    <path d="M16 8 L16 16 20 20" />
-</svg> <div class="weathersectiontitle">Time format options</div><br/>
-     <div class="stationvalue">Set the Date Format</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-   <label name="dateFormat"></label>
-        <select id="dateFormat" name="dateFormat" class="choose1">
-            <option><?php echo $dateFormat ;?></option>
-            <option>d-m-Y</option>
-            <option>m-d-Y</option>
-            <option>Y-m-d</option>
-
-        </select>
-
-
-        <div class="stationvalue">Set the Main Clock Format</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-   <label name="clockformat"></label>
-        <select id="clockformat" name="clockformat" class="choose1">
-            <option><?php echo $clockformat ;?></option>
-            <option>24</option>
-            <option>12</option>
-        </select>
-
-
-
-        <br/>
-
-     <div class="stationvalue">Set the Time Format</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-   <label name="timeFormat"></label>
-        <select id="timeFormat" name="timeFormat" class="choose1">
-            <option><?php echo $timeFormat ;?></option>
-             <option>H:i:s</option>
-             <option>g:i:s a</option>
-              <option>g:i:s</option>
-            </select>
-
-        &nbsp;
-
-        <div class="stationvalue">Set the Short Time Format</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-   <label name="timeFormatShort"></label>
-        <select id="timeFormatShort" name="timeFormatShort" class="choose1">
-            <option><?php echo $timeFormatShort ;?></option>
-            <option>H:i</option>
-            <option>g:i</option>
-
-
-        </select>
-
-         &nbsp;<br/><br/>
-
-
-
-        <span style="color:#777;font-weight:600;">Date format<br/></span>
-        <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><?php echo $iicon;?> d-m-Y <span style="color:#777;">for DAY MONTH YEAR format (12-03-2017)</span></span><br/>
-        <span style="color:rgba(86, 95, 103, 1.000);"><?php echo $oiicon;?> m-d-Y <span style="color:#777;">for MONTH DAY YEAR format (03-12-2017)</span></span><br/>
-     <span style="color:rgba(86, 95, 103, 1.000);"><?php echo $oiicon;?> m-d-Y <span style="color:#777;">for YEAR MONTH DAY format (2017-12-03)</span></span><br/>
-     <br/>
-
-
-     <span style="color:#777;font-weight:600;">Main Clock format<br/></span>
-        <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><?php echo $iicon;?> 24 <span style="color:#777;">Main Clock output example 17:32:12 </span></span><br/>
-        <span style="color:rgba(86, 95, 103, 1.000);"><?php echo $oiicon;?> 12 <span style="color:#777;">Main Clock output example 5:32:12 pm</span></span><br/> <br/>
-
-      <span style="color:#777;font-weight:600;">Time format<br/></span>
-       <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><?php echo $iicon;?> H:i:s <span style="color:#777;"> 17:34:22 format</span> </span><br/>
-
-     <span style="color:rgba(86, 95, 103, 1.000);"><?php echo $oiicon;?> g:i:s a <span style="color:#777;"> 05:34:22 am format</span></span><br/>
-
-     <span style="color:rgba(86, 95, 103, 1.000);"><?php echo $oiicon;?> g:i:s  <span style="color:#777;"> 05:34:22 format</span></span><br/> <br/>
-
-
-      <span style="color:#777;font-weight:600;">Short Time format used for Sunrise/Set & Moonrise/Set areas<br/></span>
-      <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><?php echo $iicon;?> H:i <span style="color:#777;">17:34 format</span></span><br/>
-
-     <span style="color:rgba(86, 95, 103, 1.000);"><?php echo $oiicon;?> g:i a  <span style="color:#777;">05:34 am format</span></span><br/>
-
-     <span style="color:rgba(86, 95, 103, 1.000);"><?php echo $oiicon;?> g:i   <span style="color:#777;">05:34 format</span></span><br/>
-     <br/>
-
-        <div class="stationvalue">show updated date & time </div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-   <label name="showDate"></label>
-        <select id="showDate" name="showDate" class="choose1">
-            <option>false</option>
-        </select><br/>
-     <span style="color:#777;font-weight:600;">options<br/></span>
-
-     <span style="color:rgba(86, 95, 103, 1.000);font-weight:normal;"><?php echo $oiicon;?> false = </span> <span style="color:#777;font-weight:normal;">not used as of 27th April 2017 always false</span>
-
-     </div>
-    <br/>
-
-<!--##########################################################################################
-    #########                        Start of Menu Options Sidebar                   #########
-    ##########################################################################################-->
-
-<div class="weatheroptionssidebar">
-    <span style="color:#777;">
-        <?php echo $iicon;?>
-        Select <span style="font-weight:bold;color:rgba(236, 87, 27, 1.000);">no</span> or leave the IDs blank to hide any link.
-        <br/>
-        <br/>
-        <?php echo $iicon;?>
-        Select whether to display WU link and if you want to use the new or old site. <span style="color:red">Map does not work on old site.</span>
-        <br/>
-        <br/>
-        <?php echo $iicon;?>
-        <a href="http://www.findu.com/citizenweather/cw_form.html" title="CWOP Sign-UP">Sign up for CWOP here</a>. Type in your ID for CWOP and FindU. Starting letter is either <span style="font-weight:bold;color:rgba(236, 87, 27, 1.000);">F</span>/<span style="font-weight:bold;color:rgba(236, 87, 27, 1.000);">D</span>/<span style="font-weight:bold;color:rgba(236, 87, 27, 1.000);">E</span>/<span style="font-weight:bold;color:rgba(236, 87, 27, 1.000);">C</span>.
-        <br/>
-        <?php echo $iicon;?>
-        CWOP looks like <span style="font-weight:bold;color:rgba(236, 87, 27, 1.000);">F</span>0000
-        <br/>
-        <?php echo $iicon;?>
-        FindU looks like <span style="font-weight:bold;color:rgba(236, 87, 27, 1.000);">FW</span>0000.
-        <br/>
-        <?php echo $iicon;?>
-        <orange><b>NOAA</b></orange>, <orange><b>MADIS</b></orange>, and <orange><b>MesoWest</b></orange> all use your CWOP ID, so you don't have to enter it again.
-        <br/>
-        <?php echo $iicon;?>
-        Go to <a href="https://app.weathercloud.net" title="WeatherCloud" target="_blank">WeatherCloud</a>, the ID is the last part of the url (<orange><b>d0123456789</b></orange>).
-        <br/>
-        <?php echo $iicon;?>
-        Go to <a href="https://www.awekas.at/en/login_pruefung.php?rd=station" title="AWEKAS" target="_blank">AWEKAS</a>, after logging in, your ID will be at the end of the url (<orange><b>12345</b></orange>)
-        <br/>
-        <?php echo $iicon;?>
-        Go to <a href="https://dashboard.ambientweather.net/devices" title="Ambient Weaher" target="_blank">Ambient Weatehr</a> and click the green share button for your station. Click to make your station public, then copy the last section of your url (<orange><b>0123456789abcdef<br/>0123456789abcdef</b></orange>).
-        <br/>
-        <?php echo $iicon;?>
-        Go to <a href="https://www.pwsweather.com/stationlist.php" title="PWS Weather Stations" target="_blank">PWS Weather Station List</a> and find the "station ID" in the first column.
-        <br/>
-        <?php echo $iicon;?>
-        Go to <a href="http://wow.metoffice.gov.uk/sites" title="MetOffice" target="_blank">MetOffice/WoW</a>. Your ID is the last part of your URL, following "site-ID=".
-        <br/>
-        <br/>
-        <?php echo $iicon;?>
-        Custom links - Make sure to set the title and url
-        <br/>
-        <?php echo $iicon;?>
-        Extra Menu Link is a link that shows up outside of the flyout menu
-        <br/>
-        <?php echo $iicon;?>
-        Create an Account at <a href="https://usaweatherfinder.com/index.php?a=join" title="USA Weather Finder" target="_blank">USA Weather Finder</a>. Secret Code is <orange><b>CUMULUS</orange></b>. Your username is the code for tracking.
-    </span>
-
-
-</div>
-
-<!--##########################################################################################
-    #########                        Start of Menu Options Section                   #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-    <svg id="i-menu" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-        <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
-    </svg>
-    <div class="weathersectiontitle">Menu options</div>
-    <br/>
-    <!-- Display Languages -->
-    <div class="stationvalue">Display Languages in Menu</div>
-    <?php echo $rightchevron.$downchevron;?>
-    <label name="languages"></label>
-    <select id="languages" name="languages" class="choose1" >
-        <option><?php echo ($languages?$languages:'no');?></option>
-        <option><?php echo ($languages=='no'||empty($languages)?'yes':'no');?></option>
-    </select>
-    <br/>
-    <!-- To show some extra links -->
-    <div class="stationvalue">Display Extra links in Menu</div>
-    <?php echo $rightchevron.$downchevron;?>
-    <label name="extralinks"></label>
-    <select id="extralinks" name="extralinks" class="choose1" >
-    <option><?php echo ($extralinks?$extralinks:'no');?></option>
-        <option><?php echo ($extralinks=='no'||empty($extralinks)?'yes':'no');?></option>
-    </select>
-    <br/>
-    <!-- WU Link -->
-    <div class="stationvalue">Display Wunderground Link</div>
-    <?php echo $rightchevron.$downchevron;?>
-    <label name="linkWU"></label>
-    <select id="linkWU" name="linkWU" class="choose1">
-        <option><?php echo ($linkWU?$linkWU:'no');?></option>
-        <option><?php echo ($linkWU=='no'||empty($linkWU)?'yes':'no');?></option>
-    </select>
-    <!-- Use new or old WU Site -->
-    <div class="stationvalue">New WU Site</div>
-    <?php echo $rightchevron.$downchevron;?>
-    <label name="linkWUNew"></label>
-    <select id="linkWUNew" name="linkWUNew" class="choose1">
-        <option><?php echo ($linkWUNew?$linkWUNew:'yes');?></option>
-        <option><?php echo ($linkWUNew=='yes'||empty($linkWUNew)?'no':'yes');?></option>
-    </select>
-    <br/>
-    <!-- CWOP Link -->
-    <div class="stationvalue">Display CWOP Link</div>
-    <?php echo $rightchevron;?>
-    <label name="linkCWOPID"></label>
-    <input name="linkCWOPID" type="text" id="linkCWOPID" value="<?php echo $linkCWOPID;?>" class="choose">
-    <span style="color:#777;">(<orange><b>F0000</b></orange>)</span>
-    <br/>
-    <!-- FindU Link -->
-    <div class="stationvalue">Display FindU Link&nbsp;&nbsp;</div>
-    <?php echo $rightchevron;?>
-    <label name="linkFindUID"></label>
-    <input name="linkFindUID" type="text" id="linkFindUID" value="<?php echo $linkFindUID;?>" class="choose">
-    <span style="color:#777;">(<orange><b>FW0000</b></orange>)</span>
-    <br/>
-    <!-- NOAA Link -->
-    <div class="stationvalue">Display NOAA Link&nbsp;</div>
-    <?php echo $rightchevron.$downchevron;?>
-    <label name="linkNOAA"></label>
-    <select id="linkNOAA" name="linkNOAA" class="choose1">
-        <option><?php echo ($linkNOAA?$linkNOAA:'no');?></option>
-        <option><?php echo ($linkNOAA=='no'||empty($linkNOAA)?'yes':'no');?></option>
-    </select>
-    <br/>
-    <!-- MADIS Link -->
-    <div class="stationvalue">Display MADIS Link</div>
-    <?php echo $rightchevron.$downchevron;?>
-    <label name="linkMADIS"></label>
-    <select id="linkMADIS" name="linkMADIS" class="choose1">
-        <option><?php echo ($linkMADIS?$linkMADIS:'no');?></option>
-        <option><?php echo ($linkMADIS=='no'||empty($linkMADIS)?'yes':'no');?></option>
-    </select>
-    <br/>
-    <!-- MesoWest Link -->
-    <div class="stationvalue">Display MesoWest Link</div>
-    <?php echo $rightchevron.$downchevron;?>
-    <label name="linkMesoWest"></label>
-    <select id="linkMesoWest" name="linkMesoWest" class="choose1">
-        <option><?php echo ($linkMesoWest?$linkMesoWest:'no');?></option>
-        <option><?php echo ($linkMesoWest=='no'||empty($linkMesoWest)?'yes':'no');?></option>
-    </select>
-    <br/>
-    <!-- MesoWest Link -->
-    <div class="stationvalue">Display WeatherCloud Link</div>
-    <?php echo $rightchevron;?>
-    <label name="linkWeatherCloudID"></label>
-    <input name="linkWeatherCloudID" type="text" id="linkWeatherCloudID" value="<?php echo $linkWeatherCloudID;?>" class="choose">
-    <span style="color:#777;">(<orange><b>d0123456789</b></orange>)</span>
-    <br/>
-    <!-- MesoWest Link -->
-    <div class="stationvalue">Display Windy.com Link</div>
-    <?php echo $rightchevron;?>
-    <label name="linkWindyID"></label>
-    <input name="linkWindyID" type="text" id="linkWindyID" value="<?php echo $linkWindyID;?>" class="choose">
-    <span style="color:#777;">(<orange><b>f0123456</b></orange>)</span>
-    <br/>
-    <!-- AWEKAS Link -->
-    <div class="stationvalue">Display AWEKAS Link</div>
-    <?php echo $rightchevron;?>
-    <label name="linkAWEKASID"></label>
-    <input name="linkAWEKASID" type="text" id="linkAWEKASID" value="<?php echo $linkAWEKASID;?>" class="choose">
-    <span style="color:#777;">(<orange><b>14782</b></orange>)</span>
-    <br/>
-    <!-- Ambient Link -->
-    <div class="stationvalue">Display Ambient Link</div>
-    <?php echo $rightchevron;?>
-    <label name="linkAmbientWeatherID"></label>
-    <input name="linkAmbientWeatherID" type="text" id="linkAmbientWeatherID" value="<?php echo $linkAmbientWeatherID;?>" class="chooseapi">
-    <span style="color:#777;">(<orange><b>0123456789abcdef0123456789abcdef</b></orange>)</span>
-    <br/>
-    <!-- PWS Weather Link -->
-    <div class="stationvalue">Display PWS Weather Link</div>
-    <?php echo $rightchevron;?>
-    <label name="linkPWSWeatherID"></label>
-    <input name="linkPWSWeatherID" type="text" id="linkPWSWeatherID" value="<?php echo $linkPWSWeatherID;?>" class="choose">
-    <br/>
-    <!-- MetOffice Link -->
-    <div class="stationvalue">Display MetOffice/WoW Link</div>
-    <?php echo $rightchevron;?>
-    <label name="linkMetOfficeID"></label>
-    <input name="linkMetOfficeID" type="text" id="linkMetOfficeID" value="<?php echo $linkMetOfficeID;?>" class="chooseapi">
-    <br/>
-    <!-- USA Weather Finder Link -->
-    <div class="stationvalue">USA Weather Finder Username</div>
-    <?php echo $rightchevron;?>
-    <label name="USAWeatherFinder"></label>
-    <input name="USAWeatherFinder" type="text" id="USAWeatherFinder" value="<?php echo $USAWeatherFinder;?>" class="choose">
-    <br/>
-    <orange>This is for USA based stations only.</orange>
-    <br/>
-    <br/>
-    <!-- Custom Link 1 -->
-    <div class="weathersectiontitle">Custom Links</div>
-    <br/>
-    <div class="stationvalue">1st Title&nbsp;</div>
-    <?php echo $rightchevron;?>
-    <label name="linkCustom1Title"></label>
-    <input name="linkCustom1Title" type="text" id="linkCustom1Title" value="<?php echo $linkCustom1Title;?>" class="choose">
-    <div class="stationvalue">1st URL&nbsp;</div>
-    <?php echo $rightchevron;?>
-    <label name="linkCustom1URL"></label>
-    <input name="linkCustom1URL" type="text" id="linkCustom1URL" value="<?php echo $linkCustom1URL;?>" class="chooseapi">
-    <br/>
-    <!-- Custom Link 2 -->
-    <div class="stationvalue">2nd Title</div>
-    <?php echo $rightchevron;?>
-    <label name="linkCustom2Title"></label>
-    <input name="linkCustom2Title" type="text" id="linkCustom2Title" value="<?php echo $linkCustom2Title;?>" class="choose">
-    <div class="stationvalue">2nd URL</div>
-    <?php echo $rightchevron;?>
-    <label name="linkCustom2URL"></label>
-    <input name="linkCustom2URL" type="text" id="linkCustom2URL" value="<?php echo $linkCustom2URL;?>" class="chooseapi">
-    <br/>
-    <br/>
-    <!-- Extra Menu's Custom Link -->
-    <div class="weathersectiontitle">Extra Menu - Custom Link</div>
-    <br/>
-    <div class="stationvalue">Title&nbsp;&nbsp;</div>
-    <?php echo $rightchevron;?>&nbsp;&nbsp;&nbsp;
-    <label name="extraLinkTitle"></label>
-    <input name="extraLinkTitle" type="text" id="extraLinkTitle" value="<?php echo $extraLinkTitle;?>" class="choose">
-    <div class="stationvalue">URL&nbsp;</div>
-    <?php echo $rightchevron;?>
-    <label name="extraLinkURL"></label>
-    <input name="extraLinkURL" type="text" id="extraLinkURL" value="<?php echo $extraLinkURL;?>" class="chooseapi">
-    <br/>
-    <div class="stationvalue">Color</div>
-    <?php echo $rightchevron.$downchevron;?>
-    <label name="extraLinkColor"></label>
-    <select id="extraLinkColor" name="extraLinkColor" class="choose1">
-        <?php echo ($extraLinkColor?'<option>'.$extraLinkColor.'</option>':'<option value="">Blank - No value</option>');?>
-        <?php echo ($extraLinkColor=='white'?'':'<option>white</option>');?>
-        <?php echo ($extraLinkColor=='red'?'':'<option>red</option>');?>
-        <?php echo ($extraLinkColor=='grey'?'':'<option>grey</option>');?>
-        <?php echo ($extraLinkColor=='green'?'':'<option>green</option>');?>
-        <?php echo ($extraLinkColor=='yellow'?'':'<option>yellow</option>');?>
-        <?php echo ($extraLinkColor=='blue'?'':'<option>blue</option>');?>
-        <?php echo ($extraLinkColor=='orange'?'':'<option>orange</option>');?>
-        <?php echo (!empty($extraLinkColor)?'<option value="">Blank - No value</option>':'');?>
-    </select>
-</div>
-<br/>
-
-<!--##########################################################################################
-    #########                        Start of WU/DarkSky Section                     #########
-    ##########################################################################################-->
-
-     <div class="weatheroptions">
-   <div class="weathersectiontitle">WU/Darksky Options</div><br/><br/>
-
-
-
-
-
-     <div class="stationvalue"> <img src="img/wunderground.svg" width="100" /> STATION ID  for PWS Historical Charts</div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="WUID" type="text" id="WUID" value="<?php echo $id ;?>" class="choose">
-    <br/> <span style="color:#777;">enter your <strong>weather underground</strong> station id example in capitals <strong>ISTANBUL161</strong></span>
-    <br/>
-
-
-
-    <div class="stationvalue"> Weather Underground API KEY</div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="wuapikey" type="text" id="wuapikey" value="<?php echo $wuapikey ;?>" class="chooseapi">
-    <br/><span style="color:rgba(236, 87, 27, 1.000);">**New API Version Key Required</span>
-    <br/> <span style="color:#777;">enter your Weather Underground API KEY <strong>8BXWEATHER34KEY123456789</strong></span>
-    <br/><span style="color:#777;"><a href="https://www.wunderground.com/member/api-keys" title="https://www.wunderground.com/member/api-keys" target="_blank">login into https://www.wunderground.com/member/api-keys</a> to generate your new personal key.. </span>
-    <br/>
-
-     <div class="stationvalue"> *important set units for Weather Underground API </div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <label name="wuapiunit"></label>
-        <select id="wuapiunit" name="wuapiunit" value="<?php echo $wuapiunit ;?>" class="choose1" >
-          <option><?php echo $wuapiunit ;?></option>
-            <option>e</option>
-            <option>m</option>
-             <option>s</option>
-             <option>h</option>
-            </select>
-
-             <br/><span style="color:#777;"> e = <span style="color:rgba(236, 87, 27, 1.000);">Imperial(Non Metric) </span>
-             <br/><span style="color:#777;"> m = <span style="color:rgba(236, 87, 27, 1.000);">Metric </span>
-             <br/><span style="color:#777;"> s = <span style="color:rgba(236, 87, 27, 1.000);">m/s wind speed + metric(Scandinavia) </span>
-             <br/><span style="color:#777;"> h = <span style="color:rgba(236, 87, 27, 1.000);">mph wind speed + metric(UK) </span>
-
-    <br/><br/>
-
-        <div class="stationvalue">
-<img src="img/darksky.svg" width="100" /> DarkSky API Key  for forecast Data </div>
- <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-    <input name="wuapi" type="text" id="wuapi" value="<?php echo $apikey ;?>" class="chooseapi">
-<br/> <span style="color:#777;">enter your <strong>DarkSky</strong> <strong>API key</strong> this is the most common mistake made be careful when cut and paste often an hidden space is either inserted before or after causing the <strong>API key</strong> to fail. </span>
-<br/><br/>
-
-    <div class="stationvalue">
-<img src="img/darksky.svg" width="100" /> DarkSky API UNITS *important</div>
- <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-    <label name="darkskyunit"></label>
-        <select id="darkskyunit" name="darkskyunit" value="<?php echo $darkskyunit ;?>" class="choose1" >
-          <option><?php echo $darkskyunit ;?></option>
-            <option>ca</option>
-            <option>uk2</option>
-             <option>us</option>
-             <option>si</option>
-            </select>
-
-<br/> <?php echo $iicon;?> <span style="color:#777;"><green>CA</green> same as si, windSpeed km/h</span>
-<br/> <?php echo $iicon;?> <span style="color:#777;"><green>UK2</green>  same as si,windSpeed mph</span>
-<br/> <?php echo $iicon;?> <span style="color:#777;"><green>US</green> Imperial units (NON METRIC)</span>
-<br/> <?php echo $iicon;?> <span style="color:#777;"><green>SI</green> units</span>
-<br/><span style="color:rgba(86, 95, 103, 1.000);">*IMPORTANT</span> NEW DARKSKY API (uses old script originally used in  2016) requires personal API KEY (MAY 30TH 2018) available via <a href="https://darksky.net/dev/docs" title="https://darksky.net/dev/docs" target="_blank">https://darksky.net/dev/docs</a>
-<br/><br/>
-
-<div class="stationvalue">
-<img src="img/darksky.svg" width="100" /> DarkSky Hourly Forecast (If using WU Weekly)</div>
- <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-    <label name="dshourly"></label>
-        <select id="dshourly" name="dshourly" value="<?php echo $dshourly ;?>" class="choose1" >
-          <option><?php echo $dshourly ;?></option>
-            <option>yes</option>
-            <option>no</option>
-            </select>
-
-<br/>
- Whether or not to show the DarkSky Hourly Forecast when using WeatherUnderground's Weekly Forecast
-    </div>
-    <br/>
-
-<!--##########################################################################################
-    #########                        Start of WeatherFlow Sidebar                    #########
-    ##########################################################################################-->
-
-    <div class="weatheroptionssidebar">
-        <span style="color:rgba(236, 87, 27, 1);"><strong>Only</strong> select yes if your <strong>WeatherFlow Station</strong> is not directly connected to your <strong>MB</strong>.</span>
-    </div>
-
-<!--##########################################################################################
-    #########                        Start of WeatherFlow Section                    #########
-    ##########################################################################################-->
-
-    <div class="weatheroptions">
-   <div class="weathersectiontitle"><img src="img/wflogo.svg" width="200px"/></div> <br/>
-
-
-<div class="stationvalue">Do you have Weatherflow Station</div> <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-
-   <label name="weatherflowoption"></label>
-        <select id="weatherflowoption" name="weatherflowoption" class="choose1" >
-            <option><?php echo $weatherflowoption ;?></option>
-            <option>yes</option>
-            <option>no</option>
+    <div class="theframe1">
+      <div class="theframe">
+        <form action="" method="post" name="install" id="install">
+
+          <!--##########################################################################################
+          #############                        Start of Easy Password Sidebar                  #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> Please setup and password protect this page for later use it is for your privacy and protection.
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Easy Password Section                  #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+              Setup Unique Easysetup Password
+            </div>
+            <br/>
+
+            <div class="stationvalue">Set Easysetup Password it is for your privacy & protection</div>
+            <?php echo $rightchevron;?>
+            <input name="password" type="password" id="password" value="<?php echo $password ;?>" class="choose" required>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Charts Sidebar                         #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> Select which charts to use. NanoCharts uses a Database within your MB to download the chart data every 5 minutes.
+            Since it uses the MB's internal database, its only available on a MB Pro or MB NanoSD.
+            <br/>
+            <?php echo $iicon;?> Mbcharts are available for all MBs and currently uses an external MySQL database.
+            If you do not have a MB Pro or NanoSD, you <b>MUST</b> provide login detail for an existing MySQL database.
+            <br/>
+            <?php echo $iicon;?> Hostname cannot contain the port number.
+
+            <div class="weatherbottominfo">
+              <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M2 20 L12 28 30 4" />
+              </svg>
+              Check username password
+            </div>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Charts Section                         #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+              Charts Selection
+            </div>
+            <br/>
+
+            <div class="stationvalue">Meteobridge Chart Data</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="chartsource"></label>
+            <select id="chartsource" name="chartsource" class="choose1">
+              <option <?php echo ($chartsource=='mbcharts'?'selected':'');?> value='mbcharts'>mbcharts</option>
+              <option <?php echo ($chartsource=='nanocharts'?'selected':'');?> value='nanocharts'>nanocharts</option>
             </select>
             <br/>
-            <span style="color:#777;"><strong> Select <span style="color:rgba(24, 25, 27, 0.8);">Yes</span> or <span style="color:rgba(86, 95, 103, 1.000);">No</span></strong><br/>
+            <span class='red'>(WU history charts no longer supported)</span>
+            <br/>
+            <span class='red'>NanoCharts are only available for the MB Pro and MB NanoSD.</span>
+            <br/>
+            <br/>
 
-  <br/>
-        <strong> <span style="color:rgba(236, 87, 27, 1.000);">*important</span> only select yes if your weatherflow hardware is not connected directly to meteobridge and want to use weatherflow hardware alongside existing hardware connected to meteobridge..this option uses weatherflow API data for UV,SOLAR and lightning only </strong></span><br/>
+            <div class="weathersectiontitle">
+              <?php echo $iicon;?>
+              mbcharts Database Options
+            </div>
+            <br/>
 
+            <div class="stationvalue">Database Hostname</div>
+            <?php echo $rightchevron;?>
+            <input name="db_host" type="text" id="db_host" value="<?php echo $db_host ;?>" class="choose">
 
+            <div class="stationvalue"> Database Username</div>
+            <?php echo $rightchevron;?>
+            <input name="db_user" type="text" id="db_user" value="<?php echo $db_user ;?>" class="choose">
+            <br/>
 
-     <div class="stationvalue"> Weather-Flow STATION ID</div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
+            <div class="stationvalue">  Database Password</div>
+            <?php echo $rightchevron;?>
+            <input name="db_pass" type="password" id="db_pass" value="<?php echo $db_pass ;?>" class="choose">
 
-    <input name="wfid" type="text" id="wfid" value="<?php echo $weatherflowID ;?>" class="choose">
+            <div class="stationvalue">  Database Name</div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php //attempt to line up the boxes ?>
+            <?php echo $rightchevron;?>
+            <input name="db_name" type="text" id="db_name" value="<?php echo $db_name ;?>" class="choose">
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
 
+          <!--##########################################################################################
+          #############                        Start of Language Sidebar                       #########
+          ##############################################################################################-->
 
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> Setup the default language
 
+            <div class="weatherbottominfo">
+              <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M2 20 L12 28 30 4" />
+              </svg>
+              Check languages
+            </div>
+          </div>
 
+          <!--##########################################################################################
+          #############                        Start of Language Section                       #########
+          ##############################################################################################-->
 
-    <br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg> <span style="color:#777;">enter your <strong>WeatherFlow </strong> station id example <strong><span style="color:rgba(86, 95, 103, 1.000);"> 1200</strong></span></span>
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">Languages</div>
+            <br/>
+            <div class="stationvalue">Template Language (lowercase)</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="defaultlanguage"></label>
+            <select id="defaultlanguage" name="defaultlanguage" class="choose1">
+              <option <?php echo ($defaultlanguage=='en'?'selected':'');?> value='en'>English</option>
+              <option <?php echo ($defaultlanguage=='cat'?'selected':'');?> value='cat'>Català</option>
+              <option <?php echo ($defaultlanguage=='dk'?'selected':'');?> value='dk'>Dansk</option>
+              <option <?php echo ($defaultlanguage=='dl'?'selected':'');?> value='dl'>Deutsch</option>
+              <option <?php echo ($defaultlanguage=='fr'?'selected':'');?> value='fr'>Français</option>
+              <option <?php echo ($defaultlanguage=='gr'?'selected':'');?> value='gr'>Ελληνικά</option>
+              <option <?php echo ($defaultlanguage=='hu'?'selected':'');?> value='hu'>Magyar</option>
+              <option <?php echo ($defaultlanguage=='it'?'selected':'');?> value='it'>Italiano</option>
+              <option <?php echo ($defaultlanguage=='nl'?'selected':'');?> value='nl'>Nederlands</option>
+              <option <?php echo ($defaultlanguage=='no'?'selected':'');?> value='no'>Norsk</option>
+              <option <?php echo ($defaultlanguage=='pl'?'selected':'');?> value='pl'>Polskie</option>
+              <option <?php echo ($defaultlanguage=='sp'?'selected':'');?> value='sp'>Español</option>
+              <option <?php echo ($defaultlanguage=='sw'?'selected':'');?> value='sw'>Svenska</option>
+              <option <?php echo ($defaultlanguage=='tr'?'selected':'');?> value='tr'>Türkçe</option>
+            </select>
+            <br/>
 
-    <br/>
-        <div class="stationvalue"> Weather-Flow Lightning module </div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
+            <div class="stationvalue">Your Country Flag</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="flag"></label>
+            <select id="flag" name="flag" class="choose1">
+              <option <?php echo ($flag=='ar'?'selected':'');?> value='ar'>Argentina</option>
+              <option <?php echo ($flag=='aus'?'selected':'');?> value='aus'>Australia</option>
+              <option <?php echo ($flag=='en'?'selected':'');?> value='en'>England</option>
+              <option <?php echo ($flag=='can'?'selected':'');?> value='can'>Canada</option>
+              <option <?php echo ($flag=='cat'?'selected':'');?> value='cat'>Catalonia</option>
+              <option <?php echo ($flag=='ch'?'selected':'');?> value='ch'>Switzerland</option>
+              <option <?php echo ($flag=='dk'?'selected':'');?> value='dk'>Denmark</option>
+              <option <?php echo ($flag=='dl'?'selected':'');?> value='dl'>Germany</option>
+              <option <?php echo ($flag=='fi'?'selected':'');?> value='fi'>Finland</option>
+              <option <?php echo ($flag=='fr'?'selected':'');?> value='fr'>France</option>
+              <option <?php echo ($flag=='gr'?'selected':'');?> value='gr'>Greece</option>
+              <option <?php echo ($flag=='hu'?'selected':'');?> value='hu'>Hungary</option>
+              <option <?php echo ($flag=='iom'?'selected':'');?> value='iom'>Isle of Man</option>
+              <option <?php echo ($flag=='ire'?'selected':'');?> value='ire'>Ireland</option>
+              <option <?php echo ($flag=='it'?'selected':'');?> value='it'>Italy</option>
+              <option <?php echo ($flag=='nl'?'selected':'');?> value='nl'>Netherlands</option>
+              <option <?php echo ($flag=='no'?'selected':'');?> value='no'>Norway</option>
+              <option <?php echo ($flag=='nz'?'selected':'');?> value='nz'>New Zealand</option>
+              <option <?php echo ($flag=='pl'?'selected':'');?> value='pl'>Poland</option>
+              <option <?php echo ($flag=='sa'?'selected':'');?> value='sa'>Saudi Arabia</option>
+              <option <?php echo ($flag=='scot'?'selected':'');?> value='scot'>Scotland</option>
+              <option <?php echo ($flag=='singapore'?'selected':'');?> value='singapore'>Singapore</option>
+              <option <?php echo ($flag=='sk'?'selected':'');?> value='sk'>Slovakia</option>
+              <option <?php echo ($flag=='sp'?'selected':'');?> value='sp'>Spain</option>
+              <option <?php echo ($flag=='sw'?'selected':'');?> value='sw'>Sweden</option>
+              <option <?php echo ($flag=='tr'?'selected':'');?> value='tr'>Turkey</option>
+              <option <?php echo ($flag=='us'?'selected':'');?> value='us'>USA</option>
+              <option <?php echo ($flag=='wal'?'selected':'');?> value='wal'>Wales</option>
+            </select>
+            <br/>
+            <div class="stationvalue">DARK SKY Forecast Language</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="language"></label>
+            <select id="language" name="language" class="choose1">
+              <option <?php echo ($language=='en'?'selected':'');?> value='en'>English</option>
+              <option <?php echo ($language=='bg'?'selected':'');?> value='bg'>Bulgarian</option>
+              <option <?php echo ($language=='bs'?'selected':'');?> value='bs'>Bosnian</option>
+              <option <?php echo ($language=='ca'?'selected':'');?> value='ca'>Catalan</option>
+              <option <?php echo ($language=='da'?'selected':'');?> value='da'>Danish</option>
+              <option <?php echo ($language=='de'?'selected':'');?> value='de'>German</option>
+              <option <?php echo ($language=='el'?'selected':'');?> value='el'>Greek</option>
+              <option <?php echo ($language=='es'?'selected':'');?> value='es'>Spanish</option>
+              <option <?php echo ($language=='fi'?'selected':'');?> value='fi'>Finnish</option>
+              <option <?php echo ($language=='fr'?'selected':'');?> value='fr'>French</option>
+              <option <?php echo ($language=='hu'?'selected':'');?> value='hu'>Hungarian</option>
+              <option <?php echo ($language=='it'?'selected':'');?> value='it'>Italian</option>
+              <option <?php echo ($language=='nl'?'selected':'');?> value='nl'>Dutch</option>
+              <option <?php echo ($language=='pl'?'selected':'');?> value='pl'>Polish</option>
+              <option <?php echo ($language=='sv'?'selected':'');?> value='sv'>Swedish</option>
+              <option <?php echo ($language=='tr'?'selected':'');?> value='tr'>Turkish</option>
+            </select>
+          </div>
+          <br/>
 
-    <input name="wfli" type="text" id="wfli" value="<?php echo $weatherflowlightning ;?>" class="choose">
+          <!--##########################################################################################
+          #############                        Start of MB Sidebar                             #########
+          ##############################################################################################-->
 
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> Meteobridge Hardware
+            <br/>
+            <br/>
+            
+            <?php echo $iicon;?> Check path to data file
+            <br/>
+            <br/>
+            
+            <?php echo $iicon;?> getting the path correct is essential for live realtime data display
+            <span class='orange'>(mbridge/MBrealtimeupload.txt)</span>
+          </div>
 
+          <!--##########################################################################################
+          #############                        Start of MB Section                             #########
+          ##############################################################################################-->
 
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
+              </svg>
+              Meteobridge API Settings
+            </div>
+            <br/>
 
+            <div class="stationvalue">Data Type</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="livedataFormat"></label>
+            <select id="livedataFormat" name="livedataFormat" class="choose1">
+              <option <?php echo ($livedataFormat=='meteobridge-api'?'selected':'');?> value='meteobridge-api'>meteobridge-api</option>
+            </select>
+            <span class='red'>Depreciated</span>
+            <br/>
 
-    <br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg> <span style="color:#777;">(option works when available weatherflow is connected to meteobridge) select yes if you wish to display lightning module </span></span>
+            <div class="stationvalue">Add Your Path to data file</div>
+            <?php echo $rightchevron;?>
+            <input name="livedata" type="text" id="livedata" value="<?php echo $livedata ;?>" class="chooseapi" required>
+            <br/>
+            <span class='red'>Do not change unless you know what you're doing</span>
+            <br/>
 
-<br/>
+            <div class="stationvalue">StationCron control</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="stationCron"></label>
+            <select id="stationCron" name="stationCron" class="choose1">
+              <option <?php echo ($stationCron=='mb'?'selected':'');?> value='mb'>Meteobridge</option>
+              <option <?php echo ($stationCron=='HWS'?'selected':'');?> value='HWS'>HWS</option>
+            </select>
+            <br/>
+            <?php echo $iicon;?>
+            <span class='red'>If you choose to allow the HWS template to run "stationcron.php" itself,
+            you must first either delete or turn off the "stationcron.php" Service in your MB.</span>
+            <br/>
+            <?php echo $iicon;?>
+            Choosing template will allow the template to run stationcron.php every <span class='red'>5 minutes</span>.
+          </div>
 
-<div class="stationvalue">
-Weatherflow Map Zoom</div>
- <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="#F05E40" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-    <label name="weatherflowmapzoom"></label>
-        <select id="weatherflowmapzoom" name="weatherflowmapzoom" value="<?php echo $weatherflowmapzoom ;?>" class="choose1" >
-          <option><?php echo $weatherflowmapzoom ;?></option>
-            <option>5</option>
-            <option>6</option>
-             <option>7</option>
-             <option>8</option>
-             <option>9</option>
-             <option>10</option>
-             <option>11</option>
+          <!--##########################################################################################
+          #############                        Start of Hardware Section                       #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
+              </svg>
+              Hardware Options
+            </div>
+            <br/>
+
+            <div class="stationvalue">Using Davis Hardware?</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="davis"></label>
+            <select id="davis" name="davis" class="choose1">
+              <option <?php echo ($davis=='Yes'?'selected':'');?> value='Yes'>Yes</option>
+              <option <?php echo ($davis=='No'?'selected':'');?> value='No'>No</option>
+            </select>
+            <br/>
+
+            <div class="stationvalue"> Your Weather Station Hardware</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="weatherhardware"></label>
+            <select id="weatherhardware" name="weatherhardware" class="chooseapi">
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro2'?'selected':'');?> value='Davis Vantage Pro2'>Davis Vantage Pro2</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro2 Plus'?'selected':'');?> value='Davis Vantage Pro2 Plus'>Davis Vantage Pro2 Plus</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro2 Plus+FARS'?'selected':'');?> value='Davis Vantage Pro2 Plus+FARS'>Davis Vantage Pro2 Plus+FARS</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro2 FARS'?'selected':'');?> value='Davis Vantage Pro2 FARS'>Davis Vantage Pro2 FARS</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro2 Solar'?'selected':'');?> value='Davis Vantage Pro2 Solar'>Davis Vantage Pro2 Solar</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro2 UV'?'selected':'');?> value='Davis Vantage Pro2 UV'>Davis Vantage Pro2 UV</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Vue'?'selected':'');?> value='Davis Vantage Vue'>Davis Vantage Vue</option>
+              <option <?php echo ($weatherhardware=='Davis Envoy8x'?'selected':'');?> value='Davis Envoy8x'>Davis Envoy8x</option>
+              <option <?php echo ($weatherhardware=='Davis Cabled Vantage Pro2'?'selected':'');?> value='Davis Cabled Vantage Pro2'>Davis Cabled Vantage Pro2</option>
+              <option <?php echo ($weatherhardware=='Davis Cabled Vantage Pro2 Plus'?'selected':'');?> value='Davis Cabled Vantage Pro2 Plus'>Davis Cabled Vantage Pro2 Plus</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro1'?'selected':'');?> value='Davis Vantage Pro1'>Davis Vantage Pro1</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro1+Solar/UV'?'selected':'');?> value='Davis Vantage Pro1+Solar/UV'>Davis Vantage Pro1+Solar/UV</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro1+Solar/UV/FARS'?'selected':'');?> value='Davis Vantage Pro1+Solar/UV/FARS'>Davis Vantage Pro1+Solar/UV/FARS</option>
+              <option <?php echo ($weatherhardware=='Davis Vantage Pro1+FARS'?'selected':'');?> value='Davis Vantage Pro1+FARS'>Davis Vantage Pro1+FARS</option>
+              <option <?php echo ($weatherhardware=='Davis Cabled Vantage Pro1'?'selected':'');?> value='Davis Cabled Vantage Pro1'>Davis Cabled Vantage Pro1</option>
+              <option <?php echo ($weatherhardware=='Davis Cabled Vantage Pro1+Solar/UV'?'selected':'');?> value='Davis Cabled Vantage Pro1+Solar/UV'>Davis Cabled Vantage Pro1+Solar/UV</option>
+              <option <?php echo ($weatherhardware=='Davis Cabled Vantage Pro1+Solar/UV/FARS'?'selected':'');?> value='Davis Cabled Vantage Pro1+Solar/UV/FARS'>Davis Cabled Vantage Pro1+Solar/UV/FARS</option>
+              <option <?php echo ($weatherhardware=='Davis Cabled Vantage Pro1+FARS'?'selected':'');?> value='Davis Cabled Vantage Pro1+FARS'>Davis Cabled Vantage Pro1+FARS</option>
+              <option <?php echo ($weatherhardware=='Oregon Scientific WMR-100'?'selected':'');?> value='Oregon Scientific WMR-100'>Oregon Scientific WMR-100</option>
+              <option <?php echo ($weatherhardware=='Oregon Scientific WMR-200'?'selected':'');?> value='Oregon Scientific WMR-200'>Oregon Scientific WMR-200</option>
+              <option <?php echo ($weatherhardware=='Oregon Scientific WMR-300'?'selected':'');?> value='Oregon Scientific WMR-300'>Oregon Scientific WMR-300</option>
+              <option <?php echo ($weatherhardware=='Oregon Scientific WMR-100'?'selected':'');?> value='Oregon Scientific WMR-100'>Oregon Scientific WMR-100</option>
+              <option <?php echo ($weatherhardware=='Oregon Scientific WMR-88'?'selected':'');?> value='Oregon Scientific WMR-88'>Oregon Scientific WMR-88</option>
+              <option <?php echo ($weatherhardware=='Oregon Scientific WMR-968'?'selected':'');?> value='Oregon Scientific WMR-968'>Oregon Scientific WMR-968</option>
+              <option <?php echo ($weatherhardware=='Oregon Scientific WMR-969'?'selected':'');?> value='Oregon Scientific WMR-969'>Oregon Scientific WMR-969</option>
+              <option <?php echo ($weatherhardware=='Oregon Scientific WMR-100'?'selected':'');?> value='Oregon Scientific WMR-100'>Oregon Scientific WMR-100</option>
+              <option <?php echo ($weatherhardware=='Ambient Weather Observer-IP'?'selected':'');?> value='Ambient Weather Observer-IP'>Ambient Weather Observer-IP</option>
+              <option <?php echo ($weatherhardware=='Ambient Weather WS-12-IP'?'selected':'');?> value='Ambient Weather WS-12-IP'>Ambient Weather WS-12-IP</option>
+              <option <?php echo ($weatherhardware=='Ambient Weather WS-1000'?'selected':'');?> value='Ambient Weather WS-1000'>Ambient Weather WS-1000</option>
+              <option <?php echo ($weatherhardware=='Fine Offset WH-1080'?'selected':'');?> value='Fine Offset WH-1080'>Fine Offset WH-1080</option>
+              <option <?php echo ($weatherhardware=='Fine Offset WH-2080'?'selected':'');?> value='Fine Offset WH-2080'>Fine Offset WH-2080</option>
+              <option <?php echo ($weatherhardware=='Fine Offset WH-3080'?'selected':'');?> value='Fine Offset WH-3080'>Fine Offset WH-3080</option>
+              <option <?php echo ($weatherhardware=='Fine Offset WH-1080'?'selected':'');?> value='Fine Offset WH-1080'>Fine Offset WH-1080</option>
+              <option <?php echo ($weatherhardware=='Ecowitt GW-1000'?'selected':'');?> value='Ecowitt GW-1000'>Ecowitt GW-1000</option>
+              <option <?php echo ($weatherhardware=='Accurite'?'selected':'');?> value='Accurite'>Accurite</option>
+              <option <?php echo ($weatherhardware=='La Crosse'?'selected':'');?> value='La Crosse'>La Crosse</option>
+              <option <?php echo ($weatherhardware=='Weatherflow Air-Sky'?'selected':'');?> value='Weatherflow Air-Sky'>Weatherflow Air-Sky</option>
+              <option <?php echo ($weatherhardware=='Lufft WS10'?'selected':'');?> value='Lufft WS10'>Lufft WS10</option>
+              <option <?php echo ($weatherhardware=='Lufft WS100'?'selected':'');?> value='Lufft WS100'>Lufft WS100</option>
+              <option <?php echo ($weatherhardware=='Lufft WS200 UMB'?'selected':'');?> value='Lufft WS200 UMB'>Lufft WS200 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS300 UMB'?'selected':'');?> value='Lufft WS300 UMB'>Lufft WS300 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS301 UMB'?'selected':'');?> value='Lufft WS301 UMB'>Lufft WS301 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS302 UMB'?'selected':'');?> value='Lufft WS302 UMB'>Lufft WS302 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS303 UMB'?'selected':'');?> value='Lufft WS303 UMB'>Lufft WS303 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS304 UMB'?'selected':'');?> value='Lufft WS304 UMB'>Lufft WS304 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS310 UMB'?'selected':'');?> value='Lufft WS310 UMB'>Lufft WS310 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS400 UMB'?'selected':'');?> value='Lufft WS400 UMB'>Lufft WS400 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS401 UMB'?'selected':'');?> value='Lufft WS401 UMB'>Lufft WS401 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS500 UMB'?'selected':'');?> value='Lufft WS500 UMB'>Lufft WS500 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS501 UMB'?'selected':'');?> value='Lufft WS501 UMB'>Lufft WS501 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS502 UMB'?'selected':'');?> value='Lufft WS502 UMB'>Lufft WS502 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS503 UMB'?'selected':'');?> value='Lufft WS503 UMB'>Lufft WS503 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS504 UMB'?'selected':'');?> value='Lufft WS504 UMB'>Lufft WS504 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS510 UMB'?'selected':'');?> value='Lufft WS510 UMB'>Lufft WS510 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS600 UMB'?'selected':'');?> value='Lufft WS600 UMB'>Lufft WS600 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS601 UMB'?'selected':'');?> value='Lufft WS601 UMB'>Lufft WS601 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS700 UMB'?'selected':'');?> value='Lufft WS700 UMB'>Lufft WS700 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS800 UMB'?'selected':'');?> value='Lufft WS800 UMB'>Lufft WS800 UMB</option>
+              <option <?php echo ($weatherhardware=='Lufft WS3100 UMB'?'selected':'');?> value='Lufft WS3100 UMB'>Lufft WS3100 UMB</option>
+              <option <?php echo ($weatherhardware=='None of above'?'selected':'');?> value='None of above'>None of above</option>
+            </select>
+            <br/>
+
+            <div class="stationvalue">Which Meteobridge Platform Do You Use</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="mbplatform"></label>
+            <select id="mbplatform" name="mbplatform" class="chooseapi">
+              <option <?php echo ($mbplatform=='Meteobridge Nano'?'selected':'');?> value='Meteobridge Nano'>Meteobridge Nano</option>
+              <option <?php echo ($mbplatform=='Meteobridge NanoSD'?'selected':'');?> value='Meteobridge NanoSD'>Meteobridge NanoSD</option>
+              <option <?php echo ($mbplatform=='Meteobridge Pro'?'selected':'');?> value='Meteobridge Pro'>Meteobridge Pro</option>
+              <option <?php echo ($mbplatform=='MB TP-Link'?'selected':'');?> value='MB TP-Link'>MB TP-Link</option>
+              <option <?php echo ($mbplatform=='MB D-Link'?'selected':'');?> value='MB D-Link'>MB D-Link</option>
+              <option <?php echo ($mbplatform=='MB Asus'?'selected':'');?> value='MB Asus'>MB Asus</option>
+              <option <?php echo ($mbplatform=='Meteobridge'?'selected':'');?> value='Meteobridge'>Meteobridge</option>
+            </select>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Current Weather Section                #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-code" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
+              </svg>
+              Current Weather Conditions Text
+            </div>
+            <br/>
+
+            <div class="stationvalue">Options</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="currentconditions"></label>
+            <select id="currentconditions" name="currentconditions" class="chooseapi">
+              <option <?php echo ($currentconditions=='currentconditionsmetar34davis.php'?'selected':'');?> value='currentconditionsmetar34davis.php'>currentconditionsmetar34davis.php</option>
+              <option <?php echo ($currentconditions=='currentconditionsmetar34.php'?'selected':'');?> value='currentconditionsmetar34.php'>currentconditionsmetar34.php</option>
+              <option <?php echo ($currentconditions=='currentconditionsds.php'?'selected':'');?> value='currentconditionsds.php'>currentconditionsds.php</option>
+            </select>
+            <br/>
+
+            <?php echo $iicon;?> <span class='orange'>currentconditionsmetar34davis.php</span>
+            <b>*New*</b> for Davis owners. <b>English Only.</b> Outputs Davis forecast console text.
+            Also uses Nearby Metar Aviation Weather Options must get API key and insert into option near bottom of this setup screen. 
+            <span class='red important'>*requires meteobridge reboot</span>
+            <br/>
+            <?php echo $iicon;?> <span class='orange'>currentconditionsmetar34.php</span> uses Nearby Metar Aviation Weather Options must get API key and insert into option near bottom of this setup screen.
+            <br/>
+            <?php echo $iicon;?> <span class='orange'>currentconditionsds.php</span> uses DarkSky must get API key and insert into option near bottom of this setup screen.
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Station Name Sidebar                   #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> Try and keep these short dont include full country try a short code
+            <br/>
+            <br/>
+            <?php echo $iicon;?> Web App Name should be less than 10 characters long. If you exceed 10 characters, the excess will be replaced with ... on Android or iPhone.
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Station Name Section                   #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <circle cx="16" cy="11" r="4" />
+                <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
+              </svg>
+              Station Names
+            </div>
+            <br/>
+            <div class="stationvalue">Station Location</div>
+            <?php echo $rightchevron;?>
+            <input name="stationlocation" type="text" id="stationlocation" value="<?php echo $stationlocation ;?>" class="chooseapi" required>
+            <br/>
+
+            <div class="stationvalue">Station Name</div>
+            &nbsp;&nbsp;&nbsp;
+            <?php echo $rightchevron;?>
+            <input name="stationName" type="text" id="stationName" value="<?php echo $stationName ;?>" class="chooseapi" required>
+            <br/>
+
+            <div class="stationvalue">Web App Name</div>
+            <?php echo $rightchevron;?>
+            <input name="manifestShortName" type="text" id="manifestShortName" value="<?php echo $manifestShortName ;?>" class="chooseapi" required>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Location Info Section                  #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> Here is the area where you set your Lat/Lon with timezone + UTC offset , for timezone you can check
+            <a href="http://php.net/manual/en/timezones.php" title="http://php.net/manual/en/timezones.php" target="_blank"> the official php timezone documented page</a>
+            <br/>
+            <br/>
+            <b>Lat</b> 54.00000 <b>Lon</b> -22.00000
+            <br/>
+            <br/>
+            <b>UTC</b> offset use single number like -2,-4,1,2,3,4 etc
+            <br/>
+            do not use -01,0-04,01 ,02,03, 04 etc
+            <br/>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Location Info Section                  #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <circle cx="16" cy="11" r="4" />
+                <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
+              </svg>
+              Location Information
+            </div>
+            <br/>
+
+            <div class="stationvalue">Timezone</div>
+            <?php echo $rightchevron;?>
+            <input name="TZ" type="text" id="TZ" value="<?php echo $TZ ;?>" class="choose" required>
+            
+            <div class="stationvalue">UTC Offset</div>
+            <?php echo $rightchevron;?>
+            <input name="UTC" type="text" id="UTC" value="<?php echo $UTC ;?>" class="choose" required>
+            <br/>
+            
+            <div class="stationvalue">Latitude</div>
+            <?php echo $rightchevron;?>
+            <input name="lat" type="text" id="lat" value="<?php echo $lat ;?>" class="choose" required>
+
+            <div class="stationvalue">Longitude</div>
+            <?php echo $rightchevron;?>
+            <input name="lon" type="lon" id="lon" value="<?php echo $lon ;?>" class="choose" required>
+            <br/>
+            
+            <div class="stationvalue">Elevation</div>
+            <?php echo $rightchevron;?>
+            <input name="elevation" type="text" id="elevation" value="<?php echo $elevation ;?>" class="choose" required>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Units Sidebar                          #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $rightchevron;?> Set the units for the main page display and modules it is connected to the unit selector in the menu
+
+            <div class="weatherbottominfo">
+              <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M2 20 L12 28 30 4" />
+              </svg>
+              Double check again
+            </div>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Units Section                          #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+              Units Selection
+            </div>
+            <br/>
+
+            <label name="unit"></label>
+            <div class="stationvalue">Units</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="unit" name="unit" class="choose1">
+            <option <?php echo ($unit=='english'?'selected':'');?> value='english'>Imperial</option>
+              <option <?php echo ($unit=='metric'?'selected':'');?> value='metric'>Metric</option>
             </select>
 
-<br/> <?php echo $iicon;?> <span style="color:#777;"><green>Select Map Zoom level</green> 5-11</span>
+            <label name="metric"></label>
+            <div class="stationvalue">Metric</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="metric" name="metric" class="choose1">
+              <option <?php echo ($metric==false?'selected':'');?> value='false'>false</option>
+              <option <?php echo ($metric==true?'selected':'');?> value='true'>true</option>
+            </select>
+            <br/>
 
-</div>
-    <br/>
+            <label name="windunit"></label>
+            <div class="stationvalue">Wind Unit</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="windunit" name="windunit" class="choose1">
+              <option <?php echo ($windunit=='km/h'?'selected':'');?> value='km/h'>km/h</option>
+              <option <?php echo ($windunit=='mph'?'selected':'');?> value='mph'>mph</option>
+              <option <?php echo ($windunit=='m/s'?'selected':'');?> value='m/s'>m/s</option>
+              <option <?php echo ($windunit=='kts'?'selected':'');?> value='kts'>kts</option>
+            </select>
 
-<!--##########################################################################################
-    #########                        Start of Temp Module Section                    #########
-    ##########################################################################################-->
+            <label name="tempunit"></label>
+            <div class="stationvalue">Temperature Unit</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="tempunit" name="tempunit" class="choose1">
+              <option <?php echo ($tempunit=='F'?'selected':'');?> value='F'>Fahrenheit</option>
+              <option <?php echo ($tempunit=='C'?'selected':'');?> value='C'>Celsius</option>
+            </select>
+            <br/>
 
-     <div class="weatheroptions">
-   <div class="weathersectiontitle">Temperature Module</div><span style="color:#777;"> <br/>
-       <div class="stationvalue"> Options </div>
-       <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg><svg id="i-chevron-bottom" viewBox="0 0 32 32" width="10" height="10" fill="#777" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M30 12 L16 24 2 12" />
-</svg>
-       <label name="temperaturemodule"></label>
-        <select id="temperaturemodule" name="temperaturemodule" class="choose">
-          <option><?php echo $temperaturemodule ;?></option>
-            <option>temperature.php</option>
-            <option>temperaturein.php</option>
-           </select>
-           <br/></span>
-           <span style="color:#777;">
-            <?php echo $iicon;?> *option temperature.php default without indoor temperature displayed <br/>
-    <?php echo $iicon;?> *temperaturein.php shows indoor temp icon<br/></span>
+            <label name="rainunit"></label>
+            <div class="stationvalue">Rain Unit&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="rainunit" name="rainunit" class="choose1">
+              <option <?php echo ($rainunit=='mm'?'selected':'');?> value='mm'>mm</option>
+              <option <?php echo ($rainunit=='in'?'selected':'');?> value='in'>in</option>
+            </select>
+
+            <label name="rainrate"></label>
+            <div class="stationvalue">Rain Rate (per Hr/Min)</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="rainrate" name="rainrate" class="choose1">
+              <option <?php echo ($rainrate=='/h'?'selected':'');?> value='/h'>per hour</option>
+              <option <?php echo ($rainrate=='/m'?'selected':'');?> value='/m'>per minute</option>
+            </select>
+            <br/>
+
+            <label name="pressureunit"></label>
+            <div class="stationvalue">Barometer Unit</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="pressureunit" name="pressureunit" class="choose1">
+              <option <?php echo ($pressurerate=='mb'?'selected':'');?> value='mb'>mb</option>
+              <option <?php echo ($pressurerate=='hPa'?'selected':'');?> value='hPa'>hPa</option>
+              <option <?php echo ($pressurerate=='inHg'?'selected':'');?> value='inHg'>inHg</option>
+            </select>
+            <br/>
+
+            <label name="distanceunit"></label>
+            <div class="stationvalue">Distance unit measured miles or kilometres</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="distanceunit" name="distanceunit" class="choose1">
+              <option <?php echo ($distancerate=='mi'?'selected':'');?> value='mi'>mi</option>
+              <option <?php echo ($distancerate=='km'?'selected':'');?> value='km'>km</option>
+            </select>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Theming Sidebar                        #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $rightchevron;?> Here you can set (2 choices)the default theme dark or light option<br />
+            and set the default display unit
+
+            <div class="weatherbottominfo">
+              <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M2 20 L12 28 30 4" />
+              </svg>
+              check unit(s)
+            </div>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Theming Section                        #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+              Theme Selection
+            </div>
+            <br/>
+            
+            <div class="stationvalue"> Default Theme Colour</div>
+              <?php echo $rightchevron.$downchevron;?>
+              <label name="theme1"></label>
+              <select id="theme1" name="theme1" class="choose1">
+                <option <?php echo ($theme1=='dark'?'selected':'');?> value='dark'>dark</option>
+                <option <?php echo ($theme1=='light'?'selected':'');?> value='light'>light</option>
+              </select>
+              set: 
+              <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="#25292D" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+                <path d="M16 14 L16 23 M16 8 L16 10" />
+                <circle cx="16" cy="16" r="14" />
+              </svg>
+              dark, 
+              <svg id="i-info" viewBox="0 0 32 32" width="10" height="10" fill="rgba(144, 177, 42, 1.000)" stroke="rgba(230, 232, 239, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.25%">
+                <path d="M16 14 L16 23 M16 8 L16 10" />
+                <circle cx="16" cy="16" r="14" />
+              </svg>
+              light
+            </div>
+            <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Notify Sidebar                         #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $rightchevron;?>
+            Selection which notifications to show
+            <br/><br/>
+            
+            <?php echo $iicon;?>  yes to show a notification
+            <br/>
+
+            <?php echo $iicon;?> no to disable a notification
+            <div class="weatherbottominfo"></div>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Notify Section                         #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+              Notification Settings
+            </div>
+            <br/>
+            <div class="stationvalue">Notifications&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="notifications" name="notifications" class="choose1">
+              <option <?php echo ($notifications=='no'?'selected':'');?> value='no'>no</option>
+              <option <?php echo ($notifications=='yes'?'selected':'');?> value='yes'>yes</option>
+            </select>
+            <br/>
+
+            <div class="stationvalue">Earthquakes</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="notifyEarthquake" name="notifyEarthquake" class="choose1">
+              <option <?php echo ($notifyEarthquake=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($notifyEarthquake=='no'?'selected':'');?> value='no'>no</option>
+            </select>&nbsp;&nbsp;&nbsp;
+            <div class="stationvalue">Minimum Magnitude</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="notifyMagnitude" name="notifyMagnitude" class="choose1">
+              <option <?php echo ($notifyMagnitude==1?'selected':'');?> value='1'>1</option>
+              <option <?php echo ($notifyMagnitude==2?'selected':'');?> value='2'>2</option>
+              <option <?php echo ($notifyMagnitude==3?'selected':'');?> value='3'>3</option>
+              <option <?php echo ($notifyMagnitude==4?'selected':'');?> value='4'>4</option>
+              <option <?php echo ($notifyMagnitude==5?'selected':'');?> value='5'>5</option>
+              <option <?php echo ($notifyMagnitude==6?'selected':'');?> value='6'>6</option>
+              <option <?php echo ($notifyMagnitude==7?'selected':'');?> value='7'>7</option>
+              <option <?php echo ($notifyMagnitude==8?'selected':'');?> value='8'>8</option>
+              <option <?php echo ($notifyMagnitude==9?'selected':'');?> value='9'>9</option>
+            </select>
+            <br/>
+            <div class="stationvalue">Wind Alerts&nbsp;&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="notifyWind" name="notifyWind" class="choose1">
+              <option <?php echo ($notifyWind=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($notifyWind=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Ignore this old section                         #########
+          ##############################################################################################-->
+
+          <?php // If this section is used again, convert it into a single prompt asking for $locationCountry, or better yet, see about converting the GPS coordinates into a country name. ?>
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-location" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <circle cx="16" cy="11" r="4" />
+                <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15 Z" />
+              </svg>
+              This section is deprecated, you can ignore it
+            </div>
+            <br/>
+            <label name="uk"></label>
+            <div class="stationvalue">Are you in the UK</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="uk" name="uk" class="choose1">
+              <option <?php echo ($uk==false?'selected':'');?> value='false'>false</option>
+              <option <?php echo ($uk==true?'selected':'');?> value='true'>true</option>
+            </select>
+            
+            <label name="usa"></label>
+            <div class="stationvalue">Are you in the USA</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="usa" name="usa" class="choose1">
+              <option <?php echo ($usa==true?'selected':'');?> value='true'>true</option>
+              <option <?php echo ($usa==false?'selected':'');?> value='false'>false</option>
+            </select>
+            <br/>
+            
+            <label name="scandinavia"></label>
+            <div class="stationvalue">Are you in Scandinavia</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="scandinavia" name="scandinavia" class="choose1">
+              <option <?php echo ($scandinavia==false?'selected':'');?> value='false'>false</option>
+              <option <?php echo ($scandinavia==true?'selected':'');?> value='true'>true</option>
+            </select>
+
+            <label name="restoftheworld"></label>
+            <div class="stationvalue">Are you not in any of others</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="restoftheworld" name="restoftheworld" class="choose1">
+              <option <?php echo ($restoftheworld==false?'selected':'');?> value='false'>false</option>
+              <option <?php echo ($restoftheworld==true?'selected':'');?> value='true'>true</option>
+            </select>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Email and Twitter Sidebar              #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $rightchevron;?>
+            Email and Twitter options for links in your about page
+
+            <div class="weatherbottominfo">
+              <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M2 20 L12 28 30 4" />
+              </svg>
+              your nearly there :-) keep going
+            </div>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Email and Twitter Section              #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">
+              <svg id="i-settings" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+              Email and Twitter
+            </div>
+            <br/>
+
+            <div class="stationvalue">Email</div>
+            <?php echo $rightchevron;?>
+            <input name="email" type="text" id="email" value="<?php echo $email ;?>" class="chooseapi" required>
+            
+            <div class="stationvalue">Twitter Name</div>
+            <?php echo $rightchevron;?>
+            <input name="twitter" type="text" id="twitter" value="<?php echo $twitter ;?>" class="choose">
+            <br/>
+            
+            <div class="stationvalue">Year your weather station was installed</div>
+            <?php echo $rightchevron;?>
+            <input name="since" type="text" id="since" value="<?php echo $since ;?>" class="choose" required>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Module Sidebar                         #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $rightchevron;?>
+            General template settings with options to choose which type of module to display ,basic station information
+            <br/>
+            <br/>
+            
+            <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+              <path d="M2 20 L12 28 30 4" />
+            </svg>
+            Make sure you have a <a href="https://www.wunderground.com/member/api-keys" title="https://www.wunderground.com/member/api-keys" target="_blank">*NEW* Weather Underground Developer API KEY</a>.
+            <br/>
+            <br/>
+
+            <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+              <path d="M2 20 L12 28 30 4" />
+            </svg>
+            Options to use UVINDEX forecast data if you <b>DO NOT</b> have UV Index hardware
+            <br/>
+            <br/>
+
+            <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+              <path d="M2 20 L12 28 30 4" />
+            </svg>
+            Moonset offset times can be adjusted here to align with your location it is measured in hours, please adjust by hours to correct the output you may have to adjust
+            when clocks move with annually daylight saving times
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Module Section                         #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">Template Modules</div>
+            <br/>
+
+            <span class='orange'>
+              <?php echo $iicon;?>
+              Options for Top Row 4 Modules + *new Position 6 and 12 module + Last module
+            </span>
+            <br/>
+            
+            <div class="stationvalue">Position 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="position1"></label>
+            <select id="position1" name="position1" class="choose">
+              <option <?php echo ($position1=='temperatureyear.php'?'selected':'');?> value='temperatureyear.php'>temperatureyear.php</option>
+              <option <?php echo ($position1=='weather34clock.php'?'selected':'');?> value='weather34clock.php'>weather34clock.php</option>
+              <option <?php echo ($position1=='windgustyear.php'?'selected':'');?> value='windgustyear.php'>windgustyear.php</option>
+            </select>
+
+            <div class="stationvalue">Position 1 Title&nbsp;&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="position1title"></label>
+            <input name="position1title" type="text" id="position1title" value="<?php echo $position1title ;?>" class="choose" required>
+            <br/>
+
+            <div class="stationvalue">Position 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="position2"></label>
+            <select id="position2" name="position2" class="choose">
+              <option <?php echo ($position2=='rainfallf-year-month.php'?'selected':'');?> value='rainfallf-year-month.php'>Total Yearly/Monthly Rainfall</option>
+              <option <?php echo ($position2=='windgustyear.php'?'selected':'');?> value='windgustyear.php'>Max Yearly/Monthly Gusts</option>
+              <option <?php echo ($position2=='temperatureyear.php'?'selected':'');?> value='temperatureyear.php'>Current Yearly/Monthly Temps</option>
+              <option <?php echo ($position2=='wflightning.php'?'selected':'');?> value='wflightning.php'>WF Lightning</option>
+            </select>
+
+            <div class="stationvalue">Position 2 Title&nbsp;&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="position2title"></label>
+            <input name="position2title" type="text" id="position2title" value="<?php echo $position2title ;?>" class="choose" required>
+            <br/>
+
+            <div class="stationvalue">Position 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="position3"></label>
+            <select id="position3" name="position3" class="choose">
+              <option <?php echo ($position3=='rainfallf-year-month.php'?'selected':'');?> value='rainfallf-year-month.php'>Total Yearly/Monthly Rainfall</option>
+              <option <?php echo ($position3=='windgustyear.php'?'selected':'');?> value='windgustyear.php'>Max Yearly/Monthly Gusts</option>
+              <option <?php echo ($position3=='temperatureyear.php'?'selected':'');?> value='temperatureyear.php'>Current Yearly/Monthly Temps</option>
+              <option <?php echo ($position3=='wflightning.php'?'selected':'');?> value='wflightning.php'>WF Lightning</option>
+            </select>
+
+            <div class="stationvalue">Position 3 Title&nbsp;&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="position3title"></label>
+            <input name="position3title" type="text" id="position3title" value="<?php echo $position3title ;?>" class="choose" required>
+            <br/>
+
+            <div class="stationvalue">Position 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="position4"></label>
+            <select id="position4" name="position4" class="choose">
+              <option <?php echo ($position4=='temperatureyear.php'?'selected':'');?> value='temperatureyear.php'>Current Yearly/Monthly Temps</option>
+              <option <?php echo ($position4=='davisconsoleoutlook.php'?'selected':'');?> value='davisconsoleoutlook.php'>Davis Console Outlook</option>
+              <option <?php echo ($position4=='advisory.php'?'selected':'');?> value='advisory.php'>Weather Advisory</option>
+            </select>
+
+            <div class="stationvalue">Position 4 Title&nbsp;&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="position4title"></label>
+            <input name="position4title" type="text" id="position4title" value="<?php echo $position4title ;?>" class="choose" required>
+            <br/>
+
+            <div class="stationvalue">Position 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="position6"></label>
+            <select id="position6" name="position6" class="choose">
+              <option <?php echo ($position6=='forecast3ds.php'?'selected':'');?> value='forecast3ds.php'>3 Day Forecast - DarkSky</option>
+              <option <?php echo ($position6=='forecast3wu.php'?'selected':'');?> value='forecast3wu.php'>3 Day Forecast - WU</option>
+              <option <?php echo ($position6=='forecast3wularge.php'?'selected':'');?> value='forecast3wularge.php'>WU Large Forecast</option>
+            </select>
+
+            <div class="stationvalue">Position 6 Title&nbsp;&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="position6title"></label>
+            <input name="position6title" type="text" id="position6title" value="<?php echo $position6title;?>" class="choose" required>
+            <br/>
+
+            <div class="stationvalue">*Position 12&nbsp;&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="position12"></label>
+            <select id="position12" name="position12" class="choose">
+              <option <?php echo ($position12=='indoortemperature.php'?'selected':'');?> value='indoortemperature.php'>Indoor Temperature</option>
+              <option <?php echo ($position12=='airqualitymodule.php'?'selected':'');?> value='airqualitymodule.php'>Air Quality</option>
+              <option <?php echo ($position12=='webcamsmall.php'?'selected':'');?> value='webcamsmall.php'>Weather Camera</option>
+              <option <?php echo ($position12=='moonphase.php'?'selected':'');?> value='moonphase.php'>Moon Phase</option>
+              <option <?php echo ($position12=='weather34uvsolar.php'?'selected':'');?> value='weather34uvsolar.php'>UV/Solar from Station</option>
+              <option <?php echo ($position12=='solaruvds.php'?'selected':'');?> value='solaruvds.php'>UV/Solar from DarkSky</option>
+              <option <?php echo ($position12=='solaruvwu.php'?'selected':'');?> value='solaruvwu.php'>UV/Solar from WU</option>
+              <option <?php echo ($position12=='eq.php'?'selected':'');?> value='eq.php'>Earthquakes</option>
+              <option <?php echo ($position12=='lightning34.php'?'selected':'');?> value='lightning34.php'>Lightning from WeatherFlow</option>
+            </select>
+
+            <div class="stationvalue">Position 12 Title</div>
+            <?php echo $rightchevron;?>
+            <label name="position12title"></label>
+            <input name="position12title" type="text" id="position12title" value="<?php echo $position12title ;?>" class="choose" required>
+            <br/>
+
+            <div class="stationvalue">*Last Module</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="positionlastmodule"></label>
+            <select id="positionlastmodule" name="positionlastmodule" class="choose">
+              <option <?php echo ($positionlastmodule=='indoortemperature.php'?'selected':'');?> value='indoortemperature.php'>Indoor Temperature</option>
+              <option <?php echo ($positionlastmodule=='airqualitymodule.php'?'selected':'');?> value='airqualitymodule.php'>Air Quality</option>
+              <option <?php echo ($positionlastmodule=='webcamsmall.php'?'selected':'');?> value='webcamsmall.php'>Weather Camera</option>
+              <option <?php echo ($positionlastmodule=='moonphase.php'?'selected':'');?> value='moonphase.php'>Moon Phase</option>
+              <option <?php echo ($positionlastmodule=='weather34uvsolar.php'?'selected':'');?> value='weather34uvsolar.php'>UV/Solar from Station</option>
+              <option <?php echo ($positionlastmodule=='solaruvds.php'?'selected':'');?> value='solaruvds.php'>UV/Solar from DarkSky</option>
+              <option <?php echo ($positionlastmodule=='solaruvwu.php'?'selected':'');?> value='solaruvwu.php'>UV/Solar from WU</option>
+              <option <?php echo ($positionlastmodule=='eq.php'?'selected':'');?> value='eq.php'>Earthquakes</option>
+              <option <?php echo ($positionlastmodule=='lightning34.php'?'selected':'');?> value='lightning34.php'>Lightning from WeatherFlow</option>
+            </select>
+
+            <div class="stationvalue">Last Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="positionlastmoduletitle"></label>
+            <input name="positionlastmoduletitle" type="text" id="positionlastmoduletitle" value="<?php echo $positionlastmoduletitle ;?>" class="choose" required>
+            <br/>
+            <br/>
+
+            <?php echo $iicon;?><span class='orange'> UV/Solar from Station</span> requires that your hardware has UV and Solar sensors.
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Webcam Section                         #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">Webcam</div>
+            <br/>
+            
+            <div class="stationvalue">Path/Url to your webcam <u><b>image</b></u></div>
+            <?php echo $rightchevron;?>
+            <input name="webcamurl" type="text" id="webcamurl" value="<?php echo $webcamurl ;?>" class="chooseapi">
+            <br/>
+            
+            <?php echo $iicon;?>
+            <b><span class='orange'>Leave blank to hide link within menu</span></b>
+            <br/>
+
+            <?php echo $iicon;?> Should be an image url, possibly ending in <b>jpg</b>/<b>jpeg</b>/<b>png</b>
+            <br/>
+
+            <div class="stationvalue"> Path/Url to your webcam <u><b>video</b></u></div>
+            <?php echo $rightchevron;?>
+            <input name="videoWeatherCamURL" type="text" id="videoWeatherCamURL" value="<?php echo $videoWeatherCamURL;?>" class="chooseapi">
+            <br/>
+
+            <?php echo $iicon;?>
+            <b><span class='orange'>Leave blank to use the Static Weather Camera image instead</span></b>
+            <br/>
+
+            <?php echo $iicon;?> Add the url to your Weather Camera's live video feed to include it in the Weather Camera popup
+            <br/>
+
+            <?php echo $iicon;?> If your video doesn't work here, but you can view it by putting it in the URL bar, 
+            <a href="https://github.com/lightmaster/Meteobridge-Weather34-Template/issues/new?assignees=lightmaster&labels=enhancement&template=feature_request.md&title=" title="Add a Feature | HWS GitHub" target="_blank">
+              <span class='orange'>start a new issue on the GitHub page</span>
+            </a> and I'll try to add support for your video.
+            <br/>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Moon Section                           #########
+          ##############################################################################################-->
+          
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">Moonrise/set option</div>
+            <br/>
+
+            <div class="stationvalue">Fine Tune the Moonrise/Set</div>
+            <?php echo $rightchevron;?>
+            <input name="moonadj" type="text" id="moonadj" value="<?php echo $moonadj ;?>" class="choose">
+            <br/>
+
+            <?php echo $iicon;?> <span class='important'>Only change if you need to, leave it alone if you're unsure.</span>
+            <br/>
+
+            <?php echo $iicon;?> <b>Adjust the moonrise/set to your location in hours</b>
+            <br/>
+
+            <div class="stationvalue">Which hemisphere are you in?</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="hemisphere" name="hemisphere" class="choose1">
+              <option <?php echo ($hemisphere=='0'?'selected':'');?> value='0'>Northern (0)</option>
+              <option <?php echo ($hemisphere=='180'?'selected':'');?> value='180'>Southern(180)</option>
+            </select>
+            <br/>
+
+            <div class="stationvalue">Sun Position Module</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <select id="sunoption" name="sunoption" class="choose1">
+              <option <?php echo ($sunoption=='sun3.php'?'selected':'');?> value='sun3.php'>Northern (sun3.php)</option>
+              <option <?php echo ($sunoption=='sun4.php'?'selected':'');?> value='sun4.php'>Southern (sun4.php)</option>
+            </select>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Time Format Section                    #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <svg id="i-clock" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="<?php echo $fontGray;?>" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+              <circle cx="16" cy="16" r="14" />
+              <path d="M16 8 L16 16 20 20" />
+            </svg>
+            <div class="weathersectiontitle">Time format options</div>
+            <br/>
+
+            <div class="stationvalue">Set the Date Format</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="dateFormat"></label>
+            <select id="dateFormat" name="dateFormat" class="choose1">
+              <option <?php echo ($dateFormat=='d-m-Y'?'selected':'');?> value='d-m-Y'>d-m-Y (12-03-2017)</option>
+              <option <?php echo ($dateFormat=='m-d-Y'?'selected':'');?> value='m-d-Y'>m-d-Y (03-12-2017)</option>
+              <option <?php echo ($dateFormat=='Y-m-d'?'selected':'');?> value='Y-m-d'>Y-m-d (2017-12-03)</option>
+            </select>
+
+            <div class="stationvalue">Set the Main Clock Format</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="clockformat"></label>
+            <select id="clockformat" name="clockformat" class="choose1">
+              <option <?php echo ($clockformat=='24'?'selected':'');?> value='24'>24hr (13:00:00)</option>
+              <option <?php echo ($clockformat=='12'?'selected':'');?> value='12'>12hr (1:00:00 PM)</option>
+            </select>
+            <br/>
+
+            <div class="stationvalue">Set the Time Format</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="timeFormat"></label>
+            <select id="timeFormat" name="timeFormat" class="choose1">
+              <option <?php echo ($timeFormat=='H:i:s'?'selected':'');?> value='H:i:s'>H:i:s (17:34:22)</option>
+              <option <?php echo ($timeFormat=='g:i:s a'?'selected':'');?> value='g:i:s a'>g:i:s a (5:34:22 pm)</option>
+              <option <?php echo ($timeFormat=='g:i:s'?'selected':'');?> value='g:i:s'>g:i:s (5:34:22)</option>
+            </select>
+
+            <div class="stationvalue">Set the Short Time Format</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="timeFormatShort"></label>
+            <select id="timeFormatShort" name="timeFormatShort" class="choose1">
+              <option <?php echo ('H:i'?'selected':'');?> value='H:i'>H:i (17:34)</option>
+              <option <?php echo ('g:i'?'selected':'');?> value='g:i'>g:i (05:34)</option>
+            </select>
+            <br/>
+
+            <div class="stationvalue">show updated date & time </div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="showDate"></label>
+            <select id="showDate" name="showDate" class="choose1">
+              <option <?php echo ($showdate==false?'selected':'');?> value='false'>false</option>
+            </select>
+            <br/>
+
+            <span class='red important'><?php echo $oiicon;?> Depricated</span>
+
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Menu Options Sidebar                   #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?>
+            Select <span class='orange important'>no</span> or leave the IDs blank to hide any link.
+            <br/>
+            <br/>
+
+            <?php echo $iicon;?>
+            Select whether to display WU link and if you want to use the new or old site. <span class='red'>Map does not work on old site.</span>
+            <br/>
+            <br/>
+
+            <?php echo $iicon;?>
+            <a href="http://www.findu.com/citizenweather/cw_form.html" title="CWOP Sign-UP">Sign up for CWOP here</a>.
+            Type in your ID for CWOP and FindU. Starting letter is either
+            <span class='orange important'>F</span>
+            /<span class='orange important'>D</span>
+            /<span class='orange important'>E</span>
+            /<span class='orange important'>C</span>.
+            <br/>
+
+            <?php echo $iicon;?>
+            CWOP looks like <span class='orange important'>F</span>0000
+            <br/>
+
+            <?php echo $iicon;?>
+            FindU looks like <span class='orange important'>FW</span>0000.
+            <br/>
+
+            <?php echo $iicon;?>
+            <span class='orange important'>NOAA</span>, <span class='orange important'>MADIS</span>, and <span class='orange important'>MesoWest</span> all use your CWOP ID, so you don't have to enter it again.
+            <br/>
+
+            <?php echo $iicon;?>
+            Go to <a href="https://app.weathercloud.net" title="WeatherCloud" target="_blank">WeatherCloud</a>, the ID is the last part of the url (<span class='orange important'>d0123456789</span>).
+            <br/>
+
+            <?php echo $iicon;?>
+            Go to <a href="https://www.awekas.at/en/login_pruefung.php?rd=station" title="AWEKAS" target="_blank">AWEKAS</a>,
+            after logging in, your ID will be at the end of the url (<span class='orange important'>12345</span>)
+            <br/>
+
+            <?php echo $iicon;?>
+            Go to <a href="https://dashboard.ambientweather.net/devices" title="Ambient Weaher" target="_blank">Ambient Weatehr</a> and click the green share button for your station.
+            Click to make your station public, then copy the last section of your url (<span class='orange important'>0123456789abcdef<br/>0123456789abcdef</span>).
+            <br/>
+
+            <?php echo $iicon;?>
+            Go to <a href="https://www.pwsweather.com/stationlist.php" title="PWS Weather Stations" target="_blank">PWS Weather Station List</a> and
+            find the "station ID" in the first column.
+            <br/>
+
+            <?php echo $iicon;?>
+            Go to <a href="http://wow.metoffice.gov.uk/sites" title="MetOffice" target="_blank">MetOffice/WoW</a>. Your ID is the last part of your URL, following "site-ID=".
+            <br/>
+            <br/>
+
+            <?php echo $iicon;?>
+            Custom links - Make sure to set the title and url
+            <br/>
+
+            <?php echo $iicon;?>
+            Extra Menu Link is a link that shows up outside of the flyout menu
+            <br/>
+            
+            <?php echo $iicon;?>
+            Create an Account at <a href="https://usaweatherfinder.com/index.php?a=join" title="USA Weather Finder" target="_blank">USA Weather Finder</a>.
+            Secret Code is <span class='orange important'>CUMULUS</span>. Your username is the code for tracking.
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Menu Options Section                   #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <svg id="i-menu" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="<?php echo $fontGray;?>" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+              <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
+            </svg>
+            <div class="weathersectiontitle">Menu options</div>
+            <br/>
+
+            <!-- Display Languages -->
+            <div class="stationvalue">Display Languages in Menu</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="languages"></label>
+            <select id="languages" name="languages" class="choose1">
+              <option <?php echo ($languages=='no'?'selected':'');?> value='no'>no</option>
+              <option <?php echo ($languages=='yes'?'selected':'');?> value='yes'>yes</option>
+            </select>
+            <br/>
+
+            <!-- To show some extra links -->
+            <div class="stationvalue">Display Extra links in Menu</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="extralinks"></label>
+            <select id="extralinks" name="extralinks" class="choose1">
+              <option <?php echo ($extralinks=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($extralinks=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+            
+            <!-- WU Link -->
+            <div class="stationvalue">Display Wunderground Link</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="linkWU"></label>
+            <select id="linkWU" name="linkWU" class="choose1">
+              <option <?php echo ($linkWU=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($linkWU=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+
+            <!-- Use new or old WU Site -->
+            <div class="stationvalue">New WU Site</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="linkWUNew"></label>
+            <select id="linkWUNew" name="linkWUNew" class="choose1">
+              <option <?php echo ($linkWUNew=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($linkWUNew=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+
+            <!-- CWOP Link -->
+            <div class="stationvalue">Display CWOP Link</div>
+            <?php echo $rightchevron;?>
+            <label name="linkCWOPID"></label>
+            <input name="linkCWOPID" type="text" id="linkCWOPID" value="<?php echo $linkCWOPID;?>" class="choose">
+            (<span class='orange important'>F0000</span>)
+            <br/>
+
+            <!-- FindU Link -->
+            <div class="stationvalue">Display FindU Link&nbsp;&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="linkFindUID"></label>
+            <input name="linkFindUID" type="text" id="linkFindUID" value="<?php echo $linkFindUID;?>" class="choose">
+            (<span class='orange important'>FW0000</span>)
+            <br/>
+
+            <!-- NOAA Link -->
+            <div class="stationvalue">Display NOAA Link&nbsp;</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="linkNOAA"></label>
+            <select id="linkNOAA" name="linkNOAA" class="choose1">
+              <option <?php echo ($linkNOAA=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($linkNOAA=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+
+            <!-- MADIS Link -->
+            <div class="stationvalue">Display MADIS Link</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="linkMADIS"></label>
+            <select id="linkMADIS" name="linkMADIS" class="choose1">
+              <option <?php echo ($linkMADIS=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($linkMADIS=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+
+            <!-- MesoWest Link -->
+            <div class="stationvalue">Display MesoWest Link</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="linkMesoWest"></label>
+            <select id="linkMesoWest" name="linkMesoWest" class="choose1">
+              <option <?php echo ($linkMesoWest=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($linkMesoWest=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+
+            <!-- MesoWest Link -->
+            <div class="stationvalue">Display WeatherCloud Link</div>
+            <?php echo $rightchevron;?>
+            <label name="linkWeatherCloudID"></label>
+            <input name="linkWeatherCloudID" type="text" id="linkWeatherCloudID" value="<?php echo $linkWeatherCloudID;?>" class="choose">
+            (<span class='orange important'>d0123456789</span>)
+            <br/>
+
+            <!-- MesoWest Link -->
+            <div class="stationvalue">Display Windy.com Link</div>
+            <?php echo $rightchevron;?>
+            <label name="linkWindyID"></label>
+            <input name="linkWindyID" type="text" id="linkWindyID" value="<?php echo $linkWindyID;?>" class="choose">
+            (<span class='orange important'>f0123456</span>)
+            <br/>
+
+            <!-- AWEKAS Link -->
+            <div class="stationvalue">Display AWEKAS Link</div>
+            <?php echo $rightchevron;?>
+            <label name="linkAWEKASID"></label>
+            <input name="linkAWEKASID" type="text" id="linkAWEKASID" value="<?php echo $linkAWEKASID;?>" class="choose">
+            (<span class='orange important'>14782</span>)
+            <br/>
+
+            <!-- Ambient Link -->
+            <div class="stationvalue">Display Ambient Link</div>
+            <?php echo $rightchevron;?>
+            <label name="linkAmbientWeatherID"></label>
+            <input name="linkAmbientWeatherID" type="text" id="linkAmbientWeatherID" value="<?php echo $linkAmbientWeatherID;?>" class="chooseapi">
+            (<span class='orange important'>0123456789abcdef0123456789abcdef</span>)
+            <br/>
+
+            <!-- PWS Weather Link -->
+            <div class="stationvalue">Display PWS Weather Link</div>
+            <?php echo $rightchevron;?>
+            <label name="linkPWSWeatherID"></label>
+            <input name="linkPWSWeatherID" type="text" id="linkPWSWeatherID" value="<?php echo $linkPWSWeatherID;?>" class="choose">
+            <br/>
+
+            <!-- MetOffice Link -->
+            <div class="stationvalue">Display MetOffice/WoW Link</div>
+            <?php echo $rightchevron;?>
+            <label name="linkMetOfficeID"></label>
+            <input name="linkMetOfficeID" type="text" id="linkMetOfficeID" value="<?php echo $linkMetOfficeID;?>" class="chooseapi">
+            <br/>
+
+            <!-- USA Weather Finder Link -->
+            <div class="stationvalue">USA Weather Finder Username</div>
+            <?php echo $rightchevron;?>
+            <label name="USAWeatherFinder"></label>
+            <input name="USAWeatherFinder" type="text" id="USAWeatherFinder" value="<?php echo $USAWeatherFinder;?>" class="choose">
+            <br/>
+            <span class='orange'>This is for USA based stations only.</span>
+            <br/>
+            <br/>
+            
+            <!-- Custom Link 1 -->
+            <div class="weathersectiontitle">Custom Links</div>
+            <br/>
+
+            <div class="stationvalue">1st Title&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="linkCustom1Title"></label>
+            <input name="linkCustom1Title" type="text" id="linkCustom1Title" value="<?php echo $linkCustom1Title;?>" class="choose">
+
+            <div class="stationvalue">1st URL&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="linkCustom1URL"></label>
+            <input name="linkCustom1URL" type="text" id="linkCustom1URL" value="<?php echo $linkCustom1URL;?>" class="chooseapi">
+            <br/>
+
+            <!-- Custom Link 2 -->
+            <div class="stationvalue">2nd Title</div>
+            <?php echo $rightchevron;?>
+            <label name="linkCustom2Title"></label>
+            <input name="linkCustom2Title" type="text" id="linkCustom2Title" value="<?php echo $linkCustom2Title;?>" class="choose">
+
+            <div class="stationvalue">2nd URL</div>
+            <?php echo $rightchevron;?>
+            <label name="linkCustom2URL"></label>
+            <input name="linkCustom2URL" type="text" id="linkCustom2URL" value="<?php echo $linkCustom2URL;?>" class="chooseapi">
+            <br/>
+            <br/>
+
+            <!-- Extra Menu's Custom Link -->
+            <div class="weathersectiontitle">Extra Menu - Custom Link</div>
+            <br/>
+
+            <div class="stationvalue">Title&nbsp;&nbsp;</div>
+            <?php echo $rightchevron;?>&nbsp;&nbsp;&nbsp;
+            <label name="extraLinkTitle"></label>
+            <input name="extraLinkTitle" type="text" id="extraLinkTitle" value="<?php echo $extraLinkTitle;?>" class="choose">
+
+            <div class="stationvalue">URL&nbsp;</div>
+            <?php echo $rightchevron;?>
+            <label name="extraLinkURL"></label>
+            <input name="extraLinkURL" type="text" id="extraLinkURL" value="<?php echo $extraLinkURL;?>" class="chooseapi">
+            <br/>
+
+            <div class="stationvalue">Color</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="extraLinkColor"></label>
+            <select id="extraLinkColor" name="extraLinkColor" class="choose1">
+              <option <?php echo ($extraLinkColor=='white'?'selected':'');?> value='white'>white</option>
+              <option <?php echo ($extraLinkColor=='red'?'selected':'');?> value='red'>red</option>
+              <option <?php echo ($extraLinkColor=='grey'?'selected':'');?> value='grey'>grey</option>
+              <option <?php echo ($extraLinkColor=='green'?'selected':'');?> value='green'>green</option>
+              <option <?php echo ($extraLinkColor=='yellow'?'selected':'');?> value='yellow'>yellow</option>
+              <option <?php echo ($extraLinkColor=='blue'?'selected':'');?> value='blue'>blue</option>
+              <option <?php echo ($extraLinkColor=='orange'?'selected':'');?> value='orange'>orange</option>
+            </select>
+          </div>
+          <br/>
+          <?php //STOPPED HERE ?>
+
+          <!--##########################################################################################
+          #############                        Start of WU/DarkSky Sidebar                     #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> enter your <span class='orange'>Weather Underground</span> Station ID (ie: <b>ISTANBUL161</b>)
+            <br/>
+
+            <span class='red'><?php echo $iicon;?> **New API Key Required</span>
+            <br/>
+            
+            <?php echo $iicon;?> Enter your Weather Underground API KEY <span class='orange'>8BXWEATHER34KEY123456<br/>789</span>
+            <br/>
+
+            <?php echo $iicon;?> Go to
+            <a href="https://www.wunderground.com/member/api-keys" title="WU API Key" target="_blank">WU API Key</a>
+            to generate your new personal key
+            <br/>
+
+            <?php echo $iicon;?> Enter your <b>DarkSky API key</b>. Check for a hidden space either before or after, can cause the <b>API key</b> to fail.
+            <br/>
+            
+            <?php echo $iicon;?> DarkSky API requires personal API key available via
+            <a href="https://darksky.net/dev/account" title="DarkSky Dev Account" target="_blank">DarkSky Dev Account</a>
+            <br/>
+
+            <?php echo $iicon;?> Whether or not to show the DarkSky Hourly Forecast when using WunderGround's Weekly Forecast
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of WU/DarkSky Section                     #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">WU/Darksky Options</div>
+            <br/>
+            <br/>
+
+            <div class="stationvalue"> <img src="img/wunderground.svg" width="100" /> Station ID</div>
+            <?php echo $rightchevron;?>
+            <input name="WUID" type="text" id="WUID" value="<?php echo $id;?>" class="choose">
+            <br/>
+
+            <div class="stationvalue">Weather Underground API KEY</div>
+            <?php echo $rightchevron;?>
+            <input name="wuapikey" type="text" id="wuapikey" value="<?php echo $wuapikey ;?>" class="chooseapi">
+            <br/>
+            
+
+            <div class="stationvalue">Units for Weather Underground API</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="wuapiunit"></label>
+            <select id="wuapiunit" name="wuapiunit" value="<?php echo $wuapiunit ;?>" class="choose1">
+              <option <?php echo ($wuapiunit=='e'?'selected':'');?> value='e'>Imperial</option>
+              <option <?php echo ($wuapiunit=='m'?'selected':'');?> value='m'>Metric</option>
+              <option <?php echo ($wuapiunit=='s'?'selected':'');?> value='s'>Metric + m/s</option>
+              <option <?php echo ($wuapiunit=='h'?'selected':'');?> value='h'>Metric + mph</option>
+            </select>
+            <br/>
+            <br/>
+
+            <div class="stationvalue"><img src="img/darksky.svg" width="80" /> API Key</div>
+            <?php echo $rightchevron;?>
+            <input name="wuapi" type="text" id="wuapi" value="<?php echo $apikey ;?>" class="chooseapi">
+            <br/>
+            <br/>
+
+            <div class="stationvalue"><img src="img/darksky.svg" width="80" /> API Units</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="darkskyunit"></label>
+            <select id="darkskyunit" name="darkskyunit" value="<?php echo $darkskyunit ;?>" class="choose1">
+              <option <?php echo ($darkskyunit=='us'?'selected':'');?> value='us'>Imperial</option>
+              <option <?php echo ($darkskyunit=='ca'?'selected':'');?> value='ca'>Metric</option>
+              <option <?php echo ($darkskyunit=='uk2'?'selected':'');?> value='uk2'>Metric + mi + mph</option>
+              <option <?php echo ($darkskyunit=='si'?'selected':'');?> value='si'>Metric + m/s</option>
+            </select>
+            <br/>
+            <br/>
+
+            <div class="stationvalue"><img src="img/darksky.svg" width="80" /> Hourly Forecast</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="dshourly"></label>
+            <select id="dshourly" name="dshourly" value="<?php echo $dshourly ;?>" class="choose1">
+              <option <?php echo ($dshourly=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($dshourly=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+            <br/>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of WeatherFlow Sidebar                    #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <span class='orange'><b>Only</b> select yes if your <b>WeatherFlow Station</b> is not directly connected to your <b>MB</b>.</span>
+            <br/>
+            <br/>
+
+            <?php echo $iicon;?> Enter your <b>WeatherFlow</b> Station ID (ie: <span class='orange important'>1200</span>)
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of WeatherFlow Section                    #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle"><img src="img/wflogo.svg" width="200px"/></div>
+            <br/>
+
+            <div class="stationvalue">Do you have Weatherflow Station</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="weatherflowoption"></label>
+            <select id="weatherflowoption" name="weatherflowoption" class="choose1">
+              <option <?php echo ($weatherflowoption=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($weatherflowoption=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+            <span class='orange important'>*Important</span>: only select yes if your WeatherFlow hardware is not directly connected to your meteobridge and
+            you want to use WeatherFlow hardware alongside an existing station connected to your meteobridge.
+            This option uses weatherflow API data for UV, solar, and lightning only
+            <br/>
+
+            <div class="stationvalue">WeatherFlow Station ID</div>
+            <?php echo $rightchevron;?>
+            <input name="wfid" type="text" id="wfid" value="<?php echo $weatherflowID ;?>" class="choose">
+            <br/>
+            
+            <div class="stationvalue">WeatherFlow Lightning Module</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="weatherflowlightning"></label>
+            <select id="weatherflowlightning" name="weatherflowlightning" class="choose">
+              <option <?php echo ($weatherflowlightning=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($weatherflowlightning=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+            
+            <?php echo $iicon;?> Option works when available weatherflow is connected to meteobridge
+            <br/>
+
+            <div class="stationvalue">Weatherflow Map Zoom</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="weatherflowmapzoom"></label>
+            <select id="weatherflowmapzoom" name="weatherflowmapzoom" value="<?php echo $weatherflowmapzoom ;?>" class="choose1">
+              <option <?php echo ($weatherflowmapzoom==5?'selected':'');?> value='5'>5</option>
+              <option <?php echo ($weatherflowmapzoom==6?'selected':'');?> value='6'>6</option>
+              <option <?php echo ($weatherflowmapzoom==7?'selected':'');?> value='7'>7</option>
+              <option <?php echo ($weatherflowmapzoom==8?'selected':'');?> value='8'>8</option>
+              <option <?php echo ($weatherflowmapzoom==9?'selected':'');?> value='9'>9</option>
+              <option <?php echo ($weatherflowmapzoom==10?'selected':'');?> value='10'>10</option>
+              <option <?php echo ($weatherflowmapzoom==11?'selected':'');?> value='11'>11</option>
+            </select>
+            <br/>
+            
+            <?php echo $iicon;?> Select Map Zoom level <b>5-11</b>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Temp Module Sidebar                    #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> *option temperature.php default without indoor temperature displayed
+            <br/>
+            
+            <?php echo $iicon;?> *temperaturein.php shows indoor temp icon
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Temp Module Section                    #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">Temperature Module</div>
+            <br/>
+            <div class="stationvalue">Options</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="temperaturemodule"></label>
+            <select id="temperaturemodule" name="temperaturemodule" class="choose">
+              <option <?php echo ($temperaturemodule=='temperature.php'?'selected':'');?> value='temperature.php'>Hide Indoor Icon</option>
+              <option <?php echo ($temperaturemodule=='temperaturein.php'?'selected':'');?> value='temperaturein.php'>Show Indoor Icon</option>
+            </select>
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                         Start of Purple Air Sidebar                    #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> Important, only for Purple Air owners
+            <br/>
+            <br/>
+            <?php echo $iicon;?> Enter your <b>PurpleAir</b> Station ID (ie: <b>1200</b>)
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Purple Air Section                     #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle"><img src=img/purpleair.svg width=40px > Purple Air</div>
+            <br/>
+
+            <div class="stationvalue">Do you have Purple Air Quality Hardware</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="purpleairhardware"></label>
+            <select id="purpleairhardware" name="purpleairhardware" class="choose">
+              <option <?php echo ($purpleairhardware=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($purpleairhardware=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+
+            <div class="stationvalue"> Purple Air ID</div>
+            <?php echo $rightchevron;?>
+            <input name="purpleair" type="text" id="purpleair" value="<?php echo $purpleairID ;?>" class="choose">
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                         Start of METAR Sidebar                         #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?> Sign up for a key at <a href='https://www.checkwx.com/signup' title='CheckWx Sign Up'>checkwx.com/signup</a>
+            <br/>
+
+            <?php echo $iicon;?> Enter your <b>CheckWx API Key</b>. Check for a hidden space before or after the key, causing it to fail.
+            <br/>
+
+            <?php echo $iicon;?> Enter the nearest METAR station's code (ie: <span class='orange'>LTBA</span> in capitals)
+            <br/>
+
+            <?php echo $iicon;?> Enter the nearest METAR station's location (ie: <span class='orange'>Istanbul,Turkey</span>)
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of METAR Section                          #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">Nearby Metar Aviation Weather Options</div>
+            <br/>
+
+            <div class="stationvalue">CheckWX API Key</div>
+            <?php echo $rightchevron;?>
+            <input name="metarapikey" type="text" id="" value="<?php echo $metarapikey ;?>" class="chooseapi">
+            <br/>
+
+            <div class="stationvalue"> Display Nearby Metar</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="metar"></label>
+            <select id="metar" name="metar" class="choose">
+              <option <?php echo ($metar=='yes'?'selected':'');?> value='yes'>yes</option>
+              <option <?php echo ($metar=='no'?'selected':'');?> value='no'>no</option>
+            </select>
+            <br/>
+            
+            Only supports English
+            <br/>
+
+            <div class="stationvalue">ICAO Code for Metar</div>
+            <?php echo $rightchevron;?>
+            <input name="icao1" type="text" id="icao1" value="<?php echo $icao1 ;?>" class="choose">
+            <br/>
+
+            <div class="stationvalue">ICAO Location for Metar</div>
+            <?php echo $rightchevron;?>
+            <input name="airport1" type="text" id="airport1" value="<?php echo $airport1 ;?>" class="choose">
+            <br/>
+
+            <div class="stationvalue">Metar Station's Distance for you</div>
+            <?php echo $rightchevron;?>
+            <input name="airport1dist" type="text" id="airport1dist" value="<?php echo $airport1dist ;?>" class="choose">
+            <br/>
+            Enter the nearest METAR station's distance with <span class='red important'>no units</span> (ie: <span class='orange'>26</span> or <span class='orange'>5</span>)
+          </div>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of GOES Maps Sidebar                      #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?>
+            Select <span class='orange important'>Blank</span> to hide the link.
+            <br/>
+
+            <?php echo $iicon;?> Currently only for North and South America. I am looking for similar images for the rest of the world.
+            <br/>
+
+            <?php echo $iicon;?> Choose the area you want from <a href="https://www.star.nesdis.noaa.gov/GOES/index.php" title="NOAA GOES Images">NOAA GOES Images</a>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of GOES Maps Section                      #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">NOAA GOES maps</div>
+            <br/>
+            <div class="stationvalue">Pick animated Map</div>
+            <?php echo $rightchevron.$downchevron;?>
+            <label name="goesLink"></label>
+            <select id="goesLink" name="goesLink" class="choose1">
+              <option <?php echo ($goesLink=='' || empty($goesLink)?'selected':'');?> value=''>Blank - Link Hidden</option>
+              <optgroup label="GOES-WEST">
+                <option <?php echo ($goesLink=='pacus'?'selected':'');?> value="pacus">Pacific US</option>
+                <option <?php echo ($goesLink=='pacificNorthwest'?'selected':'');?> value="pacificNorthwest">Pacific Northwest</option>
+                <option <?php echo ($goesLink=='pacificSouthwest'?'selected':'');?> value="pacificSouthwest">Pacific Southwest</option>
+                <option <?php echo ($goesLink=='usWestCoast'?'selected':'');?> value="usWestCoast">US West Coast</option>
+                <option <?php echo ($goesLink=='alaska'?'selected':'');?> value="alaska">Alaska</option>
+                <option <?php echo ($goesLink=='hawaii'?'selected':'');?> value="hawaii">Hawaii</option>
+                <option <?php echo ($goesLink=='northerPacificOcean'?'selected':'');?> value="northerPacificOcean">Northern Pacific Ocean</option>
+                <option <?php echo ($goesLink=='tropicalPacificOcean'?'selected':'');?> value="tropicalPacificOcean">Tropical Pacific Ocean</option>
+              </optgroup>
+              <optgroup label="GOES-EAST">
+                <option <?php echo ($goesLink=='conus'?'selected':'');?> value="conus">Continental US</option>
+                <option <?php echo ($goesLink=='northernRockies'?'selected':'');?> value="northernRockies">Northern Rockies</option>
+                <option <?php echo ($goesLink=='upperMississippiValley'?'selected':'');?> value="upperMississippiValley">Upper Mississippi Valley</option>
+                <option <?php echo ($goesLink=='greatLakes'?'selected':'');?> value="greatLakes">Great Lakes</option>
+                <option <?php echo ($goesLink=='northeast'?'selected':'');?> value="northeast">NorthEast</option>
+                <option <?php echo ($goesLink=='southernRockies'?'selected':'');?> value="southernRockies">Southern Rockies</option>
+                <option <?php echo ($goesLink=='southerPlains'?'selected':'');?> value="southerPlains">Southern Plains</option>
+                <option <?php echo ($goesLink=='southerMississippiValley'?'selected':'');?> value="southerMississippiValley">Southern Mississippi Valley</option>
+                <option <?php echo ($goesLink=='southeast'?'selected':'');?> value="southeast">Southeast</option>
+                <option <?php echo ($goesLink=='usEastCoast'?'selected':'');?> value="usEastCoast">US East Coast</option>
+                <option <?php echo ($goesLink=='canada'?'selected':'');?> value="canada">Canada</option>
+                <option <?php echo ($goesLink=='caribbean'?'selected':'');?> value="caribbean">Caribbean</option>
+                <option <?php echo ($goesLink=='gulfOfMexico'?'selected':'');?> value="gulfOfMexico">Gulf of Mexico</option>
+                <option <?php echo ($goesLink=='puertoRico'?'selected':'');?> value="puertoRico">Puerto Rico</option>
+                <option <?php echo ($goesLink=='tropicalAtlantic'?'selected':'');?> value="tropicalAtlantic">Tropical Atlantic</option>
+                <option <?php echo ($goesLink=='easternPacific'?'selected':'');?> value="easternPacific">Eastern Pacific</option>
+                <option <?php echo ($goesLink=='mexico'?'selected':'');?> value="mexico">Mexico</option>
+                <option <?php echo ($goesLink=='centralAmerica'?'selected':'');?> value="centralAmerica">Central America</option>
+                <option <?php echo ($goesLink=='southAmericaNorth'?'selected':'');?> value="southAmericaNorth">Northern South America</option>
+                <option <?php echo ($goesLink=='southAmericaSouth'?'selected':'');?> value="southAmericaSouth">Southern South America</option>
+              </optgroup>
+            </select>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Submit Button Sidebar                  #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="<?php echo $fontGray;?>" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+              <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" />
+            </svg>
+            click save if everything looks ok above and dont forget to set the password.
+
+            <div class="weatherbottominfo">
+              <?php echo $iicon;?> Now check the weather
+              <svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+                <path d="M2 20 L12 28 30 4" />
+              </svg>
+            </div>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Submit Button Section                  #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <input type="submit" name="Submit" value="Save Configuration" class="button">
+            <br/>
+            <br/>
+            <svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="<?php echo $fontGray;?>" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+              <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" />
+            </svg>
+            Click "save configuration" if everything looks ok and dont forget to set the password.
+          </div>
+          <br/>
+
+          <center>
+            <?php echo $iicon;?> Meteobridge DASHBOARD EASY SETUP &copy; 2015-<?php echo date('Y');?> Dashboard MB-UB40-SE
+            <br/>
+
+            <a href="http://www.meteobridge.com/wiki/index.php/Home" title="http://www.meteobridge.com/wiki/index.php/Home" target="_blank">
+              <img src="img/meteobridge.svg" width="120" />
+            </a>
+          </center>
+          <br/>
+        </form>
+      </div>
     </div>
-    <br/>
-
-<!--##########################################################################################
-    #########                        Start of Purple Air Section                     #########
-    ##########################################################################################-->
-
-     <div class="weatheroptions">
-   <div class="weathersectiontitle"> <img src=img/purpleair.svg width=25px > Purple Air</div><br/>
-    <span style="color:rgba(236, 87, 27, 1.000);"> * <span style="color:#777;">Important<span style="color:rgba(236, 87, 27, 1.000);"> for Purple Air owners only</span></span></span> <br/>
-
-
-
-
-    <div class="stationvalue"> <img src=img/purpleair.svg width=25px > Do you have Purple Air Quality Hardware (yes or no) </div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="purpleairhardware" type="text" id="purpleairhardware" value="<?php echo $purpleairhardware ;?>" class="choose">
-    <br/> <span style="color:#777;">enter yes or no(lowercase)</span>
-    <br/>
-
-
-    <div class="stationvalue"> Purple Air ID</div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="purpleair" type="text" id="purpleair" value="<?php echo $purpleairID ;?>" class="choose">
-
-
-
-
-
-    <br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg> <span style="color:#777;">enter your <strong>PurpleAir </strong> station id example <strong><span style="color:rgba(86, 95, 103, 1.000);"> 1200</strong></span></span>
-
-    </div>
-    <br/>
-
-<!--##########################################################################################
-    #########                        Start of METAR Section                          #########
-    ##########################################################################################-->
-
-     <div class="weatheroptions">
-   <div class="weathersectiontitle">Nearby Metar Aviation Weather Options</div><br/>
-<span style="color:rgba(236, 87, 27, 1.000);">
-    <div class="stationvalue">CheckWX API Key</div>
- <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-    <input name="metarapikey" type="text" id="" value="<?php echo $metarapikey ;?>" class="chooseapi">
-<br/> <span style="color:#777;">enter your <strong>CheckWx</strong> <strong>API key</strong> this is the most common mistake made be careful when cut and paste often an hidden space is either inserted before or after causing the <strong>API key</strong> to fail. This key is important for displaying nearby metar data. <a href="https://www.checkwx.com/signup" title="https://www.checkwx.com/signup" target="_blank">You need to sign up here for free API key https://www.checkwx.com/signup.</a></span>
-<br/>
-
-
-<div class="stationvalue"> Display Nearby Metar (yes or no) *English Only </div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="metar" type="text" id="metar" value="<?php echo $metar ;?>" class="choose">
-    <br/> <span style="color:#777;">enter yes or no(lowercase) *note it only supports english language</span>
-
-    <br/>
-    <div class="stationvalue"> ICAO Code for  Metar Station 1  </div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="icao1" type="text" id="icao1" value="<?php echo $icao1 ;?>" class="choose">
-    <br/> <span style="color:#777;">enter your nearby METAR stations  For example station 1 <span style="color:rgba(236, 87, 27, 1.000);">LTBA</span> in capitals
-    <br/>
-
-    <div class="stationvalue"> ICAO Location  for  Metar Station 1  </div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="airport1" type="text" id="airport1" value="<?php echo $airport1 ;?>" class="choose">
-     <br/> <span style="color:#777;">enter your nearby METAR station 1 location for example <span style="color:rgba(236, 87, 27, 1.000);">Istanbul,Turkey</span>
-        <br/>
-
-
-    <div class="stationvalue"> ICAO Aprox Distance  for  Metar Station 1 from your location  </div>
-    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M12 30 L24 16 12 2" />
-</svg>
-
-    <input name="airport1dist" type="text" id="airport1dist" value="<?php echo $airport1dist ;?>" class="choose">
-    <br/> <span style="color:#777;">enter your nearby METAR stations distance for example <span style="color:rgba(236, 87, 27, 1.000);">26</span> or <span style="color:rgba(236, 87, 27, 1.000);">5</span> do not enter any letters km or m
-</div>
-<br/>
-
-<!--##########################################################################################
-    #########                        Start of Submit Button Sidebar                  #########
-    ##########################################################################################-->
-
-   <div class="weatheroptionssidebar"><svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" />
-</svg>
-click save if everything looks ok above and dont forget to set the password.
-
-
-<div class="weatherbottominfo">
-<svg id="i-info" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg>
-
-now check the weather
-<svg id="i-checkmark" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M2 20 L12 28 30 4" />
-</svg>
-</div>
-</div>
-
-<!--##########################################################################################
-    #########                        Start of Submit Button Section                  #########
-    ##########################################################################################-->
-
-<div class="weatheroptions">
-
-    <input type="submit" name="Submit" value="Save Configuration" class="button"><br/><br/><span style="color:#777;font-size:12px;padding:5px;line-height:16px;">
-  <svg id="i-alert" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M16 3 L30 29 2 29 Z M16 11 L16 19 M16 23 L16 25" /> </svg> Click "save configuration" if everything looks ok and dont forget to set the password.</span>
-
-  </div>
-  <br/>
-
-
-    <span style="font-size:12px;color:#777;"><svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-    <path d="M16 14 L16 23 M16 8 L16 10" />
-    <circle cx="16" cy="16" r="14" />
-</svg> Meteobridge DASHBOARD EASY SETUP &copy; 2015-<?php echo date('Y');?> Dashboard MB-UB40-SE</span><br/>
-<center><a href="http://www.meteobridge.com/wiki/index.php/Home" title="http://www.meteobridge.com/wiki/index.php/Home" target="_blank"><img src="img/meteobridge.svg" width="120" /></a></center><br/>
-
-</form></div>
-</div>
+  </body>
+</html>

@@ -27,8 +27,8 @@ foreach($json['obs'] as $item){
 </div>
 <div class="wfstrike">
 <?php //weather34 wf lightning
- echo "<wfstriketoday>",$weatherflow["lightning3hr"]  ;
- ?></wfstriketoday></div>
+ echo "<lightningstriketoday>",$weatherflow["lightning3hr"]  ;
+ ?></lightningstriketoday></div>
 <div class="minwordl">Strikes</div></div>
 <div class="mintimedate"><value>&nbsp;Last 3 Hrs<value></div>
 <div class='wflaststrike'>

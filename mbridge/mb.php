@@ -15,6 +15,15 @@ if( isset($_GET['d']) ) {
 $file_live		= file_get_contents($filename);
 $meteobridgeapi	= explode(" ", $file_live); //convert json object to php associative array
 
+function callStationCron() {
+	include('../mbdbfiles/stationcron.php');
+}
+
+function downloadCharts() {
+	$parentScript = 'mb.php';
+	include('../nanocharts/downloadcharts.php');
+}
+
 function savemysqli(){
 	//grab the global database variables
 	global $db_host, $db_user, $db_pass, $db_name, $chartsource;
@@ -26,7 +35,7 @@ function savemysqli(){
 		$file_live		= file_get_contents('MBrealtimeupload.txt');
 		$meteobridgeapi	= explode(" ", $file_live); //convert json object to php associative array
 		$date			= date("d M");
-		$updated		= date('G:i');
+		$updated		= date('H:i');
 
 		//check if using new or old API
 		if (is_numeric($meteobridgeapi[176])) {
@@ -73,6 +82,29 @@ function savemysqli(){
 	}
 }
 
+function saveWindAvg($windAvg5m) {
+	$windJson = '../jsondata/windAvg.json';
+
+	//check if json file already exists, creating empty array if it doesn't exist
+	if (file_exists($windJson)) {
+		$existingWind = json_decode(file_get_contents($windJson),true);
+	} else {
+		$existingWind = array();
+	}
+
+	//calculate current time in minutes, putting into array
+	$windTime = date('H') * 60 + date('i');
+	$newWind = array($windTime => $windAvg5m);
+
+	// combine the new and old wind arrays
+	$windLast24hr = array_merge($newWind, $existingWind);
+	// remove values older than 24 hours
+	$windLast24hr = array_slice($windLast24hr,0,288);
+
+	//save json to file
+	file_put_contents($windJson, json_encode($windLast24hr));
+}
+
 function saveupdatedtime($timefile, $currenttime) {
 	$code = '<?php'."\n";
 	$code .= '$'."lastupdated = '".$currenttime."';\n";
@@ -90,24 +122,40 @@ if (is_numeric($meteobridgeapi[176]) && $meteobridgeapi[177] >= 100) {
 		saveupdatedtime($timefile, $currenttime);
 	}
 	include($timefile);
+	
 	// check if $interval seconds has passed
 	if ($lastupdated + $interval <= $currenttime) {
-		savemysqli();
 		saveupdatedtime($timefile, $currenttime);
-		echo '<br/>saved MySQL';
-		//echo '<br/>lastupdated: '.$lastupdated;
-		//echo '<br/>currenttime: '.$currenttime;
+
+		if ($stationCron == 'HWS') {
+			#settings to enable station cron call
+			callStationCron();
+			echo '<br/>Station Cron has run';
+		}
+		
+		//Save 5 min average wind
+		saveWindAvg($meteobridgeapi[17]);
+
+		//Update Charts
+		if ($chartsource == "mbcharts") {
+			savemysqli();
+			echo '<br/>saved MySQL';
+		} else if ($chartsource == "nanocharts") {
+			downloadCharts();
+			echo '<br/>NanoCharts have been downloaded';
+		}
 	} else {
 		echo '<br/>not enough time has passed';
-		//echo '<br/>lastupdated: '.$lastupdated;
-		//echo '<br/>currenttime: '.$currenttime;
 	}
 } else if ($meteobridgeapi[10] >= 100) {
-		// If using old API, save every time file is called from API
+	// If using old API, save every time file is called from API
+	if ($chartsource == 'mbcharts') {
 		savemysqli();
+	}
 } else {
 	echo "<br/>Barometer value is too low, check if your station is working right.";
 }
+
 if ($weatherflowoption=='yes'){
 	$section1 = file_get_contents('https://swd.weatherflow.com/swd/rest/observations/station/'.$weatherflowID.'?api_key='.$somethinggoeshere.'');
 	file_put_contents('jsondata/weatherflow.txt', $section1);

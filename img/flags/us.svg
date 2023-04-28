@@ -1,8 +1,43 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 70 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <use id="Background" xlink:href="#_Image1" x="0" y="0" width="70px" height="47px"/>
-    <defs>
-        <image id="_Image1" width="70px" height="47px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAYAAABe1bwWAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEJklEQVRoge2bb2wTZRzHP3dt6dqRK93RbZLBdIiiMhWXISTON4LTZb5gZLBoxBBBlhhQXhn3yhdoMn2xEEPC0sXIIMbZoIkZ/ss0Zg3iMgYmwBttNINlqdSuWTf6x+5aX5QedPT2J6a7A+7z4pI+9/ye+z3fPve953fJCdxCU2fgBWA/sBmoAASKxIlzncUaejFkgL+BX4Fu2ef9LndCAGjqDJQAnwK7liojgwgzmz5gj+zzxq03GrwsoSgGZheQAl61NHUGngc+AqiRbRx5bTWyQ+T8lYTau6PZQ2OtRGQqRTCqANBWL3Gg0cNyG1waT6p9e9ureaRyGZfHEsRTGc34lvEzSzPVxfP4O4/VnbUC+9/aKnN/uR1ZsjESmGbkrxht9RI1FXaeWrucWDLN271Xaalz8eKTEtUeOw67hb4zYQD2Nrgpd1lZX+UknlQ49lOYDatKeGZ9aV78lrVOLowl507LGLRb1m07eHToz7iz4aFSfGcjPFcrcercJMOjCaZjCg94lvHzpShPrHHQ44/g/z3Gzs1uuvqDbN/k5uMfw5y/kuDhCjujoSQzSoZEMsNgIHZbfN9wVL2ygVcMgNsKrAQ4NRThwliSqYTCRCwNkP13B8OMTqRY4bCoUV39QfVcji9HJlnhsOByiOqq0Iq/AygXmjoDGT2ubNCnkop4648a2UZvezV7G9x5nTqaPRzeUcnGKrva1lYv0b2nirZ6Ka9vb3s1Hc0eypzinPFGxwpgmu/tWAGODIQ5vKOSrwZCvNJQxolfsn6zscqOR7Ix9Mc0LXUuevwRILsquvqD7H5W5tBn40BWnGuTUcpdVjasKmEwEGMqoRSMB7AfP4pQtH31/ye3wTPNdxZFM18BsFgEZpTCw/cdWINo4BVTNPN1O0WUdEYz3uiY5quBCFnzvZ5M0zMQ4tHVDkYnUnw+HOXb36JcDSX5ZiSimucH/SEcdgtd/UG21kqcvjhNjz/CtckZBi9HGQ0lVfOdHX/64rTe810wupmvkZ9IAJZ12w6+BxCMKtTINt7dfl9edR2MKhxqXMmmB0vV6jgYVWirl2jdUqZW1/FUhkg8zYcvV+VV14XiAXY+7dJt0gvB9BgNdNvgJXa/qcN0F86iPUZA22PcDguSucGbNdCNgwCkFzDiXVNdvz/PBi+nxXGzui5svrHE3WG+5gZPA7O61sB8tamBOH+XexNTGA2E6/F/57yVMurh5iM5r/4TsicyBdoNXifOiXW+DoJ6mGOid7gIhTBvJQ1MYTQwhdHAFEYDUxgNTGE0EMKt+3QpCYyOuWI0MIXRwBRGAxH4R+8kDEhYBPx6Z2FABkXgmN5ZGJBuUfZ5fwBO6p2JgTgp+7zf58z3DeALPbMxCD6yWuS/Rgm37nsJeJ2bX5/cC+S+PvlE9nm/zjX+B/6JDr50XKS2AAAAAElFTkSuQmCC"/>
-    </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 47">
+  <title>us</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <rect width="70" height="47" rx="6.95" fill="#fff"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <path d="M6.94,0H63.18A6.82,6.82,0,0,1,70,6.82V9.4a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V6.94A6.94,6.94,0,0,1,6.94,0Z" fill="#ed5565"/>
+    <rect y="18.8" width="70" height="9.4" fill="#ed5565"/>
+    <path d="M0,37.6H70a0,0,0,0,1,0,0v2.58A6.82,6.82,0,0,1,63.18,47H6.82A6.82,6.82,0,0,1,0,40.18V37.6a0,0,0,0,1,0,0Z" fill="#ed5565"/>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <path d="M30,23.5H0V6.82A6.82,6.82,0,0,1,6.82,0H30Z" fill="#4a89dc"/>
+  </g>
+  <g id="Layer_4" data-name="Layer 4">
+    <g>
+      <polygon points="4.98 1.92 5.58 3.28 7.07 3.43 5.95 4.42 6.27 5.88 4.98 5.13 3.7 5.88 4.01 4.42 2.9 3.43 4.38 3.28 4.98 1.92" fill="#fff"/>
+      <polygon points="9.98 1.92 10.58 3.28 12.06 3.43 10.95 4.42 11.27 5.88 9.98 5.13 8.7 5.88 9.01 4.42 7.9 3.43 9.38 3.28 9.98 1.92" fill="#fff"/>
+      <polygon points="15 1.92 15.6 3.28 17.08 3.43 15.97 4.42 16.29 5.88 15 5.13 13.71 5.88 14.03 4.42 12.92 3.43 14.4 3.28 15 1.92" fill="#fff"/>
+      <polygon points="19.98 1.92 20.58 3.28 22.07 3.43 20.95 4.42 21.27 5.88 19.98 5.13 18.7 5.88 19.01 4.42 17.9 3.43 19.39 3.28 19.98 1.92" fill="#fff"/>
+      <polygon points="24.98 1.92 25.58 3.28 27.07 3.43 25.95 4.42 26.27 5.88 24.98 5.13 23.7 5.88 24.01 4.42 22.9 3.43 24.39 3.28 24.98 1.92" fill="#fff"/>
+      <polygon points="4.98 5.82 5.58 7.18 7.07 7.33 5.95 8.32 6.27 9.78 4.98 9.03 3.7 9.78 4.01 8.32 2.9 7.33 4.38 7.18 4.98 5.82" fill="#fff"/>
+      <polygon points="9.98 5.82 10.58 7.18 12.06 7.33 10.95 8.32 11.27 9.78 9.98 9.03 8.7 9.78 9.01 8.32 7.9 7.33 9.38 7.18 9.98 5.82" fill="#fff"/>
+      <polygon points="15 5.82 15.6 7.18 17.08 7.33 15.97 8.32 16.29 9.78 15 9.03 13.71 9.78 14.03 8.32 12.92 7.33 14.4 7.18 15 5.82" fill="#fff"/>
+      <polygon points="19.98 5.82 20.58 7.18 22.07 7.33 20.95 8.32 21.27 9.78 19.98 9.03 18.7 9.78 19.01 8.32 17.9 7.33 19.39 7.18 19.98 5.82" fill="#fff"/>
+      <polygon points="24.98 5.82 25.58 7.18 27.07 7.33 25.95 8.32 26.27 9.78 24.98 9.03 23.7 9.78 24.01 8.32 22.9 7.33 24.39 7.18 24.98 5.82" fill="#fff"/>
+      <polygon points="4.98 9.77 5.58 11.13 7.07 11.28 5.95 12.27 6.27 13.73 4.98 12.98 3.7 13.73 4.01 12.27 2.9 11.28 4.38 11.13 4.98 9.77" fill="#fff"/>
+      <polygon points="9.98 9.77 10.58 11.13 12.06 11.28 10.95 12.27 11.27 13.73 9.98 12.98 8.7 13.73 9.01 12.27 7.9 11.28 9.38 11.13 9.98 9.77" fill="#fff"/>
+      <polygon points="15 9.77 15.6 11.13 17.08 11.28 15.97 12.27 16.29 13.73 15 12.98 13.71 13.73 14.03 12.27 12.92 11.28 14.4 11.13 15 9.77" fill="#fff"/>
+      <polygon points="19.98 9.77 20.58 11.13 22.07 11.28 20.95 12.27 21.27 13.73 19.98 12.98 18.7 13.73 19.01 12.27 17.9 11.28 19.39 11.13 19.98 9.77" fill="#fff"/>
+      <polygon points="24.98 9.77 25.58 11.13 27.07 11.28 25.95 12.27 26.27 13.73 24.98 12.98 23.7 13.73 24.01 12.27 22.9 11.28 24.39 11.13 24.98 9.77" fill="#fff"/>
+      <polygon points="4.98 13.69 5.58 15.05 7.07 15.2 5.95 16.19 6.27 17.65 4.98 16.89 3.7 17.65 4.01 16.19 2.9 15.2 4.38 15.05 4.98 13.69" fill="#fff"/>
+      <polygon points="9.98 13.69 10.58 15.05 12.06 15.2 10.95 16.19 11.27 17.65 9.98 16.89 8.7 17.65 9.01 16.19 7.9 15.2 9.38 15.05 9.98 13.69" fill="#fff"/>
+      <polygon points="15 13.69 15.6 15.05 17.08 15.2 15.97 16.19 16.29 17.65 15 16.89 13.71 17.65 14.03 16.19 12.92 15.2 14.4 15.05 15 13.69" fill="#fff"/>
+      <polygon points="19.98 13.69 20.58 15.05 22.07 15.2 20.95 16.19 21.27 17.65 19.98 16.89 18.7 17.65 19.01 16.19 17.9 15.2 19.39 15.05 19.98 13.69" fill="#fff"/>
+      <polygon points="24.98 13.69 25.58 15.05 27.07 15.2 25.95 16.19 26.27 17.65 24.98 16.89 23.7 17.65 24.01 16.19 22.9 15.2 24.39 15.05 24.98 13.69" fill="#fff"/>
+      <polygon points="5 17.58 5.6 18.95 7.08 19.09 5.97 20.09 6.29 21.54 5 20.79 3.71 21.54 4.03 20.09 2.92 19.09 4.4 18.95 5 17.58" fill="#fff"/>
+      <polygon points="10 17.58 10.6 18.95 12.08 19.09 10.97 20.09 11.29 21.54 10 20.79 8.71 21.54 9.03 20.09 7.92 19.09 9.4 18.95 10 17.58" fill="#fff"/>
+      <polygon points="15.02 17.58 15.62 18.95 17.1 19.09 15.99 20.09 16.3 21.54 15.02 20.79 13.73 21.54 14.05 20.09 12.94 19.09 14.42 18.95 15.02 17.58" fill="#fff"/>
+      <polygon points="20 17.58 20.6 18.95 22.08 19.09 20.97 20.09 21.29 21.54 20 20.79 18.71 21.54 19.03 20.09 17.92 19.09 19.4 18.95 20 17.58" fill="#fff"/>
+      <polygon points="25 17.58 25.6 18.95 27.08 19.09 25.97 20.09 26.29 21.54 25 20.79 23.71 21.54 24.03 20.09 22.92 19.09 24.4 18.95 25 17.58" fill="#fff"/>
+    </g>
+  </g>
 </svg>

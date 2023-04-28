@@ -451,13 +451,14 @@ elseif($weather["rain_units"] =='in'){ echo number_format($weather["rain_alltime
 
 
  <main class="grid1">
-        <articlegraph>
+<?php if ($chartsource == 'mbcharts') {?>
+ <articlegraph>
     <div class=actualt><?php echo date('Y');?> Rainfall (<?php echo $weather["rain_units"]?>)</div>
-    <iframe    src="mbcharts/yearlyrainfallmedium.php" frameborder="0" scrolling="no" width="100%"    height="225px"></iframe>
+    <iframe src="mbcharts/yearlyrainfallmedium.php" frameborder="0" scrolling="no" width="100%"    height="225px"></iframe>
 
     </articlegraph>
-
-        <articlegraph style="height:30px">
+<?php }?>
+        <articlegraph style="height:8vh">
     <div class="lotemp">
     <?php echo $info?>
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank" style="font-size:8px;"> Charts rendered and compiled using <?php echo $creditschart ;?> </a></span>

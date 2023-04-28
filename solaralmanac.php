@@ -195,11 +195,11 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 <main class="grid1">
   <articlegraph> 
   <div class=actualt>Today <span style="color:#ff9350">Solar W/m<supwm2>2</supwm2></div>  
-  <iframe  src="mbcharts/todaysolarsmall.php" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+  <iframe  src="<?php echo $chartsource.'/'.($chartsource == 'nanocharts'?'nanochartsalmanac.php?t=72hr&c=solar':'todaysolarsmall.php');?>" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
    
   </articlegraph> 
   
-  <articlegraph style="height:30px">  
+  <articlegraph style="height:8vh">  
   <div class="lotemp">
   <?php echo $info?> 
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank" style="font-size:8px;"> Charts rendered and compiled using <?php echo $creditschart ;?> </a></span>

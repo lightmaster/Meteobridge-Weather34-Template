@@ -208,13 +208,14 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0;text-align:ce
 </article>
   </main>
   <main class="grid1">
+  <?php if ($chartsource == 'mbcharts') {?>
   <articlegraph>
   <div class=actualt><?php echo date('Y')?> Barometer Chart</div>
   <iframe  src="mbcharts/yearlybarometermedium.php" frameborder="0" scrolling="no" width="100%" height="205px"></iframe>
 
   </articlegraph>
-
-  <articlegraph style="height:30px">
+  <?php }?>
+  <articlegraph style="height:8vh">
   <div class="lotemp">
   <?php echo $info?>
 <a href="https://canvasjs.com" title="https://canvasjs.com" target="_blank" style="font-size:8px;"> Charts rendered and compiled using <?php echo $creditschart ;?> </a></span>
