@@ -1,21 +1,29 @@
-<?php 
+<?php
 //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
 include_once('common.php');include_once('livedata.php');
 # 27th Jan 2019 file edited by Ken True based on barometer units for non standard configurations by lightmaster https://www.wxforum.net/index.php?topic=36011.0
 header('Content-type: text/html; charset=utf-8');?>
 <meta http-equiv="Content-Type: text/html; charset=UTF-8" />
 <style>
-.weather34barometerarrowactual{-webkit-transform:rotate(<?php 
+.weather34barometerarrowactual{-webkit-transform:rotate(<?php
 if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa"){echo $weather["barometer"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer"]*50.6;}?>deg);
 transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa"){echo $weather["barometer"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer"]*50.6;}?>deg);}
-.weather34barometerarrowmin{-webkit-transform:rotate(<?php 
+.weather34barometerarrowmin{-webkit-transform:rotate(<?php
 if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa" ){echo $weather["barometer_min"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer_min"]*50.6;}?>deg);
 transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa" ){echo $weather["barometer_min"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer_min"]*50.6;}?>deg);}
-.weather34barometerarrowmax{-webkit-transform:rotate(<?php 
+.weather34barometerarrowmax{-webkit-transform:rotate(<?php
 if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa" ){echo $weather["barometer_max"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer_max"]*50.6;}?>deg);
 transform:rotate(<?php if ($weather["barometer_units"]=='mb' OR $weather["barometer_units"]=="hPa" ){echo $weather["barometer_max"]*0.02953*50.6;}else if ($weather["barometer_units"]=='inHg'){echo $weather["barometer_max"]*50.6;}?>deg);}
 </style>
-<div class="updatedtime"><span><?php if(file_exists($livedata)&&time()- filemtime($livedata)>300)echo $offline. '<offline> Offline </offline>';else echo $online." ".$weather["time"];?></div>  
+<div class="updatedtime">
+    <span>
+        <?php if (file_exists($livedata) && time() - filemtime($livedata)<300) {
+            echo $online.' '.$weather['time'];
+        } else {
+            echo $offline. '<offline> Offline </offline>';
+        }?>
+    </span>
+</div>
 <div class='barometermax'>
 <?php echo '<div class=barometerorange><valuetext>Max ('.$weather["thb0seapressmaxtime"].')<br><maxred><value>',$weather["barometer_max"],'</maxred>&nbsp;',$weather["barometer_units"],' </valuetext></div>';?></div>
 <div class='barometermin'>
