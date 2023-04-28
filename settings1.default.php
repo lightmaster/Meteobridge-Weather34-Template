@@ -35,6 +35,7 @@ $livedataFormat = "meteobridge-api";
 $livedata   = "mbridge/MBrealtimeupload.txt";
 $currentconditions   = "currentconditionsmetar34davis.php";
 $chartsource   = "mbcharts";
+$stationCron   = "HWS";
 $extralinks   = "no";
 $languages   = "yes";
 $dateFormat   = "d-m-Y";
@@ -107,4 +108,5 @@ $USAWeatherFinder = "";
 $extraLinkTitle = "";
 $extraLinkColor = "";
 $extraLinkURL = "";
+$goesLink = "";
 ?>
