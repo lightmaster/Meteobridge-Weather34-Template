@@ -193,12 +193,12 @@ else if ($weather["lux"]>=0) {echo '<div class=luxtoday1>'.number_format($weathe
    <article> 
   <div class=actualt><?php echo $info?> Guide</div>        
   <?php
-   echo '<purple>10+</purple> Avoid being outside seek a cool shaded area!<br>'; 	
-echo '<red>8-10</red> Avoid being outside during midday hours use <orange1>Sunscreen</orange1><br>'; 
-echo '<orange1>6-8</orange1> Seek shadea area during midday hours!<br>'; 	
-echo '<yellow>3-5</yellow> Midday hours! caution use some form of  protection<br>'; 	
-echo '<green>1-3</green> UVI No advisory required <br>';	 	
-echo '<green>0</green> UVI No cautions required<br>'; 
+   echo '<purple>10+</purple> Avoid being outside. Seek a cool shaded area!<br>'; 	
+echo '<red>8-10</red> Avoid being outside during midday hour. Use <orange1>Sunscreen</orange1>!<br>'; 
+echo '<orange1>6-8</orange1> Seek shaded area during midday hours!<br>'; 	
+echo '<yellow>3-5</yellow> Caution! Use some form of protection!<br>'; 	
+echo '<green>1-3</green> No advisory required.<br>';	 	
+echo '<green>0</green> No cautions required.<br>'; 
 ?>
  
 </article> 
