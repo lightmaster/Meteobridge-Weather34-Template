@@ -137,6 +137,7 @@ $extraLinkColor = "'. $_POST["extraLinkColor"]. '";
 $extraLinkURL = "'. $_POST["extraLinkURL"]. '";
 $goesLink = "'. $_POST["goesLink"]. '";
 $mbRemoteUrl = "'. $_POST["mbRemoteUrl"]. '";
+$gAnalyticID = "'. $_POST["gAnalyticID"]. '";
 ?>';
 
 $fp = FOPEN("settings1.php", "w") or die("Unable to open settings1.php file check file permissions !");
@@ -1969,6 +1970,33 @@ FCLOSE($fp);
           <br/>
           <br/>
           <br/>
+          <br/>
+
+          <!--##########################################################################################
+          #############                        Start of Google Analytics Sidebar               #########
+          ##############################################################################################-->
+
+          <div class="weatheroptionssidebar">
+            <?php echo $iicon;?>
+            Leave <span class='orange important'>blank</span> to not use Google Analytics. If it is blank, then no Analytics code will be used in the website.
+            <br/>
+            <?php echo $iicon;?>
+            Sign up for Google Analytics and get your ID <a href="https://analytics.google.com/analytics/web/" target="_blank">here</a>
+          </div>
+
+          <!--##########################################################################################
+          #############                        Start of Google Analytics Section               #########
+          ##############################################################################################-->
+
+          <div class="weatheroptions">
+            <div class="weathersectiontitle">Google Analytics</div>
+            <br/>
+            <div class="stationvalue">Google Analytics ID</div>
+            <?php echo $rightchevron;?>
+            <input name="gAnalyticID" type="text" id="gAnalyticID" value="<?php echo $gAnalyticID ;?>" class="choose">
+            <br/>
+            Enter your full Google Analytics ID (ie <span class='orange important'>UA-123456789-0</span>)
+          </div>
           <br/>
 
           <!--##########################################################################################

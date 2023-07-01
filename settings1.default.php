@@ -110,4 +110,5 @@ $extraLinkColor = "";
 $extraLinkURL = "";
 $goesLink = "";
 $mbRemoteUrl = "";
+$gAnalyticID = "";
 ?>
