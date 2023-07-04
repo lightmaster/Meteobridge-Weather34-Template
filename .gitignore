@@ -28,6 +28,8 @@ mbridge/MBrealtimeupload.txt
 mbridge/lastupdated.php
 **/yearlydata.js
 **/72hrdata.js
+**/72hrdataNEW.js
+**/yearlydataNEW.js
 
 #Ignore all backup files
 *.bak
