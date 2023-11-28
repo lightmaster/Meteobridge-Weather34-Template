@@ -15,26 +15,26 @@ error_reporting(0);
 
 <?php //current eqlist
 date_default_timezone_set($TZ);
-//$json_string=file_get_contents('http://earthquake-report.com/feeds/recent-eq?json');
 $json_string=file_get_contents('jsondata/eqnotification.txt');
 $parsed_json=json_decode($json_string,true);
 $magnitude = array();
 $eqtitle = array();
 $depth = array();
+$utime = array();
 $time = array();
 $lati = array();
 $longi = array();
 $eventime = array();
 for ($i = 0; $i < 100; $i++) {
-	$magnitude[$i]=number_format($parsed_json{$i}{'magnitude'},1);
-	$eqtitle[$i]=$parsed_json{$i}['title'];
-	$depth[$i]=$parsed_json{$i}['depth'];
-	$time[$i]=$parsed_json{$i}['date_time'];
-	$lati[$i]=$parsed_json{$i}['latitude'];
-	$longi[$i]=$parsed_json{$i}['longitude'];
-	$eventime[$i]=date($timeFormatShort, strtotime($time[$i]) );
-	$eqdist[$i] = round(distance($lat, $lon, $lati[$i], $longi[$i])) ;
-	
+	$magnitude[$i]=number_format($parsed_json["features"][$i]["properties"]["mag"],1);
+	$eqtitle[$i]=$parsed_json["features"][$i]["properties"]["title"];
+	$depth[$i]=$parsed_json["features"][$i]["geometry"]["coordinates"][2];
+    $utime[$i]=round($parsed_json["features"][$i]["properties"]["time"] / 1000, 0, PHP_ROUND_HALF_UP);
+	$time[$i]=gmdate("Y-m-d\TH:i:s\Z", $utime[$i]);
+	$lati[$i]=$parsed_json["features"][$i]["geometry"]["coordinates"][1];
+	$longi[$i]=$parsed_json["features"][$i]["geometry"]["coordinates"][0];
+	$eventime[$i]=date($timeFormatShort, $utime[$i]);
+	$eqdist[$i] = round(distance($lat, $lon, $lati[$i], $longi[$i]));
 	
 }
 $eqalert='<svg id="i-activity" viewBox="0 0 32 32" width="52" height="52" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -120,12 +120,10 @@ orange1{color:rgba(255, 131, 47, 1.000);}
   <article>  
    <div class=actualt>&nbsp;&nbsp Recent Earthquake </div>        
     <?php 
-				if($magnitude[0]>=7){echo "<div class=mag9-10>",$magnitude[0],"";}
-				else if($magnitude[0]>=5.8){echo "<div class=mag9-10>",$magnitude[0],"";}
-				else if($magnitude[0]>=5){echo "<div class=mag6-8>",$magnitude[0],"";}
+				if($magnitude[0]>=9){echo "<div class=mag9-10>",$magnitude[0],"";}
+				else if($magnitude[0]>=6){echo "<div class=mag6-8>",$magnitude[0],"";}
 				else if($magnitude[0]>=4){echo "<div class=mag4-5>",$magnitude[0],"";}
-				else if($magnitude[0]>=2){echo "<div class=mag1-3>",$magnitude[0],"";}	
-				else if($magnitude[0]<2){echo "<div class=mag1-3>N/A";}		
+				else {echo "<div class=mag1-3>",$magnitude[0],"";}	
 						
 				?>
 <div></div>
@@ -135,46 +133,18 @@ orange1{color:rgba(255, 131, 47, 1.000);}
 <div class="hitempy">
 <?php
 	echo "";
-for ($i = 0; $i < 1; $i++) {
+//for ($i = 0; $i < 1; $i++) {
 	// EQ Latest earthquake 
 	
 	if ($eqdist[0]<1300)  {
 	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[0]."</div></span>";
 	echo $eqtitle[0];
 	} 
-	else if ($magnitude[0]>7)  {
+	else {
 	echo "<div class='time'><span>",$eventime[0] ,"</div></span>";
 	echo $eqtitle[0] ;
 	} 
-	
-	
-	else if ($magnitude[0]>5.7)  {
-	echo "<div class='time'><span>",$eventime[0] ,"</div></span>";
-	echo $eqtitle[0] ;
-	} 
-	
-	
-	else if ($magnitude[0]>5.2)  {
-	echo "<div class='time'><span>",$eventime[0] ,"</div></span>";
-	echo $eqtitle[0] ;
-	} 
-	
-	else if ($magnitude[0]>4)  {
-	echo "<div class='time'><span>",$eventime[0] ,"</div></span>";
-	echo $eqtitle[0] ;
-	} 
-	
-	
-	else if ($magnitude[0]>3)  {
-	echo "<div class='time'><span>",$eventime[0] ,"</div></span>";
-	echo $eqtitle[0] ;
-	} 
-	
-	else if ($magnitude[0]>2)  {
-	echo "<div class='time'><span>",$eventime[0] ,"</div></span>";
-	echo $eqtitle[0] ;
-	} 
-}
+//}
 
 ?><br>
 <?php
@@ -202,12 +172,11 @@ else if ($windunit == 'mph') {
  <article>  
    <div class=actualt>&nbsp;&nbsp Recent Earthquake </div>        
     <?php  //1
-				if($magnitude[1]>=7){echo "<div class=mag9-10>",$magnitude[1],"";}
-				else if($magnitude[1]>=5.8){echo "<div class=mag9-10>",$magnitude[1],"";}
-				else if($magnitude[1]>=5){echo "<div class=mag6-8>",$magnitude[1],"";}
+
+				if($magnitude[1]>=9){echo "<div class=mag9-10>",$magnitude[1],"";}
+				else if($magnitude[1]>=6){echo "<div class=mag6-8>",$magnitude[1],"";}
 				else if($magnitude[1]>=4){echo "<div class=mag4-5>",$magnitude[1],"";}
-				else if($magnitude[1]>=2){echo "<div class=mag1-3>",$magnitude[1],"";}	
-				else if($magnitude[1]<2){echo "<div class=mag1-3>N/A";}		
+				else {echo "<div class=mag1-3>",$magnitude[1],"";}	
 						
 				?>
 <div></div>
@@ -217,46 +186,18 @@ else if ($windunit == 'mph') {
 <div class="hitempy">
 <?php
 	echo "";
-for ($i = 0; $i < 1; $i++) {
-	// EQ Latest earthquake 
+//for ($i = 1; $i < 2; $i++) {
+	// Temp fix
 	
 	if ($eqdist[1]<1300)  {
 	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[1]."</div></span>";
 	echo $eqtitle[1];
 	} 
-	else if ($magnitude[1]>7)  {
+	else {
 	echo "<div class='time'><span>",$eventime[1] ,"</div></span>";
 	echo $eqtitle[1] ;
 	} 
-	
-	
-	else if ($magnitude[1]>5.7)  {
-	echo "<div class='time'><span>",$eventime[1] ,"</div></span>";
-	echo $eqtitle[1] ;
-	} 
-	
-	
-	else if ($magnitude[1]>5.2)  {
-	echo "<div class='time'><span>",$eventime[1] ,"</div></span>";
-	echo $eqtitle[1] ;
-	} 
-	
-	else if ($magnitude[1]>4)  {
-	echo "<div class='time'><span>",$eventime[1] ,"</div></span>";
-	echo $eqtitle[1] ;
-	} 
-	
-	
-	else if ($magnitude[1]>3)  {
-	echo "<div class='time'><span>",$eventime[1] ,"</div></span>";
-	echo $eqtitle[0] ;
-	} 
-	
-	else if ($magnitude[1]>2)  {
-	echo "<div class='time'><span>",$eventime[1] ,"</div></span>";
-	echo $eqtitle[1] ;
-	} 
-}
+//}
 
 ?><br>
 <?php
@@ -284,12 +225,12 @@ else if ($windunit == 'mph') {
    <article>  
    <div class=actualt>&nbsp;&nbsp Recent Earthquake </div>        
     <?php //2
-				if($magnitude[2]>=7){echo "<div class=mag9-10>",$magnitude[2],"";}
-				else if($magnitude[2]>=5.8){echo "<div class=mag9-10>",$magnitude[2],"";}
-				else if($magnitude[2]>=5){echo "<div class=mag6-8>",$magnitude[2],"";}
+
+				if($magnitude[2]>=9){echo "<div class=mag9-10>",$magnitude[2],"";}
+				else if($magnitude[2]>=6){echo "<div class=mag6-8>",$magnitude[2],"";}
 				else if($magnitude[2]>=4){echo "<div class=mag4-5>",$magnitude[2],"";}
-				else if($magnitude[2]>=2){echo "<div class=mag1-3>",$magnitude[2],"";}	
-				else if($magnitude[2]<2){echo "<div class=mag1-3>N/A";}		
+				else {echo "<div class=mag1-3>",$magnitude[2],"";}	
+
 						
 				?>
 <div></div>
@@ -299,46 +240,18 @@ else if ($windunit == 'mph') {
 <div class="hitempy">
 <?php
 	echo "";
-for ($i = 0; $i < 1; $i++) {
+//for ($i = 2; $i < 3; $i++) {
 	// EQ Latest earthquake 
 	
 	if ($eqdist[2]<1300)  {
 	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[2]."</div></span>";
 	echo $eqtitle[2];
 	} 
-	else if ($magnitude[2]>7)  {
+	else {
 	echo "<div class='time'><span>",$eventime[2] ,"</div></span>";
 	echo $eqtitle[2] ;
 	} 
-	
-	
-	else if ($magnitude[2]>5.7)  {
-	echo "<div class='time'><span>",$eventime[2] ,"</div></span>";
-	echo $eqtitle[2] ;
-	} 
-	
-	
-	else if ($magnitude[2]>5.2)  {
-	echo "<div class='time'><span>",$eventime[2] ,"</div></span>";
-	echo $eqtitle[2] ;
-	} 
-	
-	else if ($magnitude[2]>4)  {
-	echo "<div class='time'><span>",$eventime[2] ,"</div></span>";
-	echo $eqtitle[2] ;
-	} 
-	
-	
-	else if ($magnitude[2]>3)  {
-	echo "<div class='time'><span>",$eventime[2] ,"</div></span>";
-	echo $eqtitle[0] ;
-	} 
-	
-	else if ($magnitude[2]>2)  {
-	echo "<div class='time'><span>",$eventime[2] ,"</div></span>";
-	echo $eqtitle[2] ;
-	} 
-}
+//}
 
 ?><br>
 <?php
@@ -366,12 +279,12 @@ else if ($windunit == 'mph') {
    <article>  
    <div class=actualt>&nbsp;&nbsp Recent Earthquake </div>        
     <?php //3
-				if($magnitude[3]>=7){echo "<div class=mag9-10>",$magnitude[3],"";}
-				else if($magnitude[3]>=5.8){echo "<div class=mag9-10>",$magnitude[3],"";}
-				else if($magnitude[3]>=5){echo "<div class=mag6-8>",$magnitude[3],"";}
+
+				if($magnitude[3]>=9){echo "<div class=mag9-10>",$magnitude[3],"";}
+				else if($magnitude[3]>=6){echo "<div class=mag6-8>",$magnitude[3],"";}
 				else if($magnitude[3]>=4){echo "<div class=mag4-5>",$magnitude[3],"";}
-				else if($magnitude[3]>=2){echo "<div class=mag1-3>",$magnitude[3],"";}	
-				else if($magnitude[3]<2){echo "<div class=mag1-3>N/A";}		
+				else {echo "<div class=mag1-3>",$magnitude[3],"";}	
+
 						
 				?>
 <div></div>
@@ -381,46 +294,18 @@ else if ($windunit == 'mph') {
 <div class="hitempy">
 <?php
 	echo "";
-for ($i = 0; $i < 1; $i++) {
+//for ($i = 3; $i < 4; $i++) {
 	// EQ Latest earthquake 
 	
 	if ($eqdist[3]<1300)  {
 	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[3]."</div></span>";
 	echo $eqtitle[3];
 	} 
-	else if ($magnitude[3]>7)  {
+	else {
 	echo "<div class='time'><span>",$eventime[3] ,"</div></span>";
 	echo $eqtitle[3] ;
 	} 
-	
-	
-	else if ($magnitude[3]>5.7)  {
-	echo "<div class='time'><span>",$eventime[3] ,"</div></span>";
-	echo $eqtitle[3] ;
-	} 
-	
-	
-	else if ($magnitude[3]>5.2)  {
-	echo "<div class='time'><span>",$eventime[3] ,"</div></span>";
-	echo $eqtitle[3] ;
-	} 
-	
-	else if ($magnitude[3]>4)  {
-	echo "<div class='time'><span>",$eventime[3] ,"</div></span>";
-	echo $eqtitle[3] ;
-	} 
-	
-	
-	else if ($magnitude[3]>3)  {
-	echo "<div class='time'><span>",$eventime[3] ,"</div></span>";
-	echo $eqtitle[3] ;
-	} 
-	
-	else if ($magnitude[3]>2)  {
-	echo "<div class='time'><span>",$eventime[3] ,"</div></span>";
-	echo $eqtitle[3] ;
-	} 
-}
+//}
 
 ?><br>
 <?php
@@ -448,12 +333,12 @@ else if ($windunit == 'mph') {
  <article>  
    <div class=actualt>&nbsp;&nbsp Recent Earthquake </div>        
     <?php //4
-				if($magnitude[4]>=7){echo "<div class=mag9-10>",$magnitude[4],"";}
-				else if($magnitude[4]>=5.8){echo "<div class=mag9-10>",$magnitude[4],"";}
-				else if($magnitude[4]>=5){echo "<div class=mag6-8>",$magnitude[4],"";}
+
+				if($magnitude[4]>=9){echo "<div class=mag9-10>",$magnitude[4],"";}
+				else if($magnitude[4]>=6){echo "<div class=mag6-8>",$magnitude[4],"";}
 				else if($magnitude[4]>=4){echo "<div class=mag4-5>",$magnitude[4],"";}
-				else if($magnitude[4]>=2){echo "<div class=mag1-3>",$magnitude[4],"";}	
-				else if($magnitude[4]<2){echo "<div class=mag1-3>N/A";}		
+				else {echo "<div class=mag1-3>",$magnitude[4],"";}	
+
 						
 				?>
 <div></div>
@@ -463,46 +348,18 @@ else if ($windunit == 'mph') {
 <div class="hitempy">
 <?php
 	echo "";
-for ($i = 0; $i < 1; $i++) {
+//for ($i = 4; $i < 5; $i++) {
 	// EQ Latest earthquake 
 	
 	if ($eqdist[4]<1300)  {
 	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[4]."</div></span>";
 	echo $eqtitle[4];
 	} 
-	else if ($magnitude[4]>7)  {
+	else {
 	echo "<div class='time'><span>",$eventime[4] ,"</div></span>";
 	echo $eqtitle[4] ;
 	} 
-	
-	
-	else if ($magnitude[4]>5.7)  {
-	echo "<div class='time'><span>",$eventime[4] ,"</div></span>";
-	echo $eqtitle[4] ;
-	} 
-	
-	
-	else if ($magnitude[4]>5.2)  {
-	echo "<div class='time'><span>",$eventime[4] ,"</div></span>";
-	echo $eqtitle[4] ;
-	} 
-	
-	else if ($magnitude[4]>4)  {
-	echo "<div class='time'><span>",$eventime[4] ,"</div></span>";
-	echo $eqtitle[4] ;
-	} 
-	
-	
-	else if ($magnitude[4]>3)  {
-	echo "<div class='time'><span>",$eventime[4] ,"</div></span>";
-	echo $eqtitle[4] ;
-	} 
-	
-	else if ($magnitude[4]>2)  {
-	echo "<div class='time'><span>",$eventime[4] ,"</div></span>";
-	echo $eqtitle[4] ;
-	} 
-}
+//}
 
 ?><br>
 <?php
@@ -530,12 +387,12 @@ else if ($windunit == 'mph') {
  <article>  
    <div class=actualt>&nbsp;&nbsp Recent Earthquake </div>        
     <?php //5
-				if($magnitude[5]>=7){echo "<div class=mag9-10>",$magnitude[5],"";}
-				else if($magnitude[5]>=5.8){echo "<div class=mag9-10>",$magnitude[5],"";}
-				else if($magnitude[5]>=5){echo "<div class=mag6-8>",$magnitude[5],"";}
+
+				if($magnitude[5]>=9){echo "<div class=mag9-10>",$magnitude[5],"";}
+				else if($magnitude[5]>=6){echo "<div class=mag6-8>",$magnitude[5],"";}
 				else if($magnitude[5]>=4){echo "<div class=mag4-5>",$magnitude[5],"";}
-				else if($magnitude[5]>=2){echo "<div class=mag1-3>",$magnitude[5],"";}	
-				else if($magnitude[5]<2){echo "<div class=mag1-3>N/A";}		
+				else {echo "<div class=mag1-3>",$magnitude[5],"";}	
+
 						
 				?>
 <div></div>
@@ -545,46 +402,18 @@ else if ($windunit == 'mph') {
 <div class="hitempy">
 <?php
 	echo "";
-for ($i = 0; $i < 1; $i++) {
+//for ($i = 5; $i < 6; $i++) {
 	// EQ Latest earthquake 
 	
 	if ($eqdist[5]<1300)  {
 	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[5]."</div></span>";
 	echo $eqtitle[5];
 	} 
-	else if ($magnitude[5]>7)  {
-	echo "<div class='time'><span>",$eventime[5] ,"</div></span>";
-	echo $eqtitle[0] ;
-	} 
-	
-	
-	else if ($magnitude[5]>5.7)  {
+	else {
 	echo "<div class='time'><span>",$eventime[5] ,"</div></span>";
 	echo $eqtitle[5] ;
 	} 
-	
-	
-	else if ($magnitude[5]>5.2)  {
-	echo "<div class='time'><span>",$eventime[5] ,"</div></span>";
-	echo $eqtitle[5] ;
-	} 
-	
-	else if ($magnitude[5]>4)  {
-	echo "<div class='time'><span>",$eventime[5] ,"</div></span>";
-	echo $eqtitle[5] ;
-	} 
-	
-	
-	else if ($magnitude[5]>3)  {
-	echo "<div class='time'><span>",$eventime[5] ,"</div></span>";
-	echo $eqtitle[5] ;
-	} 
-	
-	else if ($magnitude[5]>2)  {
-	echo "<div class='time'><span>",$eventime[5] ,"</div></span>";
-	echo $eqtitle[5] ;
-	} 
-}
+//}
 
 ?><br>
 <?php
@@ -613,12 +442,11 @@ else if ($windunit == 'mph') {
 <article>  
    <div class=actualt>&nbsp;&nbsp Recent Earthquake </div>        
     <?php //6
-				if($magnitude[6]>=7){echo "<div class=mag9-10>",$magnitude[6],"";}
-				else if($magnitude[6]>=5.8){echo "<div class=mag9-10>",$magnitude[6],"";}
-				else if($magnitude[6]>=5){echo "<div class=mag6-8>",$magnitude[6],"";}
+
+				if($magnitude[6]>=9){echo "<div class=mag9-10>",$magnitude[6],"";}
+				else if($magnitude[6]>=6){echo "<div class=mag6-8>",$magnitude[6],"";}
 				else if($magnitude[6]>=4){echo "<div class=mag4-5>",$magnitude[6],"";}
-				else if($magnitude[6]>=2){echo "<div class=mag1-3>",$magnitude[6],"";}	
-				else if($magnitude[6]<2){echo "<div class=mag1-3>N/A";}		
+				else {echo "<div class=mag1-3>",$magnitude[6],"";}	
 						
 				?>
 <div></div>
@@ -628,46 +456,18 @@ else if ($windunit == 'mph') {
 <div class="hitempy">
 <?php
 	echo "";
-for ($i = 0; $i < 1; $i++) {
+//for ($i = 6; $i < 7; $i++) {
 	// EQ Latest earthquake 
 	
 	if ($eqdist[6]<1300)  {
 	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[6]."</div></span>";
 	echo $eqtitle[6];
 	} 
-	else if ($magnitude[6]>7)  {
+	else {
 	echo "<div class='time'><span>",$eventime[6] ,"</div></span>";
 	echo $eqtitle[6] ;
 	} 
-	
-	
-	else if ($magnitude[6]>5.7)  {
-	echo "<div class='time'><span>",$eventime[6] ,"</div></span>";
-	echo $eqtitle[6] ;
-	} 
-	
-	
-	else if ($magnitude[6]>5.2)  {
-	echo "<div class='time'><span>",$eventime[6] ,"</div></span>";
-	echo $eqtitle[6] ;
-	} 
-	
-	else if ($magnitude[6]>4)  {
-	echo "<div class='time'><span>",$eventime[6] ,"</div></span>";
-	echo $eqtitle[6] ;
-	} 
-	
-	
-	else if ($magnitude[6]>3)  {
-	echo "<div class='time'><span>",$eventime[6] ,"</div></span>";
-	echo $eqtitle[6] ;
-	} 
-	
-	else if ($magnitude[6]>2)  {
-	echo "<div class='time'><span>",$eventime[6] ,"</div></span>";
-	echo $eqtitle[6] ;
-	} 
-}
+//}
 
 ?><br>
 <?php
@@ -695,12 +495,11 @@ else if ($windunit == 'mph') {
 <article>  
    <div class=actualt>&nbsp;&nbsp Recent Earthquake </div>        
     <?php //7
-				if($magnitude[7]>=7){echo "<div class=mag9-10>",$magnitude[7],"";}
-				else if($magnitude[7]>=5.8){echo "<div class=mag9-10>",$magnitude[7],"";}
-				else if($magnitude[7]>=5){echo "<div class=mag6-8>",$magnitude[7],"";}
+
+				if($magnitude[7]>=9){echo "<div class=mag9-10>",$magnitude[7],"";}
+				else if($magnitude[7]>=6){echo "<div class=mag6-8>",$magnitude[7],"";}
 				else if($magnitude[7]>=4){echo "<div class=mag4-5>",$magnitude[7],"";}
-				else if($magnitude[7]>=2){echo "<div class=mag1-3>",$magnitude[7],"";}	
-				else if($magnitude[7]<2){echo "<div class=mag1-3>N/A";}		
+				else {echo "<div class=mag1-3>",$magnitude[7],"";}	
 						
 				?>
 <div></div>
@@ -710,46 +509,18 @@ else if ($windunit == 'mph') {
 <div class="hitempy">
 <?php
 	echo "";
-for ($i = 0; $i < 1; $i++) {
+//for ($i = 7; $i < 8; $i++) {
 	// EQ Latest earthquake 
 	
 	if ($eqdist[7]<1300)  {
 	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[7]."</div></span>";
 	echo $eqtitle[7];
 	} 
-	else if ($magnitude[7]>7)  {
+	else {
 	echo "<div class='time'><span>",$eventime[7] ,"</div></span>";
 	echo $eqtitle[7] ;
 	} 
-	
-	
-	else if ($magnitude[7]>5.7)  {
-	echo "<div class='time'><span>",$eventime[7] ,"</div></span>";
-	echo $eqtitle[7] ;
-	} 
-	
-	
-	else if ($magnitude[7]>5.2)  {
-	echo "<div class='time'><span>",$eventime[7] ,"</div></span>";
-	echo $eqtitle[7] ;
-	} 
-	
-	else if ($magnitude[7]>4)  {
-	echo "<div class='time'><span>",$eventime[7] ,"</div></span>";
-	echo $eqtitle[7] ;
-	} 
-	
-	
-	else if ($magnitude[7]>3)  {
-	echo "<div class='time'><span>",$eventime[7] ,"</div></span>";
-	echo $eqtitle[7] ;
-	} 
-	
-	else if ($magnitude[7]>2)  {
-	echo "<div class='time'><span>",$eventime[7] ,"</div></span>";
-	echo $eqtitle[7] ;
-	} 
-}
+//}
 
 ?><br>
 <?php

@@ -57,32 +57,32 @@ if ($metarapikey != "11111111111111"){
     echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Please set your Metar API Key in EasyWeatherSetup.php<br>':"<span style='color:red;font-weight:bold'><pre>Please set your Metar API Key in EasyWeatherSetup.php</pre></span>");
 }
 
-#Update DarkSky
-if ($position6=="forecast3ds.php" || $position6=='forecast3wu.php' || $position6=='forecast3wularge.php' || $position4 == "advisory.php"){
-    if ($apikey != "11111111111111") {
-        // weather34 darksky  curl based
-        $url4a = 'https://api.forecast.io/forecast/'.$apikey.'/'.$lat.','.$lon.'?lang='.$language.'&units='.$darkskyunit ;
-        $ch4a = curl_init($url4a);
-        $filename4a = '../jsondata/darksky.txt';
-        $complete_save_loc4a = $filename4a;
-        $fp4a = fopen($complete_save_loc4a, 'wb');
-        curl_setopt($ch4a, CURLOPT_FILE, $fp4a);
-        curl_setopt($ch4a, CURLOPT_HEADER, 0);
-        $result = curl_exec($ch4a);
-        if ($result) {
-            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'DarkSky updated<br>':"<pre>DarkSky updated</pre>");
-        } else {
-            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating DarkSky<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating DarkSky</pre></span>");
-        }
-        curl_close($ch4a);
-        fclose($fp4a);
-        unset($result);
-    } else {
-        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Please set your DarkSky API Key in EasyWeatherSetup.php<br>':"<span style='color:red;font-weight:bold'><pre>Please set your DarkSky API Key in EasyWeatherSetup.php</pre></span>");
-    }
-} else {
-    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Not set to use DarkSky<br>':"<pre>Not set to use DarkSky</pre>");
-}
+#Update DarkSky ***** DarkSky is no longer Operational *****
+//if ($position6=="forecast3ds.php" || $position6=='forecast3wu.php' || $position6=='forecast3wularge.php' || $position4 == "advisory.php"){
+//    if ($apikey != "11111111111111") {
+//        // weather34 darksky  curl based
+//        $url4a = 'https://api.forecast.io/forecast/'.$apikey.'/'.$lat.','.$lon.'?lang='.$language.'&units='.$darkskyunit ;
+//        $ch4a = curl_init($url4a);
+//        $filename4a = '../jsondata/darksky.txt';
+//        $complete_save_loc4a = $filename4a;
+//        $fp4a = fopen($complete_save_loc4a, 'wb');
+//        curl_setopt($ch4a, CURLOPT_FILE, $fp4a);
+//        curl_setopt($ch4a, CURLOPT_HEADER, 0);
+//        $result = curl_exec($ch4a);
+//        if ($result) {
+//            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'DarkSky updated<br>':"<pre>DarkSky updated</pre>");
+//        } else {
+//            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating DarkSky<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating DarkSky</pre></span>");
+//        }
+//        curl_close($ch4a);
+//        fclose($fp4a);
+//        unset($result);
+//    } else {
+//        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Please set your DarkSky API Key in EasyWeatherSetup.php<br>':"<span style='color:red;font-weight:bold'><pre>Please set your DarkSky API Key in EasyWeatherSetup.php</pre></span>");
+//    }
+//} else {
+//    echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Not set to use DarkSky<br>':"<pre>Not set to use DarkSky</pre>");
+//}
 
 #Update WU
 if ($position6=="forecast3wu.php" || $position6=="forecast3wularge.php"){
@@ -112,7 +112,8 @@ if ($position6=="forecast3wu.php" || $position6=="forecast3wularge.php"){
 }
 
 // weather34 earthquakes curl based
-$url1 = 'https://earthquake-report.com/feeds/recent-eq?json';
+//$url1 = 'https://earthquake-report.com/feeds/recent-eq?json';
+$url1 = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
 $ch1 = curl_init($url1);
 $filename1 = '../jsondata/eqnotification.txt';
 $complete_save_loc1 = $filename1;
@@ -130,7 +131,8 @@ fclose($fp1);
 unset($result);
 
 //k-index curl based
-$url2a = 'https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json';
+//$url2a = 'https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json';
+$url2a = 'https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json';
 $ch2a = curl_init($url2a);
 $filename2a = '../jsondata/kindex.txt';
 $complete_save_loc2a = $filename2a;

@@ -59,7 +59,8 @@ curl_close($ch);
 fclose($fp);
 ?>
 <?php // weather34 earthquakes curl based
-$url1 = 'https://earthquake-report.com/feeds/recent-eq?json'; 
+//$url1 = 'https://earthquake-report.com/feeds/recent-eq?json'; 
+$url1 = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
 $ch1 = curl_init($url1);
 $filename1 = '../jsondata/eqnotification.txt';
 $complete_save_loc1 = $filename1; 
@@ -71,7 +72,8 @@ curl_close($ch1);
 fclose($fp1);
 ?>
 <?php //k-index curl based
-$url2 = 'https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json'; 
+//$url2 = 'https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json'; 
+$url2 = 'https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json';
 $ch2 = curl_init($url2);
 $filename2 = '../jsondata/kindex.txt';
 $complete_save_loc2 = $filename2; 
