@@ -182,7 +182,7 @@ orange1{color:rgba(255, 131, 47, 1.000);}
   <br>
   <br>
   <?php echo $info?>  
-<a href="http://earthquake-report.com" title="Earthquake-Report.com" target="_blank">Data © <?php echo date('Y');?> Earthquake-Report.com</a></span>
+<a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php" title="USGS Earthquake GeoJSON Summary Feed" target="_blank">Data © <?php echo date('Y');?> USGS Earthquake GeoJSON Summary Feed</a></span>
 
   
   </article> 
