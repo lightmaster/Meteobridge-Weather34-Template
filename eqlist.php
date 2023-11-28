@@ -50,7 +50,7 @@ for ($i = 0; $i < $eqcount; $i++) {
 
 <?php
 function formatArticle($item) {
-	global $magnitude, $eqdist, $eqtitle, $stationlocation, $windunit;
+	global $magnitude, $eqdist, $eqtitle, $stationlocation, $windunit, $time;
     echo ("<article>\n");  
 
     echo ("<div class=actualt>&nbsp;&nbsp Recent Earthquake </div>\n");      
@@ -68,12 +68,12 @@ function formatArticle($item) {
 
 	//Title
 	if ($eqdist[$item]<1300)  {
-	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$eventime[$item]."</span></div>";
+	echo "<div class='time'><orange1>*Regional</orange1> <span> ".$time[$item]."</span></div>";
 	echo $eqtitle[$item];
 	} 
 	else {
-	echo "<div class='time'><span>",$eventime[$item] ,"</span></div>";
-	echo $eqtitle[$item] ;
+	echo "<div class='time'><span>",$time[$item] ,"</span></div>";
+	echo $eqtitle[$item];
 	} 
 
 	echo ("<br>");
