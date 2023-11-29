@@ -26,19 +26,26 @@ $lati = array();
 $longi = array();
 $eventime = array();
 $eqdist = array();
+$file_elements = count($parsed_json["features"]); //For safety checks
+// Set minimum size of earthquakes to report - set to 0.0 for all
+$min_eq = 3.5; // Based on research - 3.5 is the minimum that can be felt
+// Set max number of earthquakes to report
 $eqcount = 8;
-for ($i = 0; $i < $eqcount; $i++) {
-	$magnitude[$i]=number_format($parsed_json["features"][$i]["properties"]["mag"],1);
-	$eqtitle[$i]=$parsed_json["features"][$i]["properties"]["title"];
-	$depth[$i]=$parsed_json["features"][$i]["geometry"]["coordinates"][2];
-    $utime[$i]=round($parsed_json["features"][$i]["properties"]["time"] / 1000, 0, PHP_ROUND_HALF_UP);
-	$time[$i]=gmdate("Y-m-d\TH:i:s\Z", $utime[$i]);
-	$lati[$i]=$parsed_json["features"][$i]["geometry"]["coordinates"][1];
-	$longi[$i]=$parsed_json["features"][$i]["geometry"]["coordinates"][0];
-	$eventime[$i]=date($timeFormatShort, $utime[$i]);
-	$eqdist[$i] = round(distance($lat, $lon, $lati[$i], $longi[$i]));
-	
+for ($i = 0, $a = 0; $i < $file_elements && $a < $eqcount; $i++) {
+	if (number_format($parsed_json["features"][$i]["properties"]["mag"],1) >= $min_eq) {
+	    $magnitude[$a]=number_format($parsed_json["features"][$i]["properties"]["mag"],1);
+	    $eqtitle[$a]=$parsed_json["features"][$i]["properties"]["title"];
+	    $depth[$a]=$parsed_json["features"][$i]["geometry"]["coordinates"][2];
+        $utime[$a]=round($parsed_json["features"][$i]["properties"]["time"] / 1000, 0, PHP_ROUND_HALF_UP);
+	    $time[$a]=gmdate("Y-m-d\TH:i:s\Z", $utime[$a]);
+	    $lati[$a]=$parsed_json["features"][$i]["geometry"]["coordinates"][1];
+	    $longi[$a]=$parsed_json["features"][$i]["geometry"]["coordinates"][0];
+	    $eventime[$a]=date($timeFormatShort, $utime[$a]);
+	    $eqdist[$a] = round(distance($lat, $lon, $lati[$i], $longi[$i]));
+		$a+=1;
+	}
 }
+$eqcount = $a; // In case we don't get enough eq meeting the min magnitude
 
 //$eqalert='<svg id="i-activity" viewBox="0 0 32 32" width="52" height="52" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
 //    <path d="M4 16 L11 16 14 29 18 3 21 16 28 16" />
@@ -77,18 +84,20 @@ function formatArticle($item) {
 	} 
 
 	echo ("<br>");
-    if ($windunit == 'mph' && $eqdist[$item]<200) {
-		 echo round($eqdist[$item]  * 0.621371) ." Miles from<br> $stationlocation";
+	$eqclose=200; //This is km
+    if ($windunit == 'mph') {
+		if ($eqdist[$item]<$eqclose) {
+		    echo "<orange>",round($eqdist[$item] * 0.621371) ." </orange>Miles from<br> $stationlocation";
+		} else {
+		    echo round($eqdist[$item]  * 0.621371) ." Miles from<br> $stationlocation";
+		}
 	}
-	
-    else if ($windunit == 'km/h' && $eqdist[$item]<700) {
-		 echo "<orange>",round($eqdist[$item]) ." </orange>Km from<br> $stationlocation";
-	}			
-
-    else if ($windunit == 'mph') {
-		 echo round($eqdist[$item]  * 0.621371) ." Miles from<br> $stationlocation";
-	} else {
-		 echo $eqdist[$item] ." Km from<br> $stationlocation" ;
+    else { //if ($windunit == 'km/h') { -- No reason to check this
+		if ($eqdist[$item]<$eqclose) {
+		    echo "<orange>",round($eqdist[$item]) ." </orange>Km from<br> $stationlocation";
+		} else {
+		    echo round($eqdist[$item]) ." Km from<br> $stationlocation" ;
+		}
 	}
 	echo "";
 
@@ -165,8 +174,15 @@ align-items:center;justify-content:center;margin-bottom:10px;top:0}
 .svgimage{background:rgba(0, 155, 171, 1.000);-webit-border-radius:2px;border-radius:2px;}
 orange1{color:rgba(255, 131, 47, 1.000);}
 </style>
-<div class="weather34darkbrowser" url="Recent Earthquakes"></div>
-  
+<?php
+    global $min_eq;
+    if ($min_eq) {
+		echo ("<div class=\"weather34darkbrowser\" url=\"Recent Earthquakes Magnitude $min_eq or Greater\"></div>");
+	} else {
+		echo ("<div class=\"weather34darkbrowser\" url=\"Recent Earthquakes\"></div>");
+	}
+?>
+
 <main class="grid">
 	<?php
         for ($i = 0; $i < $eqcount; $i++) {
