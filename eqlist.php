@@ -41,7 +41,7 @@ for ($i = 0, $a = 0; $i < $file_elements && $a < $eqcount; $i++) {
 	    $lati[$a]=$parsed_json["features"][$i]["geometry"]["coordinates"][1];
 	    $longi[$a]=$parsed_json["features"][$i]["geometry"]["coordinates"][0];
 	    $eventime[$a]=date($timeFormatShort, $utime[$a]);
-	    $eqdist[$a] = round(distance($lat, $lon, $lati[$i], $longi[$i]));
+	    $eqdist[$a] = round(distance($lat, $lon, $lati[$a], $longi[$a]));
 		$a+=1;
 	}
 }
