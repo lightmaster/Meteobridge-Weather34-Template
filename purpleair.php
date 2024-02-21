@@ -42,14 +42,14 @@ function map($value, $fromLow, $fromHigh, $toLow, $toHigh){
     return $tmpValue + $toLow;
 }
 $json_string             = file_get_contents("jsondata/purpleair.txt");
-$parsed_json             = json_decode($json_string);
+$parsed_json             = json_decode($json_string, true);
 //$aqiweather["aqi"]       = $parsed_json->{'results'}[1]->{'PM2_5Value'};
-$aqiweather["aqi"]       = number_format(pm25_to_aqi(($parsed_json->{'results'}[0]->{'PM2_5Value'} + $parsed_json->{'results'}[1]->{'PM2_5Value'}) / 2),1);
+$aqiweather["aqi"]       = number_format(pm25_to_aqi($parsed_json['sensor']['stats']['pm2.5_10minute']),1);
 $aqiweather["aqiozone"]  = 'N/A';
-$aqiweather["time2"]     = $parsed_json->{'results'}[0]->{'LastSeen'};
-$aqiweather["time"]      = date("H:i",$aqiweather["time2"]);
-$aqiweather["city"]      = $parsed_json->{'results'}[0]->{'ID'};
-$aqiweather["label"]     = $parsed_json->{'results'}[0]->{'Label'};
+$aqiweather["time2"]     = $parsed_json['sensor']['last_seen'];
+$aqiweather["time"]      = date($timeFormat,$aqiweather["time2"]);
+$aqiweather["city"]      = $parsed_json['sensor']['name'];
+$aqiweather["label"]     = $parsed_json['sensor']['name'];
 $a="";if($aqiweather["aqi"]==$a){$aqiweather["aqi"] = "0" ;}
 
 

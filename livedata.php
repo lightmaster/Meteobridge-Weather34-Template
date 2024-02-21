@@ -782,8 +782,10 @@ if (is_numeric($meteobridgeapi[186]) && $meteobridgeapi[186] != '--') {
 	$weather['rainStartTime']	= 'All Time';
 }
 
-$weather['consoleLowBattery']	= intval($meteobridgeapi[171]); # Console battery, 0 when battery is good, 1 when battery is low
-$weather['stationLowBattery']	= intval($meteobridgeapi[172]); # Station battery, 0 when battery is good, 1 when battery is low
+//$weather['consoleLowBattery']	= intval($meteobridgeapi[171]); # Console battery, 0 when battery is good, 1 when battery is low
+$weather['consoleLowBattery']	= 0;
+//$weather['stationLowBattery']	= intval($meteobridgeapi[172]); # Station battery, 0 when battery is good, 1 when battery is low
+$weather['stationLowBattery']	= 0;
 
 #if (is_numeric($meteobridgeapi[190]){
 #	$weather['rainStartYearSec']	= $meteobridgeapi[190];

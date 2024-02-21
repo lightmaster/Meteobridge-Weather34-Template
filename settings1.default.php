@@ -8,6 +8,7 @@ $weatherflowmapzoom   = "5";
 $id = "ISTANBUL161";
 $purpleairID = "11111";
 $purpleairhardware   = "yes";
+$purpleairapikey = "XXXXX-XXXX-XXXX-XXXX-XXXXXXXX";
 $metarapikey ="11111111111111";
 $TZ = "Europe/London";
 $UTC = "1";
