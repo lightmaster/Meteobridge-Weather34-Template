@@ -9,17 +9,55 @@ $now =date('G.i');
  //weather34 wxcheck API aviation metar script May 2018 
 $json_string             = file_get_contents("jsondata/metar34.txt");
 $parsed_json             = json_decode($json_string);
+
+$is_online = !empty($parsed_json->data);
+
 $metar34time       = $parsed_json->{'data'}[0]->{'observed'};
 $metar34raw       = $parsed_json->{'data'}[0]->{'raw_text'};
 $metar34stationid       = $parsed_json->{'data'}[0]->{'icao'};
 $metar34stationname       = $parsed_json->{'data'}[0]->{'station'}->{'name'};
-//$metar34stationname       = $airport1;	
-$metar34pressurehg       = $parsed_json->{'data'}[0]->{'barometer'}->{'hg'};	
+//$metar34stationname       = $airport1;
+$metar34pressurehg       = $parsed_json->{'data'}[0]->{'barometer'}->{'hg'};
 $metar34pressuremb       = $parsed_json->{'data'}[0]->{'barometer'}->{'mb'};
-$metar34conditions         = $parsed_json->{'data'}[0]->{'conditions'}[0]->{'code'};
-$metar34conditionstext         = $parsed_json->{'data'}[0]->{'conditions'}[0]->{'text'};
-$metar34clouds          = $parsed_json->{'data'}[0]->{'clouds'}[0]->{'code'};
-$metar34cloudstext          = $parsed_json->{'data'}[0]->{'clouds'}[0]->{'text'};
+
+// Parse the conditions based on being online and whether the entire CLR code is returned
+if ($is_online) {
+    // If the API provided structured conditions, use them. Otherwise, default to None.
+    $metar34conditions     = $parsed_json->{'data'}[0]->{'conditions'}[0]->{'code'} ?? 'None';
+    $metar34conditionstext = $parsed_json->{'data'}[0]->{'conditions'}[0]->{'text'} ?? 'Clear';
+
+    // Check if the API provided a structured cloud array
+    if (isset($parsed_json->{'data'}[0]->{'clouds'}[0]->{'code'})) {
+        $metar34clouds     = $parsed_json->{'data'}[0]->{'clouds'}[0]->{'code'};
+        $metar34cloudstext = $parsed_json->{'data'}[0]->{'clouds'}[0]->{'text'};
+    } 
+    // If missing, dynamically look for clear sky markers inside the actual raw text stream
+    elseif (strpos($metar34raw, 'CLR') !== false) {
+        $metar34clouds     = 'CLR';
+        $metar34cloudstext = 'Clear Conditions';
+    } elseif (strpos($metar34raw, 'SKC') !== false) {
+        $metar34clouds     = 'SKC';
+        $metar34cloudstext = 'Clear Skies';
+    } elseif (strpos($metar34raw, 'CAVOK') !== false) {
+        $metar34clouds     = 'CAVOK';
+        $metar34cloudstext = 'Clear Skies';
+    } else {
+        // Online, but cloud data is structurally missing and no clear keywords found
+        $metar34clouds     = 'UNKNOWN';
+        $metar34cloudstext = 'Unknown Clouds';
+    }
+} else {
+    // The station is completely offline or the JSON file is invalid/empty
+    $metar34conditions     = null;
+    $metar34conditionstext = null;
+    $metar34clouds         = null;
+    $metar34cloudstext     = null;
+}
+
+// $metar34conditions         = $parsed_json->{'data'}[0]->{'conditions'}[0]->{'code'};
+// $metar34conditionstext         = $parsed_json->{'data'}[0]->{'conditions'}[0]->{'text'};
+// $metar34clouds          = $parsed_json->{'data'}[0]->{'clouds'}[0]->{'code'};
+// $metar34cloudstext          = $parsed_json->{'data'}[0]->{'clouds'}[0]->{'text'};
 $metar34dewpointc          = $parsed_json->{'data'}[0]->{'dewpoint'}->{'celsius'};
 $metar34dewpointf          = $parsed_json->{'data'}[0]->{'dewpoint'}->{'fahrenheit'};
 $metar34temperaturec          = $parsed_json->{'data'}[0]->{'temperature'}->{'celsius'};
@@ -322,14 +360,14 @@ $sky_desc='Partly Cloudy <br>Conditions';
 else if($metar34clouds=='SCT'){
 if ($now >$suns2 ){$sky_icon='nt_scatteredclouds.svg';} 
 else if ($now <$sunrs2 ){$sky_icon='nt_scatteredclouds.svg';} 
-else $sky_icon='scatteredclouds.svg'; 	
+else $sky_icon='scatteredclouds.svg'; 
 $sky_desc='Mostly Scattered <br>Clouds';
 }
 //mostly cloudy
-else if($metar34clouds=='BKN'){		
+else if($metar34clouds=='BKN'){
 if ($now >$suns2 ){$sky_icon='nt_mostlycloudy.svg';} 
 else if ($now <$sunrs2 ){$sky_icon='nt_mostlycloudy.svg';} 
-else $sky_icon='mostlycloudy.svg'; 	
+else $sky_icon='mostlycloudy.svg'; 
 $sky_desc='Mostly Cloudy <br>Conditions';
 }
 //overcast
@@ -348,9 +386,9 @@ $sky_desc='Overcast Conditions';
 }
 //offline
 else{
-	$sky_icon='offline.svg';
-	$sky_desc='Data Offline';
+        $sky_icon='offline.svg';
+        $sky_desc='Data Offline';
 };
-//end weather34 metar aviation script API	 
+//end weather34 metar aviation script API        
 
 ?>
