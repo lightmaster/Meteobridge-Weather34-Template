@@ -36,23 +36,48 @@ if ($chartsource =="mbcharts"){
 
 #Update Metar
 if ($metarapikey != "11111111111111"){
-    $w34header= array("X-API-KEY:".$metarapikey."",);
-    $ch = curl_init();
     $filename2 = '../jsondata/metar34.txt';
-    $complete_save_loc2 = $filename2;
-    $fp2 = fopen($complete_save_loc2, 'wb');
-    curl_setopt($ch, CURLOPT_URL,"https://api.checkwx.com/metar/".$icao1."/decoded");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER,$w34header);
-    curl_setopt($ch, CURLOPT_FILE, $fp2);
-    $result = curl_exec ($ch);
-    if ($result) {
-        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Metar updated<br>':"<pre>Metar updated</pre>");
+    $cache_time = 600; // 10 minutes in seconds
+
+    clearstatcache();
+
+    // Calculate current time and file age
+    $current_time = time();
+    $file_time = file_exists($filename2) ? filemtime($filename2) : 0;
+    $file_age = $current_time - $file_time;
+
+    // Check if the file exists AND if it was modified less than 10 minutes ago
+    if (file_exists($filename2) && $file_age < $cache_time && $file_age >= 0) {
+
+        // Calculate the time remaining until the next update
+        $time_left = $cache_time - $file_age;
+        $mins = floor($time_left / 60);
+        $secs = $time_left % 60;
+
+        // Format the output string nicely (e.g., "9m 45s" or just "45s")
+        $time_string = ($mins > 0 ? $mins . "m " : "") . $secs . "s";
+        $message = "Metar update skipped (using cached data). Next update available in: " . $time_string;
+
+        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge' ? $message . '<br>' : "<pre>" . $message . "</pre>");
     } else {
-        echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating Metar<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating Metar</pre></span>");
+        $w34header= array("X-API-KEY:".$metarapikey."",);
+        $ch = curl_init();
+
+        $complete_save_loc2 = $filename2;
+        $fp2 = fopen($complete_save_loc2, 'wb');
+        curl_setopt($ch, CURLOPT_URL,"https://api.checkwx.com/metar/".$icao1."/decoded");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER,$w34header);
+        curl_setopt($ch, CURLOPT_FILE, $fp2);
+        $result = curl_exec ($ch);
+        if ($result) {
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Metar updated<br>':"<pre>Metar updated</pre>");
+        } else {
+            echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Problem updating Metar<br>':"<span style='color:red;font-weight:bold'><pre>Problem updating Metar</pre></span>");
+        }
+        curl_close ($ch);
+        unset($result);
     }
-    curl_close ($ch);
-    unset($result);
 } else {
     echo ($_SERVER['HTTP_USER_AGENT']=='meteobridge'?'Please set your Metar API Key in EasyWeatherSetup.php<br>':"<span style='color:red;font-weight:bold'><pre>Please set your Metar API Key in EasyWeatherSetup.php</pre></span>");
 }
