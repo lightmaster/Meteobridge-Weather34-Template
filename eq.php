@@ -5,14 +5,14 @@ date_default_timezone_set($TZ);
 //$json_string=file_get_contents('http://earthquake-report.com/feeds/recent-eq?json');
 $json_string=file_get_contents('jsondata/eqnotification.txt');
 $parsed_json=json_decode($json_string,true);
-$magnitude1=$parsed_json{0}{'magnitude'};
-$magnitude=number_format($magnitude1,1);
-$title=$parsed_json{0}['title'];
-$eqtitle=$parsed_json{0}['location'];
-$depth=$parsed_json{0}['depth'];
-$time1=$parsed_json{0}['date_time'];
-$lati=$parsed_json{0}['latitude'];
-$longi=$parsed_json{0}['longitude'];
+$magnitude=number_format($parsed_json["features"][0]["properties"]["mag"],1);
+$eqtitle=$parsed_json["features"][0]["properties"]["title"];
+$title=$eqtitle;
+$depth=$parsed_json["features"][0]["geometry"]["coordinates"][2];
+$utime=round($parsed_json["features"][0]["properties"]["time"] / 1000, 0, PHP_ROUND_HALF_UP);
+$time1=gmdate("Y-m-d\TH:i:s\Z", $utime);
+$lati=$parsed_json["features"][0]["geometry"]["coordinates"][1];
+$longi=$parsed_json["features"][0]["geometry"]["coordinates"][0];
 $eventime=date( $dateFormat . " " . $timeFormatShort, strtotime("$time1") );
 $shorttime=date( $timeFormatShort, strtotime("$time1") );
 ?>
@@ -32,8 +32,8 @@ echo  $online, " ",date($timeFormat, $updated);?></span>
 <?php //chuck
 if($eqdista <= 200){echo "<div class=tempconvertercirclered>".$eqdista ;}
 else if($eqdista <= 500){echo "<div class=tempconvertercircleorange>".$eqdista ;}
-else if($magnitude <=1000){echo "<div class=tempconvertercircleyellow>".$eqdista;}
-else if($magnitude >= 1000){echo "<div class=tempconvertercirclegreen>".$eqdista ;}
+else if($eqdista <=1000){echo "<div class=tempconvertercircleyellow>".$eqdista;}
+else if($eqdista >= 1000){echo "<div class=tempconvertercirclegreen>".$eqdista ;}
 
 
 ?></smalltempunit2></div></div>

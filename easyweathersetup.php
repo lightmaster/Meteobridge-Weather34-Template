@@ -2212,13 +2212,23 @@ Weatherflow Map Zoom</div>
     <input name="purpleair" type="text" id="purpleair" value="<?php echo $purpleairID ;?>" class="choose">
 
 
-
-
-
     <br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M16 14 L16 23 M16 8 L16 10" />
     <circle cx="16" cy="16" r="14" />
 </svg> <span style="color:#777;">enter your <strong>PurpleAir </strong> station id example <strong><span style="color:rgba(86, 95, 103, 1.000);"> 1200</strong></span></span>
+
+    <br/>
+    <div class="stationvalue"> Purple Air API Key</div>
+    <svg id="i-chevron-right" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="rgba(86, 95, 103, 1.000)" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+    <path d="M12 30 L24 16 12 2" />
+</svg>
+
+    <input name="purpleair" type="text" id="purpleair" value="<?php echo $purpleairapikey ;?>" class="chooseapi">
+
+    <br/> <svg id="i-info" viewBox="0 0 32 32" width="12" height="12" fill="none" stroke="#777" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M16 14 L16 23 M16 8 L16 10" />
+    <circle cx="16" cy="16" r="14" />
+</svg> <span style="color:#777;">enter your <strong>PurpleAir </strong> API Key example <strong><span style="color:rgba(86, 95, 103, 1.000);"> XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</strong></span></span>
 
     </div>
     <br/>

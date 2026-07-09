@@ -59,7 +59,8 @@ curl_close($ch);
 fclose($fp);
 ?>
 <?php // weather34 earthquakes curl based
-$url1 = 'https://earthquake-report.com/feeds/recent-eq?json'; 
+//$url1 = 'https://earthquake-report.com/feeds/recent-eq?json'; 
+$url1 = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
 $ch1 = curl_init($url1);
 $filename1 = '../jsondata/eqnotification.txt';
 $complete_save_loc1 = $filename1; 
@@ -71,7 +72,8 @@ curl_close($ch1);
 fclose($fp1);
 ?>
 <?php //k-index curl based
-$url2 = 'https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json'; 
+//$url2 = 'https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json'; 
+$url2 = 'https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json';
 $ch2 = curl_init($url2);
 $filename2 = '../jsondata/kindex.txt';
 $complete_save_loc2 = $filename2; 
@@ -97,14 +99,17 @@ fclose($fp3);}
 ?>
 <?php // weather34 purple air quality  curl based
 if($purpleairhardware=='yes'){
-$url4 = 'https://www.purpleair.com/json?show='.$purpleairID.''; 
-$ch4 = curl_init($url4);
-$filename4 = '../jsondata/purpleair.txt';
-$complete_save_loc4 = $filename4; 
-$fp4 = fopen($complete_save_loc4, 'wb'); 
-curl_setopt($ch4, CURLOPT_FILE, $fp4);
-curl_setopt($ch4, CURLOPT_HEADER, 0);
-curl_exec($ch4);
-curl_close($ch4);
-fclose($fp4);}
+   $url4 = 'https://api.purpleair.com/v1/sensors/'.$purpleairID;
+   $ch4 = curl_init($url4);
+   $filename4 = '../jsondata/purpleair.txt';
+   $complete_save_loc4 = $filename4;
+   $fp4 = fopen($complete_save_loc4, 'wb');
+   curl_setopt($ch4, CURLOPT_FILE, $fp4);
+   $pahdr = [ "X-API-Key: ".$purpleairapikey ];
+   curl_setopt($ch4, CURLOPT_HTTPHEADER, $pahdr);
+
+   curl_exec($ch4);
+   curl_close($ch4);
+   fclose($fp4);
+}
 ?>
